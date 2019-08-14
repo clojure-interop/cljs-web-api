@@ -1,4 +1,4 @@
-(defproject potapenko/cljs-web-api "1.0.0"
+(defproject clojure-interop/cljs-web-api "1.0.0"
   :description "All Browser Classes (MDN) ClojureScript Bingings with Docs"
   :url ""
   :license {:name "Eclipse Public License"

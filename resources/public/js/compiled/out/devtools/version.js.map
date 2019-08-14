@@ -1,1 +1,0 @@
-{"version":3,"file":"\/Users\/eugenepotapenko\/Projects\/clojure-interop\/cljs-web-api\/resources\/public\/js\/compiled\/out\/devtools\/version.js","sources":["version.cljs?rel=1565798865815"],"lineCount":9,"mappings":";AAAA;;AAGA,AAAKA,mCAAgB;AAErB,uCAAA,vCAAMC;AAAN,AACED","names":["devtools.version\/current-version","devtools.version\/get-current-version"]}

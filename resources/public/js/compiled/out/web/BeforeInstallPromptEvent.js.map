@@ -1,1 +1,0 @@
-{"version":3,"file":"\/Users\/eugenepotapenko\/Projects\/clojure-interop\/cljs-web-api\/resources\/public\/js\/compiled\/out\/web\/BeforeInstallPromptEvent.js","sources":["BeforeInstallPromptEvent.cljs?rel=1565798803519"],"lineCount":18,"mappings":";AAAA;;AAMA;;;;;;;;;;sCAAA,tCAAMA,oFASHC;AATH,OAUMA,PAAK","names":["web.BeforeInstallPromptEvent\/prompt","this"]}

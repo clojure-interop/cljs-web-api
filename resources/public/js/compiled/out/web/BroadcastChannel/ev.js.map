@@ -1,1 +1,0 @@
-{"version":3,"file":"\/Users\/eugenepotapenko\/Projects\/clojure-interop\/cljs-web-api\/resources\/public\/js\/compiled\/out\/web\/BroadcastChannel\/ev.js","sources":["ev.cljs?rel=1565798825260"],"lineCount":23,"mappings":";AAAA;;AAIA;;;;;;;;kCAAA,lCAAKA;AAUL;;;;;;;;uCAAA,vCAAKC","names":["web.BroadcastChannel.ev\/message","web.BroadcastChannel.ev\/messageerror"]}
