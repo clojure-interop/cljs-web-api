@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/eugenepotapenko\/Projects\/clojure-interop\/cljs-web-api\/resources\/public\/js\/compiled\/out\/xml\/XMLSerializer.js","sources":["XMLSerializer.cljs?rel=1565798805168"],"lineCount":18,"mappings":";AAAA;;AAKA;;;;;;;;;;wCAAA,xCAAMA,wFASHC,MAAKC;AATR,OAUMD,PAAK,+BAAoBC","names":["xml.XMLSerializer\/serialize-to-string","this","root-node"]}

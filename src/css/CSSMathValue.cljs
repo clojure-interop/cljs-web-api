@@ -1,0 +1,33 @@
+(ns css.CSSMathValue
+  "The CSSMathValue interface of the CSS Typed Object Model API
+  base class for classes representing complex numeric values."
+  (:refer-clojure :exclude []))
+
+(defn operator
+  "Property.
+
+  The CSSMathValue.operator read-only property of the `css.CSSMathValue`
+  indicates the operator that the current subtype represents. For
+  if the current CSSMathValue subtype is CSSMathSum, this property
+  return the string \\\"sum\\\".
+
+  `var aString = CSSMathValue.operator;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue/operator`"
+  [this]
+  (-> this (.operator)))
+
+(defn set-operator!
+  "Property.
+
+  The CSSMathValue.operator read-only property of the `css.CSSMathValue`
+  indicates the operator that the current subtype represents. For
+  if the current CSSMathValue subtype is CSSMathSum, this property
+  return the string \\\"sum\\\".
+
+  `var aString = CSSMathValue.operator;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue/operator`"
+  [this val]
+  (aset this "operator" val))
+

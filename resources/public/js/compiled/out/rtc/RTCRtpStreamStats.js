@@ -1,0 +1,289 @@
+// Compiled by ClojureScript 1.9.946 {}
+goog.provide('rtc.RTCRtpStreamStats');
+goog.require('cljs.core');
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's codecId property is
+ *   string which uniquely identifies the object that was inspected
+ *   produce the data in the `rtc.RTCCodecStats` for the RTP stream.
+ * 
+ *   `var codecID = RTCRtpStreamStats.codecId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/codecId`
+ */
+rtc.RTCRtpStreamStats.codec_id = (function rtc$RTCRtpStreamStats$codec_id(this$){
+return this$.codecId();
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's codecId property is
+ *   string which uniquely identifies the object that was inspected
+ *   produce the data in the `rtc.RTCCodecStats` for the RTP stream.
+ * 
+ *   `var codecID = RTCRtpStreamStats.codecId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/codecId`
+ */
+rtc.RTCRtpStreamStats.set_codec_id_BANG_ = (function rtc$RTCRtpStreamStats$set_codec_id_BANG_(this$,val){
+return (this$["codecId"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The firCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   the number of Full Intra Request (FIR) packets have been sent
+ *   the receiver to the sender.
+ * 
+ *   `var firCount = RTCRtpStreamStats.firCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/firCount`
+ */
+rtc.RTCRtpStreamStats.fir_count = (function rtc$RTCRtpStreamStats$fir_count(this$){
+return this$.firCount();
+});
+/**
+ * Property.
+ * 
+ *   The firCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   the number of Full Intra Request (FIR) packets have been sent
+ *   the receiver to the sender.
+ * 
+ *   `var firCount = RTCRtpStreamStats.firCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/firCount`
+ */
+rtc.RTCRtpStreamStats.set_fir_count_BANG_ = (function rtc$RTCRtpStreamStats$set_fir_count_BANG_(this$,val){
+return (this$["firCount"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The kind property of the `rtc.RTCRtpStreamStats` dictionary is
+ *   string indicating whether the described RTP stream contains audio
+ *   video media.
+ * 
+ *   `mediaKind = RTCRtpStreamStats.kind;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/kind`
+ */
+rtc.RTCRtpStreamStats.kind = (function rtc$RTCRtpStreamStats$kind(this$){
+return this$.kind();
+});
+/**
+ * Property.
+ * 
+ *   The kind property of the `rtc.RTCRtpStreamStats` dictionary is
+ *   string indicating whether the described RTP stream contains audio
+ *   video media.
+ * 
+ *   `mediaKind = RTCRtpStreamStats.kind;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/kind`
+ */
+rtc.RTCRtpStreamStats.set_kind_BANG_ = (function rtc$RTCRtpStreamStats$set_kind_BANG_(this$,val){
+return (this$["kind"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The nackCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   a numeric value indicating the number of times the receiver sent
+ *   NACK packet to the sender.
+ * 
+ *   `var nackCount = RTCRtpStreamStats.nackCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/nackCount`
+ */
+rtc.RTCRtpStreamStats.nack_count = (function rtc$RTCRtpStreamStats$nack_count(this$){
+return this$.nackCount();
+});
+/**
+ * Property.
+ * 
+ *   The nackCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   a numeric value indicating the number of times the receiver sent
+ *   NACK packet to the sender.
+ * 
+ *   `var nackCount = RTCRtpStreamStats.nackCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/nackCount`
+ */
+rtc.RTCRtpStreamStats.set_nack_count_BANG_ = (function rtc$RTCRtpStreamStats$set_nack_count_BANG_(this$,val){
+return (this$["nackCount"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The pliCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   the number of times the stream's receiving end sent a Picture
+ *   Indication (PLI) packet to the sender.
+ * 
+ *   `var pliCount = RTCRtpStreamStats.pliCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/pliCount`
+ */
+rtc.RTCRtpStreamStats.pli_count = (function rtc$RTCRtpStreamStats$pli_count(this$){
+return this$.pliCount();
+});
+/**
+ * Property.
+ * 
+ *   The pliCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   the number of times the stream's receiving end sent a Picture
+ *   Indication (PLI) packet to the sender.
+ * 
+ *   `var pliCount = RTCRtpStreamStats.pliCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/pliCount`
+ */
+rtc.RTCRtpStreamStats.set_pli_count_BANG_ = (function rtc$RTCRtpStreamStats$set_pli_count_BANG_(this$,val){
+return (this$["pliCount"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The qpSum property of the `rtc.RTCRtpStreamStats` dictionary
+ *   a value generated by adding the Quantization Parameter (QP) values
+ *   every frame sent or received to date on the video track corresponding
+ *   this RTCRtpStreamStats object.
+ * 
+ *   `var qpSum = RTCRtpStreamStats.qpSum;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/qpSum`
+ */
+rtc.RTCRtpStreamStats.qp_sum = (function rtc$RTCRtpStreamStats$qp_sum(this$){
+return this$.qpSum();
+});
+/**
+ * Property.
+ * 
+ *   The qpSum property of the `rtc.RTCRtpStreamStats` dictionary
+ *   a value generated by adding the Quantization Parameter (QP) values
+ *   every frame sent or received to date on the video track corresponding
+ *   this RTCRtpStreamStats object.
+ * 
+ *   `var qpSum = RTCRtpStreamStats.qpSum;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/qpSum`
+ */
+rtc.RTCRtpStreamStats.set_qp_sum_BANG_ = (function rtc$RTCRtpStreamStats$set_qp_sum_BANG_(this$,val){
+return (this$["qpSum"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The sliCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   how many Slice Loss Indication (SLI) packets were received by
+ *   sender.
+ * 
+ *   `var sliCount = RTCRtpStreamStats.sliCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/sliCount`
+ */
+rtc.RTCRtpStreamStats.sli_count = (function rtc$RTCRtpStreamStats$sli_count(this$){
+return this$.sliCount();
+});
+/**
+ * Property.
+ * 
+ *   The sliCount property of the `rtc.RTCRtpStreamStats` dictionary
+ *   how many Slice Loss Indication (SLI) packets were received by
+ *   sender.
+ * 
+ *   `var sliCount = RTCRtpStreamStats.sliCount;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/sliCount`
+ */
+rtc.RTCRtpStreamStats.set_sli_count_BANG_ = (function rtc$RTCRtpStreamStats$set_sli_count_BANG_(this$,val){
+return (this$["sliCount"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's ssrc property is an
+ *   which uniquely identifies the source of the RTP packets whose
+ *   are covered by the `rtc.RTCStatsReport` that includes this RTCRtpStreamStats
+ * 
+ *   `var ssrc = RTCRtpStreamStats.ssrc;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/ssrc`
+ */
+rtc.RTCRtpStreamStats.ssrc = (function rtc$RTCRtpStreamStats$ssrc(this$){
+return this$.ssrc();
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's ssrc property is an
+ *   which uniquely identifies the source of the RTP packets whose
+ *   are covered by the `rtc.RTCStatsReport` that includes this RTCRtpStreamStats
+ * 
+ *   `var ssrc = RTCRtpStreamStats.ssrc;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/ssrc`
+ */
+rtc.RTCRtpStreamStats.set_ssrc_BANG_ = (function rtc$RTCRtpStreamStats$set_ssrc_BANG_(this$,val){
+return (this$["ssrc"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's trackId property is
+ *   string which uniquely identifies the `rtc.RTCMediaStreamTrackStats`
+ *   which contains the track statistics for the `media.MediaStreamTrack`
+ *   which statistics are provided in this object.
+ * 
+ *   `var trackID = RTCRtpStreamStats.trackId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/trackId`
+ */
+rtc.RTCRtpStreamStats.track_id = (function rtc$RTCRtpStreamStats$track_id(this$){
+return this$.trackId();
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's trackId property is
+ *   string which uniquely identifies the `rtc.RTCMediaStreamTrackStats`
+ *   which contains the track statistics for the `media.MediaStreamTrack`
+ *   which statistics are provided in this object.
+ * 
+ *   `var trackID = RTCRtpStreamStats.trackId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/trackId`
+ */
+rtc.RTCRtpStreamStats.set_track_id_BANG_ = (function rtc$RTCRtpStreamStats$set_track_id_BANG_(this$,val){
+return (this$["trackId"] = val);
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's transportId property
+ *   a string which uniquely identifies the object from which the
+ *   contained in the `rtc.RTCTransportStats` properties in the `rtc.RTCStatsReport`.
+ * 
+ *   `var transportID = RTCRtpStreamStats.transportId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/transportId`
+ */
+rtc.RTCRtpStreamStats.transport_id = (function rtc$RTCRtpStreamStats$transport_id(this$){
+return this$.transportId();
+});
+/**
+ * Property.
+ * 
+ *   The `rtc.RTCRtpStreamStats` dictionary's transportId property
+ *   a string which uniquely identifies the object from which the
+ *   contained in the `rtc.RTCTransportStats` properties in the `rtc.RTCStatsReport`.
+ * 
+ *   `var transportID = RTCRtpStreamStats.transportId;`
+ * 
+ *   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpStreamStats/transportId`
+ */
+rtc.RTCRtpStreamStats.set_transport_id_BANG_ = (function rtc$RTCRtpStreamStats$set_transport_id_BANG_(this$,val){
+return (this$["transportId"] = val);
+});
+
+//# sourceMappingURL=RTCRtpStreamStats.js.map?rel=1565798836895

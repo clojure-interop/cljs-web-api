@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/eugenepotapenko\/Projects\/clojure-interop\/cljs-web-api\/resources\/public\/js\/compiled\/out\/web\/XPathNSResolver.js","sources":["XPathNSResolver.cljs?rel=1565798836393"],"lineCount":19,"mappings":";AAAA;;AAKA;;;;;;;;;;;2CAAA,3CAAMA,8FAUHC,MAAKC;AAVR,OAWMD,PAAK,gCAAqBC","names":["web.XPathNSResolver\/lookup-namespace-uri","this","prefix"]}
