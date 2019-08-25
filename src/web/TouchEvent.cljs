@@ -1,10 +1,10 @@
 (ns web.TouchEvent
-  "The TouchEvent interface represents an `web.UIEvent` which is
-  when the state of contacts with a touch-sensitive surface changes.
-  surface can be a touch screen or trackpad, for example. The event
-  describe one or more points of contact with the screen and includes
-  for detecting movement, addition and removal of contact points,
-  so forth."
+  "The TouchEvent interface represents an `web.event.UIEvent` which
+  sent when the state of contacts with a touch-sensitive surface
+  This surface can be a touch screen or trackpad, for example.
+  event can describe one or more points of contact with the screen
+  includes support for detecting movement, addition and removal
+  contact points, and so forth."
   (:refer-clojure :exclude []))
 
 (def constructor
@@ -18,7 +18,7 @@
 (defn alt-key
   "Property.
 
-  A `web.Boolean` value indicating whether or not the alt (Alternate)
+  A `js.Boolean` value indicating whether or not the alt (Alternate)
   is enabled when the touch event is created. If the alt key is
   the attribute's value is true. Otherwise, it is false.
 
@@ -31,7 +31,7 @@
 (defn set-alt-key!
   "Property.
 
-  A `web.Boolean` value indicating whether or not the alt (Alternate)
+  A `js.Boolean` value indicating whether or not the alt (Alternate)
   is enabled when the touch event is created. If the alt key is
   the attribute's value is true. Otherwise, it is false.
 
@@ -44,9 +44,9 @@
 (defn changed-touches
   "Property.
 
-  The changedTouches read-only property is a `web.TouchList` whose
-  points (`web.Touch` objects) varies depending on the event type,
-  follows:
+  The changedTouches read-only property is a `web.mobile.TouchList`
+  touch points (`web.other.Touch` objects) varies depending on
+  event type, as follows:
 
   `var changes = touchEvent.changedTouches;`
 
@@ -57,7 +57,7 @@
 (defn ctrl-key
   "Property.
 
-  A `web.Boolean` value indicating whether the control (Control)
+  A `js.Boolean` value indicating whether the control (Control)
   is enabled when the touch event is created. If this key is enabled,
   attribute's value is true. Otherwise, it is false.
 
@@ -70,7 +70,7 @@
 (defn set-ctrl-key!
   "Property.
 
-  A `web.Boolean` value indicating whether the control (Control)
+  A `js.Boolean` value indicating whether the control (Control)
   is enabled when the touch event is created. If this key is enabled,
   attribute's value is true. Otherwise, it is false.
 
@@ -83,9 +83,9 @@
 (defn meta-key
   "Property.
 
-  A `web.Boolean` value indicating whether or not the Meta key
-  enabled when the touch event is created. If this key is enabled,
-  attribute's value is true. Otherwise, it is false.
+  A `js.Boolean` value indicating whether or not the Meta key is
+  when the touch event is created. If this key is enabled, the
+  value is true. Otherwise, it is false.
 
   `var metaEnabled = touchEvent.metaKey;`
 
@@ -96,9 +96,9 @@
 (defn set-meta-key!
   "Property.
 
-  A `web.Boolean` value indicating whether or not the Meta key
-  enabled when the touch event is created. If this key is enabled,
-  attribute's value is true. Otherwise, it is false.
+  A `js.Boolean` value indicating whether or not the Meta key is
+  when the touch event is created. If this key is enabled, the
+  value is true. Otherwise, it is false.
 
   `var metaEnabled = touchEvent.metaKey;`
 
@@ -109,7 +109,7 @@
 (defn shift-key
   "Property.
 
-  A `web.Boolean` value indicating whether or not the shift key
+  A `js.Boolean` value indicating whether or not the shift key
   enabled when the touch event is created. If this key is enabled,
   attribute's value is true. Otherwise, it is false.
 
@@ -122,7 +122,7 @@
 (defn set-shift-key!
   "Property.
 
-  A `web.Boolean` value indicating whether or not the shift key
+  A `js.Boolean` value indicating whether or not the shift key
   enabled when the touch event is created. If this key is enabled,
   attribute's value is true. Otherwise, it is false.
 
@@ -135,10 +135,10 @@
 (defn target-touches
   "Property.
 
-  The targetTouches read-only property is a `web.TouchList` listing
-  the `web.Touch` objects for touch points that are still in contact
-  the touch surface and whose touchstart event occurred inside
-  same target `web.element` as the current target element.
+  The targetTouches read-only property is a `web.mobile.TouchList`
+  all the `web.other.Touch` objects for touch points that are still
+  contact with the touch surface and whose touchstart event occurred
+  the same target `element` as the current target element.
 
   `var touches = touchEvent.targetTouches;`
 
@@ -149,10 +149,10 @@
 (defn touches
   "Property.
 
-  touches is a read-only `web.TouchList` listing all the `web.Touch`
-  for touch points that are currently in contact with the touch
-  regardless of whether or not they've changed or what their target
-  was at touchstart time.
+  touches is a read-only `web.mobile.TouchList` listing all the
+  objects for touch points that are currently in contact with the
+  surface, regardless of whether or not they've changed or what
+  target element was at touchstart time.
 
   `var touches = touchEvent.touches;`
 

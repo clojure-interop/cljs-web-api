@@ -1,6 +1,6 @@
 (ns web.WindowOrWorkerGlobalScope
   "The WindowOrWorkerGlobalScope mixin describes several features
-  to the `web.Window` and `web.WorkerGlobalScope` interfaces."
+  to the `web.Window` and `web.workers.WorkerGlobalScope` interfaces."
   (:refer-clojure :exclude []))
 
 (defn atob
@@ -8,7 +8,7 @@
 
   The WindowOrWorkerGlobalScope.atob() function decodes a string
   data which has been encoded using base-64 encoding. You can use
-  `web.btoa()` method to encode and transmit data which may otherwise
+  `btoa()` method to encode and transmit data which may otherwise
   communication problems, then transmit it and use the atob() method
   decode the data again. For example, you can encode, transmit,
   decode control characters such as ASCII values 0 through 31.
@@ -23,7 +23,7 @@
   "Method.
 
   The WindowOrWorkerGlobalScope.btoa() method creates a base-64
-  ASCII string from a binary string (i.e., a `web.String` object
+  ASCII string from a binary string (i.e., a `js.String` object
   which each character in the string is treated as a byte of binary
 
   `var encodedData = scope.btoa(stringToEncode);`
@@ -37,7 +37,7 @@
 
   The clearInterval() method of the `web.WindowOrWorkerGlobalScope`
   cancels a timed, repeating action which was previously established
-  a call to `web.setInterval()`.
+  a call to `setInterval()`.
 
   `scope.clearInterval(intervalID)`
 
@@ -49,7 +49,7 @@
   "Method.
 
   The clearTimeout() method of the `web.WindowOrWorkerGlobalScope`
-  cancels a timeout previously established by calling `web.setTimeout()`.
+  cancels a timeout previously established by calling `setTimeout()`.
 
   `scope.clearTimeout(timeoutID)`
 
@@ -63,8 +63,8 @@
   The createImageBitmap() method creates a bitmap from a given
   optionally cropped to contain only a portion of that source.
   method exists on the global scope in both windows and workers.
-  accepts a variety of different image sources, and returns a `web.Promise`
-  resolves to an `web.ImageBitmap`.
+  accepts a variety of different image sources, and returns a `js.Promise`
+  resolves to an `web.canvas.ImageBitmap`.
 
   `createImageBitmap(image[, options]).then(function(response) { ... });
   createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
@@ -101,11 +101,11 @@
 (defn set-interval
   "Method.
 
-  The setInterval() method, offered on the `web.Window` and `web.Worker`
+  The setInterval() method, offered on the `web.Window` and `web.workers.Worker`
   repeatedly calls a function or executes a code snippet, with
   fixed time delay between each call.
 
-  `var intervalID = scope.setInterval(func, delay[, param1, param2, ...]);
+  `var intervalID = scope.setInterval(func, delay[, arg1, arg2, ...]);
   var intervalID = scope.setInterval(code, delay);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
@@ -131,9 +131,9 @@
   "Property.
 
   The caches read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the `web.CacheStorage` object associated with the current
-  This object enables functionality such as storing assets for
-  use, and generating custom responses to requests.
+  returns the `web.service-workers.CacheStorage` object associated
+  the current context. This object enables functionality such as
+  assets for offline use, and generating custom responses to requests.
 
   `var myCacheStorage = self.caches; // or just caches`
 

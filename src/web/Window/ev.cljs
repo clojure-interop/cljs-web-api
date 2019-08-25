@@ -2,15 +2,127 @@
   "Window Events."
   (:refer-clojure :exclude [load]))
 
+(def error
+  "Event.
+
+  Fired when when a resource failed to load, or can't be used.
+  example, if a script has an execution error or an image can't
+  found or is invalid.
+  Also available via the onerror property."
+
+  "error")
+
+(def animationcancel
+  "Event.
+
+  Fired when an animation unexpectedly aborts.
+  Also available via the onanimationcancel property."
+
+  "animationcancel")
+
+(def clipboardchange
+  "Event.
+
+  Fired when the system clipboard content changes."
+
+  "clipboardchange")
+
+(def offline
+  "Event.
+
+  Fired when the browser has lost access to the network and the
+  of navigator.onLine has switched to false.
+  Also available via the onoffline property."
+
+  "offline")
+
+(def blur
+  "Event.
+
+  Fired when an element has lost focus.
+  Also available via the onblur property."
+
+  "blur")
+
+(def gamepadconnected
+  "Event.
+
+  Fired when the browser detects that a gamepad has been connected
+  the first time a button/axis of the gamepad is used.
+  Also available via the ongamepadconnected property."
+
+  "gamepadconnected")
+
+(def hashchange
+  "Event.
+
+  Fired when the fragment identifier of the URL has changed (the
+  of the URL beginning with and following the # symbol).
+  Also available via the onhashchange property."
+
+  "hashchange")
+
+(def beforeunload
+  "Event.
+
+  Fired when the window, the document and its resources are about
+  be unloaded.
+  Also available via the onbeforeunload property."
+
+  "beforeunload")
+
+(def appinstalled
+  "Event.
+
+  Fired when the browser has successfully installed a page as an
+  Also available via the onappinstalled property."
+
+  "appinstalled")
+
+(def message
+  "Event.
+
+  Fired when the window receives a message, for example from a
+  to Window.postMessage() from another browsing context.
+  Also available via the onmessage property."
+
+  "message")
+
 (def afterprint
   "Event.
 
-  The afterprint event is fired after the associated document has
-  printing or the print preview has been closed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/afterprint_event`"
+  Fired after the associated document has started printing or the
+  preview has been closed.
+  Also available via the onafterprint property."
 
   "afterprint")
+
+(def rejectionhandled
+  "Event.
+
+  Sent every time a JavaScript Promise is rejected, regardless
+  whether or not there is a handler in place to catch the rejection.
+  Also available through the onrejectionhandled event handler"
+
+  "rejectionhandled")
+
+(def transitioncancel
+  "Event.
+
+  Fired when a CSS transition is canceled.
+  Also available via the ontransitioncancel property."
+
+  "transitioncancel")
+
+(def vrdisplayactivate
+  "Event.
+
+  Fired when a VR display becomes available to be presented to,
+  example if an HMD has been moved to bring it out of standby,
+  woken up by being put on.
+  Also available via the onvrdisplayactivate property."
+
+  "vrdisplayactivate")
 
 (def beforeprint
   "Event.
@@ -21,25 +133,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event`"
 
   "beforeprint")
-
-(def beforeunload
-  "Event.
-
-  The beforeunload event is fired when the window, the document
-  its resources are about to be unloaded.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event`"
-
-  "beforeunload")
-
-(def blur
-  "Event.
-
-  The blur event fires when an element has lost focus.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/blur_event`"
-
-  "blur")
 
 (def copy
   "Event.
@@ -72,17 +165,6 @@
 
   "DOMContentLoaded")
 
-(def error
-  "Event.
-
-  The error event is fired on a `web.Window` object when a resource
-  to load or couldn't be used — for example if a script has an
-  error.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event`"
-
-  "error")
-
 (def focus
   "Event.
 
@@ -91,17 +173,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/focus_event`"
 
   "focus")
-
-(def hashchange
-  "Event.
-
-  The hashchange event is fired when the fragment identifier of
-  URL has changed (the part of the URL beginning with and following
-  # symbol).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event`"
-
-  "hashchange")
 
 (def languagechange
   "Event.
@@ -125,17 +196,6 @@
 
   "load")
 
-(def message
-  "Event.
-
-  The message event is fired on a `web.Window` object when the
-  receives a message, for example from a call to Window.postMessage()
-  another browsing context.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event`"
-
-  "message")
-
 (def messageerror
   "Event.
 
@@ -146,22 +206,11 @@
 
   "messageerror")
 
-(def offline
-  "Event.
-
-  The offline event of the `web.Window` interface is fired when
-  browser has lost access to the network and the value of `web.Navigator.onLine`
-  to false.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event`"
-
-  "offline")
-
 (def online
   "Event.
 
   The online event of the `web.Window` interface is fired when
-  browser has gained access to the network and the value of `web.Navigator.onLine`
+  browser has gained access to the network and the value of `Navigator.onLine`
   to true.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event`"
@@ -219,17 +268,6 @@
 
   "popstate")
 
-(def rejectionhandled
-  "Event.
-
-  The rejectionhandled event is sent to the script's global scope
-  `web.window` but also `web.Worker`) whenever a JavaScript `web.Promise`
-  rejected but after the promise rejection has been handled.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/rejectionhandled_event`"
-
-  "rejectionhandled")
-
 (def storage
   "Event.
 
@@ -245,9 +283,8 @@
   "Event.
 
   The unhandledrejection event is sent to the global scope of a
-  when a JavaScript `web.Promise` that has no rejection handler
-  rejected; typically, this is the `web.window`, but may also be
-  `web.Worker`.
+  when a JavaScript `js.Promise` that has no rejection handler
+  rejected; typically, this is the `window`, but may also be a
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event`"
 

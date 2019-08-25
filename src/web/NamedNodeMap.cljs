@@ -18,3 +18,17 @@
   [this name]
   (-> this (.getNamedItem name)))
 
+(defn length
+  "Property.
+
+  Returns the amount of objects in the map."
+  [this]
+  (-> this (.length)))
+
+(defn set-length!
+  "Property.
+
+  Returns the amount of objects in the map."
+  [this val]
+  (aset this "length" val))
+

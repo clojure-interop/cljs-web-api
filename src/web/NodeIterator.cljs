@@ -43,12 +43,36 @@
   [this ]
   (-> this (.previousNode)))
 
+(defn root
+  "Property.
+
+  The NodeIterator.root read-only property represents the `web.Node`
+  is the root of what the `web.NodeIterator` traverses.
+
+  `root = nodeIterator.root;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
+  [this]
+  (-> this (.root)))
+
+(defn set-root!
+  "Property.
+
+  The NodeIterator.root read-only property represents the `web.Node`
+  is the root of what the `web.NodeIterator` traverses.
+
+  `root = nodeIterator.root;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
+  [this val]
+  (aset this "root" val))
+
 (defn expand-entity-references
   "Property.
 
   The NodeIterator.expandEntityReferences read-only property returns
-  `web.Boolean` flag indicating whether or not the children of
-  reference nodes are visible to the `web.NodeIterator`.
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.NodeIterator`.
 
   `expand = nodeIterator.expandEntityReferences;`
 
@@ -60,8 +84,8 @@
   "Property.
 
   The NodeIterator.expandEntityReferences read-only property returns
-  `web.Boolean` flag indicating whether or not the children of
-  reference nodes are visible to the `web.NodeIterator`.
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.NodeIterator`.
 
   `expand = nodeIterator.expandEntityReferences;`
 
@@ -99,9 +123,9 @@
   "Property.
 
   The NodeIterator.pointerBeforeReferenceNode read-only property
-  a `web.Boolean` flag that indicates whether the `web.NodeFilter`
+  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
   anchored before (if this value is true) or after (if this value
-  false) the anchor node indicated by the `web.NodeIterator.referenceNode`
+  false) the anchor node indicated by the `NodeIterator.referenceNode`
 
   `flag = nodeIterator.pointerBeforeReferenceNode;`
 
@@ -113,9 +137,9 @@
   "Property.
 
   The NodeIterator.pointerBeforeReferenceNode read-only property
-  a `web.Boolean` flag that indicates whether the `web.NodeFilter`
+  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
   anchored before (if this value is true) or after (if this value
-  false) the anchor node indicated by the `web.NodeIterator.referenceNode`
+  false) the anchor node indicated by the `NodeIterator.referenceNode`
 
   `flag = nodeIterator.pointerBeforeReferenceNode;`
 
@@ -148,30 +172,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode`"
   [this val]
   (aset this "referenceNode" val))
-
-(defn root
-  "Property.
-
-  The NodeIterator.root read-only property represents the `web.Node`
-  is the root of what the `web.NodeIterator` traverses.
-
-  `root = nodeIterator.root;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
-  [this]
-  (-> this (.root)))
-
-(defn set-root!
-  "Property.
-
-  The NodeIterator.root read-only property represents the `web.Node`
-  is the root of what the `web.NodeIterator` traverses.
-
-  `root = nodeIterator.root;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
-  [this val]
-  (aset this "root" val))
 
 (defn what-to-show
   "Property.
@@ -219,7 +219,7 @@
 
   \\t\\t\\tNodeFilter.SHOW_DOCUMENT_FRAGMENT
   \\t\\t\\t1024
-  \\t\\t\\tShows `web.DocumentFragment` nodes.
+  \\t\\t\\tShows `web.web-components.DocumentFragment` nodes.
 
 
   \\t\\t\\tNodeFilter.SHOW_DOCUMENT_TYPE
@@ -234,17 +234,17 @@
 
   \\t\\t\\tNodeFilter.SHOW_ENTITY
   \\t\\t\\t32
-  \\t\\t\\tShows `web.Entity` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with an `web.Entity` node as its root; in this case, it means that the `web.Entity` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
+  \\t\\t\\tShows `Entity` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with an `Entity` node as its root; in this case, it means that the `Entity` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
 
 
   \\t\\t\\tNodeFilter.SHOW_ENTITY_REFERENCE
   \\t\\t\\t16
-  \\t\\t\\tShows `web.EntityReference` nodes.
+  \\t\\t\\tShows `EntityReference` nodes.
 
 
   \\t\\t\\tNodeFilter.SHOW_NOTATION
   \\t\\t\\t2048
-  \\t\\t\\tShows `web.Notation` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with a `web.Notation` node as its root; in this case, it means that the `web.Notation` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
+  \\t\\t\\tShows `web.other.Notation` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with a `web.other.Notation` node as its root; in this case, it means that the `web.other.Notation` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
 
 
   \\t\\t\\tNodeFilter.SHOW_PROCESSING_INSTRUCTION
@@ -306,7 +306,7 @@
 
   \\t\\t\\tNodeFilter.SHOW_DOCUMENT_FRAGMENT
   \\t\\t\\t1024
-  \\t\\t\\tShows `web.DocumentFragment` nodes.
+  \\t\\t\\tShows `web.web-components.DocumentFragment` nodes.
 
 
   \\t\\t\\tNodeFilter.SHOW_DOCUMENT_TYPE
@@ -321,17 +321,17 @@
 
   \\t\\t\\tNodeFilter.SHOW_ENTITY
   \\t\\t\\t32
-  \\t\\t\\tShows `web.Entity` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with an `web.Entity` node as its root; in this case, it means that the `web.Entity` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
+  \\t\\t\\tShows `Entity` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with an `Entity` node as its root; in this case, it means that the `Entity` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
 
 
   \\t\\t\\tNodeFilter.SHOW_ENTITY_REFERENCE
   \\t\\t\\t16
-  \\t\\t\\tShows `web.EntityReference` nodes.
+  \\t\\t\\tShows `EntityReference` nodes.
 
 
   \\t\\t\\tNodeFilter.SHOW_NOTATION
   \\t\\t\\t2048
-  \\t\\t\\tShows `web.Notation` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with a `web.Notation` node as its root; in this case, it means that the `web.Notation` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
+  \\t\\t\\tShows `web.other.Notation` nodes. This is meaningful only when creating a `web.NodeIterator` or `web.TreeWalker` with a `web.other.Notation` node as its root; in this case, it means that the `web.other.Notation` node will appear in the first position of the traversal. Since entities are not part of the document tree, they do not appear when traversing over the document tree.
 
 
   \\t\\t\\tNodeFilter.SHOW_PROCESSING_INSTRUCTION

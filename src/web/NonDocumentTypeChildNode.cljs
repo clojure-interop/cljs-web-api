@@ -4,6 +4,20 @@
   suitable for `web.DocumentType`."
   (:refer-clojure :exclude []))
 
+(defn previous-element-sibling
+  "Property.
+
+  The NonDocumentTypeChildNode.previousElementSibling read-only
+  returns the `web.Element` immediately prior to the specified
+  in its parent's children list, or null if the specified element
+  the first one in the list.
+
+  `prevNode = elementNodeReference.previousElementSibling;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling`"
+  [this]
+  (-> this (.previousElementSibling)))
+
 (defn next-element-sibling
   "Property.
 
@@ -29,18 +43,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this val]
   (aset this "nextElementSibling" val))
-
-(defn previous-element-sibling
-  "Property.
-
-  The NonDocumentTypeChildNode.previousElementSibling read-only
-  returns the `web.Element` immediately prior to the specified
-  in its parent's children list, or null if the specified element
-  the first one in the list.
-
-  `prevNode = elementNodeReference.previousElementSibling;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling`"
-  [this]
-  (-> this (.previousElementSibling)))
 

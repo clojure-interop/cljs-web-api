@@ -7,7 +7,7 @@
   "Method.
 
   The ParentNode.append() method inserts a set of `web.Node` objects
-  `dom.DOMString` objects after the last child of the ParentNode.
+  `web.dom.DOMString` objects after the last child of the ParentNode.
   objects are inserted as equivalent `web.Text` nodes.
 
   `[Throws, Unscopable]
@@ -21,7 +21,7 @@
   "Method.
 
   The ParentNode.prepend() method inserts a set of `web.Node` objects
-  `dom.DOMString` objects before the first child of the `web.ParentNode`.
+  `web.dom.DOMString` objects before the first child of the `web.ParentNode`.
   objects are inserted as equivalent `web.Text` nodes.
 
   `ParentNode.prepend(...nodesToPrepend);`
@@ -70,7 +70,7 @@
   count
   The return value, which is an unsigned long (simply an integer) type.
   node
-  An object representing a `web.Document`, `web.DocumentFragment`, or `web.Element`.`
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this]
@@ -88,7 +88,7 @@
   count
   The return value, which is an unsigned long (simply an integer) type.
   node
-  An object representing a `web.Document`, `web.DocumentFragment`, or `web.Element`.`
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this val]
@@ -98,8 +98,8 @@
   "Property.
 
   The `web.ParentNode` property children is a read-only property
-  returns a live `html.HTMLCollection` which contains all of the
-  `web.elements` of the node upon which it was called.
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
 
   `var children = node.children;`
 
@@ -111,8 +111,8 @@
   "Property.
 
   The `web.ParentNode` property children is a read-only property
-  returns a live `html.HTMLCollection` which contains all of the
-  `web.elements` of the node upon which it was called.
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
 
   `var children = node.children;`
 

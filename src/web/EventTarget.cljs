@@ -30,7 +30,7 @@
 (defn dispatch-event
   "Method.
 
-  Dispatches an `web.Event` at the specified `web.EventTarget`,
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
   invoking the affected `web.EventListener`s in the appropriate
   The normal event processing rules (including the capturing and
   bubbling phase) also apply to events dispatched manually with
@@ -45,7 +45,7 @@
   "Method.
 
   The EventTarget.removeEventListener() method removes from the
-  an event listener previously registered with `web.EventTarget.addEventListener()`.
+  an event listener previously registered with `EventTarget.addEventListener()`.
   event listener to be removed is identified using a combination
   the event type, the event listener function itself, and various
   options that may affect the matching process; see Matching event

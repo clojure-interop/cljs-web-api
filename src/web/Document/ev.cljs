@@ -2,12 +2,22 @@
   "Document Events."
   (:refer-clojure :exclude [drop]))
 
+(def scroll
+  "Event.
+
+  The scroll event fires when the document view or an element has
+  scrolled.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event`"
+
+  "scroll")
+
 (def animationcancel
   "Event.
 
   The animationcancel event is fired when a CSS Animation unexpectedly
   In other words, any time it stops running without sending an
-  event. This might happen when the `web.animation-name` is changed
+  event. This might happen when the `animation-name` is changed
   that the animation is removed, or when the animating node is
   using CSS. Therefore, either directly or because any of its containing
   are hidden.
@@ -15,6 +25,77 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/animationcancel_event`"
 
   "animationcancel")
+
+(def copy
+  "Event.
+
+  The copy event fires when the user initiates a copy action through
+  browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event`"
+
+  "copy")
+
+(def drag
+  "Event.
+
+  The drag event is fired every few hundred milliseconds as an
+  or text selection is being dragged by the user.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event`"
+
+  "drag")
+
+(def fullscreenchange
+  "Event.
+
+  The fullscreenchange event is fired immediately after the browser
+  into or out of full-screen mode.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event`"
+
+  "fullscreenchange")
+
+(def dom-content-loaded
+  "Event.
+
+  The DOMContentLoaded event fires when the initial HTML document
+  been completely loaded and parsed, without waiting for stylesheets,
+  and subframes to finish loading.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event`"
+
+  "DOMContentLoaded")
+
+(def gotpointercapture
+  "Event.
+
+  The gotpointercapture event is fired when an element captures
+  pointer using `setPointerCapture()`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/gotpointercapture_event`"
+
+  "gotpointercapture")
+
+(def selectionchange
+  "Event.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event`"
+
+  "selectionchange")
+
+(def touchcancel
+  "Event.
+
+  The touchcancel event is fired when one or more touch points
+  been disrupted in an implementation-specific manner (for example,
+  many touch points are created).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/touchcancel_event`"
+
+  "touchcancel")
 
 (def animationend
   "Event.
@@ -43,25 +124,15 @@
   "Event.
 
   The animationstart event is fired when a CSS Animation has started.
-  there is an `web.animation-delay`, this event will fire once
-  delay period has expired. A negative delay will cause the event
-  fire with an elapsedTime equal to the absolute value of the delay
+  there is an `animation-delay`, this event will fire once the
+  period has expired. A negative delay will cause the event to
+  with an elapsedTime equal to the absolute value of the delay
   correspondingly, the animation will begin playing at that time
   into the sequence).
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/animationstart_event`"
 
   "animationstart")
-
-(def copy
-  "Event.
-
-  The copy event fires when the user initiates a copy action through
-  browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event`"
-
-  "copy")
 
 (def cut
   "Event.
@@ -72,27 +143,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/cut_event`"
 
   "cut")
-
-(def dom-content-loaded
-  "Event.
-
-  The DOMContentLoaded event fires when the initial HTML document
-  been completely loaded and parsed, without waiting for stylesheets,
-  and subframes to finish loading.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event`"
-
-  "DOMContentLoaded")
-
-(def drag
-  "Event.
-
-  The drag event is fired every few hundred milliseconds as an
-  or text selection is being dragged by the user.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event`"
-
-  "drag")
 
 (def dragend
   "Event.
@@ -163,16 +213,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event`"
 
   "drop")
-
-(def gotpointercapture
-  "Event.
-
-  The gotpointercapture event is fired when an element captures
-  pointer using `web.setPointerCapture()`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/gotpointercapture_event`"
-
-  "gotpointercapture")
 
 (def keydown
   "Event.
@@ -252,8 +292,8 @@
 
   The pointerenter event fires when a pointing device is moved
   the hit test boundaries of an element or one of its descendants,
-  as a result of a `web.pointerdown` event from a device that does
-  support hover (see `web.pointerdown`).
+  as a result of a `pointerdown` event from a device that does
+  support hover (see `pointerdown`).
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerenter_event`"
 
@@ -305,10 +345,9 @@
 
   The pointerout event is fired for several reasons including:
   device is moved out of the hit test boundaries of an element;
-  the `web.pointerup` event for a device that does not support
-  (see `web.pointerup`); after firing the `web.pointercancel` event
-  `web.pointercancel`); when a pen stylus leaves the hover range
-  by the digitizer.
+  the `pointerup` event for a device that does not support hover
+  `pointerup`); after firing the `pointercancel` event (see `pointercancel`);
+  a pen stylus leaves the hover range detectable by the digitizer.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerout_event`"
 
@@ -336,33 +375,12 @@
 (def readystatechange
   "Event.
 
-  The readystatechange event is fired when the `web.readyState`
-  of a document has changed.
+  The readystatechange event is fired when the `readyState` attribute
+  a document has changed.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event`"
 
   "readystatechange")
-
-(def scroll
-  "Event.
-
-  The scroll event fires when the document view or an element has
-  scrolled.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event`"
-
-  "scroll")
-
-(def touchcancel
-  "Event.
-
-  The touchcancel event is fired when one or more touch points
-  been disrupted in an implementation-specific manner (for example,
-  many touch points are created).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/touchcancel_event`"
-
-  "touchcancel")
 
 (def touchend
   "Event.
@@ -408,8 +426,8 @@
 
   The transitionend event is fired when a CSS transition has completed.
   the case where a transition is removed before completion, such
-  if the `web.transition-property` is removed or `web.display`
-  set to none, then the event will not be generated.
+  if the `transition-property` is removed or `display` is set to
+  then the event will not be generated.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/transitionend_event`"
 
@@ -419,7 +437,7 @@
   "Event.
 
   The transitionrun event is fired when a CSS transition is first
-  i.e. before any `web.transition-delay` has begun.
+  i.e. before any `transition-delay` has begun.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/transitionrun_event`"
 
@@ -429,47 +447,9 @@
   "Event.
 
   The transitionstart event is fired when a CSS transition has
-  started, i.e., after any `web.transition-delay` has ended.
+  started, i.e., after any `transition-delay` has ended.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/transitionstart_event`"
 
   "transitionstart")
-
-(def wheel
-  "Event.
-
-  The wheel event fires when the user rotates a wheel button on
-  pointing device (typically a mouse).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/wheel_event`"
-
-  "wheel")
-
-(def fullscreenchange
-  "Event.
-
-  The fullscreenchange event is fired immediately after the browser
-  into or out of full-screen mode.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event`"
-
-  "fullscreenchange")
-
-(def selectionchange
-  "Event.
-
-
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event`"
-
-  "selectionchange")
-
-(def selectstart
-  "Event.
-
-
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectstart_event`"
-
-  "selectstart")
 

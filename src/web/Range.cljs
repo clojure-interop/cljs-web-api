@@ -11,11 +11,22 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/Range`"
   js/Range)
 
+(defn set-start
+  "Method.
+
+  The Range.setStart() method sets the start position of a `web.Range`.
+
+  `range.setStart(startNode, startOffset);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStart`"
+  [this start-node start-offset]
+  (-> this (.setStart start-node start-offset)))
+
 (defn clone-contents
   "Method.
 
-  The Range.cloneContents() returns a `web.DocumentFragment` copying
-  objects of type `web.Node` included in the `web.Range`.
+  The Range.cloneContents() returns a `web.web-components.DocumentFragment`
+  the objects of type `web.Node` included in the `web.Range`.
 
   `documentFragment = range.cloneContents();`
 
@@ -86,7 +97,7 @@
 (defn create-contextual-fragment
   "Method.
 
-  The Range.createContextualFragment() method returns a `web.DocumentFragment`
+  The Range.createContextualFragment() method returns a `web.web-components.DocumentFragment`
   invoking the HTML fragment parsing algorithm or the XML fragment
   algorithm with the start of the range (the parent of the selected
   as the context node. The HTML fragment parsing algorithm is used
@@ -129,7 +140,7 @@
   "Method.
 
   The Range.extractContents() method moves contents of the `web.Range`
-  the document tree into a `web.DocumentFragment`.
+  the document tree into a `web.web-components.DocumentFragment`.
 
   `documentFragment = range.extractContents();`
 
@@ -140,7 +151,7 @@
 (defn get-bounding-client-rect
   "Method.
 
-  The Range.getBoundingClientRect() method returns a `dom.DOMRect`
+  The Range.getBoundingClientRect() method returns a `web.dom.DOMRect`
   that bounds the contents of the range; this is a rectangle enclosing
   union of the bounding rectangles for all the elements in the
 
@@ -153,9 +164,9 @@
 (defn get-client-rects
   "Method.
 
-  The Range.getClientRects() method returns a list of `dom.DOMRect`
+  The Range.getClientRects() method returns a list of `web.dom.DOMRect`
   representing the area of the screen occupied by the range. This
-  created by aggregating the results of calls to `web.Element.getClientRects()`
+  created by aggregating the results of calls to `Element.getClientRects()`
   all the elements in the range.
 
   `rectList = range.getClientRects()`
@@ -263,17 +274,6 @@
   [this reference-node]
   (-> this (.setEndBefore reference-node)))
 
-(defn set-start
-  "Method.
-
-  The Range.setStart() method sets the start position of a `web.Range`.
-
-  `range.setStart(startNode, startOffset);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStart`"
-  [this start-node start-offset]
-  (-> this (.setStart start-node start-offset)))
-
 (defn set-start-after
   "Method.
 
@@ -327,7 +327,7 @@
 (defn collapsed
   "Property.
 
-  The Range.collapsed read-only property returns a `web.Boolean`
+  The Range.collapsed read-only property returns a `js.Boolean`
   indicating whether the start and end points of the `web.Range`
   at the same position. It returns true if the start and end boundary
   of the `web.Range` are the same point in the DOM, false if not.
@@ -341,7 +341,7 @@
 (defn set-collapsed!
   "Property.
 
-  The Range.collapsed read-only property returns a `web.Boolean`
+  The Range.collapsed read-only property returns a `js.Boolean`
   indicating whether the start and end points of the `web.Range`
   at the same position. It returns true if the start and end boundary
   of the `web.Range` are the same point in the DOM, false if not.
@@ -357,9 +357,9 @@
 
   The Range.commonAncestorContainer read-only property returns
   deepest — or furthest down the document tree — `web.Node` that
-  both boundary points of the range. This means that if `web.Range.startContainer`
-  `web.Range.endContainer` both refer to the same node, this node
-  the commonAncestorContainer.
+  both boundary points of the `web.Range`. This means that if `Range.startContainer`
+  `Range.endContainer` both refer to the same node, this node is
+  common ancestor container.
 
   `rangeAncestor = range.commonAncestorContainer;`
 
@@ -372,9 +372,9 @@
 
   The Range.commonAncestorContainer read-only property returns
   deepest — or furthest down the document tree — `web.Node` that
-  both boundary points of the range. This means that if `web.Range.startContainer`
-  `web.Range.endContainer` both refer to the same node, this node
-  the commonAncestorContainer.
+  both boundary points of the `web.Range`. This means that if `Range.startContainer`
+  `Range.endContainer` both refer to the same node, this node is
+  common ancestor container.
 
   `rangeAncestor = range.commonAncestorContainer;`
 
@@ -387,7 +387,7 @@
 
   The Range.endContainer read-only property returns the `web.Node`
   which the `web.Range` ends. To change the end position of a node,
-  the `web.Range.setEnd()` method or a similar one.
+  the `Range.setEnd()` method or a similar one.
 
   `endRangeNode = range.endContainer;`
 
@@ -400,7 +400,7 @@
 
   The Range.endContainer read-only property returns the `web.Node`
   which the `web.Range` ends. To change the end position of a node,
-  the `web.Range.setEnd()` method or a similar one.
+  the `Range.setEnd()` method or a similar one.
 
   `endRangeNode = range.endContainer;`
 
@@ -412,7 +412,7 @@
   "Property.
 
   The Range.endOffset read-only property returns a number representing
-  in the `web.Range.endContainer` the `web.Range` ends.
+  in the `Range.endContainer` the `web.Range` ends.
 
   `endRangeOffset = range.endOffset;`
 
@@ -424,7 +424,7 @@
   "Property.
 
   The Range.endOffset read-only property returns a number representing
-  in the `web.Range.endContainer` the `web.Range` ends.
+  in the `Range.endContainer` the `web.Range` ends.
 
   `endRangeOffset = range.endOffset;`
 
@@ -437,7 +437,7 @@
 
   The Range.startContainer read-only property returns the `web.Node`
   which the Range starts. To change the start position of a node,
-  one of the `web.Range.setStart()` methods.
+  one of the `Range.setStart()` methods.
 
   `startRangeNode = range.startContainer;`
 
@@ -450,7 +450,7 @@
 
   The Range.startContainer read-only property returns the `web.Node`
   which the Range starts. To change the start position of a node,
-  one of the `web.Range.setStart()` methods.
+  one of the `Range.setStart()` methods.
 
   `startRangeNode = range.startContainer;`
 

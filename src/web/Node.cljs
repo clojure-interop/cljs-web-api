@@ -18,6 +18,11 @@
   [this a-child]
   (-> this (.appendChild a-child)))
 
+(defn get-feature
+  "Method."
+  [this & args]
+  (apply (-> this .-getFeature) (concat [this] args)))
+
 (defn clone-node
   "Method.
 
@@ -59,9 +64,9 @@
 (defn contains
   "Method.
 
-  The Node.contains() method returns a `web.Boolean` value indicating
+  The Node.contains() method returns a `js.Boolean` value indicating
   a node is a descendant of a given node, i.e. the node itself,
-  of its direct children (`web.childNodes`), one of the children's
+  of its direct children (`childNodes`), one of the children's
   children, and so on.
 
   `node.contains( otherNode )`
@@ -86,8 +91,8 @@
 (defn get-user-data
   "Method.
 
-  The Node.getUserData() method returns any user `dom.DOMUserData`
-  previously on the given node by `web.Node.setUserData()`.
+  The Node.getUserData() method returns any user `web.dom.DOMUserData`
+  previously on the given node by `Node.setUserData()`.
 
   `userData = someNode.getUserData(userKey);`
 
@@ -98,7 +103,7 @@
 (defn has-child-nodes
   "Method.
 
-  The Node.hasChildNodes() method returns a `web.Boolean` value
+  The Node.hasChildNodes() method returns a `js.Boolean` value
   whether the given `web.Node` has child nodes or not.
 
   `bool = node.hasChildNodes();`
@@ -139,8 +144,8 @@
   "Method.
 
   The Node.isDefaultNamespace() method accepts a namespace URI
-  an argument and returns a `web.Boolean` with a value of true
-  the namespace is the default namespace on the given node or false
+  an argument and returns a `js.Boolean` with a value of true if
+  namespace is the default namespace on the given node or false
   not.
 
   `result = node.isDefaultNamespace(namespaceURI);`
@@ -182,7 +187,7 @@
 (defn is-supported
   "Method.
 
-  The Node.isSupported()returns a `web.Boolean` flag containing
+  The Node.isSupported()returns a `js.Boolean` flag containing
   result of a test whether the DOM implementation implements a
   feature and this feature is supported by the specific node.
 
@@ -208,9 +213,9 @@
 (defn lookup-prefix
   "Method.
 
-  The Node.lookupPrefix() method returns a `dom.DOMString` containing
-  prefix for a given namespace URI, if present, and null if not.
-  multiple prefixes are possible, the result is implementation-dependent.
+  The Node.lookupPrefix() method returns a `web.dom.DOMString`
+  the prefix for a given namespace URI, if present, and null if
+  When multiple prefixes are possible, the result is implementation-dependent.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix`"
   [this & args]
@@ -278,11 +283,10 @@
 
   The Node.setUserData() method allows a user to attach (or remove)
   to an element, without needing to modify the DOM. Note that such
-  will not be preserved when imported via `web.Node.importNode`,
-  with `web.Node.cloneNode()` and `web.Node.renameNode()` operations
-  `web.Node.adoptNode` does preserve the information), and equality
-  in `web.Node.isEqualNode()` do not consider user data in making
-  assessment.
+  will not be preserved when imported via `Node.importNode`, as
+  `Node.cloneNode()` and `Node.renameNode()` operations (though
+  does preserve the information), and equality tests in `Node.isEqualNode()`
+  not consider user data in making the assessment.
 
   `var prevUserData = someNode.setUserData(userKey, userData, handler);`
 
@@ -302,12 +306,42 @@
   [this]
   (-> this (.baseURI)))
 
+(defn local-name
+  "Property.
+
+  The Node.localName read-only property returns the local part
+  the qualified name of this node.
+
+  `name = element.localName
+
+
+  name is the local name as a string (see Notes below for details)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
+  [this]
+  (-> this (.localName)))
+
+(defn set-local-name!
+  "Property.
+
+  The Node.localName read-only property returns the local part
+  the qualified name of this node.
+
+  `name = element.localName
+
+
+  name is the local name as a string (see Notes below for details)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
+  [this val]
+  (aset this "localName" val))
+
 (defn base-uri-object
   "Property.
 
   The Node.baseURIObject property returns the nsIURI representing
   node's (typically a document or an element) base URL. It's similar
-  `web.Node.baseURI`, except it returns an nsIURI instead of a
+  `Node.baseURI`, except it returns an nsIURI instead of a string.
 
   `uriObj = node.baseURIObject`
 
@@ -319,8 +353,8 @@
   "Property.
 
   The Node.childNodes read-only property returns a live `web.NodeList`
-  child `web.nodes` of the given element where the first child
-  is assigned index 0.
+  child `nodes` of the given element where the first child node
+  assigned index 0.
 
   `var nodeList = elementNodeReference.childNodes;`
 
@@ -332,8 +366,8 @@
   "Property.
 
   The Node.childNodes read-only property returns a live `web.NodeList`
-  child `web.nodes` of the given element where the first child
-  is assigned index 0.
+  child `nodes` of the given element where the first child node
+  assigned index 0.
 
   `var nodeList = elementNodeReference.childNodes;`
 
@@ -371,8 +405,8 @@
   The isConnected read-only property of the `web.Node` interface
   a boolean indicating whether the node is connected (directly
   indirectly) to the context object, for example the `web.Document`
-  in the case of the normal DOM, or the `web.ShadowRoot` in the
-  of a shadow DOM.
+  in the case of the normal DOM, or the `web.shadow-dom.ShadowRoot`
+  the case of a shadow DOM.
 
   `var isItConnected = nodeObjectInstance.isConnected`
 
@@ -386,8 +420,8 @@
   The isConnected read-only property of the `web.Node` interface
   a boolean indicating whether the node is connected (directly
   indirectly) to the context object, for example the `web.Document`
-  in the case of the normal DOM, or the `web.ShadowRoot` in the
-  of a shadow DOM.
+  in the case of the normal DOM, or the `web.shadow-dom.ShadowRoot`
+  the case of a shadow DOM.
 
   `var isItConnected = nodeObjectInstance.isConnected`
 
@@ -423,36 +457,6 @@
   [this val]
   (aset this "lastChild" val))
 
-(defn local-name
-  "Property.
-
-  The Node.localName read-only property returns the local part
-  the qualified name of this node.
-
-  `name = element.localName
-
-
-  name is the local name as a string (see Notes below for details)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
-  [this]
-  (-> this (.localName)))
-
-(defn set-local-name!
-  "Property.
-
-  The Node.localName read-only property returns the local part
-  the qualified name of this node.
-
-  `name = element.localName
-
-
-  name is the local name as a string (see Notes below for details)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
-  [this val]
-  (aset this "localName" val))
-
 (defn namespace-uri
   "Property.
 
@@ -483,7 +487,7 @@
   "Property.
 
   The Node.nextSibling read-only property returns the node immediately
-  the specified one in their parent's `web.childNodes`, or returns
+  the specified one in their parent's `childNodes`, or returns
   if the specified node is the last child in the parent element.
 
   `nextNode = node.nextSibling`
@@ -496,7 +500,7 @@
   "Property.
 
   The Node.nextSibling read-only property returns the node immediately
-  the specified one in their parent's `web.childNodes`, or returns
+  the specified one in their parent's `childNodes`, or returns
   if the specified node is the last child in the parent element.
 
   `nextNode = node.nextSibling`
@@ -546,7 +550,7 @@
 
   The read-only Node.nodeType property is an integer that identifies
   the node is. It distinguishes different kind of nodes from each
-  such as `web.elements`, `web.text` and `web.comments`.
+  such as `elements`, `text` and `comments`.
 
   `var type = node.nodeType;
 
@@ -561,7 +565,7 @@
 
   The read-only Node.nodeType property is an integer that identifies
   the node is. It distinguishes different kind of nodes from each
-  such as `web.elements`, `web.text` and `web.comments`.
+  such as `elements`, `text` and `comments`.
 
   `var type = node.nodeType;
 
@@ -600,7 +604,7 @@
 (defn outer-text
   "Property.
 
-  See `html.HTMLElement.outerText`.
+  See `HTMLElement.outerText`.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
   [this]
@@ -609,7 +613,7 @@
 (defn set-outer-text!
   "Property.
 
-  See `html.HTMLElement.outerText`.
+  See `HTMLElement.outerText`.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
   [this val]
@@ -725,8 +729,8 @@
   "Property.
 
   The Node.previousSibling read-only property returns the node
-  preceding the specified one in its parent's `web.childNodes`
-  or null if the specified node is the first in that list.
+  preceding the specified one in its parent's `childNodes` list,
+  null if the specified node is the first in that list.
 
   `previousNode = node.previousSibling;`
 
@@ -738,8 +742,8 @@
   "Property.
 
   The Node.previousSibling read-only property returns the node
-  preceding the specified one in its parent's `web.childNodes`
-  or null if the specified node is the first in that list.
+  preceding the specified one in its parent's `childNodes` list,
+  null if the specified node is the first in that list.
 
   `previousNode = node.previousSibling;`
 
@@ -752,7 +756,7 @@
 
   The Node.rootNode read-only property returns a `web.Node` object
   the topmost node in the tree, or the current node if it's the
-  node in the tree. This is found by walking backward along `web.Node.parentNode`
+  node in the tree. This is found by walking backward along `Node.parentNode`
   the top is reached.
 
   `rootNode = node.rootNode;`
@@ -766,7 +770,7 @@
 
   The Node.rootNode read-only property returns a `web.Node` object
   the topmost node in the tree, or the current node if it's the
-  node in the tree. This is found by walking backward along `web.Node.parentNode`
+  node in the tree. This is found by walking backward along `Node.parentNode`
   the top is reached.
 
   `rootNode = node.rootNode;`

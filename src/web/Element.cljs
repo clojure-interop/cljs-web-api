@@ -4,12 +4,39 @@
   to all kinds of elements. More specific classes inherit from"
   (:refer-clojure :exclude [name remove]))
 
+(defn add-event-listener
+  "Method.
+
+  The `web.EventTarget` method addEventListener() sets up a function
+  will be called whenever the specified event is delivered to the
+
+  `target.addEventListener(type, listener[, options]);
+  target.addEventListener(type, listener[, useCapture]);
+  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
+  [this & args]
+  (apply (-> this .-addEventListener) (concat [this] args)))
+
+(defn scroll
+  "Method.
+
+  The scroll() method of the `web.Element` interface scrolls the
+  to a particular set of coordinates inside a given element.
+
+  `element.scroll(x-coord, y-coord)
+  element.scroll(options)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll`"
+  [this & args]
+  (apply (-> this .-scroll) (concat [this] args)))
+
 (defn after
   "Method.
 
-  The ChildNode.after() method inserts a set of `web.Node` or `dom.DOMString`
+  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.after((Node or DOMString)... nodes);`
@@ -22,8 +49,9 @@
   "Method.
 
   The `web.Element` interface's animate() method is a shortcut
-  which creates a new `web.Animation`, applies it to the element,
-  plays the animation. It returns the created `web.Animation` object
+  which creates a new `web.animation.Animation`, applies it to
+  element, then plays the animation. It returns the created `web.animation.Animation`
+  instance.
 
   `var animation = element.animate(keyframes, options);`
 
@@ -35,7 +63,7 @@
   "Method.
 
   The ParentNode.append() method inserts a set of `web.Node` objects
-  `dom.DOMString` objects after the last child of the ParentNode.
+  `web.dom.DOMString` objects after the last child of the ParentNode.
   objects are inserted as equivalent `web.Text` nodes.
 
   `[Throws, Unscopable]
@@ -49,7 +77,7 @@
   "Method.
 
   The Element.attachShadow() method attaches a shadow DOM tree
-  the specified element and returns a reference to its `web.ShadowRoot`.
+  the specified element and returns a reference to its `web.shadow-dom.ShadowRoot`.
 
   `var shadowroot = element.attachShadow(shadowRootInit);`
 
@@ -62,7 +90,7 @@
 
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
-  this ChildNode. `dom.DOMString` objects are inserted as equivalent
+  this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
   nodes.
 
   `[Throws, Unscopable]
@@ -89,8 +117,9 @@
   "Method.
 
   The computedStyleMap() method of the `web.Element` interface
-  a `web.StylePropertyMapReadOnly` interface which provides a read-only
-  of a CSS declaration block that is an alternative to `css.CSSStyleDeclaration`.
+  a `web.css.StylePropertyMapReadOnly` interface which provides
+  read-only representation of a CSS declaration block that is an
+  to `web.cssdom.CSSStyleDeclaration`.
 
   `var stylePropertyMapReadOnly = Element.computedStyleMap()`
 
@@ -116,9 +145,9 @@
   "Method.
 
   The getAnimations() method of the `web.Element` interface (specified
-  the Animatable mixin) returns an array of all `web.Animation`
+  the Animatable mixin) returns an array of all `web.animation.Animation`
   affecting this element or which are scheduled to do so in future.
-  can optionally return `web.Animation` objects for descendant
+  can optionally return `web.animation.Animation` objects for descendant
   too.
 
   `const animations = Element.getAnimations(options);`
@@ -149,7 +178,7 @@
   "Method.
 
   The getAttributeNames() method of the `web.Element` interface
-  the attribute names of the element as an `web.Array` of strings.
+  the attribute names of the element as an `js.Array` of strings.
   the element has no attributes it returns an empty array.
 
   `let attributeNames = element.getAttributeNames();`
@@ -224,7 +253,7 @@
   "Method.
 
   The getClientRects() method of the `web.Element` interface returns
-  collection of `dom.DOMRect` objects that indicate the bounding
+  collection of `web.dom.DOMRect` objects that indicate the bounding
   for each CSS border box in a client.
 
   `let rectCollection = object.getClientRects();`
@@ -249,13 +278,13 @@
 (defn get-elements-by-tag-name
   "Method.
 
-  The Element.getElementsByTagName() method returns a live `html.HTMLCollection`
+  The Element.getElementsByTagName() method returns a live `web.dom.HTMLCollection`
   elements with the given tag name.
 
   `elements = element.getElementsByTagName(tagName)
 
 
-  \\telements is a live `html.HTMLCollection` of elements with a matching tag name, in the order they appear. If no elements are found, the HTMLCollection is empty.
+  \\telements is a live `web.dom.HTMLCollection` of elements with a matching tag name, in the order they appear. If no elements are found, the HTMLCollection is empty.
   \\telement is the element from where the search starts. Only the element's descendants are included, not the element itself.
   \\ttagName is the qualified name to look for. The special string \\\"*\\\" represents all elements. For compatibility with XHTML, lower-case should be used.`
 
@@ -266,18 +295,18 @@
 (defn get-elements-by-tag-name-ns
   "Method.
 
-  The Element.getElementsByTagNameNS() method returns a live `html.HTMLCollection`
+  The Element.getElementsByTagNameNS() method returns a live `web.dom.HTMLCollection`
   elements with the given tag name belonging to the given namespace.
-  is similar to `web.Document.getElementsByTagNameNS`, except that
+  is similar to `Document.getElementsByTagNameNS`, except that
   search is restricted to descendants of the specified element.
 
   `elements = element.getElementsByTagNameNS(namespaceURI, localName)
 
 
-  elements is a live `html.HTMLCollection` of found elements in the order they appear in the tree.
+  elements is a live `web.dom.HTMLCollection` of found elements in the order they appear in the tree.
   element is the element from where the search should start. Note that only the descendants of this element are included in the search, not the node itself.
-  namespaceURI is the namespace URI of elements to look for (see `web.Element.namespaceURI` and `web.Attr.namespaceURI`). For example, if you need to look for XHTML elements, use the XHTML namespace URI, http://www.w3.org/1999/xhtml.
-  localName is either the local name of elements to look for or the special value \\\"*\\\", which matches all elements (see `web.Element.localName` and `web.Attr.localName`).`
+  namespaceURI is the namespace URI of elements to look for (see `Element.namespaceURI` and `Attr.namespaceURI`). For example, if you need to look for XHTML elements, use the XHTML namespace URI, http://www.w3.org/1999/xhtml.
+  localName is either the local name of elements to look for or the special value \\\"*\\\", which matches all elements (see `Element.localName` and `Attr.localName`).`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagNameNS`"
   [this & args]
@@ -322,8 +351,8 @@
   "Method.
 
   The hasAttributes() method of the `web.Element` interface returns
-  `web.Boolean` indicating whether the current element has any
-  or not.
+  `js.Boolean` indicating whether the current element has any attributes
+  not.
 
   `var result = element.hasAttributes();`
 
@@ -365,7 +394,7 @@
   the DOM tree at a specified position. It does not reparse the
   it is being used on, and thus it does not corrupt the existing
   inside that element. This avoids the extra step of serialization,
-  it much faster than direct `web.innerHTML` manipulation.
+  it much faster than direct `innerHTML` manipulation.
 
   `element.insertAdjacentHTML(position, text);`
 
@@ -411,7 +440,7 @@
   "Method.
 
   The ParentNode.prepend() method inserts a set of `web.Node` objects
-  `dom.DOMString` objects before the first child of the `web.ParentNode`.
+  `web.dom.DOMString` objects before the first child of the `web.ParentNode`.
   objects are inserted as equivalent `web.Text` nodes.
 
   `ParentNode.prepend(...nodesToPrepend);`
@@ -516,8 +545,8 @@
   "Method.
 
   The ChildNode.replaceWith() method replaces this ChildNode in
-  children list of its parent with a set of `web.Node` or `dom.DOMString`
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  children list of its parent with a set of `web.Node` or `web.dom.DOMString`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.replaceWith((Node or DOMString)... nodes);`
@@ -549,19 +578,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock`"
   [this ]
   (-> this (.requestPointerLock)))
-
-(defn scroll
-  "Method.
-
-  The scroll() method of the `web.Element` interface scrolls the
-  to a particular set of coordinates inside a given element.
-
-  `element.scroll(x-coord, y-coord)
-  element.scroll(options)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll`"
-  [this & args]
-  (apply (-> this .-scroll) (concat [this] args)))
 
 (defn scroll-by
   "Method.
@@ -598,7 +614,7 @@
   into the visible area of the browser window if it's not already
   the visible area of the browser window. If the element is already
   the visible area of the browser window, then no scrolling takes
-  This method is a proprietary variation of the standard `web.Element.scrollIntoView()`
+  This method is a proprietary variation of the standard `Element.scrollIntoView()`
 
   `TODO`
 
@@ -684,7 +700,7 @@
 
   Call this method during the handling of a mousedown event to
   all mouse events to this element until the mouse button is released
-  `web.document.releaseCapture()` is called.
+  `document.releaseCapture()` is called.
 
   `element.setCapture(retargetToElement);
 
@@ -702,7 +718,7 @@
   The setPointerCapture() method of the `web.Element` interface
   used to designate a specific element as the capture target of
   pointer events. Subsequent events for the pointer will be targeted
-  the capture element until capture is released (via `web.Element.releasePointerCapture()`).
+  the capture element until capture is released (via `Element.releasePointerCapture()`).
 
   `targetElement.setPointerCapture(pointerId);`
 
@@ -723,50 +739,89 @@
   [this & args]
   (apply (-> this .-toggleAttribute) (concat [this] args)))
 
-(defn add-event-listener
-  "Method.
+(defn attributes
+  "Property.
 
-  The `web.EventTarget` method addEventListener() sets up a function
-  will be called whenever the specified event is delivered to the
+  The Element.attributes property returns a live collection of
+  attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
+  an Array, so it has no `js.Array` methods and the `web.Attr`
+  indexes may differ among browsers. To be more specific, attributes
+  a key/value pair of strings that represents any information regarding
+  attribute.
 
-  `target.addEventListener(type, listener[, options]);
-  target.addEventListener(type, listener[, useCapture]);
-  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
+  `var attr = element.attributes;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
-  [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
+  [this]
+  (-> this (.attributes)))
 
-(defn dispatch-event
-  "Method.
+(defn set-attributes!
+  "Property.
 
-  Dispatches an `web.Event` at the specified `web.EventTarget`,
-  invoking the affected `web.EventListener`s in the appropriate
-  The normal event processing rules (including the capturing and
-  bubbling phase) also apply to events dispatched manually with
+  The Element.attributes property returns a live collection of
+  attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
+  an Array, so it has no `js.Array` methods and the `web.Attr`
+  indexes may differ among browsers. To be more specific, attributes
+  a key/value pair of strings that represents any information regarding
+  attribute.
 
-  `cancelled = !target.dispatchEvent(event)`
+  `var attr = element.attributes;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
-  [this event]
-  (-> this (.dispatchEvent event)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
+  [this val]
+  (aset this "attributes" val))
 
-(defn remove-event-listener
-  "Method.
+(defn assigned-slot
+  "Property.
 
-  The EventTarget.removeEventListener() method removes from the
-  an event listener previously registered with `web.EventTarget.addEventListener()`.
-  event listener to be removed is identified using a combination
-  the event type, the event listener function itself, and various
-  options that may affect the matching process; see Matching event
-  for removal
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
 
-  `target.removeEventListener(type, listener[, options]);
-  target.removeEventListener(type, listener[, useCapture]);`
+  `var slotElement = elementInstance.assignedSlot`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
-  [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this]
+  (-> this (.assignedSlot)))
+
+(defn set-assigned-slot!
+  "Property.
+
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
+
+  `var slotElement = elementInstance.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this val]
+  (aset this "assignedSlot" val))
+
+(defn onfullscreenchange
+  "Property.
+
+  The `web.Element` interface's onfullscreenchange property is
+  event handler for the fullscreenchange event that is fired when
+  element has transitioned into or out of full-screen mode.
+
+  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
+  [this]
+  (-> this (.onfullscreenchange)))
+
+(defn set-onfullscreenchange!
+  "Property.
+
+  The `web.Element` interface's onfullscreenchange property is
+  event handler for the fullscreenchange event that is fired when
+  element has transitioned into or out of full-screen mode.
+
+  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
+  [this val]
+  (aset this "onfullscreenchange" val))
 
 (defn access-key
   "Property.
@@ -788,38 +843,6 @@
   [this val]
   (aset this "accessKey" val))
 
-(defn attributes
-  "Property.
-
-  The Element.attributes property returns a live collection of
-  attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
-  an Array, so it has no `web.Array` methods and the `web.Attr`
-  indexes may differ among browsers. To be more specific, attributes
-  a key/value pair of strings that represents any information regarding
-  attribute.
-
-  `var attr = element.attributes;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
-  [this]
-  (-> this (.attributes)))
-
-(defn set-attributes!
-  "Property.
-
-  The Element.attributes property returns a live collection of
-  attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
-  an Array, so it has no `web.Array` methods and the `web.Attr`
-  indexes may differ among browsers. To be more specific, attributes
-  a key/value pair of strings that represents any information regarding
-  attribute.
-
-  `var attr = element.attributes;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
-  [this val]
-  (aset this "attributes" val))
-
 (defn child-element-count
   "Property.
 
@@ -832,7 +855,7 @@
   count
   The return value, which is an unsigned long (simply an integer) type.
   node
-  An object representing a `web.Document`, `web.DocumentFragment`, or `web.Element`.`
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this]
@@ -850,7 +873,7 @@
   count
   The return value, which is an unsigned long (simply an integer) type.
   node
-  An object representing a `web.Document`, `web.DocumentFragment`, or `web.Element`.`
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this val]
@@ -860,8 +883,8 @@
   "Property.
 
   The `web.ParentNode` property children is a read-only property
-  returns a live `html.HTMLCollection` which contains all of the
-  `web.elements` of the node upon which it was called.
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
 
   `var children = node.children;`
 
@@ -873,8 +896,8 @@
   "Property.
 
   The `web.ParentNode` property children is a read-only property
-  returns a live `html.HTMLCollection` which contains all of the
-  `web.elements` of the node upon which it was called.
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
 
   `var children = node.children;`
 
@@ -886,11 +909,12 @@
   "Property.
 
   The Element.classList is a read-only property that returns a
-  `dom.DOMTokenList` collection of the class attributes of the
+  `web.dom.DOMTokenList` collection of the class attributes of
+  element.
 
   `const elementClasses = elementNodeReference.classList;
 
-  elementClasses is a `dom.DOMTokenList` representing the class attribute of elementNodeReference. If the class attribute was not set or is empty elementClasses.length returns 0. element.classList itself is read-only, although you can modify it using the add() and remove() methods.`
+  elementClasses is a `web.dom.DOMTokenList` representing the class attribute of elementNodeReference. If the class attribute was not set or is empty elementClasses.length returns 0. element.classList itself is read-only, although you can modify it using the add() and remove() methods.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/classList`"
   [this]
@@ -900,7 +924,7 @@
   "Property.
 
   The className property of the `web.Element` interface gets and
-  the value of the `web.class` of the specified element.
+  the value of the `class` of the specified element.
 
   `var cName = elementNodeReference.className;
   elementNodeReference.className = cName;
@@ -916,7 +940,7 @@
   "Property.
 
   The className property of the `web.Element` interface gets and
-  the value of the `web.class` of the specified element.
+  the value of the `class` of the specified element.
 
   `var cName = elementNodeReference.className;
   elementNodeReference.className = cName;
@@ -1050,7 +1074,7 @@
   "Property.
 
   Element.currentStyle is a proprietary property which is similar
-  the standardized `web.window.getComputedStyle()` method.
+  the standardized `window.getComputedStyle()` method.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
   [this]
@@ -1060,7 +1084,7 @@
   "Property.
 
   Element.currentStyle is a proprietary property which is similar
-  the standardized `web.window.getComputedStyle()` method.
+  the standardized `window.getComputedStyle()` method.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
   [this val]
@@ -1202,10 +1226,9 @@
   "Property.
 
   name gets or sets the name property of an element in the DOM.
-  only applies to the following elements: `web.<a>`, `web.<applet>`,
-  `web.<form>`, `web.<frame>`, `web.<iframe>`, `web.<img>`, `web.<input>`,
-  `web.<meta>`, `web.<object>`, `web.<param>`, `web.<select>`,
-  `web.<textarea>`.
+  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
+  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
+  `<param>`, `<select>`, and `<textarea>`.
 
   `HTMLElement.name = string;
   var elName = HTMLElement.name;
@@ -1221,10 +1244,9 @@
   "Property.
 
   name gets or sets the name property of an element in the DOM.
-  only applies to the following elements: `web.<a>`, `web.<applet>`,
-  `web.<form>`, `web.<frame>`, `web.<iframe>`, `web.<img>`, `web.<input>`,
-  `web.<meta>`, `web.<object>`, `web.<param>`, `web.<select>`,
-  `web.<textarea>`.
+  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
+  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
+  `<param>`, `<select>`, and `<textarea>`.
 
   `HTMLElement.name = string;
   var elName = HTMLElement.name;
@@ -1286,32 +1308,6 @@
   [this val]
   (aset this "nextElementSibling" val))
 
-(defn onfullscreenchange
-  "Property.
-
-  The `web.Element` interface's onfullscreenchange property is
-  event handler for the fullscreenchange event that is fired when
-  element has transitioned into or out of full-screen mode.
-
-  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
-  [this]
-  (-> this (.onfullscreenchange)))
-
-(defn set-onfullscreenchange!
-  "Property.
-
-  The `web.Element` interface's onfullscreenchange property is
-  event handler for the fullscreenchange event that is fired when
-  element has transitioned into or out of full-screen mode.
-
-  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
-  [this val]
-  (aset this "onfullscreenchange" val))
-
 (defn onfullscreenerror
   "Property.
 
@@ -1344,8 +1340,8 @@
   "Property.
 
   The Element.openOrCloseShadowRoot read-only property represents
-  shadow root hosted by the element, regardless if its `web.mode`
-  open or closed.
+  shadow root hosted by the element, regardless if its `mode` is
+  or closed.
 
   `var shadowroot = element.shadowRoot;`
 
@@ -1357,8 +1353,8 @@
   "Property.
 
   The Element.openOrCloseShadowRoot read-only property represents
-  shadow root hosted by the element, regardless if its `web.mode`
-  open or closed.
+  shadow root hosted by the element, regardless if its `mode` is
+  or closed.
 
   `var shadowroot = element.shadowRoot;`
 
@@ -1439,7 +1435,7 @@
 (defn runtime-style
   "Property.
 
-  Element.runtimeStyle is a proprietary property similar to `html.HTMLElement.style`,
+  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
   its styles, that have higher precedence and modification.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
@@ -1449,7 +1445,7 @@
 (defn set-runtime-style!
   "Property.
 
-  Element.runtimeStyle is a proprietary property similar to `html.HTMLElement.style`,
+  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
   its styles, that have higher precedence and modification.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
@@ -1513,7 +1509,7 @@
 (defn scroll-left-max
   "Property.
 
-  The Element.scrollLeftMax read-only property returns a `web.Number`
+  The Element.scrollLeftMax read-only property returns a `js.Number`
   the maximum left scroll offset possible for the element.
 
   `var pxl = element.scrollLeftMax;`
@@ -1531,7 +1527,7 @@
   `// Get the number of pixels scrolled.
   var intElemScrollTop = someElement.scrollTop;
 
-  After running this code, intElemScrollTop is an integer corresponding to the number of pixels that the `web.element`'s content has been scrolled upwards.
+  After running this code, intElemScrollTop is an integer corresponding to the number of pixels that the `element`'s content has been scrolled upwards.
 
 
 
@@ -1558,7 +1554,7 @@
   `// Get the number of pixels scrolled.
   var intElemScrollTop = someElement.scrollTop;
 
-  After running this code, intElemScrollTop is an integer corresponding to the number of pixels that the `web.element`'s content has been scrolled upwards.
+  After running this code, intElemScrollTop is an integer corresponding to the number of pixels that the `element`'s content has been scrolled upwards.
 
 
 
@@ -1579,7 +1575,7 @@
 (defn scroll-top-max
   "Property.
 
-  The Element.scrollTopMax read-only property returns a `web.Number`
+  The Element.scrollTopMax read-only property returns a `js.Number`
   the maximum top scroll offset possible for the element.
 
   `var pxl = elt.scrollTopMax;`
@@ -1709,30 +1705,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName`"
   [this]
   (-> this (.tagName)))
-
-(defn assigned-slot
-  "Property.
-
-  The assignedSlot read-only property of the `web.Slotable` interface
-  an `html.HTMLSlotElement` representing the `web.<slot>` element
-  node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this]
-  (-> this (.assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot read-only property of the `web.Slotable` interface
-  an `html.HTMLSlotElement` representing the `web.<slot>` element
-  node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
 

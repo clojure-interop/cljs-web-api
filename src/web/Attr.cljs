@@ -1,10 +1,23 @@
 (ns web.Attr
   "This type represents a DOM element's attribute as an object.
   most DOM methods, you will probably directly retrieve the attribute
-  a string (e.g., `web.Element.getAttribute()`, but certain functions
-  `web.Element.getAttributeNode()`) or means of iterating give
-  types."
-  (:refer-clojure :exclude []))
+  a string (e.g., `Element.getAttribute()`, but certain functions
+  `Element.getAttributeNode()`) or means of iterating give Attr"
+  (:refer-clojure :exclude [name]))
+
+(defn name
+  "Property.
+
+  The attribute's name."
+  [this]
+  (-> this (.name)))
+
+(defn set-name!
+  "Property.
+
+  The attribute's name."
+  [this val]
+  (aset this "name" val))
 
 (defn local-name
   "Property.

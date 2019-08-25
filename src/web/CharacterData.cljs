@@ -6,12 +6,20 @@
   aren't abstract."
   (:refer-clojure :exclude [remove]))
 
+(defn append-data
+  "Method.
+
+  Appends the given DOMString to the CharacterData.data string;
+  this method returns, data contains the concatenated DOMString."
+  [this & args]
+  (apply (-> this .-appendData) (concat [this] args)))
+
 (defn after
   "Method.
 
-  The ChildNode.after() method inserts a set of `web.Node` or `dom.DOMString`
+  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.after((Node or DOMString)... nodes);`
@@ -25,7 +33,7 @@
 
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
-  this ChildNode. `dom.DOMString` objects are inserted as equivalent
+  this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
   nodes.
 
   `[Throws, Unscopable]
@@ -51,8 +59,8 @@
   "Method.
 
   The ChildNode.replaceWith() method replaces this ChildNode in
-  children list of its parent with a set of `web.Node` or `dom.DOMString`
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  children list of its parent with a set of `web.Node` or `web.dom.DOMString`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.replaceWith((Node or DOMString)... nodes);`
@@ -60,6 +68,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
   [this & args]
   (apply (-> this .-replaceWith) (concat [this] args)))
+
+(defn data
+  "Property.
+
+  Is a DOMString representing the textual data contained in this"
+  [this]
+  (-> this (.data)))
+
+(defn set-data!
+  "Property.
+
+  Is a DOMString representing the textual data contained in this"
+  [this val]
+  (aset this "data" val))
 
 (defn next-element-sibling
   "Property.

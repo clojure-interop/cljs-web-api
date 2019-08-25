@@ -3,6 +3,20 @@
   a position within them."
   (:refer-clojure :exclude [filter]))
 
+(defn parent-node
+  "Method.
+
+  The TreeWalker.parentNode() method moves the current `web.Node`
+  the first visible ancestor node in the document order, and returns
+  found node. If no such node exists, or if it is above the TreeWalker's
+  node, returns null and the current node is not changed.
+
+  `node = treeWalker.parentNode();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/parentNode`"
+  [this ]
+  (-> this (.parentNode)))
+
 (defn first-child
   "Method.
 
@@ -58,20 +72,6 @@
   [this ]
   (-> this (.nextSibling)))
 
-(defn parent-node
-  "Method.
-
-  The TreeWalker.parentNode() method moves the current `web.Node`
-  the first visible ancestor node in the document order, and returns
-  found node. If no such node exists, or if it is above the TreeWalker's
-  node, returns null and the current node is not changed.
-
-  `node = treeWalker.parentNode();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/parentNode`"
-  [this ]
-  (-> this (.parentNode)))
-
 (defn previous-node
   "Method.
 
@@ -99,6 +99,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/previousSibling`"
   [this ]
   (-> this (.previousSibling)))
+
+(defn root
+  "Property.
+
+  The TreeWalker.root read-only property returns the node that
+  the root of what the TreeWalker traverses.
+
+  `root = TreeWalker.root;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
+  [this]
+  (-> this (.root)))
+
+(defn set-root!
+  "Property.
+
+  The TreeWalker.root read-only property returns the node that
+  the root of what the TreeWalker traverses.
+
+  `root = TreeWalker.root;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
+  [this val]
+  (aset this "root" val))
 
 (defn current-node
   "Property.
@@ -130,8 +154,8 @@
   "Property.
 
   The TreeWalker.expandEntityReferences read-only property returns
-  `web.Boolean` flag indicating whether or not the children of
-  reference nodes are visible to the `web.TreeWalker`.
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.TreeWalker`.
 
   `expand = treeWalker.expandEntityReferences;`
 
@@ -143,8 +167,8 @@
   "Property.
 
   The TreeWalker.expandEntityReferences read-only property returns
-  `web.Boolean` flag indicating whether or not the children of
-  reference nodes are visible to the `web.TreeWalker`.
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.TreeWalker`.
 
   `expand = treeWalker.expandEntityReferences;`
 
@@ -175,30 +199,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
   [this val]
   (aset this "filter" val))
-
-(defn root
-  "Property.
-
-  The TreeWalker.root read-only property returns the node that
-  the root of what the TreeWalker traverses.
-
-  `root = TreeWalker.root;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
-  [this]
-  (-> this (.root)))
-
-(defn set-root!
-  "Property.
-
-  The TreeWalker.root read-only property returns the node that
-  the root of what the TreeWalker traverses.
-
-  `root = TreeWalker.root;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
-  [this val]
-  (aset this "root" val))
 
 (defn what-to-show
   "Property.

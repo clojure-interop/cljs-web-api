@@ -1,7 +1,7 @@
 (ns web.FormData
   "The FormData interface provides a way to easily construct a set
   key/value pairs representing form fields and their values, which
-  then be easily sent using the `xml.XMLHttpRequest.send()` method.
+  then be easily sent using the `XMLHttpRequest.send()` method.
   uses the same format a form would use if the encoding type were
   to \\\"multipart/form-data\\\"."
   (:refer-clojure :exclude [get keys set]))
@@ -12,7 +12,7 @@
   The FormData() constructor creates a new `web.FormData` object.
 
   form Optional
-  An HTML `web.<form>` element — when specified, the `web.FormData` object will be populated with the form's current keys/values using the name property of each element for the keys and their submitted value for the values. It will also encode file input content.
+  An HTML `<form>` element — when specified, the `web.FormData` object will be populated with the form's current keys/values using the name property of each element for the keys and their submitted value for the values. It will also encode file input content.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData`"
   js/FormData)
@@ -50,10 +50,10 @@
 (defn entries
   "Method.
 
-  The FormData.entries() method returns an `web.iterator` allowing
+  The FormData.entries() method returns an `iterator` allowing
   go through all key/value pairs contained in this object. The
   of each pair is a `web.USVString` object; the value either a
-  or a `web.Blob`.
+  or a `web.files.Blob`.
 
   `formData.entries();`
 
@@ -66,7 +66,7 @@
 
   The get() method of the `web.FormData` interface returns the
   value associated with a given key from within a FormData object.
-  you expect multiple values and want all of them, use the `web.getAll()`
+  you expect multiple values and want all of them, use the `getAll()`
   instead.
 
   `formData.get(name);`
@@ -102,8 +102,8 @@
 (defn keys
   "Method.
 
-  The FormData.keys() method returns an `web.iterator` allowing
-  go through all keys contained in this object. The keys are `web.USVString`
+  The FormData.keys() method returns an `iterator` allowing to
+  through all keys contained in this object. The keys are `web.USVString`
 
   `formData.keys();`
 
@@ -131,13 +131,13 @@
   name
   The name of the field whose data is contained in value.
   value
-  The field's value. In the two parameter version this is a `web.USVString`, or if it is not, it is converted to a string. In the three parameter version this can be a `web.Blob`, `file.File`, or a `web.USVString`. If none of these are specified the value is converted to a string.
+  The field's value. In the two parameter version this is a `web.USVString`, or if it is not, it is converted to a string. In the three parameter version this can be a `web.files.Blob`, `web.files.File`, or a `web.USVString`. If none of these are specified the value is converted to a string.
   filename Optional
-  The filename reported to the server (a `web.USVString`), when a `web.Blob` or `file.File` is passed as the second parameter. The default filename for `web.Blob` objects is \\\"blob\\\".
+  The filename reported to the server (a `web.USVString`), when a `web.files.Blob` or `web.files.File` is passed as the second parameter. The default filename for `web.files.Blob` objects is \\\"blob\\\".
 
 
 
-  Note: If you specify a `web.Blob` as the data to append to the FormData object, the filename that will be reported to the server in the \\\"Content-Disposition\\\" header used to vary from browser to browser.`
+  Note: If you specify a `web.files.Blob` as the data to append to the FormData object, the filename that will be reported to the server in the \\\"Content-Disposition\\\" header used to vary from browser to browser.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FormData/set`"
   [this & args]
@@ -146,9 +146,9 @@
 (defn values
   "Method.
 
-  The FormData.values() method returns an `web.iterator` allowing
-  go through all values contained in this object. The values are
-  or `web.Blob` objects.
+  The FormData.values() method returns an `iterator` allowing to
+  through all values contained in this object. The values are `web.USVString`
+  `web.files.Blob` objects.
 
   `formData.values();`
 

@@ -28,9 +28,9 @@
   "Property.
 
   The data read-only property of the `web.InputEvent` interface
-  a `dom.DOMString` with the inserted characters. This may be an
-  string if the change doesn't insert text (such as when deleting
-  for example).
+  a `web.dom.DOMString` with the inserted characters. This may
+  an empty string if the change doesn't insert text (such as when
+  characters, for example).
 
   `var aString = inputEvent.data;`
 
@@ -42,9 +42,9 @@
   "Property.
 
   The data read-only property of the `web.InputEvent` interface
-  a `dom.DOMString` with the inserted characters. This may be an
-  string if the change doesn't insert text (such as when deleting
-  for example).
+  a `web.dom.DOMString` with the inserted characters. This may
+  an empty string if the change doesn't insert text (such as when
+  characters, for example).
 
   `var aString = inputEvent.data;`
 
@@ -56,8 +56,8 @@
   "Property.
 
   The dataTransfer read-only property of the `web.InputEvent` interface
-  a `web.DataTransfer` object containing information about richtext
-  plaintext data being added to or removed from editible content.
+  a `web.drag.DataTransfer` object containing information about
+  or plaintext data being added to or removed from editible content.
 
   `var dataTransfer = inputEvent.dataTransfer`
 
@@ -69,8 +69,8 @@
   "Property.
 
   The dataTransfer read-only property of the `web.InputEvent` interface
-  a `web.DataTransfer` object containing information about richtext
-  plaintext data being added to or removed from editible content.
+  a `web.drag.DataTransfer` object containing information about
+  or plaintext data being added to or removed from editible content.
 
   `var dataTransfer = inputEvent.dataTransfer`
 
@@ -107,7 +107,7 @@
 (defn is-composing
   "Property.
 
-  The InputEvent.isComposing read-only property returns a `web.Boolean`
+  The InputEvent.isComposing read-only property returns a `js.Boolean`
   indicating if the event is fired after compositionstart and before
 
   `var bool = event.isComposing;`

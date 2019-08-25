@@ -13,7 +13,7 @@
   The TextDecoder() constructor returns a newly created `web.TextDecoder` object for the encoding specified in parameter.
 
   utfLabelOptional
-  Is a `dom.DOMString`, defaulting to \\\"utf-8\\\", containing the label of the encoder. Each label is associated with a specific encoding type:
+  Is a `web.dom.DOMString`, defaulting to \\\"utf-8\\\", containing the label of the encoder. Each label is associated with a specific encoding type:
 
 
 
@@ -203,7 +203,7 @@
   Is a TextDecoderOptions dictionary with the property:
 
   fatal
-  A Boolean flag indicating if the `web.TextDecoder.decode()` method must throw a `dom.DOMException` with the \\\"EncodingError\\\" value when an coding error is found. It defaults to false.
+  A Boolean flag indicating if the `TextDecoder.decode()` method must throw a `web.dom.DOMException` with the \\\"EncodingError\\\" value when an coding error is found. It defaults to false.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/TextDecoder`"
   js/TextDecoder)
@@ -211,7 +211,7 @@
 (defn decode
   "Method.
 
-  The TextDecoder.prototype.decode() method returns a `dom.DOMString`
+  The TextDecoder.prototype.decode() method returns a `web.dom.DOMString`
   the text, given in parameters, decoded with the specific method
   that TextDecoder object.
 
@@ -227,7 +227,7 @@
   "Property.
 
   The TextDecoder.prototype.encoding read-only property returns
-  `dom.DOMString` containing the name of the decoding algorithm
+  `web.dom.DOMString` containing the name of the decoding algorithm
   by the specific decoder.
 
   `var b = decoder.decoding;`

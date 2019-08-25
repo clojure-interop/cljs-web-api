@@ -15,12 +15,86 @@
   [this message]
   (-> this (.alert message)))
 
+(defn add-event-listener
+  "Method.
+
+  The `web.EventTarget` method addEventListener() sets up a function
+  will be called whenever the specified event is delivered to the
+
+  `target.addEventListener(type, listener[, options]);
+  target.addEventListener(type, listener[, useCapture]);
+  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
+  [this & args]
+  (apply (-> this .-addEventListener) (concat [this] args)))
+
+(defn show-modal-dialog
+  "Method.
+
+  The Window.showModalDialog() creates and displays a modal dialog
+  containing a specified HTML document.
+
+  `returnVal = window.showModalDialog(uri[, arguments][, options]);
+
+  where
+
+
+  returnVal is a variant, indicating the returnValue property as set by the window of the document specified by uri.
+  uri is the URI of the document to display in the dialog box.
+  arguments is an optional variant that contains values that should be passed to the dialog box; these are made available in the window object's window.dialogArguments property.
+  options an optional string that specifies window ornamentation for the dialog box, using one or more semicolon delimited values:
+
+
+
+
+
+  Syntax
+  Description
+
+
+  center: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window is centered on the desktop; otherwise it's hidden. The default value is yes.
+
+
+  dialogheight: height
+  Specifies the height of the dialog box; by default, the size is specified in pixels.
+
+
+  dialogleft: left
+  Specifies the horizontal position of the dialog box in relation to the upper-left corner of the desktop.
+
+
+  dialogwidth: width
+  Specifies the width of the dialog box; by default, the size is specified in pixels.
+
+
+  dialogtop: top
+  Specifies the vertical position of the dialog box in relation to the upper-left corner of the desktop.
+
+
+  resizable: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window can be resized by the user; otherwise its size is fixed. The default value is no.
+
+
+  scroll: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window has scroll bars; otherwise its size is fixed. The default value is no.
+
+
+
+
+  Note: Firefox does not implement the dialogHide, edge, status, or unadorned arguments.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/showModalDialog`"
+  [this & args]
+  (apply (-> this .-showModalDialog) (concat [this] args)))
+
 (defn atob
   "Method.
 
   The WindowOrWorkerGlobalScope.atob() function decodes a string
   data which has been encoded using base-64 encoding. You can use
-  `web.btoa()` method to encode and transmit data which may otherwise
+  `btoa()` method to encode and transmit data which may otherwise
   communication problems, then transmit it and use the atob() method
   decode the data again. For example, you can encode, transmit,
   decode control characters such as ASCII values 0 through 31.
@@ -34,9 +108,9 @@
 (defn back
   "Method.
 
-  The obsolete and non-standard method back() on the `web.window`
-  returns the window to the previous item in the history. This
-  a Firefox-specific method and was removed in Firefox 31.
+  The obsolete and non-standard method back() on the `window` interface
+  the window to the previous item in the history. This was a Firefox-specific
+  and was removed in Firefox 31.
 
   `window.back();`
 
@@ -59,7 +133,7 @@
   "Method.
 
   The WindowOrWorkerGlobalScope.btoa() method creates a base-64
-  ASCII string from a binary string (i.e., a `web.String` object
+  ASCII string from a binary string (i.e., a `js.String` object
   which each character in the string is treated as a byte of binary
 
   `var encodedData = scope.btoa(stringToEncode);`
@@ -72,7 +146,7 @@
   "Method.
 
   The window.cancelAnimationFrame() method cancels an animation
-  request previously scheduled through a call to `web.window.requestAnimationFrame()`.
+  request previously scheduled through a call to `window.requestAnimationFrame()`.
 
   `window.cancelAnimationFrame(requestID);`
 
@@ -84,7 +158,7 @@
   "Method.
 
   The window.cancelIdleCallback() method cancels a callback previously
-  with `web.window.requestIdleCallback()`.
+  with `window.requestIdleCallback()`.
 
   `window.cancelIdleCallback(handle);`
 
@@ -109,11 +183,11 @@
 (defn clear-immediate
   "Method.
 
-  This method clears the action specified by `web.window.setImmediate`.
+  This method clears the action specified by `window.setImmediate`.
 
   `window.clearImmediate(immediateID)
 
-  where immediateID is a ID returned by `web.window.setImmediate`.`
+  where immediateID is a ID returned by `window.setImmediate`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/clearImmediate`"
   [this & args]
@@ -124,7 +198,7 @@
 
   The clearInterval() method of the `web.WindowOrWorkerGlobalScope`
   cancels a timed, repeating action which was previously established
-  a call to `web.setInterval()`.
+  a call to `setInterval()`.
 
   `scope.clearInterval(intervalID)`
 
@@ -136,7 +210,7 @@
   "Method.
 
   The clearTimeout() method of the `web.WindowOrWorkerGlobalScope`
-  cancels a timeout previously established by calling `web.setTimeout()`.
+  cancels a timeout previously established by calling `setTimeout()`.
 
   `scope.clearTimeout(timeoutID)`
 
@@ -175,7 +249,7 @@
 (defn convert-point-from-node-to-page
   "Method.
 
-  Given a `web.Point` specified in a particular DOM `web.Node`'s
+  Given a `web.css.Point` specified in a particular DOM `web.Node`'s
   system, the `web.Window` method convertPointFromNodeToPage()
   a Point which specifies the same position in the page's coordinate
   This method is non-standard and should not be used.
@@ -189,7 +263,7 @@
 (defn convert-point-from-page-to-node
   "Method.
 
-  Given a `web.Point` specified in the page's coordinate system,
+  Given a `web.css.Point` specified in the page's coordinate system,
   `web.Window` method convertPointFromPageToNode() returns a Point
   specifying the same location in the coordinate system of the
   DOM `web.Node`.
@@ -206,8 +280,8 @@
   The createImageBitmap() method creates a bitmap from a given
   optionally cropped to contain only a portion of that source.
   method exists on the global scope in both windows and workers.
-  accepts a variety of different image sources, and returns a `web.Promise`
-  resolves to an `web.ImageBitmap`.
+  accepts a variety of different image sources, and returns a `js.Promise`
+  resolves to an `web.canvas.ImageBitmap`.
 
   `createImageBitmap(image[, options]).then(function(response) { ... });
   createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
@@ -254,15 +328,15 @@
   aString
   The text string for which to search.
   aCaseSensitive
-  `web.Boolean`. If true, specifies a case-sensitive search.
+  `js.Boolean`. If true, specifies a case-sensitive search.
   aBackwards
-  `web.Boolean`. If true, specifies a backward search.
+  `js.Boolean`. If true, specifies a backward search.
   aWrapAround
-  `web.Boolean`. If true, specifies a wrap around search.
+  `js.Boolean`. If true, specifies a wrap around search.
   aWholeWord Unimplemented
-  `web.Boolean`. If true, specifies a whole word search. This is not implemented; see bug 481513.
+  `js.Boolean`. If true, specifies a whole word search. This is not implemented; see bug 481513.
   aSearchInFrames
-  `web.Boolean`. If true, specifies a search in frames.`
+  `js.Boolean`. If true, specifies a search in frames.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/find`"
   [this & args]
@@ -322,7 +396,7 @@
   A string specifying the pseudo-element to match. Omitted (or null) for real elements.
 
 
-  The returned style is a live `css.CSSStyleDeclaration` object, which updates automatically when the element's styles are changed.`
+  The returned style is a live `web.cssdom.CSSStyleDeclaration` object, which updates automatically when the element's styles are changed.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle`"
   [this & args]
@@ -344,9 +418,9 @@
 (defn get-selection
   "Method.
 
-  The Window.getSelection() method returns a `web.Selection` object
-  the range of text selected by the user or the current position
-  the caret.
+  The Window.getSelection() method returns a `web.other.Selection`
+  representing the range of text selected by the user or the current
+  of the caret.
 
   `selection = window.getSelection();`
 
@@ -417,9 +491,9 @@
   "Method.
 
   The `web.Window` interface's open() method loads the specified
-  into the browsing context (window, `web.<iframe>` or tab) with
-  specified name. If the name doesn't exist, then a new window
-  opened and the specified resource is loaded into its browsing
+  into the browsing context (window, `<iframe>` or tab) with the
+  name. If the name doesn't exist, then a new window is opened
+  the specified resource is loaded into its browsing context.
 
   `var window = window.open(url, windowName, [windowFeatures]);`
 
@@ -430,8 +504,8 @@
 (defn open-dialog
   "Method.
 
-  window.openDialog() is an extension to `web.window.open()`. It
-  the same, except that it can optionally take one or more parameters
+  window.openDialog() is an extension to `window.open()`. It behaves
+  same, except that it can optionally take one or more parameters
   windowFeatures, and windowFeatures itself is treated a little
 
   `newWindow = openDialog(url, name, features, arg1, arg2, ...)
@@ -442,9 +516,9 @@
   url
   The URL to be loaded in the newly opened window.
   name
-  The window name (optional). See `web.window.open()` description for detailed information.
+  The window name (optional). See `window.open()` description for detailed information.
   features
-  See `web.window.open()` for details.
+  See `window.open()` for details.
   arg1, arg2, ...
   The arguments to be passed to the new window (optional).`
 
@@ -465,11 +539,11 @@
   targetWindow
   A reference to the window that will receive the message. Methods for obtaining such a reference include:
 
-  `web.window.open` (to spawn a new window and then reference it),
-  `web.window.opener` (to reference the window that spawned this one),
-  `html.HTMLIFrameElement.contentWindow` (to reference an embedded `web.<iframe>` from its parent window),
-  `web.window.parent` (to reference the parent window from within an embedded `web.<iframe>`), or
-  `web.window.frames`  an index value (named or numeric).
+  `window.open` (to spawn a new window and then reference it),
+  `window.opener` (to reference the window that spawned this one),
+  `HTMLIFrameElement.contentWindow` (to reference an embedded `<iframe>` from its parent window),
+  `window.parent` (to reference the parent window from within an embedded `<iframe>`), or
+  `window.frames`  an index value (named or numeric).
 
 
   message
@@ -477,7 +551,7 @@
   targetOrigin
   Specifies what the origin of targetWindow must be for the event to be dispatched, either as the literal string \\\"*\\\" (indicating no preference) or as a URI. If at the time the event is scheduled to be dispatched the scheme, hostname, or port of targetWindow's document does not match that provided in targetOrigin, the event will not be dispatched; only if all three match will the event be dispatched. This mechanism provides control over where messages are sent; for example, if postMessage() was used to transmit a password, it would be absolutely critical that this argument be a URI whose origin is the same as the intended receiver of the message containing the password, to prevent interception of the password by a malicious third party. Always provide a specific targetOrigin, not *, if you know where the other window's document should be located. Failing to provide a specific target discloses the data you send to any interested malicious site.
   transfer Optional
-  Is a sequence of `web.Transferable` objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.`
+  Is a sequence of `web.workers.Transferable` objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage`"
   [this & args]
@@ -707,7 +781,7 @@
   var immediateID = setImmediate(func);
 
 
-  where immediateID is the ID of the immediate which can be used later with `web.window.clearImmediate`.
+  where immediateID is the ID of the immediate which can be used later with `window.clearImmediate`.
   func is the function you wish to call.
 
 
@@ -720,11 +794,11 @@
 (defn set-interval
   "Method.
 
-  The setInterval() method, offered on the `web.Window` and `web.Worker`
+  The setInterval() method, offered on the `web.Window` and `web.workers.Worker`
   repeatedly calls a function or executes a code snippet, with
   fixed time delay between each call.
 
-  `var intervalID = scope.setInterval(func, delay[, param1, param2, ...]);
+  `var intervalID = scope.setInterval(func, delay[, arg1, arg2, ...]);
   var intervalID = scope.setInterval(code, delay);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
@@ -745,66 +819,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout`"
   [this & args]
   (apply (-> this .-setTimeout) (concat [this] args)))
-
-(defn show-modal-dialog
-  "Method.
-
-  The Window.showModalDialog() creates and displays a modal dialog
-  containing a specified HTML document.
-
-  `returnVal = window.showModalDialog(uri[, arguments][, options]);
-
-  where
-
-
-  returnVal is a variant, indicating the returnValue property as set by the window of the document specified by uri.
-  uri is the URI of the document to display in the dialog box.
-  arguments is an optional variant that contains values that should be passed to the dialog box; these are made available in the window object's window.dialogArguments property.
-  options an optional string that specifies window ornamentation for the dialog box, using one or more semicolon delimited values:
-
-
-
-
-
-  Syntax
-  Description
-
-
-  center: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window is centered on the desktop; otherwise it's hidden. The default value is yes.
-
-
-  dialogheight: height
-  Specifies the height of the dialog box; by default, the size is specified in pixels.
-
-
-  dialogleft: left
-  Specifies the horizontal position of the dialog box in relation to the upper-left corner of the desktop.
-
-
-  dialogwidth: width
-  Specifies the width of the dialog box; by default, the size is specified in pixels.
-
-
-  dialogtop: top
-  Specifies the vertical position of the dialog box in relation to the upper-left corner of the desktop.
-
-
-  resizable: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window can be resized by the user; otherwise its size is fixed. The default value is no.
-
-
-  scroll: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window has scroll bars; otherwise its size is fixed. The default value is no.
-
-
-
-
-  Note: Firefox does not implement the dialogHide, edge, status, or unadorned arguments.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/showModalDialog`"
-  [this & args]
-  (apply (-> this .-showModalDialog) (concat [this] args)))
 
 (defn size-to-content
   "Method.
@@ -843,73 +857,6 @@
   [this & args]
   (apply (-> this .-updateCommands) (concat [this] args)))
 
-(defn add-event-listener
-  "Method.
-
-  The `web.EventTarget` method addEventListener() sets up a function
-  will be called whenever the specified event is delivered to the
-
-  `target.addEventListener(type, listener[, options]);
-  target.addEventListener(type, listener[, useCapture]);
-  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
-  [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
-
-(defn remove-event-listener
-  "Method.
-
-  The EventTarget.removeEventListener() method removes from the
-  an event listener previously registered with `web.EventTarget.addEventListener()`.
-  event listener to be removed is identified using a combination
-  the event type, the event listener function itself, and various
-  options that may affect the matching process; see Matching event
-  for removal
-
-  `target.removeEventListener(type, listener[, options]);
-  target.removeEventListener(type, listener[, useCapture]);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
-  [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
-
-(defn application-cache
-  "Property.
-
-  Returns a reference to the application cache object for the window.
-
-  `cache = window.applicationCache`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
-  [this]
-  (-> this (.applicationCache)))
-
-(defn set-application-cache!
-  "Property.
-
-  Returns a reference to the application cache object for the window.
-
-  `cache = window.applicationCache`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
-  [this val]
-  (aset this "applicationCache" val))
-
-(defn caches
-  "Property.
-
-  The caches read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the `web.CacheStorage` object associated with the current
-  This object enables functionality such as storing assets for
-  use, and generating custom responses to requests.
-
-  `var myCacheStorage = self.caches; // or just caches`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
-  [this]
-  (-> this (.caches)))
-
 (defn closed
   "Property.
 
@@ -934,10 +881,46 @@
   [this val]
   (aset this "closed" val))
 
+(defn caches
+  "Property.
+
+  The caches read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the `web.service-workers.CacheStorage` object associated
+  the current context. This object enables functionality such as
+  assets for offline use, and generating custom responses to requests.
+
+  `var myCacheStorage = self.caches; // or just caches`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
+  [this]
+  (-> this (.caches)))
+
+(defn application-cache
+  "Property.
+
+  Returns a reference to the application cache object for the window.
+
+  `cache = window.applicationCache`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
+  [this]
+  (-> this (.applicationCache)))
+
+(defn set-application-cache!
+  "Property.
+
+  Returns a reference to the application cache object for the window.
+
+  `cache = window.applicationCache`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
+  [this val]
+  (aset this "applicationCache" val))
+
 (defn console
   "Property.
 
-  The Window.console property returns a reference to the `web.Console`
+  The Window.console property returns a reference to the `Console`
   which provides methods for logging information to the browser's
   These methods are intended for debugging purposes only and should
   be relied on for presenting information to end users.
@@ -957,7 +940,7 @@
   `controllers = window.controllers
 
 
-  controllers is an object of type `web.XULControllers` (`web.nsIControllers`).`
+  controllers is an object of type `XULControllers` (`nsIControllers`).`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/controllers`"
   [this]
@@ -972,7 +955,7 @@
   `controllers = window.controllers
 
 
-  controllers is an object of type `web.XULControllers` (`web.nsIControllers`).`
+  controllers is an object of type `XULControllers` (`nsIControllers`).`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/controllers`"
   [this val]
@@ -981,12 +964,12 @@
 (defn crypto
   "Property.
 
-  The `web.Window.crypto` property returns the `web.Crypto` object
-  to the global object. This object allows web pages access to
-  cryptographic related services. Although the `web.Window.crypto`
+  The `Window.crypto` property returns the `web.crypto.Crypto`
+  associated to the global object. This object allows web pages
+  to certain cryptographic related services. Although the `Window.crypto`
   iteself is read-only, all of its methods (and the methods of
-  child object, `web.SubtleCrypto`) are not read-only, and therefore
-  to attack by polyfill.
+  child object, `web.crypto.SubtleCrypto`) are not read-only, and
+  vulnerable to attack by polyfill.
 
   `var cryptoObj = window.crypto || window.msCrypto; // for IE 11`
 
@@ -997,12 +980,12 @@
 (defn set-crypto!
   "Property.
 
-  The `web.Window.crypto` property returns the `web.Crypto` object
-  to the global object. This object allows web pages access to
-  cryptographic related services. Although the `web.Window.crypto`
+  The `Window.crypto` property returns the `web.crypto.Crypto`
+  associated to the global object. This object allows web pages
+  to certain cryptographic related services. Although the `Window.crypto`
   iteself is read-only, all of its methods (and the methods of
-  child object, `web.SubtleCrypto`) are not read-only, and therefore
-  to attack by polyfill.
+  child object, `web.crypto.SubtleCrypto`) are not read-only, and
+  vulnerable to attack by polyfill.
 
   `var cryptoObj = window.crypto || window.msCrypto; // for IE 11`
 
@@ -1014,9 +997,9 @@
   "Property.
 
   The customElements read-only property of the `web.Window` interface
-  a reference to the `web.CustomElementRegistry` object, which
-  be used to register new custom elements and get information about
-  registered custom elements.
+  a reference to the `web.web-components.CustomElementRegistry`
+  which can be used to register new custom elements and get information
+  previously registered custom elements.
 
   `let customElementRegistry = window.customElements;`
 
@@ -1028,9 +1011,9 @@
   "Property.
 
   The customElements read-only property of the `web.Window` interface
-  a reference to the `web.CustomElementRegistry` object, which
-  be used to register new custom elements and get information about
-  registered custom elements.
+  a reference to the `web.web-components.CustomElementRegistry`
+  which can be used to register new custom elements and get information
+  previously registered custom elements.
 
   `let customElementRegistry = window.customElements;`
 
@@ -1079,7 +1062,7 @@
   "Property.
 
   The dialogArguments property returns the parameters that were
-  into the `web.window.showModalDialog()` method.
+  into the `window.showModalDialog()` method.
 
   `value = window.dialogArguments;`
 
@@ -1091,7 +1074,7 @@
   "Property.
 
   The dialogArguments property returns the parameters that were
-  into the `web.window.showModalDialog()` method.
+  into the `window.showModalDialog()` method.
 
   `value = window.dialogArguments;`
 
@@ -1102,7 +1085,7 @@
 (defn directories
   "Property.
 
-  Returned the window personalbar toolbar object. Use the `web.window.personalbar`
+  Returned the window personalbar toolbar object. Use the `window.personalbar`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/directories`"
   [this]
@@ -1111,7 +1094,7 @@
 (defn set-directories!
   "Property.
 
-  Returned the window personalbar toolbar object. Use the `web.window.personalbar`
+  Returned the window personalbar toolbar object. Use the `window.personalbar`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/directories`"
   [this val]
@@ -1144,7 +1127,7 @@
 (defn event
   "Property.
 
-  The read-only `web.Window` property event returns the `web.Event`
+  The read-only `web.Window` property event returns the `web.event.Event`
   is currently being handled by the site's code. Outside the context
   an event handler, the value is always undefined.
 
@@ -1155,10 +1138,10 @@
 (defn frame-element
   "Property.
 
-  Returns the element (such as `web.<iframe>` or `web.<object>`)
-  which the window is embedded, or null if the element is either
-  or is embedded into a document with a different script origin;
-  is, in cross-origin situations.
+  Returns the element (such as `<iframe>` or `<object>`) in which
+  window is embedded, or null if the element is either top-level
+  is embedded into a document with a different script origin; that
+  in cross-origin situations.
 
   `frameEl = window.frameElement;
 
@@ -1167,7 +1150,7 @@
 
 
 
-  Despite this property's name, it works for documents embedded within any embedding point, including `web.<object>`, `web.<iframe>`, or `web.<embed>`.`
+  Despite this property's name, it works for documents embedded within any embedding point, including `<object>`, `<iframe>`, or `<embed>`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement`"
   [this]
@@ -1176,10 +1159,10 @@
 (defn set-frame-element!
   "Property.
 
-  Returns the element (such as `web.<iframe>` or `web.<object>`)
-  which the window is embedded, or null if the element is either
-  or is embedded into a document with a different script origin;
-  is, in cross-origin situations.
+  Returns the element (such as `<iframe>` or `<object>`) in which
+  window is embedded, or null if the element is either top-level
+  is embedded into a document with a different script origin; that
+  in cross-origin situations.
 
   `frameEl = window.frameElement;
 
@@ -1188,7 +1171,7 @@
 
 
 
-  Despite this property's name, it works for documents embedded within any embedding point, including `web.<object>`, `web.<iframe>`, or `web.<embed>`.`
+  Despite this property's name, it works for documents embedded within any embedding point, including `<object>`, `<iframe>`, or `<embed>`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement`"
   [this val]
@@ -1264,7 +1247,7 @@
   "Property.
 
   The Window.history read-only property returns a reference to
-  `web.History` object, which provides an interface for manipulating
+  `web.dom.History` object, which provides an interface for manipulating
   browser session history (pages visited in the tab or frame that
   current page is loaded in).
 
@@ -1278,7 +1261,7 @@
   "Property.
 
   The Window.history read-only property returns a reference to
-  `web.History` object, which provides an interface for manipulating
+  `web.dom.History` object, which provides an interface for manipulating
   browser session history (pages visited in the tab or frame that
   current page is loaded in).
 
@@ -1376,7 +1359,7 @@
 (defn length
   "Property.
 
-  Returns the number of frames (either `web.<frame>` or `web.<iframe>`
+  Returns the number of frames (either `<frame>` or `<iframe>`
   in the window.
 
   `framesCount = window.length;
@@ -1391,7 +1374,7 @@
 (defn set-length!
   "Property.
 
-  Returns the number of frames (either `web.<frame>` or `web.<iframe>`
+  Returns the number of frames (either `<frame>` or `<iframe>`
   in the window.
 
   `framesCount = window.length;
@@ -1406,7 +1389,7 @@
 (defn local-storage
   "Property.
 
-  The read-only localStorage property allows you to access a `web.Storage`
+  The read-only localStorage property allows you to access a `web.storage.Storage`
   for the `web.Document`'s origin; the stored data is saved across
   sessions.
 
@@ -1419,7 +1402,7 @@
 (defn location
   "Property.
 
-  The Window.location read-only property returns a `web.Location`
+  The Window.location read-only property returns a `web.dom.Location`
   with information about the current location of the document.
 
   `var oldLocation = location;
@@ -1432,7 +1415,7 @@
 (defn set-location!
   "Property.
 
-  The Window.location read-only property returns a `web.Location`
+  The Window.location read-only property returns a `web.dom.Location`
   with information about the current location of the document.
 
   `var oldLocation = location;
@@ -1622,8 +1605,8 @@
   "Property.
 
   The Window.navigator read-only property returns a reference to
-  `web.Navigator` object, which can be queried for information
-  the application running the script.
+  `web.performance.Navigator` object, which can be queried for
+  about the application running the script.
 
   `navigatorObject = window.navigator`
 
@@ -1634,8 +1617,8 @@
 (defn onabort
   "Property.
 
-  The onabort property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing abort events sent to the window.
+  The onabort property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing abort events sent to the window.
 
   `window.onabort = functionRef;`
 
@@ -1646,8 +1629,8 @@
 (defn set-onabort!
   "Property.
 
-  The onabort property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing abort events sent to the window.
+  The onabort property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing abort events sent to the window.
 
   `window.onabort = functionRef;`
 
@@ -1658,8 +1641,8 @@
 (defn onafterprint
   "Property.
 
-  The onafterprint property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing afterprint events for the
+  The onafterprint property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing afterprint events for the
   window. These events are raised after the user prints, or if
   abort the print dialog.
 
@@ -1673,8 +1656,8 @@
 (defn set-onafterprint!
   "Property.
 
-  The onafterprint property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing afterprint events for the
+  The onafterprint property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing afterprint events for the
   window. These events are raised after the user prints, or if
   abort the print dialog.
 
@@ -1688,8 +1671,8 @@
 (defn onanimationcancel
   "Property.
 
-  The onanimationcancel property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationcancel events.
+  The onanimationcancel property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationcancel events.
 
   `var animCancelHandler = target.onanimationcancel;
 
@@ -1702,8 +1685,8 @@
 (defn set-onanimationcancel!
   "Property.
 
-  The onanimationcancel property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationcancel events.
+  The onanimationcancel property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationcancel events.
 
   `var animCancelHandler = target.onanimationcancel;
 
@@ -1716,8 +1699,8 @@
 (defn onanimationend
   "Property.
 
-  The onanimationend property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationend events.
+  The onanimationend property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationend events.
 
   `var animEndHandler = target.onanimationend;
 
@@ -1730,8 +1713,8 @@
 (defn set-onanimationend!
   "Property.
 
-  The onanimationend property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationend events.
+  The onanimationend property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationend events.
 
   `var animEndHandler = target.onanimationend;
 
@@ -1744,8 +1727,8 @@
 (defn onanimationiteration
   "Property.
 
-  The onanimationiteration property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationiteration events.
+  The onanimationiteration property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationiteration events.
 
   `var animIterationHandler = target.onanimationiteration;
 
@@ -1758,8 +1741,8 @@
 (defn set-onanimationiteration!
   "Property.
 
-  The onanimationiteration property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing animationiteration events.
+  The onanimationiteration property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing animationiteration events.
 
   `var animIterationHandler = target.onanimationiteration;
 
@@ -1776,7 +1759,7 @@
   an event handler for the appinstalled event, which is dispatched
   the web application is successfully installed as a progressive
   app. The event that is fired is a \\\"simple event\\\" that implements
-  `web.Event` interface.
+  `web.event.Event` interface.
 
   `window.onappinstalled = function(event) { ... };`
 
@@ -1791,7 +1774,7 @@
   an event handler for the appinstalled event, which is dispatched
   the web application is successfully installed as a progressive
   app. The event that is fired is a \\\"simple event\\\" that implements
-  `web.Event` interface.
+  `web.event.Event` interface.
 
   `window.onappinstalled = function(event) { ... };`
 
@@ -1802,8 +1785,8 @@
 (defn onauxclick
   "Property.
 
-  The onauxclick property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing auxclick events.
+  The onauxclick property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` for processing auxclick events.
 
   `target.onauxclick = functionRef;`
 
@@ -1814,8 +1797,8 @@
 (defn set-onauxclick!
   "Property.
 
-  The onauxclick property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing auxclick events.
+  The onauxclick property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` for processing auxclick events.
 
   `target.onauxclick = functionRef;`
 
@@ -1858,10 +1841,10 @@
 (defn onbeforeprint
   "Property.
 
-  The onbeforeprint property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing beforeprint events for
-  current window. These events are raised before the print dialog
-  is opened.
+  The onbeforeprint property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing beforeprint events for the
+  window. These events are raised before the print dialog window
+  opened.
 
   `window.addEventListener(\\\"beforeprint\\\", function(event) { ... });
   window.onbeforeprint = function(event) { ... };`
@@ -1873,10 +1856,10 @@
 (defn set-onbeforeprint!
   "Property.
 
-  The onbeforeprint property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing beforeprint events for
-  current window. These events are raised before the print dialog
-  is opened.
+  The onbeforeprint property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing beforeprint events for the
+  window. These events are raised before the print dialog window
+  opened.
 
   `window.addEventListener(\\\"beforeprint\\\", function(event) { ... });
   window.onbeforeprint = function(event) { ... };`
@@ -1888,15 +1871,15 @@
 (defn onbeforeunload
   "Property.
 
-  The onbeforeunload property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing beforeunload events.
-  events fire when a window is about to unload its resources. At
-  point, the document is still visible and the event is still cancelable.
+  The onbeforeunload property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing beforeunload events. These
+  fire when a window is about to unload its resources. At this
+  the document is still visible and the event is still cancelable.
 
   `window.addEventListener(\\\"beforeunload\\\", function(event) { ... });
   window.onbeforeunload = function(event) { ... };
 
-  Typically, it is better to use `web.window.addEventListener()` and the beforeunload event, instead of onbeforeunload.`
+  Typically, it is better to use `window.addEventListener()` and the beforeunload event, instead of onbeforeunload.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this]
@@ -1905,15 +1888,15 @@
 (defn set-onbeforeunload!
   "Property.
 
-  The onbeforeunload property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing beforeunload events.
-  events fire when a window is about to unload its resources. At
-  point, the document is still visible and the event is still cancelable.
+  The onbeforeunload property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing beforeunload events. These
+  fire when a window is about to unload its resources. At this
+  the document is still visible and the event is still cancelable.
 
   `window.addEventListener(\\\"beforeunload\\\", function(event) { ... });
   window.onbeforeunload = function(event) { ... };
 
-  Typically, it is better to use `web.window.addEventListener()` and the beforeunload event, instead of onbeforeunload.`
+  Typically, it is better to use `window.addEventListener()` and the beforeunload event, instead of onbeforeunload.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this val]
@@ -1922,8 +1905,8 @@
 (defn onblur
   "Property.
 
-  The onblur property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing blur events. It's available
+  The onblur property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing blur events. It's available
   `web.Element`, `web.Document`, and `web.Window`.
 
   `target.onblur = functionRef;`
@@ -1935,8 +1918,8 @@
 (defn set-onblur!
   "Property.
 
-  The onblur property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing blur events. It's available
+  The onblur property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing blur events. It's available
   `web.Element`, `web.Document`, and `web.Window`.
 
   `target.onblur = functionRef;`
@@ -1948,9 +1931,8 @@
 (defn oncancel
   "Property.
 
-  The oncancel property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing cancel events sent to a
-  element.
+  The oncancel property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing cancel events sent to a `<dialog>`
 
   `target.oncancel = functionRef;`
 
@@ -1961,9 +1943,8 @@
 (defn set-oncancel!
   "Property.
 
-  The oncancel property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing cancel events sent to a
-  element.
+  The oncancel property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing cancel events sent to a `<dialog>`
 
   `target.oncancel = functionRef;`
 
@@ -1974,8 +1955,8 @@
 (defn oncanplay
   "Property.
 
-  The oncanplay property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing canplay events.
+  The oncanplay property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing canplay events.
 
   `element.oncanplay = handlerFunction;
   var handlerFunction = element.oncanplay;
@@ -1989,8 +1970,8 @@
 (defn set-oncanplay!
   "Property.
 
-  The oncanplay property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing canplay events.
+  The oncanplay property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing canplay events.
 
   `element.oncanplay = handlerFunction;
   var handlerFunction = element.oncanplay;
@@ -2004,8 +1985,8 @@
 (defn oncanplaythrough
   "Property.
 
-  The oncanplaythrough property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing canplaythrough events.
+  The oncanplaythrough property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing canplaythrough events.
 
   `element.oncanplaythrough = handlerFunction;
   var handlerFunction = element.oncanplaythrough;
@@ -2019,8 +2000,8 @@
 (defn set-oncanplaythrough!
   "Property.
 
-  The oncanplaythrough property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing canplaythrough events.
+  The oncanplaythrough property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing canplaythrough events.
 
   `element.oncanplaythrough = handlerFunction;
   var handlerFunction = element.oncanplaythrough;
@@ -2034,12 +2015,12 @@
 (defn onchange
   "Property.
 
-  The onchange property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing change events.
+  The onchange property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing change events.
 
   `target.onchange = functionRef;
 
-  functionRef is a function name or a function expression. The function receives an `web.Event` object as its sole argument.`
+  functionRef is a function name or a function expression. The function receives an `web.event.Event` object as its sole argument.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange`"
   [this]
@@ -2048,12 +2029,12 @@
 (defn set-onchange!
   "Property.
 
-  The onchange property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` for processing change events.
+  The onchange property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing change events.
 
   `target.onchange = functionRef;
 
-  functionRef is a function name or a function expression. The function receives an `web.Event` object as its sole argument.`
+  functionRef is a function name or a function expression. The function receives an `web.event.Event` object as its sole argument.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange`"
   [this val]
@@ -2062,8 +2043,8 @@
 (defn onclick
   "Property.
 
-  The onclick property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing click events on a given element.
+  The onclick property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing click events on a given element.
 
   `target.onclick = functionRef;`
 
@@ -2074,8 +2055,8 @@
 (defn set-onclick!
   "Property.
 
-  The onclick property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing click events on a given element.
+  The onclick property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing click events on a given element.
 
   `target.onclick = functionRef;`
 
@@ -2086,8 +2067,8 @@
 (defn onclose
   "Property.
 
-  The onclose property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing close events sent to a `web.<dialog>`
+  The onclose property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing close events sent to a `<dialog>`
 
   `target.onclose = functionRef;`
 
@@ -2098,8 +2079,8 @@
 (defn set-onclose!
   "Property.
 
-  The onclose property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing close events sent to a `web.<dialog>`
+  The onclose property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` for processing close events sent to a `<dialog>`
 
   `target.onclose = functionRef;`
 
@@ -2110,8 +2091,8 @@
 (defn oncontextmenu
   "Property.
 
-  The oncontextmenu property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes contextmenu events.
+  The oncontextmenu property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes contextmenu events.
 
   `target.oncontextmenu = functionRef;`
 
@@ -2122,8 +2103,8 @@
 (defn set-oncontextmenu!
   "Property.
 
-  The oncontextmenu property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes contextmenu events.
+  The oncontextmenu property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes contextmenu events.
 
   `target.oncontextmenu = functionRef;`
 
@@ -2134,8 +2115,8 @@
 (defn oncuechange
   "Property.
 
-  The oncuechange property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing cuechange events.
+  The oncuechange property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing cuechange events.
 
   `element.oncuechange = handlerFunction;
   var handlerFunction = element.oncuechange;
@@ -2149,8 +2130,8 @@
 (defn set-oncuechange!
   "Property.
 
-  The oncuechange property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing cuechange events.
+  The oncuechange property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing cuechange events.
 
   `element.oncuechange = handlerFunction;
   var handlerFunction = element.oncuechange;
@@ -2164,8 +2145,8 @@
 (defn ondblclick
   "Property.
 
-  The ondblclick property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes dblclick events on the given
+  The ondblclick property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes dblclick events on the given
 
   `target.ondblclick = functionRef;`
 
@@ -2176,8 +2157,8 @@
 (defn set-ondblclick!
   "Property.
 
-  The ondblclick property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes dblclick events on the given
+  The ondblclick property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes dblclick events on the given
 
   `target.ondblclick = functionRef;`
 
@@ -2194,7 +2175,7 @@
 
   `window.ondevicelight = funcRef
 
-  Where funcRef is a function to be called when the devicelight event occurs. These events are of type `web.DeviceLightEvent`.`
+  Where funcRef is a function to be called when the devicelight event occurs. These events are of type `web.ambient.DeviceLightEvent`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicelight`"
   [this]
@@ -2209,7 +2190,7 @@
 
   `window.ondevicelight = funcRef
 
-  Where funcRef is a function to be called when the devicelight event occurs. These events are of type `web.DeviceLightEvent`.`
+  Where funcRef is a function to be called when the devicelight event occurs. These events are of type `web.ambient.DeviceLightEvent`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicelight`"
   [this val]
@@ -2222,7 +2203,7 @@
 
   `window.ondevicemotion = funcRef;
 
-  Where funcRef is a reference to a function. This function receives a `web.DeviceMotionEvent` object describing the motion that occurred.`
+  Where funcRef is a reference to a function. This function receives a `web.mobile.DeviceMotionEvent` object describing the motion that occurred.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion`"
   [this]
@@ -2235,7 +2216,7 @@
 
   `window.ondevicemotion = funcRef;
 
-  Where funcRef is a reference to a function. This function receives a `web.DeviceMotionEvent` object describing the motion that occurred.`
+  Where funcRef is a reference to a function. This function receives a `web.mobile.DeviceMotionEvent` object describing the motion that occurred.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion`"
   [this val]
@@ -2297,13 +2278,13 @@
   "Property.
 
   The ondeviceproximity property of the `web.Window` interface
-  an `web.EventHandler` to receive deviceproximity events. These
-  occur when the device sensor detects that an object becomes closer
+  an `EventHandler` to receive deviceproximity events. These events
+  when the device sensor detects that an object becomes closer
   or farther from the device.
 
   `window.onuserproximity = funcRef
 
-  Where funcRef is a function to be called when the deviceproximity event occurs. These events are of type `web.DeviceProximityEvent`.`
+  Where funcRef is a function to be called when the deviceproximity event occurs. These events are of type `web.divice.DeviceProximityEvent`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceproximity`"
   [this]
@@ -2313,13 +2294,13 @@
   "Property.
 
   The ondeviceproximity property of the `web.Window` interface
-  an `web.EventHandler` to receive deviceproximity events. These
-  occur when the device sensor detects that an object becomes closer
+  an `EventHandler` to receive deviceproximity events. These events
+  when the device sensor detects that an object becomes closer
   or farther from the device.
 
   `window.onuserproximity = funcRef
 
-  Where funcRef is a function to be called when the deviceproximity event occurs. These events are of type `web.DeviceProximityEvent`.`
+  Where funcRef is a function to be called when the deviceproximity event occurs. These events are of type `web.divice.DeviceProximityEvent`.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceproximity`"
   [this val]
@@ -2366,8 +2347,8 @@
 (defn ondurationchange
   "Property.
 
-  The ondurationchange property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing durationchange events.
+  The ondurationchange property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing durationchange events.
 
   `element.ondurationchange = handlerFunction;
   var handlerFunction = element.ondurationchange;
@@ -2381,8 +2362,8 @@
 (defn set-ondurationchange!
   "Property.
 
-  The ondurationchange property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing durationchange events.
+  The ondurationchange property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing durationchange events.
 
   `element.ondurationchange = handlerFunction;
   var handlerFunction = element.ondurationchange;
@@ -2396,8 +2377,8 @@
 (defn onended
   "Property.
 
-  The onended property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing ended events.
+  The onended property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing ended events.
 
   `element.onended = handlerFunction;
   var handlerFunction = element.onended;
@@ -2411,8 +2392,8 @@
 (defn set-onended!
   "Property.
 
-  The onended property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing ended events.
+  The onended property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing ended events.
 
   `element.onended = handlerFunction;
   var handlerFunction = element.onended;
@@ -2426,10 +2407,10 @@
 (defn onerror
   "Property.
 
-  The onerror property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes error events.
+  The onerror property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes error events.
 
-  `For historical reasons, different arguments are passed to window.onerror and element.onerror handlers (as well as on error-type `web.window.addEventListener` handlers).`
+  `For historical reasons, different arguments are passed to window.onerror and element.onerror handlers (as well as on error-type `window.addEventListener` handlers).`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror`"
   [this]
@@ -2438,10 +2419,10 @@
 (defn set-onerror!
   "Property.
 
-  The onerror property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes error events.
+  The onerror property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes error events.
 
-  `For historical reasons, different arguments are passed to window.onerror and element.onerror handlers (as well as on error-type `web.window.addEventListener` handlers).`
+  `For historical reasons, different arguments are passed to window.onerror and element.onerror handlers (as well as on error-type `window.addEventListener` handlers).`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror`"
   [this val]
@@ -2450,8 +2431,8 @@
 (defn onfocus
   "Property.
 
-  The onfocus property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes focus events on the given element.
+  The onfocus property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes focus events on the given element.
 
   `target.onfocus = functionRef;`
 
@@ -2462,8 +2443,8 @@
 (defn set-onfocus!
   "Property.
 
-  The onfocus property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes focus events on the given element.
+  The onfocus property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes focus events on the given element.
 
   `target.onfocus = functionRef;`
 
@@ -2526,8 +2507,8 @@
 (defn ongotpointercapture
   "Property.
 
-  The ongotpointercapture property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes gotpointercapture events.
+  The ongotpointercapture property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes gotpointercapture events.
 
   `target.ongotpointercapture = functionRef;`
 
@@ -2538,8 +2519,8 @@
 (defn set-ongotpointercapture!
   "Property.
 
-  The ongotpointercapture property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes gotpointercapture events.
+  The ongotpointercapture property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes gotpointercapture events.
 
   `target.ongotpointercapture = functionRef;`
 
@@ -2550,8 +2531,8 @@
 (defn onhashchange
   "Property.
 
-  The WindowEventHandlers.onhashchange property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing hashchange events.
+  The WindowEventHandlers.onhashchange property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing hashchange events.
 
   `Using an event handler:
 
@@ -2567,7 +2548,7 @@
 
   Using an event listener:
 
-  To add an event listener, use `web.addEventListener()`:
+  To add an event listener, use `addEventListener()`:
 
 
 
@@ -2580,8 +2561,8 @@
 (defn set-onhashchange!
   "Property.
 
-  The WindowEventHandlers.onhashchange property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing hashchange events.
+  The WindowEventHandlers.onhashchange property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing hashchange events.
 
   `Using an event handler:
 
@@ -2597,7 +2578,7 @@
 
   Using an event listener:
 
-  To add an event listener, use `web.addEventListener()`:
+  To add an event listener, use `addEventListener()`:
 
 
 
@@ -2610,10 +2591,10 @@
 (defn oninput
   "Property.
 
-  The oninput property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes input events on the `web.<input>`,
-  and `web.<textarea>` elements. It also handles these events on
-  where `web.contenteditable` or `web.designMode` are turned on.
+  The oninput property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes input events on the `<input>`,
+  and `<textarea>` elements. It also handles these events on elements
+  `contenteditable` or `designMode` are turned on.
 
   `target.oninput = functionRef;`
 
@@ -2624,10 +2605,10 @@
 (defn set-oninput!
   "Property.
 
-  The oninput property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes input events on the `web.<input>`,
-  and `web.<textarea>` elements. It also handles these events on
-  where `web.contenteditable` or `web.designMode` are turned on.
+  The oninput property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes input events on the `<input>`,
+  and `<textarea>` elements. It also handles these events on elements
+  `contenteditable` or `designMode` are turned on.
 
   `target.oninput = functionRef;`
 
@@ -2638,8 +2619,8 @@
 (defn oninvalid
   "Property.
 
-  The oninvalid property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes invalid events.
+  The oninvalid property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes invalid events.
 
   `target.oninvalid = functionRef;
   var functionRef = target.oninvalid;`
@@ -2651,8 +2632,8 @@
 (defn set-oninvalid!
   "Property.
 
-  The oninvalid property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes invalid events.
+  The oninvalid property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes invalid events.
 
   `target.oninvalid = functionRef;
   var functionRef = target.oninvalid;`
@@ -2664,8 +2645,8 @@
 (defn onkeydown
   "Property.
 
-  The onkeydown property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes keydown events.
+  The onkeydown property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes keydown events.
 
   `target.onkeydown = functionRef;`
 
@@ -2676,8 +2657,8 @@
 (defn set-onkeydown!
   "Property.
 
-  The onkeydown property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes keydown events.
+  The onkeydown property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes keydown events.
 
   `target.onkeydown = functionRef;`
 
@@ -2688,8 +2669,8 @@
 (defn onkeypress
   "Property.
 
-  The onkeypress property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes keypress events.
+  The onkeypress property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes keypress events.
 
   `target.onkeypress = functionRef;`
 
@@ -2700,8 +2681,8 @@
 (defn set-onkeypress!
   "Property.
 
-  The onkeypress property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes keypress events.
+  The onkeypress property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes keypress events.
 
   `target.onkeypress = functionRef;`
 
@@ -2712,8 +2693,8 @@
 (defn onkeyup
   "Property.
 
-  The onkeyup property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes keyup events.
+  The onkeyup property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes keyup events.
 
   `target.onkeyup = functionRef;`
 
@@ -2724,8 +2705,8 @@
 (defn set-onkeyup!
   "Property.
 
-  The onkeyup property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes keyup events.
+  The onkeyup property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes keyup events.
 
   `target.onkeyup = functionRef;`
 
@@ -2736,8 +2717,8 @@
 (defn onlanguagechange
   "Property.
 
-  The onlanguagechange property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing languagechange events.
+  The onlanguagechange property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing languagechange events.
 
   `object.onlanguagechange = function;`
 
@@ -2748,8 +2729,8 @@
 (defn set-onlanguagechange!
   "Property.
 
-  The onlanguagechange property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing languagechange events.
+  The onlanguagechange property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing languagechange events.
 
   `object.onlanguagechange = function;`
 
@@ -2760,9 +2741,9 @@
 (defn onload
   "Property.
 
-  The onload property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes load events on a `web.Window`,
-  `web.<img>` element, etc.
+  The onload property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes load events on a `web.Window`,
+  `<img>` element, etc.
 
   `target.onload = functionRef;`
 
@@ -2773,9 +2754,9 @@
 (defn set-onload!
   "Property.
 
-  The onload property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes load events on a `web.Window`,
-  `web.<img>` element, etc.
+  The onload property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes load events on a `web.Window`,
+  `<img>` element, etc.
 
   `target.onload = functionRef;`
 
@@ -2786,8 +2767,8 @@
 (defn onloadeddata
   "Property.
 
-  The onloadeddata property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing loadeddata events.
+  The onloadeddata property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing loadeddata events.
 
   `element.onloadeddata = handlerFunction;
   var handlerFunction = element.onloadeddata;
@@ -2801,8 +2782,8 @@
 (defn set-onloadeddata!
   "Property.
 
-  The onloadeddata property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing loadeddata events.
+  The onloadeddata property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing loadeddata events.
 
   `element.onloadeddata = handlerFunction;
   var handlerFunction = element.onloadeddata;
@@ -2816,8 +2797,8 @@
 (defn onloadedmetadata
   "Property.
 
-  The onloadedmetadata property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing loadedmetadata events.
+  The onloadedmetadata property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing loadedmetadata events.
 
   `element.onloadedmetadata = handlerFunction;
   var handlerFunction = element.onloadedmetadata;
@@ -2831,8 +2812,8 @@
 (defn set-onloadedmetadata!
   "Property.
 
-  The onloadedmetadata property of the `web.GlobalEventHandlers`
-  is the `web.EventHandler` for processing loadedmetadata events.
+  The onloadedmetadata property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing loadedmetadata events.
 
   `element.onloadedmetadata = handlerFunction;
   var handlerFunction = element.onloadedmetadata;
@@ -2846,10 +2827,10 @@
 (defn onloadend
   "Property.
 
-  The onloadend property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` representing the code to be called when
-  loadend event is raised (when progress has stopped on the loading
-  a resource.)
+  The onloadend property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` representing the code to be called when the
+  event is raised (when progress has stopped on the loading of
+  resource.)
 
   `img.onloadend = funcRef;`
 
@@ -2860,10 +2841,10 @@
 (defn set-onloadend!
   "Property.
 
-  The onloadend property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` representing the code to be called when
-  loadend event is raised (when progress has stopped on the loading
-  a resource.)
+  The onloadend property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` representing the code to be called when the
+  event is raised (when progress has stopped on the loading of
+  resource.)
 
   `img.onloadend = funcRef;`
 
@@ -2874,8 +2855,8 @@
 (defn onloadstart
   "Property.
 
-  The onloadstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` representing the code to be called when
+  The onloadstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` representing the code to be called when
   loadstart event is raised (when progress has begun on the loading
   a resource.)
 
@@ -2888,8 +2869,8 @@
 (defn set-onloadstart!
   "Property.
 
-  The onloadstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` representing the code to be called when
+  The onloadstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` representing the code to be called when
   loadstart event is raised (when progress has begun on the loading
   a resource.)
 
@@ -2902,8 +2883,8 @@
 (defn onlostpointercapture
   "Property.
 
-  The onlostpointercapture property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes lostpointercapture events.
+  The onlostpointercapture property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes lostpointercapture events.
 
   `target.onlostpointercapture = functionRef;`
 
@@ -2914,8 +2895,8 @@
 (defn set-onlostpointercapture!
   "Property.
 
-  The onlostpointercapture property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes lostpointercapture events.
+  The onlostpointercapture property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes lostpointercapture events.
 
   `target.onlostpointercapture = functionRef;`
 
@@ -2926,8 +2907,8 @@
 (defn onmessage
   "Property.
 
-  The onmessage property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` called whenever an object receives a message
+  The onmessage property of the `web.dom.WindowEventHandlers` mixin
+  the `EventHandler` called whenever an object receives a message
 
   `window.addEventListener('message', function(event) { ... })
   window.onmessage = function(event) { ... }`
@@ -2939,8 +2920,8 @@
 (defn set-onmessage!
   "Property.
 
-  The onmessage property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` called whenever an object receives a message
+  The onmessage property of the `web.dom.WindowEventHandlers` mixin
+  the `EventHandler` called whenever an object receives a message
 
   `window.addEventListener('message', function(event) { ... })
   window.onmessage = function(event) { ... }`
@@ -2952,8 +2933,8 @@
 (defn onmessageerror
   "Property.
 
-  The onmessageerror event handler of the `web.WindowEventHandlers`
-  is an `web.EventListener`, called whenever an `web.MessageEvent`
+  The onmessageerror event handler of the `web.dom.WindowEventHandlers`
+  is an `web.EventListener`, called whenever an `web.workers.MessageEvent`
   type messageerror is fired on a window—that is, when it receives
   message that cannot be deserialized.
 
@@ -2966,8 +2947,8 @@
 (defn set-onmessageerror!
   "Property.
 
-  The onmessageerror event handler of the `web.WindowEventHandlers`
-  is an `web.EventListener`, called whenever an `web.MessageEvent`
+  The onmessageerror event handler of the `web.dom.WindowEventHandlers`
+  is an `web.EventListener`, called whenever an `web.workers.MessageEvent`
   type messageerror is fired on a window—that is, when it receives
   message that cannot be deserialized.
 
@@ -2980,8 +2961,8 @@
 (defn onmousedown
   "Property.
 
-  The onmousedown property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mousedown events.
+  The onmousedown property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mousedown events.
 
   `target.onmousedown = functionRef;`
 
@@ -2992,8 +2973,8 @@
 (defn set-onmousedown!
   "Property.
 
-  The onmousedown property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mousedown events.
+  The onmousedown property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mousedown events.
 
   `target.onmousedown = functionRef;`
 
@@ -3004,8 +2985,8 @@
 (defn onmouseenter
   "Property.
 
-  The onmouseenter property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing mouseenter events.
+  The onmouseenter property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing mouseenter events.
 
   `element.onmouseenter = handlerFunction;
   var handlerFunction = element.onmouseenter;
@@ -3019,8 +3000,8 @@
 (defn set-onmouseenter!
   "Property.
 
-  The onmouseenter property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing mouseenter events.
+  The onmouseenter property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing mouseenter events.
 
   `element.onmouseenter = handlerFunction;
   var handlerFunction = element.onmouseenter;
@@ -3034,8 +3015,8 @@
 (defn onmouseleave
   "Property.
 
-  The onmouseleave property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing mouseleave events.
+  The onmouseleave property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing mouseleave events.
 
   `element.onmouseleave = handlerFunction;
   var handlerFunction = element.onmouseleave;
@@ -3049,8 +3030,8 @@
 (defn set-onmouseleave!
   "Property.
 
-  The onmouseleave property of the `web.GlobalEventHandlers` mixin
-  the `web.EventHandler` for processing mouseleave events.
+  The onmouseleave property of the `web.dom.GlobalEventHandlers`
+  is the `EventHandler` for processing mouseleave events.
 
   `element.onmouseleave = handlerFunction;
   var handlerFunction = element.onmouseleave;
@@ -3064,8 +3045,8 @@
 (defn onmousemove
   "Property.
 
-  The onmousemove property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mousemove events.
+  The onmousemove property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mousemove events.
 
   `target.onmousemove = functionRef;`
 
@@ -3076,8 +3057,8 @@
 (defn set-onmousemove!
   "Property.
 
-  The onmousemove property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mousemove events.
+  The onmousemove property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mousemove events.
 
   `target.onmousemove = functionRef;`
 
@@ -3088,8 +3069,8 @@
 (defn onmouseout
   "Property.
 
-  The onmouseout property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseout events.
+  The onmouseout property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mouseout events.
 
   `element.onmouseout = function;`
 
@@ -3100,8 +3081,8 @@
 (defn set-onmouseout!
   "Property.
 
-  The onmouseout property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseout events.
+  The onmouseout property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mouseout events.
 
   `element.onmouseout = function;`
 
@@ -3112,8 +3093,8 @@
 (defn onmouseover
   "Property.
 
-  The onmouseover property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseover events.
+  The onmouseover property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mouseover events.
 
   `element.onmouseover = function;`
 
@@ -3124,8 +3105,8 @@
 (defn set-onmouseover!
   "Property.
 
-  The onmouseover property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseover events.
+  The onmouseover property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes mouseover events.
 
   `element.onmouseover = function;`
 
@@ -3136,8 +3117,8 @@
 (defn onmouseup
   "Property.
 
-  The onmouseup property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseup events.
+  The onmouseup property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes mouseup events.
 
   `target.onmouseup = functionRef;`
 
@@ -3148,8 +3129,8 @@
 (defn set-onmouseup!
   "Property.
 
-  The onmouseup property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes mouseup events.
+  The onmouseup property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes mouseup events.
 
   `target.onmouseup = functionRef;`
 
@@ -3161,7 +3142,7 @@
   "Property.
 
   An event handler for the MozBeforePaint event. This is used in
-  with the `web.window.mozRequestAnimationFrame()` method to perform
+  with the `window.mozRequestAnimationFrame()` method to perform
   synchronized animations from JavaScript code.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onmozbeforepaint`"
@@ -3172,7 +3153,7 @@
   "Property.
 
   An event handler for the MozBeforePaint event. This is used in
-  with the `web.window.mozRequestAnimationFrame()` method to perform
+  with the `window.mozRequestAnimationFrame()` method to perform
   synchronized animations from JavaScript code.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onmozbeforepaint`"
@@ -3210,8 +3191,8 @@
 (defn onpause
   "Property.
 
-  The onpause property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing pause events.
+  The onpause property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing pause events.
 
   `element.onpause = handlerFunction;
   var handlerFunction = element.onpause;
@@ -3225,8 +3206,8 @@
 (defn set-onpause!
   "Property.
 
-  The onpause property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing pause events.
+  The onpause property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing pause events.
 
   `element.onpause = handlerFunction;
   var handlerFunction = element.onpause;
@@ -3240,8 +3221,8 @@
 (defn onplay
   "Property.
 
-  The onplay property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing play events.
+  The onplay property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing play events.
 
   `element.onplay = handlerFunction;
   var handlerFunction = element.onplay;
@@ -3255,8 +3236,8 @@
 (defn set-onplay!
   "Property.
 
-  The onplay property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` for processing play events.
+  The onplay property of the `web.dom.GlobalEventHandlers` mixin
+  the `EventHandler` for processing play events.
 
   `element.onplay = handlerFunction;
   var handlerFunction = element.onplay;
@@ -3270,8 +3251,8 @@
 (defn onpointercancel
   "Property.
 
-  The onpointercancel property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes pointercancel events.
+  The onpointercancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointercancel events.
 
   `targetElement.onpointercancel = cancelHandler;
 
@@ -3284,8 +3265,8 @@
 (defn set-onpointercancel!
   "Property.
 
-  The onpointercancel property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes pointercancel events.
+  The onpointercancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointercancel events.
 
   `targetElement.onpointercancel = cancelHandler;
 
@@ -3298,10 +3279,10 @@
 (defn onpointerdown
   "Property.
 
-  The `web.GlobalEventHandlers` event handler onpointerdown is
-  to specify the event handler for the pointerdown event, which
-  fired when the pointing device is initially pressed. This event
-  be sent to `web.Window`, `web.Document`, and `web.Element` objects.
+  The `web.dom.GlobalEventHandlers` event handler onpointerdown
+  used to specify the event handler for the pointerdown event,
+  is fired when the pointing device is initially pressed. This
+  can be sent to `web.Window`, `web.Document`, and `web.Element`
 
   `target.onpointerdown = downHandler;
 
@@ -3314,10 +3295,10 @@
 (defn set-onpointerdown!
   "Property.
 
-  The `web.GlobalEventHandlers` event handler onpointerdown is
-  to specify the event handler for the pointerdown event, which
-  fired when the pointing device is initially pressed. This event
-  be sent to `web.Window`, `web.Document`, and `web.Element` objects.
+  The `web.dom.GlobalEventHandlers` event handler onpointerdown
+  used to specify the event handler for the pointerdown event,
+  is fired when the pointing device is initially pressed. This
+  can be sent to `web.Window`, `web.Document`, and `web.Element`
 
   `target.onpointerdown = downHandler;
 
@@ -3330,8 +3311,8 @@
 (defn onpointerenter
   "Property.
 
-  The onpointerenter property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes pointerenter events.
+  The onpointerenter property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerenter events.
 
   `targetElement.onpointerenter = enterHandler;
 
@@ -3344,8 +3325,8 @@
 (defn set-onpointerenter!
   "Property.
 
-  The onpointerenter property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes pointerenter events.
+  The onpointerenter property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerenter events.
 
   `targetElement.onpointerenter = enterHandler;
 
@@ -3392,8 +3373,8 @@
 (defn onpointermove
   "Property.
 
-  The onpointermove property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointermove events.
+  The onpointermove property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointermove events.
 
   `targetElement.onpointermove = moveHandler;
 
@@ -3406,8 +3387,8 @@
 (defn set-onpointermove!
   "Property.
 
-  The onpointermove property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointermove events.
+  The onpointermove property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointermove events.
 
   `targetElement.onpointermove = moveHandler;
 
@@ -3420,8 +3401,8 @@
 (defn onpointerout
   "Property.
 
-  The onpointerout property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerout events.
+  The onpointerout property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerout events.
 
   `targetElement.onpointerout = outHandler;
 
@@ -3434,8 +3415,8 @@
 (defn set-onpointerout!
   "Property.
 
-  The onpointerout property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerout events.
+  The onpointerout property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerout events.
 
   `targetElement.onpointerout = outHandler;
 
@@ -3448,8 +3429,8 @@
 (defn onpointerover
   "Property.
 
-  The onpointerover property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerover events.
+  The onpointerover property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerover events.
 
   `targetElement.onpointerover = overHandler;
 
@@ -3462,8 +3443,8 @@
 (defn set-onpointerover!
   "Property.
 
-  The onpointerover property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerover events.
+  The onpointerover property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerover events.
 
   `targetElement.onpointerover = overHandler;
 
@@ -3476,8 +3457,8 @@
 (defn onpointerup
   "Property.
 
-  The onpointerup property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerup events.
+  The onpointerup property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerup events.
 
   `targetElement.onpointerup = upHandler;
 
@@ -3490,8 +3471,8 @@
 (defn set-onpointerup!
   "Property.
 
-  The onpointerup property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes pointerup events.
+  The onpointerup property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes pointerup events.
 
   `targetElement.onpointerup = upHandler;
 
@@ -3504,8 +3485,8 @@
 (defn onpopstate
   "Property.
 
-  The onpopstate property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing popstate events on the
+  The onpopstate property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing popstate events on the window.
 
   `window.onpopstate = funcRef;
 
@@ -3519,8 +3500,8 @@
 (defn set-onpopstate!
   "Property.
 
-  The onpopstate property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing popstate events on the
+  The onpopstate property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing popstate events on the window.
 
   `window.onpopstate = funcRef;
 
@@ -3534,9 +3515,9 @@
 (defn onrejectionhandled
   "Property.
 
-  The onrejectionhandled property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing rejectionhandled events.
-  events are raised when `web.Promise`s are rejected.
+  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing rejectionhandled events.
+  events are raised when `js.Promise`s are rejected.
 
   `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
   window.onrejectionhandled = function(event) { ...};`
@@ -3548,9 +3529,9 @@
 (defn set-onrejectionhandled!
   "Property.
 
-  The onrejectionhandled property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing rejectionhandled events.
-  events are raised when `web.Promise`s are rejected.
+  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing rejectionhandled events.
+  events are raised when `js.Promise`s are rejected.
 
   `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
   window.onrejectionhandled = function(event) { ...};`
@@ -3562,8 +3543,8 @@
 (defn onreset
   "Property.
 
-  The onreset property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes reset events.
+  The onreset property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes reset events.
 
   `target.onreset = functionRef;`
 
@@ -3574,8 +3555,8 @@
 (defn set-onreset!
   "Property.
 
-  The onreset property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes reset events.
+  The onreset property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes reset events.
 
   `target.onreset = functionRef;`
 
@@ -3586,8 +3567,8 @@
 (defn onresize
   "Property.
 
-  The onresize property of the `web.GlobalEventHandlers` interface
-  an `web.EventHandler` that processes resize events.
+  The onresize property of the `web.dom.GlobalEventHandlers` interface
+  an `EventHandler` that processes resize events.
 
   `window.onresize = functionRef;`
 
@@ -3598,8 +3579,8 @@
 (defn set-onresize!
   "Property.
 
-  The onresize property of the `web.GlobalEventHandlers` interface
-  an `web.EventHandler` that processes resize events.
+  The onresize property of the `web.dom.GlobalEventHandlers` interface
+  an `EventHandler` that processes resize events.
 
   `window.onresize = functionRef;`
 
@@ -3610,8 +3591,8 @@
 (defn onscroll
   "Property.
 
-  The onscroll property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes scroll events.
+  The onscroll property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes scroll events.
 
   `target.onscroll = functionRef;`
 
@@ -3622,8 +3603,8 @@
 (defn set-onscroll!
   "Property.
 
-  The onscroll property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes scroll events.
+  The onscroll property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes scroll events.
 
   `target.onscroll = functionRef;`
 
@@ -3634,8 +3615,8 @@
 (defn onselect
   "Property.
 
-  The onselect property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes `web.select`.
+  The onselect property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes `select`.
 
   `target.onselect = functionRef;`
 
@@ -3646,8 +3627,8 @@
 (defn set-onselect!
   "Property.
 
-  The onselect property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes `web.select`.
+  The onselect property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes `select`.
 
   `target.onselect = functionRef;`
 
@@ -3658,8 +3639,8 @@
 (defn onselectionchange
   "Property.
 
-  The onselectionchange property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes selectionchange events.
+  The onselectionchange property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes selectionchange events.
 
   `object.onselectionchange = functionRef;`
 
@@ -3670,8 +3651,8 @@
 (defn set-onselectionchange!
   "Property.
 
-  The onselectionchange property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes selectionchange events.
+  The onselectionchange property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes selectionchange events.
 
   `object.onselectionchange = functionRef;`
 
@@ -3682,8 +3663,8 @@
 (defn onselectstart
   "Property.
 
-  The onselectstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes selectstart events.
+  The onselectstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes selectstart events.
 
   `object.onselectstart = functionRef;`
 
@@ -3694,8 +3675,8 @@
 (defn set-onselectstart!
   "Property.
 
-  The onselectstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes selectstart events.
+  The onselectstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes selectstart events.
 
   `object.onselectstart = functionRef;`
 
@@ -3706,8 +3687,8 @@
 (defn onstorage
   "Property.
 
-  The onstorage property of the `web.WindowEventHandlers` mixin
-  an `web.EventHandler` for processing storage events.
+  The onstorage property of the `web.dom.WindowEventHandlers` mixin
+  an `EventHandler` for processing storage events.
 
   `window.onstorage = functionRef;`
 
@@ -3718,8 +3699,8 @@
 (defn set-onstorage!
   "Property.
 
-  The onstorage property of the `web.WindowEventHandlers` mixin
-  an `web.EventHandler` for processing storage events.
+  The onstorage property of the `web.dom.WindowEventHandlers` mixin
+  an `EventHandler` for processing storage events.
 
   `window.onstorage = functionRef;`
 
@@ -3730,8 +3711,8 @@
 (defn onsubmit
   "Property.
 
-  The onsubmit property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes submit events.
+  The onsubmit property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes submit events.
 
   `target.onsubmit = functionRef;`
 
@@ -3742,8 +3723,8 @@
 (defn set-onsubmit!
   "Property.
 
-  The onsubmit property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes submit events.
+  The onsubmit property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes submit events.
 
   `target.onsubmit = functionRef;`
 
@@ -3754,8 +3735,8 @@
 (defn ontouchcancel
   "Property.
 
-  The ontouchcancel property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes touchcancel events.
+  The ontouchcancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes touchcancel events.
 
   `var cancelHandler = someElement.ontouchcancel;`
 
@@ -3766,8 +3747,8 @@
 (defn set-ontouchcancel!
   "Property.
 
-  The ontouchcancel property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes touchcancel events.
+  The ontouchcancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes touchcancel events.
 
   `var cancelHandler = someElement.ontouchcancel;`
 
@@ -3778,8 +3759,8 @@
 (defn ontouchstart
   "Property.
 
-  The ontouchstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes touchstart events.
+  The ontouchstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes touchstart events.
 
   `var startHandler = someElement.ontouchstart;`
 
@@ -3790,8 +3771,8 @@
 (defn set-ontouchstart!
   "Property.
 
-  The ontouchstart property of the `web.GlobalEventHandlers` mixin
-  an `web.EventHandler` that processes touchstart events.
+  The ontouchstart property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes touchstart events.
 
   `var startHandler = someElement.ontouchstart;`
 
@@ -3802,8 +3783,8 @@
 (defn ontransitioncancel
   "Property.
 
-  The ontransitioncancel property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes transitioncancel events.
+  The ontransitioncancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes transitioncancel events.
 
   `var transitionCancelHandler = target.ontransitioncancel;
 
@@ -3816,8 +3797,8 @@
 (defn set-ontransitioncancel!
   "Property.
 
-  The ontransitioncancel property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes transitioncancel events.
+  The ontransitioncancel property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes transitioncancel events.
 
   `var transitionCancelHandler = target.ontransitioncancel;
 
@@ -3830,8 +3811,8 @@
 (defn ontransitionend
   "Property.
 
-  The ontransitionend property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes transitionend events.
+  The ontransitionend property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes transitionend events.
 
   `var transitionEndHandler = target.ontransitionend;
 
@@ -3844,8 +3825,8 @@
 (defn set-ontransitionend!
   "Property.
 
-  The ontransitionend property of the `web.GlobalEventHandlers`
-  is an `web.EventHandler` that processes transitionend events.
+  The ontransitionend property of the `web.dom.GlobalEventHandlers`
+  is an `EventHandler` that processes transitionend events.
 
   `var transitionEndHandler = target.ontransitionend;
 
@@ -3858,9 +3839,9 @@
 (defn onunhandledrejection
   "Property.
 
-  The onunhandledrejection property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing unhandledrejection events.
-  events are raised for unhandled `web.Promise` rejections.
+  The onunhandledrejection property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing unhandledrejection events.
+  events are raised for unhandled `js.Promise` rejections.
 
   `window.onunhandledrejection = function;`
 
@@ -3871,9 +3852,9 @@
 (defn set-onunhandledrejection!
   "Property.
 
-  The onunhandledrejection property of the `web.WindowEventHandlers`
-  is the `web.EventHandler` for processing unhandledrejection events.
-  events are raised for unhandled `web.Promise` rejections.
+  The onunhandledrejection property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing unhandledrejection events.
+  events are raised for unhandled `js.Promise` rejections.
 
   `window.onunhandledrejection = function;`
 
@@ -3884,15 +3865,15 @@
 (defn onunload
   "Property.
 
-  The onunload property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing unload events. These events
+  The onunload property of the `web.dom.WindowEventHandlers` mixin
+  the `EventHandler` for processing unload events. These events
   when the window is unloading its content and resources. The resource
   is processed after the unload event occurs.
 
   `window.addEventListener(\\\"unload\\\", function(event) { ... });
   window.onunload = function(event) { ... };
 
-  Typically, it is better to use `web.window.addEventListener()` and the unload event, instead of onunload.`
+  Typically, it is better to use `window.addEventListener()` and the unload event, instead of onunload.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this]
@@ -3901,15 +3882,15 @@
 (defn set-onunload!
   "Property.
 
-  The onunload property of the `web.WindowEventHandlers` mixin
-  the `web.EventHandler` for processing unload events. These events
+  The onunload property of the `web.dom.WindowEventHandlers` mixin
+  the `EventHandler` for processing unload events. These events
   when the window is unloading its content and resources. The resource
   is processed after the unload event occurs.
 
   `window.addEventListener(\\\"unload\\\", function(event) { ... });
   window.onunload = function(event) { ... };
 
-  Typically, it is better to use `web.window.addEventListener()` and the unload event, instead of onunload.`
+  Typically, it is better to use `window.addEventListener()` and the unload event, instead of onunload.`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this val]
@@ -3918,10 +3899,10 @@
 (defn onuserproximity
   "Property.
 
-  The Window.onuserproxymity property represents an `web.EventHandler`,
+  The Window.onuserproxymity property represents an `EventHandler`,
   is a function to be called when the userproximity event occurs.
-  events are of type `web.UserProximityEvent` and occur when the
-  device sensor detects that an object becomes nearby.
+  events are of type `web.other.UserProximityEvent` and occur when
+  the device sensor detects that an object becomes nearby.
 
   `window.onuserproximity = eventHandler`
 
@@ -3932,10 +3913,10 @@
 (defn set-onuserproximity!
   "Property.
 
-  The Window.onuserproxymity property represents an `web.EventHandler`,
+  The Window.onuserproxymity property represents an `EventHandler`,
   is a function to be called when the userproximity event occurs.
-  events are of type `web.UserProximityEvent` and occur when the
-  device sensor detects that an object becomes nearby.
+  events are of type `web.other.UserProximityEvent` and occur when
+  the device sensor detects that an object becomes nearby.
 
   `window.onuserproximity = eventHandler`
 
@@ -4190,8 +4171,8 @@
 (defn onwheel
   "Property.
 
-  The onwheel property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes wheel events.
+  The onwheel property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes wheel events.
 
   `target.onwheel = functionRef;`
 
@@ -4202,8 +4183,8 @@
 (defn set-onwheel!
   "Property.
 
-  The onwheel property of the `web.GlobalEventHandlers` mixin is
-  `web.EventHandler` that processes wheel events.
+  The onwheel property of the `web.dom.GlobalEventHandlers` mixin
+  an `EventHandler` that processes wheel events.
 
   `target.onwheel = functionRef;`
 
@@ -4215,7 +4196,7 @@
   "Property.
 
   The `web.Window` interface's opener property returns a reference
-  the window that opened the window using `web.open()`.
+  the window that opened the window using `open()`.
 
   `openerWindow = window.opener;`
 
@@ -4227,7 +4208,7 @@
   "Property.
 
   The `web.Window` interface's opener property returns a reference
-  the window that opened the window using `web.open()`.
+  the window that opened the window using `open()`.
 
   `openerWindow = window.opener;`
 
@@ -4378,7 +4359,7 @@
 (defn performance
   "Property.
 
-  The `web.Window` interface's performance property returns a `performance.Performance`
+  The `web.Window` interface's performance property returns a `web.performance.Performance`
   which can be used to gather performance information about the
   document. It serves as the point of exposure for the Performance
   API, the High Resolution Time API, the Navigation Timing API,
@@ -4393,7 +4374,7 @@
 (defn set-performance!
   "Property.
 
-  The `web.Window` interface's performance property returns a `performance.Performance`
+  The `web.Window` interface's performance property returns a `web.performance.Performance`
   which can be used to gather performance information about the
   document. It serves as the point of exposure for the Performance
   API, the High Resolution Time API, the Navigation Timing API,
@@ -4626,7 +4607,7 @@
   the number of pixels that the document is currently scrolled
   This value is subpixel precise in modern browsers, meaning that
   isn't necessarily a whole number. You can get the number of pixels
-  document is scrolled vertically from the `web.scrollY` property.
+  document is scrolled vertically from the `scrollY` property.
 
   `var x = window.scrollX;`
 
@@ -4641,7 +4622,7 @@
   the number of pixels that the document is currently scrolled
   This value is subpixel precise in modern browsers, meaning that
   isn't necessarily a whole number. You can get the number of pixels
-  document is scrolled vertically from the `web.scrollY` property.
+  document is scrolled vertically from the `scrollY` property.
 
   `var x = window.scrollX;`
 
@@ -4677,13 +4658,13 @@
   "Property.
 
   The Window.self read-only property returns the window itself,
-  a `web.WindowProxy`. It can be used with dot notation on a window
+  a `WindowProxy`. It can be used with dot notation on a window
   (that is, window.self) or standalone (self). The advantage of
   standalone notation is that a similar notation exists for non-window
   such as in Web Workers. By using self, you can refer to the global
   in a way that will work not only in a window context (self will
   to window.self) but also in a worker context (self will then
-  to `web.WorkerGlobalScope.self`).
+  to `WorkerGlobalScope.self`).
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/self`"
   [this]
@@ -4692,12 +4673,10 @@
 (defn session-storage
   "Property.
 
-  The sessionStorage property allows you to access a session `web.Storage`
-  for the current origin. sessionStorage is similar to `web.localStorage`;
-  only difference is while data stored in localStorage has no expiration
-  data stored in sessionStorage gets cleared when the page session
-  A page session lasts for as long as the browser is open and survives
-  page reloads and restores.
+  The sessionStorage property accesses a session `web.storage.Storage`
+  for the current origin. sessionStorage is similar to `localStorage`;
+  difference is that while data in localStorage doesn't expire,
+  in sessionStorage is cleared when the page session ends.
 
   `// Save data to sessionStorage
   sessionStorage.setItem('key', 'value');
@@ -4718,12 +4697,10 @@
 (defn set-session-storage!
   "Property.
 
-  The sessionStorage property allows you to access a session `web.Storage`
-  for the current origin. sessionStorage is similar to `web.localStorage`;
-  only difference is while data stored in localStorage has no expiration
-  data stored in sessionStorage gets cleared when the page session
-  A page session lasts for as long as the browser is open and survives
-  page reloads and restores.
+  The sessionStorage property accesses a session `web.storage.Storage`
+  for the current origin. sessionStorage is similar to `localStorage`;
+  difference is that while data in localStorage doesn't expire,
+  in sessionStorage is cleared when the page session ends.
 
   `// Save data to sessionStorage
   sessionStorage.setItem('key', 'value');
@@ -4765,8 +4742,8 @@
   "Property.
 
   The speechSynthesis read-only property of the Window object returns
-  `speech.SpeechSynthesis` object, which is the entry point into
-  Web Speech API speech synthesis functionality.
+  `web.speech.SpeechSynthesis` object, which is the entry point
+  using Web Speech API speech synthesis functionality.
 
   `var synth = window.speechSynthesis;`
 
@@ -4778,8 +4755,8 @@
   "Property.
 
   The speechSynthesis read-only property of the Window object returns
-  `speech.SpeechSynthesis` object, which is the entry point into
-  Web Speech API speech synthesis functionality.
+  `web.speech.SpeechSynthesis` object, which is the entry point
+  using Web Speech API speech synthesis functionality.
 
   `var synth = window.speechSynthesis;`
 
@@ -4889,8 +4866,8 @@
   "Property.
 
   The visualViewport read-only property of the `web.Window` interface
-  a `web.VisualViewport` object representing the visual viewport
-  a given window.
+  a `web.viewport.VisualViewport` object representing the visual
+  for a given window.
 
   `var visualViewport = Window.visualViewport`
 
@@ -4902,8 +4879,8 @@
   "Property.
 
   The visualViewport read-only property of the `web.Window` interface
-  a `web.VisualViewport` object representing the visual viewport
-  a given window.
+  a `web.viewport.VisualViewport` object representing the visual
+  for a given window.
 
   `var visualViewport = Window.visualViewport`
 
@@ -4942,52 +4919,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/windowState`"
   [this]
   (-> this (.windowState)))
-
-(defn content
-  "Property.
-
-  Returns a Window object for the primary content window. This
-  useful in XUL windows that have a <browser> (or tabbrowser or
-  with type=\\\"content-primary\\\" attribute on it — the most famous
-  is Firefox main window, browser.xul. In such cases, content returns
-  reference to the Window object for the document currently displayed
-  the browser. It is a shortcut for browserRef.contentWindow.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/content`"
-  [this]
-  (-> this (.content)))
-
-(defn set-content!
-  "Property.
-
-  Returns a Window object for the primary content window. This
-  useful in XUL windows that have a <browser> (or tabbrowser or
-  with type=\\\"content-primary\\\" attribute on it — the most famous
-  is Firefox main window, browser.xul. In such cases, content returns
-  reference to the Window object for the document currently displayed
-  the browser. It is a shortcut for browserRef.contentWindow.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/content`"
-  [this val]
-  (aset this "content" val))
-
-(defn orientation
-  "Property.
-
-  Returns the orientation in degrees (in 90-degree increments)
-  the viewport relative to the device's natural orientation.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation`"
-  [this]
-  (-> this (.orientation)))
-
-(defn set-orientation!
-  "Property.
-
-  Returns the orientation in degrees (in 90-degree increments)
-  the viewport relative to the device's natural orientation.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation`"
-  [this val]
-  (aset this "orientation" val))
 

@@ -11,6 +11,18 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/WheelEvent`"
   js/WheelEvent)
 
+(defn delta-x
+  "Property.
+
+  The WheelEvent.deltaX read-only property is a double representing
+  horizontal scroll amount in the `WheelEvent.deltaMode` unit.
+
+  `var dX = event.deltaX;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaX`"
+  [this]
+  (-> this (.deltaX)))
+
 (defn delta-mode
   "Property.
 
@@ -24,23 +36,11 @@
   [this]
   (-> this (.deltaMode)))
 
-(defn delta-x
-  "Property.
-
-  The WheelEvent.deltaX read-only property is a double representing
-  horizontal scroll amount in the `web.WheelEvent.deltaMode` unit.
-
-  `var dX = event.deltaX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaX`"
-  [this]
-  (-> this (.deltaX)))
-
 (defn delta-y
   "Property.
 
   The WheelEvent.deltaY read-only property is a double representing
-  vertical scroll amount in the `web.WheelEvent.deltaMode` unit.
+  vertical scroll amount in the `WheelEvent.deltaMode` unit.
 
   `var dY = event.deltaY;`
 
@@ -52,7 +52,7 @@
   "Property.
 
   The WheelEvent.deltaZ read-only property is a double representing
-  scroll amount along the z-axis, in the `web.WheelEvent.deltaMode`
+  scroll amount along the z-axis, in the `WheelEvent.deltaMode`
 
   `var dZ = event.deltaZ;`
 

@@ -29,7 +29,7 @@
   "Method.
 
   The MouseEvent.initMouseEvent() method initializes the value
-  a mouse event once it's been created (normally using the `web.Document.createEvent()`
+  a mouse event once it's been created (normally using the `Document.createEvent()`
 
   `event.initMouseEvent(type, canBubble, cancelable, view,
   detail, screenX, screenY, clientX, clientY,
@@ -43,7 +43,7 @@
 (defn alt-key
   "Property.
 
-  The MouseEvent.altKey read-only property is a `web.Boolean` that
+  The MouseEvent.altKey read-only property is a `js.Boolean` that
   whether the alt key was pressed or not when a given mouse event
 
   `var altKeyPressed = instanceOfMouseEvent.altKey`
@@ -108,9 +108,8 @@
 (defn ctrl-key
   "Property.
 
-  The MouseEvent.ctrlKey read-only property is a `web.Boolean`
-  indicates whether the ctrl key was pressed or not when a given
-  event occurs.
+  The MouseEvent.ctrlKey read-only property is a `js.Boolean` that
+  whether the ctrl key was pressed or not when a given mouse event
 
   `var ctrlKeyPressed = instanceOfMouseEvent.ctrlKey`
 
@@ -121,9 +120,8 @@
 (defn meta-key
   "Property.
 
-  The MouseEvent.metaKey read-only property is a `web.Boolean`
-  indicates whether the meta key was pressed or not when a given
-  event occurs.
+  The MouseEvent.metaKey read-only property is a `js.Boolean` that
+  whether the meta key was pressed or not when a given mouse event
 
   `var metaKeyPressed = instanceOfMouseEvent.metaKey`
 
@@ -286,7 +284,7 @@
 (defn shift-key
   "Property.
 
-  The MouseEvent.shiftKey read-only property is a `web.Boolean`
+  The MouseEvent.shiftKey read-only property is a `js.Boolean`
   indicates whether the shift key was pressed or not when a given
   event occurs.
 
@@ -367,47 +365,11 @@
 
   The MouseEvent.which read-only property indicates which button
   pressed on the mouse to trigger the event. The standard alternatives
-  this property are `web.MouseEvent.button` and `web.MouseEvent.buttons`.
+  this property are `MouseEvent.button` and `MouseEvent.buttons`.
 
   `var buttonPressed = instanceOfMouseEvent.which`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/which`"
   [this]
   (-> this (.which)))
-
-(defn x
-  "Property.
-
-  The MouseEvent.x property is an alias for the `web.MouseEvent.clientX`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x`"
-  [this]
-  (-> this (.x)))
-
-(defn set-x!
-  "Property.
-
-  The MouseEvent.x property is an alias for the `web.MouseEvent.clientX`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x`"
-  [this val]
-  (aset this "x" val))
-
-(defn y
-  "Property.
-
-  The MouseEvent.y property is an alias for the `web.MouseEvent.clientY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y`"
-  [this]
-  (-> this (.y)))
-
-(defn set-y!
-  "Property.
-
-  The MouseEvent.y property is an alias for the `web.MouseEvent.clientY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y`"
-  [this val]
-  (aset this "y" val))
 

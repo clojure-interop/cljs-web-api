@@ -26,6 +26,36 @@
   [this ]
   (-> this (.getCoalescedEvents)))
 
+(defn pointer-id
+  "Property.
+
+  The pointerId read-only property of the `web.PointerEvent` interface
+  an identifier assigned to a given pointer event. The identifier
+  unique, being different from the identifiers of all other active
+  events. Since the value may be randomly generated, it is not
+  to convey any particular meaning.
+
+  `var id = pointerEvent.pointerId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId`"
+  [this]
+  (-> this (.pointerId)))
+
+(defn set-pointer-id!
+  "Property.
+
+  The pointerId read-only property of the `web.PointerEvent` interface
+  an identifier assigned to a given pointer event. The identifier
+  unique, being different from the identifiers of all other active
+  events. Since the value may be randomly generated, it is not
+  to convey any particular meaning.
+
+  `var id = pointerEvent.pointerId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId`"
+  [this val]
+  (aset this "pointerId" val))
+
 (defn height
   "Property.
 
@@ -81,36 +111,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary`"
   [this val]
   (aset this "isPrimary" val))
-
-(defn pointer-id
-  "Property.
-
-  The pointerId read-only property of the `web.PointerEvent` interface
-  an identifier assigned to a given pointer event. The identifier
-  unique, being different from the identifiers of all other active
-  events. Since the value may be randomly generated, it is not
-  to convey any particular meaning.
-
-  `var id = pointerEvent.pointerId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId`"
-  [this]
-  (-> this (.pointerId)))
-
-(defn set-pointer-id!
-  "Property.
-
-  The pointerId read-only property of the `web.PointerEvent` interface
-  an identifier assigned to a given pointer event. The identifier
-  unique, being different from the identifiers of all other active
-  events. Since the value may be randomly generated, it is not
-  to convey any particular meaning.
-
-  `var id = pointerEvent.pointerId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId`"
-  [this val]
-  (aset this "pointerId" val))
 
 (defn pointer-type
   "Property.

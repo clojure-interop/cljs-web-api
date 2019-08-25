@@ -32,6 +32,32 @@
   [this ]
   (-> this (.toRange)))
 
+(defn start-container
+  "Property.
+
+  The startContainer property of the `web.StaticRange` interface
+  the start `web.Node` for the range.
+
+  `var node = staticNode.startContainer
+  staticNode.startContainer = startContainer`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startContainer`"
+  [this]
+  (-> this (.startContainer)))
+
+(defn set-start-container!
+  "Property.
+
+  The startContainer property of the `web.StaticRange` interface
+  the start `web.Node` for the range.
+
+  `var node = staticNode.startContainer
+  staticNode.startContainer = startContainer`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startContainer`"
+  [this val]
+  (aset this "startContainer" val))
+
 (defn collapsed
   "Property.
 
@@ -107,32 +133,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/endOffset`"
   [this val]
   (aset this "endOffset" val))
-
-(defn start-container
-  "Property.
-
-  The startContainer property of the `web.StaticRange` interface
-  the start `web.Node` for the range.
-
-  `var node = staticNode.startContainer
-  staticNode.startContainer = startContainer`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startContainer`"
-  [this]
-  (-> this (.startContainer)))
-
-(defn set-start-container!
-  "Property.
-
-  The startContainer property of the `web.StaticRange` interface
-  the start `web.Node` for the range.
-
-  `var node = staticNode.startContainer
-  staticNode.startContainer = startContainer`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startContainer`"
-  [this val]
-  (aset this "startContainer" val))
 
 (defn start-offset
   "Property.

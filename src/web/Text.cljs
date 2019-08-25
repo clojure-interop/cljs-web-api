@@ -9,7 +9,7 @@
 (def constructor
   "Constructor.
 
-  The Text() constructor returns a newly created `web.Text` object with the optional `dom.DOMString` given in parameter as its textual content.
+  The Text() constructor returns a newly created `web.Text` object with the optional `web.dom.DOMString` given in parameter as its textual content.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/Text`"
   js/Text)
@@ -31,45 +31,16 @@
 (defn split-text
   "Method.
 
-  The Text.splitText() method breaks the `web.Text` node into two
-  at the specified offset, keeping both nodes in the tree as siblings.
-
-  `newNode = textNode.splitText(offset)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/splitText`"
-  [this offset]
-  (-> this (.splitText offset)))
-
-(defn assigned-slot
-  "Property.
-
-  The assignedSlot property of the `web.Text` interface returns
-  `html.HTMLSlotElement` object associated with the element.
-
-  `var htmlSlotElement = text.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
-  [this]
-  (-> this (.assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot property of the `web.Text` interface returns
-  `html.HTMLSlotElement` object associated with the element.
-
-  `var htmlSlotElement = text.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
+  Breaks the node into two nodes at a specified offset."
+  [this & args]
+  (apply (-> this .-splitText) (concat [this] args)))
 
 (defn is-element-content-whitespace
   "Property.
 
   The Text.isElementContentWhitespace read-only property returns
-  `web.Boolean` flag indicating whether or not the text node's
-  consists solely of whitespace.
+  `js.Boolean` flag indicating whether or not the text node's content
+  solely of whitespace.
 
   `b = textnode.isElementContentWhitespace;`
 
@@ -81,14 +52,40 @@
   "Property.
 
   The Text.isElementContentWhitespace read-only property returns
-  `web.Boolean` flag indicating whether or not the text node's
-  consists solely of whitespace.
+  `js.Boolean` flag indicating whether or not the text node's content
+  solely of whitespace.
 
   `b = textnode.isElementContentWhitespace;`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/isElementContentWhitespace`"
   [this val]
   (aset this "isElementContentWhitespace" val))
+
+(defn assigned-slot
+  "Property.
+
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
+
+  `var slotElement = elementInstance.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this]
+  (-> this (.assignedSlot)))
+
+(defn set-assigned-slot!
+  "Property.
+
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
+
+  `var slotElement = elementInstance.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this val]
+  (aset this "assignedSlot" val))
 
 (defn whole-text
   "Property.

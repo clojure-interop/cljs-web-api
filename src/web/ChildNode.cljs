@@ -3,12 +3,24 @@
   `web.Node` objects that can have a parent."
   (:refer-clojure :exclude [remove]))
 
+(defn remove
+  "Method.
+
+  The ChildNode.remove() method removes the object from the tree
+  belongs to.
+
+  `node.remove();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove`"
+  [this ]
+  (-> this (.remove)))
+
 (defn after
   "Method.
 
-  The ChildNode.after() method inserts a set of `web.Node` or `dom.DOMString`
+  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.after((Node or DOMString)... nodes);`
@@ -22,7 +34,7 @@
 
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
-  this ChildNode. `dom.DOMString` objects are inserted as equivalent
+  this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
   nodes.
 
   `[Throws, Unscopable]
@@ -32,24 +44,12 @@
   [this & args]
   (apply (-> this .-before) (concat [this] args)))
 
-(defn remove
-  "Method.
-
-  The ChildNode.remove() method removes the object from the tree
-  belongs to.
-
-  `node.remove();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove`"
-  [this ]
-  (-> this (.remove)))
-
 (defn replace-with
   "Method.
 
   The ChildNode.replaceWith() method replaces this ChildNode in
-  children list of its parent with a set of `web.Node` or `dom.DOMString`
-  `dom.DOMString` objects are inserted as equivalent `web.Text`
+  children list of its parent with a set of `web.Node` or `web.dom.DOMString`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
 
   `[Throws, Unscopable]
   void ChildNode.replaceWith((Node or DOMString)... nodes);`

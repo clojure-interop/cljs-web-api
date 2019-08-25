@@ -2,14 +2,63 @@
   "Element Events."
   (:refer-clojure :exclude []))
 
-(def afterscriptexecute
+(def cancel
   "Event.
 
-  The afterscriptexecute event is fired after a script has been
+  Fires on a <dialog> when the user instructs the browser that
+  wish to dismiss the current open dialog. For example, the browser
+  fire this event when the user presses the Esc key or clicks a
+  dialog\" button which is part of the browser's UI.
+  Also available via the oncancel property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event`"
+  "cancel")
 
-  "afterscriptexecute")
+(def copy
+  "Event.
+
+  The copy event fires when the user initiates a copy action through
+  browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event`"
+
+  "copy")
+
+(def compositionend
+  "Event.
+
+  The compositionend event is fired when a text composition system
+  as an input method editor completes or cancels the current composition
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event`"
+
+  "compositionend")
+
+(def blur
+  "Event.
+
+  The blur event fires when an element has lost focus. The main
+  between this event and `focusout` is that focusout bubbles while
+  does not.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event`"
+
+  "blur")
+
+(def fullscreenchange
+  "Event.
+
+  Sent to an Element when it transitions into or out of full-screen
+  Also available via the onfullscreenchange property."
+
+  "fullscreenchange")
+
+(def keydown
+  "Event.
+
+  Fired when a key is pressed.
+  Also available via the onkeydown property."
+
+  "keydown")
 
 (def auxclick
   "Event.
@@ -22,16 +71,25 @@
 
   "auxclick")
 
-(def blur
+(def touchcancel
   "Event.
 
-  The blur event fires when an element has lost focus. The main
-  between this event and `web.focusout` is that focusout bubbles
-  blur does not.
+  The touchcancel event is fired when one or more touch points
+  been disrupted in an implementation-specific manner (for example,
+  many touch points are created).
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event`"
 
-  "blur")
+  "touchcancel")
+
+(def afterscriptexecute
+  "Event.
+
+  The afterscriptexecute event is fired after a script has been
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event`"
+
+  "afterscriptexecute")
 
 (def click
   "Event.
@@ -43,16 +101,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event`"
 
   "click")
-
-(def compositionend
-  "Event.
-
-  The compositionend event is fired when a text composition system
-  as an input method editor completes or cancels the current composition
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event`"
-
-  "compositionend")
 
 (def compositionstart
   "Event.
@@ -86,16 +134,6 @@
 
   "contextmenu")
 
-(def copy
-  "Event.
-
-  The copy event fires when the user initiates a copy action through
-  browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event`"
-
-  "copy")
-
 (def cut
   "Event.
 
@@ -124,7 +162,7 @@
   or similar device is operated and the accumulated scroll amount
   over 1 line or 1 page since last event. It's represented by the
   interface. This event was only implemented by Firefox. You should
-  use the standard `web.wheel` event.
+  use the standard `wheel` event.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMMouseScroll_event`"
 
@@ -145,8 +183,8 @@
   "Event.
 
   The focus event fires when an element has received focus. The
-  difference between this event and `web.focusin` is that focusin
-  while focus does not.
+  difference between this event and `focusin` is that focusin bubbles
+  focus does not.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event`"
 
@@ -156,7 +194,7 @@
   "Event.
 
   The focusin event fires when an element is about to receive focus.
-  main difference between this event and `web.focus` is that focusin
+  main difference between this event and `focus` is that focusin
   while focus does not.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/focusin_event`"
@@ -167,7 +205,7 @@
   "Event.
 
   The focusout event fires when an element is about to lose focus.
-  main difference between this event and `web.blur` is that focusout
+  main difference between this event and `blur` is that focusout
   while blur does not.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/focusout_event`"
@@ -204,15 +242,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturestart_event`"
 
   "gesturestart")
-
-(def keydown
-  "Event.
-
-  The keydown event is fired when a key is pressed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event`"
-
-  "keydown")
 
 (def mousedown
   "Event.
@@ -296,7 +325,7 @@
 
   The Firefox-only, non-standard, and obsolete MozMousePixelScroll
   is fired at an `web.Element` asynchronously when a mouse wheel
-  similar device is operated. It's represented by the `web.MouseScrollEvent`
+  similar device is operated. It's represented by the `web.deprecated.MouseScrollEvent`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/MozMousePixelScroll`"
 
@@ -422,22 +451,11 @@
   "Event.
 
   The show event is fired when a contextmenu event was fired on/bubbled
-  an element that has a `web.contextmenu`.
+  an element that has a `contextmenu`.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/show_event`"
 
   "show")
-
-(def touchcancel
-  "Event.
-
-  The touchcancel event is fired when one or more touch points
-  been disrupted in an implementation-specific manner (for example,
-  many touch points are created).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event`"
-
-  "touchcancel")
 
 (def touchstart
   "Event.
@@ -472,10 +490,10 @@
 (def webkitmouseforcedown
   "Event.
 
-  After a `web.mousedown` event has been fired at the element,
-  and when sufficient pressure has been applied to the mouse or
-  button to qualify as a \\\"force click,\\\" Safari begins sending
-  events to the element.
+  After a `mousedown` event has been fired at the element, if and
+  sufficient pressure has been applied to the mouse or trackpad
+  to qualify as a \\\"force click,\\\" Safari begins sending webkitmouseforcedown
+  to the element.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcedown_event`"
 
@@ -512,54 +530,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event`"
 
   "wheel")
-
-(def scroll
-  "Event.
-
-  The scroll event fires an element has been scrolled.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event`"
-
-  "scroll")
-
-(def dom-activate
-  "Event.
-
-  The DOMActivate event is fired at an element when it becomes
-  such as when it is clicked on using the mouse or a keypress is
-  to navigate to it.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMActivate_event`"
-
-  "DOMActivate")
-
-(def mouseleave
-  "Event.
-
-  The mouseleave event is fired at an `web.Element` when the cursor
-  a pointing device (usually a mouse) is moved out of it.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event`"
-
-  "mouseleave")
-
-(def touchend
-  "Event.
-
-  The touchend event fires when one or more touch points are removed
-  the touch surface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchend_event`"
-
-  "touchend")
-
-(def touchmove
-  "Event.
-
-  The touchmove event is fired when one or more touch points are
-  along the touch surface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchmove_event`"
-
-  "touchmove")
 
