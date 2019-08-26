@@ -19,59 +19,6 @@
   [this which-eye]
   (-> this (.getEyeParameters which-eye)))
 
-(defn get-pose
-  "Method.
-
-  The getPose() method of the `web.media.VRDisplay` interface returns
-  `web.vr.VRPose` object defining the future predicted pose of
-  VRDisplay as it will be when the current frame is actually presented.
-
-  `var myPose = vrDisplayInstance.getPose();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/getPose`"
-  [this ]
-  (-> this (.getPose)))
-
-(defn get-immediate-pose
-  "Method.
-
-  The getImmediatePose() method of the `web.media.VRDisplay` interface
-  a `web.vr.VRPose` object defining the current pose of the VRDisplay,
-  no prediction applied.
-
-  `var myImmediatePose = vrDisplayInstance.getImmediatePose();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/getImmediatePose`"
-  [this ]
-  (-> this (.getImmediatePose)))
-
-(defn cancel-animation-frame
-  "Method.
-
-  The cancelAnimationFrame() method of the `web.media.VRDisplay`
-  is a special implementation of `Window.cancelAnimationFrame`
-  unregisters callbacks registered with `VRDisplay.requestAnimationFrame()`.
-
-  `vrDisplayInstance.cancelAnimationFrame(handle);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/cancelAnimationFrame`"
-  [this handle]
-  (-> this (.cancelAnimationFrame handle)))
-
-(defn exit-present
-  "Method.
-
-  The exitPresent() method of the `web.media.VRDisplay` interface
-  the VRDisplay presenting a scene.
-
-  `vrDisplayInstance.exitPresent().then(function() {
-  // Do something after the presentation has ended
-  });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/exitPresent`"
-  [this & args]
-  (apply (-> this .-exitPresent) (concat [this] args)))
-
 (defn get-frame-data
   "Method.
 
@@ -96,6 +43,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/getLayers`"
   [this ]
   (-> this (.getLayers)))
+
+(defn reset-pose
+  "Method.
+
+  The resetPose() method of the `web.media.VRDisplay` interface
+  the pose for the VRDisplay, treating its current `VRPose.position`
+  `VRPose.orientation` as the \\\"origin/zero\\\" values.
+
+  `vrDisplayInstance.resetPose();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/resetPose`"
+  [this ]
+  (-> this (.resetPose)))
+
+(defn cancel-animation-frame
+  "Method.
+
+  The cancelAnimationFrame() method of the `web.media.VRDisplay`
+  is a special implementation of `Window.cancelAnimationFrame`
+  unregisters callbacks registered with `VRDisplay.requestAnimationFrame()`.
+
+  `vrDisplayInstance.cancelAnimationFrame(handle);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/cancelAnimationFrame`"
+  [this handle]
+  (-> this (.cancelAnimationFrame handle)))
 
 (defn request-animation-frame
   "Method.
@@ -125,18 +98,19 @@
   [this & args]
   (apply (-> this .-requestPresent) (concat [this] args)))
 
-(defn reset-pose
+(defn exit-present
   "Method.
 
-  The resetPose() method of the `web.media.VRDisplay` interface
-  the pose for the VRDisplay, treating its current `VRPose.position`
-  `VRPose.orientation` as the \\\"origin/zero\\\" values.
+  The exitPresent() method of the `web.media.VRDisplay` interface
+  the VRDisplay presenting a scene.
 
-  `vrDisplayInstance.resetPose();`
+  `vrDisplayInstance.exitPresent().then(function() {
+  // Do something after the presentation has ended
+  });`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/resetPose`"
-  [this ]
-  (-> this (.resetPose)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/exitPresent`"
+  [this & args]
+  (apply (-> this .-exitPresent) (concat [this] args)))
 
 (defn submit-frame
   "Method.
@@ -151,6 +125,46 @@
   [this ]
   (-> this (.submitFrame)))
 
+(defn get-pose
+  "Method.
+
+  The getPose() method of the `web.media.VRDisplay` interface returns
+  `web.vr.VRPose` object defining the future predicted pose of
+  VRDisplay as it will be when the current frame is actually presented.
+
+  `var myPose = vrDisplayInstance.getPose();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/getPose`"
+  [this ]
+  (-> this (.getPose)))
+
+(defn get-immediate-pose
+  "Method.
+
+  The getImmediatePose() method of the `web.media.VRDisplay` interface
+  a `web.vr.VRPose` object defining the current pose of the VRDisplay,
+  no prediction applied.
+
+  `var myImmediatePose = vrDisplayInstance.getImmediatePose();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/getImmediatePose`"
+  [this ]
+  (-> this (.getImmediatePose)))
+
+(defn hardware-unit-id
+  "Method.
+
+  The hardwareUnitId read-only property of the `VRDevice` interface
+  the distinct hardware ID for the overall hardware unit that this
+  is a part of. All devices that are part of the same physical
+  of hardware will have the same hardwareUnitId.
+
+  `var hardwareID = VRDevice.hardwareUnitId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/hardwareUnitId`"
+  [this ]
+  (-> this (.hardwareUnitId)))
+
 (defn capabilities
   "Property.
 
@@ -162,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/capabilities`"
   [this]
-  (-> this (.capabilities)))
+  (-> this (.-capabilities)))
 
 (defn set-capabilities!
   "Property.
@@ -190,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/depthFar`"
   [this]
-  (-> this (.depthFar)))
+  (-> this (.-depthFar)))
 
 (defn set-depth-far!
   "Property.
@@ -220,7 +234,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/depthNear`"
   [this]
-  (-> this (.depthNear)))
+  (-> this (.-depthNear)))
 
 (defn set-depth-near!
   "Property.
@@ -248,7 +262,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/displayId`"
   [this]
-  (-> this (.displayId)))
+  (-> this (.-displayId)))
 
 (defn set-display-id!
   "Property.
@@ -273,7 +287,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/displayName`"
   [this]
-  (-> this (.displayName)))
+  (-> this (.-displayName)))
 
 (defn set-display-name!
   "Property.
@@ -287,34 +301,6 @@
   [this val]
   (aset this "displayName" val))
 
-(defn hardware-unit-id
-  "Property.
-
-  The hardwareUnitId read-only property of the `VRDevice` interface
-  the distinct hardware ID for the overall hardware unit that this
-  is a part of. All devices that are part of the same physical
-  of hardware will have the same hardwareUnitId.
-
-  `var hardwareID = VRDevice.hardwareUnitId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/hardwareUnitId`"
-  [this]
-  (-> this (.hardwareUnitId)))
-
-(defn set-hardware-unit-id!
-  "Property.
-
-  The hardwareUnitId read-only property of the `VRDevice` interface
-  the distinct hardware ID for the overall hardware unit that this
-  is a part of. All devices that are part of the same physical
-  of hardware will have the same hardwareUnitId.
-
-  `var hardwareID = VRDevice.hardwareUnitId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/hardwareUnitId`"
-  [this val]
-  (aset this "hardwareUnitId" val))
-
 (defn is-connected
   "Property.
 
@@ -326,7 +312,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/isConnected`"
   [this]
-  (-> this (.isConnected)))
+  (-> this (.-isConnected)))
 
 (defn set-is-connected!
   "Property.
@@ -352,7 +338,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/isPresenting`"
   [this]
-  (-> this (.isPresenting)))
+  (-> this (.-isPresenting)))
 
 (defn set-is-presenting!
   "Property.
@@ -378,7 +364,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/stageParameters`"
   [this]
-  (-> this (.stageParameters)))
+  (-> this (.-stageParameters)))
 
 (defn set-stage-parameters!
   "Property.

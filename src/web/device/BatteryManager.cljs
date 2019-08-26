@@ -17,6 +17,37 @@
   [this & args]
   (apply (-> this .-addEventListener) (concat [this] args)))
 
+(defn remove-event-listener
+  "Method.
+
+  The EventTarget.removeEventListener() method removes from the
+  an event listener previously registered with `EventTarget.addEventListener()`.
+  event listener to be removed is identified using a combination
+  the event type, the event listener function itself, and various
+  options that may affect the matching process; see Matching event
+  for removal
+
+  `target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
+  [this & args]
+  (apply (-> this .-removeEventListener) (concat [this] args)))
+
+(defn dispatch-event
+  "Method.
+
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
+  invoking the affected `web.EventListener`s in the appropriate
+  The normal event processing rules (including the capturing and
+  bubbling phase) also apply to events dispatched manually with
+
+  `cancelled = !target.dispatchEvent(event)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
+  [this event]
+  (-> this (.dispatchEvent event)))
+
 (defn charging
   "Property.
 
@@ -29,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging`"
   [this]
-  (-> this (.charging)))
+  (-> this (.-charging)))
 
 (defn set-charging!
   "Property.
@@ -45,34 +76,6 @@
   [this val]
   (aset this "charging" val))
 
-(defn onchargingchange
-  "Property.
-
-  Specifies an event listener to receive chargingchange events.
-  events occur when the battery `charging` state is updated.
-
-  `battery.onchargingchange = funcRef
-
-  Where battery is a `web.device.BatteryManager` object, and funcRef is a function to be called when the chargingchange event occurs.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onchargingchange`"
-  [this]
-  (-> this (.onchargingchange)))
-
-(defn set-onchargingchange!
-  "Property.
-
-  Specifies an event listener to receive chargingchange events.
-  events occur when the battery `charging` state is updated.
-
-  `battery.onchargingchange = funcRef
-
-  Where battery is a `web.device.BatteryManager` object, and funcRef is a function to be called when the chargingchange event occurs.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onchargingchange`"
-  [this val]
-  (aset this "onchargingchange" val))
-
 (defn charging-time
   "Property.
 
@@ -85,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingTime`"
   [this]
-  (-> this (.chargingTime)))
+  (-> this (.-chargingTime)))
 
 (defn set-charging-time!
   "Property.
@@ -113,7 +116,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingTime`"
   [this]
-  (-> this (.dischargingTime)))
+  (-> this (.-dischargingTime)))
 
 (defn set-discharging-time!
   "Property.
@@ -141,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/level`"
   [this]
-  (-> this (.level)))
+  (-> this (.-level)))
 
 (defn set-level!
   "Property.
@@ -157,6 +160,34 @@
   [this val]
   (aset this "level" val))
 
+(defn onchargingchange
+  "Property.
+
+  Specifies an event listener to receive chargingchange events.
+  events occur when the battery `charging` state is updated.
+
+  `battery.onchargingchange = funcRef
+
+  Where battery is a `web.device.BatteryManager` object, and funcRef is a function to be called when the chargingchange event occurs.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onchargingchange`"
+  [this]
+  (-> this (.-onchargingchange)))
+
+(defn set-onchargingchange!
+  "Property.
+
+  Specifies an event listener to receive chargingchange events.
+  events occur when the battery `charging` state is updated.
+
+  `battery.onchargingchange = funcRef
+
+  Where battery is a `web.device.BatteryManager` object, and funcRef is a function to be called when the chargingchange event occurs.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onchargingchange`"
+  [this val]
+  (aset this "onchargingchange" val))
+
 (defn onchargingtimechange
   "Property.
 
@@ -169,7 +200,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onchargingtimechange`"
   [this]
-  (-> this (.onchargingtimechange)))
+  (-> this (.-onchargingtimechange)))
 
 (defn set-onchargingtimechange!
   "Property.
@@ -197,7 +228,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/ondischargingtimechange`"
   [this]
-  (-> this (.ondischargingtimechange)))
+  (-> this (.-ondischargingtimechange)))
 
 (defn set-ondischargingtimechange!
   "Property.
@@ -226,7 +257,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/onlevelchange`"
   [this]
-  (-> this (.onlevelchange)))
+  (-> this (.-onlevelchange)))
 
 (defn set-onlevelchange!
   "Property.

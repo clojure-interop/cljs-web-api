@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Report/body`"
   [this]
-  (-> this (.body)))
+  (-> this (.-body)))
 
 (defn set-body!
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Report/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Report/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.

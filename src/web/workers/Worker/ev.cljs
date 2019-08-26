@@ -10,6 +10,14 @@
 
   "message")
 
+(def messageerror
+  "Event.
+
+  Fired when a Worker object receives a message that can't be deserialized.
+  Also available via the onmessageerror property."
+
+  "messageerror")
+
 (def rejectionhandled
   "Event.
 
@@ -19,13 +27,12 @@
 
   "rejectionhandled")
 
-(def messageerror
+(def unhandledrejection
   "Event.
 
-  The messageerror event is fired on a `web.workers.Worker` object
-  it receives a message that can't be deserialized.
+  Sent when a JavaScript Promise is rejected but there is no handler
+  place to catch the rejection.
+  Also available using the onunhandledrejection event handler"
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worker/messageerror_event`"
-
-  "messageerror")
+  "unhandledrejection")
 

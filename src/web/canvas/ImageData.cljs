@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -83,7 +83,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.

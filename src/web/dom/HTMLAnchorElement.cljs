@@ -5,7 +5,7 @@
   manipulating the layout and presentation of such elements. This
   corresponds to <a> element; not to be confused with <link>, which
   represented by HTMLLinkElement)"
-  (:refer-clojure :exclude [hash]))
+  (:refer-clojure :exclude [hash type name]))
 
 (defn blur
   "Method.
@@ -18,6 +18,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/blur`"
   [this ]
   (-> this (.blur)))
+
+(defn focus
+  "Method.
+
+  The HTMLElement.focus() method sets focus on the specified element,
+  it can be focused. The focused element is the element which will
+  keyboard and similar events by default.
+
+  `element.focus(options); // Object parameter`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus`"
+  [this options]
+  (-> this (.focus options)))
 
 (defn to-string
   "Method.
@@ -38,7 +51,7 @@
   Is a DOMString representing a single character that switches
   focus to the hyperlink."
   [this]
-  (-> this (.accessKey)))
+  (-> this (.-accessKey)))
 
 (defn set-access-key!
   "Property.
@@ -47,20 +60,6 @@
   focus to the hyperlink."
   [this val]
   (aset this "accessKey" val))
-
-(defn charset
-  "Property.
-
-  Is a DOMString representing the character encoding of the linked"
-  [this]
-  (-> this (.charset)))
-
-(defn set-charset!
-  "Property.
-
-  Is a DOMString representing the character encoding of the linked"
-  [this val]
-  (aset this "charset" val))
 
 (defn download
   "Property.
@@ -77,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/download`"
   [this]
-  (-> this (.download)))
+  (-> this (.-download)))
 
 (defn set-download!
   "Property.
@@ -106,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
   [this]
-  (-> this (.hash)))
+  (-> this (.-hash)))
 
 (defn set-hash!
   "Property.
@@ -132,7 +131,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn set-host!
   "Property.
@@ -159,7 +158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hostname`"
   [this]
-  (-> this (.hostname)))
+  (-> this (.-hostname)))
 
 (defn set-hostname!
   "Property.
@@ -182,7 +181,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -194,17 +193,37 @@
   [this val]
   (aset this "href" val))
 
-(defn origin
+(defn hreflang
   "Property.
 
-  The HTMLHyperlinkElementUtils.origin read-only property is a
-  containing the Unicode serialization of the origin of the represented
-
-  `string = object.origin;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
+  Is a DOMString that reflects the hreflang HTML attribute, indicating
+  language of the linked resource."
   [this]
-  (-> this (.origin)))
+  (-> this (.-hreflang)))
+
+(defn set-hreflang!
+  "Property.
+
+  Is a DOMString that reflects the hreflang HTML attribute, indicating
+  language of the linked resource."
+  [this val]
+  (aset this "hreflang" val))
+
+(defn media
+  "Property.
+
+  Is a DOMString that reflects the media HTML attribute, indicating
+  intended media for the linked resource."
+  [this]
+  (-> this (.-media)))
+
+(defn set-media!
+  "Property.
+
+  Is a DOMString that reflects the media HTML attribute, indicating
+  intended media for the linked resource."
+  [this val]
+  (aset this "media" val))
 
 (defn password
   "Property.
@@ -217,7 +236,19 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/password`"
   [this]
-  (-> this (.password)))
+  (-> this (.-password)))
+
+(defn origin
+  "Property.
+
+  The HTMLHyperlinkElementUtils.origin read-only property is a
+  containing the Unicode serialization of the origin of the represented
+
+  `string = object.origin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
+  [this]
+  (-> this (.-origin)))
 
 (defn pathname
   "Property.
@@ -231,7 +262,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
   [this]
-  (-> this (.pathname)))
+  (-> this (.-pathname)))
 
 (defn set-pathname!
   "Property.
@@ -259,7 +290,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -286,7 +317,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.
@@ -313,7 +344,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/referrerPolicy`"
   [this]
-  (-> this (.referrerPolicy)))
+  (-> this (.-referrerPolicy)))
 
 (defn set-referrer-policy!
   "Property.
@@ -342,7 +373,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/rel`"
   [this]
-  (-> this (.rel)))
+  (-> this (.-rel)))
 
 (defn set-rel!
   "Property.
@@ -371,7 +402,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/relList`"
   [this]
-  (-> this (.relList)))
+  (-> this (.-relList)))
 
 (defn set-rel-list!
   "Property.
@@ -399,7 +430,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search`"
   [this]
-  (-> this (.search)))
+  (-> this (.-search)))
 
 (defn set-search!
   "Property.
@@ -415,6 +446,68 @@
   [this val]
   (aset this "search" val))
 
+(defn tabindex
+  "Property.
+
+  Is a long containing the position of the element in the tabbing
+  order for the current document."
+  [this]
+  (-> this (.-tabindex)))
+
+(defn set-tabindex!
+  "Property.
+
+  Is a long containing the position of the element in the tabbing
+  order for the current document."
+  [this val]
+  (aset this "tabindex" val))
+
+(defn target
+  "Property.
+
+  Is a DOMString that reflects the target HTML attribute, indicating
+  to display the linked resource."
+  [this]
+  (-> this (.-target)))
+
+(defn set-target!
+  "Property.
+
+  Is a DOMString that reflects the target HTML attribute, indicating
+  to display the linked resource."
+  [this val]
+  (aset this "target" val))
+
+(defn text
+  "Property.
+
+  Is a DOMString being a synonym for the Node.textContent property."
+  [this]
+  (-> this (.-text)))
+
+(defn set-text!
+  "Property.
+
+  Is a DOMString being a synonym for the Node.textContent property."
+  [this val]
+  (aset this "text" val))
+
+(defn type
+  "Property.
+
+  Is a DOMString that reflects the type HTML attribute, indicating
+  MIME type of the linked resource."
+  [this]
+  (-> this (.-type)))
+
+(defn set-type!
+  "Property.
+
+  Is a DOMString that reflects the type HTML attribute, indicating
+  MIME type of the linked resource."
+  [this val]
+  (aset this "type" val))
+
 (defn username
   "Property.
 
@@ -426,7 +519,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/username`"
   [this]
-  (-> this (.username)))
+  (-> this (.-username)))
 
 (defn set-username!
   "Property.
@@ -440,4 +533,84 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/username`"
   [this val]
   (aset this "username" val))
+
+(defn charset
+  "Property.
+
+  Is a DOMString representing the character encoding of the linked"
+  [this]
+  (-> this (.-charset)))
+
+(defn set-charset!
+  "Property.
+
+  Is a DOMString representing the character encoding of the linked"
+  [this val]
+  (aset this "charset" val))
+
+(defn coords
+  "Property.
+
+  Is a DOMString representing a comma-separated list of coordinates."
+  [this]
+  (-> this (.-coords)))
+
+(defn set-coords!
+  "Property.
+
+  Is a DOMString representing a comma-separated list of coordinates."
+  [this val]
+  (aset this "coords" val))
+
+(defn name
+  "Property.
+
+  Is a DOMString representing the anchor name."
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  Is a DOMString representing the anchor name."
+  [this val]
+  (aset this "name" val))
+
+(defn rev
+  "Property.
+
+  Is a DOMString representing that the rev HTML attribute, specifying
+  relationship of the link object to the target object.
+  Note: Currently the W3C HTML 5.2 spec states that rev is no
+  obsolete, whereas the WHATWG living standard still has it labeled
+  Until this discrepancy is resolved, you should still assume it
+  obsolete."
+  [this]
+  (-> this (.-rev)))
+
+(defn set-rev!
+  "Property.
+
+  Is a DOMString representing that the rev HTML attribute, specifying
+  relationship of the link object to the target object.
+  Note: Currently the W3C HTML 5.2 spec states that rev is no
+  obsolete, whereas the WHATWG living standard still has it labeled
+  Until this discrepancy is resolved, you should still assume it
+  obsolete."
+  [this val]
+  (aset this "rev" val))
+
+(defn shape
+  "Property.
+
+  Is a DOMString representing the shape of the active area."
+  [this]
+  (-> this (.-shape)))
+
+(defn set-shape!
+  "Property.
+
+  Is a DOMString representing the shape of the active area."
+  [this val]
+  (aset this "shape" val))
 

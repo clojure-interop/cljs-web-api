@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/aborted`"
   [this]
-  (-> this (.aborted)))
+  (-> this (.-aborted)))
 
 (defn set-aborted!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.

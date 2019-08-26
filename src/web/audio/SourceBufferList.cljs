@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBufferList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.
@@ -45,7 +45,7 @@
 
   The event handler for the addsourcebuffer event."
   [this]
-  (-> this (.onaddsourcebuffer)))
+  (-> this (.-onaddsourcebuffer)))
 
 (defn set-onaddsourcebuffer!
   "Property.
@@ -53,4 +53,18 @@
   The event handler for the addsourcebuffer event."
   [this val]
   (aset this "onaddsourcebuffer" val))
+
+(defn onremovesourcebuffer
+  "Property.
+
+  The event handler for the removesourcebuffer event."
+  [this]
+  (-> this (.-onremovesourcebuffer)))
+
+(defn set-onremovesourcebuffer!
+  "Property.
+
+  The event handler for the removesourcebuffer event."
+  [this val]
+  (aset this "onremovesourcebuffer" val))
 

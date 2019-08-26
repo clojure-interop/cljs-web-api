@@ -56,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/entries`"
   [this]
-  (-> this (.entries)))
+  (-> this (.-entries)))
 
 (defn set-entries!
   "Property.
@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/keys`"
   [this]
-  (-> this (.keys)))
+  (-> this (.-keys)))
 
 (defn set-keys!
   "Property.
@@ -109,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.
@@ -134,7 +134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/values`"
   [this]
-  (-> this (.values)))
+  (-> this (.-values)))
 
 (defn set-values!
   "Property.

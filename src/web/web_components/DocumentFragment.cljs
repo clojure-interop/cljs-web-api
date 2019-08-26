@@ -30,6 +30,28 @@
   [this selectors]
   (-> this (.querySelector selectors)))
 
+(defn query-selector-all
+  "Method.
+
+  The DocumentFragment.querySelectorAll() method returns a `web.NodeList`
+  elements within the `web.web-components.DocumentFragment` (using
+  pre-order traversal of the document's nodes) that matches the
+  group of selectors.
+
+  `elementList = documentframgment.querySelectorAll(selectors);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelectorAll`"
+  [this selectors]
+  (-> this (.querySelectorAll selectors)))
+
+(defn get-element-by-id
+  "Method.
+
+  Returns the first Element node within the DocumentFragment, in
+  order, that matches the specified ID."
+  [this & args]
+  (apply (-> this .-getElementById) (concat [this] args)))
+
 (defn append
   "Method.
 
@@ -57,20 +79,6 @@
   [this & args]
   (apply (-> this .-prepend) (concat [this] args)))
 
-(defn query-selector-all
-  "Method.
-
-  The DocumentFragment.querySelectorAll() method returns a `web.NodeList`
-  elements within the `web.web-components.DocumentFragment` (using
-  pre-order traversal of the document's nodes) that matches the
-  group of selectors.
-
-  `elementList = documentframgment.querySelectorAll(selectors);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelectorAll`"
-  [this selectors]
-  (-> this (.querySelectorAll selectors)))
-
 (defn children
   "Property.
 
@@ -82,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
   [this]
-  (-> this (.children)))
+  (-> this (.-children)))
 
 (defn set-children!
   "Property.
@@ -97,42 +105,6 @@
   [this val]
   (aset this "children" val))
 
-(defn child-element-count
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this]
-  (-> this (.childElementCount)))
-
-(defn set-child-element-count!
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this val]
-  (aset this "childElementCount" val))
-
 (defn first-element-child
   "Property.
 
@@ -143,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
   [this]
-  (-> this (.firstElementChild)))
+  (-> this (.-firstElementChild)))
 
 (defn set-first-element-child!
   "Property.
@@ -167,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
   [this]
-  (-> this (.lastElementChild)))
+  (-> this (.-lastElementChild)))
 
 (defn set-last-element-child!
   "Property.
@@ -180,4 +152,40 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
   [this val]
   (aset this "lastElementChild" val))
+
+(defn child-element-count
+  "Property.
+
+  The ParentNode.childElementCount read-only property returns an
+  long representing the number of child elements of the given element.
+
+  `var count = node.childElementCount;
+
+
+  count
+  The return value, which is an unsigned long (simply an integer) type.
+  node
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
+  [this]
+  (-> this (.-childElementCount)))
+
+(defn set-child-element-count!
+  "Property.
+
+  The ParentNode.childElementCount read-only property returns an
+  long representing the number of child elements of the given element.
+
+  `var count = node.childElementCount;
+
+
+  count
+  The return value, which is an unsigned long (simply an integer) type.
+  node
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
+  [this val]
+  (aset this "childElementCount" val))
 

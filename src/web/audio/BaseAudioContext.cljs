@@ -17,17 +17,6 @@
   [this ]
   (-> this (.createAnalyser)))
 
-(defn create-buffer
-  "Method.
-
-  An `web.audio.AudioBuffer` configured based on the specified
-
-  `var buffer = baseAudioContext.createBuffer(numOfchannels, length, sampleRate);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBuffer`"
-  [this num-ofchannels length sample-rate]
-  (-> this (.createBuffer num-ofchannels length sample-rate)))
-
 (defn create-biquad-filter
   "Method.
 
@@ -39,6 +28,17 @@
   [this ]
   (-> this (.createBiquadFilter)))
 
+(defn create-buffer
+  "Method.
+
+  An `web.audio.AudioBuffer` configured based on the specified
+
+  `var buffer = baseAudioContext.createBuffer(numOfchannels, length, sampleRate);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBuffer`"
+  [this num-ofchannels length sample-rate]
+  (-> this (.createBuffer num-ofchannels length sample-rate)))
+
 (defn create-buffer-source
   "Method.
 
@@ -49,6 +49,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBufferSource`"
   [this ]
   (-> this (.createBufferSource)))
+
+(defn create-constant-source
+  "Method.
+
+  The createConstantSource() property of the `web.audio.BaseAudioContext`
+  creates a `web.audio.ConstantSourceNode` object, which is an
+  source that continuously outputs a monaural (one-channel) sound
+  whose samples all have the same value.
+
+  `var constantSourceNode = AudioContext.createConstantSource()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createConstantSource`"
+  [this ]
+  (-> this (.createConstantSource)))
 
 (defn create-channel-merger
   "Method.
@@ -71,20 +85,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createChannelSplitter`"
   [this number-of-outputs]
   (-> this (.createChannelSplitter number-of-outputs)))
-
-(defn create-constant-source
-  "Method.
-
-  The createConstantSource() property of the `web.audio.BaseAudioContext`
-  creates a `web.audio.ConstantSourceNode` object, which is an
-  source that continuously outputs a monaural (one-channel) sound
-  whose samples all have the same value.
-
-  `var constantSourceNode = AudioContext.createConstantSource()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createConstantSource`"
-  [this ]
-  (-> this (.createConstantSource)))
 
 (defn create-convolver
   "Method.
@@ -260,7 +260,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/audioWorklet`"
   [this]
-  (-> this (.audioWorklet)))
+  (-> this (.-audioWorklet)))
 
 (defn set-audio-worklet!
   "Property.
@@ -276,32 +276,6 @@
   [this val]
   (aset this "audioWorklet" val))
 
-(defn onstatechange
-  "Property.
-
-  The following snippet is taken from our AudioContext states demo
-  it running live.) The onstatechange hander is used to log the
-  `state` to the console every time it changes.
-
-  `baseAudioContext.onstatechange = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange`"
-  [this]
-  (-> this (.onstatechange)))
-
-(defn set-onstatechange!
-  "Property.
-
-  The following snippet is taken from our AudioContext states demo
-  it running live.) The onstatechange hander is used to log the
-  `state` to the console every time it changes.
-
-  `baseAudioContext.onstatechange = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange`"
-  [this val]
-  (aset this "onstatechange" val))
-
 (defn current-time
   "Property.
 
@@ -314,7 +288,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/currentTime`"
   [this]
-  (-> this (.currentTime)))
+  (-> this (.-currentTime)))
 
 (defn set-current-time!
   "Property.
@@ -339,7 +313,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination`"
   [this]
-  (-> this (.destination)))
+  (-> this (.-destination)))
 
 (defn set-destination!
   "Property.
@@ -361,7 +335,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/listener`"
   [this]
-  (-> this (.listener)))
+  (-> this (.-listener)))
 
 (defn set-listener!
   "Property.
@@ -385,7 +359,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/sampleRate`"
   [this]
-  (-> this (.sampleRate)))
+  (-> this (.-sampleRate)))
 
 (defn set-sample-rate!
   "Property.
@@ -409,7 +383,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
 
 (defn set-state!
   "Property.
@@ -421,4 +395,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state`"
   [this val]
   (aset this "state" val))
+
+(defn onstatechange
+  "Property.
+
+  The following snippet is taken from our AudioContext states demo
+  it running live.) The onstatechange hander is used to log the
+  `state` to the console every time it changes.
+
+  `baseAudioContext.onstatechange = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange`"
+  [this]
+  (-> this (.-onstatechange)))
+
+(defn set-onstatechange!
+  "Property.
+
+  The following snippet is taken from our AudioContext states demo
+  it running live.) The onstatechange hander is used to log the
+  `state` to the console every time it changes.
+
+  `baseAudioContext.onstatechange = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/onstatechange`"
+  [this val]
+  (aset this "onstatechange" val))
 

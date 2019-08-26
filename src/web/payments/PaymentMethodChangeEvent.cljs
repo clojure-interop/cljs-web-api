@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodDetails`"
   [this]
-  (-> this (.methodDetails)))
+  (-> this (.-methodDetails)))
 
 (defn set-method-details!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodName`"
   [this]
-  (-> this (.methodName)))
+  (-> this (.-methodName)))
 
 (defn set-method-name!
   "Property.

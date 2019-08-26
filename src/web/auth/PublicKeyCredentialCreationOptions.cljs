@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/rp`"
   [this]
-  (-> this (.rp)))
+  (-> this (.-rp)))
 
 (defn set-rp!
   "Property.
@@ -30,59 +30,31 @@
   [this val]
   (aset this "rp" val))
 
-(defn authenticator-selection
+(defn user
   "Property.
 
-  authenticatorSelection, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object giving criteria to filter out the authenticators
-  be used for the creation operation.
+  The user property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object describing the user account for which the credentials
+  generated (via `navigator.credentials.create()`).
 
-  `authenticatorSelection = publicKeyCredentialCreationOptions.authenticatorSelection`
+  `userAccount = publicKeyCredentialCreationOptions.user`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/authenticatorSelection`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/user`"
   [this]
-  (-> this (.authenticatorSelection)))
+  (-> this (.-user)))
 
-(defn set-authenticator-selection!
+(defn set-user!
   "Property.
 
-  authenticatorSelection, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object giving criteria to filter out the authenticators
-  be used for the creation operation.
+  The user property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object describing the user account for which the credentials
+  generated (via `navigator.credentials.create()`).
 
-  `authenticatorSelection = publicKeyCredentialCreationOptions.authenticatorSelection`
+  `userAccount = publicKeyCredentialCreationOptions.user`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/authenticatorSelection`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/user`"
   [this val]
-  (aset this "authenticatorSelection" val))
-
-(defn attestation
-  "Property.
-
-  attestation is an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  This is a string whose value indicates the preference regarding
-  attestation transport, between the authenticator, the client
-  the relying party.
-
-  `attestation = publicKeyCredentialCreationOptions.attestation`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/attestation`"
-  [this]
-  (-> this (.attestation)))
-
-(defn set-attestation!
-  "Property.
-
-  attestation is an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  This is a string whose value indicates the preference regarding
-  attestation transport, between the authenticator, the client
-  the relying party.
-
-  `attestation = publicKeyCredentialCreationOptions.attestation`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/attestation`"
-  [this val]
-  (aset this "attestation" val))
+  (aset this "user" val))
 
 (defn challenge
   "Property.
@@ -98,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/challenge`"
   [this]
-  (-> this (.challenge)))
+  (-> this (.-challenge)))
 
 (defn set-challenge!
   "Property.
@@ -116,60 +88,6 @@
   [this val]
   (aset this "challenge" val))
 
-(defn exclude-credentials
-  "Property.
-
-  excludeCredentials, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an `js.Array` whose elements are descriptors for the public
-  already existing for a given user. This is provided by the relying
-  server if it wants to prevent creation of new credentials for
-  existing user.
-
-  `excludeCredentials = publicKeyCredentialCreationOptions.excludeCredentials`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/excludeCredentials`"
-  [this]
-  (-> this (.excludeCredentials)))
-
-(defn set-exclude-credentials!
-  "Property.
-
-  excludeCredentials, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an `js.Array` whose elements are descriptors for the public
-  already existing for a given user. This is provided by the relying
-  server if it wants to prevent creation of new credentials for
-  existing user.
-
-  `excludeCredentials = publicKeyCredentialCreationOptions.excludeCredentials`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/excludeCredentials`"
-  [this val]
-  (aset this "excludeCredentials" val))
-
-(defn extensions
-  "Property.
-
-  extensions, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object providing the client extensions and their input
-
-  `extensions = publicKeyCredentialCreationOptions.extensions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/extensions`"
-  [this]
-  (-> this (.extensions)))
-
-(defn set-extensions!
-  "Property.
-
-  extensions, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object providing the client extensions and their input
-
-  `extensions = publicKeyCredentialCreationOptions.extensions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/extensions`"
-  [this val]
-  (aset this "extensions" val))
-
 (defn pub-key-cred-params
   "Property.
 
@@ -182,7 +100,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/pubKeyCredParams`"
   [this]
-  (-> this (.pubKeyCredParams)))
+  (-> this (.-pubKeyCredParams)))
 
 (defn set-pub-key-cred-params!
   "Property.
@@ -209,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/timeout`"
   [this]
-  (-> this (.timeout)))
+  (-> this (.-timeout)))
 
 (defn set-timeout!
   "Property.
@@ -224,29 +142,111 @@
   [this val]
   (aset this "timeout" val))
 
-(defn user
+(defn exclude-credentials
   "Property.
 
-  The user property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object describing the user account for which the credentials
-  generated (via `navigator.credentials.create()`).
+  excludeCredentials, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an `js.Array` whose elements are descriptors for the public
+  already existing for a given user. This is provided by the relying
+  server if it wants to prevent creation of new credentials for
+  existing user.
 
-  `userAccount = publicKeyCredentialCreationOptions.user`
+  `excludeCredentials = publicKeyCredentialCreationOptions.excludeCredentials`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/user`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/excludeCredentials`"
   [this]
-  (-> this (.user)))
+  (-> this (.-excludeCredentials)))
 
-(defn set-user!
+(defn set-exclude-credentials!
   "Property.
 
-  The user property of the `web.auth.PublicKeyCredentialCreationOptions`
-  is an object describing the user account for which the credentials
-  generated (via `navigator.credentials.create()`).
+  excludeCredentials, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an `js.Array` whose elements are descriptors for the public
+  already existing for a given user. This is provided by the relying
+  server if it wants to prevent creation of new credentials for
+  existing user.
 
-  `userAccount = publicKeyCredentialCreationOptions.user`
+  `excludeCredentials = publicKeyCredentialCreationOptions.excludeCredentials`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/user`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/excludeCredentials`"
   [this val]
-  (aset this "user" val))
+  (aset this "excludeCredentials" val))
+
+(defn authenticator-selection
+  "Property.
+
+  authenticatorSelection, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object giving criteria to filter out the authenticators
+  be used for the creation operation.
+
+  `authenticatorSelection = publicKeyCredentialCreationOptions.authenticatorSelection`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/authenticatorSelection`"
+  [this]
+  (-> this (.-authenticatorSelection)))
+
+(defn set-authenticator-selection!
+  "Property.
+
+  authenticatorSelection, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object giving criteria to filter out the authenticators
+  be used for the creation operation.
+
+  `authenticatorSelection = publicKeyCredentialCreationOptions.authenticatorSelection`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/authenticatorSelection`"
+  [this val]
+  (aset this "authenticatorSelection" val))
+
+(defn attestation
+  "Property.
+
+  attestation is an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  This is a string whose value indicates the preference regarding
+  attestation transport, between the authenticator, the client
+  the relying party.
+
+  `attestation = publicKeyCredentialCreationOptions.attestation`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/attestation`"
+  [this]
+  (-> this (.-attestation)))
+
+(defn set-attestation!
+  "Property.
+
+  attestation is an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  This is a string whose value indicates the preference regarding
+  attestation transport, between the authenticator, the client
+  the relying party.
+
+  `attestation = publicKeyCredentialCreationOptions.attestation`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/attestation`"
+  [this val]
+  (aset this "attestation" val))
+
+(defn extensions
+  "Property.
+
+  extensions, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object providing the client extensions and their input
+
+  `extensions = publicKeyCredentialCreationOptions.extensions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/extensions`"
+  [this]
+  (-> this (.-extensions)))
+
+(defn set-extensions!
+  "Property.
+
+  extensions, an optional property of the `web.auth.PublicKeyCredentialCreationOptions`
+  is an object providing the client extensions and their input
+
+  `extensions = publicKeyCredentialCreationOptions.extensions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions/extensions`"
+  [this val]
+  (aset this "extensions" val))
 

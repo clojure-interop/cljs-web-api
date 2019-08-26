@@ -10,7 +10,7 @@
   Is a DOMString which represents an enumerated attribute indicating
   of the caption with respect to the table."
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.

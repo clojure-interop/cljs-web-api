@@ -114,7 +114,7 @@
   4000–4999
   Available for use by applications."
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn set-code!
   "Property.
@@ -207,4 +207,36 @@
   Available for use by applications."
   [this val]
   (aset this "code" val))
+
+(defn reason
+  "Property.
+
+  Returns a DOMString indicating the reason the server closed the
+  This is specific to the particular server and sub-protocol."
+  [this]
+  (-> this (.-reason)))
+
+(defn set-reason!
+  "Property.
+
+  Returns a DOMString indicating the reason the server closed the
+  This is specific to the particular server and sub-protocol."
+  [this val]
+  (aset this "reason" val))
+
+(defn was-clean
+  "Property.
+
+  Returns a Boolean that Indicates whether or not the connection
+  cleanly closed."
+  [this]
+  (-> this (.-wasClean)))
+
+(defn set-was-clean!
+  "Property.
+
+  Returns a Boolean that Indicates whether or not the connection
+  cleanly closed."
+  [this val]
+  (aset this "wasClean" val))
 

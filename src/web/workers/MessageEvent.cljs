@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -58,6 +58,30 @@
   [this val]
   (aset this "data" val))
 
+(defn origin
+  "Property.
+
+  The origin read-only property of the `web.workers.MessageEvent`
+  is a `web.USVString` representing the origin of the message emitter.
+
+  `var origin = messageEvent.origin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin`"
+  [this]
+  (-> this (.-origin)))
+
+(defn set-origin!
+  "Property.
+
+  The origin read-only property of the `web.workers.MessageEvent`
+  is a `web.USVString` representing the origin of the message emitter.
+
+  `var origin = messageEvent.origin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin`"
+  [this val]
+  (aset this "origin" val))
+
 (defn last-event-id
   "Property.
 
@@ -68,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/lastEventId`"
   [this]
-  (-> this (.lastEventId)))
+  (-> this (.-lastEventId)))
 
 (defn set-last-event-id!
   "Property.
@@ -82,29 +106,31 @@
   [this val]
   (aset this "lastEventId" val))
 
-(defn origin
+(defn source
   "Property.
 
-  The origin read-only property of the `web.workers.MessageEvent`
-  is a `web.USVString` representing the origin of the message emitter.
+  The source read-only property of the `web.workers.MessageEvent`
+  is a MessageEventSource (which can be a `WindowProxy`, `web.other.MessagePort`,
+  `web.workers.ServiceWorker` object) representing the message
 
-  `var origin = messageEvent.origin;`
+  `let mySource = messageEvent.source;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-source)))
 
-(defn set-origin!
+(defn set-source!
   "Property.
 
-  The origin read-only property of the `web.workers.MessageEvent`
-  is a `web.USVString` representing the origin of the message emitter.
+  The source read-only property of the `web.workers.MessageEvent`
+  is a MessageEventSource (which can be a `WindowProxy`, `web.other.MessagePort`,
+  `web.workers.ServiceWorker` object) representing the message
 
-  `var origin = messageEvent.origin;`
+  `let mySource = messageEvent.source;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source`"
   [this val]
-  (aset this "origin" val))
+  (aset this "source" val))
 
 (defn ports
   "Property.
@@ -119,7 +145,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports`"
   [this]
-  (-> this (.ports)))
+  (-> this (.-ports)))
 
 (defn set-ports!
   "Property.
@@ -135,30 +161,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports`"
   [this val]
   (aset this "ports" val))
-
-(defn source
-  "Property.
-
-  The source read-only property of the `web.workers.MessageEvent`
-  is a MessageEventSource (which can be a `WindowProxy`, `web.other.MessagePort`,
-  `web.workers.ServiceWorker` object) representing the message
-
-  `let mySource = messageEvent.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source`"
-  [this]
-  (-> this (.source)))
-
-(defn set-source!
-  "Property.
-
-  The source read-only property of the `web.workers.MessageEvent`
-  is a MessageEventSource (which can be a `WindowProxy`, `web.other.MessagePort`,
-  `web.workers.ServiceWorker` object) representing the message
-
-  `let mySource = messageEvent.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source`"
-  [this val]
-  (aset this "source" val))
 

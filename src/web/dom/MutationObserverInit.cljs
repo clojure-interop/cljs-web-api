@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeFilter`"
   [this]
-  (-> this (.attributeFilter)))
+  (-> this (.-attributeFilter)))
 
 (defn set-attribute-filter!
   "Property.
@@ -48,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributeOldValue`"
   [this]
-  (-> this (.attributeOldValue)))
+  (-> this (.-attributeOldValue)))
 
 (defn set-attribute-old-value!
   "Property.
@@ -79,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/attributes`"
   [this]
-  (-> this (.attributes)))
+  (-> this (.-attributes)))
 
 (defn set-attributes!
   "Property.
@@ -109,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterData`"
   [this]
-  (-> this (.characterData)))
+  (-> this (.-characterData)))
 
 (defn set-character-data!
   "Property.
@@ -125,4 +125,94 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterData`"
   [this val]
   (aset this "characterData" val))
+
+(defn character-data-old-value
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional characterDataOldValue
+  is used to specify whether or not the `MutationRecord.oldValue`
+  for DOM mutations should be set to the previous value of text
+  which changed.
+
+  `var options = {
+  characterDataOldValue: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterDataOldValue`"
+  [this]
+  (-> this (.-characterDataOldValue)))
+
+(defn set-character-data-old-value!
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional characterDataOldValue
+  is used to specify whether or not the `MutationRecord.oldValue`
+  for DOM mutations should be set to the previous value of text
+  which changed.
+
+  `var options = {
+  characterDataOldValue: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/characterDataOldValue`"
+  [this val]
+  (aset this "characterDataOldValue" val))
+
+(defn child-list
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional childList
+  indicates whether or not to monitor the specified node or nodes
+  the addition or removal of new child nodes.
+
+  `var options = {
+  childList: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/childList`"
+  [this]
+  (-> this (.-childList)))
+
+(defn set-child-list!
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional childList
+  indicates whether or not to monitor the specified node or nodes
+  the addition or removal of new child nodes.
+
+  `var options = {
+  childList: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/childList`"
+  [this val]
+  (aset this "childList" val))
+
+(defn subtree
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional subtree
+  can be set to true to monitor the targeted node and all of its
+
+  `var options = {
+  subtree: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/subtree`"
+  [this]
+  (-> this (.-subtree)))
+
+(defn set-subtree!
+  "Property.
+
+  The `web.dom.MutationObserverInit` dictionary's optional subtree
+  can be set to true to monitor the targeted node and all of its
+
+  `var options = {
+  subtree: true | false
+  }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit/subtree`"
+  [this val]
+  (aset this "subtree" val))
 

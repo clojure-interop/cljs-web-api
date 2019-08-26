@@ -68,6 +68,32 @@
   [this ]
   (-> this (.getComputedTiming)))
 
+(defn get-keyframes
+  "Method.
+
+  The getKeyframes() method of a `web.animation.KeyframeEffect`
+  an Array of the computed keyframes that make up this animation
+  with their computed offsets.
+
+  `var keyframes = keyframeEffect.getKeyframes();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/getKeyframes`"
+  [this ]
+  (-> this (.getKeyframes)))
+
+(defn get-timing
+  "Method.
+
+  The AnimationEffect.getTiming() method of the `web.animation.AnimationEffect`
+  returns an `web.animation.EffectTiming` object containing the
+  properties for the Animation Effect.
+
+  `animationTiming = animation.getTiming();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/getTiming`"
+  [this ]
+  (-> this (.getTiming)))
+
 (defn set-keyframes
   "Method.
 
@@ -81,18 +107,17 @@
   [this keyframes]
   (-> this (.setKeyframes keyframes)))
 
-(defn get-keyframes
+(defn update-timing
   "Method.
 
-  The getKeyframes() method of a `web.animation.KeyframeEffect`
-  an Array of the computed keyframes that make up this animation
-  with their computed offsets.
+  The updateTiming() method of the `web.animation.AnimationEffect`
+  updates the specified timing properties for an animation effect.
 
-  `var keyframes = keyframeEffect.getKeyframes();`
+  `animation.updateTiming(timing);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/getKeyframes`"
-  [this ]
-  (-> this (.getKeyframes)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming`"
+  [this timing]
+  (-> this (.updateTiming timing)))
 
 (defn target
   "Property.
@@ -115,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/target`"
   [this]
-  (-> this (.target)))
+  (-> this (.-target)))
 
 (defn set-target!
   "Property.
@@ -155,7 +180,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/iterationComposite`"
   [this]
-  (-> this (.iterationComposite)))
+  (-> this (.-iterationComposite)))
 
 (defn set-iteration-composite!
   "Property.
@@ -188,7 +213,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite`"
   [this]
-  (-> this (.composite)))
+  (-> this (.-composite)))
 
 (defn set-composite!
   "Property.

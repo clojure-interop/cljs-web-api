@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/hasOrientation`"
   [this]
-  (-> this (.hasOrientation)))
+  (-> this (.-hasOrientation)))
 
 (defn set-has-orientation!
   "Property.
@@ -30,58 +30,6 @@
   [this val]
   (aset this "hasOrientation" val))
 
-(defn angular-acceleration
-  "Property.
-
-  The angularAcceleration read-only property of the `web.vr.GamepadPose`
-  returns an array representing the angular acceleration vector
-  the `web.gamepad.Gamepad`, in meters per second per second.
-
-  `var myGamepadAngAcc = gamepadPoseInstance.angularAcceleration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularAcceleration`"
-  [this]
-  (-> this (.angularAcceleration)))
-
-(defn set-angular-acceleration!
-  "Property.
-
-  The angularAcceleration read-only property of the `web.vr.GamepadPose`
-  returns an array representing the angular acceleration vector
-  the `web.gamepad.Gamepad`, in meters per second per second.
-
-  `var myGamepadAngAcc = gamepadPoseInstance.angularAcceleration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularAcceleration`"
-  [this val]
-  (aset this "angularAcceleration" val))
-
-(defn angular-velocity
-  "Property.
-
-  The angularVelocity read-only property of the `web.vr.GamepadPose`
-  returns an array representing the angular velocity vector of
-  `web.gamepad.Gamepad`, in radians per second.
-
-  `var myGamepadAngVel = gamepadPoseInstance.angularVelocity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularVelocity`"
-  [this]
-  (-> this (.angularVelocity)))
-
-(defn set-angular-velocity!
-  "Property.
-
-  The angularVelocity read-only property of the `web.vr.GamepadPose`
-  returns an array representing the angular velocity vector of
-  `web.gamepad.Gamepad`, in radians per second.
-
-  `var myGamepadAngVel = gamepadPoseInstance.angularVelocity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularVelocity`"
-  [this val]
-  (aset this "angularVelocity" val))
-
 (defn has-position
   "Property.
 
@@ -93,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/hasPosition`"
   [this]
-  (-> this (.hasPosition)))
+  (-> this (.-hasPosition)))
 
 (defn set-has-position!
   "Property.
@@ -108,31 +56,29 @@
   [this val]
   (aset this "hasPosition" val))
 
-(defn linear-acceleration
+(defn position
   "Property.
 
-  The linearAcceleration read-only property of the `web.vr.GamepadPose`
-  returns an array representing the linear acceleration vector
-  the `web.gamepad.Gamepad`, in meters per second per second.
+  The position read-only property of the `web.vr.GamepadPose` interface
+  the position of the `web.gamepad.Gamepad` as a 3D vector.
 
-  `var myGamepadLinAcc = gamepadPoseInstance.linearAcceleration;`
+  `var myGamepadPosition = gamepadPoseInstance.position;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearAcceleration`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/position`"
   [this]
-  (-> this (.linearAcceleration)))
+  (-> this (.-position)))
 
-(defn set-linear-acceleration!
+(defn set-position!
   "Property.
 
-  The linearAcceleration read-only property of the `web.vr.GamepadPose`
-  returns an array representing the linear acceleration vector
-  the `web.gamepad.Gamepad`, in meters per second per second.
+  The position read-only property of the `web.vr.GamepadPose` interface
+  the position of the `web.gamepad.Gamepad` as a 3D vector.
 
-  `var myGamepadLinAcc = gamepadPoseInstance.linearAcceleration;`
+  `var myGamepadPosition = gamepadPoseInstance.position;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearAcceleration`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/position`"
   [this val]
-  (aset this "linearAcceleration" val))
+  (aset this "position" val))
 
 (defn linear-velocity
   "Property.
@@ -145,7 +91,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearVelocity`"
   [this]
-  (-> this (.linearVelocity)))
+  (-> this (.-linearVelocity)))
 
 (defn set-linear-velocity!
   "Property.
@@ -160,6 +106,32 @@
   [this val]
   (aset this "linearVelocity" val))
 
+(defn linear-acceleration
+  "Property.
+
+  The linearAcceleration read-only property of the `web.vr.GamepadPose`
+  returns an array representing the linear acceleration vector
+  the `web.gamepad.Gamepad`, in meters per second per second.
+
+  `var myGamepadLinAcc = gamepadPoseInstance.linearAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearAcceleration`"
+  [this]
+  (-> this (.-linearAcceleration)))
+
+(defn set-linear-acceleration!
+  "Property.
+
+  The linearAcceleration read-only property of the `web.vr.GamepadPose`
+  returns an array representing the linear acceleration vector
+  the `web.gamepad.Gamepad`, in meters per second per second.
+
+  `var myGamepadLinAcc = gamepadPoseInstance.linearAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearAcceleration`"
+  [this val]
+  (aset this "linearAcceleration" val))
+
 (defn orientation
   "Property.
 
@@ -170,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/orientation`"
   [this]
-  (-> this (.orientation)))
+  (-> this (.-orientation)))
 
 (defn set-orientation!
   "Property.
@@ -184,27 +156,55 @@
   [this val]
   (aset this "orientation" val))
 
-(defn position
+(defn angular-velocity
   "Property.
 
-  The position read-only property of the `web.vr.GamepadPose` interface
-  the position of the `web.gamepad.Gamepad` as a 3D vector.
+  The angularVelocity read-only property of the `web.vr.GamepadPose`
+  returns an array representing the angular velocity vector of
+  `web.gamepad.Gamepad`, in radians per second.
 
-  `var myGamepadPosition = gamepadPoseInstance.position;`
+  `var myGamepadAngVel = gamepadPoseInstance.angularVelocity;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/position`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularVelocity`"
   [this]
-  (-> this (.position)))
+  (-> this (.-angularVelocity)))
 
-(defn set-position!
+(defn set-angular-velocity!
   "Property.
 
-  The position read-only property of the `web.vr.GamepadPose` interface
-  the position of the `web.gamepad.Gamepad` as a 3D vector.
+  The angularVelocity read-only property of the `web.vr.GamepadPose`
+  returns an array representing the angular velocity vector of
+  `web.gamepad.Gamepad`, in radians per second.
 
-  `var myGamepadPosition = gamepadPoseInstance.position;`
+  `var myGamepadAngVel = gamepadPoseInstance.angularVelocity;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/position`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularVelocity`"
   [this val]
-  (aset this "position" val))
+  (aset this "angularVelocity" val))
+
+(defn angular-acceleration
+  "Property.
+
+  The angularAcceleration read-only property of the `web.vr.GamepadPose`
+  returns an array representing the angular acceleration vector
+  the `web.gamepad.Gamepad`, in meters per second per second.
+
+  `var myGamepadAngAcc = gamepadPoseInstance.angularAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularAcceleration`"
+  [this]
+  (-> this (.-angularAcceleration)))
+
+(defn set-angular-acceleration!
+  "Property.
+
+  The angularAcceleration read-only property of the `web.vr.GamepadPose`
+  returns an array representing the angular acceleration vector
+  the `web.gamepad.Gamepad`, in meters per second per second.
+
+  `var myGamepadAngAcc = gamepadPoseInstance.angularAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularAcceleration`"
+  [this val]
+  (aset this "angularAcceleration" val))
 

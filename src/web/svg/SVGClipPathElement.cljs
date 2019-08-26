@@ -10,7 +10,7 @@
   of the given <clipPath> element. Takes one of the constants defined
   SVGUnitTypes."
   [this]
-  (-> this (.clipPathUnits)))
+  (-> this (.-clipPathUnits)))
 
 (defn set-clip-path-units!
   "Property.

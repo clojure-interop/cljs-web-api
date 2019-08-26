@@ -10,7 +10,7 @@
   of the heading with respect to the surrounding context. The possible
   are \"left\", \"right\", \"justify\", and \"center\"."
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.

@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
 
 (defn set-state!
   "Property.
@@ -30,6 +30,24 @@
   [this val]
   (aset this "state" val))
 
+(defn status
+  "Property.
+
+  Returns the state of a requested permission; one of 'granted',
+  or 'prompt'. Later versions of the specification replace this
+  PermissionStatus.state."
+  [this]
+  (-> this (.-status)))
+
+(defn set-status!
+  "Property.
+
+  Returns the state of a requested permission; one of 'granted',
+  or 'prompt'. Later versions of the specification replace this
+  PermissionStatus.state."
+  [this val]
+  (aset this "status" val))
+
 (defn onchange
   "Property.
 
@@ -41,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.

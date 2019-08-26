@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DisplayMediaStreamConstraints/audio`"
   [this]
-  (-> this (.audio)))
+  (-> this (.-audio)))
 
 (defn set-audio!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DisplayMediaStreamConstraints/video`"
   [this]
-  (-> this (.video)))
+  (-> this (.-video)))
 
 (defn set-video!
   "Property.

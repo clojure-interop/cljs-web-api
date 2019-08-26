@@ -2,7 +2,7 @@
   "KeyboardEvent objects describe a user interaction with the keyboard;
   event describes a single interaction between the user and a key
   combination of a key with modifier keys) on the keyboard."
-  (:refer-clojure :exclude [key repeat]))
+  (:refer-clojure :exclude [char key repeat]))
 
 (def constructor
   "Constructor.
@@ -25,6 +25,22 @@
   [this key-arg]
   (-> this (.getModifierState key-arg)))
 
+(defn init-key-event
+  "Method.
+
+  The KeyboardEvent.initKeyEvent() method is used to initialize
+  value of an event created using `document.createEvent`(\\\"KeyboardEvent\\\").
+  initialized in this way must have been created with the `document.createEvent`(\\\"KeyboardEvent\\\")
+  initKeyEvent() must be called to set the event before it is dispatched.
+
+  `event.initKeyEvent (type, bubbles, cancelable, viewArg,
+  ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg,
+  keyCodeArg, charCodeArg)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/initKeyEvent`"
+  [this & args]
+  (apply (-> this .-initKeyEvent) (concat [this] args)))
+
 (defn init-keyboard-event
   "Method.
 
@@ -43,22 +59,6 @@
   [this & args]
   (apply (-> this .-initKeyboardEvent) (concat [this] args)))
 
-(defn init-key-event
-  "Method.
-
-  The KeyboardEvent.initKeyEvent() method is used to initialize
-  value of an event created using `document.createEvent`(\\\"KeyboardEvent\\\").
-  initialized in this way must have been created with the `document.createEvent`(\\\"KeyboardEvent\\\")
-  initKeyEvent() must be called to set the event before it is dispatched.
-
-  `event.initKeyEvent (type, bubbles, cancelable, viewArg,
-  ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg,
-  keyCodeArg, charCodeArg)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/initKeyEvent`"
-  [this & args]
-  (apply (-> this .-initKeyEvent) (concat [this] args)))
-
 (defn alt-key
   "Property.
 
@@ -70,7 +70,31 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/altKey`"
   [this]
-  (-> this (.altKey)))
+  (-> this (.-altKey)))
+
+(defn char
+  "Property.
+
+  Returns a DOMString representing the character value of the key.
+  the key corresponds to a printable character, this value is a
+  Unicode string containing that character. If the key doesn't
+  a printable representation, this is an empty string.
+  Note: If the key is used as a macro that inserts multiple characters,
+  attribute's value is the entire string, not just the first character."
+  [this]
+  (-> this (.-char)))
+
+(defn set-char!
+  "Property.
+
+  Returns a DOMString representing the character value of the key.
+  the key corresponds to a printable character, this value is a
+  Unicode string containing that character. If the key doesn't
+  a printable representation, this is an empty string.
+  Note: If the key is used as a macro that inserts multiple characters,
+  attribute's value is the entire string, not just the first character."
+  [this val]
+  (aset this "char" val))
 
 (defn char-code
   "Property.
@@ -83,7 +107,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/charCode`"
   [this]
-  (-> this (.charCode)))
+  (-> this (.-charCode)))
 
 (defn set-char-code!
   "Property.
@@ -108,7 +132,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code`"
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn ctrl-key
   "Property.
@@ -121,7 +145,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey`"
   [this]
-  (-> this (.ctrlKey)))
+  (-> this (.-ctrlKey)))
 
 (defn is-composing
   "Property.
@@ -133,7 +157,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing`"
   [this]
-  (-> this (.isComposing)))
+  (-> this (.-isComposing)))
 
 (defn key
   "Property.
@@ -145,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key`"
   [this]
-  (-> this (.key)))
+  (-> this (.-key)))
 
 (defn key-code
   "Property.
@@ -156,7 +180,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode`"
   [this]
-  (-> this (.keyCode)))
+  (-> this (.-keyCode)))
 
 (defn key-identifier
   "Property.
@@ -167,7 +191,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyIdentifier`"
   [this]
-  (-> this (.keyIdentifier)))
+  (-> this (.-keyIdentifier)))
 
 (defn set-key-identifier!
   "Property.
@@ -180,6 +204,46 @@
   [this val]
   (aset this "keyIdentifier" val))
 
+(defn key-location
+  "Property.
+
+  This is a non-standard deprecated alias for KeyboardEvent.location.
+  was part of an old version of DOM Level 3 Events."
+  [this]
+  (-> this (.-keyLocation)))
+
+(defn set-key-location!
+  "Property.
+
+  This is a non-standard deprecated alias for KeyboardEvent.location.
+  was part of an old version of DOM Level 3 Events."
+  [this val]
+  (aset this "keyLocation" val))
+
+(defn locale
+  "Property.
+
+  Returns a DOMString representing a locale string indicating the
+  the keyboard is configured for. This may be the empty string
+  the browser or device doesn't know the keyboard's locale.
+  Note: This does not describe the locale of the data being entered.
+  user may be using one keyboard layout while typing text in a
+  language."
+  [this]
+  (-> this (.-locale)))
+
+(defn set-locale!
+  "Property.
+
+  Returns a DOMString representing a locale string indicating the
+  the keyboard is configured for. This may be the empty string
+  the browser or device doesn't know the keyboard's locale.
+  Note: This does not describe the locale of the data being entered.
+  user may be using one keyboard layout while typing text in a
+  language."
+  [this val]
+  (aset this "locale" val))
+
 (defn location
   "Property.
 
@@ -191,7 +255,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/location`"
   [this]
-  (-> this (.location)))
+  (-> this (.-location)))
 
 (defn meta-key
   "Property.
@@ -205,7 +269,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/metaKey`"
   [this]
-  (-> this (.metaKey)))
+  (-> this (.-metaKey)))
 
 (defn repeat
   "Property.
@@ -218,7 +282,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/repeat`"
   [this]
-  (-> this (.repeat)))
+  (-> this (.-repeat)))
 
 (defn shift-key
   "Property.
@@ -231,7 +295,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/shiftKey`"
   [this]
-  (-> this (.shiftKey)))
+  (-> this (.-shiftKey)))
 
 (defn which
   "Property.
@@ -244,5 +308,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/which`"
   [this]
-  (-> this (.which)))
+  (-> this (.-which)))
 

@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/title`"
   [this]
-  (-> this (.title)))
+  (-> this (.-title)))
 
 (defn set-title!
   "Property.
@@ -48,32 +48,6 @@
   [this val]
   (aset this "title" val))
 
-(defn album
-  "Property.
-
-  The album property of the `MediaMetaData` interface returns or
-  the name of the album or collection containing the media to be
-
-  `var album = mediaMetaData.album
-  mediaMetaData.album = album`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/album`"
-  [this]
-  (-> this (.album)))
-
-(defn set-album!
-  "Property.
-
-  The album property of the `MediaMetaData` interface returns or
-  the name of the album or collection containing the media to be
-
-  `var album = mediaMetaData.album
-  mediaMetaData.album = album`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/album`"
-  [this val]
-  (aset this "album" val))
-
 (defn artist
   "Property.
 
@@ -86,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/artist`"
   [this]
-  (-> this (.artist)))
+  (-> this (.-artist)))
 
 (defn set-artist!
   "Property.
@@ -102,6 +76,32 @@
   [this val]
   (aset this "artist" val))
 
+(defn album
+  "Property.
+
+  The album property of the `MediaMetaData` interface returns or
+  the name of the album or collection containing the media to be
+
+  `var album = mediaMetaData.album
+  mediaMetaData.album = album`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/album`"
+  [this]
+  (-> this (.-album)))
+
+(defn set-album!
+  "Property.
+
+  The album property of the `MediaMetaData` interface returns or
+  the name of the album or collection containing the media to be
+
+  `var album = mediaMetaData.album
+  mediaMetaData.album = album`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/album`"
+  [this val]
+  (aset this "album" val))
+
 (defn artwork
   "Property.
 
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/artwork`"
   [this]
-  (-> this (.artwork)))
+  (-> this (.-artwork)))
 
 (defn set-artwork!
   "Property.
@@ -137,7 +137,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/MediaMetadata`"
   [this]
-  (-> this (.MediaMetadata)))
+  (-> this (.-MediaMetadata)))
 
 (defn set-media-metadata!
   "Property.

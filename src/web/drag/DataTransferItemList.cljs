@@ -20,6 +20,17 @@
   [this & args]
   (apply (-> this .-add) (concat [this] args)))
 
+(defn remove
+  "Method.
+
+  `js.undefined`.
+
+  `DataTransferItemList.remove(index);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/remove`"
+  [this index]
+  (-> this (.remove index)))
+
 (defn clear
   "Method.
 
@@ -45,17 +56,6 @@
   [this ]
   (-> this (.DataTransferItem)))
 
-(defn remove
-  "Method.
-
-  `js.undefined`.
-
-  `DataTransferItemList.remove(index);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/remove`"
-  [this index]
-  (-> this (.remove index)))
-
 (defn length
   "Property.
 
@@ -66,5 +66,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 

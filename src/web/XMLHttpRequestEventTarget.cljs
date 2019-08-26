@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onload`"
   [this]
-  (-> this (.onload)))
+  (-> this (.-onload)))
 
 (defn set-onload!
   "Property.
@@ -88,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onloadstart`"
   [this]
-  (-> this (.onloadstart)))
+  (-> this (.-onloadstart)))
 
 (defn set-onloadstart!
   "Property.
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onprogress`"
   [this]
-  (-> this (.onprogress)))
+  (-> this (.-onprogress)))
 
 (defn set-onprogress!
   "Property.
@@ -127,4 +127,40 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onprogress`"
   [this val]
   (aset this "onprogress" val))
+
+(defn ontimeout
+  "Property.
+
+  Contains the function that is called if the event times out and
+  timeout event is received by this object; this only happens if
+  timeout has been previously established by setting the value
+  the XMLHttpRequest object's timeout attribute."
+  [this]
+  (-> this (.-ontimeout)))
+
+(defn set-ontimeout!
+  "Property.
+
+  Contains the function that is called if the event times out and
+  timeout event is received by this object; this only happens if
+  timeout has been previously established by setting the value
+  the XMLHttpRequest object's timeout attribute."
+  [this val]
+  (aset this "ontimeout" val))
+
+(defn onloadend
+  "Property.
+
+  Contains the function that is called when the load is completed,
+  if the request failed, and the loadend event is received by this"
+  [this]
+  (-> this (.-onloadend)))
+
+(defn set-onloadend!
+  "Property.
+
+  Contains the function that is called when the load is completed,
+  if the request failed, and the loadend event is received by this"
+  [this val]
+  (aset this "onloadend" val))
 

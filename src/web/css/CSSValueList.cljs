@@ -26,5 +26,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSValueList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 

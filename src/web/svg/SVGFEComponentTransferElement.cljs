@@ -9,7 +9,7 @@
   An SVGAnimatedString corresponding to the in attribute of the
   element."
   [this]
-  (-> this (.in1)))
+  (-> this (.-in1)))
 
 (defn set-in1!
   "Property.

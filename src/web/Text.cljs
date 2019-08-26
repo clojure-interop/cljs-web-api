@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/isElementContentWhitespace`"
   [this]
-  (-> this (.isElementContentWhitespace)))
+  (-> this (.-isElementContentWhitespace)))
 
 (defn set-is-element-content-whitespace!
   "Property.
@@ -61,32 +61,6 @@
   [this val]
   (aset this "isElementContentWhitespace" val))
 
-(defn assigned-slot
-  "Property.
-
-  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
-  returns an `web.shadow-dom.HTMLSlotElement` representing the
-  element the node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this]
-  (-> this (.assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
-  returns an `web.shadow-dom.HTMLSlotElement` representing the
-  element the node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
-
 (defn whole-text
   "Property.
 
@@ -97,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/wholeText`"
   [this]
-  (-> this (.wholeText)))
+  (-> this (.-wholeText)))
 
 (defn set-whole-text!
   "Property.
@@ -110,4 +84,28 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/wholeText`"
   [this val]
   (aset this "wholeText" val))
+
+(defn assigned-slot
+  "Property.
+
+  The assignedSlot property of the `web.Text` interface returns
+  `web.shadow-dom.HTMLSlotElement` object associated with the element.
+
+  `var htmlSlotElement = text.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
+  [this]
+  (-> this (.-assignedSlot)))
+
+(defn set-assigned-slot!
+  "Property.
+
+  The assignedSlot property of the `web.Text` interface returns
+  `web.shadow-dom.HTMLSlotElement` object associated with the element.
+
+  `var htmlSlotElement = text.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
+  [this val]
+  (aset this "assignedSlot" val))
 

@@ -32,21 +32,6 @@
   [this name value]
   (-> this (.append name value)))
 
-(defn get-all
-  "Method.
-
-  The getAll() method of the `web.fetch.Headers` interface used
-  return an array of all the values of a header within a Headers
-  with a given name; in newer versions of the Fetch spec, it has
-  deleted, and `Headers.get()` has been updated to fetch all header
-  instead of only the first one.
-
-  `myHeaders.getAll(name);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Headers/getAll`"
-  [this name]
-  (-> this (.getAll name)))
-
 (defn delete
   "Method.
 
@@ -71,6 +56,13 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Headers/entries`"
   [this ]
   (-> this (.entries)))
+
+(defn for-each
+  "Method.
+
+  Executes a provided function once for each array element."
+  [this & args]
+  (apply (-> this .-forEach) (concat [this] args)))
 
 (defn get
   "Method.
@@ -134,4 +126,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Headers/values`"
   [this ]
   (-> this (.values)))
+
+(defn get-all
+  "Method.
+
+  The getAll() method of the `web.fetch.Headers` interface used
+  return an array of all the values of a header within a Headers
+  with a given name; in newer versions of the Fetch spec, it has
+  deleted, and `Headers.get()` has been updated to fetch all header
+  instead of only the first one.
+
+  `myHeaders.getAll(name);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Headers/getAll`"
+  [this name]
+  (-> this (.getAll name)))
 

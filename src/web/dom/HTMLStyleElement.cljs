@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/media`"
   [this]
-  (-> this (.media)))
+  (-> this (.-media)))
 
 (defn set-media!
   "Property.
@@ -30,6 +30,50 @@
   [this val]
   (aset this "media" val))
 
+(defn type
+  "Property.
+
+  The HTMLStyleElement.type read-only property returns the type
+  the current style.
+
+  `string = style.type;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/type`"
+  [this]
+  (-> this (.-type)))
+
+(defn disabled
+  "Property.
+
+  Is a Boolean value representing whether or not the stylesheet
+  disabled (true) or not (false)."
+  [this]
+  (-> this (.-disabled)))
+
+(defn set-disabled!
+  "Property.
+
+  Is a Boolean value representing whether or not the stylesheet
+  disabled (true) or not (false)."
+  [this val]
+  (aset this "disabled" val))
+
+(defn sheet
+  "Property.
+
+  Returns the StyleSheet object associated with the given element,
+  null if there is none"
+  [this]
+  (-> this (.-sheet)))
+
+(defn set-sheet!
+  "Property.
+
+  Returns the StyleSheet object associated with the given element,
+  null if there is none"
+  [this val]
+  (aset this "sheet" val))
+
 (defn scoped
   "Property.
 
@@ -42,7 +86,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/scoped`"
   [this]
-  (-> this (.scoped)))
+  (-> this (.-scoped)))
 
 (defn set-scoped!
   "Property.
@@ -57,16 +101,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/scoped`"
   [this val]
   (aset this "scoped" val))
-
-(defn type
-  "Property.
-
-  The HTMLStyleElement.type read-only property returns the type
-  the current style.
-
-  `string = style.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/type`"
-  [this]
-  (-> this (.type)))
 

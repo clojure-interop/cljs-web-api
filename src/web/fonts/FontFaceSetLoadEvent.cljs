@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/fontfaces`"
   [this]
-  (-> this (.fontfaces)))
+  (-> this (.-fontfaces)))
 
 (defn set-fontfaces!
   "Property.

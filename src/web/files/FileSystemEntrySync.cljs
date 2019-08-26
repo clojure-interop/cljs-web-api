@@ -4,22 +4,10 @@
   `DirectoryEntry`."
   (:refer-clojure :exclude []))
 
-(defn none
-  "Method."
-  [this & args]
-  (apply (-> this .-None) (concat [this] args)))
-
 (defn metadata
   "Method."
   [this & args]
   (apply (-> this .-Metadata) (concat [this] args)))
-
-(defn parent
-  "Method.
-
-  The directory to which to move the entry."
-  [this & args]
-  (apply (-> this .-parent) (concat [this] args)))
 
 (defn file-system-entry-sync
   "Method.

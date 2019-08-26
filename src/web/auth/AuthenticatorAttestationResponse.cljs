@@ -17,21 +17,21 @@
   [this & args]
   (apply (-> this .-getTransports) (concat [this] args)))
 
-(defn client-data-json-secure
+(defn client-data-json
   "Property.
 
   Client data for the authentication, such as origin and challenge.
   clientDataJSON property is inherited from the AuthenticatorResponse."
   [this]
-  (-> this (.clientDataJSONSecure)))
+  (-> this (.-clientDataJSON)))
 
-(defn set-client-data-json-secure!
+(defn set-client-data-json!
   "Property.
 
   Client data for the authentication, such as origin and challenge.
   clientDataJSON property is inherited from the AuthenticatorResponse."
   [this val]
-  (aset this "clientDataJSONSecure" val))
+  (aset this "clientDataJSON" val))
 
 (defn attestation-object
   "Property.
@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject`"
   [this]
-  (-> this (.attestationObject)))
+  (-> this (.-attestationObject)))
 
 (defn set-attestation-object!
   "Property.

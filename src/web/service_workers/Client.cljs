@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -44,32 +44,6 @@
   [this val]
   (aset this "id" val))
 
-(defn frame-type
-  "Property.
-
-  The frameType read-only property of the `web.service-workers.Client`
-  indicates the type of browsing context of the current `web.service-workers.Client`.
-  value can be one of auxiliary, top-level, nested, or none.
-
-  `var myFrameType = Client.frameType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType`"
-  [this]
-  (-> this (.frameType)))
-
-(defn set-frame-type!
-  "Property.
-
-  The frameType read-only property of the `web.service-workers.Client`
-  indicates the type of browsing context of the current `web.service-workers.Client`.
-  value can be one of auxiliary, top-level, nested, or none.
-
-  `var myFrameType = Client.frameType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType`"
-  [this val]
-  (aset this "frameType" val))
-
 (defn type
   "Property.
 
@@ -80,7 +54,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -104,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.
@@ -117,4 +91,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/url`"
   [this val]
   (aset this "url" val))
+
+(defn frame-type
+  "Property.
+
+  The frameType read-only property of the `web.service-workers.Client`
+  indicates the type of browsing context of the current `web.service-workers.Client`.
+  value can be one of auxiliary, top-level, nested, or none.
+
+  `var myFrameType = Client.frameType;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType`"
+  [this]
+  (-> this (.-frameType)))
+
+(defn set-frame-type!
+  "Property.
+
+  The frameType read-only property of the `web.service-workers.Client`
+  indicates the type of browsing context of the current `web.service-workers.Client`.
+  value can be one of auxiliary, top-level, nested, or none.
+
+  `var myFrameType = Client.frameType;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType`"
+  [this val]
+  (aset this "frameType" val))
 

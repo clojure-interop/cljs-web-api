@@ -19,7 +19,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAltGlyphElement/glyphRef`"
   [this]
-  (-> this (.glyphRef)))
+  (-> this (.-glyphRef)))
 
 (defn set-glyph-ref!
   "Property.
@@ -34,4 +34,36 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAltGlyphElement/glyphRef`"
   [this val]
   (aset this "glyphRef" val))
+
+(defn format
+  "Property.
+
+  The SVGAltGlyphElement.format property is a `web.dom.DOMString`
+  defines the format of the given font. It has the same meaning
+  the 'format' property of `web.deprecated.SVGGlyphRefElement`
+  If the font is in one of the formats listed in CSS2([CSS2], section15.3.5),
+  its value is the corresponding <string> parameter of the font.
+
+  `string = myGlyph.format;
+  myGlyph.format = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAltGlyphElement/format`"
+  [this]
+  (-> this (.-format)))
+
+(defn set-format!
+  "Property.
+
+  The SVGAltGlyphElement.format property is a `web.dom.DOMString`
+  defines the format of the given font. It has the same meaning
+  the 'format' property of `web.deprecated.SVGGlyphRefElement`
+  If the font is in one of the formats listed in CSS2([CSS2], section15.3.5),
+  its value is the corresponding <string> parameter of the font.
+
+  `string = myGlyph.format;
+  myGlyph.format = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAltGlyphElement/format`"
+  [this val]
+  (aset this "format" val))
 

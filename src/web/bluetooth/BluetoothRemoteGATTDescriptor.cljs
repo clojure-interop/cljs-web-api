@@ -18,6 +18,19 @@
   [this & args]
   (apply (-> this .-readValue) (concat [this] args)))
 
+(defn write-value
+  "Method.
+
+  The BluetoothRemoteGATTDescriptor.writeValue() method sets the
+  property to the bytes contained in an `js.ArrayBuffer` and returns
+  `js.Promise`.
+
+  `BluetoothRemoteGATTDescriptor.writeValue(array[]).then(function() { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue`"
+  [this & args]
+  (apply (-> this .-writeValue) (concat [this] args)))
+
 (defn characteristic
   "Property.
 
@@ -29,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/characteristic`"
   [this]
-  (-> this (.characteristic)))
+  (-> this (.-characteristic)))
 
 (defn set-characteristic!
   "Property.
@@ -55,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/uuid`"
   [this]
-  (-> this (.uuid)))
+  (-> this (.-uuid)))
 
 (defn set-uuid!
   "Property.
@@ -81,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -95,30 +108,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/value`"
   [this val]
   (aset this "value" val))
-
-(defn write-value
-  "Property.
-
-  The BluetoothRemoteGATTDescriptor.writeValue() method sets the
-  property to the bytes contained in an `js.ArrayBuffer` and returns
-  `js.Promise`.
-
-  `BluetoothRemoteGATTDescriptor.writeValue(array[]).then(function() { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue`"
-  [this]
-  (-> this (.writeValue)))
-
-(defn set-write-value!
-  "Property.
-
-  The BluetoothRemoteGATTDescriptor.writeValue() method sets the
-  property to the bytes contained in an `js.ArrayBuffer` and returns
-  `js.Promise`.
-
-  `BluetoothRemoteGATTDescriptor.writeValue(array[]).then(function() { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue`"
-  [this val]
-  (aset this "writeValue" val))
 

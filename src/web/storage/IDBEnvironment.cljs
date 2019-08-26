@@ -10,7 +10,7 @@
   Provides a mechanism for applications to asynchronously access
   of indexed databases; contains an IDBFactory object."
   [this]
-  (-> this (.indexedDB)))
+  (-> this (.-indexedDB)))
 
 (defn set-indexed-db!
   "Property.

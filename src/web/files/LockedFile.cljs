@@ -15,42 +15,6 @@
   [this param]
   (-> this (.getMetadata param)))
 
-(defn abort
-  "Method.
-
-  The abort method is used to release the lock on the `web.files.LockedFile`
-  making it inactive: its `active` property is set to false and
-  ongoing operations are canceled.
-
-  `var request = instanceOfLockedFile.abort();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/abort`"
-  [this ]
-  (-> this (.abort)))
-
-(defn append
-  "Method.
-
-  The append method is used to write some data at the end of the
-
-  `var request = instanceOfLockedFile.append(data);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/append`"
-  [this data]
-  (-> this (.append data)))
-
-(defn flush
-  "Method.
-
-  The flush method is used to ensure any change made to a file
-  properly written on disk.
-
-  `var request = instanceOfLockedFile.flush();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/flush`"
-  [this ]
-  (-> this (.flush)))
-
 (defn read-as-array-buffer
   "Method.
 
@@ -77,17 +41,6 @@
   [this & args]
   (apply (-> this .-readAsText) (concat [this] args)))
 
-(defn truncate
-  "Method.
-
-  The truncate method is used to remove some data within the file.
-
-  `var request = instanceOfLockedFile.truncate(start);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/truncate`"
-  [this start]
-  (-> this (.truncate start)))
-
 (defn write
   "Method.
 
@@ -99,6 +52,53 @@
   [this data]
   (-> this (.write data)))
 
+(defn append
+  "Method.
+
+  The append method is used to write some data at the end of the
+
+  `var request = instanceOfLockedFile.append(data);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/append`"
+  [this data]
+  (-> this (.append data)))
+
+(defn truncate
+  "Method.
+
+  The truncate method is used to remove some data within the file.
+
+  `var request = instanceOfLockedFile.truncate(start);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/truncate`"
+  [this start]
+  (-> this (.truncate start)))
+
+(defn flush
+  "Method.
+
+  The flush method is used to ensure any change made to a file
+  properly written on disk.
+
+  `var request = instanceOfLockedFile.flush();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/flush`"
+  [this ]
+  (-> this (.flush)))
+
+(defn abort
+  "Method.
+
+  The abort method is used to release the lock on the `web.files.LockedFile`
+  making it inactive: its `active` property is set to false and
+  ongoing operations are canceled.
+
+  `var request = instanceOfLockedFile.abort();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/abort`"
+  [this ]
+  (-> this (.abort)))
+
 (defn file-handle
   "Property.
 
@@ -109,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/fileHandle`"
   [this]
-  (-> this (.fileHandle)))
+  (-> this (.-fileHandle)))
 
 (defn set-file-handle!
   "Property.
@@ -123,33 +123,27 @@
   [this val]
   (aset this "fileHandle" val))
 
-(defn oncomplete
+(defn mode
   "Property.
 
-  Specifies an event listener to receive complete events. These
-  occur each time a read or write operation is successful.
+  The mode property provides the read/write status of the `web.files.LockedFile`
 
-  `instanceOfLockedFile.oncomplete = funcRef;
+  `var mode = instanceOfLockedFile.mode`
 
-  Where funcRef is a function to be called when the complete event occurs.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/oncomplete`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/mode`"
   [this]
-  (-> this (.oncomplete)))
+  (-> this (.-mode)))
 
-(defn set-oncomplete!
+(defn set-mode!
   "Property.
 
-  Specifies an event listener to receive complete events. These
-  occur each time a read or write operation is successful.
+  The mode property provides the read/write status of the `web.files.LockedFile`
 
-  `instanceOfLockedFile.oncomplete = funcRef;
+  `var mode = instanceOfLockedFile.mode`
 
-  Where funcRef is a function to be called when the complete event occurs.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/oncomplete`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/mode`"
   [this val]
-  (aset this "oncomplete" val))
+  (aset this "mode" val))
 
 (defn active
   "Property.
@@ -164,7 +158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/active`"
   [this]
-  (-> this (.active)))
+  (-> this (.-active)))
 
 (defn set-active!
   "Property.
@@ -192,7 +186,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/location`"
   [this]
-  (-> this (.location)))
+  (-> this (.-location)))
 
 (defn set-location!
   "Property.
@@ -207,27 +201,33 @@
   [this val]
   (aset this "location" val))
 
-(defn mode
+(defn oncomplete
   "Property.
 
-  The mode property provides the read/write status of the `web.files.LockedFile`
+  Specifies an event listener to receive complete events. These
+  occur each time a read or write operation is successful.
 
-  `var mode = instanceOfLockedFile.mode`
+  `instanceOfLockedFile.oncomplete = funcRef;
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/mode`"
+  Where funcRef is a function to be called when the complete event occurs.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/oncomplete`"
   [this]
-  (-> this (.mode)))
+  (-> this (.-oncomplete)))
 
-(defn set-mode!
+(defn set-oncomplete!
   "Property.
 
-  The mode property provides the read/write status of the `web.files.LockedFile`
+  Specifies an event listener to receive complete events. These
+  occur each time a read or write operation is successful.
 
-  `var mode = instanceOfLockedFile.mode`
+  `instanceOfLockedFile.oncomplete = funcRef;
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/mode`"
+  Where funcRef is a function to be called when the complete event occurs.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/oncomplete`"
   [this val]
-  (aset this "mode" val))
+  (aset this "oncomplete" val))
 
 (defn onabort
   "Property.
@@ -241,7 +241,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -269,7 +269,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.

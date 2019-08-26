@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -37,29 +37,31 @@
   [this val]
   (aset this "href" val))
 
-(defn hash
+(defn protocol
   "Property.
 
-  The HTMLHyperlinkElementUtils.hash property returns a `web.dom.DOMString`
-  a '#' followed by the fragment identifier of the URL.
+  The HTMLHyperlinkElementUtils.protocol property is a `web.USVString`
+  the protocol scheme of the URL, including the final ':'.
 
-  `string = object.hash;`
+  `string = object.protocol;
+  object.protocol = string;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
   [this]
-  (-> this (.hash)))
+  (-> this (.-protocol)))
 
-(defn set-hash!
+(defn set-protocol!
   "Property.
 
-  The HTMLHyperlinkElementUtils.hash property returns a `web.dom.DOMString`
-  a '#' followed by the fragment identifier of the URL.
+  The HTMLHyperlinkElementUtils.protocol property is a `web.USVString`
+  the protocol scheme of the URL, including the final ':'.
 
-  `string = object.hash;`
+  `string = object.protocol;
+  object.protocol = string;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
   [this val]
-  (aset this "hash" val))
+  (aset this "protocol" val))
 
 (defn host
   "Property.
@@ -73,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn set-host!
   "Property.
@@ -100,7 +102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hostname`"
   [this]
-  (-> this (.hostname)))
+  (-> this (.-hostname)))
 
 (defn set-hostname!
   "Property.
@@ -115,59 +117,6 @@
   [this val]
   (aset this "hostname" val))
 
-(defn origin
-  "Property.
-
-  The HTMLHyperlinkElementUtils.origin read-only property is a
-  containing the Unicode serialization of the origin of the represented
-
-  `string = object.origin;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
-  [this]
-  (-> this (.origin)))
-
-(defn password
-  "Property.
-
-  The HTMLHyperlinkElementUtils.password property is a `web.USVString`
-  the password specified before the domain name.
-
-  `string = object.password;
-  object.password = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/password`"
-  [this]
-  (-> this (.password)))
-
-(defn pathname
-  "Property.
-
-  The HTMLHyperlinkElementUtils.pathname property is a `web.USVString`
-  an initial '/' followed by the path of the URL (or the empty
-  if there is no path).
-
-  `string = object.pathname;
-  object.pathname = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
-  [this]
-  (-> this (.pathname)))
-
-(defn set-pathname!
-  "Property.
-
-  The HTMLHyperlinkElementUtils.pathname property is a `web.USVString`
-  an initial '/' followed by the path of the URL (or the empty
-  if there is no path).
-
-  `string = object.pathname;
-  object.pathname = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
-  [this val]
-  (aset this "pathname" val))
-
 (defn port
   "Property.
 
@@ -180,7 +129,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -196,31 +145,33 @@
   [this val]
   (aset this "port" val))
 
-(defn protocol
+(defn pathname
   "Property.
 
-  The HTMLHyperlinkElementUtils.protocol property is a `web.USVString`
-  the protocol scheme of the URL, including the final ':'.
+  The HTMLHyperlinkElementUtils.pathname property is a `web.USVString`
+  an initial '/' followed by the path of the URL (or the empty
+  if there is no path).
 
-  `string = object.protocol;
-  object.protocol = string;`
+  `string = object.pathname;
+  object.pathname = string;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-pathname)))
 
-(defn set-protocol!
+(defn set-pathname!
   "Property.
 
-  The HTMLHyperlinkElementUtils.protocol property is a `web.USVString`
-  the protocol scheme of the URL, including the final ':'.
+  The HTMLHyperlinkElementUtils.pathname property is a `web.USVString`
+  an initial '/' followed by the path of the URL (or the empty
+  if there is no path).
 
-  `string = object.protocol;
-  object.protocol = string;`
+  `string = object.pathname;
+  object.pathname = string;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
   [this val]
-  (aset this "protocol" val))
+  (aset this "pathname" val))
 
 (defn search
   "Property.
@@ -234,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search`"
   [this]
-  (-> this (.search)))
+  (-> this (.-search)))
 
 (defn set-search!
   "Property.
@@ -250,6 +201,30 @@
   [this val]
   (aset this "search" val))
 
+(defn hash
+  "Property.
+
+  The HTMLHyperlinkElementUtils.hash property returns a `web.dom.DOMString`
+  a '#' followed by the fragment identifier of the URL.
+
+  `string = object.hash;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
+  [this]
+  (-> this (.-hash)))
+
+(defn set-hash!
+  "Property.
+
+  The HTMLHyperlinkElementUtils.hash property returns a `web.dom.DOMString`
+  a '#' followed by the fragment identifier of the URL.
+
+  `string = object.hash;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
+  [this val]
+  (aset this "hash" val))
+
 (defn username
   "Property.
 
@@ -261,7 +236,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/username`"
   [this]
-  (-> this (.username)))
+  (-> this (.-username)))
 
 (defn set-username!
   "Property.
@@ -275,4 +250,29 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/username`"
   [this val]
   (aset this "username" val))
+
+(defn password
+  "Property.
+
+  The HTMLHyperlinkElementUtils.password property is a `web.USVString`
+  the password specified before the domain name.
+
+  `string = object.password;
+  object.password = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/password`"
+  [this]
+  (-> this (.-password)))
+
+(defn origin
+  "Property.
+
+  The HTMLHyperlinkElementUtils.origin read-only property is a
+  containing the Unicode serialization of the origin of the represented
+
+  `string = object.origin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
+  [this]
+  (-> this (.-origin)))
 

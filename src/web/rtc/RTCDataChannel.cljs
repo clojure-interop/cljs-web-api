@@ -47,7 +47,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/binaryType`"
   [this]
-  (-> this (.binaryType)))
+  (-> this (.-binaryType)))
 
 (defn set-binary-type!
   "Property.
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/bufferedAmount`"
   [this]
-  (-> this (.bufferedAmount)))
+  (-> this (.-bufferedAmount)))
 
 (defn buffered-amount-low-threshold
   "Property.
@@ -93,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold`"
   [this]
-  (-> this (.bufferedAmountLowThreshold)))
+  (-> this (.-bufferedAmountLowThreshold)))
 
 (defn set-buffered-amount-low-threshold!
   "Property.
@@ -120,7 +120,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn label
   "Property.
@@ -133,7 +133,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/label`"
   [this]
-  (-> this (.label)))
+  (-> this (.-label)))
 
 (defn max-packet-life-time
   "Property.
@@ -147,7 +147,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/maxPacketLifeTime`"
   [this]
-  (-> this (.maxPacketLifeTime)))
+  (-> this (.-maxPacketLifeTime)))
 
 (defn max-retransmits
   "Property.
@@ -161,7 +161,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/maxRetransmits`"
   [this]
-  (-> this (.maxRetransmits)))
+  (-> this (.-maxRetransmits)))
 
 (defn negotiated
   "Property.
@@ -174,7 +174,83 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/negotiated`"
   [this]
-  (-> this (.negotiated)))
+  (-> this (.-negotiated)))
+
+(defn ordered
+  "Property.
+
+  The read-only RTCDataChannel property ordered indicates whether
+  not the data channel guarantees in-order delivery of messages;
+  default is true, which indicates that the data channel is indeed
+
+  `var ordered = aDataChannel.ordered;
+
+  A `js.Boolean` value which is true if in-order delivery is guaranteed and is otherwise false.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/ordered`"
+  [this]
+  (-> this (.-ordered)))
+
+(defn protocol
+  "Property.
+
+  The read-only RTCDataChannel property protocol returns a `web.dom.DOMString`
+  the name of the subprotocol in use. If no protocol was specified
+  the data channel was created, then this property's value is \\\"\\\"
+  empty string).
+
+  `var subProtocol = aDataChannel.protocol;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/protocol`"
+  [this]
+  (-> this (.-protocol)))
+
+(defn ready-state
+  "Property.
+
+  The read-only RTCDataChannel property readyState returns an enum
+  type RTCDataChannelState which indicates the state of the data
+  underlying data connection.
+
+  `var state = aDataChannel.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/readyState`"
+  [this]
+  (-> this (.-readyState)))
+
+(defn reliable
+  "Property.
+
+  The read-only RTCDataChannel property reliable indicates whether
+  not the data channel is reliable."
+  [this]
+  (-> this (.-reliable)))
+
+(defn set-reliable!
+  "Property.
+
+  The read-only RTCDataChannel property reliable indicates whether
+  not the data channel is reliable."
+  [this val]
+  (aset this "reliable" val))
+
+(defn stream
+  "Property.
+
+  The deprecated (and never part of the official specification)
+  RTCDataChannel property stream returns an ID number (between
+  and 65,535) which uniquely identifies the RTCDataChannel."
+  [this]
+  (-> this (.-stream)))
+
+(defn set-stream!
+  "Property.
+
+  The deprecated (and never part of the official specification)
+  RTCDataChannel property stream returns an ID number (between
+  and 65,535) which uniquely identifies the RTCDataChannel."
+  [this val]
+  (aset this "stream" val))
 
 (defn onbufferedamountlow
   "Property.
@@ -190,7 +266,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onbufferedamountlow`"
   [this]
-  (-> this (.onbufferedamountlow)))
+  (-> this (.-onbufferedamountlow)))
 
 (defn set-onbufferedamountlow!
   "Property.
@@ -220,7 +296,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -248,7 +324,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -277,7 +353,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -307,7 +383,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onopen`"
   [this]
-  (-> this (.onopen)))
+  (-> this (.-onopen)))
 
 (defn set-onopen!
   "Property.
@@ -323,71 +399,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/onopen`"
   [this val]
   (aset this "onopen" val))
-
-(defn ordered
-  "Property.
-
-  The read-only RTCDataChannel property ordered indicates whether
-  not the data channel guarantees in-order delivery of messages;
-  default is true, which indicates that the data channel is indeed
-
-  `var ordered = aDataChannel.ordered;
-
-  A `js.Boolean` value which is true if in-order delivery is guaranteed and is otherwise false.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/ordered`"
-  [this]
-  (-> this (.ordered)))
-
-(defn protocol
-  "Property.
-
-  The read-only RTCDataChannel property protocol returns a `web.dom.DOMString`
-  the name of the subprotocol in use. If no protocol was specified
-  the data channel was created, then this property's value is \\\"\\\"
-  empty string).
-
-  `var subProtocol = aDataChannel.protocol;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/protocol`"
-  [this]
-  (-> this (.protocol)))
-
-(defn ready-state
-  "Property.
-
-  The read-only RTCDataChannel property readyState returns an enum
-  type RTCDataChannelState which indicates the state of the data
-  underlying data connection.
-
-  `var state = aDataChannel.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/readyState`"
-  [this]
-  (-> this (.readyState)))
-
-(defn reliable
-  "Property.
-
-  The read-only RTCDataChannel property reliable indicates whether
-  not the data channel is reliable.
-
-  `var reliable = aDataChannel.reliable;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/reliable`"
-  [this]
-  (-> this (.reliable)))
-
-(defn stream
-  "Property.
-
-  The deprecated (and never part of the official specification)
-  RTCDataChannel property stream returns an ID number (between
-  and 65,535) which uniquely identifies the `web.rtc.RTCDataChannel`.
-
-  `var stream = aDataChannel.stream;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/stream`"
-  [this]
-  (-> this (.stream)))
 

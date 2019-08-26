@@ -8,7 +8,7 @@
 
   The readable end of a TransformStream."
   [this]
-  (-> this (.readable)))
+  (-> this (.-readable)))
 
 (defn set-readable!
   "Property.
@@ -16,4 +16,18 @@
   The readable end of a TransformStream."
   [this val]
   (aset this "readable" val))
+
+(defn writable
+  "Property.
+
+  The writable end of a TransformStream."
+  [this]
+  (-> this (.-writable)))
+
+(defn set-writable!
+  "Property.
+
+  The writable end of a TransformStream."
+  [this val]
+  (aset this "writable" val))
 

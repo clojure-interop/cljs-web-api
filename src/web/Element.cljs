@@ -18,32 +18,17 @@
   [this & args]
   (apply (-> this .-addEventListener) (concat [this] args)))
 
-(defn scroll
+(defn attach-shadow
   "Method.
 
-  The scroll() method of the `web.Element` interface scrolls the
-  to a particular set of coordinates inside a given element.
+  The Element.attachShadow() method attaches a shadow DOM tree
+  the specified element and returns a reference to its `web.shadow-dom.ShadowRoot`.
 
-  `element.scroll(x-coord, y-coord)
-  element.scroll(options)`
+  `var shadowroot = element.attachShadow(shadowRootInit);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll`"
-  [this & args]
-  (apply (-> this .-scroll) (concat [this] args)))
-
-(defn after
-  "Method.
-
-  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
-  in the children list of this ChildNode's parent, just after this
-  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
-
-  `[Throws, Unscopable]
-  void ChildNode.after((Node or DOMString)... nodes);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
-  [this & args]
-  (apply (-> this .-after) (concat [this] args)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow`"
+  [this shadow-root-init]
+  (-> this (.attachShadow shadow-root-init)))
 
 (defn animate
   "Method.
@@ -59,47 +44,6 @@
   [this keyframes options]
   (-> this (.animate keyframes options)))
 
-(defn append
-  "Method.
-
-  The ParentNode.append() method inserts a set of `web.Node` objects
-  `web.dom.DOMString` objects after the last child of the ParentNode.
-  objects are inserted as equivalent `web.Text` nodes.
-
-  `[Throws, Unscopable]
-  void ParentNode.append((Node or DOMString)... nodes);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
-  [this & args]
-  (apply (-> this .-append) (concat [this] args)))
-
-(defn attach-shadow
-  "Method.
-
-  The Element.attachShadow() method attaches a shadow DOM tree
-  the specified element and returns a reference to its `web.shadow-dom.ShadowRoot`.
-
-  `var shadowroot = element.attachShadow(shadowRootInit);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow`"
-  [this shadow-root-init]
-  (-> this (.attachShadow shadow-root-init)))
-
-(defn before
-  "Method.
-
-  The ChildNode.before() method inserts a set of `web.Node` or
-  objects in the children list of this ChildNode's parent, just
-  this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
-  nodes.
-
-  `[Throws, Unscopable]
-  void ChildNode.before((Node or DOMString)... nodes);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
-  [this & args]
-  (apply (-> this .-before) (concat [this] args)))
-
 (defn closest
   "Method.
 
@@ -112,6 +56,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/closest`"
   [this selectors]
   (-> this (.closest selectors)))
+
+(defn create-shadow-root
+  "Method.
+
+  Use Element.createShadowRoot to create an instance of shadow
+  When shadow DOM is created, it is always attached to an existing
+  After the shadow DOM is created, the element that it is attached
+  is called the shadow root.
+
+  `var shadowroot = element.createShadowRoot();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot`"
+  [this ]
+  (-> this (.createShadowRoot)))
 
 (defn computed-style-map
   "Method.
@@ -127,19 +85,19 @@
   [this ]
   (-> this (.computedStyleMap)))
 
-(defn create-shadow-root
+(defn dispatch-event
   "Method.
 
-  Use Element.createShadowRoot to create an instance of shadow
-  When shadow DOM is created, it is always attached to an existing
-  After the shadow DOM is created, the element that it is attached
-  is called the shadow root.
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
+  invoking the affected `web.EventListener`s in the appropriate
+  The normal event processing rules (including the capturing and
+  bubbling phase) also apply to events dispatched manually with
 
-  `var shadowroot = element.createShadowRoot();`
+  `cancelled = !target.dispatchEvent(event)`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot`"
-  [this ]
-  (-> this (.createShadowRoot)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
+  [this event]
+  (-> this (.dispatchEvent event)))
 
 (defn get-animations
   "Method.
@@ -187,6 +145,20 @@
   [this ]
   (-> this (.getAttributeNames)))
 
+(defn get-attribute-ns
+  "Method.
+
+  The getAttributeNS() method of the `web.Element` interface returns
+  string value of the attribute with the specified namespace and
+  If the named attribute does not exist, the value returned will
+  be null or \\\"\\\" (the empty string); see Notes for details.
+
+  `attrVal = element.getAttributeNS(namespace, name)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNS`"
+  [this namespace name]
+  (-> this (.getAttributeNS namespace name)))
+
 (defn get-attribute-node
   "Method.
 
@@ -222,20 +194,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNodeNS`"
   [this & args]
   (apply (-> this .-getAttributeNodeNS) (concat [this] args)))
-
-(defn get-attribute-ns
-  "Method.
-
-  The getAttributeNS() method of the `web.Element` interface returns
-  string value of the attribute with the specified namespace and
-  If the named attribute does not exist, the value returned will
-  be null or \\\"\\\" (the empty string); see Notes for details.
-
-  `attrVal = element.getAttributeNS(namespace, name)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNS`"
-  [this namespace name]
-  (-> this (.getAttributeNS namespace name)))
 
 (defn get-bounding-client-rect
   "Method.
@@ -426,28 +384,13 @@
   [this selector-string]
   (-> this (.matches selector-string)))
 
-(defn ms-zoom-to
+(defn pseudo
   "Method.
 
-  The msZoomTo method scrolls and/or zooms an element to its specified
-  with animation.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/msZoomTo`"
+  Returns a CSSPseudoElement representing the child pseudo-element
+  by the specified pseudo-element selector."
   [this & args]
-  (apply (-> this .-msZoomTo) (concat [this] args)))
-
-(defn prepend
-  "Method.
-
-  The ParentNode.prepend() method inserts a set of `web.Node` objects
-  `web.dom.DOMString` objects before the first child of the `web.ParentNode`.
-  objects are inserted as equivalent `web.Text` nodes.
-
-  `ParentNode.prepend(...nodesToPrepend);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
-  [this & args]
-  (apply (-> this .-prepend) (concat [this] args)))
+  (apply (-> this .-pseudo) (concat [this] args)))
 
 (defn query-selector
   "Method.
@@ -465,14 +408,14 @@
 (defn query-selector-all
   "Method.
 
-  The `web.ParentNode` mixin defines the querySelectorAll() method
-  returning a `web.NodeList` representing a list of elements matching
-  specified group of selectors which are descendants of the object
+  The `web.Element` method querySelectorAll() returns a static
+  live) `web.NodeList` representing a list of elements matching
+  specified group of selectors which are descendants of the element
   which the method was called.
 
   `elementList = parentNode.querySelectorAll(selectors);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/querySelectorAll`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll`"
   [this selectors]
   (-> this (.querySelectorAll selectors)))
 
@@ -513,6 +456,18 @@
   [this attr-name]
   (-> this (.removeAttribute attr-name)))
 
+(defn remove-attribute-ns
+  "Method.
+
+  The removeAttributeNS() method of the `web.Element` interface
+  the specified attribute from an element.
+
+  `element.removeAttributeNS(namespace, attrName);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNS`"
+  [this namespace attr-name]
+  (-> this (.removeAttributeNS namespace attr-name)))
+
 (defn remove-attribute-node
   "Method.
 
@@ -529,31 +484,22 @@
   [this & args]
   (apply (-> this .-removeAttributeNode) (concat [this] args)))
 
-(defn remove-attribute-ns
+(defn remove-event-listener
   "Method.
 
-  The removeAttributeNS() method of the `web.Element` interface
-  the specified attribute from an element.
+  The EventTarget.removeEventListener() method removes from the
+  an event listener previously registered with `EventTarget.addEventListener()`.
+  event listener to be removed is identified using a combination
+  the event type, the event listener function itself, and various
+  options that may affect the matching process; see Matching event
+  for removal
 
-  `element.removeAttributeNS(namespace, attrName);`
+  `target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNS`"
-  [this namespace attr-name]
-  (-> this (.removeAttributeNS namespace attr-name)))
-
-(defn replace-with
-  "Method.
-
-  The ChildNode.replaceWith() method replaces this ChildNode in
-  children list of its parent with a set of `web.Node` or `web.dom.DOMString`
-  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
-
-  `[Throws, Unscopable]
-  void ChildNode.replaceWith((Node or DOMString)... nodes);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
-  (apply (-> this .-replaceWith) (concat [this] args)))
+  (apply (-> this .-removeEventListener) (concat [this] args)))
 
 (defn request-fullscreen
   "Method.
@@ -578,6 +524,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock`"
   [this ]
   (-> this (.requestPointerLock)))
+
+(defn scroll
+  "Method.
+
+  The scroll() method of the `web.Element` interface scrolls the
+  to a particular set of coordinates inside a given element.
+
+  `element.scroll(x-coord, y-coord)
+  element.scroll(options)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll`"
+  [this & args]
+  (apply (-> this .-scroll) (concat [this] args)))
 
 (defn scroll-by
   "Method.
@@ -607,21 +566,6 @@
   [this & args]
   (apply (-> this .-scrollIntoView) (concat [this] args)))
 
-(defn scroll-into-view-if-needed
-  "Method.
-
-  The Element.scrollIntoViewIfNeeded() method scrolls the current
-  into the visible area of the browser window if it's not already
-  the visible area of the browser window. If the element is already
-  the visible area of the browser window, then no scrolling takes
-  This method is a proprietary variation of the standard `Element.scrollIntoView()`
-
-  `TODO`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoViewIfNeeded`"
-  [this ]
-  (-> this (.scrollIntoViewIfNeeded)))
-
 (defn scroll-to
   "Method.
 
@@ -647,6 +591,23 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute`"
   [this name value]
   (-> this (.setAttribute name value)))
+
+(defn set-attribute-ns
+  "Method.
+
+  setAttributeNS adds a new attribute or changes the value of an
+  with the given namespace and name.
+
+  `element.setAttributeNS(namespace, name, value)
+
+
+  namespace is a string specifying the namespace of the attribute.
+  name is a string identifying the attribute by its qualified name; that is, a namespace prefix followed by a colon followed by a local name.
+  value is the desired string value of the new attribute.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS`"
+  [this & args]
+  (apply (-> this .-setAttributeNS) (concat [this] args)))
 
 (defn set-attribute-node
   "Method.
@@ -677,23 +638,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS`"
   [this & args]
   (apply (-> this .-setAttributeNodeNS) (concat [this] args)))
-
-(defn set-attribute-ns
-  "Method.
-
-  setAttributeNS adds a new attribute or changes the value of an
-  with the given namespace and name.
-
-  `element.setAttributeNS(namespace, name, value)
-
-
-  namespace is a string specifying the namespace of the attribute.
-  name is a string identifying the attribute by its qualified name; that is, a namespace prefix followed by a colon followed by a local name.
-  value is the desired string value of the new attribute.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS`"
-  [this & args]
-  (apply (-> this .-setAttributeNS) (concat [this] args)))
 
 (defn set-capture
   "Method.
@@ -739,6 +683,101 @@
   [this & args]
   (apply (-> this .-toggleAttribute) (concat [this] args)))
 
+(defn after
+  "Method.
+
+  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
+  in the children list of this ChildNode's parent, just after this
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
+
+  `[Throws, Unscopable]
+  void ChildNode.after((Node or DOMString)... nodes);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
+  [this & args]
+  (apply (-> this .-after) (concat [this] args)))
+
+(defn append
+  "Method.
+
+  The ParentNode.append() method inserts a set of `web.Node` objects
+  `web.dom.DOMString` objects after the last child of the ParentNode.
+  objects are inserted as equivalent `web.Text` nodes.
+
+  `[Throws, Unscopable]
+  void ParentNode.append((Node or DOMString)... nodes);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
+  [this & args]
+  (apply (-> this .-append) (concat [this] args)))
+
+(defn before
+  "Method.
+
+  The ChildNode.before() method inserts a set of `web.Node` or
+  objects in the children list of this ChildNode's parent, just
+  this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
+  nodes.
+
+  `[Throws, Unscopable]
+  void ChildNode.before((Node or DOMString)... nodes);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
+  [this & args]
+  (apply (-> this .-before) (concat [this] args)))
+
+(defn ms-zoom-to
+  "Method.
+
+  The msZoomTo method scrolls and/or zooms an element to its specified
+  with animation.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/msZoomTo`"
+  [this & args]
+  (apply (-> this .-msZoomTo) (concat [this] args)))
+
+(defn prepend
+  "Method.
+
+  The ParentNode.prepend() method inserts a set of `web.Node` objects
+  `web.dom.DOMString` objects before the first child of the `web.ParentNode`.
+  objects are inserted as equivalent `web.Text` nodes.
+
+  `ParentNode.prepend(...nodesToPrepend);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
+  [this & args]
+  (apply (-> this .-prepend) (concat [this] args)))
+
+(defn replace-with
+  "Method.
+
+  The ChildNode.replaceWith() method replaces this ChildNode in
+  children list of its parent with a set of `web.Node` or `web.dom.DOMString`
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
+
+  `[Throws, Unscopable]
+  void ChildNode.replaceWith((Node or DOMString)... nodes);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
+  [this & args]
+  (apply (-> this .-replaceWith) (concat [this] args)))
+
+(defn scroll-into-view-if-needed
+  "Method.
+
+  The Element.scrollIntoViewIfNeeded() method scrolls the current
+  into the visible area of the browser window if it's not already
+  the visible area of the browser window. If the element is already
+  the visible area of the browser window, then no scrolling takes
+  This method is a proprietary variation of the standard `Element.scrollIntoView()`
+
+  `TODO`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoViewIfNeeded`"
+  [this ]
+  (-> this (.scrollIntoViewIfNeeded)))
+
 (defn attributes
   "Property.
 
@@ -753,7 +792,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
   [this]
-  (-> this (.attributes)))
+  (-> this (.-attributes)))
 
 (defn set-attributes!
   "Property.
@@ -771,140 +810,6 @@
   [this val]
   (aset this "attributes" val))
 
-(defn assigned-slot
-  "Property.
-
-  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
-  returns an `web.shadow-dom.HTMLSlotElement` representing the
-  element the node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this]
-  (-> this (.assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
-  returns an `web.shadow-dom.HTMLSlotElement` representing the
-  element the node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
-
-(defn onfullscreenchange
-  "Property.
-
-  The `web.Element` interface's onfullscreenchange property is
-  event handler for the fullscreenchange event that is fired when
-  element has transitioned into or out of full-screen mode.
-
-  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
-  [this]
-  (-> this (.onfullscreenchange)))
-
-(defn set-onfullscreenchange!
-  "Property.
-
-  The `web.Element` interface's onfullscreenchange property is
-  event handler for the fullscreenchange event that is fired when
-  element has transitioned into or out of full-screen mode.
-
-  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
-  [this val]
-  (aset this "onfullscreenchange" val))
-
-(defn access-key
-  "Property.
-
-  The Element.accessKey property sets the keystroke which a user
-  press to jump to a given element.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/accessKey`"
-  [this]
-  (-> this (.accessKey)))
-
-(defn set-access-key!
-  "Property.
-
-  The Element.accessKey property sets the keystroke which a user
-  press to jump to a given element.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/accessKey`"
-  [this val]
-  (aset this "accessKey" val))
-
-(defn child-element-count
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this]
-  (-> this (.childElementCount)))
-
-(defn set-child-element-count!
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this val]
-  (aset this "childElementCount" val))
-
-(defn children
-  "Property.
-
-  The `web.ParentNode` property children is a read-only property
-  returns a live `web.dom.HTMLCollection` which contains all of
-  child `elements` of the node upon which it was called.
-
-  `var children = node.children;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
-  [this]
-  (-> this (.children)))
-
-(defn set-children!
-  "Property.
-
-  The `web.ParentNode` property children is a read-only property
-  returns a live `web.dom.HTMLCollection` which contains all of
-  child `elements` of the node upon which it was called.
-
-  `var children = node.children;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
-  [this val]
-  (aset this "children" val))
-
 (defn class-list
   "Property.
 
@@ -918,7 +823,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/classList`"
   [this]
-  (-> this (.classList)))
+  (-> this (.-classList)))
 
 (defn class-name
   "Property.
@@ -934,7 +839,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/className`"
   [this]
-  (-> this (.className)))
+  (-> this (.-className)))
 
 (defn set-class-name!
   "Property.
@@ -966,7 +871,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight`"
   [this]
-  (-> this (.clientHeight)))
+  (-> this (.-clientHeight)))
 
 (defn set-client-height!
   "Property.
@@ -997,7 +902,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientLeft`"
   [this]
-  (-> this (.clientLeft)))
+  (-> this (.-clientLeft)))
 
 (defn set-client-left!
   "Property.
@@ -1024,7 +929,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop`"
   [this]
-  (-> this (.clientTop)))
+  (-> this (.-clientTop)))
 
 (defn set-client-top!
   "Property.
@@ -1052,7 +957,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth`"
   [this]
-  (-> this (.clientWidth)))
+  (-> this (.-clientWidth)))
 
 (defn set-client-width!
   "Property.
@@ -1070,49 +975,35 @@
   [this val]
   (aset this "clientWidth" val))
 
-(defn current-style
+(defn computed-name
   "Property.
 
-  Element.currentStyle is a proprietary property which is similar
-  the standardized `window.getComputedStyle()` method.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
+  Returns a DOMString containing the label exposed to accessibility."
   [this]
-  (-> this (.currentStyle)))
+  (-> this (.-computedName)))
 
-(defn set-current-style!
+(defn set-computed-name!
   "Property.
 
-  Element.currentStyle is a proprietary property which is similar
-  the standardized `window.getComputedStyle()` method.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
+  Returns a DOMString containing the label exposed to accessibility."
   [this val]
-  (aset this "currentStyle" val))
+  (aset this "computedName" val))
 
-(defn first-element-child
+(defn computed-role
   "Property.
 
-  The ParentNode.firstElementChild read-only property returns the
-  first child `web.Element`, or null if there are no child elements.
-
-  `var element = node.firstElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
+  Returns a DOMString containing the ARIA role that has been applied
+  a particular element."
   [this]
-  (-> this (.firstElementChild)))
+  (-> this (.-computedRole)))
 
-(defn set-first-element-child!
+(defn set-computed-role!
   "Property.
 
-  The ParentNode.firstElementChild read-only property returns the
-  first child `web.Element`, or null if there are no child elements.
-
-  `var element = node.firstElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
+  Returns a DOMString containing the ARIA role that has been applied
+  a particular element."
   [this val]
-  (aset this "firstElementChild" val))
+  (aset this "computedRole" val))
 
 (defn id
   "Property.
@@ -1128,7 +1019,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -1158,7 +1049,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML`"
   [this]
-  (-> this (.innerHTML)))
+  (-> this (.-innerHTML)))
 
 (defn set-inner-html!
   "Property.
@@ -1174,30 +1065,6 @@
   [this val]
   (aset this "innerHTML" val))
 
-(defn last-element-child
-  "Property.
-
-  The ParentNode.lastElementChild read-only property returns the
-  last child `web.Element` or null if there are no child elements.
-
-  `var element = node.lastElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
-  [this]
-  (-> this (.lastElementChild)))
-
-(defn set-last-element-child!
-  "Property.
-
-  The ParentNode.lastElementChild read-only property returns the
-  last child `web.Element` or null if there are no child elements.
-
-  `var element = node.lastElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
-  [this val]
-  (aset this "lastElementChild" val))
-
 (defn local-name
   "Property.
 
@@ -1208,7 +1075,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/localName`"
   [this]
-  (-> this (.localName)))
+  (-> this (.-localName)))
 
 (defn set-local-name!
   "Property.
@@ -1222,42 +1089,6 @@
   [this val]
   (aset this "localName" val))
 
-(defn name
-  "Property.
-
-  name gets or sets the name property of an element in the DOM.
-  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
-  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
-  `<param>`, `<select>`, and `<textarea>`.
-
-  `HTMLElement.name = string;
-  var elName = HTMLElement.name;
-
-  var fControl = HTMLFormElement.elementName;
-  var controlCollection = HTMLFormElement.elements.elementName;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/name`"
-  [this]
-  (-> this (.name)))
-
-(defn set-name!
-  "Property.
-
-  name gets or sets the name property of an element in the DOM.
-  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
-  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
-  `<param>`, `<select>`, and `<textarea>`.
-
-  `HTMLElement.name = string;
-  var elName = HTMLElement.name;
-
-  var fControl = HTMLFormElement.elementName;
-  var controlCollection = HTMLFormElement.elements.elementName;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn namespace-uri
   "Property.
 
@@ -1268,7 +1099,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/namespaceURI`"
   [this]
-  (-> this (.namespaceURI)))
+  (-> this (.-namespaceURI)))
 
 (defn set-namespace-uri!
   "Property.
@@ -1293,7 +1124,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this]
-  (-> this (.nextElementSibling)))
+  (-> this (.-nextElementSibling)))
 
 (defn set-next-element-sibling!
   "Property.
@@ -1307,60 +1138,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this val]
   (aset this "nextElementSibling" val))
-
-(defn onfullscreenerror
-  "Property.
-
-  The `web.Element` interface's onfullscreenerror property is an
-  handler for the fullscreenerror event which is sent to the element
-  an error occurs while attempting to transition into or out of
-  mode.
-
-  `targetElement.onfullscreenerror = fullscreenErrorHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenerror`"
-  [this]
-  (-> this (.onfullscreenerror)))
-
-(defn set-onfullscreenerror!
-  "Property.
-
-  The `web.Element` interface's onfullscreenerror property is an
-  handler for the fullscreenerror event which is sent to the element
-  an error occurs while attempting to transition into or out of
-  mode.
-
-  `targetElement.onfullscreenerror = fullscreenErrorHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenerror`"
-  [this val]
-  (aset this "onfullscreenerror" val))
-
-(defn open-or-closed-shadow-root
-  "Property.
-
-  The Element.openOrCloseShadowRoot read-only property represents
-  shadow root hosted by the element, regardless if its `mode` is
-  or closed.
-
-  `var shadowroot = element.shadowRoot;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
-  [this]
-  (-> this (.openOrClosedShadowRoot)))
-
-(defn set-open-or-closed-shadow-root!
-  "Property.
-
-  The Element.openOrCloseShadowRoot read-only property represents
-  shadow root hosted by the element, regardless if its `mode` is
-  or closed.
-
-  `var shadowroot = element.shadowRoot;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
-  [this val]
-  (aset this "openOrClosedShadowRoot" val))
 
 (defn outer-html
   "Property.
@@ -1376,7 +1153,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML`"
   [this]
-  (-> this (.outerHTML)))
+  (-> this (.-outerHTML)))
 
 (defn set-outer-html!
   "Property.
@@ -1404,7 +1181,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/prefix`"
   [this]
-  (-> this (.prefix)))
+  (-> this (.-prefix)))
 
 (defn set-prefix!
   "Property.
@@ -1430,27 +1207,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling`"
   [this]
-  (-> this (.previousElementSibling)))
-
-(defn runtime-style
-  "Property.
-
-  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
-  its styles, that have higher precedence and modification.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
-  [this]
-  (-> this (.runtimeStyle)))
-
-(defn set-runtime-style!
-  "Property.
-
-  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
-  its styles, that have higher precedence and modification.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
-  [this val]
-  (aset this "runtimeStyle" val))
+  (-> this (.-previousElementSibling)))
 
 (defn scroll-height
   "Property.
@@ -1465,7 +1222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight`"
   [this]
-  (-> this (.scrollHeight)))
+  (-> this (.-scrollHeight)))
 
 (defn set-scroll-height!
   "Property.
@@ -1492,7 +1249,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft`"
   [this]
-  (-> this (.scrollLeft)))
+  (-> this (.-scrollLeft)))
 
 (defn set-scroll-left!
   "Property.
@@ -1516,7 +1273,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeftMax`"
   [this]
-  (-> this (.scrollLeftMax)))
+  (-> this (.-scrollLeftMax)))
 
 (defn scroll-top
   "Property.
@@ -1543,7 +1300,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop`"
   [this]
-  (-> this (.scrollTop)))
+  (-> this (.-scrollTop)))
 
 (defn set-scroll-top!
   "Property.
@@ -1582,7 +1339,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTopMax`"
   [this]
-  (-> this (.scrollTopMax)))
+  (-> this (.-scrollTopMax)))
 
 (defn scroll-width
   "Property.
@@ -1597,7 +1354,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth`"
   [this]
-  (-> this (.scrollWidth)))
+  (-> this (.-scrollWidth)))
 
 (defn set-scroll-width!
   "Property.
@@ -1624,7 +1381,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot`"
   [this]
-  (-> this (.shadowRoot)))
+  (-> this (.-shadowRoot)))
 
 (defn set-shadow-root!
   "Property.
@@ -1638,6 +1395,32 @@
   [this val]
   (aset this "shadowRoot" val))
 
+(defn open-or-closed-shadow-root
+  "Property.
+
+  The Element.openOrCloseShadowRoot read-only property represents
+  shadow root hosted by the element, regardless if its `mode` is
+  or closed.
+
+  `var shadowroot = element.shadowRoot;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
+  [this]
+  (-> this (.-openOrClosedShadowRoot)))
+
+(defn set-open-or-closed-shadow-root!
+  "Property.
+
+  The Element.openOrCloseShadowRoot read-only property represents
+  shadow root hosted by the element, regardless if its `mode` is
+  or closed.
+
+  `var shadowroot = element.shadowRoot;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
+  [this val]
+  (aset this "openOrClosedShadowRoot" val))
+
 (defn slot
   "Property.
 
@@ -1649,7 +1432,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/slot`"
   [this]
-  (-> this (.slot)))
+  (-> this (.-slot)))
 
 (defn set-slot!
   "Property.
@@ -1677,7 +1460,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/tabStop`"
   [this]
-  (-> this (.tabStop)))
+  (-> this (.-tabStop)))
 
 (defn set-tab-stop!
   "Property.
@@ -1704,5 +1487,321 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName`"
   [this]
-  (-> this (.tagName)))
+  (-> this (.-tagName)))
+
+(defn undo-manager
+  "Property.
+
+  Returns the UndoManager associated with the element."
+  [this]
+  (-> this (.-undoManager)))
+
+(defn set-undo-manager!
+  "Property.
+
+  Returns the UndoManager associated with the element."
+  [this val]
+  (aset this "undoManager" val))
+
+(defn undo-scope
+  "Property.
+
+  Is a Boolean indicating if the element is an undo scope host,
+  not."
+  [this]
+  (-> this (.-undoScope)))
+
+(defn set-undo-scope!
+  "Property.
+
+  Is a Boolean indicating if the element is an undo scope host,
+  not."
+  [this val]
+  (aset this "undoScope" val))
+
+(defn assigned-slot
+  "Property.
+
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
+
+  `var slotElement = elementInstance.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this]
+  (-> this (.-assignedSlot)))
+
+(defn set-assigned-slot!
+  "Property.
+
+  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
+  returns an `web.shadow-dom.HTMLSlotElement` representing the
+  element the node is inserted in.
+
+  `var slotElement = elementInstance.assignedSlot`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
+  [this val]
+  (aset this "assignedSlot" val))
+
+(defn onfullscreenchange
+  "Property.
+
+  The `web.Element` interface's onfullscreenchange property is
+  event handler for the fullscreenchange event that is fired when
+  element has transitioned into or out of full-screen mode.
+
+  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
+  [this]
+  (-> this (.-onfullscreenchange)))
+
+(defn set-onfullscreenchange!
+  "Property.
+
+  The `web.Element` interface's onfullscreenchange property is
+  event handler for the fullscreenchange event that is fired when
+  element has transitioned into or out of full-screen mode.
+
+  `targetDocument.onfullscreenchange = fullscreenChangeHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange`"
+  [this val]
+  (aset this "onfullscreenchange" val))
+
+(defn onfullscreenerror
+  "Property.
+
+  The `web.Element` interface's onfullscreenerror property is an
+  handler for the fullscreenerror event which is sent to the element
+  an error occurs while attempting to transition into or out of
+  mode.
+
+  `targetElement.onfullscreenerror = fullscreenErrorHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenerror`"
+  [this]
+  (-> this (.-onfullscreenerror)))
+
+(defn set-onfullscreenerror!
+  "Property.
+
+  The `web.Element` interface's onfullscreenerror property is an
+  handler for the fullscreenerror event which is sent to the element
+  an error occurs while attempting to transition into or out of
+  mode.
+
+  `targetElement.onfullscreenerror = fullscreenErrorHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenerror`"
+  [this val]
+  (aset this "onfullscreenerror" val))
+
+(defn access-key
+  "Property.
+
+  The Element.accessKey property sets the keystroke which a user
+  press to jump to a given element.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/accessKey`"
+  [this]
+  (-> this (.-accessKey)))
+
+(defn set-access-key!
+  "Property.
+
+  The Element.accessKey property sets the keystroke which a user
+  press to jump to a given element.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/accessKey`"
+  [this val]
+  (aset this "accessKey" val))
+
+(defn child-element-count
+  "Property.
+
+  The ParentNode.childElementCount read-only property returns an
+  long representing the number of child elements of the given element.
+
+  `var count = node.childElementCount;
+
+
+  count
+  The return value, which is an unsigned long (simply an integer) type.
+  node
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
+  [this]
+  (-> this (.-childElementCount)))
+
+(defn set-child-element-count!
+  "Property.
+
+  The ParentNode.childElementCount read-only property returns an
+  long representing the number of child elements of the given element.
+
+  `var count = node.childElementCount;
+
+
+  count
+  The return value, which is an unsigned long (simply an integer) type.
+  node
+  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
+  [this val]
+  (aset this "childElementCount" val))
+
+(defn children
+  "Property.
+
+  The `web.ParentNode` property children is a read-only property
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
+
+  `var children = node.children;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
+  [this]
+  (-> this (.-children)))
+
+(defn set-children!
+  "Property.
+
+  The `web.ParentNode` property children is a read-only property
+  returns a live `web.dom.HTMLCollection` which contains all of
+  child `elements` of the node upon which it was called.
+
+  `var children = node.children;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
+  [this val]
+  (aset this "children" val))
+
+(defn current-style
+  "Property.
+
+  Element.currentStyle is a proprietary property which is similar
+  the standardized `window.getComputedStyle()` method.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
+  [this]
+  (-> this (.-currentStyle)))
+
+(defn set-current-style!
+  "Property.
+
+  Element.currentStyle is a proprietary property which is similar
+  the standardized `window.getComputedStyle()` method.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/currentStyle`"
+  [this val]
+  (aset this "currentStyle" val))
+
+(defn first-element-child
+  "Property.
+
+  The ParentNode.firstElementChild read-only property returns the
+  first child `web.Element`, or null if there are no child elements.
+
+  `var element = node.firstElementChild;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
+  [this]
+  (-> this (.-firstElementChild)))
+
+(defn set-first-element-child!
+  "Property.
+
+  The ParentNode.firstElementChild read-only property returns the
+  first child `web.Element`, or null if there are no child elements.
+
+  `var element = node.firstElementChild;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
+  [this val]
+  (aset this "firstElementChild" val))
+
+(defn last-element-child
+  "Property.
+
+  The ParentNode.lastElementChild read-only property returns the
+  last child `web.Element` or null if there are no child elements.
+
+  `var element = node.lastElementChild;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
+  [this]
+  (-> this (.-lastElementChild)))
+
+(defn set-last-element-child!
+  "Property.
+
+  The ParentNode.lastElementChild read-only property returns the
+  last child `web.Element` or null if there are no child elements.
+
+  `var element = node.lastElementChild;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
+  [this val]
+  (aset this "lastElementChild" val))
+
+(defn name
+  "Property.
+
+  name gets or sets the name property of an element in the DOM.
+  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
+  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
+  `<param>`, `<select>`, and `<textarea>`.
+
+  `HTMLElement.name = string;
+  var elName = HTMLElement.name;
+
+  var fControl = HTMLFormElement.elementName;
+  var controlCollection = HTMLFormElement.elements.elementName;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/name`"
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  name gets or sets the name property of an element in the DOM.
+  only applies to the following elements: `<a>`, `<applet>`, `<button>`,
+  `<frame>`, `<iframe>`, `<img>`, `<input>`, `<map>`, `<meta>`,
+  `<param>`, `<select>`, and `<textarea>`.
+
+  `HTMLElement.name = string;
+  var elName = HTMLElement.name;
+
+  var fControl = HTMLFormElement.elementName;
+  var controlCollection = HTMLFormElement.elements.elementName;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/name`"
+  [this val]
+  (aset this "name" val))
+
+(defn runtime-style
+  "Property.
+
+  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
+  its styles, that have higher precedence and modification.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
+  [this]
+  (-> this (.-runtimeStyle)))
+
+(defn set-runtime-style!
+  "Property.
+
+  Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
+  its styles, that have higher precedence and modification.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/runtimeStyle`"
+  [this val]
+  (aset this "runtimeStyle" val))
 

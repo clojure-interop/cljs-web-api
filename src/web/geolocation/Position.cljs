@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Position/coords`"
   [this]
-  (-> this (.coords)))
+  (-> this (.-coords)))
 
 (defn set-coords!
   "Property.
@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Position/timestamp`"
   [this]
-  (-> this (.timestamp)))
+  (-> this (.-timestamp)))
 
 (defn set-timestamp!
   "Property.

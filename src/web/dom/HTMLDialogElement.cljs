@@ -54,7 +54,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open`"
   [this]
-  (-> this (.open)))
+  (-> this (.-open)))
 
 (defn set-open!
   "Property.
@@ -82,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue`"
   [this]
-  (-> this (.returnValue)))
+  (-> this (.-returnValue)))
 
 (defn set-return-value!
   "Property.

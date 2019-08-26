@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/currentDirection`"
   [this]
-  (-> this (.currentDirection)))
+  (-> this (.-currentDirection)))
 
 (defn direction
   "Property.
@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/direction`"
   [this]
-  (-> this (.direction)))
+  (-> this (.-direction)))
 
 (defn set-direction!
   "Property.
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/mid`"
   [this]
-  (-> this (.mid)))
+  (-> this (.-mid)))
 
 (defn receiver
   "Property.
@@ -91,7 +91,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/receiver`"
   [this]
-  (-> this (.receiver)))
+  (-> this (.-receiver)))
 
 (defn set-receiver!
   "Property.
@@ -117,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/sender`"
   [this]
-  (-> this (.sender)))
+  (-> this (.-sender)))
 
 (defn set-sender!
   "Property.
@@ -143,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/stopped`"
   [this]
-  (-> this (.stopped)))
+  (-> this (.-stopped)))
 
 (defn set-stopped!
   "Property.

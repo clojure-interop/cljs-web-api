@@ -12,6 +12,13 @@
   [this & args]
   (apply (-> this .-animate) (concat [this] args)))
 
+(defn get-animations
+  "Method.
+
+  Returns an array of Animation objects currently active on the"
+  [this & args]
+  (apply (-> this .-getAnimations) (concat [this] args)))
+
 (defn add-event-listener
   "Method.
 
@@ -26,6 +33,37 @@
   [this & args]
   (apply (-> this .-addEventListener) (concat [this] args)))
 
+(defn dispatch-event
+  "Method.
+
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
+  invoking the affected `web.EventListener`s in the appropriate
+  The normal event processing rules (including the capturing and
+  bubbling phase) also apply to events dispatched manually with
+
+  `cancelled = !target.dispatchEvent(event)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
+  [this event]
+  (-> this (.dispatchEvent event)))
+
+(defn remove-event-listener
+  "Method.
+
+  The EventTarget.removeEventListener() method removes from the
+  an event listener previously registered with `EventTarget.addEventListener()`.
+  event listener to be removed is identified using a combination
+  the event type, the event listener function itself, and various
+  options that may affect the matching process; see Matching event
+  for removal
+
+  `target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
+  [this & args]
+  (apply (-> this .-removeEventListener) (concat [this] args)))
+
 (defn element
   "Property.
 
@@ -37,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/element`"
   [this]
-  (-> this (.element)))
+  (-> this (.-element)))
 
 (defn set-element!
   "Property.
@@ -63,7 +101,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

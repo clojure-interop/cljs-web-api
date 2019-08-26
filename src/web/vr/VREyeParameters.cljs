@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/offset`"
   [this]
-  (-> this (.offset)))
+  (-> this (.-offset)))
 
 (defn set-offset!
   "Property.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/fieldOfView`"
   [this]
-  (-> this (.fieldOfView)))
+  (-> this (.-fieldOfView)))
 
 (defn set-field-of-view!
   "Property.
@@ -58,6 +58,58 @@
   [this val]
   (aset this "fieldOfView" val))
 
+(defn render-width
+  "Property.
+
+  The renderWidth read-only property of the `web.vr.VREyeParameters`
+  describes the recommended render target width of each eye viewport,
+  pixels.
+
+  `var myRenderWidth = eyeParametersInstance.renderWidth;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderWidth`"
+  [this]
+  (-> this (.-renderWidth)))
+
+(defn set-render-width!
+  "Property.
+
+  The renderWidth read-only property of the `web.vr.VREyeParameters`
+  describes the recommended render target width of each eye viewport,
+  pixels.
+
+  `var myRenderWidth = eyeParametersInstance.renderWidth;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderWidth`"
+  [this val]
+  (aset this "renderWidth" val))
+
+(defn render-height
+  "Property.
+
+  The renderHeight read-only property of the `web.vr.VREyeParameters`
+  describes the recommended render target height of each eye viewport,
+  pixels.
+
+  `var myRenderHeight = eyeParametersInstance.renderHeight;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderHeight`"
+  [this]
+  (-> this (.-renderHeight)))
+
+(defn set-render-height!
+  "Property.
+
+  The renderHeight read-only property of the `web.vr.VREyeParameters`
+  describes the recommended render target height of each eye viewport,
+  pixels.
+
+  `var myRenderHeight = eyeParametersInstance.renderHeight;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderHeight`"
+  [this val]
+  (aset this "renderHeight" val))
+
 (defn maximum-field-of-view
   "Property.
 
@@ -68,7 +120,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/maximumFieldOfView`"
   [this]
-  (-> this (.maximumFieldOfView)))
+  (-> this (.-maximumFieldOfView)))
 
 (defn set-maximum-field-of-view!
   "Property.
@@ -92,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/minimumFieldOfView`"
   [this]
-  (-> this (.minimumFieldOfView)))
+  (-> this (.-minimumFieldOfView)))
 
 (defn set-minimum-field-of-view!
   "Property.
@@ -117,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/recommendedFieldOfView`"
   [this]
-  (-> this (.recommendedFieldOfView)))
+  (-> this (.-recommendedFieldOfView)))
 
 (defn set-recommended-field-of-view!
   "Property.
@@ -132,32 +184,6 @@
   [this val]
   (aset this "recommendedFieldOfView" val))
 
-(defn render-height
-  "Property.
-
-  The renderHeight read-only property of the `web.vr.VREyeParameters`
-  describes the recommended render target height of each eye viewport,
-  pixels.
-
-  `var myRenderHeight = eyeParametersInstance.renderHeight;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderHeight`"
-  [this]
-  (-> this (.renderHeight)))
-
-(defn set-render-height!
-  "Property.
-
-  The renderHeight read-only property of the `web.vr.VREyeParameters`
-  describes the recommended render target height of each eye viewport,
-  pixels.
-
-  `var myRenderHeight = eyeParametersInstance.renderHeight;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderHeight`"
-  [this val]
-  (aset this "renderHeight" val))
-
 (defn render-rect
   "Property.
 
@@ -169,7 +195,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderRect`"
   [this]
-  (-> this (.renderRect)))
+  (-> this (.-renderRect)))
 
 (defn set-render-rect!
   "Property.
@@ -183,30 +209,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderRect`"
   [this val]
   (aset this "renderRect" val))
-
-(defn render-width
-  "Property.
-
-  The renderWidth read-only property of the `web.vr.VREyeParameters`
-  describes the recommended render target width of each eye viewport,
-  pixels.
-
-  `var myRenderWidth = eyeParametersInstance.renderWidth;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderWidth`"
-  [this]
-  (-> this (.renderWidth)))
-
-(defn set-render-width!
-  "Property.
-
-  The renderWidth read-only property of the `web.vr.VREyeParameters`
-  describes the recommended render target width of each eye viewport,
-  pixels.
-
-  `var myRenderWidth = eyeParametersInstance.renderWidth;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VREyeParameters/renderWidth`"
-  [this val]
-  (aset this "renderWidth" val))
 

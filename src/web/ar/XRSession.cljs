@@ -34,3 +34,42 @@
   [this type]
   (-> this (.requestReferenceSpace type)))
 
+(defn request-animation-frame
+  "Method.
+
+  The requestAnimationFrame() method of the `web.ar.XRSession`
+  Tells the browser to paint one frame of an animation at which
+  the browser will call the supplied callback function. The callback
+  be run once before the next repaint.
+
+  `XRSession.requestAnimationFrame(onXRAnimationFrame);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRSession/requestAnimationFrame`"
+  [this on-xr-animation-frame]
+  (-> this (.requestAnimationFrame on-xr-animation-frame)))
+
+(defn cancel-animation-frame
+  "Method.
+
+  The cancelAnimationFrame() method of the `web.ar.XRSession` interface
+  an animation frame previously requested via a call to `XRSession.requestAnimationFrame`.
+
+  `XRSession.cancelAnimationFrame(handle);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRSession/cancelAnimationFrame`"
+  [this handle]
+  (-> this (.cancelAnimationFrame handle)))
+
+(defn end
+  "Method.
+
+  The end() method of the `web.ar.XRSession` interface requests
+  the current XR session and returns a promise that resolves when
+  session ends.
+
+  `XRSession.end();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRSession/end`"
+  [this ]
+  (-> this (.end)))
+

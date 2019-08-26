@@ -49,7 +49,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context`"
   [this]
-  (-> this (.context)))
+  (-> this (.-context)))
 
 (defn set-context!
   "Property.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfInputs`"
   [this]
-  (-> this (.numberOfInputs)))
+  (-> this (.-numberOfInputs)))
 
 (defn set-number-of-inputs!
   "Property.
@@ -98,7 +98,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfOutputs`"
   [this]
-  (-> this (.numberOfOutputs)))
+  (-> this (.-numberOfOutputs)))
 
 (defn set-number-of-outputs!
   "Property.
@@ -124,7 +124,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelCount`"
   [this]
-  (-> this (.channelCount)))
+  (-> this (.-channelCount)))
 
 (defn set-channel-count!
   "Property.
@@ -150,7 +150,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelCountMode`"
   [this]
-  (-> this (.channelCountMode)))
+  (-> this (.-channelCountMode)))
 
 (defn set-channel-count-mode!
   "Property.
@@ -177,7 +177,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelInterpretation`"
   [this]
-  (-> this (.channelInterpretation)))
+  (-> this (.-channelInterpretation)))
 
 (defn set-channel-interpretation!
   "Property.

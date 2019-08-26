@@ -1,7 +1,7 @@
 (ns web.credential.Credential
   "The Credential interface of the the Credential Management API
   information about an entity as a prerequisite to a trust decision."
-  (:refer-clojure :exclude [name type]))
+  (:refer-clojure :exclude [type name]))
 
 (defn id
   "Property.
@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -29,30 +29,6 @@
   [this val]
   (aset this "id" val))
 
-(defn name
-  "Property.
-
-  The name property of the `web.credential.Credential` interface
-  a `web.dom.DOMString`, containing the name associated with a
-
-  `var credName = Credential.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/name`"
-  [this]
-  (-> this (.name)))
-
-(defn set-name!
-  "Property.
-
-  The name property of the `web.credential.Credential` interface
-  a `web.dom.DOMString`, containing the name associated with a
-
-  `var credName = Credential.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn type
   "Property.
 
@@ -64,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -78,4 +54,28 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/type`"
   [this val]
   (aset this "type" val))
+
+(defn name
+  "Property.
+
+  The name property of the `web.credential.Credential` interface
+  a `web.dom.DOMString`, containing the name associated with a
+
+  `var credName = Credential.name;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/name`"
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  The name property of the `web.credential.Credential` interface
+  a `web.dom.DOMString`, containing the name associated with a
+
+  `var credName = Credential.name;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/name`"
+  [this val]
+  (aset this "name" val))
 

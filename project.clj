@@ -1,4 +1,4 @@
-(defproject clojure-interop/cljs-web-api "1.0.2"
+(defproject clojure-interop/cljs-web-api "1.0.5"
   :description "All Browser Classes (MDN) ClojureScript Bingings with Docs"
   :url ""
   :license {:name "Eclipse Public License"
@@ -24,7 +24,7 @@
                 ;; into your build
                 :figwheel {:open-urls ["http://localhost:3449/index.html"]}
 
-                :compiler {:main web.Document
+                :compiler {:main web.Core
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/web-api.js"
                            :output-dir "resources/public/js/compiled/out"
@@ -38,7 +38,7 @@
                {:id "min"
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/web-api.js"
-                           :main web.Document
+                           :main web.Core
                            :optimizations :advanced
                            :pretty-print false}}]}
 

@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/animVal`"
   [this]
-  (-> this (.animVal)))
+  (-> this (.-animVal)))
 
 (defn set-anim-val!
   "Property.
@@ -34,4 +34,26 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/animVal`"
   [this val]
   (aset this "animVal" val))
+
+(defn base-val
+  "Property.
+
+  BaseVal gets or sets the base value of the given attribute before
+  animations are applied.The base value of the given attribute
+  applying any animations. Setter throws DOMException.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/baseVal`"
+  [this]
+  (-> this (.-baseVal)))
+
+(defn set-base-val!
+  "Property.
+
+  BaseVal gets or sets the base value of the given attribute before
+  animations are applied.The base value of the given attribute
+  applying any animations. Setter throws DOMException.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/baseVal`"
+  [this val]
+  (aset this "baseVal" val))
 

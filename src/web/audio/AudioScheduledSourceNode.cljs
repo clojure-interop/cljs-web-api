@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.

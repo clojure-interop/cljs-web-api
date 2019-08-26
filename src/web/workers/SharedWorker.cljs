@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -61,7 +61,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.

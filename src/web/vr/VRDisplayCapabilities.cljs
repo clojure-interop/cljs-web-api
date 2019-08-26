@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayCapabilities/canPresent`"
   [this]
-  (-> this (.canPresent)))
+  (-> this (.-canPresent)))
 
 (defn set-can-present!
   "Property.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayCapabilities/hasExternalDisplay`"
   [this]
-  (-> this (.hasExternalDisplay)))
+  (-> this (.-hasExternalDisplay)))
 
 (defn set-has-external-display!
   "Property.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayCapabilities/hasOrientation`"
   [this]
-  (-> this (.hasOrientation)))
+  (-> this (.-hasOrientation)))
 
 (defn set-has-orientation!
   "Property.
@@ -94,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayCapabilities/hasPosition`"
   [this]
-  (-> this (.hasPosition)))
+  (-> this (.-hasPosition)))
 
 (defn set-has-position!
   "Property.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayCapabilities/maxLayers`"
   [this]
-  (-> this (.maxLayers)))
+  (-> this (.-maxLayers)))
 
 (defn set-max-layers!
   "Property.

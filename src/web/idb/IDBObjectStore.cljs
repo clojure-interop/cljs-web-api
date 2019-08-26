@@ -102,6 +102,18 @@
   [this key]
   (-> this (.get key)))
 
+(defn get-key
+  "Method.
+
+  If a key is successfully found, then a structured clone of it
+  created and set as the result of the request object.
+
+  `var request = objectStore.getKey(key);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getKey`"
+  [this key]
+  (-> this (.getKey key)))
+
 (defn get-all
   "Method.
 
@@ -129,18 +141,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys`"
   [this & args]
   (apply (-> this .-getAllKeys) (concat [this] args)))
-
-(defn get-key
-  "Method.
-
-  If a key is successfully found, then a structured clone of it
-  created and set as the result of the request object.
-
-  `var request = objectStore.getKey(key);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getKey`"
-  [this key]
-  (-> this (.getKey key)))
 
 (defn index
   "Method.
@@ -203,7 +203,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/indexNames`"
   [this]
-  (-> this (.indexNames)))
+  (-> this (.-indexNames)))
 
 (defn set-index-names!
   "Property.
@@ -216,28 +216,6 @@
   [this val]
   (aset this "indexNames" val))
 
-(defn auto-increment
-  "Property.
-
-  A `js.Boolean`:
-
-  `var myAutoIncrement = objectStore.autoIncrement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
-  [this]
-  (-> this (.autoIncrement)))
-
-(defn set-auto-increment!
-  "Property.
-
-  A `js.Boolean`:
-
-  `var myAutoIncrement = objectStore.autoIncrement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
-  [this val]
-  (aset this "autoIncrement" val))
-
 (defn key-path
   "Property.
 
@@ -248,7 +226,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath`"
   [this]
-  (-> this (.keyPath)))
+  (-> this (.-keyPath)))
 
 (defn set-key-path!
   "Property.
@@ -272,7 +250,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -295,7 +273,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction`"
   [this]
-  (-> this (.transaction)))
+  (-> this (.-transaction)))
 
 (defn set-transaction!
   "Property.
@@ -307,4 +285,26 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction`"
   [this val]
   (aset this "transaction" val))
+
+(defn auto-increment
+  "Property.
+
+  A `js.Boolean`:
+
+  `var myAutoIncrement = objectStore.autoIncrement;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
+  [this]
+  (-> this (.-autoIncrement)))
+
+(defn set-auto-increment!
+  "Property.
+
+  A `js.Boolean`:
+
+  `var myAutoIncrement = objectStore.autoIncrement;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
+  [this val]
+  (aset this "autoIncrement" val))
 

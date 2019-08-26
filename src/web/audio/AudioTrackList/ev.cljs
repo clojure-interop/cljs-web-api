@@ -13,19 +13,16 @@
 (def change
   "Event.
 
-  The change event is fired when an audio track is enabled or disabled,
-  example by changing the track's enabled property.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/change_event`"
+  Fired when a track has been enabled or disabled.
+  Also available via the onchange property."
 
   "change")
 
 (def removetrack
   "Event.
 
-  The removetrack event is fired when a track is removed from an
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/removetrack_event`"
+  Fired when a new audio track has been removed from the media
+  Also available via the onremovetrack property."
 
   "removetrack")
 

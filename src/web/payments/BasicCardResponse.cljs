@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/cardNumber`"
   [this]
-  (-> this (.cardNumber)))
+  (-> this (.-cardNumber)))
 
 (defn set-card-number!
   "Property.
@@ -29,30 +29,6 @@
   [this val]
   (aset this "cardNumber" val))
 
-(defn billing-address
-  "Property.
-
-  The billingAddress property of the `web.payments.BasicCardResponse`
-  contains the billing address of the card used to make the payment.
-
-  `\\\"billingAddress\\\" : PaymentAddress`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/billingAddress`"
-  [this]
-  (-> this (.billingAddress)))
-
-(defn set-billing-address!
-  "Property.
-
-  The billingAddress property of the `web.payments.BasicCardResponse`
-  contains the billing address of the card used to make the payment.
-
-  `\\\"billingAddress\\\" : PaymentAddress`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/billingAddress`"
-  [this val]
-  (aset this "billingAddress" val))
-
 (defn cardholder-name
   "Property.
 
@@ -63,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/cardholderName`"
   [this]
-  (-> this (.cardholderName)))
+  (-> this (.-cardholderName)))
 
 (defn set-cardholder-name!
   "Property.
@@ -87,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/cardSecurityCode`"
   [this]
-  (-> this (.cardSecurityCode)))
+  (-> this (.-cardSecurityCode)))
 
 (defn set-card-security-code!
   "Property.
@@ -111,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/expiryMonth`"
   [this]
-  (-> this (.expiryMonth)))
+  (-> this (.-expiryMonth)))
 
 (defn set-expiry-month!
   "Property.
@@ -135,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/expiryYear`"
   [this]
-  (-> this (.expiryYear)))
+  (-> this (.-expiryYear)))
 
 (defn set-expiry-year!
   "Property.
@@ -148,4 +124,28 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/expiryYear`"
   [this val]
   (aset this "expiryYear" val))
+
+(defn billing-address
+  "Property.
+
+  The billingAddress property of the `web.payments.BasicCardResponse`
+  contains the billing address of the card used to make the payment.
+
+  `\\\"billingAddress\\\" : PaymentAddress`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/billingAddress`"
+  [this]
+  (-> this (.-billingAddress)))
+
+(defn set-billing-address!
+  "Property.
+
+  The billingAddress property of the `web.payments.BasicCardResponse`
+  contains the billing address of the card used to make the payment.
+
+  `\\\"billingAddress\\\" : PaymentAddress`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardResponse/billingAddress`"
+  [this val]
+  (aset this "billingAddress" val))
 

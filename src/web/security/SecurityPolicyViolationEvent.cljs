@@ -23,7 +23,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/blockedURI`"
   [this]
-  (-> this (.blockedURI)))
+  (-> this (.-blockedURI)))
 
 (defn set-blocked-uri!
   "Property.
@@ -48,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/columnNumber`"
   [this]
-  (-> this (.columnNumber)))
+  (-> this (.-columnNumber)))
 
 (defn set-column-number!
   "Property.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/disposition`"
   [this]
-  (-> this (.disposition)))
+  (-> this (.-disposition)))
 
 (defn set-disposition!
   "Property.
@@ -99,7 +99,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/documentURI`"
   [this]
-  (-> this (.documentURI)))
+  (-> this (.-documentURI)))
 
 (defn set-document-uri!
   "Property.
@@ -125,7 +125,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/effectiveDirective`"
   [this]
-  (-> this (.effectiveDirective)))
+  (-> this (.-effectiveDirective)))
 
 (defn set-effective-directive!
   "Property.
@@ -150,7 +150,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/lineNumber`"
   [this]
-  (-> this (.lineNumber)))
+  (-> this (.-lineNumber)))
 
 (defn set-line-number!
   "Property.
@@ -175,7 +175,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/originalPolicy`"
   [this]
-  (-> this (.originalPolicy)))
+  (-> this (.-originalPolicy)))
 
 (defn set-original-policy!
   "Property.
@@ -201,7 +201,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/referrer`"
   [this]
-  (-> this (.referrer)))
+  (-> this (.-referrer)))
 
 (defn set-referrer!
   "Property.
@@ -227,7 +227,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/sample`"
   [this]
-  (-> this (.sample)))
+  (-> this (.-sample)))
 
 (defn set-sample!
   "Property.
@@ -253,7 +253,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/sourceFile`"
   [this]
-  (-> this (.sourceFile)))
+  (-> this (.-sourceFile)))
 
 (defn set-source-file!
   "Property.
@@ -279,7 +279,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/statusCode`"
   [this]
-  (-> this (.statusCode)))
+  (-> this (.-statusCode)))
 
 (defn set-status-code!
   "Property.
@@ -305,7 +305,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/violatedDirective`"
   [this]
-  (-> this (.violatedDirective)))
+  (-> this (.-violatedDirective)))
 
 (defn set-violated-directive!
   "Property.

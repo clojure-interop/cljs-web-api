@@ -20,17 +20,16 @@
   [this & args]
   (apply (-> this .-bound) (concat [this] args)))
 
-(defn includes
+(defn only
   "Method.
 
-  key The key you want to check for in your key range. This can
-  any type.
+  value is the value for the new key range.
 
-  `var isIncluded = myKeyRange.includes(key)`
+  `var myIDBKeyRange = IDBKeyRange.only(value);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/includes`"
-  [this key]
-  (-> this (.includes key)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/only`"
+  [this value]
+  (-> this (.only value)))
 
 (defn lower-bound
   "Method.
@@ -44,17 +43,6 @@
   [this & args]
   (apply (-> this .-lowerBound) (concat [this] args)))
 
-(defn only
-  "Method.
-
-  value is the value for the new key range.
-
-  `var myIDBKeyRange = IDBKeyRange.only(value);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/only`"
-  [this value]
-  (-> this (.only value)))
-
 (defn upper-bound
   "Method.
 
@@ -66,6 +54,18 @@
   [this & args]
   (apply (-> this .-upperBound) (concat [this] args)))
 
+(defn includes
+  "Method.
+
+  key The key you want to check for in your key range. This can
+  any type.
+
+  `var isIncluded = myKeyRange.includes(key)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/includes`"
+  [this key]
+  (-> this (.includes key)))
+
 (defn lower
   "Property.
 
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lower`"
   [this]
-  (-> this (.lower)))
+  (-> this (.-lower)))
 
 (defn set-lower!
   "Property.
@@ -88,28 +88,6 @@
   [this val]
   (aset this "lower" val))
 
-(defn lower-open
-  "Property.
-
-  A `boolean`:
-
-  `var lowerOpen = myKeyRange.lowerOpen`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen`"
-  [this]
-  (-> this (.lowerOpen)))
-
-(defn set-lower-open!
-  "Property.
-
-  A `boolean`:
-
-  `var lowerOpen = myKeyRange.lowerOpen`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen`"
-  [this val]
-  (aset this "lowerOpen" val))
-
 (defn upper
   "Property.
 
@@ -119,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upper`"
   [this]
-  (-> this (.upper)))
+  (-> this (.-upper)))
 
 (defn set-upper!
   "Property.
@@ -132,6 +110,28 @@
   [this val]
   (aset this "upper" val))
 
+(defn lower-open
+  "Property.
+
+  A `boolean`:
+
+  `var lowerOpen = myKeyRange.lowerOpen`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen`"
+  [this]
+  (-> this (.-lowerOpen)))
+
+(defn set-lower-open!
+  "Property.
+
+  A `boolean`:
+
+  `var lowerOpen = myKeyRange.lowerOpen`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen`"
+  [this val]
+  (aset this "lowerOpen" val))
+
 (defn upper-open
   "Property.
 
@@ -141,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperOpen`"
   [this]
-  (-> this (.upperOpen)))
+  (-> this (.-upperOpen)))
 
 (defn set-upper-open!
   "Property.

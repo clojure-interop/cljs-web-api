@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/unit`"
   [this]
-  (-> this (.unit)))
+  (-> this (.-unit)))
 
 (defn set-unit!
   "Property.

@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/coneInnerAngle`"
   [this]
-  (-> this (.coneInnerAngle)))
+  (-> this (.-coneInnerAngle)))
 
 (defn set-cone-inner-angle!
   "Property.
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/coneOuterAngle`"
   [this]
-  (-> this (.coneOuterAngle)))
+  (-> this (.-coneOuterAngle)))
 
 (defn set-cone-outer-angle!
   "Property.
@@ -141,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/coneOuterGain`"
   [this]
-  (-> this (.coneOuterGain)))
+  (-> this (.-coneOuterGain)))
 
 (defn set-cone-outer-gain!
   "Property.
@@ -169,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/distanceModel`"
   [this]
-  (-> this (.distanceModel)))
+  (-> this (.-distanceModel)))
 
 (defn set-distance-model!
   "Property.
@@ -195,7 +195,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/maxDistance`"
   [this]
-  (-> this (.maxDistance)))
+  (-> this (.-maxDistance)))
 
 (defn set-max-distance!
   "Property.
@@ -222,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/orientationX`"
   [this]
-  (-> this (.orientationX)))
+  (-> this (.-orientationX)))
 
 (defn set-orientation-x!
   "Property.
@@ -250,7 +250,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/orientationY`"
   [this]
-  (-> this (.orientationY)))
+  (-> this (.-orientationY)))
 
 (defn set-orientation-y!
   "Property.
@@ -278,7 +278,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/orientationZ`"
   [this]
-  (-> this (.orientationZ)))
+  (-> this (.-orientationZ)))
 
 (defn set-orientation-z!
   "Property.
@@ -305,7 +305,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/panningModel`"
   [this]
-  (-> this (.panningModel)))
+  (-> this (.-panningModel)))
 
 (defn set-panning-model!
   "Property.
@@ -333,7 +333,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/positionX`"
   [this]
-  (-> this (.positionX)))
+  (-> this (.-positionX)))
 
 (defn set-position-x!
   "Property.
@@ -362,7 +362,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/positionY`"
   [this]
-  (-> this (.positionY)))
+  (-> this (.-positionY)))
 
 (defn set-position-y!
   "Property.
@@ -390,7 +390,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/positionZ`"
   [this]
-  (-> this (.positionZ)))
+  (-> this (.-positionZ)))
 
 (defn set-position-z!
   "Property.
@@ -418,7 +418,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/refDistance`"
   [this]
-  (-> this (.refDistance)))
+  (-> this (.-refDistance)))
 
 (defn set-ref-distance!
   "Property.
@@ -446,7 +446,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/rolloffFactor`"
   [this]
-  (-> this (.rolloffFactor)))
+  (-> this (.-rolloffFactor)))
 
 (defn set-rolloff-factor!
   "Property.

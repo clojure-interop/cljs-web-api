@@ -7,7 +7,7 @@
 
   An SVGAnimatedNumber corresponding to the offset of the given"
   [this]
-  (-> this (.offset)))
+  (-> this (.-offset)))
 
 (defn set-offset!
   "Property.

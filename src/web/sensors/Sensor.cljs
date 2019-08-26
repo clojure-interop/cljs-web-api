@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/activated`"
   [this]
-  (-> this (.activated)))
+  (-> this (.-activated)))
 
 (defn set-activated!
   "Property.
@@ -56,6 +56,62 @@
   [this val]
   (aset this "activated" val))
 
+(defn has-reading
+  "Property.
+
+  The hasReading read-only property of the `web.sensors.Sensor`
+  returns a `js.Boolean` indicating whether the sensor has a reading.
+
+  `var boolean = sensorInstance.hasReading
+
+  Because `web.sensors.Sensor` is a base class, hasReading may only be read from one of its derived classes.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/hasReading`"
+  [this]
+  (-> this (.-hasReading)))
+
+(defn set-has-reading!
+  "Property.
+
+  The hasReading read-only property of the `web.sensors.Sensor`
+  returns a `js.Boolean` indicating whether the sensor has a reading.
+
+  `var boolean = sensorInstance.hasReading
+
+  Because `web.sensors.Sensor` is a base class, hasReading may only be read from one of its derived classes.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/hasReading`"
+  [this val]
+  (aset this "hasReading" val))
+
+(defn timestamp
+  "Property.
+
+  The timestamp read-only property of the `web.sensors.Sensor`
+  returns the time stamp of the latest sensor reading.
+
+  `var timestamp = sensorInstance.timestamp
+
+  Because `web.sensors.Sensor` is a base class, timestamp may only be read from one of its derived classes.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
+  [this]
+  (-> this (.-timestamp)))
+
+(defn set-timestamp!
+  "Property.
+
+  The timestamp read-only property of the `web.sensors.Sensor`
+  returns the time stamp of the latest sensor reading.
+
+  `var timestamp = sensorInstance.timestamp
+
+  Because `web.sensors.Sensor` is a base class, timestamp may only be read from one of its derived classes.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
+  [this val]
+  (aset this "timestamp" val))
+
 (defn onerror
   "Property.
 
@@ -69,7 +125,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -86,64 +142,6 @@
   [this val]
   (aset this "onerror" val))
 
-(defn has-reading
-  "Property.
-
-  The hasReading read-only property of the `web.sensors.Sensor`
-  returns a `js.Boolean` indicating whether the sensor has a reading.
-
-  `var boolean = sensorInstance.hasReading
-
-  Because `web.sensors.Sensor` is a base class, hasReading may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/hasReading`"
-  [this]
-  (-> this (.hasReading)))
-
-(defn set-has-reading!
-  "Property.
-
-  The hasReading read-only property of the `web.sensors.Sensor`
-  returns a `js.Boolean` indicating whether the sensor has a reading.
-
-  `var boolean = sensorInstance.hasReading
-
-  Because `web.sensors.Sensor` is a base class, hasReading may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/hasReading`"
-  [this val]
-  (aset this "hasReading" val))
-
-(defn onactivate
-  "Property.
-
-  The onactivate `EventHandler` is called when one of the Sensor
-  child interfaces becomes active.
-
-  `sensorInstance.onactivate = function
-  sensorInstance.addEventListener('activate', function() { ... })
-
-  Because `web.sensors.Sensor` is a base class, onactivate may only be used on one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onactivate`"
-  [this]
-  (-> this (.onactivate)))
-
-(defn set-onactivate!
-  "Property.
-
-  The onactivate `EventHandler` is called when one of the Sensor
-  child interfaces becomes active.
-
-  `sensorInstance.onactivate = function
-  sensorInstance.addEventListener('activate', function() { ... })
-
-  Because `web.sensors.Sensor` is a base class, onactivate may only be used on one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onactivate`"
-  [this val]
-  (aset this "onactivate" val))
-
 (defn onreading
   "Property.
 
@@ -157,7 +155,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onreading`"
   [this]
-  (-> this (.onreading)))
+  (-> this (.-onreading)))
 
 (defn set-onreading!
   "Property.
@@ -174,31 +172,33 @@
   [this val]
   (aset this "onreading" val))
 
-(defn timestamp
+(defn onactivate
   "Property.
 
-  The timestamp read-only property of the `web.sensors.Sensor`
-  returns the time stamp of the latest sensor reading.
+  The onactivate `EventHandler` is called when one of the Sensor
+  child interfaces becomes active.
 
-  `var timestamp = sensorInstance.timestamp
+  `sensorInstance.onactivate = function
+  sensorInstance.addEventListener('activate', function() { ... })
 
-  Because `web.sensors.Sensor` is a base class, timestamp may only be read from one of its derived classes.`
+  Because `web.sensors.Sensor` is a base class, onactivate may only be used on one of its derived classes.`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onactivate`"
   [this]
-  (-> this (.timestamp)))
+  (-> this (.-onactivate)))
 
-(defn set-timestamp!
+(defn set-onactivate!
   "Property.
 
-  The timestamp read-only property of the `web.sensors.Sensor`
-  returns the time stamp of the latest sensor reading.
+  The onactivate `EventHandler` is called when one of the Sensor
+  child interfaces becomes active.
 
-  `var timestamp = sensorInstance.timestamp
+  `sensorInstance.onactivate = function
+  sensorInstance.addEventListener('activate', function() { ... })
 
-  Because `web.sensors.Sensor` is a base class, timestamp may only be read from one of its derived classes.`
+  Because `web.sensors.Sensor` is a base class, onactivate may only be used on one of its derived classes.`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/onactivate`"
   [this val]
-  (aset this "timestamp" val))
+  (aset this "onactivate" val))
 

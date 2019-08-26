@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/labels`"
   [this]
-  (-> this (.labels)))
+  (-> this (.-labels)))
 
 (defn set-labels!
   "Property.

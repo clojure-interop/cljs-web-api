@@ -69,7 +69,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -82,6 +82,28 @@
   [this val]
   (aset this "name" val))
 
+(defn version
+  "Property.
+
+  An integer containing the version of the connected database.
+
+  `var myInteger = IDBDatabase.version;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version`"
+  [this]
+  (-> this (.-version)))
+
+(defn set-version!
+  "Property.
+
+  An integer containing the version of the connected database.
+
+  `var myInteger = IDBDatabase.version;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version`"
+  [this val]
+  (aset this "version" val))
+
 (defn object-store-names
   "Property.
 
@@ -92,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/objectStoreNames`"
   [this]
-  (-> this (.objectStoreNames)))
+  (-> this (.-objectStoreNames)))
 
 (defn set-object-store-names!
   "Property.
@@ -117,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -141,7 +163,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -165,7 +187,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -192,7 +214,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange`"
   [this]
-  (-> this (.onversionchange)))
+  (-> this (.-onversionchange)))
 
 (defn set-onversionchange!
   "Property.
@@ -207,26 +229,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange`"
   [this val]
   (aset this "onversionchange" val))
-
-(defn version
-  "Property.
-
-  An integer containing the version of the connected database.
-
-  `var myInteger = IDBDatabase.version;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version`"
-  [this]
-  (-> this (.version)))
-
-(defn set-version!
-  "Property.
-
-  An integer containing the version of the connected database.
-
-  `var myInteger = IDBDatabase.version;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version`"
-  [this val]
-  (aset this "version" val))
 

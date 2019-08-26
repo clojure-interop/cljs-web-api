@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed`"
   [this]
-  (-> this (.pressed)))
+  (-> this (.-pressed)))
 
 (defn set-pressed!
   "Property.

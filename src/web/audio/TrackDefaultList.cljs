@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefaultList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

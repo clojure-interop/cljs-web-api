@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/boundingClientRect`"
   [this]
-  (-> this (.boundingClientRect)))
+  (-> this (.-boundingClientRect)))
 
 (defn set-bounding-client-rect!
   "Property.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRatio`"
   [this]
-  (-> this (.intersectionRatio)))
+  (-> this (.-intersectionRatio)))
 
 (defn set-intersection-ratio!
   "Property.
@@ -72,7 +72,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRect`"
   [this]
-  (-> this (.intersectionRect)))
+  (-> this (.-intersectionRect)))
 
 (defn set-intersection-rect!
   "Property.
@@ -102,7 +102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting`"
   [this]
-  (-> this (.isIntersecting)))
+  (-> this (.-isIntersecting)))
 
 (defn set-is-intersecting!
   "Property.
@@ -132,7 +132,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/rootBounds`"
   [this]
-  (-> this (.rootBounds)))
+  (-> this (.-rootBounds)))
 
 (defn set-root-bounds!
   "Property.
@@ -159,7 +159,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/target`"
   [this]
-  (-> this (.target)))
+  (-> this (.-target)))
 
 (defn set-target!
   "Property.
@@ -186,7 +186,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/time`"
   [this]
-  (-> this (.time)))
+  (-> this (.-time)))
 
 (defn set-time!
   "Property.

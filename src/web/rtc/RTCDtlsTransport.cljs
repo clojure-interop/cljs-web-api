@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/iceTransport`"
   [this]
-  (-> this (.iceTransport)))
+  (-> this (.-iceTransport)))
 
 (defn state
   "Property.
@@ -26,5 +26,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
 

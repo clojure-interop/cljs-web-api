@@ -9,7 +9,7 @@
   When the current port receives a MIDIMessage it triggers a call
   this event handler."
   [this]
-  (-> this (.onmidimessage)))
+  (-> this (.-onmidimessage)))
 
 (defn set-onmidimessage!
   "Property.

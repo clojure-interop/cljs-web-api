@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SensorErrorEvent/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.

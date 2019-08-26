@@ -10,6 +10,33 @@
 
   "error")
 
+(def offline
+  "Event.
+
+  Ffired when the browser has lost access to the network and the
+  of navigator.onLine switched to false.
+  Also available via the WorkerGlobalScope.onoffline property."
+
+  "offline")
+
+(def online
+  "Event.
+
+  Fired when the browser has gained access to the network and the
+  of navigator.onLine switched to true.
+  Also available via the WorkerGlobalScope.ononline property."
+
+  "online")
+
+(def languagechange
+  "Event.
+
+  Fired at the global/worker scope object when the user's preferred
+  change.
+  Also available via the WorkerGlobalScope.onlanguagechange property."
+
+  "languagechange")
+
 (def close
   "Event.
 
@@ -19,13 +46,19 @@
 
   "close")
 
-(def languagechange
+(def rejectionhandled
   "Event.
 
-  The languagechange event is fired at the global scope object
-  the user's preferred language changes.
+  An event handler for handled Promise rejection events.
+  Also available via the WorkerGlobalScope.onrejectionhandled"
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/languagechange_event`"
+  "rejectionhandled")
 
-  "languagechange")
+(def unhandledrejection
+  "Event.
+
+  An event handler for unhandled Promise rejection events.
+  Also available via the WorkerGlobalScope.onunhandledrejection"
+
+  "unhandledrejection")
 

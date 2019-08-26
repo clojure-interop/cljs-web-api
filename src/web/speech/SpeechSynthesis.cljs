@@ -79,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/paused`"
   [this]
-  (-> this (.paused)))
+  (-> this (.-paused)))
 
 (defn set-paused!
   "Property.
@@ -94,34 +94,6 @@
   [this val]
   (aset this "paused" val))
 
-(defn onvoiceschanged
-  "Property.
-
-  The onvoiceschanged property of the `web.speech.SpeechSynthesis`
-  represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`
-  that would be returned by the `SpeechSynthesis.getVoices()` method
-  changed (when the voiceschanged event fires.)
-
-  `speechSynthesisInstance.onvoiceschanged = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged`"
-  [this]
-  (-> this (.onvoiceschanged)))
-
-(defn set-onvoiceschanged!
-  "Property.
-
-  The onvoiceschanged property of the `web.speech.SpeechSynthesis`
-  represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`
-  that would be returned by the `SpeechSynthesis.getVoices()` method
-  changed (when the voiceschanged event fires.)
-
-  `speechSynthesisInstance.onvoiceschanged = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged`"
-  [this val]
-  (aset this "onvoiceschanged" val))
-
 (defn pending
   "Property.
 
@@ -133,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending`"
   [this]
-  (-> this (.pending)))
+  (-> this (.-pending)))
 
 (defn set-pending!
   "Property.
@@ -160,7 +132,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking`"
   [this]
-  (-> this (.speaking)))
+  (-> this (.-speaking)))
 
 (defn set-speaking!
   "Property.
@@ -175,4 +147,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking`"
   [this val]
   (aset this "speaking" val))
+
+(defn onvoiceschanged
+  "Property.
+
+  The onvoiceschanged property of the `web.speech.SpeechSynthesis`
+  represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`
+  that would be returned by the `SpeechSynthesis.getVoices()` method
+  changed (when the voiceschanged event fires.)
+
+  `speechSynthesisInstance.onvoiceschanged = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged`"
+  [this]
+  (-> this (.-onvoiceschanged)))
+
+(defn set-onvoiceschanged!
+  "Property.
+
+  The onvoiceschanged property of the `web.speech.SpeechSynthesis`
+  represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`
+  that would be returned by the `SpeechSynthesis.getVoices()` method
+  changed (when the voiceschanged event fires.)
+
+  `speechSynthesisInstance.onvoiceschanged = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/onvoiceschanged`"
+  [this val]
+  (aset this "onvoiceschanged" val))
 

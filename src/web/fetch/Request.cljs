@@ -135,7 +135,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/cache`"
   [this]
-  (-> this (.cache)))
+  (-> this (.-cache)))
 
 (defn set-cache!
   "Property.
@@ -150,56 +150,6 @@
   [this val]
   (aset this "cache" val))
 
-(defn body
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this]
-  (-> this (.body)))
-
-(defn set-body!
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this val]
-  (aset this "body" val))
-
-(defn body-used
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this]
-  (-> this (.bodyUsed)))
-
-(defn set-body-used!
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this val]
-  (aset this "bodyUsed" val))
-
 (defn context
   "Property.
 
@@ -210,7 +160,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/context`"
   [this]
-  (-> this (.context)))
+  (-> this (.-context)))
 
 (defn set-context!
   "Property.
@@ -235,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials`"
   [this]
-  (-> this (.credentials)))
+  (-> this (.-credentials)))
 
 (defn set-credentials!
   "Property.
@@ -260,7 +210,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/destination`"
   [this]
-  (-> this (.destination)))
+  (-> this (.-destination)))
 
 (defn headers
   "Property.
@@ -272,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/headers`"
   [this]
-  (-> this (.headers)))
+  (-> this (.-headers)))
 
 (defn set-headers!
   "Property.
@@ -296,7 +246,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/integrity`"
   [this]
-  (-> this (.integrity)))
+  (-> this (.-integrity)))
 
 (defn set-integrity!
   "Property.
@@ -320,7 +270,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/method`"
   [this]
-  (-> this (.method)))
+  (-> this (.-method)))
 
 (defn set-method!
   "Property.
@@ -346,7 +296,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/mode`"
   [this]
-  (-> this (.mode)))
+  (-> this (.-mode)))
 
 (defn set-mode!
   "Property.
@@ -372,7 +322,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/redirect`"
   [this]
-  (-> this (.redirect)))
+  (-> this (.-redirect)))
 
 (defn set-redirect!
   "Property.
@@ -397,7 +347,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/referrer`"
   [this]
-  (-> this (.referrer)))
+  (-> this (.-referrer)))
 
 (defn set-referrer!
   "Property.
@@ -423,7 +373,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/referrerPolicy`"
   [this]
-  (-> this (.referrerPolicy)))
+  (-> this (.-referrerPolicy)))
 
 (defn set-referrer-policy!
   "Property.
@@ -448,7 +398,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.
@@ -461,4 +411,54 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Request/url`"
   [this val]
   (aset this "url" val))
+
+(defn body
+  "Property.
+
+  The body read-only property of the `web.fetch.Body` mixin is
+  simple getter used to expose a `web.files.ReadableStream` of
+  body contents.
+
+  `var stream = responseInstance.body;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
+  [this]
+  (-> this (.-body)))
+
+(defn set-body!
+  "Property.
+
+  The body read-only property of the `web.fetch.Body` mixin is
+  simple getter used to expose a `web.files.ReadableStream` of
+  body contents.
+
+  `var stream = responseInstance.body;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
+  [this val]
+  (aset this "body" val))
+
+(defn body-used
+  "Property.
+
+  The bodyUsed read-only property of the `web.fetch.Body` mixin
+  a `js.Boolean` that indicates whether the body has been read
+
+  `var myBodyUsed = response.bodyUsed;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
+  [this]
+  (-> this (.-bodyUsed)))
+
+(defn set-body-used!
+  "Property.
+
+  The bodyUsed read-only property of the `web.fetch.Body` mixin
+  a `js.Boolean` that indicates whether the body has been read
+
+  `var myBodyUsed = response.bodyUsed;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
+  [this val]
+  (aset this "bodyUsed" val))
 

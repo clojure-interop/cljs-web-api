@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/provider`"
   [this]
-  (-> this (.provider)))
+  (-> this (.-provider)))
 
 (defn set-provider!
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.

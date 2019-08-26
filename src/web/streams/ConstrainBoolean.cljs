@@ -11,7 +11,7 @@
 
   A Boolean which indicates a value the property must have."
   [this]
-  (-> this (.exact)))
+  (-> this (.-exact)))
 
 (defn set-exact!
   "Property.
@@ -19,4 +19,24 @@
   A Boolean which indicates a value the property must have."
   [this val]
   (aset this "exact" val))
+
+(defn ideal
+  "Property.
+
+  A Boolean value indicating the ideal, but not required, value
+  property should ideally have. If possible, this value will be
+  but the user agent will use the other value if it needs to in
+  to come up with a workable configuration."
+  [this]
+  (-> this (.-ideal)))
+
+(defn set-ideal!
+  "Property.
+
+  A Boolean value indicating the ideal, but not required, value
+  property should ideally have. If possible, this value will be
+  but the user agent will use the other value if it needs to in
+  to come up with a workable configuration."
+  [this val]
+  (aset this "ideal" val))
 

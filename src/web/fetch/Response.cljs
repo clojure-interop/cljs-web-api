@@ -42,6 +42,30 @@
   [this ]
   (-> this (.clone)))
 
+(defn error
+  "Method.
+
+  The error() method of the `web.fetch.Response` interface returns
+  new Response object associated with a network error.
+
+  `var errorResponse = Response.error();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/error`"
+  [this ]
+  (-> this (.error)))
+
+(defn redirect
+  "Method.
+
+  The redirect() method of the `web.fetch.Response` interface returns
+  Response resulting in a redirect to the specified URL.
+
+  `var response = Response.redirect(url, status);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/redirect`"
+  [this url status]
+  (-> this (.redirect url status)))
+
 (defn array-buffer
   "Method.
 
@@ -71,18 +95,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/blob`"
   [this & args]
   (apply (-> this .-blob) (concat [this] args)))
-
-(defn error
-  "Method.
-
-  The error() method of the `web.fetch.Response` interface returns
-  new Response object associated with a network error.
-
-  `var errorResponse = Response.error();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/error`"
-  [this ]
-  (-> this (.error)))
 
 (defn form-data
   "Method.
@@ -115,18 +127,6 @@
   [this & args]
   (apply (-> this .-json) (concat [this] args)))
 
-(defn redirect
-  "Method.
-
-  The redirect() method of the `web.fetch.Response` interface returns
-  Response resulting in a redirect to the specified URL.
-
-  `var response = Response.redirect(url, status);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/redirect`"
-  [this url status]
-  (-> this (.redirect url status)))
-
 (defn text
   "Method.
 
@@ -153,7 +153,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/headers`"
   [this]
-  (-> this (.headers)))
+  (-> this (.-headers)))
 
 (defn set-headers!
   "Property.
@@ -167,56 +167,6 @@
   [this val]
   (aset this "headers" val))
 
-(defn body
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this]
-  (-> this (.body)))
-
-(defn set-body!
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this val]
-  (aset this "body" val))
-
-(defn body-used
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this]
-  (-> this (.bodyUsed)))
-
-(defn set-body-used!
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this val]
-  (aset this "bodyUsed" val))
-
 (defn ok
   "Property.
 
@@ -228,7 +178,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/ok`"
   [this]
-  (-> this (.ok)))
+  (-> this (.-ok)))
 
 (defn set-ok!
   "Property.
@@ -254,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected`"
   [this]
-  (-> this (.redirected)))
+  (-> this (.-redirected)))
 
 (defn status
   "Property.
@@ -266,7 +216,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/status`"
   [this]
-  (-> this (.status)))
+  (-> this (.-status)))
 
 (defn set-status!
   "Property.
@@ -291,7 +241,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText`"
   [this]
-  (-> this (.statusText)))
+  (-> this (.-statusText)))
 
 (defn set-status-text!
   "Property.
@@ -316,7 +266,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -341,7 +291,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.
@@ -366,7 +316,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/useFinalURL`"
   [this]
-  (-> this (.useFinalURL)))
+  (-> this (.-useFinalURL)))
 
 (defn set-use-final-url!
   "Property.
@@ -379,4 +329,54 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/useFinalURL`"
   [this val]
   (aset this "useFinalURL" val))
+
+(defn body
+  "Property.
+
+  The body read-only property of the `web.fetch.Body` mixin is
+  simple getter used to expose a `web.files.ReadableStream` of
+  body contents.
+
+  `var stream = responseInstance.body;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
+  [this]
+  (-> this (.-body)))
+
+(defn set-body!
+  "Property.
+
+  The body read-only property of the `web.fetch.Body` mixin is
+  simple getter used to expose a `web.files.ReadableStream` of
+  body contents.
+
+  `var stream = responseInstance.body;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
+  [this val]
+  (aset this "body" val))
+
+(defn body-used
+  "Property.
+
+  The bodyUsed read-only property of the `web.fetch.Body` mixin
+  a `js.Boolean` that indicates whether the body has been read
+
+  `var myBodyUsed = response.bodyUsed;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
+  [this]
+  (-> this (.-bodyUsed)))
+
+(defn set-body-used!
+  "Property.
+
+  The bodyUsed read-only property of the `web.fetch.Body` mixin
+  a `js.Boolean` that indicates whether the body has been read
+
+  `var myBodyUsed = response.bodyUsed;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
+  [this val]
+  (aset this "bodyUsed" val))
 

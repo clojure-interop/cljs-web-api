@@ -22,6 +22,27 @@
   [this & args]
   (apply (-> this .-item) (concat [this] args)))
 
+(defn node-list
+  "Method.
+
+  NodeList.entries()"
+  [this & args]
+  (apply (-> this .-nodeList) (concat [this] args)))
+
+(defn iterator
+  "Method.
+
+  NodeList.forEach()"
+  [this & args]
+  (apply (-> this .-iterator) (concat [this] args)))
+
+(defn node-list
+  "Method.
+
+  NodeList.keys()"
+  [this & args]
+  (apply (-> this .-NodeList) (concat [this] args)))
+
 (defn entries
   "Method.
 
@@ -83,7 +104,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

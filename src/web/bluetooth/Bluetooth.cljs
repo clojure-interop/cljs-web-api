@@ -36,7 +36,7 @@
   URL, which the user agent allows the user to open. A BluetoothDevice
   the beacon would be available through navigator.bluetooth.referringDevice."
   [this]
-  (-> this (.referringDevice)))
+  (-> this (.-referringDevice)))
 
 (defn set-referring-device!
   "Property.
@@ -54,7 +54,7 @@
   An event handler that runs when an event of type availabilitychanged
   fired."
   [this]
-  (-> this (.onavailabilitychanged)))
+  (-> this (.-onavailabilitychanged)))
 
 (defn set-onavailabilitychanged!
   "Property.

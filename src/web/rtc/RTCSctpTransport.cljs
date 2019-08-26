@@ -7,35 +7,37 @@
   channels are sent and received."
   (:refer-clojure :exclude []))
 
-(defn max-channels-read
+(defn max-channels
   "Property.
 
   An integer value indicating the maximum number of RTCDataChannels
   can be open simultaneously."
   [this]
-  (-> this (.maxChannelsRead)))
+  (-> this (.-maxChannels)))
 
-(defn set-max-channels-read!
+(defn set-max-channels!
   "Property.
 
   An integer value indicating the maximum number of RTCDataChannels
   can be open simultaneously."
   [this val]
-  (aset this "maxChannelsRead" val))
+  (aset this "maxChannels" val))
 
-(defn onstatechange
+(defn max-message-size
   "Property.
 
-  Fired when the RTCSctpTransport.state changes."
+  An integer value indicating the maximum size, in bytes, of a
+  which can be sent using the RTCDataChannel.send() method."
   [this]
-  (-> this (.onstatechange)))
+  (-> this (.-maxMessageSize)))
 
-(defn set-onstatechange!
+(defn set-max-message-size!
   "Property.
 
-  Fired when the RTCSctpTransport.state changes."
+  An integer value indicating the maximum size, in bytes, of a
+  which can be sent using the RTCDataChannel.send() method."
   [this val]
-  (aset this "onstatechange" val))
+  (aset this "maxMessageSize" val))
 
 (defn state
   "Property.
@@ -48,5 +50,35 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
+
+(defn transport
+  "Property.
+
+  An RTCDtlsTransport object representing the DTLS transport used
+  the transmission and receipt of data packets."
+  [this]
+  (-> this (.-transport)))
+
+(defn set-transport!
+  "Property.
+
+  An RTCDtlsTransport object representing the DTLS transport used
+  the transmission and receipt of data packets."
+  [this val]
+  (aset this "transport" val))
+
+(defn onstatechange
+  "Property.
+
+  Fired when the RTCSctpTransport.state changes."
+  [this]
+  (-> this (.-onstatechange)))
+
+(defn set-onstatechange!
+  "Property.
+
+  Fired when the RTCSctpTransport.state changes."
+  [this val]
+  (aset this "onstatechange" val))
 

@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionX`"
   [this]
-  (-> this (.positionX)))
+  (-> this (.-positionX)))
 
 (defn set-position-x!
   "Property.
@@ -61,126 +61,6 @@
   [this val]
   (aset this "positionX" val))
 
-(defn doppler-factor
-  "Property.
-
-  The deprecated dopplerFactor property of the `web.audio.AudioListener`
-  is a double value representing the amount of pitch shift to use
-  rendering a doppler effect.
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.dopplerFactor = 1;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/dopplerFactor`"
-  [this]
-  (-> this (.dopplerFactor)))
-
-(defn set-doppler-factor!
-  "Property.
-
-  The deprecated dopplerFactor property of the `web.audio.AudioListener`
-  is a double value representing the amount of pitch shift to use
-  rendering a doppler effect.
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.dopplerFactor = 1;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/dopplerFactor`"
-  [this val]
-  (aset this "dopplerFactor" val))
-
-(defn forward-x
-  "Property.
-
-  The forwardX read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the x value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardX.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX`"
-  [this]
-  (-> this (.forwardX)))
-
-(defn set-forward-x!
-  "Property.
-
-  The forwardX read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the x value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardX.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX`"
-  [this val]
-  (aset this "forwardX" val))
-
-(defn forward-y
-  "Property.
-
-  The forwardY read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the y value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardY.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY`"
-  [this]
-  (-> this (.forwardY)))
-
-(defn set-forward-y!
-  "Property.
-
-  The forwardY read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the y value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardY.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY`"
-  [this val]
-  (aset this "forwardY" val))
-
-(defn forward-z
-  "Property.
-
-  The forwardZ read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the z value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardZ.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ`"
-  [this]
-  (-> this (.forwardZ)))
-
-(defn set-forward-z!
-  "Property.
-
-  The forwardZ read-only property of the `web.audio.AudioListener`
-  is an `web.audio.AudioParam` representing the z value of the
-  vector defining the forward direction the listener is pointing
-
-  `var audioCtx = new AudioContext();
-  var myListener = audioCtx.listener;
-  myListener.forwardZ.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ`"
-  [this val]
-  (aset this "forwardZ" val))
-
 (defn position-y
   "Property.
 
@@ -194,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionY`"
   [this]
-  (-> this (.positionY)))
+  (-> this (.-positionY)))
 
 (defn set-position-y!
   "Property.
@@ -224,7 +104,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionZ`"
   [this]
-  (-> this (.positionZ)))
+  (-> this (.-positionZ)))
 
 (defn set-position-z!
   "Property.
@@ -241,33 +121,95 @@
   [this val]
   (aset this "positionZ" val))
 
-(defn speed-of-sound
+(defn forward-x
   "Property.
 
-  The speedOfSound property of the `web.audio.AudioListener` interface
-  a double value representing the speed of sound, in meters per
+  The forwardX read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the x value of the
+  vector defining the forward direction the listener is pointing
 
   `var audioCtx = new AudioContext();
   var myListener = audioCtx.listener;
-  myListener.speedOfSound = 343.3;`
+  myListener.forwardX.value = 0;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/speedOfSound`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX`"
   [this]
-  (-> this (.speedOfSound)))
+  (-> this (.-forwardX)))
 
-(defn set-speed-of-sound!
+(defn set-forward-x!
   "Property.
 
-  The speedOfSound property of the `web.audio.AudioListener` interface
-  a double value representing the speed of sound, in meters per
+  The forwardX read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the x value of the
+  vector defining the forward direction the listener is pointing
 
   `var audioCtx = new AudioContext();
   var myListener = audioCtx.listener;
-  myListener.speedOfSound = 343.3;`
+  myListener.forwardX.value = 0;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/speedOfSound`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX`"
   [this val]
-  (aset this "speedOfSound" val))
+  (aset this "forwardX" val))
+
+(defn forward-y
+  "Property.
+
+  The forwardY read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the y value of the
+  vector defining the forward direction the listener is pointing
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.forwardY.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY`"
+  [this]
+  (-> this (.-forwardY)))
+
+(defn set-forward-y!
+  "Property.
+
+  The forwardY read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the y value of the
+  vector defining the forward direction the listener is pointing
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.forwardY.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardY`"
+  [this val]
+  (aset this "forwardY" val))
+
+(defn forward-z
+  "Property.
+
+  The forwardZ read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the z value of the
+  vector defining the forward direction the listener is pointing
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.forwardZ.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ`"
+  [this]
+  (-> this (.-forwardZ)))
+
+(defn set-forward-z!
+  "Property.
+
+  The forwardZ read-only property of the `web.audio.AudioListener`
+  is an `web.audio.AudioParam` representing the z value of the
+  vector defining the forward direction the listener is pointing
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.forwardZ.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardZ`"
+  [this val]
+  (aset this "forwardZ" val))
 
 (defn up-x
   "Property.
@@ -282,7 +224,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upX`"
   [this]
-  (-> this (.upX)))
+  (-> this (.-upX)))
 
 (defn set-up-x!
   "Property.
@@ -312,7 +254,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upY`"
   [this]
-  (-> this (.upY)))
+  (-> this (.-upY)))
 
 (defn set-up-y!
   "Property.
@@ -342,7 +284,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upZ`"
   [this]
-  (-> this (.upZ)))
+  (-> this (.-upZ)))
 
 (defn set-up-z!
   "Property.
@@ -358,4 +300,62 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/upZ`"
   [this val]
   (aset this "upZ" val))
+
+(defn doppler-factor
+  "Property.
+
+  The deprecated dopplerFactor property of the `web.audio.AudioListener`
+  is a double value representing the amount of pitch shift to use
+  rendering a doppler effect.
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.dopplerFactor = 1;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/dopplerFactor`"
+  [this]
+  (-> this (.-dopplerFactor)))
+
+(defn set-doppler-factor!
+  "Property.
+
+  The deprecated dopplerFactor property of the `web.audio.AudioListener`
+  is a double value representing the amount of pitch shift to use
+  rendering a doppler effect.
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.dopplerFactor = 1;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/dopplerFactor`"
+  [this val]
+  (aset this "dopplerFactor" val))
+
+(defn speed-of-sound
+  "Property.
+
+  The speedOfSound property of the `web.audio.AudioListener` interface
+  a double value representing the speed of sound, in meters per
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.speedOfSound = 343.3;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/speedOfSound`"
+  [this]
+  (-> this (.-speedOfSound)))
+
+(defn set-speed-of-sound!
+  "Property.
+
+  The speedOfSound property of the `web.audio.AudioListener` interface
+  a double value representing the speed of sound, in meters per
+
+  `var audioCtx = new AudioContext();
+  var myListener = audioCtx.listener;
+  myListener.speedOfSound = 343.3;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/speedOfSound`"
+  [this val]
+  (aset this "speedOfSound" val))
 

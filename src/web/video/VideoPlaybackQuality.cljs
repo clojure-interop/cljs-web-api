@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/corruptedVideoFrames`"
   [this]
-  (-> this (.corruptedVideoFrames)))
+  (-> this (.-corruptedVideoFrames)))
 
 (defn set-corrupted-video-frames!
   "Property.
@@ -30,36 +30,6 @@
   [this val]
   (aset this "corruptedVideoFrames" val))
 
-(defn total-frame-delay
-  "Property.
-
-  The VideoPlaybackQuality.totalFrameDelay read-only property returns
-  double containing the sum of the frame delay since the creation
-  the associated `web.video.HTMLVideoElement`. The frame delay
-  the difference between a frame's theoretical presentation time
-  its effective display time.
-
-  `value = videoPlaybackQuality.totalFrameDelay;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalFrameDelay`"
-  [this]
-  (-> this (.totalFrameDelay)))
-
-(defn set-total-frame-delay!
-  "Property.
-
-  The VideoPlaybackQuality.totalFrameDelay read-only property returns
-  double containing the sum of the frame delay since the creation
-  the associated `web.video.HTMLVideoElement`. The frame delay
-  the difference between a frame's theoretical presentation time
-  its effective display time.
-
-  `value = videoPlaybackQuality.totalFrameDelay;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalFrameDelay`"
-  [this val]
-  (aset this "totalFrameDelay" val))
-
 (defn creation-time
   "Property.
 
@@ -71,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/creationTime`"
   [this]
-  (-> this (.creationTime)))
+  (-> this (.-creationTime)))
 
 (defn set-creation-time!
   "Property.
@@ -98,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/droppedVideoFrames`"
   [this]
-  (-> this (.droppedVideoFrames)))
+  (-> this (.-droppedVideoFrames)))
 
 (defn set-dropped-video-frames!
   "Property.
@@ -125,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalVideoFrames`"
   [this]
-  (-> this (.totalVideoFrames)))
+  (-> this (.-totalVideoFrames)))
 
 (defn set-total-video-frames!
   "Property.
@@ -139,4 +109,34 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalVideoFrames`"
   [this val]
   (aset this "totalVideoFrames" val))
+
+(defn total-frame-delay
+  "Property.
+
+  The VideoPlaybackQuality.totalFrameDelay read-only property returns
+  double containing the sum of the frame delay since the creation
+  the associated `web.video.HTMLVideoElement`. The frame delay
+  the difference between a frame's theoretical presentation time
+  its effective display time.
+
+  `value = videoPlaybackQuality.totalFrameDelay;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalFrameDelay`"
+  [this]
+  (-> this (.-totalFrameDelay)))
+
+(defn set-total-frame-delay!
+  "Property.
+
+  The VideoPlaybackQuality.totalFrameDelay read-only property returns
+  double containing the sum of the frame delay since the creation
+  the associated `web.video.HTMLVideoElement`. The frame delay
+  the difference between a frame's theoretical presentation time
+  its effective display time.
+
+  `value = videoPlaybackQuality.totalFrameDelay;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality/totalFrameDelay`"
+  [this val]
+  (aset this "totalFrameDelay" val))
 

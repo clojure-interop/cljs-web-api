@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine`"
   [this]
-  (-> this (.onLine)))
+  (-> this (.-onLine)))
 
 (defn set-on-line!
   "Property.

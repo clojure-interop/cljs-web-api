@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFlags/create`"
   [this]
-  (-> this (.create)))
+  (-> this (.-create)))
 
 (defn set-create!
   "Property.
@@ -47,7 +47,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFlags/exclusive`"
   [this]
-  (-> this (.exclusive)))
+  (-> this (.-exclusive)))
 
 (defn set-exclusive!
   "Property.

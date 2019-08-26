@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceProximityEvent/max`"
   [this]
-  (-> this (.max)))
+  (-> this (.-max)))
 
 (defn set-max!
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceProximityEvent/min`"
   [this]
-  (-> this (.min)))
+  (-> this (.-min)))
 
 (defn set-min!
   "Property.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceProximityEvent/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.

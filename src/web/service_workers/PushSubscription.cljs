@@ -53,7 +53,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/endpoint`"
   [this]
-  (-> this (.endpoint)))
+  (-> this (.-endpoint)))
 
 (defn set-endpoint!
   "Property.
@@ -68,32 +68,6 @@
   [this val]
   (aset this "endpoint" val))
 
-(defn subscription-id
-  "Property.
-
-  The endpoint read-only property of the `web.service-workers.PushSubscription`
-  returns a `web.dom.DOMString` containing the subscription ID
-  with the push subscription.
-
-  `var subId = pushSubscription.subscriptionId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
-  [this]
-  (-> this (.subscriptionId)))
-
-(defn set-subscription-id!
-  "Property.
-
-  The endpoint read-only property of the `web.service-workers.PushSubscription`
-  returns a `web.dom.DOMString` containing the subscription ID
-  with the push subscription.
-
-  `var subId = pushSubscription.subscriptionId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
-  [this val]
-  (aset this "subscriptionId" val))
-
 (defn expiration-time
   "Property.
 
@@ -105,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/expirationTime`"
   [this]
-  (-> this (.expirationTime)))
+  (-> this (.-expirationTime)))
 
 (defn set-expiration-time!
   "Property.
@@ -131,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/options`"
   [this]
-  (-> this (.options)))
+  (-> this (.-options)))
 
 (defn set-options!
   "Property.
@@ -145,4 +119,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/options`"
   [this val]
   (aset this "options" val))
+
+(defn subscription-id
+  "Property.
+
+  The endpoint read-only property of the `web.service-workers.PushSubscription`
+  returns a `web.dom.DOMString` containing the subscription ID
+  with the push subscription.
+
+  `var subId = pushSubscription.subscriptionId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
+  [this]
+  (-> this (.-subscriptionId)))
+
+(defn set-subscription-id!
+  "Property.
+
+  The endpoint read-only property of the `web.service-workers.PushSubscription`
+  returns a `web.dom.DOMString` containing the subscription ID
+  with the push subscription.
+
+  `var subId = pushSubscription.subscriptionId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
+  [this val]
+  (aset this "subscriptionId" val))
 

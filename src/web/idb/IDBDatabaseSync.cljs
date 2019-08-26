@@ -1,14 +1,7 @@
 (ns web.idb.IDBDatabaseSync
   "The DatabaseSync interface in the IndexedDB API represents a
   connection to a database."
-  (:refer-clojure :exclude [name]))
-
-(defn name
-  "Method.
-
-  The name of a new object store."
-  [this & args]
-  (apply (-> this .-name) (concat [this] args)))
+  (:refer-clojure :exclude []))
 
 (defn idb-object-store-sync
   "Method.
@@ -32,27 +25,6 @@
   already exists in the connected database."
   [this & args]
   (apply (-> this .-NOT_FOUND_ERR) (concat [this] args)))
-
-(defn store-name
-  "Method.
-
-  The name of an existing object store to remove."
-  [this & args]
-  (apply (-> this .-storeName) (concat [this] args)))
-
-(defn version
-  "Method.
-
-  The version to store in the database."
-  [this & args]
-  (apply (-> this .-version) (concat [this] args)))
-
-(defn store-names
-  "Method.
-
-  The names of object stores and indexes in the scope of the new"
-  [this & args]
-  (apply (-> this .-storeNames) (concat [this] args)))
 
 (defn idb-transaction-sync
   "Method.

@@ -31,20 +31,6 @@
   [this unit]
   (-> this (.getFloatValue unit)))
 
-(defn get-rect-value
-  "Method.
-
-  The getRectValue() method of the `web.css.CSSPrimitiveValue`
-  is used to get a rect value. If this CSS value doesn't contain
-  rect value, a `web.dom.DOMException` is raised. Modification
-  the corresponding style property can be achieved using the `Rect`
-
-  `var rectValue = cssPrimitiveValue.getRectValue();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getRectValue`"
-  [this ]
-  (-> this (.getRectValue)))
-
 (defn get-rgb-color-value
   "Method.
 
@@ -58,6 +44,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getRGBColorValue`"
   [this ]
   (-> this (.getRGBColorValue)))
+
+(defn get-rect-value
+  "Method.
+
+  The getRectValue() method of the `web.css.CSSPrimitiveValue`
+  is used to get a rect value. If this CSS value doesn't contain
+  rect value, a `web.dom.DOMException` is raised. Modification
+  the corresponding style property can be achieved using the `Rect`
+
+  `var rectValue = cssPrimitiveValue.getRectValue();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getRectValue`"
+  [this ]
+  (-> this (.getRectValue)))
 
 (defn get-string-value
   "Method.
@@ -110,5 +110,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/primitiveType`"
   [this]
-  (-> this (.primitiveType)))
+  (-> this (.-primitiveType)))
 

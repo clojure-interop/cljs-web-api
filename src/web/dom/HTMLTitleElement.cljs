@@ -8,7 +8,7 @@
 
   Is a DOMString representing the text of the document's title."
   [this]
-  (-> this (.text)))
+  (-> this (.-text)))
 
 (defn set-text!
   "Property.

@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.

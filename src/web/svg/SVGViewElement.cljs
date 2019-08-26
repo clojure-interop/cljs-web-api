@@ -12,7 +12,7 @@
   can be associated with the corresponding element using the getElementById()
   call."
   [this]
-  (-> this (.viewTarget)))
+  (-> this (.-viewTarget)))
 
 (defn set-view-target!
   "Property.

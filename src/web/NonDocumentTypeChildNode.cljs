@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling`"
   [this]
-  (-> this (.previousElementSibling)))
+  (-> this (.-previousElementSibling)))
 
 (defn next-element-sibling
   "Property.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this]
-  (-> this (.nextElementSibling)))
+  (-> this (.-nextElementSibling)))
 
 (defn set-next-element-sibling!
   "Property.

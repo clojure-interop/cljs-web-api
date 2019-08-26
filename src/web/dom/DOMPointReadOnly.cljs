@@ -32,6 +32,18 @@
   [this & args]
   (apply (-> this .-matrixTransform) (concat [this] args)))
 
+(defn to-json
+  "Method.
+
+  The `web.dom.DOMPointReadOnly` method toJSON() returns a `web.dom.DOMPointInit`
+  giving the JSON form of the point object.
+
+  `pointJSON = DOMPointReadOnly.toJSON();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON`"
+  [this ]
+  (-> this (.toJSON)))
+
 (defn from-point
   "Method.
 
@@ -44,15 +56,62 @@
   [this source-point]
   (-> this (.fromPoint source-point)))
 
-(defn to-json
-  "Method.
+(defn x
+  "Property.
 
-  The `web.dom.DOMPointReadOnly` method toJSON() returns a `web.dom.DOMPointInit`
-  giving the JSON form of the point object.
+  The DOMPointReadOnly interface's x property holds the horizontal
+  x, for a read-only point in space. This property cannot be changed
+  JavaScript code in this read-only version of the DOMPoint object.
 
-  `pointJSON = DOMPointReadOnly.toJSON();`
+  `var xPos = DOMPointReadOnly.x;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON`"
-  [this ]
-  (-> this (.toJSON)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/x`"
+  [this]
+  (-> this (.-x)))
+
+(defn y
+  "Property.
+
+  The DOMPointReadOnly interface's y property holds the vertical
+  y, for a read-only point in space.
+
+  `var yPos = DOMPointReadOnly.y;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/y`"
+  [this]
+  (-> this (.-y)))
+
+(defn z
+  "Property.
+
+  The DOMPointReadOnly interface's z property holds the depth coordinate,
+  for a read-only point in space.
+
+  `var zPos = DOMPointReadOnly.z;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/z`"
+  [this]
+  (-> this (.-z)))
+
+(defn w
+  "Property.
+
+  The DOMPointReadOnly interface's w property holds the point's
+  value, w, for a read-only point in space.
+
+  `var perspective = DOMPointReadOnly.w;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/w`"
+  [this]
+  (-> this (.-w)))
+
+(defn dom-point-read-only
+  "Property."
+  [this]
+  (-> this (.-DOMPointReadOnly)))
+
+(defn set-dom-point-read-only!
+  "Property."
+  [this val]
+  (aset this "DOMPointReadOnly" val))
 

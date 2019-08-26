@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/top`"
   [this]
-  (-> this (.top)))
+  (-> this (.-top)))
 
 (defn set-top!
   "Property.
@@ -26,28 +26,6 @@
   [this val]
   (aset this "top" val))
 
-(defn behavior
-  "Property.
-
-  An enum, the value of which can be one of the following:
-
-  `behavior: ScrollBehavior`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/behavior`"
-  [this]
-  (-> this (.behavior)))
-
-(defn set-behavior!
-  "Property.
-
-  An enum, the value of which can be one of the following:
-
-  `behavior: ScrollBehavior`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/behavior`"
-  [this val]
-  (aset this "behavior" val))
-
 (defn left
   "Property.
 
@@ -57,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/left`"
   [this]
-  (-> this (.left)))
+  (-> this (.-left)))
 
 (defn set-left!
   "Property.
@@ -69,4 +47,26 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/left`"
   [this val]
   (aset this "left" val))
+
+(defn behavior
+  "Property.
+
+  An enum, the value of which can be one of the following:
+
+  `behavior: ScrollBehavior`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/behavior`"
+  [this]
+  (-> this (.-behavior)))
+
+(defn set-behavior!
+  "Property.
+
+  An enum, the value of which can be one of the following:
+
+  `behavior: ScrollBehavior`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScrollToOptions/behavior`"
+  [this val]
+  (aset this "behavior" val))
 

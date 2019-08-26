@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentDetailsUpdate/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.
@@ -47,7 +47,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentDetailsUpdate/shippingAddressErrors`"
   [this]
-  (-> this (.shippingAddressErrors)))
+  (-> this (.-shippingAddressErrors)))
 
 (defn set-shipping-address-errors!
   "Property.

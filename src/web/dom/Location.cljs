@@ -4,7 +4,7 @@
   relates to. Both the `web.Document` and `web.Window` interface
   such a linked Location, accessible via `Document.location` and
   respectively."
-  (:refer-clojure :exclude [replace]))
+  (:refer-clojure :exclude [hash replace]))
 
 (defn assign
   "Method.
@@ -45,6 +45,14 @@
   [this url]
   (-> this (.replace url)))
 
+(defn to-string
+  "Method.
+
+  Returns a DOMString containing the whole URL. It is a synonym
+  URLUtils.href, though it can't be used to modify the value."
+  [this & args]
+  (apply (-> this .-toString) (concat [this] args)))
+
 (defn href
   "Property.
 
@@ -52,7 +60,7 @@
   navigates to the new page. It can be set from a different origin
   the associated document."
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -62,4 +70,158 @@
   the associated document."
   [this val]
   (aset this "href" val))
+
+(defn protocol
+  "Property.
+
+  Is a DOMString containing the protocol scheme of the URL, including
+  final ':'."
+  [this]
+  (-> this (.-protocol)))
+
+(defn set-protocol!
+  "Property.
+
+  Is a DOMString containing the protocol scheme of the URL, including
+  final ':'."
+  [this val]
+  (aset this "protocol" val))
+
+(defn host
+  "Property.
+
+  Is a DOMString containing the host, that is the hostname, a ':',
+  the port of the URL."
+  [this]
+  (-> this (.-host)))
+
+(defn set-host!
+  "Property.
+
+  Is a DOMString containing the host, that is the hostname, a ':',
+  the port of the URL."
+  [this val]
+  (aset this "host" val))
+
+(defn hostname
+  "Property.
+
+  Is a DOMString containing the domain of the URL."
+  [this]
+  (-> this (.-hostname)))
+
+(defn set-hostname!
+  "Property.
+
+  Is a DOMString containing the domain of the URL."
+  [this val]
+  (aset this "hostname" val))
+
+(defn port
+  "Property.
+
+  Is a DOMString containing the port number of the URL."
+  [this]
+  (-> this (.-port)))
+
+(defn set-port!
+  "Property.
+
+  Is a DOMString containing the port number of the URL."
+  [this val]
+  (aset this "port" val))
+
+(defn pathname
+  "Property.
+
+  Is a DOMString containing an initial '/' followed by the path
+  the URL."
+  [this]
+  (-> this (.-pathname)))
+
+(defn set-pathname!
+  "Property.
+
+  Is a DOMString containing an initial '/' followed by the path
+  the URL."
+  [this val]
+  (aset this "pathname" val))
+
+(defn search
+  "Property.
+
+  Is a DOMString containing a '?' followed by the parameters or
+  of the URL. Modern browsers provide URLSearchParams and URL.searchParams
+  make it easy to parse out the parameters from the querystring."
+  [this]
+  (-> this (.-search)))
+
+(defn set-search!
+  "Property.
+
+  Is a DOMString containing a '?' followed by the parameters or
+  of the URL. Modern browsers provide URLSearchParams and URL.searchParams
+  make it easy to parse out the parameters from the querystring."
+  [this val]
+  (aset this "search" val))
+
+(defn hash
+  "Property.
+
+  Is a DOMString containing a '#' followed by the fragment identifier
+  the URL."
+  [this]
+  (-> this (.-hash)))
+
+(defn set-hash!
+  "Property.
+
+  Is a DOMString containing a '#' followed by the fragment identifier
+  the URL."
+  [this val]
+  (aset this "hash" val))
+
+(defn username
+  "Property.
+
+  Is a DOMString containing the username specified before the domain"
+  [this]
+  (-> this (.-username)))
+
+(defn set-username!
+  "Property.
+
+  Is a DOMString containing the username specified before the domain"
+  [this val]
+  (aset this "username" val))
+
+(defn password
+  "Property.
+
+  Is a DOMString containing the password specified before the domain"
+  [this]
+  (-> this (.-password)))
+
+(defn set-password!
+  "Property.
+
+  Is a DOMString containing the password specified before the domain"
+  [this val]
+  (aset this "password" val))
+
+(defn origin
+  "Property.
+
+  Returns a DOMString containing the canonical form of the origin
+  the specific location."
+  [this]
+  (-> this (.-origin)))
+
+(defn set-origin!
+  "Property.
+
+  Returns a DOMString containing the canonical form of the origin
+  the specific location."
+  [this val]
+  (aset this "origin" val))
 

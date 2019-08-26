@@ -1,0 +1,23 @@
+(ns web.other.core
+  "web.other interfaces."
+  (:require [web.other.EventSource]
+            [web.other.EventSource.ev]
+            [web.other.FileReaderSync]
+            [web.other.IdleDeadline]
+            [web.other.InputDeviceCapabilities]
+            [web.other.MessageChannel]
+            [web.other.MessagePort]
+            [web.other.MessagePort.ev]
+            [web.other.MimeType]
+            [web.other.MimeTypeArray]
+            [web.other.NetworkInformation]
+            [web.other.Notation]
+            [web.other.Notification]
+            [web.other.NotificationAction]
+            [web.other.PageTransitionEvent]
+            [web.other.ProgressEvent]
+            [web.other.Selection]
+            [web.other.TextEncoder]
+            [web.other.Touch]
+            [web.other.UserProximityEvent]
+            [web.other.Worklet]))

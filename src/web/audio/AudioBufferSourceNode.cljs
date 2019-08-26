@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/buffer`"
   [this]
-  (-> this (.buffer)))
+  (-> this (.-buffer)))
 
 (defn set-buffer!
   "Property.
@@ -85,7 +85,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/detune`"
   [this]
-  (-> this (.detune)))
+  (-> this (.-detune)))
 
 (defn set-detune!
   "Property.
@@ -114,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loop`"
   [this]
-  (-> this (.loop)))
+  (-> this (.-loop)))
 
 (defn set-loop!
   "Property.
@@ -127,6 +127,36 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loop`"
   [this val]
   (aset this "loop" val))
+
+(defn loop-start
+  "Property.
+
+  The loopStart property of the `web.audio.AudioBufferSourceNode`
+  is a floating-point value indicating, in seconds, where in the
+  the restart of the play must happen.
+
+  `AudioBufferSourceNode.loopStart = startOffsetInSeconds;
+
+  startOffsetInSeconds = AudioBufferSourceNode.loopStart;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart`"
+  [this]
+  (-> this (.-loopStart)))
+
+(defn set-loop-start!
+  "Property.
+
+  The loopStart property of the `web.audio.AudioBufferSourceNode`
+  is a floating-point value indicating, in seconds, where in the
+  the restart of the play must happen.
+
+  `AudioBufferSourceNode.loopStart = startOffsetInSeconds;
+
+  startOffsetInSeconds = AudioBufferSourceNode.loopStart;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart`"
+  [this val]
+  (aset this "loopStart" val))
 
 (defn loop-end
   "Property.
@@ -142,7 +172,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd`"
   [this]
-  (-> this (.loopEnd)))
+  (-> this (.-loopEnd)))
 
 (defn set-loop-end!
   "Property.
@@ -160,36 +190,6 @@
   [this val]
   (aset this "loopEnd" val))
 
-(defn loop-start
-  "Property.
-
-  The loopStart property of the `web.audio.AudioBufferSourceNode`
-  is a floating-point value indicating, in seconds, where in the
-  the restart of the play must happen.
-
-  `AudioBufferSourceNode.loopStart = startOffsetInSeconds;
-
-  startOffsetInSeconds = AudioBufferSourceNode.loopStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart`"
-  [this]
-  (-> this (.loopStart)))
-
-(defn set-loop-start!
-  "Property.
-
-  The loopStart property of the `web.audio.AudioBufferSourceNode`
-  is a floating-point value indicating, in seconds, where in the
-  the restart of the play must happen.
-
-  `AudioBufferSourceNode.loopStart = startOffsetInSeconds;
-
-  startOffsetInSeconds = AudioBufferSourceNode.loopStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart`"
-  [this val]
-  (aset this "loopStart" val))
-
 (defn playback-rate
   "Property.
 
@@ -201,7 +201,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/playbackRate`"
   [this]
-  (-> this (.playbackRate)))
+  (-> this (.-playbackRate)))
 
 (defn set-playback-rate!
   "Property.

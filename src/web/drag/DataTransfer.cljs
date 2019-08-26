@@ -28,6 +28,53 @@
   [this & args]
   (apply (-> this .-clearData) (concat [this] args)))
 
+(defn get-data
+  "Method.
+
+  The DataTransfer.getData() method retrieves drag data (as a `web.dom.DOMString`)
+  the specified type. If the drag operation does not include data,
+  method returns an empty string.
+
+  `dataTransfer.getData(format);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/getData`"
+  [this format]
+  (-> this (.getData format)))
+
+(defn set-data
+  "Method.
+
+  The DataTransfer.setData() method sets the drag operation's `drag
+  to the specified data and type. If data for the given type does
+  exist, it is added at the end of the drag data store, such that
+  last item in the `types` list will be the new type. If data for
+  given type already exists, the existing data is replaced in the
+  position. That is, the order of the `types` list is not changed
+  replacing data of the same type.
+
+  `void dataTransfer.setData(format, data);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData`"
+  [this format data]
+  (-> this (.setData format data)))
+
+(defn set-drag-image
+  "Method.
+
+  When a drag occurs, a translucent image is generated from the
+  target (the element the dragstart event is fired at), and follows
+  mouse pointer during the drag. This image is created automatically,
+  you do not need to create it yourself. However, if a custom image
+  desired, the DataTransfer.setDragImage() method can be used to
+  the custom image to be used. The image will typically be an `<image>`
+  but it can also be a `<canvas>` or any other image element.
+
+  `void dataTransfer.setDragImage(img, xOffset, yOffset);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage`"
+  [this img x-offset y-offset]
+  (-> this (.setDragImage img x-offset y-offset)))
+
 (defn add-element
   "Method.
 
@@ -41,19 +88,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/addElement`"
   [this el]
   (-> this (.addElement el)))
-
-(defn get-data
-  "Method.
-
-  The DataTransfer.getData() method retrieves drag data (as a `web.dom.DOMString`)
-  the specified type. If the drag operation does not include data,
-  method returns an empty string.
-
-  `dataTransfer.getData(format);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/getData`"
-  [this format]
-  (-> this (.getData format)))
 
 (defn moz-clear-data-at
   "Method.
@@ -109,40 +143,6 @@
   [this index]
   (-> this (.mozTypesAt index)))
 
-(defn set-data
-  "Method.
-
-  The DataTransfer.setData() method sets the drag operation's `drag
-  to the specified data and type. If data for the given type does
-  exist, it is added at the end of the drag data store, such that
-  last item in the `types` list will be the new type. If data for
-  given type already exists, the existing data is replaced in the
-  position. That is, the order of the `types` list is not changed
-  replacing data of the same type.
-
-  `void dataTransfer.setData(format, data);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData`"
-  [this format data]
-  (-> this (.setData format data)))
-
-(defn set-drag-image
-  "Method.
-
-  When a drag occurs, a translucent image is generated from the
-  target (the element the dragstart event is fired at), and follows
-  mouse pointer during the drag. This image is created automatically,
-  you do not need to create it yourself. However, if a custom image
-  desired, the DataTransfer.setDragImage() method can be used to
-  the custom image to be used. The image will typically be an `<image>`
-  but it can also be a `<canvas>` or any other image element.
-
-  `void dataTransfer.setDragImage(img, xOffset, yOffset);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage`"
-  [this img x-offset y-offset]
-  (-> this (.setDragImage img x-offset y-offset)))
-
 (defn drop-effect
   "Property.
 
@@ -156,7 +156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect`"
   [this]
-  (-> this (.dropEffect)))
+  (-> this (.-dropEffect)))
 
 (defn set-drop-effect!
   "Property.
@@ -173,30 +173,6 @@
   [this val]
   (aset this "dropEffect" val))
 
-(defn moz-cursor
-  "Property.
-
-  The DataTransfer.mozCursor property returns or sets the drag
-  state. This is primarily used to control the cursor during tab
-
-  `dataTransfer.mozCursor;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozCursor`"
-  [this]
-  (-> this (.mozCursor)))
-
-(defn set-moz-cursor!
-  "Property.
-
-  The DataTransfer.mozCursor property returns or sets the drag
-  state. This is primarily used to control the cursor during tab
-
-  `dataTransfer.mozCursor;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozCursor`"
-  [this val]
-  (aset this "mozCursor" val))
-
 (defn effect-allowed
   "Property.
 
@@ -212,7 +188,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed`"
   [this]
-  (-> this (.effectAllowed)))
+  (-> this (.-effectAllowed)))
 
 (defn set-effect-allowed!
   "Property.
@@ -241,7 +217,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/files`"
   [this]
-  (-> this (.files)))
+  (-> this (.-files)))
 
 (defn set-files!
   "Property.
@@ -267,7 +243,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items`"
   [this]
-  (-> this (.items)))
+  (-> this (.-items)))
 
 (defn set-items!
   "Property.
@@ -283,6 +259,58 @@
   [this val]
   (aset this "items" val))
 
+(defn types
+  "Property.
+
+  The DataTransfer.types read-only property returns an array of
+  drag data formats (as `strings`) that were set in the dragstart
+  The order of the formats is the same order as the data included
+  the drag operation.
+
+  `dataTransfer.types;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types`"
+  [this]
+  (-> this (.-types)))
+
+(defn set-types!
+  "Property.
+
+  The DataTransfer.types read-only property returns an array of
+  drag data formats (as `strings`) that were set in the dragstart
+  The order of the formats is the same order as the data included
+  the drag operation.
+
+  `dataTransfer.types;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types`"
+  [this val]
+  (aset this "types" val))
+
+(defn moz-cursor
+  "Property.
+
+  The DataTransfer.mozCursor property returns or sets the drag
+  state. This is primarily used to control the cursor during tab
+
+  `dataTransfer.mozCursor;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozCursor`"
+  [this]
+  (-> this (.-mozCursor)))
+
+(defn set-moz-cursor!
+  "Property.
+
+  The DataTransfer.mozCursor property returns or sets the drag
+  state. This is primarily used to control the cursor during tab
+
+  `dataTransfer.mozCursor;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozCursor`"
+  [this val]
+  (aset this "mozCursor" val))
+
 (defn moz-item-count
   "Property.
 
@@ -294,7 +322,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozItemCount`"
   [this]
-  (-> this (.mozItemCount)))
+  (-> this (.-mozItemCount)))
 
 (defn set-moz-item-count!
   "Property.
@@ -322,7 +350,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozSourceNode`"
   [this]
-  (-> this (.mozSourceNode)))
+  (-> this (.-mozSourceNode)))
 
 (defn set-moz-source-node!
   "Property.
@@ -351,7 +379,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozUserCancelled`"
   [this]
-  (-> this (.mozUserCancelled)))
+  (-> this (.-mozUserCancelled)))
 
 (defn set-moz-user-cancelled!
   "Property.
@@ -366,32 +394,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozUserCancelled`"
   [this val]
   (aset this "mozUserCancelled" val))
-
-(defn types
-  "Property.
-
-  The DataTransfer.types read-only property returns an array of
-  drag data formats (as `strings`) that were set in the dragstart
-  The order of the formats is the same order as the data included
-  the drag operation.
-
-  `dataTransfer.types;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types`"
-  [this]
-  (-> this (.types)))
-
-(defn set-types!
-  "Property.
-
-  The DataTransfer.types read-only property returns an array of
-  drag data formats (as `strings`) that were set in the dragstart
-  The order of the formats is the same order as the data included
-  the drag operation.
-
-  `dataTransfer.types;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types`"
-  [this val]
-  (aset this "types" val))
 

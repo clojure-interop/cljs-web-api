@@ -31,19 +31,6 @@
   [this direction endpoint-number]
   (-> this (.clearHalt direction endpoint-number)))
 
-(defn close
-  "Method.
-
-  The close() method of the `web.usb.USBDevice` interface returns
-  `promise` that resolves when all open interfaces are released
-  the device session has ended.
-
-  `var promise = USBDevice.close()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/close`"
-  [this ]
-  (-> this (.close)))
-
 (defn control-transfer-in
   "Method.
 
@@ -69,6 +56,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/controlTransferOut`"
   [this setup data]
   (-> this (.controlTransferOut setup data)))
+
+(defn close
+  "Method.
+
+  The close() method of the `web.usb.USBDevice` interface returns
+  `promise` that resolves when all open interfaces are released
+  the device session has ended.
+
+  `var promise = USBDevice.close()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/close`"
+  [this ]
+  (-> this (.close)))
 
 (defn isochronous-transfer-in
   "Method.
@@ -196,7 +196,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configuration`"
   [this]
-  (-> this (.configuration)))
+  (-> this (.-configuration)))
 
 (defn set-configuration!
   "Property.
@@ -222,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configurations`"
   [this]
-  (-> this (.configurations)))
+  (-> this (.-configurations)))
 
 (defn set-configurations!
   "Property.
@@ -247,9 +247,9 @@
 
   `var number = USBDevice.deviceClass`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/USBDevice.deviceClass`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceClass`"
   [this]
-  (-> this (.deviceClass)))
+  (-> this (.-deviceClass)))
 
 (defn set-device-class!
   "Property.
@@ -261,7 +261,7 @@
 
   `var number = USBDevice.deviceClass`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/USBDevice.deviceClass`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceClass`"
   [this val]
   (aset this "deviceClass" val))
 
@@ -277,7 +277,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceProtocol`"
   [this]
-  (-> this (.deviceProtocol)))
+  (-> this (.-deviceProtocol)))
 
 (defn set-device-protocol!
   "Property.
@@ -305,7 +305,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceSubclass`"
   [this]
-  (-> this (.deviceSubclass)))
+  (-> this (.-deviceSubclass)))
 
 (defn set-device-subclass!
   "Property.
@@ -331,7 +331,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMajor`"
   [this]
-  (-> this (.deviceVersionMajor)))
+  (-> this (.-deviceVersionMajor)))
 
 (defn set-device-version-major!
   "Property.
@@ -355,7 +355,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMinor`"
   [this]
-  (-> this (.deviceVersionMinor)))
+  (-> this (.-deviceVersionMinor)))
 
 (defn set-device-version-minor!
   "Property.
@@ -379,7 +379,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionSubminor`"
   [this]
-  (-> this (.deviceVersionSubminor)))
+  (-> this (.-deviceVersionSubminor)))
 
 (defn set-device-version-subminor!
   "Property.
@@ -403,7 +403,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/manufacturerName`"
   [this]
-  (-> this (.manufacturerName)))
+  (-> this (.-manufacturerName)))
 
 (defn set-manufacturer-name!
   "Property.
@@ -428,7 +428,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/opened`"
   [this]
-  (-> this (.opened)))
+  (-> this (.-opened)))
 
 (defn set-opened!
   "Property.
@@ -453,7 +453,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productID`"
   [this]
-  (-> this (.productID)))
+  (-> this (.-productID)))
 
 (defn set-product-id!
   "Property.
@@ -477,7 +477,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productName`"
   [this]
-  (-> this (.productName)))
+  (-> this (.-productName)))
 
 (defn set-product-name!
   "Property.
@@ -501,7 +501,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/serialNumber`"
   [this]
-  (-> this (.serialNumber)))
+  (-> this (.-serialNumber)))
 
 (defn set-serial-number!
   "Property.
@@ -527,7 +527,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMajor`"
   [this]
-  (-> this (.usbVersionMajor)))
+  (-> this (.-usbVersionMajor)))
 
 (defn set-usb-version-major!
   "Property.
@@ -555,7 +555,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMinor`"
   [this]
-  (-> this (.usbVersionMinor)))
+  (-> this (.-usbVersionMinor)))
 
 (defn set-usb-version-minor!
   "Property.
@@ -583,7 +583,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionSubminor`"
   [this]
-  (-> this (.usbVersionSubminor)))
+  (-> this (.-usbVersionSubminor)))
 
 (defn set-usb-version-subminor!
   "Property.
@@ -609,7 +609,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/vendorID`"
   [this]
-  (-> this (.vendorID)))
+  (-> this (.-vendorID)))
 
 (defn set-vendor-id!
   "Property.

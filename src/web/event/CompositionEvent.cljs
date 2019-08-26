@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/locale`"
   [this]
-  (-> this (.locale)))
+  (-> this (.-locale)))
 
 (defn set-locale!
   "Property.

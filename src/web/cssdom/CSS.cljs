@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSS/paintWorklet`"
   [this]
-  (-> this (.paintWorklet)))
+  (-> this (.-paintWorklet)))
 
 (defn set-paint-worklet!
   "Property.

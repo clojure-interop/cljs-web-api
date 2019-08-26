@@ -379,7 +379,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/canTrickleIceCandidates`"
   [this]
-  (-> this (.canTrickleIceCandidates)))
+  (-> this (.-canTrickleIceCandidates)))
 
 (defn set-can-trickle-ice-candidates!
   "Property.
@@ -405,7 +405,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/connectionState`"
   [this]
-  (-> this (.connectionState)))
+  (-> this (.-connectionState)))
 
 (defn set-connection-state!
   "Property.
@@ -435,7 +435,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/currentLocalDescription`"
   [this]
-  (-> this (.currentLocalDescription)))
+  (-> this (.-currentLocalDescription)))
 
 (defn current-remote-description
   "Property.
@@ -452,7 +452,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/currentRemoteDescription`"
   [this]
-  (-> this (.currentRemoteDescription)))
+  (-> this (.-currentRemoteDescription)))
 
 (defn default-ice-servers
   "Property.
@@ -468,7 +468,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/defaultIceServers`"
   [this]
-  (-> this (.defaultIceServers)))
+  (-> this (.-defaultIceServers)))
 
 (defn set-default-ice-servers!
   "Property.
@@ -497,7 +497,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/iceConnectionState`"
   [this]
-  (-> this (.iceConnectionState)))
+  (-> this (.-iceConnectionState)))
 
 (defn ice-gathering-state
   "Property.
@@ -511,7 +511,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/iceGatheringState`"
   [this]
-  (-> this (.iceGatheringState)))
+  (-> this (.-iceGatheringState)))
 
 (defn local-description
   "Property.
@@ -527,7 +527,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/localDescription`"
   [this]
-  (-> this (.localDescription)))
+  (-> this (.-localDescription)))
 
 (defn onaddstream
   "Property.
@@ -543,7 +543,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onaddstream`"
   [this]
-  (-> this (.onaddstream)))
+  (-> this (.-onaddstream)))
 
 (defn set-onaddstream!
   "Property.
@@ -573,7 +573,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onconnectionstatechange`"
   [this]
-  (-> this (.onconnectionstatechange)))
+  (-> this (.-onconnectionstatechange)))
 
 (defn set-onconnectionstatechange!
   "Property.
@@ -602,7 +602,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/ondatachannel`"
   [this]
-  (-> this (.ondatachannel)))
+  (-> this (.-ondatachannel)))
 
 (defn set-ondatachannel!
   "Property.
@@ -632,7 +632,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onicecandidate`"
   [this]
-  (-> this (.onicecandidate)))
+  (-> this (.-onicecandidate)))
 
 (defn set-onicecandidate!
   "Property.
@@ -662,7 +662,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/oniceconnectionstatechange`"
   [this]
-  (-> this (.oniceconnectionstatechange)))
+  (-> this (.-oniceconnectionstatechange)))
 
 (defn set-oniceconnectionstatechange!
   "Property.
@@ -692,7 +692,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onicegatheringstatechange`"
   [this]
-  (-> this (.onicegatheringstatechange)))
+  (-> this (.-onicegatheringstatechange)))
 
 (defn set-onicegatheringstatechange!
   "Property.
@@ -722,7 +722,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onidentityresult`"
   [this]
-  (-> this (.onidentityresult)))
+  (-> this (.-onidentityresult)))
 
 (defn set-onidentityresult!
   "Property.
@@ -752,7 +752,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onidpassertionerror`"
   [this]
-  (-> this (.onidpassertionerror)))
+  (-> this (.-onidpassertionerror)))
 
 (defn set-onidpassertionerror!
   "Property.
@@ -782,7 +782,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onidpvalidationerror`"
   [this]
-  (-> this (.onidpvalidationerror)))
+  (-> this (.-onidpvalidationerror)))
 
 (defn set-onidpvalidationerror!
   "Property.
@@ -813,7 +813,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onnegotiationneeded`"
   [this]
-  (-> this (.onnegotiationneeded)))
+  (-> this (.-onnegotiationneeded)))
 
 (defn set-onnegotiationneeded!
   "Property.
@@ -844,7 +844,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onpeeridentity`"
   [this]
-  (-> this (.onpeeridentity)))
+  (-> this (.-onpeeridentity)))
 
 (defn set-onpeeridentity!
   "Property.
@@ -873,7 +873,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onremovestream`"
   [this]
-  (-> this (.onremovestream)))
+  (-> this (.-onremovestream)))
 
 (defn set-onremovestream!
   "Property.
@@ -900,7 +900,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onsignalingstatechange`"
   [this]
-  (-> this (.onsignalingstatechange)))
+  (-> this (.-onsignalingstatechange)))
 
 (defn set-onsignalingstatechange!
   "Property.
@@ -926,7 +926,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/ontrack`"
   [this]
-  (-> this (.ontrack)))
+  (-> this (.-ontrack)))
 
 (defn set-ontrack!
   "Property.
@@ -952,7 +952,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/peerIdentity`"
   [this]
-  (-> this (.peerIdentity)))
+  (-> this (.-peerIdentity)))
 
 (defn pending-local-description
   "Property.
@@ -969,7 +969,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/pendingLocalDescription`"
   [this]
-  (-> this (.pendingLocalDescription)))
+  (-> this (.-pendingLocalDescription)))
 
 (defn pending-remote-description
   "Property.
@@ -987,7 +987,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/pendingRemoteDescription`"
   [this]
-  (-> this (.pendingRemoteDescription)))
+  (-> this (.-pendingRemoteDescription)))
 
 (defn remote-description
   "Property.
@@ -1003,7 +1003,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/remoteDescription`"
   [this]
-  (-> this (.remoteDescription)))
+  (-> this (.-remoteDescription)))
 
 (defn sctp
   "Property.
@@ -1017,7 +1017,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/sctp`"
   [this]
-  (-> this (.sctp)))
+  (-> this (.-sctp)))
 
 (defn set-sctp!
   "Property.
@@ -1047,5 +1047,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/signalingState`"
   [this]
-  (-> this (.signalingState)))
+  (-> this (.-signalingState)))
 

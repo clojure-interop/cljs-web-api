@@ -31,6 +31,19 @@
   [this key]
   (-> this (.get key)))
 
+(defn get-key
+  "Method.
+
+  If a key is found it is set as the result of the request object:
+  returns the primary key of the record the key is associated with,
+  the whole record as `IDBIndex.get` does.
+
+  `var request = myIndex.getKey(key);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getKey`"
+  [this key]
+  (-> this (.getKey key)))
+
 (defn get-all
   "Method.
 
@@ -62,19 +75,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys`"
   [this & args]
   (apply (-> this .-getAllKeys) (concat [this] args)))
-
-(defn get-key
-  "Method.
-
-  If a key is found it is set as the result of the request object:
-  returns the primary key of the record the key is associated with,
-  the whole record as `IDBIndex.get` does.
-
-  `var request = myIndex.getKey(key);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getKey`"
-  [this key]
-  (-> this (.getKey key)))
 
 (defn open-cursor
   "Method.
@@ -116,7 +116,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/isAutoLocale`"
   [this]
-  (-> this (.isAutoLocale)))
+  (-> this (.-isAutoLocale)))
 
 (defn set-is-auto-locale!
   "Property.
@@ -132,28 +132,6 @@
   [this val]
   (aset this "isAutoLocale" val))
 
-(defn key-path
-  "Property.
-
-  Any data type that can be used as a key path.
-
-  `var myKeyPath = myIndex.keyPath;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath`"
-  [this]
-  (-> this (.keyPath)))
-
-(defn set-key-path!
-  "Property.
-
-  Any data type that can be used as a key path.
-
-  `var myKeyPath = myIndex.keyPath;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath`"
-  [this val]
-  (aset this "keyPath" val))
-
 (defn locale
   "Property.
 
@@ -168,7 +146,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/locale`"
   [this]
-  (-> this (.locale)))
+  (-> this (.-locale)))
 
 (defn set-locale!
   "Property.
@@ -186,28 +164,6 @@
   [this val]
   (aset this "locale" val))
 
-(defn multi-entry
-  "Property.
-
-  A `js.Boolean`:
-
-  `var isMultiEntry = myIndex.multiEntry;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry`"
-  [this]
-  (-> this (.multiEntry)))
-
-(defn set-multi-entry!
-  "Property.
-
-  A `js.Boolean`:
-
-  `var isMultiEntry = myIndex.multiEntry;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry`"
-  [this val]
-  (aset this "multiEntry" val))
-
 (defn name
   "Property.
 
@@ -218,7 +174,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -241,7 +197,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/objectStore`"
   [this]
-  (-> this (.objectStore)))
+  (-> this (.-objectStore)))
 
 (defn set-object-store!
   "Property.
@@ -254,6 +210,50 @@
   [this val]
   (aset this "objectStore" val))
 
+(defn key-path
+  "Property.
+
+  Any data type that can be used as a key path.
+
+  `var myKeyPath = myIndex.keyPath;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath`"
+  [this]
+  (-> this (.-keyPath)))
+
+(defn set-key-path!
+  "Property.
+
+  Any data type that can be used as a key path.
+
+  `var myKeyPath = myIndex.keyPath;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath`"
+  [this val]
+  (aset this "keyPath" val))
+
+(defn multi-entry
+  "Property.
+
+  A `js.Boolean`:
+
+  `var isMultiEntry = myIndex.multiEntry;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry`"
+  [this]
+  (-> this (.-multiEntry)))
+
+(defn set-multi-entry!
+  "Property.
+
+  A `js.Boolean`:
+
+  `var isMultiEntry = myIndex.multiEntry;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry`"
+  [this val]
+  (aset this "multiEntry" val))
+
 (defn unique
   "Property.
 
@@ -263,7 +263,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique`"
   [this]
-  (-> this (.unique)))
+  (-> this (.-unique)))
 
 (defn set-unique!
   "Property.

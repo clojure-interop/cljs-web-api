@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/challenge`"
   [this]
-  (-> this (.challenge)))
+  (-> this (.-challenge)))
 
 (defn set-challenge!
   "Property.
@@ -36,55 +36,31 @@
   [this val]
   (aset this "challenge" val))
 
-(defn allow-credentials
+(defn timeout
   "Property.
 
-  allowCredentials is an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
-  which indicates the existing credentials acceptable for retrieval.
-  is an `js.Array` of credential descriptors.
+  The timeout property, of the `web.auth.PublicKeyCredentialRequestOptions`
+  represents an hint, given in milliseconds, for the time the script
+  willing to wait for the completion of the retrieval operation.
 
-  `allowCredentials = publicKeyCredentialRequestOptions.allowCredentials`
+  `timeout = publicKeyCredentialRequestOptions.timeout`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/allowCredentials`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/timeout`"
   [this]
-  (-> this (.allowCredentials)))
+  (-> this (.-timeout)))
 
-(defn set-allow-credentials!
+(defn set-timeout!
   "Property.
 
-  allowCredentials is an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
-  which indicates the existing credentials acceptable for retrieval.
-  is an `js.Array` of credential descriptors.
+  The timeout property, of the `web.auth.PublicKeyCredentialRequestOptions`
+  represents an hint, given in milliseconds, for the time the script
+  willing to wait for the completion of the retrieval operation.
 
-  `allowCredentials = publicKeyCredentialRequestOptions.allowCredentials`
+  `timeout = publicKeyCredentialRequestOptions.timeout`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/allowCredentials`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/timeout`"
   [this val]
-  (aset this "allowCredentials" val))
-
-(defn extensions
-  "Property.
-
-  extensions, an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
-  is an object providing the client extensions and their input
-
-  `extensions = publicKeyCredentialRequestOptions.extensions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/extensions`"
-  [this]
-  (-> this (.extensions)))
-
-(defn set-extensions!
-  "Property.
-
-  extensions, an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
-  is an object providing the client extensions and their input
-
-  `extensions = publicKeyCredentialRequestOptions.extensions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/extensions`"
-  [this val]
-  (aset this "extensions" val))
+  (aset this "timeout" val))
 
 (defn rp-id
   "Property.
@@ -99,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/rpId`"
   [this]
-  (-> this (.rpId)))
+  (-> this (.-rpId)))
 
 (defn set-rp-id!
   "Property.
@@ -116,31 +92,31 @@
   [this val]
   (aset this "rpId" val))
 
-(defn timeout
+(defn allow-credentials
   "Property.
 
-  The timeout property, of the `web.auth.PublicKeyCredentialRequestOptions`
-  represents an hint, given in milliseconds, for the time the script
-  willing to wait for the completion of the retrieval operation.
+  allowCredentials is an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
+  which indicates the existing credentials acceptable for retrieval.
+  is an `js.Array` of credential descriptors.
 
-  `timeout = publicKeyCredentialRequestOptions.timeout`
+  `allowCredentials = publicKeyCredentialRequestOptions.allowCredentials`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/timeout`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/allowCredentials`"
   [this]
-  (-> this (.timeout)))
+  (-> this (.-allowCredentials)))
 
-(defn set-timeout!
+(defn set-allow-credentials!
   "Property.
 
-  The timeout property, of the `web.auth.PublicKeyCredentialRequestOptions`
-  represents an hint, given in milliseconds, for the time the script
-  willing to wait for the completion of the retrieval operation.
+  allowCredentials is an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
+  which indicates the existing credentials acceptable for retrieval.
+  is an `js.Array` of credential descriptors.
 
-  `timeout = publicKeyCredentialRequestOptions.timeout`
+  `allowCredentials = publicKeyCredentialRequestOptions.allowCredentials`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/timeout`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/allowCredentials`"
   [this val]
-  (aset this "timeout" val))
+  (aset this "allowCredentials" val))
 
 (defn user-verification
   "Property.
@@ -153,7 +129,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/userVerification`"
   [this]
-  (-> this (.userVerification)))
+  (-> this (.-userVerification)))
 
 (defn set-user-verification!
   "Property.
@@ -167,4 +143,28 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/userVerification`"
   [this val]
   (aset this "userVerification" val))
+
+(defn extensions
+  "Property.
+
+  extensions, an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
+  is an object providing the client extensions and their input
+
+  `extensions = publicKeyCredentialRequestOptions.extensions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/extensions`"
+  [this]
+  (-> this (.-extensions)))
+
+(defn set-extensions!
+  "Property.
+
+  extensions, an optional property of the `web.auth.PublicKeyCredentialRequestOptions`
+  is an object providing the client extensions and their input
+
+  `extensions = publicKeyCredentialRequestOptions.extensions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions/extensions`"
+  [this val]
+  (aset this "extensions" val))
 

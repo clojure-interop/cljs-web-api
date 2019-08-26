@@ -10,7 +10,7 @@
 
   A DOMString. This should be set to AES-CBC."
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -18,4 +18,24 @@
   A DOMString. This should be set to AES-CBC."
   [this val]
   (aset this "name" val))
+
+(defn iv
+  "Property.
+
+  A BufferSource. The initialization vector. Must be 16 bytes,
+  and preferably cryptographically random. However, it need not
+  secret (for example, it may be transmitted unencrypted along
+  the ciphertext)."
+  [this]
+  (-> this (.-iv)))
+
+(defn set-iv!
+  "Property.
+
+  A BufferSource. The initialization vector. Must be 16 bytes,
+  and preferably cryptographically random. However, it need not
+  secret (for example, it may be transmitted unencrypted along
+  the ciphertext)."
+  [this val]
+  (aset this "iv" val))
 

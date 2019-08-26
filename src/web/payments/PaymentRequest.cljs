@@ -91,6 +91,19 @@
   [this details-promise]
   (-> this (.show details-promise)))
 
+(defn abort
+  "Method.
+
+  The PaymentRequest.abort() method of the `web.payments.PaymentRequest`
+  causes the user agent to end the payment request and to remove
+  user interface that might be shown.
+
+  `PaymentRequest.abort();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/abort`"
+  [this ]
+  (-> this (.abort)))
+
 (defn id
   "Property.
 
@@ -101,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -115,88 +128,6 @@
   [this val]
   (aset this "id" val))
 
-(defn onmerchantvalidation
-  "Property.
-
-  The `web.payments.PaymentRequest` event handler onmerchantvalidation
-  invoked when the merchantvalidation
-
-  `paymentRequest.onmerchantvalidation = eventHandlerFunction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onmerchantvalidation`"
-  [this]
-  (-> this (.onmerchantvalidation)))
-
-(defn set-onmerchantvalidation!
-  "Property.
-
-  The `web.payments.PaymentRequest` event handler onmerchantvalidation
-  invoked when the merchantvalidation
-
-  `paymentRequest.onmerchantvalidation = eventHandlerFunction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onmerchantvalidation`"
-  [this val]
-  (aset this "onmerchantvalidation" val))
-
-(defn onpaymentmethodchange
-  "Property.
-
-  The `web.payments.PaymentRequest` event handler onpaymentmethodchange
-  invoked when the paymentmethodchange
-
-  `PaymentRequest.addEventListener('paymentmethodchange', paymentMethodChangeEvent => { ... });
-
-  PaymentRequest.onpaymentmethodchange = function(paymentMethodChangeEvent) { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange`"
-  [this]
-  (-> this (.onpaymentmethodchange)))
-
-(defn set-onpaymentmethodchange!
-  "Property.
-
-  The `web.payments.PaymentRequest` event handler onpaymentmethodchange
-  invoked when the paymentmethodchange
-
-  `PaymentRequest.addEventListener('paymentmethodchange', paymentMethodChangeEvent => { ... });
-
-  PaymentRequest.onpaymentmethodchange = function(paymentMethodChangeEvent) { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange`"
-  [this val]
-  (aset this "onpaymentmethodchange" val))
-
-(defn onshippingaddresschange
-  "Property.
-
-  The onshippingaddresschange event of the `web.payments.PaymentRequest`
-  is fired whenever the user changes their shipping address, including
-  an address is added by the user for the first time.
-
-  `PaymentRequest.addEventListener('shippingaddresschange', shippingAddressChangeEvent => { ... });
-
-  PaymentRequest.onshippingaddresschange = function(shippingAddressChangeEvent) { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange`"
-  [this]
-  (-> this (.onshippingaddresschange)))
-
-(defn set-onshippingaddresschange!
-  "Property.
-
-  The onshippingaddresschange event of the `web.payments.PaymentRequest`
-  is fired whenever the user changes their shipping address, including
-  an address is added by the user for the first time.
-
-  `PaymentRequest.addEventListener('shippingaddresschange', shippingAddressChangeEvent => { ... });
-
-  PaymentRequest.onshippingaddresschange = function(shippingAddressChangeEvent) { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange`"
-  [this val]
-  (aset this "onshippingaddresschange" val))
-
 (defn shipping-address
   "Property.
 
@@ -208,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingAddress`"
   [this]
-  (-> this (.shippingAddress)))
+  (-> this (.-shippingAddress)))
 
 (defn set-shipping-address!
   "Property.
@@ -237,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingOption`"
   [this]
-  (-> this (.shippingOption)))
+  (-> this (.-shippingOption)))
 
 (defn set-shipping-option!
   "Property.
@@ -254,4 +185,112 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingOption`"
   [this val]
   (aset this "shippingOption" val))
+
+(defn shipping-type
+  "Property.
+
+  The shippingType read-only property of the `web.payments.PaymentRequest`
+  returns one of \\\"shipping\\\", \\\"delivery\\\", \\\"pickup\\\", or null
+  one was not provided by the constructor.
+
+  `var shippingType = paymentRequest.shippingType`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingType`"
+  [this]
+  (-> this (.-shippingType)))
+
+(defn set-shipping-type!
+  "Property.
+
+  The shippingType read-only property of the `web.payments.PaymentRequest`
+  returns one of \\\"shipping\\\", \\\"delivery\\\", \\\"pickup\\\", or null
+  one was not provided by the constructor.
+
+  `var shippingType = paymentRequest.shippingType`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingType`"
+  [this val]
+  (aset this "shippingType" val))
+
+(defn onmerchantvalidation
+  "Property.
+
+  The `web.payments.PaymentRequest` event handler onmerchantvalidation
+  invoked when the merchantvalidation
+
+  `paymentRequest.onmerchantvalidation = eventHandlerFunction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onmerchantvalidation`"
+  [this]
+  (-> this (.-onmerchantvalidation)))
+
+(defn set-onmerchantvalidation!
+  "Property.
+
+  The `web.payments.PaymentRequest` event handler onmerchantvalidation
+  invoked when the merchantvalidation
+
+  `paymentRequest.onmerchantvalidation = eventHandlerFunction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onmerchantvalidation`"
+  [this val]
+  (aset this "onmerchantvalidation" val))
+
+(defn onpaymentmethodchange
+  "Property.
+
+  The `web.payments.PaymentRequest` event handler onpaymentmethodchange
+  invoked when the paymentmethodchange
+
+  `PaymentRequest.addEventListener('paymentmethodchange', paymentMethodChangeEvent => { ... });
+
+  PaymentRequest.onpaymentmethodchange = function(paymentMethodChangeEvent) { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange`"
+  [this]
+  (-> this (.-onpaymentmethodchange)))
+
+(defn set-onpaymentmethodchange!
+  "Property.
+
+  The `web.payments.PaymentRequest` event handler onpaymentmethodchange
+  invoked when the paymentmethodchange
+
+  `PaymentRequest.addEventListener('paymentmethodchange', paymentMethodChangeEvent => { ... });
+
+  PaymentRequest.onpaymentmethodchange = function(paymentMethodChangeEvent) { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onpaymentmethodchange`"
+  [this val]
+  (aset this "onpaymentmethodchange" val))
+
+(defn onshippingaddresschange
+  "Property.
+
+  The onshippingaddresschange event of the `web.payments.PaymentRequest`
+  is fired whenever the user changes their shipping address, including
+  an address is added by the user for the first time.
+
+  `PaymentRequest.addEventListener('shippingaddresschange', shippingAddressChangeEvent => { ... });
+
+  PaymentRequest.onshippingaddresschange = function(shippingAddressChangeEvent) { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange`"
+  [this]
+  (-> this (.-onshippingaddresschange)))
+
+(defn set-onshippingaddresschange!
+  "Property.
+
+  The onshippingaddresschange event of the `web.payments.PaymentRequest`
+  is fired whenever the user changes their shipping address, including
+  an address is added by the user for the first time.
+
+  `PaymentRequest.addEventListener('shippingaddresschange', shippingAddressChangeEvent => { ... });
+
+  PaymentRequest.onshippingaddresschange = function(shippingAddressChangeEvent) { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/onshippingaddresschange`"
+  [this val]
+  (aset this "onshippingaddresschange" val))
 

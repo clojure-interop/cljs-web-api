@@ -11,13 +11,20 @@
 
   "controllerchange")
 
+(def error
+  "Event.
+
+  Fired whenever an error occurs in the associated service workers.
+  Also available via the ServiceWorkerContainer.onerror property."
+
+  "error")
+
 (def message
   "Event.
 
-  The message event is used in a page controlled by a service worker
-  receive messages from the service worker.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/message_event`"
+  Occurs when incoming messages are received by the ServiceWorkerContainer
+  (e.g. via a MessagePort.postMessage() call.)
+  Also available via the ServiceWorkerContainer.onmessage property."
 
   "message")
 

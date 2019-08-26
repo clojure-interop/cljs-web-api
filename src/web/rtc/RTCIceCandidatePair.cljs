@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePair/local`"
   [this]
-  (-> this (.local)))
+  (-> this (.-local)))
 
 (defn set-local!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePair/remote`"
   [this]
-  (-> this (.remote)))
+  (-> this (.-remote)))
 
 (defn set-remote!
   "Property.

@@ -139,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
   [this]
-  (-> this (.caches)))
+  (-> this (.-caches)))
 
 (defn indexed-db
   "Property.
@@ -152,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB`"
   [this]
-  (-> this (.indexedDB)))
+  (-> this (.-indexedDB)))
 
 (defn is-secure-context
   "Property.
@@ -165,7 +165,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext`"
   [this]
-  (-> this (.isSecureContext)))
+  (-> this (.-isSecureContext)))
 
 (defn set-is-secure-context!
   "Property.
@@ -190,7 +190,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-origin)))
 
 (defn set-origin!
   "Property.

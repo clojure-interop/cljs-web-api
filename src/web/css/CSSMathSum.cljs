@@ -8,7 +8,7 @@
 
   Returns a CSSNumericArray object which contains one or more CSSNumericValue"
   [this]
-  (-> this (.values)))
+  (-> this (.-values)))
 
 (defn set-values!
   "Property.

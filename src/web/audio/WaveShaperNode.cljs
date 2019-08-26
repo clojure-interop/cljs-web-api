@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WaveShaperNode/curve`"
   [this]
-  (-> this (.curve)))
+  (-> this (.-curve)))
 
 (defn set-curve!
   "Property.
@@ -61,7 +61,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WaveShaperNode/oversample`"
   [this]
-  (-> this (.oversample)))
+  (-> this (.-oversample)))
 
 (defn set-oversample!
   "Property.

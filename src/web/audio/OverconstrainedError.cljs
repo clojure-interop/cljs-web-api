@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError/constraint`"
   [this]
-  (-> this (.constraint)))
+  (-> this (.-constraint)))
 
 (defn set-constraint!
   "Property.
@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.
@@ -79,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.

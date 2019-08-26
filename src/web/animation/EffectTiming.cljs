@@ -21,7 +21,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/delay`"
   [this]
-  (-> this (.delay)))
+  (-> this (.-delay)))
 
 (defn set-delay!
   "Property.
@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/direction`"
   [this]
-  (-> this (.direction)))
+  (-> this (.-direction)))
 
 (defn set-direction!
   "Property.
@@ -90,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/duration`"
   [this]
-  (-> this (.duration)))
+  (-> this (.-duration)))
 
 (defn set-duration!
   "Property.
@@ -126,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing`"
   [this]
-  (-> this (.easing)))
+  (-> this (.-easing)))
 
 (defn set-easing!
   "Property.
@@ -165,7 +165,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/endDelay`"
   [this]
-  (-> this (.endDelay)))
+  (-> this (.-endDelay)))
 
 (defn set-end-delay!
   "Property.
@@ -203,7 +203,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/fill`"
   [this]
-  (-> this (.fill)))
+  (-> this (.-fill)))
 
 (defn set-fill!
   "Property.
@@ -221,6 +221,40 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/fill`"
   [this val]
   (aset this "fill" val))
+
+(defn iteration-start
+  "Property.
+
+  Web Animations API's `web.animation.EffectTiming` dictionary's
+  property specifies the repetition number which repetition the
+  begins at and its progress through it.
+
+  `var timingProperties = {
+  iterationStart = iterationNumber
+  };
+
+  timingProperties.iterationStart = iterationNumber;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterationStart`"
+  [this]
+  (-> this (.-iterationStart)))
+
+(defn set-iteration-start!
+  "Property.
+
+  Web Animations API's `web.animation.EffectTiming` dictionary's
+  property specifies the repetition number which repetition the
+  begins at and its progress through it.
+
+  `var timingProperties = {
+  iterationStart = iterationNumber
+  };
+
+  timingProperties.iterationStart = iterationNumber;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterationStart`"
+  [this val]
+  (aset this "iterationStart" val))
 
 (defn iterations
   "Property.
@@ -240,7 +274,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterations`"
   [this]
-  (-> this (.iterations)))
+  (-> this (.-iterations)))
 
 (defn set-iterations!
   "Property.
@@ -261,38 +295,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterations`"
   [this val]
   (aset this "iterations" val))
-
-(defn iteration-start
-  "Property.
-
-  Web Animations API's `web.animation.EffectTiming` dictionary's
-  property specifies the repetition number which repetition the
-  begins at and its progress through it.
-
-  `var timingProperties = {
-  iterationStart = iterationNumber
-  };
-
-  timingProperties.iterationStart = iterationNumber;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterationStart`"
-  [this]
-  (-> this (.iterationStart)))
-
-(defn set-iteration-start!
-  "Property.
-
-  Web Animations API's `web.animation.EffectTiming` dictionary's
-  property specifies the repetition number which repetition the
-  begins at and its progress through it.
-
-  `var timingProperties = {
-  iterationStart = iterationNumber
-  };
-
-  timingProperties.iterationStart = iterationNumber;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/iterationStart`"
-  [this val]
-  (aset this "iterationStart" val))
 

@@ -180,35 +180,41 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/navigation`"
   [this]
-  (-> this (.navigation)))
+  (-> this (.-navigation)))
 
-(defn onresourcetimingbufferfull
+(defn timing
   "Property.
 
-  The onresourcetimingbufferfull property is an event handler that
-  be called when the resourcetimingbufferfull event is fired. This
-  is fired when the browser's resource timing performance buffer
-  full.
+  The legacy Performance.timing read-only property returns a `web.deprecated.PerformanceTiming`
+  containing latency-related performance information.
 
-  `callback = performance.onresourcetimingbufferfull = buffer_full_cb;`
+  `timingInfo = performance.timing;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing`"
   [this]
-  (-> this (.onresourcetimingbufferfull)))
+  (-> this (.-timing)))
 
-(defn set-onresourcetimingbufferfull!
+(defn memory
   "Property.
 
-  The onresourcetimingbufferfull property is an event handler that
-  be called when the resourcetimingbufferfull event is fired. This
-  is fired when the browser's resource timing performance buffer
-  full.
+  None.
 
-  `callback = performance.onresourcetimingbufferfull = buffer_full_cb;`
+  `timingInfo = performance.memory`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory`"
+  [this]
+  (-> this (.-memory)))
+
+(defn set-memory!
+  "Property.
+
+  None.
+
+  `timingInfo = performance.memory`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory`"
   [this val]
-  (aset this "onresourcetimingbufferfull" val))
+  (aset this "memory" val))
 
 (defn time-origin
   "Property.
@@ -221,7 +227,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin`"
   [this]
-  (-> this (.timeOrigin)))
+  (-> this (.-timeOrigin)))
 
 (defn set-time-origin!
   "Property.
@@ -236,15 +242,31 @@
   [this val]
   (aset this "timeOrigin" val))
 
-(defn timing
+(defn onresourcetimingbufferfull
   "Property.
 
-  The legacy Performance.timing read-only property returns a `web.deprecated.PerformanceTiming`
-  containing latency-related performance information.
+  The onresourcetimingbufferfull property is an event handler that
+  be called when the resourcetimingbufferfull event is fired. This
+  is fired when the browser's resource timing performance buffer
+  full.
 
-  `timingInfo = performance.timing;`
+  `callback = performance.onresourcetimingbufferfull = buffer_full_cb;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull`"
   [this]
-  (-> this (.timing)))
+  (-> this (.-onresourcetimingbufferfull)))
+
+(defn set-onresourcetimingbufferfull!
+  "Property.
+
+  The onresourcetimingbufferfull property is an event handler that
+  be called when the resourcetimingbufferfull event is fired. This
+  is fired when the browser's resource timing performance buffer
+  full.
+
+  `callback = performance.onresourcetimingbufferfull = buffer_full_cb;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/onresourcetimingbufferfull`"
+  [this val]
+  (aset this "onresourcetimingbufferfull" val))
 

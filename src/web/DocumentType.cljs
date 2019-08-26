@@ -1,7 +1,7 @@
 (ns web.DocumentType
   "The DocumentType interface represents a `web.Node` containing
   doctype."
-  (:refer-clojure :exclude [remove]))
+  (:refer-clojure :exclude [name remove]))
 
 (defn remove
   "Method.
@@ -64,7 +64,7 @@
   A NamedNodeMap of entities declared in the DTD. Every node in
   map implements the Entity interface."
   [this]
-  (-> this (.entities)))
+  (-> this (.-entities)))
 
 (defn set-entities!
   "Property.
@@ -73,4 +73,80 @@
   map implements the Entity interface."
   [this val]
   (aset this "entities" val))
+
+(defn internal-subset
+  "Property.
+
+  A DOMString of the internal subset, or null if there is none.
+  \"<!ELEMENT foo (bar)>\"."
+  [this]
+  (-> this (.-internalSubset)))
+
+(defn set-internal-subset!
+  "Property.
+
+  A DOMString of the internal subset, or null if there is none.
+  \"<!ELEMENT foo (bar)>\"."
+  [this val]
+  (aset this "internalSubset" val))
+
+(defn name
+  "Property.
+
+  A DOMString, eg \"html\" for <!DOCTYPE HTML>."
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  A DOMString, eg \"html\" for <!DOCTYPE HTML>."
+  [this val]
+  (aset this "name" val))
+
+(defn notations
+  "Property.
+
+  A NamedNodeMap with notations declared in the DTD. Every node
+  this map implements the Notation interface."
+  [this]
+  (-> this (.-notations)))
+
+(defn set-notations!
+  "Property.
+
+  A NamedNodeMap with notations declared in the DTD. Every node
+  this map implements the Notation interface."
+  [this val]
+  (aset this "notations" val))
+
+(defn public-id
+  "Property.
+
+  A DOMString, eg \"-//W3C//DTD HTML 4.01//EN\", empty string for"
+  [this]
+  (-> this (.-publicId)))
+
+(defn set-public-id!
+  "Property.
+
+  A DOMString, eg \"-//W3C//DTD HTML 4.01//EN\", empty string for"
+  [this val]
+  (aset this "publicId" val))
+
+(defn system-id
+  "Property.
+
+  A DOMString, eg \"http://www.w3.org/TR/html4/strict.dtd\", empty
+  for HTML5."
+  [this]
+  (-> this (.-systemId)))
+
+(defn set-system-id!
+  "Property.
+
+  A DOMString, eg \"http://www.w3.org/TR/html4/strict.dtd\", empty
+  for HTML5."
+  [this val]
+  (aset this "systemId" val))
 

@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/clients`"
   [this]
-  (-> this (.clients)))
+  (-> this (.-clients)))
 
 (defn set-clients!
   "Property.
@@ -51,6 +51,32 @@
   [this val]
   (aset this "clients" val))
 
+(defn registration
+  "Property.
+
+  The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
+  returns a reference to the `web.workers.ServiceWorkerRegistration`
+  which represents the service worker's registration.
+
+  `serviceWorkerRegistration = self.registration`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration`"
+  [this]
+  (-> this (.-registration)))
+
+(defn set-registration!
+  "Property.
+
+  The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
+  returns a reference to the `web.workers.ServiceWorkerRegistration`
+  which represents the service worker's registration.
+
+  `serviceWorkerRegistration = self.registration`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration`"
+  [this val]
+  (aset this "registration" val))
+
 (defn caches
   "Property.
 
@@ -62,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches`"
   [this]
-  (-> this (.caches)))
+  (-> this (.-caches)))
 
 (defn set-caches!
   "Property.
@@ -89,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onactivate`"
   [this]
-  (-> this (.onactivate)))
+  (-> this (.-onactivate)))
 
 (defn set-onactivate!
   "Property.
@@ -116,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onfetch`"
   [this]
-  (-> this (.onfetch)))
+  (-> this (.-onfetch)))
 
 (defn set-onfetch!
   "Property.
@@ -142,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall`"
   [this]
-  (-> this (.oninstall)))
+  (-> this (.-oninstall)))
 
 (defn set-oninstall!
   "Property.
@@ -167,7 +193,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -193,7 +219,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onnotificationclick`"
   [this]
-  (-> this (.onnotificationclick)))
+  (-> this (.-onnotificationclick)))
 
 (defn set-onnotificationclick!
   "Property.
@@ -222,7 +248,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onnotificationclose`"
   [this]
-  (-> this (.onnotificationclose)))
+  (-> this (.-onnotificationclose)))
 
 (defn set-onnotificationclose!
   "Property.
@@ -251,7 +277,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onpush`"
   [this]
-  (-> this (.onpush)))
+  (-> this (.-onpush)))
 
 (defn set-onpush!
   "Property.
@@ -280,7 +306,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onpushsubscriptionchange`"
   [this]
-  (-> this (.onpushsubscriptionchange)))
+  (-> this (.-onpushsubscriptionchange)))
 
 (defn set-onpushsubscriptionchange!
   "Property.
@@ -296,30 +322,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onpushsubscriptionchange`"
   [this val]
   (aset this "onpushsubscriptionchange" val))
-
-(defn registration
-  "Property.
-
-  The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
-  returns a reference to the `web.workers.ServiceWorkerRegistration`
-  which represents the service worker's registration.
-
-  `serviceWorkerRegistration = self.registration`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration`"
-  [this]
-  (-> this (.registration)))
-
-(defn set-registration!
-  "Property.
-
-  The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
-  returns a reference to the `web.workers.ServiceWorkerRegistration`
-  which represents the service worker's registration.
-
-  `serviceWorkerRegistration = self.registration`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration`"
-  [this val]
-  (aset this "registration" val))
 

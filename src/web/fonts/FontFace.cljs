@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/display`"
   [this]
-  (-> this (.display)))
+  (-> this (.-display)))
 
 (defn set-display!
   "Property.
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/family`"
   [this]
-  (-> this (.family)))
+  (-> this (.-family)))
 
 (defn set-family!
   "Property.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/featureSettings`"
   [this]
-  (-> this (.featureSettings)))
+  (-> this (.-featureSettings)))
 
 (defn set-feature-settings!
   "Property.
@@ -143,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/loaded`"
   [this]
-  (-> this (.loaded)))
+  (-> this (.-loaded)))
 
 (defn set-loaded!
   "Property.
@@ -170,7 +170,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/status`"
   [this]
-  (-> this (.status)))
+  (-> this (.-status)))
 
 (defn set-status!
   "Property.
@@ -196,7 +196,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/stretch`"
   [this]
-  (-> this (.stretch)))
+  (-> this (.-stretch)))
 
 (defn set-stretch!
   "Property.
@@ -222,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/style`"
   [this]
-  (-> this (.style)))
+  (-> this (.-style)))
 
 (defn set-style!
   "Property.
@@ -249,7 +249,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/unicodeRange`"
   [this]
-  (-> this (.unicodeRange)))
+  (-> this (.-unicodeRange)))
 
 (defn set-unicode-range!
   "Property.
@@ -276,7 +276,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/variant`"
   [this]
-  (-> this (.variant)))
+  (-> this (.-variant)))
 
 (defn set-variant!
   "Property.
@@ -302,7 +302,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/weight`"
   [this]
-  (-> this (.weight)))
+  (-> this (.-weight)))
 
 (defn set-weight!
   "Property.

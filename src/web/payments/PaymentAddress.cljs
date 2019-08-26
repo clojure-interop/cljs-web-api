@@ -28,43 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/addressLine`"
   [this]
-  (-> this (.addressLine)))
-
-(defn language-code
-  "Property.
-
-  The languageCode read-only property of the `web.payments.PaymentAddress`
-  returns a string containing the BCP-47 language code for the
-
-  `var paymentLanguageCode = PaymentAddress.languageCode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
-  [this]
-  (-> this (.languageCode)))
-
-(defn set-language-code!
-  "Property.
-
-  The languageCode read-only property of the `web.payments.PaymentAddress`
-  returns a string containing the BCP-47 language code for the
-
-  `var paymentLanguageCode = PaymentAddress.languageCode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
-  [this val]
-  (aset this "languageCode" val))
-
-(defn city
-  "Property.
-
-  The city read-only property of the `web.payments.PaymentAddress`
-  returns a string containing the city or town portion of the address.
-
-  `var paymentCity = PaymentAddress.city;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/city`"
-  [this]
-  (-> this (.city)))
+  (-> this (.-addressLine)))
 
 (defn country
   "Property.
@@ -77,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/country`"
   [this]
-  (-> this (.country)))
+  (-> this (.-country)))
 
 (defn set-country!
   "Property.
@@ -92,6 +56,18 @@
   [this val]
   (aset this "country" val))
 
+(defn city
+  "Property.
+
+  The city read-only property of the `web.payments.PaymentAddress`
+  returns a string containing the city or town portion of the address.
+
+  `var paymentCity = PaymentAddress.city;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/city`"
+  [this]
+  (-> this (.-city)))
+
 (defn dependent-locality
   "Property.
 
@@ -104,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/dependentLocality`"
   [this]
-  (-> this (.dependentLocality)))
+  (-> this (.-dependentLocality)))
 
 (defn set-dependent-locality!
   "Property.
@@ -131,7 +107,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/organization`"
   [this]
-  (-> this (.organization)))
+  (-> this (.-organization)))
 
 (defn phone
   "Property.
@@ -144,7 +120,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/phone`"
   [this]
-  (-> this (.phone)))
+  (-> this (.-phone)))
 
 (defn postal-code
   "Property.
@@ -158,7 +134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/postalCode`"
   [this]
-  (-> this (.postalCode)))
+  (-> this (.-postalCode)))
 
 (defn recipient
   "Property.
@@ -171,7 +147,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/recipient`"
   [this]
-  (-> this (.recipient)))
+  (-> this (.-recipient)))
 
 (defn set-recipient!
   "Property.
@@ -198,7 +174,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/region`"
   [this]
-  (-> this (.region)))
+  (-> this (.-region)))
 
 (defn region-code
   "Property.
@@ -212,7 +188,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/regionCode`"
   [this]
-  (-> this (.regionCode)))
+  (-> this (.-regionCode)))
 
 (defn sorting-code
   "Property.
@@ -225,5 +201,29 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/sortingCode`"
   [this]
-  (-> this (.sortingCode)))
+  (-> this (.-sortingCode)))
+
+(defn language-code
+  "Property.
+
+  The languageCode read-only property of the `web.payments.PaymentAddress`
+  returns a string containing the BCP-47 language code for the
+
+  `var paymentLanguageCode = PaymentAddress.languageCode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
+  [this]
+  (-> this (.-languageCode)))
+
+(defn set-language-code!
+  "Property.
+
+  The languageCode read-only property of the `web.payments.PaymentAddress`
+  returns a string containing the BCP-47 language code for the
+
+  `var paymentLanguageCode = PaymentAddress.languageCode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
+  [this val]
+  (aset this "languageCode" val))
 

@@ -27,5 +27,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Crypto/subtle`"
   [this]
-  (-> this (.subtle)))
+  (-> this (.-subtle)))
 

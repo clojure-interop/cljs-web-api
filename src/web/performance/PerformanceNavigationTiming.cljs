@@ -3,7 +3,7 @@
   to store and retrieve metrics regarding the browser's document
   events. For example, this interface can be used to determine
   much time it takes to load or unload a document."
-  (:refer-clojure :exclude [type]))
+  (:refer-clojure :exclude [name type]))
 
 (defn to-json
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/entryType`"
   [this]
-  (-> this (.entryType)))
+  (-> this (.-entryType)))
 
 (defn set-entry-type!
   "Property.
@@ -43,6 +43,80 @@
   [this val]
   (aset this "entryType" val))
 
+(defn name
+  "Property.
+
+  The name property of the `web.performance.PerformanceEntry` interface
+  a value that further specifies the value returned by the `PerformanceEntry.entryType`
+  This property is read only.
+
+  `var name = entry.name;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/name`"
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  The name property of the `web.performance.PerformanceEntry` interface
+  a value that further specifies the value returned by the `PerformanceEntry.entryType`
+  This property is read only.
+
+  `var name = entry.name;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/name`"
+  [this val]
+  (aset this "name" val))
+
+(defn start-time
+  "Property.
+
+  The startTime property returns the first recorded `timestamp`
+  the `performance entry`.
+
+  `entry.startTime;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/startTime`"
+  [this]
+  (-> this (.-startTime)))
+
+(defn set-start-time!
+  "Property.
+
+  The startTime property returns the first recorded `timestamp`
+  the `performance entry`.
+
+  `entry.startTime;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/startTime`"
+  [this val]
+  (aset this "startTime" val))
+
+(defn duration
+  "Property.
+
+  The duration property returns a `timestamp` that is the duration
+  the `performance entry`.
+
+  `entry.duration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/duration`"
+  [this]
+  (-> this (.-duration)))
+
+(defn set-duration!
+  "Property.
+
+  The duration property returns a `timestamp` that is the duration
+  the `performance entry`.
+
+  `entry.duration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/duration`"
+  [this val]
+  (aset this "duration" val))
+
 (defn initiator-type
   "Property.
 
@@ -53,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/initiatorType`"
   [this]
-  (-> this (.initiatorType)))
+  (-> this (.-initiatorType)))
 
 (defn set-initiator-type!
   "Property.
@@ -78,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domComplete`"
   [this]
-  (-> this (.domComplete)))
+  (-> this (.-domComplete)))
 
 (defn set-dom-complete!
   "Property.
@@ -93,48 +167,6 @@
   [this val]
   (aset this "domComplete" val))
 
-(defn request-start
-  "Property.
-
-  A DOMHighResTimeStamp representing the time immediately before
-  user agent starts requesting the resource from the server, or
-  relevant application caches or from local resources."
-  [this]
-  (-> this (.requestStart)))
-
-(defn set-request-start!
-  "Property.
-
-  A DOMHighResTimeStamp representing the time immediately before
-  user agent starts requesting the resource from the server, or
-  relevant application caches or from local resources."
-  [this val]
-  (aset this "requestStart" val))
-
-(defn type
-  "Property.
-
-  The type read-only property returns a `string` representing the
-  of navigation. The value must be one of the following:
-
-  `perfEntry.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/type`"
-  [this]
-  (-> this (.type)))
-
-(defn set-type!
-  "Property.
-
-  The type read-only property returns a `string` representing the
-  of navigation. The value must be one of the following:
-
-  `perfEntry.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/type`"
-  [this val]
-  (aset this "type" val))
-
 (defn dom-content-loaded-event-end
   "Property.
 
@@ -146,7 +178,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd`"
   [this]
-  (-> this (.domContentLoadedEventEnd)))
+  (-> this (.-domContentLoadedEventEnd)))
 
 (defn set-dom-content-loaded-event-end!
   "Property.
@@ -172,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart`"
   [this]
-  (-> this (.domContentLoadedEventStart)))
+  (-> this (.-domContentLoadedEventStart)))
 
 (defn set-dom-content-loaded-event-start!
   "Property.
@@ -198,7 +230,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domInteractive`"
   [this]
-  (-> this (.domInteractive)))
+  (-> this (.-domInteractive)))
 
 (defn set-dom-interactive!
   "Property.
@@ -224,7 +256,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/loadEventEnd`"
   [this]
-  (-> this (.loadEventEnd)))
+  (-> this (.-loadEventEnd)))
 
 (defn set-load-event-end!
   "Property.
@@ -250,7 +282,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/loadEventStart`"
   [this]
-  (-> this (.loadEventStart)))
+  (-> this (.-loadEventStart)))
 
 (defn set-load-event-start!
   "Property.
@@ -276,7 +308,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/redirectCount`"
   [this]
-  (-> this (.redirectCount)))
+  (-> this (.-redirectCount)))
 
 (defn set-redirect-count!
   "Property.
@@ -291,6 +323,68 @@
   [this val]
   (aset this "redirectCount" val))
 
+(defn request-start
+  "Property.
+
+  A DOMHighResTimeStamp representing the time immediately before
+  user agent starts requesting the resource from the server, or
+  relevant application caches or from local resources."
+  [this]
+  (-> this (.-requestStart)))
+
+(defn set-request-start!
+  "Property.
+
+  A DOMHighResTimeStamp representing the time immediately before
+  user agent starts requesting the resource from the server, or
+  relevant application caches or from local resources."
+  [this val]
+  (aset this "requestStart" val))
+
+(defn response-start
+  "Property.
+
+  A DOMHighResTimeStamp representing the time immediately after
+  user agent's HTTP parser receives the first byte of the response
+  relevant applicaiton caches, or from local resources or from
+  server."
+  [this]
+  (-> this (.-responseStart)))
+
+(defn set-response-start!
+  "Property.
+
+  A DOMHighResTimeStamp representing the time immediately after
+  user agent's HTTP parser receives the first byte of the response
+  relevant applicaiton caches, or from local resources or from
+  server."
+  [this val]
+  (aset this "responseStart" val))
+
+(defn type
+  "Property.
+
+  The type read-only property returns a `string` representing the
+  of navigation. The value must be one of the following:
+
+  `perfEntry.type;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/type`"
+  [this]
+  (-> this (.-type)))
+
+(defn set-type!
+  "Property.
+
+  The type read-only property returns a `string` representing the
+  of navigation. The value must be one of the following:
+
+  `perfEntry.type;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/type`"
+  [this val]
+  (aset this "type" val))
+
 (defn unload-event-end
   "Property.
 
@@ -303,7 +397,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd`"
   [this]
-  (-> this (.unloadEventEnd)))
+  (-> this (.-unloadEventEnd)))
 
 (defn set-unload-event-end!
   "Property.
@@ -331,7 +425,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/unloadEventStart`"
   [this]
-  (-> this (.unloadEventStart)))
+  (-> this (.-unloadEventStart)))
 
 (defn set-unload-event-start!
   "Property.

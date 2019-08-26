@@ -32,7 +32,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/threshold`"
   [this]
-  (-> this (.threshold)))
+  (-> this (.-threshold)))
 
 (defn set-threshold!
   "Property.
@@ -47,32 +47,6 @@
   [this val]
   (aset this "threshold" val))
 
-(defn attack
-  "Property.
-
-  An `web.audio.AudioParam`.
-
-  `var audioCtx = new AudioContext();
-  var compressor = audioCtx.createDynamicsCompressor();
-  compressor.attack.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/attack`"
-  [this]
-  (-> this (.attack)))
-
-(defn set-attack!
-  "Property.
-
-  An `web.audio.AudioParam`.
-
-  `var audioCtx = new AudioContext();
-  var compressor = audioCtx.createDynamicsCompressor();
-  compressor.attack.value = 0;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/attack`"
-  [this val]
-  (aset this "attack" val))
-
 (defn knee
   "Property.
 
@@ -84,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/knee`"
   [this]
-  (-> this (.knee)))
+  (-> this (.-knee)))
 
 (defn set-knee!
   "Property.
@@ -110,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/ratio`"
   [this]
-  (-> this (.ratio)))
+  (-> this (.-ratio)))
 
 (defn set-ratio!
   "Property.
@@ -136,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/reduction`"
   [this]
-  (-> this (.reduction)))
+  (-> this (.-reduction)))
 
 (defn set-reduction!
   "Property.
@@ -151,6 +125,32 @@
   [this val]
   (aset this "reduction" val))
 
+(defn attack
+  "Property.
+
+  An `web.audio.AudioParam`.
+
+  `var audioCtx = new AudioContext();
+  var compressor = audioCtx.createDynamicsCompressor();
+  compressor.attack.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/attack`"
+  [this]
+  (-> this (.-attack)))
+
+(defn set-attack!
+  "Property.
+
+  An `web.audio.AudioParam`.
+
+  `var audioCtx = new AudioContext();
+  var compressor = audioCtx.createDynamicsCompressor();
+  compressor.attack.value = 0;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/attack`"
+  [this val]
+  (aset this "attack" val))
+
 (defn release
   "Property.
 
@@ -162,7 +162,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/release`"
   [this]
-  (-> this (.release)))
+  (-> this (.-release)))
 
 (defn set-release!
   "Property.

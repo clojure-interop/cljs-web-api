@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/absolute`"
   [this]
-  (-> this (.absolute)))
+  (-> this (.-absolute)))
 
 (defn set-absolute!
   "Property.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/alpha`"
   [this]
-  (-> this (.alpha)))
+  (-> this (.-alpha)))
 
 (defn set-alpha!
   "Property.
@@ -95,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/beta`"
   [this]
-  (-> this (.beta)))
+  (-> this (.-beta)))
 
 (defn set-beta!
   "Property.
@@ -123,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/gamma`"
   [this]
-  (-> this (.gamma)))
+  (-> this (.-gamma)))
 
 (defn set-gamma!
   "Property.

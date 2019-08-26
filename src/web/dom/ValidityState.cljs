@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/badInput`"
   [this]
-  (-> this (.badInput)))
+  (-> this (.-badInput)))
 
 (defn too-long
   "Property.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooLong`"
   [this]
-  (-> this (.tooLong)))
+  (-> this (.-tooLong)))
 
 (defn set-too-long!
   "Property.
@@ -42,4 +42,22 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooLong`"
   [this val]
   (aset this "tooLong" val))
+
+(defn too-short
+  "Property.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooShort`"
+  [this]
+  (-> this (.-tooShort)))
+
+(defn set-too-short!
+  "Property.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooShort`"
+  [this val]
+  (aset this "tooShort" val))
 

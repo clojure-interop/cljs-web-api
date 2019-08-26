@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/oldVersion`"
   [this]
-  (-> this (.oldVersion)))
+  (-> this (.-oldVersion)))
 
 (defn set-old-version!
   "Property.
@@ -28,6 +28,28 @@
   [this val]
   (aset this "oldVersion" val))
 
+(defn new-version
+  "Property.
+
+  A 64-bit integer.
+
+  `var newVersion = IDBVersionChangeEvent.newVersion`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion`"
+  [this]
+  (-> this (.-newVersion)))
+
+(defn set-new-version!
+  "Property.
+
+  A 64-bit integer.
+
+  `var newVersion = IDBVersionChangeEvent.newVersion`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion`"
+  [this val]
+  (aset this "newVersion" val))
+
 (defn version
   "Property.
 
@@ -38,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/version`"
   [this]
-  (-> this (.version)))
+  (-> this (.-version)))
 
 (defn set-version!
   "Property.
@@ -51,26 +73,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/version`"
   [this val]
   (aset this "version" val))
-
-(defn new-version
-  "Property.
-
-  A 64-bit integer.
-
-  `var newVersion = IDBVersionChangeEvent.newVersion`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion`"
-  [this]
-  (-> this (.newVersion)))
-
-(defn set-new-version!
-  "Property.
-
-  A 64-bit integer.
-
-  `var newVersion = IDBVersionChangeEvent.newVersion`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/newVersion`"
-  [this val]
-  (aset this "newVersion" val))
 

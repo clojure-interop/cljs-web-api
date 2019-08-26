@@ -54,7 +54,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
+
+(defn event-handler
+  "Property.
+
+  BroadcastChannel.onmessageerror"
+  [this]
+  (-> this (.-EventHandler)))
+
+(defn set-event-handler!
+  "Property.
+
+  BroadcastChannel.onmessageerror"
+  [this val]
+  (aset this "EventHandler" val))
 
 (defn onmessage
   "Property.
@@ -68,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -96,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.

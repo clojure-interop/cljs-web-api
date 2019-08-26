@@ -11,7 +11,7 @@
   marker to be used to display. The values are browser dependent
   have never been standardized."
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -21,4 +21,24 @@
   have never been standardized."
   [this val]
   (aset this "type" val))
+
+(defn compact
+  "Property.
+
+  Is a Boolean indicating that spacing between list items should
+  reduced. This property reflects the compact attribute only, it
+  consider the line-height CSS property used for that behavior
+  modern pages."
+  [this]
+  (-> this (.-compact)))
+
+(defn set-compact!
+  "Property.
+
+  Is a Boolean indicating that spacing between list items should
+  reduced. This property reflects the compact attribute only, it
+  consider the line-height CSS property used for that behavior
+  modern pages."
+  [this val]
+  (aset this "compact" val))
 

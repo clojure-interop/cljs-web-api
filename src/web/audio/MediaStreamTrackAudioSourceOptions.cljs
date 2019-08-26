@@ -19,7 +19,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceOptions/mediaStreamTrack`"
   [this]
-  (-> this (.mediaStreamTrack)))
+  (-> this (.-mediaStreamTrack)))
 
 (defn set-media-stream-track!
   "Property.

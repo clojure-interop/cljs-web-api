@@ -15,6 +15,59 @@
   [this & args]
   (apply (-> this .-getStartTime) (concat [this] args)))
 
+(defn get-current-time
+  "Method.
+
+  Returns a float representing the current time in seconds relative
+  time zero for the given time container."
+  [this & args]
+  (apply (-> this .-getCurrentTime) (concat [this] args)))
+
+(defn get-simple-duration
+  "Method.
+
+  Returns a float representing the number of seconds for the simple
+  for this animation. If the simple duration is undefined (e.g.,
+  end time is indefinite), then a DOMException with code NOT_SUPPORTED_ERR
+  raised."
+  [this & args]
+  (apply (-> this .-getSimpleDuration) (concat [this] args)))
+
+(defn begin-element
+  "Method.
+
+  Creates a begin instance time for the current time. The new instance
+  is added to the begin instance times list. The behavior of this
+  is equivalent to beginElementAt(0)."
+  [this & args]
+  (apply (-> this .-beginElement) (concat [this] args)))
+
+(defn begin-element-at
+  "Method.
+
+  Creates a begin instance time for the current time plus the
+  offset. The new instance time is added to the begin instance
+  list."
+  [this & args]
+  (apply (-> this .-beginElementAt) (concat [this] args)))
+
+(defn end-element
+  "Method.
+
+  Creates an end instance time for the current time. The new instance
+  is added to the end instance times list. The behavior of this
+  is equivalent to endElementAt(0)."
+  [this & args]
+  (apply (-> this .-endElement) (concat [this] args)))
+
+(defn end-element-at
+  "Method.
+
+  Creates a end instance time for the current time plus the specified
+  The new instance time is added to the end instance times list."
+  [this & args]
+  (apply (-> this .-endElementAt) (concat [this] args)))
+
 (defn target-element
   "Property.
 
@@ -27,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/targetElement`"
   [this]
-  (-> this (.targetElement)))
+  (-> this (.-targetElement)))
 
 (defn set-target-element!
   "Property.
@@ -53,7 +106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onbegin`"
   [this]
-  (-> this (.onbegin)))
+  (-> this (.-onbegin)))
 
 (defn set-onbegin!
   "Property.
@@ -77,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onend`"
   [this]
-  (-> this (.onend)))
+  (-> this (.-onend)))
 
 (defn set-onend!
   "Property.
@@ -101,7 +154,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/onrepeat`"
   [this]
-  (-> this (.onrepeat)))
+  (-> this (.-onrepeat)))
 
 (defn set-onrepeat!
   "Property.

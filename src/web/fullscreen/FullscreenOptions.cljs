@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions/navigationUI`"
   [this]
-  (-> this (.navigationUI)))
+  (-> this (.-navigationUI)))
 
 (defn set-navigation-ui!
   "Property.

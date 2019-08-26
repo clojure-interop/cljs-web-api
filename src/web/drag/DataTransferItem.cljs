@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind`"
   [this]
-  (-> this (.kind)))
+  (-> this (.-kind)))
 
 (defn set-kind!
   "Property.
@@ -81,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

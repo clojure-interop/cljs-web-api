@@ -11,19 +11,6 @@
   [this & args]
   (apply (-> this .-addTextTrack) (concat [this] args)))
 
-(defn can-play-type
-  "Method.
-
-  The `web.media.HTMLMediaElement` method canPlayType() reports
-  likely it is that the current browser will be able to play media
-  a given MIME type.
-
-  `canPlayResponse = audioOrVideo.canPlayType(mediaType);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType`"
-  [this media-type]
-  (-> this (.canPlayType media-type)))
-
 (defn capture-stream
   "Method.
 
@@ -36,6 +23,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream`"
   [this ]
   (-> this (.captureStream)))
+
+(defn can-play-type
+  "Method.
+
+  The `web.media.HTMLMediaElement` method canPlayType() reports
+  likely it is that the current browser will be able to play media
+  a given MIME type.
+
+  `canPlayResponse = audioOrVideo.canPlayType(mediaType);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType`"
+  [this media-type]
+  (-> this (.canPlayType media-type)))
 
 (defn fast-seek
   "Method.
@@ -63,17 +63,29 @@
   [this ]
   (-> this (.load)))
 
-(defn ms-insert-audio-effect
+(defn moz-capture-stream
   "Method.
 
-  The HTMLMediaElement.msInsertAudioEffect() method inserts the
-  audio effect into the media pipeline.
-
-  `HTMLMediaElement.msInsertAudioEffect(activatableClassId: DOMString, effectRequired: boolean, config);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/msInsertAudioEffect`"
+  [enter description]"
   [this & args]
-  (apply (-> this .-msInsertAudioEffect) (concat [this] args)))
+  (apply (-> this .-mozCaptureStream) (concat [this] args)))
+
+(defn moz-capture-stream-until-ended
+  "Method.
+
+  [enter description]"
+  [this & args]
+  (apply (-> this .-mozCaptureStreamUntilEnded) (concat [this] args)))
+
+(defn moz-get-metadata
+  "Method.
+
+  Returns Object, which contains properties that represent metadata
+  the playing media resource as {key: value} pairs. A separate
+  of the data is returned each time the method is called. This
+  must be called after the loadedmetadata event fires."
+  [this & args]
+  (apply (-> this .-mozGetMetadata) (concat [this] args)))
 
 (defn pause
   "Method.
@@ -141,6 +153,18 @@
   [this sink-id]
   (-> this (.setSinkId sink-id)))
 
+(defn ms-insert-audio-effect
+  "Method.
+
+  The HTMLMediaElement.msInsertAudioEffect() method inserts the
+  audio effect into the media pipeline.
+
+  `HTMLMediaElement.msInsertAudioEffect(activatableClassId: DOMString, effectRequired: boolean, config);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/msInsertAudioEffect`"
+  [this & args]
+  (apply (-> this .-msInsertAudioEffect) (concat [this] args)))
+
 (defn audio-tracks
   "Property.
 
@@ -152,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks`"
   [this]
-  (-> this (.audioTracks)))
+  (-> this (.-audioTracks)))
 
 (defn set-audio-tracks!
   "Property.
@@ -167,32 +191,6 @@
   [this val]
   (aset this "audioTracks" val))
 
-(defn onencrypted
-  "Property.
-
-  The onencrypted property of the `web.media.HTMLMediaElement`
-  an event handler, fired whenever an encrypted event occurs, denoting
-  media is encrypted.
-
-  `HTMLMediaElement.onencrypted = function(encrypted) { ... }`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onencrypted`"
-  [this]
-  (-> this (.onencrypted)))
-
-(defn set-onencrypted!
-  "Property.
-
-  The onencrypted property of the `web.media.HTMLMediaElement`
-  an event handler, fired whenever an encrypted event occurs, denoting
-  media is encrypted.
-
-  `HTMLMediaElement.onencrypted = function(encrypted) { ... }`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onencrypted`"
-  [this val]
-  (aset this "onencrypted" val))
-
 (defn autoplay
   "Property.
 
@@ -206,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/autoplay`"
   [this]
-  (-> this (.autoplay)))
+  (-> this (.-autoplay)))
 
 (defn set-autoplay!
   "Property.
@@ -234,7 +232,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/buffered`"
   [this]
-  (-> this (.buffered)))
+  (-> this (.-buffered)))
 
 (defn controller
   "Property.
@@ -246,7 +244,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controller`"
   [this]
-  (-> this (.controller)))
+  (-> this (.-controller)))
 
 (defn set-controller!
   "Property.
@@ -272,7 +270,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controls`"
   [this]
-  (-> this (.controls)))
+  (-> this (.-controls)))
 
 (defn set-controls!
   "Property.
@@ -301,7 +299,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList`"
   [this]
-  (-> this (.controlsList)))
+  (-> this (.-controlsList)))
 
 (defn set-controls-list!
   "Property.
@@ -326,7 +324,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/crossOrigin`"
   [this]
-  (-> this (.crossOrigin)))
+  (-> this (.-crossOrigin)))
 
 (defn set-cross-origin!
   "Property.
@@ -351,7 +349,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentSrc`"
   [this]
-  (-> this (.currentSrc)))
+  (-> this (.-currentSrc)))
 
 (defn current-time
   "Property.
@@ -364,7 +362,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime`"
   [this]
-  (-> this (.currentTime)))
+  (-> this (.-currentTime)))
 
 (defn set-current-time!
   "Property.
@@ -392,7 +390,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/defaultMuted`"
   [this]
-  (-> this (.defaultMuted)))
+  (-> this (.-defaultMuted)))
 
 (defn set-default-muted!
   "Property.
@@ -420,7 +418,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/defaultPlaybackRate`"
   [this]
-  (-> this (.defaultPlaybackRate)))
+  (-> this (.-defaultPlaybackRate)))
 
 (defn set-default-playback-rate!
   "Property.
@@ -435,6 +433,30 @@
   [this val]
   (aset this "defaultPlaybackRate" val))
 
+(defn disable-remote-playback
+  "Property.
+
+  The HTMLMediaElement.disableRemotePlayback property determines
+  the media element is allowed to have a remote playback UI.
+
+  `var remotePlaybackState ​= element.disableRemotePlayback();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/disableRemotePlayback`"
+  [this]
+  (-> this (.-disableRemotePlayback)))
+
+(defn set-disable-remote-playback!
+  "Property.
+
+  The HTMLMediaElement.disableRemotePlayback property determines
+  the media element is allowed to have a remote playback UI.
+
+  `var remotePlaybackState ​= element.disableRemotePlayback();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/disableRemotePlayback`"
+  [this val]
+  (aset this "disableRemotePlayback" val))
+
 (defn duration
   "Property.
 
@@ -445,7 +467,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/duration`"
   [this]
-  (-> this (.duration)))
+  (-> this (.-duration)))
 
 (defn ended
   "Property.
@@ -457,7 +479,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended`"
   [this]
-  (-> this (.ended)))
+  (-> this (.-ended)))
 
 (defn error
   "Property.
@@ -471,20 +493,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/error`"
   [this]
-  (-> this (.error)))
-
-(defn initial-time
-  "Property.
-
-  The HTMLMediaElement.initialTime is the initial playback position
-  seconds. This property is obsolete, you can use a Media Fragments
-  in the `HTMLMediaElement.src` attribute instead.
-
-  `...`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/initialTime`"
-  [this]
-  (-> this (.initialTime)))
+  (-> this (.-error)))
 
 (defn loop
   "Property.
@@ -498,7 +507,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loop`"
   [this]
-  (-> this (.loop)))
+  (-> this (.-loop)))
 
 (defn set-loop!
   "Property.
@@ -525,7 +534,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/mediaGroup`"
   [this]
-  (-> this (.mediaGroup)))
+  (-> this (.-mediaGroup)))
 
 (defn set-media-group!
   "Property.
@@ -540,6 +549,110 @@
   [this val]
   (aset this "mediaGroup" val))
 
+(defn media-keys
+  "Property.
+
+  Returns a MediaKeys object or null. MediaKeys is a set of keys
+  an associated HTMLMediaElement can use for decryption of media
+  during playback."
+  [this]
+  (-> this (.-mediaKeys)))
+
+(defn set-media-keys!
+  "Property.
+
+  Returns a MediaKeys object or null. MediaKeys is a set of keys
+  an associated HTMLMediaElement can use for decryption of media
+  during playback."
+  [this val]
+  (aset this "mediaKeys" val))
+
+(defn moz-audio-captured
+  "Property.
+
+  Returns a Boolean. Related to audio stream capture."
+  [this]
+  (-> this (.-mozAudioCaptured)))
+
+(defn set-moz-audio-captured!
+  "Property.
+
+  Returns a Boolean. Related to audio stream capture."
+  [this val]
+  (aset this "mozAudioCaptured" val))
+
+(defn moz-fragment-end
+  "Property.
+
+  Is a double that provides access to the fragment end time if
+  media element has a fragment URI for currentSrc, otherwise it
+  equal to the media duration."
+  [this]
+  (-> this (.-mozFragmentEnd)))
+
+(defn set-moz-fragment-end!
+  "Property.
+
+  Is a double that provides access to the fragment end time if
+  media element has a fragment URI for currentSrc, otherwise it
+  equal to the media duration."
+  [this val]
+  (aset this "mozFragmentEnd" val))
+
+(defn moz-frame-buffer-length
+  "Property.
+
+  Is a unsigned long that indicates the number of samples that
+  be returned in the framebuffer of each MozAudioAvailable event.
+  number is a total for all channels, and by default is set to
+  the number of channels * 1024 (e.g., 2 channels * 1024 samples
+  2048 total).
+  The mozFrameBufferLength property can be set to a new value
+  lower latency, larger amounts of data, etc. The size given must
+  a number between 512 and 16384. Using any other size results
+  an exception being thrown. The best time to set a new length
+  after the loadedmetadata event fires, when the audio info is
+  but before the audio has started or MozAudioAvailable events
+  begun firing."
+  [this]
+  (-> this (.-mozFrameBufferLength)))
+
+(defn set-moz-frame-buffer-length!
+  "Property.
+
+  Is a unsigned long that indicates the number of samples that
+  be returned in the framebuffer of each MozAudioAvailable event.
+  number is a total for all channels, and by default is set to
+  the number of channels * 1024 (e.g., 2 channels * 1024 samples
+  2048 total).
+  The mozFrameBufferLength property can be set to a new value
+  lower latency, larger amounts of data, etc. The size given must
+  a number between 512 and 16384. Using any other size results
+  an exception being thrown. The best time to set a new length
+  after the loadedmetadata event fires, when the audio info is
+  but before the audio has started or MozAudioAvailable events
+  begun firing."
+  [this val]
+  (aset this "mozFrameBufferLength" val))
+
+(defn moz-sample-rate
+  "Property.
+
+  Returns a double representing the number of samples per second
+  will be played. For example, 44100 samples per second is the
+  rate used by CD audio."
+  [this]
+  (-> this (.-mozSampleRate)))
+
+(defn set-moz-sample-rate!
+  "Property.
+
+  Returns a double representing the number of samples per second
+  will be played. For example, 44100 samples per second is the
+  rate used by CD audio."
+  [this val]
+  (aset this "mozSampleRate" val))
+
 (defn muted
   "Property.
 
@@ -550,7 +663,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/muted`"
   [this]
-  (-> this (.muted)))
+  (-> this (.-muted)))
 
 (defn set-muted!
   "Property.
@@ -574,31 +687,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/networkState`"
   [this]
-  (-> this (.networkState)))
-
-(defn onerror
-  "Property.
-
-  The onerror property of the `web.media.HTMLMediaElement` interface
-  the `EventHandler` for processing error events.
-
-  `HTMLMediaElement.onerror = EventListener;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onerror`"
-  [this]
-  (-> this (.onerror)))
-
-(defn set-onerror!
-  "Property.
-
-  The onerror property of the `web.media.HTMLMediaElement` interface
-  the `EventHandler` for processing error events.
-
-  `HTMLMediaElement.onerror = EventListener;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onerror`"
-  [this val]
-  (aset this "onerror" val))
+  (-> this (.-networkState)))
 
 (defn paused
   "Property.
@@ -610,7 +699,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/paused`"
   [this]
-  (-> this (.paused)))
+  (-> this (.-paused)))
 
 (defn playback-rate
   "Property.
@@ -628,7 +717,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate`"
   [this]
-  (-> this (.playbackRate)))
+  (-> this (.-playbackRate)))
 
 (defn set-playback-rate!
   "Property.
@@ -648,6 +737,60 @@
   [this val]
   (aset this "playbackRate" val))
 
+(defn played
+  "Property.
+
+  Returns a TimeRanges object that contains the ranges of the media
+  that the browser has played, if any."
+  [this]
+  (-> this (.-played)))
+
+(defn set-played!
+  "Property.
+
+  Returns a TimeRanges object that contains the ranges of the media
+  that the browser has played, if any."
+  [this val]
+  (aset this "played" val))
+
+(defn preload
+  "Property.
+
+  Is a DOMString that reflects the preload HTML attribute, indicating
+  data should be preloaded, if any. Possible values are: none,
+  auto."
+  [this]
+  (-> this (.-preload)))
+
+(defn set-preload!
+  "Property.
+
+  Is a DOMString that reflects the preload HTML attribute, indicating
+  data should be preloaded, if any. Possible values are: none,
+  auto."
+  [this val]
+  (aset this "preload" val))
+
+(defn preserves-pitch
+  "Property.
+
+  Is a Boolean that determines if the pitch of the sound will be
+  If set to false, the pitch will adjust to the speed of the audio.
+  is implemented with prefixes in Firefox (mozPreservesPitch) and
+  (webkitPreservesPitch)."
+  [this]
+  (-> this (.-preservesPitch)))
+
+(defn set-preserves-pitch!
+  "Property.
+
+  Is a Boolean that determines if the pitch of the sound will be
+  If set to false, the pitch will adjust to the speed of the audio.
+  is implemented with prefixes in Firefox (mozPreservesPitch) and
+  (webkitPreservesPitch)."
+  [this val]
+  (aset this "preservesPitch" val))
+
 (defn ready-state
   "Property.
 
@@ -658,7 +801,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState`"
   [this]
-  (-> this (.readyState)))
+  (-> this (.-readyState)))
 
 (defn seekable
   "Property.
@@ -671,7 +814,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seekable`"
   [this]
-  (-> this (.seekable)))
+  (-> this (.-seekable)))
 
 (defn set-seekable!
   "Property.
@@ -686,6 +829,22 @@
   [this val]
   (aset this "seekable" val))
 
+(defn seeking
+  "Property.
+
+  Returns a Boolean that indicates whether the media is in the
+  of seeking to a new position."
+  [this]
+  (-> this (.-seeking)))
+
+(defn set-seeking!
+  "Property.
+
+  Returns a Boolean that indicates whether the media is in the
+  of seeking to a new position."
+  [this val]
+  (aset this "seeking" val))
+
 (defn sink-id
   "Property.
 
@@ -699,7 +858,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/sinkId`"
   [this]
-  (-> this (.sinkId)))
+  (-> this (.-sinkId)))
 
 (defn set-sink-id!
   "Property.
@@ -727,7 +886,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/src`"
   [this]
-  (-> this (.src)))
+  (-> this (.-src)))
 
 (defn set-src!
   "Property.
@@ -755,7 +914,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject`"
   [this]
-  (-> this (.srcObject)))
+  (-> this (.-srcObject)))
 
 (defn set-src-object!
   "Property.
@@ -783,7 +942,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/textTracks`"
   [this]
-  (-> this (.HTMLMedia)))
+  (-> this (.-HTMLMedia)))
 
 (defn set-html-media!
   "Property.
@@ -809,7 +968,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/videoTracks`"
   [this]
-  (-> this (.videoTracks)))
+  (-> this (.-videoTracks)))
 
 (defn set-video-tracks!
   "Property.
@@ -834,7 +993,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume`"
   [this]
-  (-> this (.volume)))
+  (-> this (.-volume)))
 
 (defn set-volume!
   "Property.
@@ -847,4 +1006,93 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume`"
   [this val]
   (aset this "volume" val))
+
+(defn onencrypted
+  "Property.
+
+  The onencrypted property of the `web.media.HTMLMediaElement`
+  an event handler, fired whenever an encrypted event occurs, denoting
+  media is encrypted.
+
+  `HTMLMediaElement.onencrypted = function(encrypted) { ... }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onencrypted`"
+  [this]
+  (-> this (.-onencrypted)))
+
+(defn set-onencrypted!
+  "Property.
+
+  The onencrypted property of the `web.media.HTMLMediaElement`
+  an event handler, fired whenever an encrypted event occurs, denoting
+  media is encrypted.
+
+  `HTMLMediaElement.onencrypted = function(encrypted) { ... }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onencrypted`"
+  [this val]
+  (aset this "onencrypted" val))
+
+(defn onwaitingforkey
+  "Property.
+
+  The onwaitingforkey property of the `web.media.HTMLMediaElement`
+  an event handler, fired when a waitingforkey event occurs, when
+  is blocked while waiting for an encryption key.
+
+  `HTMLMediaElement.onwaitingforkey = function(waitingforkey) { ... }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onwaitingforkey`"
+  [this]
+  (-> this (.-onwaitingforkey)))
+
+(defn set-onwaitingforkey!
+  "Property.
+
+  The onwaitingforkey property of the `web.media.HTMLMediaElement`
+  an event handler, fired when a waitingforkey event occurs, when
+  is blocked while waiting for an encryption key.
+
+  `HTMLMediaElement.onwaitingforkey = function(waitingforkey) { ... }`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onwaitingforkey`"
+  [this val]
+  (aset this "onwaitingforkey" val))
+
+(defn initial-time
+  "Property.
+
+  The HTMLMediaElement.initialTime is the initial playback position
+  seconds. This property is obsolete, you can use a Media Fragments
+  in the `HTMLMediaElement.src` attribute instead.
+
+  `...`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/initialTime`"
+  [this]
+  (-> this (.-initialTime)))
+
+(defn onerror
+  "Property.
+
+  The onerror property of the `web.media.HTMLMediaElement` interface
+  the `EventHandler` for processing error events.
+
+  `HTMLMediaElement.onerror = EventListener;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onerror`"
+  [this]
+  (-> this (.-onerror)))
+
+(defn set-onerror!
+  "Property.
+
+  The onerror property of the `web.media.HTMLMediaElement` interface
+  the `EventHandler` for processing error events.
+
+  `HTMLMediaElement.onerror = EventListener;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/onerror`"
+  [this val]
+  (aset this "onerror" val))
 

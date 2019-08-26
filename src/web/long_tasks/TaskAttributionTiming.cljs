@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerType`"
   [this]
-  (-> this (.containerType)))
+  (-> this (.-containerType)))
 
 (defn set-container-type!
   "Property.
@@ -29,6 +29,34 @@
   [this val]
   (aset this "containerType" val))
 
+(defn container-src
+  "Property.
+
+  The containerSrc readonly property of the `web.long-tasks.TaskAttributionTiming`
+  returns the container's src attribute. A container is the iframe,
+  or object etc. that is being implicated, on the whole, for a
+  task.
+
+  `var containerSrc = TaskAttributionTiming.containerSrc;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerSrc`"
+  [this]
+  (-> this (.-containerSrc)))
+
+(defn set-container-src!
+  "Property.
+
+  The containerSrc readonly property of the `web.long-tasks.TaskAttributionTiming`
+  returns the container's src attribute. A container is the iframe,
+  or object etc. that is being implicated, on the whole, for a
+  task.
+
+  `var containerSrc = TaskAttributionTiming.containerSrc;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerSrc`"
+  [this val]
+  (aset this "containerSrc" val))
+
 (defn container-id
   "Property.
 
@@ -41,7 +69,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerId`"
   [this]
-  (-> this (.containerId)))
+  (-> this (.-containerId)))
 
 (defn set-container-id!
   "Property.
@@ -69,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerName`"
   [this]
-  (-> this (.containerName)))
+  (-> this (.-containerName)))
 
 (defn set-container-name!
   "Property.
@@ -84,32 +112,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerName`"
   [this val]
   (aset this "containerName" val))
-
-(defn container-src
-  "Property.
-
-  The containerSrc readonly property of the `web.long-tasks.TaskAttributionTiming`
-  returns the container's src attribute. A container is the iframe,
-  or object etc. that is being implicated, on the whole, for a
-  task.
-
-  `var containerSrc = TaskAttributionTiming.containerSrc;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerSrc`"
-  [this]
-  (-> this (.containerSrc)))
-
-(defn set-container-src!
-  "Property.
-
-  The containerSrc readonly property of the `web.long-tasks.TaskAttributionTiming`
-  returns the container's src attribute. A container is the iframe,
-  or object etc. that is being implicated, on the whole, for a
-  task.
-
-  `var containerSrc = TaskAttributionTiming.containerSrc;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TaskAttributionTiming/containerSrc`"
-  [this val]
-  (aset this "containerSrc" val))
 

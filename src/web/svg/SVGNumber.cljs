@@ -10,7 +10,7 @@
   NO_MODIFICATION_ALLOWED_ERR is raised on an attempt to change
   value."
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.

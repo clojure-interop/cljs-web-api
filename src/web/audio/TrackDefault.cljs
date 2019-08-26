@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/byteStreamTrackID`"
   [this]
-  (-> this (.byteStreamTrackID)))
+  (-> this (.-byteStreamTrackID)))
 
 (defn set-byte-stream-track-id!
   "Property.
@@ -75,33 +75,33 @@
   [this val]
   (aset this "byteStreamTrackID" val))
 
-(defn kinds
+(defn language
   "Property.
 
-  The kinds read-only property of the `web.audio.TrackDefault`
-  returns default kinds for an associated `web.audio.SourceBuffer`
-  use when an initialization segment does not contain label information
-  a new track.
+  The language read-only property of the `web.audio.TrackDefault`
+  returns a default language for an associated `web.audio.SourceBuffer`
+  use when an initialization segment does not contain language
+  for a new track.
 
-  `var mykinds = TrackDefault.kinds;`
+  `var mylanguage = TrackDefault.language;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/kinds`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/language`"
   [this]
-  (-> this (.kinds)))
+  (-> this (.-language)))
 
-(defn set-kinds!
+(defn set-language!
   "Property.
 
-  The kinds read-only property of the `web.audio.TrackDefault`
-  returns default kinds for an associated `web.audio.SourceBuffer`
-  use when an initialization segment does not contain label information
-  a new track.
+  The language read-only property of the `web.audio.TrackDefault`
+  returns a default language for an associated `web.audio.SourceBuffer`
+  use when an initialization segment does not contain language
+  for a new track.
 
-  `var mykinds = TrackDefault.kinds;`
+  `var mylanguage = TrackDefault.language;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/kinds`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/language`"
   [this val]
-  (aset this "kinds" val))
+  (aset this "language" val))
 
 (defn label
   "Property.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/label`"
   [this]
-  (-> this (.label)))
+  (-> this (.-label)))
 
 (defn set-label!
   "Property.
@@ -131,31 +131,31 @@
   [this val]
   (aset this "label" val))
 
-(defn language
+(defn kinds
   "Property.
 
-  The language read-only property of the `web.audio.TrackDefault`
-  returns a default language for an associated `web.audio.SourceBuffer`
-  use when an initialization segment does not contain language
-  for a new track.
+  The kinds read-only property of the `web.audio.TrackDefault`
+  returns default kinds for an associated `web.audio.SourceBuffer`
+  use when an initialization segment does not contain label information
+  a new track.
 
-  `var mylanguage = TrackDefault.language;`
+  `var mykinds = TrackDefault.kinds;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/language`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/kinds`"
   [this]
-  (-> this (.language)))
+  (-> this (.-kinds)))
 
-(defn set-language!
+(defn set-kinds!
   "Property.
 
-  The language read-only property of the `web.audio.TrackDefault`
-  returns a default language for an associated `web.audio.SourceBuffer`
-  use when an initialization segment does not contain language
-  for a new track.
+  The kinds read-only property of the `web.audio.TrackDefault`
+  returns default kinds for an associated `web.audio.SourceBuffer`
+  use when an initialization segment does not contain label information
+  a new track.
 
-  `var mylanguage = TrackDefault.language;`
+  `var mykinds = TrackDefault.kinds;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/language`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackDefault/kinds`"
   [this val]
-  (aset this "language" val))
+  (aset this "kinds" val))
 

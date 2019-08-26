@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/audioLevel`"
   [this]
-  (-> this (.audioLevel)))
+  (-> this (.-audioLevel)))
 
 (defn set-audio-level!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/source`"
   [this]
-  (-> this (.source)))
+  (-> this (.-source)))
 
 (defn set-source!
   "Property.
@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/timestamp`"
   [this]
-  (-> this (.timestamp)))
+  (-> this (.-timestamp)))
 
 (defn set-timestamp!
   "Property.

@@ -15,6 +15,18 @@
   [this index]
   (-> this (.deleteRule index)))
 
+(defn insert-rule
+  "Method.
+
+  The CSSStyleSheet.insertRule() method inserts a new CSS rule
+  the current style sheet, with some restrictions.
+
+  `stylesheet.insertRule(rule [, index])`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule`"
+  [this & args]
+  (apply (-> this .-insertRule) (concat [this] args)))
+
 (defn add-rule
   "Method.
 
@@ -27,18 +39,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/addRule`"
   [this selector style-block index]
   (-> this (.addRule selector style-block index)))
-
-(defn insert-rule
-  "Method.
-
-  The CSSStyleSheet.insertRule() method inserts a new CSS rule
-  the current style sheet, with some restrictions.
-
-  `stylesheet.insertRule(rule [, index])`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule`"
-  [this & args]
-  (apply (-> this .-insertRule) (concat [this] args)))
 
 (defn remove-rule
   "Method.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/cssRules`"
   [this]
-  (-> this (.cssRules)))
+  (-> this (.-cssRules)))
 
 (defn owner-rule
   "Property.
@@ -76,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/ownerRule`"
   [this]
-  (-> this (.ownerRule)))
+  (-> this (.-ownerRule)))
 
 (defn rules
   "Property.
@@ -90,5 +90,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/rules`"
   [this]
-  (-> this (.rules)))
+  (-> this (.-rules)))
 

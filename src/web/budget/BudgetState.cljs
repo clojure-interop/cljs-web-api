@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BudgetState/budgetAt`"
   [this]
-  (-> this (.budgetAt)))
+  (-> this (.-budgetAt)))
 
 (defn set-budget-at!
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BudgetState/time`"
   [this]
-  (-> this (.time)))
+  (-> this (.-time)))
 
 (defn set-time!
   "Property.

@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

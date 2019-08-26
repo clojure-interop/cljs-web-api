@@ -26,5 +26,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline/currentTime`"
   [this]
-  (-> this (.currentTime)))
+  (-> this (.-currentTime)))
 

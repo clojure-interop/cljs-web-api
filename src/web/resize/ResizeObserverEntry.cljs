@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentRect`"
   [this]
-  (-> this (.contentRect)))
+  (-> this (.-contentRect)))
 
 (defn set-content-rect!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/target`"
   [this]
-  (-> this (.target)))
+  (-> this (.-target)))
 
 (defn set-target!
   "Property.

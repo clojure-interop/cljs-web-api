@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.
@@ -32,6 +32,102 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error`"
   [this val]
   (aset this "error" val))
+
+(defn result
+  "Property.
+
+  any
+
+  `var myResult = request.result;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result`"
+  [this]
+  (-> this (.-result)))
+
+(defn set-result!
+  "Property.
+
+  any
+
+  `var myResult = request.result;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result`"
+  [this val]
+  (aset this "result" val))
+
+(defn source
+  "Property.
+
+  An object representing the source of the request, such as an
+  `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
+
+  `var IDBIndex = request.source;
+  var IDBCursor = request.source;
+  var IDBObjectStore = request.source;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source`"
+  [this]
+  (-> this (.-source)))
+
+(defn set-source!
+  "Property.
+
+  An object representing the source of the request, such as an
+  `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
+
+  `var IDBIndex = request.source;
+  var IDBCursor = request.source;
+  var IDBObjectStore = request.source;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source`"
+  [this val]
+  (aset this "source" val))
+
+(defn ready-state
+  "Property.
+
+  The `IDBRequestReadyState` of the request, which takes one of
+  following two values:
+
+  `var currentReadyState = request.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState`"
+  [this]
+  (-> this (.-readyState)))
+
+(defn set-ready-state!
+  "Property.
+
+  The `IDBRequestReadyState` of the request, which takes one of
+  following two values:
+
+  `var currentReadyState = request.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState`"
+  [this val]
+  (aset this "readyState" val))
+
+(defn transaction
+  "Property.
+
+  An `web.storage.IDBTransaction`.
+
+  `var myTransaction = request.transaction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
+  [this]
+  (-> this (.-transaction)))
+
+(defn set-transaction!
+  "Property.
+
+  An `web.storage.IDBTransaction`.
+
+  `var myTransaction = request.transaction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
+  [this val]
+  (aset this "transaction" val))
 
 (defn onerror
   "Property.
@@ -48,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -81,7 +177,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onsuccess`"
   [this]
-  (-> this (.onsuccess)))
+  (-> this (.-onsuccess)))
 
 (defn set-onsuccess!
   "Property.
@@ -98,100 +194,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/onsuccess`"
   [this val]
   (aset this "onsuccess" val))
-
-(defn ready-state
-  "Property.
-
-  The `IDBRequestReadyState` of the request, which takes one of
-  following two values:
-
-  `var currentReadyState = request.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState`"
-  [this]
-  (-> this (.readyState)))
-
-(defn set-ready-state!
-  "Property.
-
-  The `IDBRequestReadyState` of the request, which takes one of
-  following two values:
-
-  `var currentReadyState = request.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
-(defn result
-  "Property.
-
-  any
-
-  `var myResult = request.result;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result`"
-  [this]
-  (-> this (.result)))
-
-(defn set-result!
-  "Property.
-
-  any
-
-  `var myResult = request.result;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result`"
-  [this val]
-  (aset this "result" val))
-
-(defn source
-  "Property.
-
-  An object representing the source of the request, such as an
-  `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
-
-  `var IDBIndex = request.source;
-  var IDBCursor = request.source;
-  var IDBObjectStore = request.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source`"
-  [this]
-  (-> this (.source)))
-
-(defn set-source!
-  "Property.
-
-  An object representing the source of the request, such as an
-  `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
-
-  `var IDBIndex = request.source;
-  var IDBCursor = request.source;
-  var IDBObjectStore = request.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source`"
-  [this val]
-  (aset this "source" val))
-
-(defn transaction
-  "Property.
-
-  An `web.storage.IDBTransaction`.
-
-  `var myTransaction = request.transaction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
-  [this]
-  (-> this (.transaction)))
-
-(defn set-transaction!
-  "Property.
-
-  An `web.storage.IDBTransaction`.
-
-  `var myTransaction = request.transaction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
-  [this val]
-  (aset this "transaction" val))
 

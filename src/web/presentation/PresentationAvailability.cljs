@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.

@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/averageRtcpInterval`"
   [this]
-  (-> this (.averageRtcpInterval)))
+  (-> this (.-averageRtcpInterval)))
 
 (defn set-average-rtcp-interval!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/bytesReceived`"
   [this]
-  (-> this (.bytesReceived)))
+  (-> this (.-bytesReceived)))
 
 (defn set-bytes-received!
   "Property.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/fecPacketsDiscarded`"
   [this]
-  (-> this (.fecPacketsDiscarded)))
+  (-> this (.-fecPacketsDiscarded)))
 
 (defn set-fec-packets-discarded!
   "Property.
@@ -82,6 +82,32 @@
   [this val]
   (aset this "fecPacketsDiscarded" val))
 
+(defn fec-packets-received
+  "Property.
+
+  The fecPacketsReceived property of the `web.rtc.RTCInboundRtpStreamStats`
+  indicates how many Forward Error Correction (FEC) packets have
+  received by this RTP receiver from the remote peer.
+
+  `var fecPacketsReceived = rtcInboundRtpStreamStats.fecPacketsReceived;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/fecPacketsReceived`"
+  [this]
+  (-> this (.-fecPacketsReceived)))
+
+(defn set-fec-packets-received!
+  "Property.
+
+  The fecPacketsReceived property of the `web.rtc.RTCInboundRtpStreamStats`
+  indicates how many Forward Error Correction (FEC) packets have
+  received by this RTP receiver from the remote peer.
+
+  `var fecPacketsReceived = rtcInboundRtpStreamStats.fecPacketsReceived;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/fecPacketsReceived`"
+  [this val]
+  (aset this "fecPacketsReceived" val))
+
 (defn fir-count
   "Property.
 
@@ -93,7 +119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/firCount`"
   [this]
-  (-> this (.firCount)))
+  (-> this (.-firCount)))
 
 (defn set-fir-count!
   "Property.
@@ -119,7 +145,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/framesDecoded`"
   [this]
-  (-> this (.framesDecoded)))
+  (-> this (.-framesDecoded)))
 
 (defn set-frames-decoded!
   "Property.
@@ -145,7 +171,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/lastPacketReceivedTimestamp`"
   [this]
-  (-> this (.lastPacketReceivedTimestamp)))
+  (-> this (.-lastPacketReceivedTimestamp)))
 
 (defn set-last-packet-received-timestamp!
   "Property.
@@ -171,7 +197,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/nackCount`"
   [this]
-  (-> this (.nackCount)))
+  (-> this (.-nackCount)))
 
 (defn set-nack-count!
   "Property.
@@ -197,7 +223,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/packetsDuplicated`"
   [this]
-  (-> this (.packetsDuplicated)))
+  (-> this (.-packetsDuplicated)))
 
 (defn set-packets-duplicated!
   "Property.
@@ -224,7 +250,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/packetsFailedDecryption`"
   [this]
-  (-> this (.packetsFailedDecryption)))
+  (-> this (.-packetsFailedDecryption)))
 
 (defn set-packets-failed-decryption!
   "Property.
@@ -252,7 +278,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/perDscpPacketsReceived`"
   [this]
-  (-> this (.perDscpPacketsReceived)))
+  (-> this (.-perDscpPacketsReceived)))
 
 (defn set-per-dscp-packets-received!
   "Property.
@@ -280,7 +306,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/pliCount`"
   [this]
-  (-> this (.pliCount)))
+  (-> this (.-pliCount)))
 
 (defn set-pli-count!
   "Property.
@@ -308,7 +334,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/qpSum`"
   [this]
-  (-> this (.qpSum)))
+  (-> this (.-qpSum)))
 
 (defn set-qp-sum!
   "Property.
@@ -335,7 +361,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/receiverId`"
   [this]
-  (-> this (.receiverId)))
+  (-> this (.-receiverId)))
 
 (defn set-receiver-id!
   "Property.
@@ -362,7 +388,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/remoteId`"
   [this]
-  (-> this (.remoteId)))
+  (-> this (.-remoteId)))
 
 (defn set-remote-id!
   "Property.
@@ -389,7 +415,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/sliCount`"
   [this]
-  (-> this (.sliCount)))
+  (-> this (.-sliCount)))
 
 (defn set-sli-count!
   "Property.
@@ -416,7 +442,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCInboundRtpStreamStats/trackId`"
   [this]
-  (-> this (.trackId)))
+  (-> this (.-trackId)))
 
 (defn set-track-id!
   "Property.

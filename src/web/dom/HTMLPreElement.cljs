@@ -11,7 +11,7 @@
   Is a long value reflecting the obsolete width attribute, containing
   fixed-size length for the <pre> element."
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.

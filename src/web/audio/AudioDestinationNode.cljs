@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioDestinationNode/maxChannelCount`"
   [this]
-  (-> this (.maxChannelCount)))
+  (-> this (.-maxChannelCount)))
 
 (defn set-max-channel-count!
   "Property.

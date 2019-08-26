@@ -14,6 +14,53 @@
   [this & args]
   (apply (-> this .-appendData) (concat [this] args)))
 
+(defn delete-data
+  "Method.
+
+  Removes the specified amount of characters, starting at the specified
+  from the CharacterData.data string; when this method returns,
+  contains the shortened DOMString."
+  [this & args]
+  (apply (-> this .-deleteData) (concat [this] args)))
+
+(defn insert-data
+  "Method.
+
+  Inserts the specified characters, at the specified offset, in
+  CharacterData.data string; when this method returns, data contains
+  modified DOMString."
+  [this & args]
+  (apply (-> this .-insertData) (concat [this] args)))
+
+(defn remove
+  "Method.
+
+  The ChildNode.remove() method removes the object from the tree
+  belongs to.
+
+  `node.remove();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove`"
+  [this ]
+  (-> this (.remove)))
+
+(defn replace-data
+  "Method.
+
+  Replaces the specified amount of characters, starting at the
+  offset, with the specified DOMString; when this method returns,
+  contains the modified DOMString."
+  [this & args]
+  (apply (-> this .-replaceData) (concat [this] args)))
+
+(defn substring-data
+  "Method.
+
+  Returns a DOMString containing the part of CharacterData.data
+  the specified length and starting at the specified offset."
+  [this & args]
+  (apply (-> this .-substringData) (concat [this] args)))
+
 (defn after
   "Method.
 
@@ -43,18 +90,6 @@
   [this & args]
   (apply (-> this .-before) (concat [this] args)))
 
-(defn remove
-  "Method.
-
-  The ChildNode.remove() method removes the object from the tree
-  belongs to.
-
-  `node.remove();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove`"
-  [this ]
-  (-> this (.remove)))
-
 (defn replace-with
   "Method.
 
@@ -74,7 +109,7 @@
 
   Is a DOMString representing the textual data contained in this"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -82,6 +117,22 @@
   Is a DOMString representing the textual data contained in this"
   [this val]
   (aset this "data" val))
+
+(defn length
+  "Property.
+
+  Returns an unsigned long representing the size of the string
+  in CharacterData.data."
+  [this]
+  (-> this (.-length)))
+
+(defn set-length!
+  "Property.
+
+  Returns an unsigned long representing the size of the string
+  in CharacterData.data."
+  [this val]
+  (aset this "length" val))
 
 (defn next-element-sibling
   "Property.
@@ -94,7 +145,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this]
-  (-> this (.nextElementSibling)))
+  (-> this (.-nextElementSibling)))
 
 (defn set-next-element-sibling!
   "Property.
@@ -121,5 +172,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling`"
   [this]
-  (-> this (.previousElementSibling)))
+  (-> this (.-previousElementSibling)))
 

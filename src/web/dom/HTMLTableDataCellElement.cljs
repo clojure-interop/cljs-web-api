@@ -9,7 +9,7 @@
   Is a DOMString containing a name used to refer to this cell in
   context. It reflects the abbr attribute."
   [this]
-  (-> this (.abbr)))
+  (-> this (.-abbr)))
 
 (defn set-abbr!
   "Property.

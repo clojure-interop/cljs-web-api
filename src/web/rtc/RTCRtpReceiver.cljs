@@ -17,6 +17,14 @@
   [this ]
   (-> this (.getContributingSources)))
 
+(defn get-parameters
+  "Method.
+
+  Returns an RTCRtpParameters object which contains information
+  how the RTC data is to be decoded."
+  [this & args]
+  (apply (-> this .-getParameters) (concat [this] args)))
+
 (defn get-stats
   "Method.
 
@@ -57,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track`"
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 
 (defn set-track!
   "Property.
@@ -71,4 +79,36 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track`"
   [this val]
   (aset this "track" val))
+
+(defn rtcp-transport
+  "Property.
+
+  Returns the RTCDtlsTransport instance over which RTCP is sent
+  received."
+  [this]
+  (-> this (.-rtcpTransport)))
+
+(defn set-rtcp-transport!
+  "Property.
+
+  Returns the RTCDtlsTransport instance over which RTCP is sent
+  received."
+  [this val]
+  (aset this "rtcpTransport" val))
+
+(defn transport
+  "Property.
+
+  Returns the RTCDtlsTransport instance over which the media for
+  receiver's track is received."
+  [this]
+  (-> this (.-transport)))
+
+(defn set-transport!
+  "Property.
+
+  Returns the RTCDtlsTransport instance over which the media for
+  receiver's track is received."
+  [this val]
+  (aset this "transport" val))
 

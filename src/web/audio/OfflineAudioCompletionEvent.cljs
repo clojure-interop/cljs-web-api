@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer`"
   [this]
-  (-> this (.renderedBuffer)))
+  (-> this (.-renderedBuffer)))
 
 (defn set-rendered-buffer!
   "Property.

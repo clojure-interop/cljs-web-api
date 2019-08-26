@@ -15,96 +15,6 @@
   [this message]
   (-> this (.alert message)))
 
-(defn add-event-listener
-  "Method.
-
-  The `web.EventTarget` method addEventListener() sets up a function
-  will be called whenever the specified event is delivered to the
-
-  `target.addEventListener(type, listener[, options]);
-  target.addEventListener(type, listener[, useCapture]);
-  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
-  [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
-
-(defn show-modal-dialog
-  "Method.
-
-  The Window.showModalDialog() creates and displays a modal dialog
-  containing a specified HTML document.
-
-  `returnVal = window.showModalDialog(uri[, arguments][, options]);
-
-  where
-
-
-  returnVal is a variant, indicating the returnValue property as set by the window of the document specified by uri.
-  uri is the URI of the document to display in the dialog box.
-  arguments is an optional variant that contains values that should be passed to the dialog box; these are made available in the window object's window.dialogArguments property.
-  options an optional string that specifies window ornamentation for the dialog box, using one or more semicolon delimited values:
-
-
-
-
-
-  Syntax
-  Description
-
-
-  center: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window is centered on the desktop; otherwise it's hidden. The default value is yes.
-
-
-  dialogheight: height
-  Specifies the height of the dialog box; by default, the size is specified in pixels.
-
-
-  dialogleft: left
-  Specifies the horizontal position of the dialog box in relation to the upper-left corner of the desktop.
-
-
-  dialogwidth: width
-  Specifies the width of the dialog box; by default, the size is specified in pixels.
-
-
-  dialogtop: top
-  Specifies the vertical position of the dialog box in relation to the upper-left corner of the desktop.
-
-
-  resizable: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window can be resized by the user; otherwise its size is fixed. The default value is no.
-
-
-  scroll: {on | off | yes | no | 1 | 0 }
-  If this argument's value is on, yes, or 1, the dialog window has scroll bars; otherwise its size is fixed. The default value is no.
-
-
-
-
-  Note: Firefox does not implement the dialogHide, edge, status, or unadorned arguments.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/showModalDialog`"
-  [this & args]
-  (apply (-> this .-showModalDialog) (concat [this] args)))
-
-(defn atob
-  "Method.
-
-  The WindowOrWorkerGlobalScope.atob() function decodes a string
-  data which has been encoded using base-64 encoding. You can use
-  `btoa()` method to encode and transmit data which may otherwise
-  communication problems, then transmit it and use the atob() method
-  decode the data again. For example, you can encode, transmit,
-  decode control characters such as ASCII values 0 through 31.
-
-  `var decodedData = scope.atob(encodedData);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob`"
-  [this encoded-data]
-  (-> this (.atob encoded-data)))
-
 (defn back
   "Method.
 
@@ -128,19 +38,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/blur`"
   [this ]
   (-> this (.blur)))
-
-(defn btoa
-  "Method.
-
-  The WindowOrWorkerGlobalScope.btoa() method creates a base-64
-  ASCII string from a binary string (i.e., a `js.String` object
-  which each character in the string is treated as a byte of binary
-
-  `var encodedData = scope.btoa(stringToEncode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa`"
-  [this string-to-encode]
-  (-> this (.btoa string-to-encode)))
 
 (defn cancel-animation-frame
   "Method.
@@ -193,31 +90,6 @@
   [this & args]
   (apply (-> this .-clearImmediate) (concat [this] args)))
 
-(defn clear-interval
-  "Method.
-
-  The clearInterval() method of the `web.WindowOrWorkerGlobalScope`
-  cancels a timed, repeating action which was previously established
-  a call to `setInterval()`.
-
-  `scope.clearInterval(intervalID)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval`"
-  [this interval-id]
-  (-> this (.clearInterval interval-id)))
-
-(defn clear-timeout
-  "Method.
-
-  The clearTimeout() method of the `web.WindowOrWorkerGlobalScope`
-  cancels a timeout previously established by calling `setTimeout()`.
-
-  `scope.clearTimeout(timeoutID)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout`"
-  [this timeout-id]
-  (-> this (.clearTimeout timeout-id)))
-
 (defn close
   "Method.
 
@@ -246,49 +118,19 @@
   [this & args]
   (apply (-> this .-confirm) (concat [this] args)))
 
-(defn convert-point-from-node-to-page
+(defn disable-external-capture
   "Method.
 
-  Given a `web.css.Point` specified in a particular DOM `web.Node`'s
-  system, the `web.Window` method convertPointFromNodeToPage()
-  a Point which specifies the same position in the page's coordinate
-  This method is non-standard and should not be used.
-
-  `Point = Window.convertPointFromNodeToPage(node, nodePoint);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/convertPointFromNodeToPage`"
-  [this node node-point]
-  (-> this (.convertPointFromNodeToPage node node-point)))
-
-(defn convert-point-from-page-to-node
-  "Method.
-
-  Given a `web.css.Point` specified in the page's coordinate system,
-  `web.Window` method convertPointFromPageToNode() returns a Point
-  specifying the same location in the coordinate system of the
-  DOM `web.Node`.
-
-  `Point = Window.convertPointFromPageToNode(node, pagePoint);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/convertPointFromPageToNode`"
-  [this node page-point]
-  (-> this (.convertPointFromPageToNode node page-point)))
-
-(defn create-image-bitmap
-  "Method.
-
-  The createImageBitmap() method creates a bitmap from a given
-  optionally cropped to contain only a portion of that source.
-  method exists on the global scope in both windows and workers.
-  accepts a variety of different image sources, and returns a `js.Promise`
-  resolves to an `web.canvas.ImageBitmap`.
-
-  `createImageBitmap(image[, options]).then(function(response) { ... });
-  createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
+  FIXME: NeedsContents"
   [this & args]
-  (apply (-> this .-createImageBitmap) (concat [this] args)))
+  (apply (-> this .-disableExternalCapture) (concat [this] args)))
+
+(defn dispatch-event
+  "Method.
+
+  Used to trigger an event."
+  [this & args]
+  (apply (-> this .-dispatchEvent) (concat [this] args)))
 
 (defn dump
   "Method.
@@ -303,18 +145,12 @@
   [this & args]
   (apply (-> this .-dump) (concat [this] args)))
 
-(defn fetch
+(defn enable-external-capture
   "Method.
 
-  The fetch() method of the `web.WindowOrWorkerGlobalScope` mixin
-  the process of fetching a resource from the network, returning
-  promise which is fulfilled once the response is available.
-
-  `fetchResponsePromise = fetch(resource, init);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch`"
-  [this resource init]
-  (-> this (.fetch resource init)))
+  FIXME: NeedsContents"
+  [this & args]
+  (apply (-> this .-enableExternalCapture) (concat [this] args)))
 
 (defn find
   "Method.
@@ -379,6 +215,13 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/getAttention`"
   [this ]
   (-> this (.getAttention)))
+
+(defn get-attention-with-cycle-count
+  "Method.
+
+  FIXME: NeedsContents"
+  [this & args]
+  (apply (-> this .-getAttentionWithCycleCount) (concat [this] args)))
 
 (defn get-computed-style
   "Method.
@@ -453,6 +296,13 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia`"
   [this media-query-string]
   (-> this (.matchMedia media-query-string)))
+
+(defn maximize
+  "Method.
+
+  FIXME: NeedsContents"
+  [this & args]
+  (apply (-> this .-maximize) (concat [this] args)))
 
 (defn minimize
   "Method.
@@ -580,18 +430,6 @@
   [this message default]
   (-> this (.prompt message default)))
 
-(defn queue-microtask
-  "Method.
-
-  The queueMicrotask() method of the `web.WindowOrWorkerGlobalScope`
-  queues a microtask.
-
-  `scope.queueMicrotask(function);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask`"
-  [this function]
-  (-> this (.queueMicrotask function)))
-
 (defn release-events
   "Method.
 
@@ -618,25 +456,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame`"
   [this callback]
   (-> this (.requestAnimationFrame callback)))
-
-(defn request-file-system
-  "Method.
-
-  The non-standard `web.Window` method requestFileSystem() method
-  a Google Chrome-specific method which lets a web site or app
-  access to a sandboxed file system for its own use. The returned
-  is then available for use with the other file system APIs.
-
-  `This method is prefixed with webkit in all browsers that implement it (that is, Google Chrome).
-
-
-
-
-  window.requestFileSystem(type, size, successCallback[, errorCallback]);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/requestFileSystem`"
-  [this & args]
-  (apply (-> this .-requestFileSystem) (concat [this] args)))
 
 (defn request-idle-callback
   "Method.
@@ -791,34 +610,12 @@
   [this & args]
   (apply (-> this .-setImmediate) (concat [this] args)))
 
-(defn set-interval
+(defn set-resizable
   "Method.
 
-  The setInterval() method, offered on the `web.Window` and `web.workers.Worker`
-  repeatedly calls a function or executes a code snippet, with
-  fixed time delay between each call.
-
-  `var intervalID = scope.setInterval(func, delay[, arg1, arg2, ...]);
-  var intervalID = scope.setInterval(code, delay);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
+  Toggles a user's ability to resize a window."
   [this & args]
-  (apply (-> this .-setInterval) (concat [this] args)))
-
-(defn set-timeout
-  "Method.
-
-  The setTimeout() method of the `web.WindowOrWorkerGlobalScope`
-  (and successor to Window.setTimeout()) sets a timer which executes
-  function or specified piece of code once the timer expires.
-
-  `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]);
-  var timeoutID = scope.setTimeout(function[, delay]);
-  var timeoutID = scope.setTimeout(code[, delay]);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout`"
-  [this & args]
-  (apply (-> this .-setTimeout) (concat [this] args)))
+  (apply (-> this .-setResizable) (concat [this] args)))
 
 (defn size-to-content
   "Method.
@@ -857,6 +654,268 @@
   [this & args]
   (apply (-> this .-updateCommands) (concat [this] args)))
 
+(defn add-event-listener
+  "Method.
+
+  The `web.EventTarget` method addEventListener() sets up a function
+  will be called whenever the specified event is delivered to the
+
+  `target.addEventListener(type, listener[, options]);
+  target.addEventListener(type, listener[, useCapture]);
+  target.addEventListener(type, listener[, useCapture, wantsUntrusted  ]); // Gecko/Mozilla only`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
+  [this & args]
+  (apply (-> this .-addEventListener) (concat [this] args)))
+
+(defn atob
+  "Method.
+
+  The WindowOrWorkerGlobalScope.atob() function decodes a string
+  data which has been encoded using base-64 encoding. You can use
+  `btoa()` method to encode and transmit data which may otherwise
+  communication problems, then transmit it and use the atob() method
+  decode the data again. For example, you can encode, transmit,
+  decode control characters such as ASCII values 0 through 31.
+
+  `var decodedData = scope.atob(encodedData);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob`"
+  [this encoded-data]
+  (-> this (.atob encoded-data)))
+
+(defn btoa
+  "Method.
+
+  The WindowOrWorkerGlobalScope.btoa() method creates a base-64
+  ASCII string from a binary string (i.e., a `js.String` object
+  which each character in the string is treated as a byte of binary
+
+  `var encodedData = scope.btoa(stringToEncode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa`"
+  [this string-to-encode]
+  (-> this (.btoa string-to-encode)))
+
+(defn clear-interval
+  "Method.
+
+  The clearInterval() method of the `web.WindowOrWorkerGlobalScope`
+  cancels a timed, repeating action which was previously established
+  a call to `setInterval()`.
+
+  `scope.clearInterval(intervalID)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval`"
+  [this interval-id]
+  (-> this (.clearInterval interval-id)))
+
+(defn clear-timeout
+  "Method.
+
+  The clearTimeout() method of the `web.WindowOrWorkerGlobalScope`
+  cancels a timeout previously established by calling `setTimeout()`.
+
+  `scope.clearTimeout(timeoutID)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout`"
+  [this timeout-id]
+  (-> this (.clearTimeout timeout-id)))
+
+(defn create-image-bitmap
+  "Method.
+
+  The createImageBitmap() method creates a bitmap from a given
+  optionally cropped to contain only a portion of that source.
+  method exists on the global scope in both windows and workers.
+  accepts a variety of different image sources, and returns a `js.Promise`
+  resolves to an `web.canvas.ImageBitmap`.
+
+  `createImageBitmap(image[, options]).then(function(response) { ... });
+  createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
+  [this & args]
+  (apply (-> this .-createImageBitmap) (concat [this] args)))
+
+(defn fetch
+  "Method.
+
+  The fetch() method of the `web.WindowOrWorkerGlobalScope` mixin
+  the process of fetching a resource from the network, returning
+  promise which is fulfilled once the response is available.
+
+  `fetchResponsePromise = fetch(resource, init);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch`"
+  [this resource init]
+  (-> this (.fetch resource init)))
+
+(defn remove-event-listener
+  "Method.
+
+  The EventTarget.removeEventListener() method removes from the
+  an event listener previously registered with `EventTarget.addEventListener()`.
+  event listener to be removed is identified using a combination
+  the event type, the event listener function itself, and various
+  options that may affect the matching process; see Matching event
+  for removal
+
+  `target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
+  [this & args]
+  (apply (-> this .-removeEventListener) (concat [this] args)))
+
+(defn set-interval
+  "Method.
+
+  The setInterval() method, offered on the `web.Window` and `web.workers.Worker`
+  repeatedly calls a function or executes a code snippet, with
+  fixed time delay between each call.
+
+  `var intervalID = scope.setInterval(func, delay[, arg1, arg2, ...]);
+  var intervalID = scope.setInterval(code, delay);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
+  [this & args]
+  (apply (-> this .-setInterval) (concat [this] args)))
+
+(defn set-timeout
+  "Method.
+
+  The setTimeout() method of the `web.WindowOrWorkerGlobalScope`
+  (and successor to Window.setTimeout()) sets a timer which executes
+  function or specified piece of code once the timer expires.
+
+  `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]);
+  var timeoutID = scope.setTimeout(function[, delay]);
+  var timeoutID = scope.setTimeout(code[, delay]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout`"
+  [this & args]
+  (apply (-> this .-setTimeout) (concat [this] args)))
+
+(defn show-modal-dialog
+  "Method.
+
+  The Window.showModalDialog() creates and displays a modal dialog
+  containing a specified HTML document.
+
+  `returnVal = window.showModalDialog(uri[, arguments][, options]);
+
+  where
+
+
+  returnVal is a variant, indicating the returnValue property as set by the window of the document specified by uri.
+  uri is the URI of the document to display in the dialog box.
+  arguments is an optional variant that contains values that should be passed to the dialog box; these are made available in the window object's window.dialogArguments property.
+  options an optional string that specifies window ornamentation for the dialog box, using one or more semicolon delimited values:
+
+
+
+
+
+  Syntax
+  Description
+
+
+  center: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window is centered on the desktop; otherwise it's hidden. The default value is yes.
+
+
+  dialogheight: height
+  Specifies the height of the dialog box; by default, the size is specified in pixels.
+
+
+  dialogleft: left
+  Specifies the horizontal position of the dialog box in relation to the upper-left corner of the desktop.
+
+
+  dialogwidth: width
+  Specifies the width of the dialog box; by default, the size is specified in pixels.
+
+
+  dialogtop: top
+  Specifies the vertical position of the dialog box in relation to the upper-left corner of the desktop.
+
+
+  resizable: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window can be resized by the user; otherwise its size is fixed. The default value is no.
+
+
+  scroll: {on | off | yes | no | 1 | 0 }
+  If this argument's value is on, yes, or 1, the dialog window has scroll bars; otherwise its size is fixed. The default value is no.
+
+
+
+
+  Note: Firefox does not implement the dialogHide, edge, status, or unadorned arguments.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/showModalDialog`"
+  [this & args]
+  (apply (-> this .-showModalDialog) (concat [this] args)))
+
+(defn convert-point-from-node-to-page
+  "Method.
+
+  Given a `web.css.Point` specified in a particular DOM `web.Node`'s
+  system, the `web.Window` method convertPointFromNodeToPage()
+  a Point which specifies the same position in the page's coordinate
+  This method is non-standard and should not be used.
+
+  `Point = Window.convertPointFromNodeToPage(node, nodePoint);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/convertPointFromNodeToPage`"
+  [this node node-point]
+  (-> this (.convertPointFromNodeToPage node node-point)))
+
+(defn convert-point-from-page-to-node
+  "Method.
+
+  Given a `web.css.Point` specified in the page's coordinate system,
+  `web.Window` method convertPointFromPageToNode() returns a Point
+  specifying the same location in the coordinate system of the
+  DOM `web.Node`.
+
+  `Point = Window.convertPointFromPageToNode(node, pagePoint);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/convertPointFromPageToNode`"
+  [this node page-point]
+  (-> this (.convertPointFromPageToNode node page-point)))
+
+(defn queue-microtask
+  "Method.
+
+  The queueMicrotask() method of the `web.WindowOrWorkerGlobalScope`
+  queues a microtask.
+
+  `scope.queueMicrotask(function);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask`"
+  [this function]
+  (-> this (.queueMicrotask function)))
+
+(defn request-file-system
+  "Method.
+
+  The non-standard `web.Window` method requestFileSystem() method
+  a Google Chrome-specific method which lets a web site or app
+  access to a sandboxed file system for its own use. The returned
+  is then available for use with the other file system APIs.
+
+  `This method is prefixed with webkit in all browsers that implement it (that is, Google Chrome).
+
+
+
+
+  window.requestFileSystem(type, size, successCallback[, errorCallback]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/requestFileSystem`"
+  [this & args]
+  (apply (-> this .-requestFileSystem) (concat [this] args)))
+
 (defn closed
   "Property.
 
@@ -867,7 +926,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/closed`"
   [this]
-  (-> this (.closed)))
+  (-> this (.-closed)))
 
 (defn set-closed!
   "Property.
@@ -881,42 +940,6 @@
   [this val]
   (aset this "closed" val))
 
-(defn caches
-  "Property.
-
-  The caches read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the `web.service-workers.CacheStorage` object associated
-  the current context. This object enables functionality such as
-  assets for offline use, and generating custom responses to requests.
-
-  `var myCacheStorage = self.caches; // or just caches`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
-  [this]
-  (-> this (.caches)))
-
-(defn application-cache
-  "Property.
-
-  Returns a reference to the application cache object for the window.
-
-  `cache = window.applicationCache`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
-  [this]
-  (-> this (.applicationCache)))
-
-(defn set-application-cache!
-  "Property.
-
-  Returns a reference to the application cache object for the window.
-
-  `cache = window.applicationCache`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
-  [this val]
-  (aset this "applicationCache" val))
-
 (defn console
   "Property.
 
@@ -929,7 +952,35 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/console`"
   [this]
-  (-> this (.console)))
+  (-> this (.-console)))
+
+(defn content
+  "Property.
+
+  Returns a Window object for the primary content window. This
+  useful in XUL windows that have a <browser> (or tabbrowser or
+  with type=\\\"content-primary\\\" attribute on it — the most famous
+  is Firefox main window, browser.xul. In such cases, content returns
+  reference to the Window object for the document currently displayed
+  the browser. It is a shortcut for browserRef.contentWindow.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/content`"
+  [this]
+  (-> this (.-content)))
+
+(defn set-content!
+  "Property.
+
+  Returns a Window object for the primary content window. This
+  useful in XUL windows that have a <browser> (or tabbrowser or
+  with type=\\\"content-primary\\\" attribute on it — the most famous
+  is Firefox main window, browser.xul. In such cases, content returns
+  reference to the Window object for the document currently displayed
+  the browser. It is a shortcut for browserRef.contentWindow.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/content`"
+  [this val]
+  (aset this "content" val))
 
 (defn controllers
   "Property.
@@ -944,7 +995,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/controllers`"
   [this]
-  (-> this (.controllers)))
+  (-> this (.-controllers)))
 
 (defn set-controllers!
   "Property.
@@ -961,6 +1012,34 @@
   [this val]
   (aset this "controllers" val))
 
+(defn custom-elements
+  "Property.
+
+  The customElements read-only property of the `web.Window` interface
+  a reference to the `web.web-components.CustomElementRegistry`
+  which can be used to register new custom elements and get information
+  previously registered custom elements.
+
+  `let customElementRegistry = window.customElements;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
+  [this]
+  (-> this (.-customElements)))
+
+(defn set-custom-elements!
+  "Property.
+
+  The customElements read-only property of the `web.Window` interface
+  a reference to the `web.web-components.CustomElementRegistry`
+  which can be used to register new custom elements and get information
+  previously registered custom elements.
+
+  `let customElementRegistry = window.customElements;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
+  [this val]
+  (aset this "customElements" val))
+
 (defn crypto
   "Property.
 
@@ -975,7 +1054,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto`"
   [this]
-  (-> this (.crypto)))
+  (-> this (.-crypto)))
 
 (defn set-crypto!
   "Property.
@@ -993,34 +1072,6 @@
   [this val]
   (aset this "crypto" val))
 
-(defn custom-elements
-  "Property.
-
-  The customElements read-only property of the `web.Window` interface
-  a reference to the `web.web-components.CustomElementRegistry`
-  which can be used to register new custom elements and get information
-  previously registered custom elements.
-
-  `let customElementRegistry = window.customElements;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
-  [this]
-  (-> this (.customElements)))
-
-(defn set-custom-elements!
-  "Property.
-
-  The customElements read-only property of the `web.Window` interface
-  a reference to the `web.web-components.CustomElementRegistry`
-  which can be used to register new custom elements and get information
-  previously registered custom elements.
-
-  `let customElementRegistry = window.customElements;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
-  [this val]
-  (aset this "customElements" val))
-
 (defn default-status
   "Property.
 
@@ -1031,7 +1082,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/defaultStatus`"
   [this]
-  (-> this (.defaultStatus)))
+  (-> this (.-defaultStatus)))
 
 (defn set-default-status!
   "Property.
@@ -1056,7 +1107,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio`"
   [this]
-  (-> this (.devicePixelRatio)))
+  (-> this (.-devicePixelRatio)))
 
 (defn dialog-arguments
   "Property.
@@ -1068,7 +1119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/dialogArguments`"
   [this]
-  (-> this (.dialogArguments)))
+  (-> this (.-dialogArguments)))
 
 (defn set-dialog-arguments!
   "Property.
@@ -1089,7 +1140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/directories`"
   [this]
-  (-> this (.directories)))
+  (-> this (.-directories)))
 
 (defn set-directories!
   "Property.
@@ -1110,7 +1161,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/document`"
   [this]
-  (-> this (.document)))
+  (-> this (.-document)))
 
 (defn set-document!
   "Property.
@@ -1124,6 +1175,116 @@
   [this val]
   (aset this "document" val))
 
+(defn dom-matrix
+  "Property.
+
+  Returns a reference to a DOMMatrix object, which represents 4x4
+  suitable for 2D and 3D operations."
+  [this]
+  (-> this (.-DOMMatrix)))
+
+(defn set-dom-matrix!
+  "Property.
+
+  Returns a reference to a DOMMatrix object, which represents 4x4
+  suitable for 2D and 3D operations."
+  [this val]
+  (aset this "DOMMatrix" val))
+
+(defn dom-matrix-read-only
+  "Property.
+
+  Returns a reference to a DOMMatrixReadOnly object, which represents
+  matrices, suitable for 2D and 3D operations."
+  [this]
+  (-> this (.-DOMMatrixReadOnly)))
+
+(defn set-dom-matrix-read-only!
+  "Property.
+
+  Returns a reference to a DOMMatrixReadOnly object, which represents
+  matrices, suitable for 2D and 3D operations."
+  [this val]
+  (aset this "DOMMatrixReadOnly" val))
+
+(defn dom-point
+  "Property.
+
+  Returns a reference to a DOMPoint object, which represents a
+  or 3D point in a coordinate system."
+  [this]
+  (-> this (.-DOMPoint)))
+
+(defn set-dom-point!
+  "Property.
+
+  Returns a reference to a DOMPoint object, which represents a
+  or 3D point in a coordinate system."
+  [this val]
+  (aset this "DOMPoint" val))
+
+(defn dom-point-read-only
+  "Property.
+
+  Returns a reference to a DOMPointReadOnly object, which represents
+  2D or 3D point in a coordinate system."
+  [this]
+  (-> this (.-DOMPointReadOnly)))
+
+(defn set-dom-point-read-only!
+  "Property.
+
+  Returns a reference to a DOMPointReadOnly object, which represents
+  2D or 3D point in a coordinate system."
+  [this val]
+  (aset this "DOMPointReadOnly" val))
+
+(defn dom-quad
+  "Property.
+
+  Returns a reference to a DOMQuad object, which provides represents
+  quadrilaterial object, that is one having four corners and four"
+  [this]
+  (-> this (.-DOMQuad)))
+
+(defn set-dom-quad!
+  "Property.
+
+  Returns a reference to a DOMQuad object, which provides represents
+  quadrilaterial object, that is one having four corners and four"
+  [this val]
+  (aset this "DOMQuad" val))
+
+(defn dom-rect
+  "Property.
+
+  Returns a reference to a DOMRect object, which represents a rectangle."
+  [this]
+  (-> this (.-DOMRect)))
+
+(defn set-dom-rect!
+  "Property.
+
+  Returns a reference to a DOMRect object, which represents a rectangle."
+  [this val]
+  (aset this "DOMRect" val))
+
+(defn dom-rect-read-only
+  "Property.
+
+  Returns a reference to a DOMRectReadOnly object, which represents
+  rectangle."
+  [this]
+  (-> this (.-DOMRectReadOnly)))
+
+(defn set-dom-rect-read-only!
+  "Property.
+
+  Returns a reference to a DOMRectReadOnly object, which represents
+  rectangle."
+  [this val]
+  (aset this "DOMRectReadOnly" val))
+
 (defn event
   "Property.
 
@@ -1133,7 +1294,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/event`"
   [this]
-  (-> this (.event)))
+  (-> this (.-event)))
 
 (defn frame-element
   "Property.
@@ -1154,7 +1315,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement`"
   [this]
-  (-> this (.frameElement)))
+  (-> this (.-frameElement)))
 
 (defn set-frame-element!
   "Property.
@@ -1193,7 +1354,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frames`"
   [this]
-  (-> this (.frames)))
+  (-> this (.-frames)))
 
 (defn set-frames!
   "Property.
@@ -1226,7 +1387,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/fullScreen`"
   [this]
-  (-> this (.fullScreen)))
+  (-> this (.-fullScreen)))
 
 (defn set-full-screen!
   "Property.
@@ -1243,6 +1404,24 @@
   [this val]
   (aset this "fullScreen" val))
 
+(defn global-storage
+  "Property.
+
+  Unsupported since Gecko 13 (Firefox 13). Use Window.localStorage
+  Was: Multiple storage objects that are used for storing data
+  multiple pages."
+  [this]
+  (-> this (.-globalStorage)))
+
+(defn set-global-storage!
+  "Property.
+
+  Unsupported since Gecko 13 (Firefox 13). Use Window.localStorage
+  Was: Multiple storage objects that are used for storing data
+  multiple pages."
+  [this val]
+  (aset this "globalStorage" val))
+
 (defn history
   "Property.
 
@@ -1255,7 +1434,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/history`"
   [this]
-  (-> this (.history)))
+  (-> this (.-history)))
 
 (defn set-history!
   "Property.
@@ -1271,19 +1450,6 @@
   [this val]
   (aset this "history" val))
 
-(defn indexed-db
-  "Property.
-
-  The indexedDB read-only property of the `web.WindowOrWorkerGlobalScope`
-  provides a mechanism for applications to asynchronously access
-  capabilities of indexed databases.
-
-  `var IDBFactory = self.indexedDB;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB`"
-  [this]
-  (-> this (.indexedDB)))
-
 (defn inner-height
   "Property.
 
@@ -1294,7 +1460,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight`"
   [this]
-  (-> this (.innerHeight)))
+  (-> this (.-innerHeight)))
 
 (defn set-inner-height!
   "Property.
@@ -1318,7 +1484,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth`"
   [this]
-  (-> this (.innerWidth)))
+  (-> this (.-innerWidth)))
 
 (defn set-inner-width!
   "Property.
@@ -1342,7 +1508,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/isSecureContext`"
   [this]
-  (-> this (.isSecureContext)))
+  (-> this (.-isSecureContext)))
 
 (defn set-is-secure-context!
   "Property.
@@ -1369,7 +1535,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.
@@ -1386,19 +1552,6 @@
   [this val]
   (aset this "length" val))
 
-(defn local-storage
-  "Property.
-
-  The read-only localStorage property allows you to access a `web.storage.Storage`
-  for the `web.Document`'s origin; the stored data is saved across
-  sessions.
-
-  `myStorage = window.localStorage;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage`"
-  [this]
-  (-> this (.localStorage)))
-
 (defn location
   "Property.
 
@@ -1410,7 +1563,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/location`"
   [this]
-  (-> this (.location)))
+  (-> this (.-location)))
 
 (defn set-location!
   "Property.
@@ -1434,7 +1587,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/locationbar`"
   [this]
-  (-> this (.locationbar)))
+  (-> this (.-locationbar)))
 
 (defn set-locationbar!
   "Property.
@@ -1447,6 +1600,19 @@
   [this val]
   (aset this "locationbar" val))
 
+(defn local-storage
+  "Property.
+
+  The read-only localStorage property allows you to access a `web.storage.Storage`
+  for the `web.Document`'s origin; the stored data is saved across
+  sessions.
+
+  `myStorage = window.localStorage;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage`"
+  [this]
+  (-> this (.-localStorage)))
+
 (defn menubar
   "Property.
 
@@ -1457,7 +1623,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/menubar`"
   [this]
-  (-> this (.menubar)))
+  (-> this (.-menubar)))
 
 (defn set-menubar!
   "Property.
@@ -1471,6 +1637,20 @@
   [this val]
   (aset this "menubar" val))
 
+(defn message-manager
+  "Property.
+
+  Returns the message manager object for this window."
+  [this]
+  (-> this (.-messageManager)))
+
+(defn set-message-manager!
+  "Property.
+
+  Returns the message manager object for this window."
+  [this val]
+  (aset this "messageManager" val))
+
 (defn moz-animation-start-time
   "Property.
 
@@ -1482,7 +1662,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozAnimationStartTime`"
   [this]
-  (-> this (.mozAnimationStartTime)))
+  (-> this (.-mozAnimationStartTime)))
 
 (defn set-moz-animation-start-time!
   "Property.
@@ -1507,7 +1687,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozInnerScreenX`"
   [this]
-  (-> this (.mozInnerScreenX)))
+  (-> this (.-mozInnerScreenX)))
 
 (defn set-moz-inner-screen-x!
   "Property.
@@ -1531,7 +1711,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozInnerScreenY`"
   [this]
-  (-> this (.mozInnerScreenY)))
+  (-> this (.-mozInnerScreenY)))
 
 (defn set-moz-inner-screen-y!
   "Property.
@@ -1559,7 +1739,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozPaintCount`"
   [this]
-  (-> this (.mozPaintCount)))
+  (-> this (.-mozPaintCount)))
 
 (defn set-moz-paint-count!
   "Property.
@@ -1587,7 +1767,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -1612,7 +1792,734 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator`"
   [this]
-  (-> this (.navigator)))
+  (-> this (.-navigator)))
+
+(defn opener
+  "Property.
+
+  The `web.Window` interface's opener property returns a reference
+  the window that opened the window using `open()`.
+
+  `openerWindow = window.opener;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/opener`"
+  [this]
+  (-> this (.-opener)))
+
+(defn set-opener!
+  "Property.
+
+  The `web.Window` interface's opener property returns a reference
+  the window that opened the window using `open()`.
+
+  `openerWindow = window.opener;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/opener`"
+  [this val]
+  (aset this "opener" val))
+
+(defn orientation
+  "Property.
+
+  Returns the orientation in degrees (in 90-degree increments)
+  the viewport relative to the device's natural orientation.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation`"
+  [this]
+  (-> this (.-orientation)))
+
+(defn set-orientation!
+  "Property.
+
+  Returns the orientation in degrees (in 90-degree increments)
+  the viewport relative to the device's natural orientation.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation`"
+  [this val]
+  (aset this "orientation" val))
+
+(defn outer-height
+  "Property.
+
+  The Window.outerHeight read-only property returns the height
+  pixels of the whole browser window, including any sidebar, window
+  and window-resizing borders/handles.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight`"
+  [this]
+  (-> this (.-outerHeight)))
+
+(defn set-outer-height!
+  "Property.
+
+  The Window.outerHeight read-only property returns the height
+  pixels of the whole browser window, including any sidebar, window
+  and window-resizing borders/handles.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight`"
+  [this val]
+  (aset this "outerHeight" val))
+
+(defn outer-width
+  "Property.
+
+  Window.outerWidth read-only property returns the width of the
+  of the browser window. It represents the width of the whole browser
+  including sidebar (if expanded), window chrome and window resizing
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth`"
+  [this]
+  (-> this (.-outerWidth)))
+
+(defn set-outer-width!
+  "Property.
+
+  Window.outerWidth read-only property returns the width of the
+  of the browser window. It represents the width of the whole browser
+  including sidebar (if expanded), window chrome and window resizing
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth`"
+  [this val]
+  (aset this "outerWidth" val))
+
+(defn scroll-x
+  "Property.
+
+  The read-only scrollX property of the `web.Window` interface
+  the number of pixels that the document is currently scrolled
+  This value is subpixel precise in modern browsers, meaning that
+  isn't necessarily a whole number. You can get the number of pixels
+  document is scrolled vertically from the `scrollY` property.
+
+  `var x = window.scrollX;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX`"
+  [this]
+  (-> this (.-scrollX)))
+
+(defn set-scroll-x!
+  "Property.
+
+  The read-only scrollX property of the `web.Window` interface
+  the number of pixels that the document is currently scrolled
+  This value is subpixel precise in modern browsers, meaning that
+  isn't necessarily a whole number. You can get the number of pixels
+  document is scrolled vertically from the `scrollY` property.
+
+  `var x = window.scrollX;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX`"
+  [this val]
+  (aset this "scrollX" val))
+
+(defn scroll-y
+  "Property.
+
+  The read-only scrollY property of the `web.Window` interface
+  the number of pixels that the document is currently scrolled
+
+  `var y = window.scrollY`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY`"
+  [this]
+  (-> this (.-scrollY)))
+
+(defn set-scroll-y!
+  "Property.
+
+  The read-only scrollY property of the `web.Window` interface
+  the number of pixels that the document is currently scrolled
+
+  `var y = window.scrollY`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY`"
+  [this val]
+  (aset this "scrollY" val))
+
+(defn parent
+  "Property.
+
+  The Window.parent property is a reference to the parent of the
+  window or subframe.
+
+  `var parentWindow = window.parent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/parent`"
+  [this]
+  (-> this (.-parent)))
+
+(defn set-parent!
+  "Property.
+
+  The Window.parent property is a reference to the parent of the
+  window or subframe.
+
+  `var parentWindow = window.parent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/parent`"
+  [this val]
+  (aset this "parent" val))
+
+(defn performance
+  "Property.
+
+  The `web.Window` interface's performance property returns a `web.performance.Performance`
+  which can be used to gather performance information about the
+  document. It serves as the point of exposure for the Performance
+  API, the High Resolution Time API, the Navigation Timing API,
+  User Timing API, and the Resource Timing API.
+
+  `performanceData = window.performance;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/performance`"
+  [this]
+  (-> this (.-performance)))
+
+(defn set-performance!
+  "Property.
+
+  The `web.Window` interface's performance property returns a `web.performance.Performance`
+  which can be used to gather performance information about the
+  document. It serves as the point of exposure for the Performance
+  API, the High Resolution Time API, the Navigation Timing API,
+  User Timing API, and the Resource Timing API.
+
+  `performanceData = window.performance;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/performance`"
+  [this val]
+  (aset this "performance" val))
+
+(defn personalbar
+  "Property.
+
+  Returns the personalbar object, whose visibility can be toggled
+  the window.
+
+  `objRef =window.personalbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar`"
+  [this]
+  (-> this (.-personalbar)))
+
+(defn set-personalbar!
+  "Property.
+
+  Returns the personalbar object, whose visibility can be toggled
+  the window.
+
+  `objRef =window.personalbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar`"
+  [this val]
+  (aset this "personalbar" val))
+
+(defn pkcs11
+  "Property.
+
+  Returns the pkcs11 object, which is used to install drivers and
+  software associated with the pkcs11 protocol. If pkcs11 isn't
+  this property returns null.
+
+  `objRef = window.pkcs11`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pkcs11`"
+  [this]
+  (-> this (.-pkcs11)))
+
+(defn set-pkcs11!
+  "Property.
+
+  Returns the pkcs11 object, which is used to install drivers and
+  software associated with the pkcs11 protocol. If pkcs11 isn't
+  this property returns null.
+
+  `objRef = window.pkcs11`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pkcs11`"
+  [this val]
+  (aset this "pkcs11" val))
+
+(defn return-value
+  "Property.
+
+  The return value to be returned to the function that called window.showModalDialog()
+  display the window as a modal dialog."
+  [this]
+  (-> this (.-returnValue)))
+
+(defn set-return-value!
+  "Property.
+
+  The return value to be returned to the function that called window.showModalDialog()
+  display the window as a modal dialog."
+  [this val]
+  (aset this "returnValue" val))
+
+(defn screen
+  "Property.
+
+  The `web.Window` property screen returns a reference to the screen
+  associated with the window. The screen object, implementing the
+  interface, is a special object for inspecting properties of the
+  on which the current window is being rendered.
+
+  `let screenObj = window.screen;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screen`"
+  [this]
+  (-> this (.-screen)))
+
+(defn set-screen!
+  "Property.
+
+  The `web.Window` property screen returns a reference to the screen
+  associated with the window. The screen object, implementing the
+  interface, is a special object for inspecting properties of the
+  on which the current window is being rendered.
+
+  `let screenObj = window.screen;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screen`"
+  [this val]
+  (aset this "screen" val))
+
+(defn screen-x
+  "Property.
+
+  The Window.screenX read-only property returns the horizontal
+  in CSS pixels, of the left border of the user's browser viewport
+  the left side of the screen.
+
+  `leftWindowPos = window.screenX`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenX`"
+  [this]
+  (-> this (.-screenX)))
+
+(defn screen-y
+  "Property.
+
+  The Window.screenY read-only property returns the vertical distance,
+  CSS pixels, of the top border of the user's browser viewport
+  the top edge of the screen.
+
+  `topWindowPos = window.screenY`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenY`"
+  [this]
+  (-> this (.-screenY)))
+
+(defn scrollbars
+  "Property.
+
+  The Window.scrollbars property returns the scrollbars object,
+  visibility can be checked.
+
+  `objRef = window.scrollbars`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars`"
+  [this]
+  (-> this (.-scrollbars)))
+
+(defn set-scrollbars!
+  "Property.
+
+  The Window.scrollbars property returns the scrollbars object,
+  visibility can be checked.
+
+  `objRef = window.scrollbars`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars`"
+  [this val]
+  (aset this "scrollbars" val))
+
+(defn scroll-max-x
+  "Property.
+
+  The Window.scrollMaxX read-only property returns the maximum
+  of pixels that the document can be scrolled horizontally.
+
+  `xMax = window.scrollMaxX
+
+
+  xMax is the number of pixels.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxX`"
+  [this]
+  (-> this (.-scrollMaxX)))
+
+(defn set-scroll-max-x!
+  "Property.
+
+  The Window.scrollMaxX read-only property returns the maximum
+  of pixels that the document can be scrolled horizontally.
+
+  `xMax = window.scrollMaxX
+
+
+  xMax is the number of pixels.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxX`"
+  [this val]
+  (aset this "scrollMaxX" val))
+
+(defn scroll-max-y
+  "Property.
+
+  The Window.scrollMaxY read-only property returns the maximum
+  of pixels that the document can be scrolled vertically.
+
+  `yMax = window.scrollMaxY
+
+
+  yMax is the number of pixels.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxY`"
+  [this]
+  (-> this (.-scrollMaxY)))
+
+(defn set-scroll-max-y!
+  "Property.
+
+  The Window.scrollMaxY read-only property returns the maximum
+  of pixels that the document can be scrolled vertically.
+
+  `yMax = window.scrollMaxY
+
+
+  yMax is the number of pixels.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxY`"
+  [this val]
+  (aset this "scrollMaxY" val))
+
+(defn self
+  "Property.
+
+  The Window.self read-only property returns the window itself,
+  a `WindowProxy`. It can be used with dot notation on a window
+  (that is, window.self) or standalone (self). The advantage of
+  standalone notation is that a similar notation exists for non-window
+  such as in Web Workers. By using self, you can refer to the global
+  in a way that will work not only in a window context (self will
+  to window.self) but also in a worker context (self will then
+  to `WorkerGlobalScope.self`).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/self`"
+  [this]
+  (-> this (.-self)))
+
+(defn session-storage
+  "Property.
+
+  The sessionStorage property accesses a session `web.storage.Storage`
+  for the current origin. sessionStorage is similar to `localStorage`;
+  difference is that while data in localStorage doesn't expire,
+  in sessionStorage is cleared when the page session ends.
+
+  `// Save data to sessionStorage
+  sessionStorage.setItem('key', 'value');
+
+  // Get saved data from sessionStorage
+  let data = sessionStorage.getItem('key');
+
+  // Remove saved data from sessionStorage
+  sessionStorage.removeItem('key');
+
+  // Remove all saved data from sessionStorage
+  sessionStorage.clear();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage`"
+  [this]
+  (-> this (.-sessionStorage)))
+
+(defn set-session-storage!
+  "Property.
+
+  The sessionStorage property accesses a session `web.storage.Storage`
+  for the current origin. sessionStorage is similar to `localStorage`;
+  difference is that while data in localStorage doesn't expire,
+  in sessionStorage is cleared when the page session ends.
+
+  `// Save data to sessionStorage
+  sessionStorage.setItem('key', 'value');
+
+  // Get saved data from sessionStorage
+  let data = sessionStorage.getItem('key');
+
+  // Remove saved data from sessionStorage
+  sessionStorage.removeItem('key');
+
+  // Remove all saved data from sessionStorage
+  sessionStorage.clear();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage`"
+  [this val]
+  (aset this "sessionStorage" val))
+
+(defn sidebar
+  "Property.
+
+  Returns a sidebar object, which contains several methods for
+  add-ons with the browser.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar`"
+  [this]
+  (-> this (.-sidebar)))
+
+(defn set-sidebar!
+  "Property.
+
+  Returns a sidebar object, which contains several methods for
+  add-ons with the browser.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar`"
+  [this val]
+  (aset this "sidebar" val))
+
+(defn speech-synthesis
+  "Property.
+
+  The speechSynthesis read-only property of the Window object returns
+  `web.speech.SpeechSynthesis` object, which is the entry point
+  using Web Speech API speech synthesis functionality.
+
+  `var synth = window.speechSynthesis;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
+  [this]
+  (-> this (.-speechSynthesis)))
+
+(defn set-speech-synthesis!
+  "Property.
+
+  The speechSynthesis read-only property of the Window object returns
+  `web.speech.SpeechSynthesis` object, which is the entry point
+  using Web Speech API speech synthesis functionality.
+
+  `var synth = window.speechSynthesis;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
+  [this val]
+  (aset this "speechSynthesis" val))
+
+(defn status
+  "Property.
+
+  The status property of the `web.Window` interface sets the text
+  the status bar at the bottom of the browser or returns the previously
+  text.
+
+  `window.status = string;
+  var value = window.status;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/status`"
+  [this]
+  (-> this (.-status)))
+
+(defn set-status!
+  "Property.
+
+  The status property of the `web.Window` interface sets the text
+  the status bar at the bottom of the browser or returns the previously
+  text.
+
+  `window.status = string;
+  var value = window.status;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/status`"
+  [this val]
+  (aset this "status" val))
+
+(defn statusbar
+  "Property.
+
+  The Window.statusbar property returns the statusbar object, whose
+  can be toggled in the window.
+
+  `objRef = window.statusbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar`"
+  [this]
+  (-> this (.-statusbar)))
+
+(defn set-statusbar!
+  "Property.
+
+  The Window.statusbar property returns the statusbar object, whose
+  can be toggled in the window.
+
+  `objRef = window.statusbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar`"
+  [this val]
+  (aset this "statusbar" val))
+
+(defn toolbar
+  "Property.
+
+  The Window.toolbar property returns the toolbar object, whose
+  can be toggled in the window.
+
+  `objRef = window.toolbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar`"
+  [this]
+  (-> this (.-toolbar)))
+
+(defn set-toolbar!
+  "Property.
+
+  The Window.toolbar property returns the toolbar object, whose
+  can be toggled in the window.
+
+  `objRef = window.toolbar`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar`"
+  [this val]
+  (aset this "toolbar" val))
+
+(defn top
+  "Property.
+
+  Returns a reference to the topmost window in the window hierarchy.
+
+  `var topWindow = window.top;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/top`"
+  [this]
+  (-> this (.-top)))
+
+(defn set-top!
+  "Property.
+
+  Returns a reference to the topmost window in the window hierarchy.
+
+  `var topWindow = window.top;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/top`"
+  [this val]
+  (aset this "top" val))
+
+(defn visual-viewport
+  "Property.
+
+  The visualViewport read-only property of the `web.Window` interface
+  a `web.viewport.VisualViewport` object representing the visual
+  for a given window.
+
+  `var visualViewport = Window.visualViewport`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport`"
+  [this]
+  (-> this (.-visualViewport)))
+
+(defn set-visual-viewport!
+  "Property.
+
+  The visualViewport read-only property of the `web.Window` interface
+  a `web.viewport.VisualViewport` object representing the visual
+  for a given window.
+
+  `var visualViewport = Window.visualViewport`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport`"
+  [this val]
+  (aset this "visualViewport" val))
+
+(defn window
+  "Property.
+
+  The window property of a `web.Window` object points to the window
+  itself.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/window`"
+  [this]
+  (-> this (.-window)))
+
+(defn set-window!
+  "Property.
+
+  The window property of a `web.Window` object points to the window
+  itself.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/window`"
+  [this val]
+  (aset this "window" val))
+
+(defn caches
+  "Property.
+
+  The caches read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the `web.service-workers.CacheStorage` object associated
+  the current context. This object enables functionality such as
+  assets for offline use, and generating custom responses to requests.
+
+  `var myCacheStorage = self.caches; // or just caches`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
+  [this]
+  (-> this (.-caches)))
+
+(defn indexed-db
+  "Property.
+
+  The indexedDB read-only property of the `web.WindowOrWorkerGlobalScope`
+  provides a mechanism for applications to asynchronously access
+  capabilities of indexed databases.
+
+  `var IDBFactory = self.indexedDB;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB`"
+  [this]
+  (-> this (.-indexedDB)))
+
+(defn origin
+  "Property.
+
+  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the origin of the global scope, serialized as a string.
+
+  `var myOrigin = self.origin; // or just origin`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  [this]
+  (-> this (.-origin)))
+
+(defn set-origin!
+  "Property.
+
+  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the origin of the global scope, serialized as a string.
+
+  `var myOrigin = self.origin; // or just origin`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  [this val]
+  (aset this "origin" val))
+
+(defn application-cache
+  "Property.
+
+  Returns a reference to the application cache object for the window.
+
+  `cache = window.applicationCache`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
+  [this]
+  (-> this (.-applicationCache)))
+
+(defn set-application-cache!
+  "Property.
+
+  Returns a reference to the application cache object for the window.
+
+  `cache = window.applicationCache`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/applicationCache`"
+  [this val]
+  (aset this "applicationCache" val))
 
 (defn onabort
   "Property.
@@ -1624,7 +2531,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -1651,7 +2558,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint`"
   [this]
-  (-> this (.onafterprint)))
+  (-> this (.-onafterprint)))
 
 (defn set-onafterprint!
   "Property.
@@ -1680,7 +2587,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationcancel`"
   [this]
-  (-> this (.onanimationcancel)))
+  (-> this (.-onanimationcancel)))
 
 (defn set-onanimationcancel!
   "Property.
@@ -1708,7 +2615,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationend`"
   [this]
-  (-> this (.onanimationend)))
+  (-> this (.-onanimationend)))
 
 (defn set-onanimationend!
   "Property.
@@ -1736,7 +2643,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationiteration`"
   [this]
-  (-> this (.onanimationiteration)))
+  (-> this (.-onanimationiteration)))
 
 (defn set-onanimationiteration!
   "Property.
@@ -1765,7 +2672,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onappinstalled`"
   [this]
-  (-> this (.onappinstalled)))
+  (-> this (.-onappinstalled)))
 
 (defn set-onappinstalled!
   "Property.
@@ -1792,7 +2699,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onauxclick`"
   [this]
-  (-> this (.onauxclick)))
+  (-> this (.-onauxclick)))
 
 (defn set-onauxclick!
   "Property.
@@ -1820,7 +2727,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onbeforeinstallprompt`"
   [this]
-  (-> this (.onbeforeinstallprompt)))
+  (-> this (.-onbeforeinstallprompt)))
 
 (defn set-onbeforeinstallprompt!
   "Property.
@@ -1851,7 +2758,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint`"
   [this]
-  (-> this (.onbeforeprint)))
+  (-> this (.-onbeforeprint)))
 
 (defn set-onbeforeprint!
   "Property.
@@ -1883,7 +2790,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this]
-  (-> this (.onbeforeunload)))
+  (-> this (.-onbeforeunload)))
 
 (defn set-onbeforeunload!
   "Property.
@@ -1913,7 +2820,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur`"
   [this]
-  (-> this (.onblur)))
+  (-> this (.-onblur)))
 
 (defn set-onblur!
   "Property.
@@ -1938,7 +2845,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncancel`"
   [this]
-  (-> this (.oncancel)))
+  (-> this (.-oncancel)))
 
 (defn set-oncancel!
   "Property.
@@ -1965,7 +2872,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay`"
   [this]
-  (-> this (.oncanplay)))
+  (-> this (.-oncanplay)))
 
 (defn set-oncanplay!
   "Property.
@@ -1995,7 +2902,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough`"
   [this]
-  (-> this (.oncanplaythrough)))
+  (-> this (.-oncanplaythrough)))
 
 (defn set-oncanplaythrough!
   "Property.
@@ -2024,7 +2931,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -2050,7 +2957,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick`"
   [this]
-  (-> this (.onclick)))
+  (-> this (.-onclick)))
 
 (defn set-onclick!
   "Property.
@@ -2074,7 +2981,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -2098,7 +3005,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu`"
   [this]
-  (-> this (.oncontextmenu)))
+  (-> this (.-oncontextmenu)))
 
 (defn set-oncontextmenu!
   "Property.
@@ -2125,7 +3032,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncuechange`"
   [this]
-  (-> this (.oncuechange)))
+  (-> this (.-oncuechange)))
 
 (defn set-oncuechange!
   "Property.
@@ -2152,7 +3059,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick`"
   [this]
-  (-> this (.ondblclick)))
+  (-> this (.-ondblclick)))
 
 (defn set-ondblclick!
   "Property.
@@ -2179,7 +3086,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicelight`"
   [this]
-  (-> this (.ondevicelight)))
+  (-> this (.-ondevicelight)))
 
 (defn set-ondevicelight!
   "Property.
@@ -2207,7 +3114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondevicemotion`"
   [this]
-  (-> this (.ondevicemotion)))
+  (-> this (.-ondevicemotion)))
 
 (defn set-ondevicemotion!
   "Property.
@@ -2233,7 +3140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation`"
   [this]
-  (-> this (.ondeviceorientation)))
+  (-> this (.-ondeviceorientation)))
 
 (defn set-ondeviceorientation!
   "Property.
@@ -2259,7 +3166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientationabsolute`"
   [this]
-  (-> this (.ondeviceorientationabsolute)))
+  (-> this (.-ondeviceorientationabsolute)))
 
 (defn set-ondeviceorientationabsolute!
   "Property.
@@ -2288,7 +3195,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceproximity`"
   [this]
-  (-> this (.ondeviceproximity)))
+  (-> this (.-ondeviceproximity)))
 
 (defn set-ondeviceproximity!
   "Property.
@@ -2323,7 +3230,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ondragdrop`"
   [this]
-  (-> this (.ondragdrop)))
+  (-> this (.-ondragdrop)))
 
 (defn set-ondragdrop!
   "Property.
@@ -2357,7 +3264,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange`"
   [this]
-  (-> this (.ondurationchange)))
+  (-> this (.-ondurationchange)))
 
 (defn set-ondurationchange!
   "Property.
@@ -2387,7 +3294,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.
@@ -2414,7 +3321,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -2438,7 +3345,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus`"
   [this]
-  (-> this (.onfocus)))
+  (-> this (.-onfocus)))
 
 (defn set-onfocus!
   "Property.
@@ -2463,7 +3370,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ongamepadconnected`"
   [this]
-  (-> this (.ongamepadconnected)))
+  (-> this (.-ongamepadconnected)))
 
 (defn set-ongamepadconnected!
   "Property.
@@ -2489,7 +3396,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/ongamepaddisconnected`"
   [this]
-  (-> this (.ongamepaddisconnected)))
+  (-> this (.-ongamepaddisconnected)))
 
 (defn set-ongamepaddisconnected!
   "Property.
@@ -2514,7 +3421,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ongotpointercapture`"
   [this]
-  (-> this (.ongotpointercapture)))
+  (-> this (.-ongotpointercapture)))
 
 (defn set-ongotpointercapture!
   "Property.
@@ -2556,7 +3463,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange`"
   [this]
-  (-> this (.onhashchange)))
+  (-> this (.-onhashchange)))
 
 (defn set-onhashchange!
   "Property.
@@ -2600,7 +3507,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput`"
   [this]
-  (-> this (.oninput)))
+  (-> this (.-oninput)))
 
 (defn set-oninput!
   "Property.
@@ -2627,7 +3534,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid`"
   [this]
-  (-> this (.oninvalid)))
+  (-> this (.-oninvalid)))
 
 (defn set-oninvalid!
   "Property.
@@ -2652,7 +3559,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown`"
   [this]
-  (-> this (.onkeydown)))
+  (-> this (.-onkeydown)))
 
 (defn set-onkeydown!
   "Property.
@@ -2676,7 +3583,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress`"
   [this]
-  (-> this (.onkeypress)))
+  (-> this (.-onkeypress)))
 
 (defn set-onkeypress!
   "Property.
@@ -2700,7 +3607,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup`"
   [this]
-  (-> this (.onkeyup)))
+  (-> this (.-onkeyup)))
 
 (defn set-onkeyup!
   "Property.
@@ -2724,7 +3631,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange`"
   [this]
-  (-> this (.onlanguagechange)))
+  (-> this (.-onlanguagechange)))
 
 (defn set-onlanguagechange!
   "Property.
@@ -2749,7 +3656,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload`"
   [this]
-  (-> this (.onload)))
+  (-> this (.-onload)))
 
 (defn set-onload!
   "Property.
@@ -2777,7 +3684,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata`"
   [this]
-  (-> this (.onloadeddata)))
+  (-> this (.-onloadeddata)))
 
 (defn set-onloadeddata!
   "Property.
@@ -2807,7 +3714,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata`"
   [this]
-  (-> this (.onloadedmetadata)))
+  (-> this (.-onloadedmetadata)))
 
 (defn set-onloadedmetadata!
   "Property.
@@ -2836,7 +3743,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend`"
   [this]
-  (-> this (.onloadend)))
+  (-> this (.-onloadend)))
 
 (defn set-onloadend!
   "Property.
@@ -2864,7 +3771,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadstart`"
   [this]
-  (-> this (.onloadstart)))
+  (-> this (.-onloadstart)))
 
 (defn set-onloadstart!
   "Property.
@@ -2890,7 +3797,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onlostpointercapture`"
   [this]
-  (-> this (.onlostpointercapture)))
+  (-> this (.-onlostpointercapture)))
 
 (defn set-onlostpointercapture!
   "Property.
@@ -2915,7 +3822,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -2942,7 +3849,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.
@@ -2968,7 +3875,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown`"
   [this]
-  (-> this (.onmousedown)))
+  (-> this (.-onmousedown)))
 
 (defn set-onmousedown!
   "Property.
@@ -2995,7 +3902,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter`"
   [this]
-  (-> this (.onmouseenter)))
+  (-> this (.-onmouseenter)))
 
 (defn set-onmouseenter!
   "Property.
@@ -3025,7 +3932,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave`"
   [this]
-  (-> this (.onmouseleave)))
+  (-> this (.-onmouseleave)))
 
 (defn set-onmouseleave!
   "Property.
@@ -3052,7 +3959,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove`"
   [this]
-  (-> this (.onmousemove)))
+  (-> this (.-onmousemove)))
 
 (defn set-onmousemove!
   "Property.
@@ -3076,7 +3983,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout`"
   [this]
-  (-> this (.onmouseout)))
+  (-> this (.-onmouseout)))
 
 (defn set-onmouseout!
   "Property.
@@ -3100,7 +4007,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover`"
   [this]
-  (-> this (.onmouseover)))
+  (-> this (.-onmouseover)))
 
 (defn set-onmouseover!
   "Property.
@@ -3124,7 +4031,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup`"
   [this]
-  (-> this (.onmouseup)))
+  (-> this (.-onmouseup)))
 
 (defn set-onmouseup!
   "Property.
@@ -3147,7 +4054,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onmozbeforepaint`"
   [this]
-  (-> this (.onmozbeforepaint)))
+  (-> this (.-onmozbeforepaint)))
 
 (defn set-onmozbeforepaint!
   "Property.
@@ -3172,7 +4079,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onpaint`"
   [this]
-  (-> this (.onpaint)))
+  (-> this (.-onpaint)))
 
 (defn set-onpaint!
   "Property.
@@ -3201,7 +4108,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause`"
   [this]
-  (-> this (.onpause)))
+  (-> this (.-onpause)))
 
 (defn set-onpause!
   "Property.
@@ -3231,7 +4138,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay`"
   [this]
-  (-> this (.onplay)))
+  (-> this (.-onplay)))
 
 (defn set-onplay!
   "Property.
@@ -3260,7 +4167,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointercancel`"
   [this]
-  (-> this (.onpointercancel)))
+  (-> this (.-onpointercancel)))
 
 (defn set-onpointercancel!
   "Property.
@@ -3290,7 +4197,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerdown`"
   [this]
-  (-> this (.onpointerdown)))
+  (-> this (.-onpointerdown)))
 
 (defn set-onpointerdown!
   "Property.
@@ -3320,7 +4227,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerenter`"
   [this]
-  (-> this (.onpointerenter)))
+  (-> this (.-onpointerenter)))
 
 (defn set-onpointerenter!
   "Property.
@@ -3351,7 +4258,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerleave`"
   [this]
-  (-> this (.onpointerleave)))
+  (-> this (.-onpointerleave)))
 
 (defn set-onpointerleave!
   "Property.
@@ -3382,7 +4289,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointermove`"
   [this]
-  (-> this (.onpointermove)))
+  (-> this (.-onpointermove)))
 
 (defn set-onpointermove!
   "Property.
@@ -3410,7 +4317,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout`"
   [this]
-  (-> this (.onpointerout)))
+  (-> this (.-onpointerout)))
 
 (defn set-onpointerout!
   "Property.
@@ -3438,7 +4345,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerover`"
   [this]
-  (-> this (.onpointerover)))
+  (-> this (.-onpointerover)))
 
 (defn set-onpointerover!
   "Property.
@@ -3466,7 +4373,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerup`"
   [this]
-  (-> this (.onpointerup)))
+  (-> this (.-onpointerup)))
 
 (defn set-onpointerup!
   "Property.
@@ -3495,7 +4402,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate`"
   [this]
-  (-> this (.onpopstate)))
+  (-> this (.-onpopstate)))
 
 (defn set-onpopstate!
   "Property.
@@ -3524,7 +4431,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
   [this]
-  (-> this (.onrejectionhandled)))
+  (-> this (.-onrejectionhandled)))
 
 (defn set-onrejectionhandled!
   "Property.
@@ -3550,7 +4457,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset`"
   [this]
-  (-> this (.onreset)))
+  (-> this (.-onreset)))
 
 (defn set-onreset!
   "Property.
@@ -3574,7 +4481,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize`"
   [this]
-  (-> this (.onresize)))
+  (-> this (.-onresize)))
 
 (defn set-onresize!
   "Property.
@@ -3598,7 +4505,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll`"
   [this]
-  (-> this (.onscroll)))
+  (-> this (.-onscroll)))
 
 (defn set-onscroll!
   "Property.
@@ -3622,7 +4529,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect`"
   [this]
-  (-> this (.onselect)))
+  (-> this (.-onselect)))
 
 (defn set-onselect!
   "Property.
@@ -3646,7 +4553,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectionchange`"
   [this]
-  (-> this (.onselectionchange)))
+  (-> this (.-onselectionchange)))
 
 (defn set-onselectionchange!
   "Property.
@@ -3670,7 +4577,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectstart`"
   [this]
-  (-> this (.onselectstart)))
+  (-> this (.-onselectstart)))
 
 (defn set-onselectstart!
   "Property.
@@ -3694,7 +4601,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage`"
   [this]
-  (-> this (.onstorage)))
+  (-> this (.-onstorage)))
 
 (defn set-onstorage!
   "Property.
@@ -3718,7 +4625,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit`"
   [this]
-  (-> this (.onsubmit)))
+  (-> this (.-onsubmit)))
 
 (defn set-onsubmit!
   "Property.
@@ -3742,7 +4649,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchcancel`"
   [this]
-  (-> this (.ontouchcancel)))
+  (-> this (.-ontouchcancel)))
 
 (defn set-ontouchcancel!
   "Property.
@@ -3766,7 +4673,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchstart`"
   [this]
-  (-> this (.ontouchstart)))
+  (-> this (.-ontouchstart)))
 
 (defn set-ontouchstart!
   "Property.
@@ -3792,7 +4699,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitioncancel`"
   [this]
-  (-> this (.ontransitioncancel)))
+  (-> this (.-ontransitioncancel)))
 
 (defn set-ontransitioncancel!
   "Property.
@@ -3820,7 +4727,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitionend`"
   [this]
-  (-> this (.ontransitionend)))
+  (-> this (.-ontransitionend)))
 
 (defn set-ontransitionend!
   "Property.
@@ -3847,7 +4754,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection`"
   [this]
-  (-> this (.onunhandledrejection)))
+  (-> this (.-onunhandledrejection)))
 
 (defn set-onunhandledrejection!
   "Property.
@@ -3877,7 +4784,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this]
-  (-> this (.onunload)))
+  (-> this (.-onunload)))
 
 (defn set-onunload!
   "Property.
@@ -3908,7 +4815,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onuserproximity`"
   [this]
-  (-> this (.onuserproximity)))
+  (-> this (.-onuserproximity)))
 
 (defn set-onuserproximity!
   "Property.
@@ -3936,7 +4843,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplayactivate`"
   [this]
-  (-> this (.onvrdisplayactivate)))
+  (-> this (.-onvrdisplayactivate)))
 
 (defn set-onvrdisplayactivate!
   "Property.
@@ -3965,7 +4872,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplayblur`"
   [this]
-  (-> this (.onvrdisplayblur)))
+  (-> this (.-onvrdisplayblur)))
 
 (defn set-onvrdisplayblur!
   "Property.
@@ -3993,7 +4900,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplayconnect`"
   [this]
-  (-> this (.onvrdisplayconnect)))
+  (-> this (.-onvrdisplayconnect)))
 
 (defn set-onvrdisplayconnect!
   "Property.
@@ -4020,7 +4927,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplaydeactivate`"
   [this]
-  (-> this (.onvrdisplaydeactivate)))
+  (-> this (.-onvrdisplaydeactivate)))
 
 (defn set-onvrdisplaydeactivate!
   "Property.
@@ -4047,7 +4954,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplaydisconnect`"
   [this]
-  (-> this (.onvrdisplaydisconnect)))
+  (-> this (.-onvrdisplaydisconnect)))
 
 (defn set-onvrdisplaydisconnect!
   "Property.
@@ -4073,7 +4980,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplayfocus`"
   [this]
-  (-> this (.onvrdisplayfocus)))
+  (-> this (.-onvrdisplayfocus)))
 
 (defn set-onvrdisplayfocus!
   "Property.
@@ -4099,7 +5006,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplaypointerrestricted`"
   [this]
-  (-> this (.onvrdisplaypointerrestricted)))
+  (-> this (.-onvrdisplaypointerrestricted)))
 
 (defn set-onvrdisplaypointerrestricted!
   "Property.
@@ -4125,7 +5032,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplaypointerunrestricted`"
   [this]
-  (-> this (.onvrdisplaypointerunrestricted)))
+  (-> this (.-onvrdisplaypointerunrestricted)))
 
 (defn set-onvrdisplaypointerunrestricted!
   "Property.
@@ -4152,7 +5059,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/onvrdisplaypresentchange`"
   [this]
-  (-> this (.onvrdisplaypresentchange)))
+  (-> this (.-onvrdisplaypresentchange)))
 
 (defn set-onvrdisplaypresentchange!
   "Property.
@@ -4178,7 +5085,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel`"
   [this]
-  (-> this (.onwheel)))
+  (-> this (.-onwheel)))
 
 (defn set-onwheel!
   "Property.
@@ -4192,98 +5099,6 @@
   [this val]
   (aset this "onwheel" val))
 
-(defn opener
-  "Property.
-
-  The `web.Window` interface's opener property returns a reference
-  the window that opened the window using `open()`.
-
-  `openerWindow = window.opener;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/opener`"
-  [this]
-  (-> this (.opener)))
-
-(defn set-opener!
-  "Property.
-
-  The `web.Window` interface's opener property returns a reference
-  the window that opened the window using `open()`.
-
-  `openerWindow = window.opener;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/opener`"
-  [this val]
-  (aset this "opener" val))
-
-(defn origin
-  "Property.
-
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
-
-  `var myOrigin = self.origin; // or just origin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
-  [this]
-  (-> this (.origin)))
-
-(defn set-origin!
-  "Property.
-
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
-
-  `var myOrigin = self.origin; // or just origin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
-  [this val]
-  (aset this "origin" val))
-
-(defn outer-height
-  "Property.
-
-  The Window.outerHeight read-only property returns the height
-  pixels of the whole browser window, including any sidebar, window
-  and window-resizing borders/handles.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight`"
-  [this]
-  (-> this (.outerHeight)))
-
-(defn set-outer-height!
-  "Property.
-
-  The Window.outerHeight read-only property returns the height
-  pixels of the whole browser window, including any sidebar, window
-  and window-resizing borders/handles.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight`"
-  [this val]
-  (aset this "outerHeight" val))
-
-(defn outer-width
-  "Property.
-
-  Window.outerWidth read-only property returns the width of the
-  of the browser window. It represents the width of the whole browser
-  including sidebar (if expanded), window chrome and window resizing
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth`"
-  [this]
-  (-> this (.outerWidth)))
-
-(defn set-outer-width!
-  "Property.
-
-  Window.outerWidth read-only property returns the width of the
-  of the browser window. It represents the width of the whole browser
-  including sidebar (if expanded), window chrome and window resizing
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth`"
-  [this val]
-  (aset this "outerWidth" val))
-
 (defn page-x-offset
   "Property.
 
@@ -4291,7 +5106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageXOffset`"
   [this]
-  (-> this (.pageXOffset)))
+  (-> this (.-pageXOffset)))
 
 (defn set-page-x-offset!
   "Property.
@@ -4315,7 +5130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset`"
   [this]
-  (-> this (.pageYOffset)))
+  (-> this (.-pageYOffset)))
 
 (defn set-page-y-offset!
   "Property.
@@ -4332,138 +5147,6 @@
   [this val]
   (aset this "pageYOffset" val))
 
-(defn parent
-  "Property.
-
-  The Window.parent property is a reference to the parent of the
-  window or subframe.
-
-  `var parentWindow = window.parent;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/parent`"
-  [this]
-  (-> this (.parent)))
-
-(defn set-parent!
-  "Property.
-
-  The Window.parent property is a reference to the parent of the
-  window or subframe.
-
-  `var parentWindow = window.parent;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/parent`"
-  [this val]
-  (aset this "parent" val))
-
-(defn performance
-  "Property.
-
-  The `web.Window` interface's performance property returns a `web.performance.Performance`
-  which can be used to gather performance information about the
-  document. It serves as the point of exposure for the Performance
-  API, the High Resolution Time API, the Navigation Timing API,
-  User Timing API, and the Resource Timing API.
-
-  `performanceData = window.performance;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/performance`"
-  [this]
-  (-> this (.performance)))
-
-(defn set-performance!
-  "Property.
-
-  The `web.Window` interface's performance property returns a `web.performance.Performance`
-  which can be used to gather performance information about the
-  document. It serves as the point of exposure for the Performance
-  API, the High Resolution Time API, the Navigation Timing API,
-  User Timing API, and the Resource Timing API.
-
-  `performanceData = window.performance;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/performance`"
-  [this val]
-  (aset this "performance" val))
-
-(defn personalbar
-  "Property.
-
-  Returns the personalbar object, whose visibility can be toggled
-  the window.
-
-  `objRef =window.personalbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar`"
-  [this]
-  (-> this (.personalbar)))
-
-(defn set-personalbar!
-  "Property.
-
-  Returns the personalbar object, whose visibility can be toggled
-  the window.
-
-  `objRef =window.personalbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar`"
-  [this val]
-  (aset this "personalbar" val))
-
-(defn pkcs11
-  "Property.
-
-  Returns the pkcs11 object, which is used to install drivers and
-  software associated with the pkcs11 protocol. If pkcs11 isn't
-  this property returns null.
-
-  `objRef = window.pkcs11`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pkcs11`"
-  [this]
-  (-> this (.pkcs11)))
-
-(defn set-pkcs11!
-  "Property.
-
-  Returns the pkcs11 object, which is used to install drivers and
-  software associated with the pkcs11 protocol. If pkcs11 isn't
-  this property returns null.
-
-  `objRef = window.pkcs11`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pkcs11`"
-  [this val]
-  (aset this "pkcs11" val))
-
-(defn screen
-  "Property.
-
-  The `web.Window` property screen returns a reference to the screen
-  associated with the window. The screen object, implementing the
-  interface, is a special object for inspecting properties of the
-  on which the current window is being rendered.
-
-  `let screenObj = window.screen;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screen`"
-  [this]
-  (-> this (.screen)))
-
-(defn set-screen!
-  "Property.
-
-  The `web.Window` property screen returns a reference to the screen
-  associated with the window. The screen object, implementing the
-  interface, is a special object for inspecting properties of the
-  on which the current window is being rendered.
-
-  `let screenObj = window.screen;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screen`"
-  [this val]
-  (aset this "screen" val))
-
 (defn screen-left
   "Property.
 
@@ -4475,7 +5158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenLeft`"
   [this]
-  (-> this (.screenLeft)))
+  (-> this (.-screenLeft)))
 
 (defn screen-top
   "Property.
@@ -4488,435 +5171,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenTop`"
   [this]
-  (-> this (.screenTop)))
-
-(defn screen-x
-  "Property.
-
-  The Window.screenX read-only property returns the horizontal
-  in CSS pixels, of the left border of the user's browser viewport
-  the left side of the screen.
-
-  `leftWindowPos = window.screenX`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenX`"
-  [this]
-  (-> this (.screenX)))
-
-(defn screen-y
-  "Property.
-
-  The Window.screenY read-only property returns the vertical distance,
-  CSS pixels, of the top border of the user's browser viewport
-  the top edge of the screen.
-
-  `topWindowPos = window.screenY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screenY`"
-  [this]
-  (-> this (.screenY)))
-
-(defn scrollbars
-  "Property.
-
-  The Window.scrollbars property returns the scrollbars object,
-  visibility can be checked.
-
-  `objRef = window.scrollbars`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars`"
-  [this]
-  (-> this (.scrollbars)))
-
-(defn set-scrollbars!
-  "Property.
-
-  The Window.scrollbars property returns the scrollbars object,
-  visibility can be checked.
-
-  `objRef = window.scrollbars`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars`"
-  [this val]
-  (aset this "scrollbars" val))
-
-(defn scroll-max-x
-  "Property.
-
-  The Window.scrollMaxX read-only property returns the maximum
-  of pixels that the document can be scrolled horizontally.
-
-  `xMax = window.scrollMaxX
-
-
-  xMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxX`"
-  [this]
-  (-> this (.scrollMaxX)))
-
-(defn set-scroll-max-x!
-  "Property.
-
-  The Window.scrollMaxX read-only property returns the maximum
-  of pixels that the document can be scrolled horizontally.
-
-  `xMax = window.scrollMaxX
-
-
-  xMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxX`"
-  [this val]
-  (aset this "scrollMaxX" val))
-
-(defn scroll-max-y
-  "Property.
-
-  The Window.scrollMaxY read-only property returns the maximum
-  of pixels that the document can be scrolled vertically.
-
-  `yMax = window.scrollMaxY
-
-
-  yMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxY`"
-  [this]
-  (-> this (.scrollMaxY)))
-
-(defn set-scroll-max-y!
-  "Property.
-
-  The Window.scrollMaxY read-only property returns the maximum
-  of pixels that the document can be scrolled vertically.
-
-  `yMax = window.scrollMaxY
-
-
-  yMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxY`"
-  [this val]
-  (aset this "scrollMaxY" val))
-
-(defn scroll-x
-  "Property.
-
-  The read-only scrollX property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-  This value is subpixel precise in modern browsers, meaning that
-  isn't necessarily a whole number. You can get the number of pixels
-  document is scrolled vertically from the `scrollY` property.
-
-  `var x = window.scrollX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX`"
-  [this]
-  (-> this (.scrollX)))
-
-(defn set-scroll-x!
-  "Property.
-
-  The read-only scrollX property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-  This value is subpixel precise in modern browsers, meaning that
-  isn't necessarily a whole number. You can get the number of pixels
-  document is scrolled vertically from the `scrollY` property.
-
-  `var x = window.scrollX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX`"
-  [this val]
-  (aset this "scrollX" val))
-
-(defn scroll-y
-  "Property.
-
-  The read-only scrollY property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-
-  `var y = window.scrollY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY`"
-  [this]
-  (-> this (.scrollY)))
-
-(defn set-scroll-y!
-  "Property.
-
-  The read-only scrollY property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-
-  `var y = window.scrollY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY`"
-  [this val]
-  (aset this "scrollY" val))
-
-(defn self
-  "Property.
-
-  The Window.self read-only property returns the window itself,
-  a `WindowProxy`. It can be used with dot notation on a window
-  (that is, window.self) or standalone (self). The advantage of
-  standalone notation is that a similar notation exists for non-window
-  such as in Web Workers. By using self, you can refer to the global
-  in a way that will work not only in a window context (self will
-  to window.self) but also in a worker context (self will then
-  to `WorkerGlobalScope.self`).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/self`"
-  [this]
-  (-> this (.self)))
-
-(defn session-storage
-  "Property.
-
-  The sessionStorage property accesses a session `web.storage.Storage`
-  for the current origin. sessionStorage is similar to `localStorage`;
-  difference is that while data in localStorage doesn't expire,
-  in sessionStorage is cleared when the page session ends.
-
-  `// Save data to sessionStorage
-  sessionStorage.setItem('key', 'value');
-
-  // Get saved data from sessionStorage
-  let data = sessionStorage.getItem('key');
-
-  // Remove saved data from sessionStorage
-  sessionStorage.removeItem('key');
-
-  // Remove all saved data from sessionStorage
-  sessionStorage.clear();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage`"
-  [this]
-  (-> this (.sessionStorage)))
-
-(defn set-session-storage!
-  "Property.
-
-  The sessionStorage property accesses a session `web.storage.Storage`
-  for the current origin. sessionStorage is similar to `localStorage`;
-  difference is that while data in localStorage doesn't expire,
-  in sessionStorage is cleared when the page session ends.
-
-  `// Save data to sessionStorage
-  sessionStorage.setItem('key', 'value');
-
-  // Get saved data from sessionStorage
-  let data = sessionStorage.getItem('key');
-
-  // Remove saved data from sessionStorage
-  sessionStorage.removeItem('key');
-
-  // Remove all saved data from sessionStorage
-  sessionStorage.clear();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage`"
-  [this val]
-  (aset this "sessionStorage" val))
-
-(defn sidebar
-  "Property.
-
-  Returns a sidebar object, which contains several methods for
-  add-ons with the browser.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar`"
-  [this]
-  (-> this (.sidebar)))
-
-(defn set-sidebar!
-  "Property.
-
-  Returns a sidebar object, which contains several methods for
-  add-ons with the browser.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar`"
-  [this val]
-  (aset this "sidebar" val))
-
-(defn speech-synthesis
-  "Property.
-
-  The speechSynthesis read-only property of the Window object returns
-  `web.speech.SpeechSynthesis` object, which is the entry point
-  using Web Speech API speech synthesis functionality.
-
-  `var synth = window.speechSynthesis;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
-  [this]
-  (-> this (.speechSynthesis)))
-
-(defn set-speech-synthesis!
-  "Property.
-
-  The speechSynthesis read-only property of the Window object returns
-  `web.speech.SpeechSynthesis` object, which is the entry point
-  using Web Speech API speech synthesis functionality.
-
-  `var synth = window.speechSynthesis;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
-  [this val]
-  (aset this "speechSynthesis" val))
-
-(defn status
-  "Property.
-
-  The status property of the `web.Window` interface sets the text
-  the status bar at the bottom of the browser or returns the previously
-  text.
-
-  `window.status = string;
-  var value = window.status;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/status`"
-  [this]
-  (-> this (.status)))
-
-(defn set-status!
-  "Property.
-
-  The status property of the `web.Window` interface sets the text
-  the status bar at the bottom of the browser or returns the previously
-  text.
-
-  `window.status = string;
-  var value = window.status;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/status`"
-  [this val]
-  (aset this "status" val))
-
-(defn statusbar
-  "Property.
-
-  The Window.statusbar property returns the statusbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.statusbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar`"
-  [this]
-  (-> this (.statusbar)))
-
-(defn set-statusbar!
-  "Property.
-
-  The Window.statusbar property returns the statusbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.statusbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar`"
-  [this val]
-  (aset this "statusbar" val))
-
-(defn toolbar
-  "Property.
-
-  The Window.toolbar property returns the toolbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.toolbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar`"
-  [this]
-  (-> this (.toolbar)))
-
-(defn set-toolbar!
-  "Property.
-
-  The Window.toolbar property returns the toolbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.toolbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar`"
-  [this val]
-  (aset this "toolbar" val))
-
-(defn top
-  "Property.
-
-  Returns a reference to the topmost window in the window hierarchy.
-
-  `var topWindow = window.top;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/top`"
-  [this]
-  (-> this (.top)))
-
-(defn set-top!
-  "Property.
-
-  Returns a reference to the topmost window in the window hierarchy.
-
-  `var topWindow = window.top;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/top`"
-  [this val]
-  (aset this "top" val))
-
-(defn visual-viewport
-  "Property.
-
-  The visualViewport read-only property of the `web.Window` interface
-  a `web.viewport.VisualViewport` object representing the visual
-  for a given window.
-
-  `var visualViewport = Window.visualViewport`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport`"
-  [this]
-  (-> this (.visualViewport)))
-
-(defn set-visual-viewport!
-  "Property.
-
-  The visualViewport read-only property of the `web.Window` interface
-  a `web.viewport.VisualViewport` object representing the visual
-  for a given window.
-
-  `var visualViewport = Window.visualViewport`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport`"
-  [this val]
-  (aset this "visualViewport" val))
-
-(defn window
-  "Property.
-
-  The window property of a `web.Window` object points to the window
-  itself.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/window`"
-  [this]
-  (-> this (.window)))
-
-(defn set-window!
-  "Property.
-
-  The window property of a `web.Window` object points to the window
-  itself.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/window`"
-  [this val]
-  (aset this "window" val))
+  (-> this (.-screenTop)))
 
 (defn window-state
   "Property.
 
-  The windowState read-only property of the `web.Window` interface
-  the window's current state.
-
-  `var state = window.windowState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/windowState`"
+  The windowState read-only property of the Window interface returns
+  window's current state."
   [this]
-  (-> this (.windowState)))
+  (-> this (.-windowState)))
+
+(defn set-window-state!
+  "Property.
+
+  The windowState read-only property of the Window interface returns
+  window's current state."
+  [this val]
+  (aset this "windowState" val))
 

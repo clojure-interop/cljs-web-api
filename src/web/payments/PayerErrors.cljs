@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PayerErrors/email`"
   [this]
-  (-> this (.email)))
+  (-> this (.-email)))
 
 (defn set-email!
   "Property.
@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PayerErrors/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PayerErrors/phone`"
   [this]
-  (-> this (.phone)))
+  (-> this (.-phone)))
 
 (defn set-phone!
   "Property.

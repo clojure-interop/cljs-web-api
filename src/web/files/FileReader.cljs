@@ -95,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.
@@ -108,54 +108,6 @@
   [this val]
   (aset this "error" val))
 
-(defn onabort
-  "Property.
-
-  The FileReader.onabort property contains an event handler executed
-  the abort event is fired, i.e. when the process of reading the
-  is aborted.
-
-  `reader.onabort = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort`"
-  [this]
-  (-> this (.onabort)))
-
-(defn set-onabort!
-  "Property.
-
-  The FileReader.onabort property contains an event handler executed
-  the abort event is fired, i.e. when the process of reading the
-  is aborted.
-
-  `reader.onabort = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort`"
-  [this val]
-  (aset this "onabort" val))
-
-(defn onload
-  "Property.
-
-  The FileReader.onload property contains an event handler executed
-  the load event is fired, when content read with readAsArrayBuffer,
-  readAsDataURL or readAsText is available.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload`"
-  [this]
-  (-> this (.onload)))
-
-(defn set-onload!
-  "Property.
-
-  The FileReader.onload property contains an event handler executed
-  the load event is fired, when content read with readAsArrayBuffer,
-  readAsDataURL or readAsText is available.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload`"
-  [this val]
-  (aset this "onload" val))
-
 (defn ready-state
   "Property.
 
@@ -165,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readyState`"
   [this]
-  (-> this (.readyState)))
+  (-> this (.-readyState)))
 
 (defn set-ready-state!
   "Property.
@@ -190,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result`"
   [this]
-  (-> this (.result)))
+  (-> this (.-result)))
 
 (defn set-result!
   "Property.
@@ -205,4 +157,118 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result`"
   [this val]
   (aset this "result" val))
+
+(defn onabort
+  "Property.
+
+  The FileReader.onabort property contains an event handler executed
+  the abort event is fired, i.e. when the process of reading the
+  is aborted.
+
+  `reader.onabort = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort`"
+  [this]
+  (-> this (.-onabort)))
+
+(defn set-onabort!
+  "Property.
+
+  The FileReader.onabort property contains an event handler executed
+  the abort event is fired, i.e. when the process of reading the
+  is aborted.
+
+  `reader.onabort = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onabort`"
+  [this val]
+  (aset this "onabort" val))
+
+(defn onerror
+  "Property.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror`"
+  [this]
+  (-> this (.-onerror)))
+
+(defn set-onerror!
+  "Property.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror`"
+  [this val]
+  (aset this "onerror" val))
+
+(defn onload
+  "Property.
+
+  The FileReader.onload property contains an event handler executed
+  the load event is fired, when content read with readAsArrayBuffer,
+  readAsDataURL or readAsText is available.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload`"
+  [this]
+  (-> this (.-onload)))
+
+(defn set-onload!
+  "Property.
+
+  The FileReader.onload property contains an event handler executed
+  the load event is fired, when content read with readAsArrayBuffer,
+  readAsDataURL or readAsText is available.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload`"
+  [this val]
+  (aset this "onload" val))
+
+(defn onloadstart
+  "Property.
+
+  A handler for the loadstart event. This event is triggered each
+  the reading is starting."
+  [this]
+  (-> this (.-onloadstart)))
+
+(defn set-onloadstart!
+  "Property.
+
+  A handler for the loadstart event. This event is triggered each
+  the reading is starting."
+  [this val]
+  (aset this "onloadstart" val))
+
+(defn onloadend
+  "Property.
+
+  A handler for the loadend event. This event is triggered each
+  the reading operation is completed (either in success or failure)."
+  [this]
+  (-> this (.-onloadend)))
+
+(defn set-onloadend!
+  "Property.
+
+  A handler for the loadend event. This event is triggered each
+  the reading operation is completed (either in success or failure)."
+  [this val]
+  (aset this "onloadend" val))
+
+(defn onprogress
+  "Property.
+
+  A handler for the progress event. This event is triggered while
+  a Blob content."
+  [this]
+  (-> this (.-onprogress)))
+
+(defn set-onprogress!
+  "Property.
+
+  A handler for the progress event. This event is triggered while
+  a Blob content."
+  [this val]
+  (aset this "onprogress" val))
 

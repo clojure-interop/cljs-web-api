@@ -17,20 +17,6 @@
   [this & args]
   (apply (-> this .-get) (concat [this] args)))
 
-(defn claim
-  "Method.
-
-  The claim() method of the `web.workers.Clients` allows an active
-  worker to set itself as the `controller` for all clients within
-  `scope`. This triggers a \\\"controllerchange\\\" event on `navigator.serviceWorker`
-  any clients that become controlled by this service worker.
-
-  `await clients.claim();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim`"
-  [this ]
-  (-> this (.claim)))
-
 (defn match-all
   "Method.
 
@@ -64,4 +50,18 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/openWindow`"
   [this & args]
   (apply (-> this .-openWindow) (concat [this] args)))
+
+(defn claim
+  "Method.
+
+  The claim() method of the `web.workers.Clients` allows an active
+  worker to set itself as the `controller` for all clients within
+  `scope`. This triggers a \\\"controllerchange\\\" event on `navigator.serviceWorker`
+  any clients that become controlled by this service worker.
+
+  `await clients.claim();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim`"
+  [this ]
+  (-> this (.claim)))
 

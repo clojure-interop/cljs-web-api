@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/control`"
   [this]
-  (-> this (.control)))
+  (-> this (.-control)))
 
 (defn form
   "Property.
@@ -30,5 +30,37 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/form`"
   [this]
-  (-> this (.form)))
+  (-> this (.-form)))
+
+(defn html-for
+  "Property.
+
+  The HTMLLabelElement.htmlFor property reflects the value of the
+  content property. That means that this script-accessible property
+  used to set and read the value of the content property for, which
+  the ID of the label's associated control element.
+
+  `controlId = HTMLLabelElement.htmlFor
+
+  HTMLLabelElement.htmlFor = newId`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor`"
+  [this]
+  (-> this (.-htmlFor)))
+
+(defn set-html-for!
+  "Property.
+
+  The HTMLLabelElement.htmlFor property reflects the value of the
+  content property. That means that this script-accessible property
+  used to set and read the value of the content property for, which
+  the ID of the label's associated control element.
+
+  `controlId = HTMLLabelElement.htmlFor
+
+  HTMLLabelElement.htmlFor = newId`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor`"
+  [this val]
+  (aset this "htmlFor" val))
 

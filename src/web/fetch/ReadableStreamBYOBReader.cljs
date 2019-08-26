@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/closed`"
   [this]
-  (-> this (.closed)))
+  (-> this (.-closed)))
 
 (defn set-closed!
   "Property.

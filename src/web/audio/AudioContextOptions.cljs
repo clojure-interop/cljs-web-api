@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContextOptions/latencyHint`"
   [this]
-  (-> this (.latencyHint)))
+  (-> this (.-latencyHint)))
 
 (defn set-latency-hint!
   "Property.
@@ -35,4 +35,34 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContextOptions/latencyHint`"
   [this val]
   (aset this "latencyHint" val))
+
+(defn sample-rate
+  "Property.
+
+  The `web.audio.AudioContextOptions` dictionary (used when instantiating
+  `web.audio.AudioContext`) may contain a property named sampleRate,
+  indicates the sample rate to use for the new context.
+
+  `audioContextOptions.sampleRate = 44100;
+
+  var sampleRate = audioContextOptions.sampleRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContextOptions/sampleRate`"
+  [this]
+  (-> this (.-sampleRate)))
+
+(defn set-sample-rate!
+  "Property.
+
+  The `web.audio.AudioContextOptions` dictionary (used when instantiating
+  `web.audio.AudioContext`) may contain a property named sampleRate,
+  indicates the sample rate to use for the new context.
+
+  `audioContextOptions.sampleRate = 44100;
+
+  var sampleRate = audioContextOptions.sampleRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContextOptions/sampleRate`"
+  [this val]
+  (aset this "sampleRate" val))
 

@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/toneBuffer`"
   [this]
-  (-> this (.toneBuffer)))
+  (-> this (.-toneBuffer)))
 
 (defn set-tone-buffer!
   "Property.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/ontonechange`"
   [this]
-  (-> this (.ontonechange)))
+  (-> this (.-ontonechange)))
 
 (defn set-ontonechange!
   "Property.

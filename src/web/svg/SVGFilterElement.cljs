@@ -17,7 +17,7 @@
   of the given <filter> element. Takes one of the constants defined
   SVGUnitTypes."
   [this]
-  (-> this (.filterUnits)))
+  (-> this (.-filterUnits)))
 
 (defn set-filter-units!
   "Property.
@@ -27,4 +27,118 @@
   SVGUnitTypes."
   [this val]
   (aset this "filterUnits" val))
+
+(defn primitive-units
+  "Property.
+
+  An SVGAnimatedEnumeration that corresponds to the primitiveUnits
+  of the given <filter> element. Takes one of the constants defined
+  SVGUnitTypes."
+  [this]
+  (-> this (.-primitiveUnits)))
+
+(defn set-primitive-units!
+  "Property.
+
+  An SVGAnimatedEnumeration that corresponds to the primitiveUnits
+  of the given <filter> element. Takes one of the constants defined
+  SVGUnitTypes."
+  [this val]
+  (aset this "primitiveUnits" val))
+
+(defn x
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the x attribute on the
+  <filter> element."
+  [this]
+  (-> this (.-x)))
+
+(defn set-x!
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the x attribute on the
+  <filter> element."
+  [this val]
+  (aset this "x" val))
+
+(defn y
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the y attribute of the
+  <filter> element."
+  [this]
+  (-> this (.-y)))
+
+(defn set-y!
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the y attribute of the
+  <filter> element."
+  [this val]
+  (aset this "y" val))
+
+(defn width
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the width attribute
+  the given <filter> element."
+  [this]
+  (-> this (.-width)))
+
+(defn set-width!
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the width attribute
+  the given <filter> element."
+  [this val]
+  (aset this "width" val))
+
+(defn height
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the height attribute
+  the given <filter> element."
+  [this]
+  (-> this (.-height)))
+
+(defn set-height!
+  "Property.
+
+  An SVGAnimatedLength that corresponds to the height attribute
+  the given <filter> element."
+  [this val]
+  (aset this "height" val))
+
+(defn filter-res-x
+  "Property.
+
+  An SVGAnimatedInteger that contains the X component of the filterRes
+  of the given <filter> element."
+  [this]
+  (-> this (.-filterResX)))
+
+(defn set-filter-res-x!
+  "Property.
+
+  An SVGAnimatedInteger that contains the X component of the filterRes
+  of the given <filter> element."
+  [this val]
+  (aset this "filterResX" val))
+
+(defn filter-res-y
+  "Property.
+
+  An SVGAnimatedInteger that contains the Y component of the filterRes
+  of the given <filter> element."
+  [this]
+  (-> this (.-filterResY)))
+
+(defn set-filter-res-y!
+  "Property.
+
+  An SVGAnimatedInteger that contains the Y component of the filterRes
+  of the given <filter> element."
+  [this val]
+  (aset this "filterResY" val))
 

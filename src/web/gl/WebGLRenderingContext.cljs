@@ -1499,7 +1499,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/canvas`"
   [this]
-  (-> this (.canvas)))
+  (-> this (.-canvas)))
 
 (defn drawing-buffer-height
   "Property.
@@ -1514,7 +1514,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawingBufferHeight`"
   [this]
-  (-> this (.drawingBufferHeight)))
+  (-> this (.-drawingBufferHeight)))
 
 (defn drawing-buffer-width
   "Property.
@@ -1529,5 +1529,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawingBufferWidth`"
   [this]
-  (-> this (.drawingBufferWidth)))
+  (-> this (.-drawingBufferWidth)))
 

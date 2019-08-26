@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/enabled`"
   [this]
-  (-> this (.enabled)))
+  (-> this (.-enabled)))
 
 (defn set-enabled!
   "Property.
@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn kind
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/kind`"
   [this]
-  (-> this (.kind)))
+  (-> this (.-kind)))
 
 (defn label
   "Property.
@@ -70,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/label`"
   [this]
-  (-> this (.label)))
+  (-> this (.-label)))
 
 (defn language
   "Property.
@@ -82,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/language`"
   [this]
-  (-> this (.language)))
+  (-> this (.-language)))
 
 (defn source-buffer
   "Property.
@@ -97,5 +97,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/sourceBuffer`"
   [this]
-  (-> this (.sourceBuffer)))
+  (-> this (.-sourceBuffer)))
 

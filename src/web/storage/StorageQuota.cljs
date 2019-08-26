@@ -17,6 +17,19 @@
   [this & args]
   (apply (-> this .-queryInfo) (concat [this] args)))
 
+(defn request-persistent-quota
+  "Method.
+
+  The requestPersistentQuota() property of the `web.storage.StorageQuota`
+  requests persistent storage for the requesting application and
+  a `js.Promise` to an instance of `StorageInfo`.
+
+  `StorageQuota.requestPersistentQuota().then(function(storageInfo) { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/requestPersistentQuota`"
+  [this & args]
+  (apply (-> this .-requestPersistentQuota) (concat [this] args)))
+
 (defn supported-types
   "Property.
 
@@ -27,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/supportedTypes`"
   [this]
-  (-> this (.supportedTypes)))
+  (-> this (.-supportedTypes)))
 
 (defn set-supported-types!
   "Property.
@@ -40,30 +53,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/supportedTypes`"
   [this val]
   (aset this "supportedTypes" val))
-
-(defn request-persistent-quota
-  "Property.
-
-  The requestPersistentQuota() property of the `web.storage.StorageQuota`
-  requests persistent storage for the requesting application and
-  a `js.Promise` to an instance of `StorageInfo`.
-
-  `StorageQuota.requestPersistentQuota().then(function(storageInfo) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/requestPersistentQuota`"
-  [this]
-  (-> this (.requestPersistentQuota)))
-
-(defn set-request-persistent-quota!
-  "Property.
-
-  The requestPersistentQuota() property of the `web.storage.StorageQuota`
-  requests persistent storage for the requesting application and
-  a `js.Promise` to an instance of `StorageInfo`.
-
-  `StorageQuota.requestPersistentQuota().then(function(storageInfo) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/requestPersistentQuota`"
-  [this val]
-  (aset this "requestPersistentQuota" val))
 

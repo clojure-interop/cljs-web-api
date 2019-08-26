@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisEvent/charIndex`"
   [this]
-  (-> this (.charIndex)))
+  (-> this (.-charIndex)))
 
 (defn set-char-index!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisEvent/elapsedTime`"
   [this]
-  (-> this (.elapsedTime)))
+  (-> this (.-elapsedTime)))
 
 (defn set-elapsed-time!
   "Property.
@@ -69,7 +69,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisEvent/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -97,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisEvent/utterance`"
   [this]
-  (-> this (.utterance)))
+  (-> this (.-utterance)))
 
 (defn set-utterance!
   "Property.

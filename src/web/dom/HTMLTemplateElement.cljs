@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/content`"
   [this]
-  (-> this (.content)))
+  (-> this (.-content)))
 
 (defn set-content!
   "Property.

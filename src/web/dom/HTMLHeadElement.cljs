@@ -10,7 +10,7 @@
   Is a DOMString representing the URIs of one or more metadata
   (white space separated)."
   [this]
-  (-> this (.profile)))
+  (-> this (.-profile)))
 
 (defn set-profile!
   "Property.

@@ -22,6 +22,20 @@
   [this & args]
   (apply (-> this .-check) (concat [this] args)))
 
+(defn clear
+  "Method.
+
+  Removes all fonts from the font set."
+  [this & args]
+  (apply (-> this .-clear) (concat [this] args)))
+
+(defn delete
+  "Method.
+
+  Removes a font from the font set."
+  [this & args]
+  (apply (-> this .-delete) (concat [this] args)))
+
 (defn load
   "Method.
 
@@ -43,7 +57,7 @@
   Indicates the font-face's loading status. It will be one of 'loading'
   'loaded'."
   [this]
-  (-> this (.status)))
+  (-> this (.-status)))
 
 (defn set-status!
   "Property.
@@ -65,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready`"
   [this]
-  (-> this (.ready)))
+  (-> this (.-ready)))
 
 (defn set-ready!
   "Property.
@@ -87,7 +101,7 @@
   An EventListener called whenever an event of type loading is
   indicating a font-face set has started loading."
   [this]
-  (-> this (.onloading)))
+  (-> this (.-onloading)))
 
 (defn set-onloading!
   "Property.
@@ -96,4 +110,36 @@
   indicating a font-face set has started loading."
   [this val]
   (aset this "onloading" val))
+
+(defn onloadingdone
+  "Property.
+
+  An EventListener called whenever an event of type loadingdone
+  fired, indicating that a font face set has finished loading."
+  [this]
+  (-> this (.-onloadingdone)))
+
+(defn set-onloadingdone!
+  "Property.
+
+  An EventListener called whenever an event of type loadingdone
+  fired, indicating that a font face set has finished loading."
+  [this val]
+  (aset this "onloadingdone" val))
+
+(defn onloadingerror
+  "Property.
+
+  An EventListener called whenever an event of type loadingerror
+  fired, indicating that an error occurred whilst loading a font-face"
+  [this]
+  (-> this (.-onloadingerror)))
+
+(defn set-onloadingerror!
+  "Property.
+
+  An EventListener called whenever an event of type loadingerror
+  fired, indicating that an error occurred whilst loading a font-face"
+  [this val]
+  (aset this "onloadingerror" val))
 

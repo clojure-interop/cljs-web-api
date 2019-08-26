@@ -15,6 +15,18 @@
   [this orientation]
   (-> this (.lock orientation)))
 
+(defn unlock
+  "Method.
+
+  The unlock() property of the `web.orientation.ScreenOrientation`
+  unlocks the orientation of the containing document from its default
+
+  `ScreenOrientation.unlock()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/unlock`"
+  [this ]
+  (-> this (.unlock)))
+
 (defn type
   "Property.
 
@@ -26,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -41,6 +53,30 @@
   [this val]
   (aset this "type" val))
 
+(defn angle
+  "Property.
+
+  The angle read-only property of the `web.orientation.ScreenOrientation`
+  returns the document's current orientation angle.
+
+  `angle = ScreenOrientation.angle`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle`"
+  [this]
+  (-> this (.-angle)))
+
+(defn set-angle!
+  "Property.
+
+  The angle read-only property of the `web.orientation.ScreenOrientation`
+  returns the document's current orientation angle.
+
+  `angle = ScreenOrientation.angle`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle`"
+  [this val]
+  (aset this "angle" val))
+
 (defn onchange
   "Property.
 
@@ -53,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -68,52 +104,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/onchange`"
   [this val]
   (aset this "onchange" val))
-
-(defn angle
-  "Property.
-
-  The angle read-only property of the `web.orientation.ScreenOrientation`
-  returns the document's current orientation angle.
-
-  `angle = ScreenOrientation.angle`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle`"
-  [this]
-  (-> this (.angle)))
-
-(defn set-angle!
-  "Property.
-
-  The angle read-only property of the `web.orientation.ScreenOrientation`
-  returns the document's current orientation angle.
-
-  `angle = ScreenOrientation.angle`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle`"
-  [this val]
-  (aset this "angle" val))
-
-(defn unlock
-  "Property.
-
-  The unlock() property of the `web.orientation.ScreenOrientation`
-  unlocks the orientation of the containing document from its default
-
-  `ScreenOrientation.unlock()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/unlock`"
-  [this]
-  (-> this (.unlock)))
-
-(defn set-unlock!
-  "Property.
-
-  The unlock() property of the `web.orientation.ScreenOrientation`
-  unlocks the orientation of the containing document from its default
-
-  `ScreenOrientation.unlock()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/unlock`"
-  [this val]
-  (aset this "unlock" val))
 

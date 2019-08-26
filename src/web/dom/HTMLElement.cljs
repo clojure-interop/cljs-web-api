@@ -60,7 +60,7 @@
 
   Is a DOMString representing the access key assigned to the element."
   [this]
-  (-> this (.accessKey)))
+  (-> this (.-accessKey)))
 
 (defn set-access-key!
   "Property.
@@ -69,29 +69,31 @@
   [this val]
   (aset this "accessKey" val))
 
-(defn oncopy
+(defn access-key-label
   "Property.
 
-  The oncopy property of the `web.dom.HTMLElement` interface is
-  `EventHandler` that processes copy events.
+  The HTMLElement.accessKeyLabel read-only property returns a `js.String`
+  represents the element's assigned access key (if any); otherwise
+  returns an empty string.
 
-  `target.oncopy = functionRef;`
+  `label = element.accessKeyLabel`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKeyLabel`"
   [this]
-  (-> this (.oncopy)))
+  (-> this (.-accessKeyLabel)))
 
-(defn set-oncopy!
+(defn set-access-key-label!
   "Property.
 
-  The oncopy property of the `web.dom.HTMLElement` interface is
-  `EventHandler` that processes copy events.
+  The HTMLElement.accessKeyLabel read-only property returns a `js.String`
+  represents the element's assigned access key (if any); otherwise
+  returns an empty string.
 
-  `target.oncopy = functionRef;`
+  `label = element.accessKeyLabel`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKeyLabel`"
   [this val]
-  (aset this "oncopy" val))
+  (aset this "accessKeyLabel" val))
 
 (defn content-editable
   "Property.
@@ -104,7 +106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable`"
   [this]
-  (-> this (.contentEditable)))
+  (-> this (.-contentEditable)))
 
 (defn set-content-editable!
   "Property.
@@ -119,6 +121,19 @@
   [this val]
   (aset this "contentEditable" val))
 
+(defn is-content-editable
+  "Property.
+
+  The HTMLElement.isContentEditable read-only property returns
+  `js.Boolean` that is true if the contents of the element are
+  otherwise it returns false.
+
+  `editable = element.isContentEditable`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/isContentEditable`"
+  [this]
+  (-> this (.-isContentEditable)))
+
 (defn context-menu
   "Property.
 
@@ -126,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contextMenu`"
   [this]
-  (-> this (.contextMenu)))
+  (-> this (.-contextMenu)))
 
 (defn set-context-menu!
   "Property.
@@ -153,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset`"
   [this]
-  (-> this (.dataset)))
+  (-> this (.-dataset)))
 
 (defn set-dataset!
   "Property.
@@ -191,7 +206,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir`"
   [this]
-  (-> this (.dir)))
+  (-> this (.-dir)))
 
 (defn set-dir!
   "Property.
@@ -213,6 +228,36 @@
   [this val]
   (aset this "dir" val))
 
+(defn draggable
+  "Property.
+
+  Is a Boolean indicating if the element can be dragged."
+  [this]
+  (-> this (.-draggable)))
+
+(defn set-draggable!
+  "Property.
+
+  Is a Boolean indicating if the element can be dragged."
+  [this val]
+  (aset this "draggable" val))
+
+(defn dropzone
+  "Property.
+
+  Returns a DOMSettableTokenList reflecting the dropzone global
+  and describing the behavior of the element regarding a drop operation."
+  [this]
+  (-> this (.-dropzone)))
+
+(defn set-dropzone!
+  "Property.
+
+  Returns a DOMSettableTokenList reflecting the dropzone global
+  and describing the behavior of the element regarding a drop operation."
+  [this val]
+  (aset this "dropzone" val))
+
 (defn hidden
   "Property.
 
@@ -228,7 +273,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden`"
   [this]
-  (-> this (.hidden)))
+  (-> this (.-hidden)))
 
 (defn set-hidden!
   "Property.
@@ -247,6 +292,24 @@
   [this val]
   (aset this "hidden" val))
 
+(defn inert
+  "Property.
+
+  Is a Boolean indicating whether the user agent must act as though
+  given node is absent for the purposes of user interaction events,
+  text searches (\"find in page\"), and text selection."
+  [this]
+  (-> this (.-inert)))
+
+(defn set-inert!
+  "Property.
+
+  Is a Boolean indicating whether the user agent must act as though
+  given node is absent for the purposes of user interaction events,
+  text searches (\"find in page\"), and text selection."
+  [this val]
+  (aset this "inert" val))
+
 (defn inner-text
   "Property.
 
@@ -258,7 +321,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText`"
   [this]
-  (-> this (.innerText)))
+  (-> this (.-innerText)))
 
 (defn set-inner-text!
   "Property.
@@ -273,18 +336,89 @@
   [this val]
   (aset this "innerText" val))
 
-(defn is-content-editable
+(defn item-scope
   "Property.
 
-  The HTMLElement.isContentEditable read-only property returns
-  `js.Boolean` that is true if the contents of the element are
-  otherwise it returns false.
-
-  `editable = element.isContentEditable`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/isContentEditable`"
+  Is a Boolean representing the item scope."
   [this]
-  (-> this (.isContentEditable)))
+  (-> this (.-itemScope)))
+
+(defn set-item-scope!
+  "Property.
+
+  Is a Boolean representing the item scope."
+  [this val]
+  (aset this "itemScope" val))
+
+(defn item-type
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this]
+  (-> this (.-itemType)))
+
+(defn set-item-type!
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this val]
+  (aset this "itemType" val))
+
+(defn item-id
+  "Property.
+
+  Is a DOMString representing the item ID."
+  [this]
+  (-> this (.-itemId)))
+
+(defn set-item-id!
+  "Property.
+
+  Is a DOMString representing the item ID."
+  [this val]
+  (aset this "itemId" val))
+
+(defn item-ref
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this]
+  (-> this (.-itemRef)))
+
+(defn set-item-ref!
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this val]
+  (aset this "itemRef" val))
+
+(defn item-prop
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this]
+  (-> this (.-itemProp)))
+
+(defn set-item-prop!
+  "Property.
+
+  Returns a DOMSettableTokenList…"
+  [this val]
+  (aset this "itemProp" val))
+
+(defn item-value
+  "Property.
+
+  Returns a Object representing the item value."
+  [this]
+  (-> this (.-itemValue)))
+
+(defn set-item-value!
+  "Property.
+
+  Returns a Object representing the item value."
+  [this val]
+  (aset this "itemValue" val))
 
 (defn lang
   "Property.
@@ -299,7 +433,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang`"
   [this]
-  (-> this (.lang)))
+  (-> this (.-lang)))
 
 (defn set-lang!
   "Property.
@@ -316,6 +450,22 @@
   [this val]
   (aset this "lang" val))
 
+(defn no-module
+  "Property.
+
+  Is a Boolean indicating whether an import script can be executed
+  user agents that support module scripts."
+  [this]
+  (-> this (.-noModule)))
+
+(defn set-no-module!
+  "Property.
+
+  Is a Boolean indicating whether an import script can be executed
+  user agents that support module scripts."
+  [this val]
+  (aset this "noModule" val))
+
 (defn nonce
   "Property.
 
@@ -328,7 +478,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/nonce`"
   [this]
-  (-> this (.nonce)))
+  (-> this (.-nonce)))
 
 (defn set-nonce!
   "Property.
@@ -356,7 +506,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight`"
   [this]
-  (-> this (.offsetHeight)))
+  (-> this (.-offsetHeight)))
 
 (defn set-offset-height!
   "Property.
@@ -385,7 +535,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetLeft`"
   [this]
-  (-> this (.offsetLeft)))
+  (-> this (.-offsetLeft)))
 
 (defn offset-parent
   "Property.
@@ -402,7 +552,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent`"
   [this]
-  (-> this (.offsetParent)))
+  (-> this (.-offsetParent)))
 
 (defn set-offset-parent!
   "Property.
@@ -431,7 +581,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop`"
   [this]
-  (-> this (.offsetTop)))
+  (-> this (.-offsetTop)))
 
 (defn offset-width
   "Property.
@@ -448,7 +598,287 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth`"
   [this]
-  (-> this (.offsetWidth)))
+  (-> this (.-offsetWidth)))
+
+(defn properties
+  "Property.
+
+  Returns a HTMLPropertiesCollection…"
+  [this]
+  (-> this (.-properties)))
+
+(defn set-properties!
+  "Property.
+
+  Returns a HTMLPropertiesCollection…"
+  [this val]
+  (aset this "properties" val))
+
+(defn spellcheck
+  "Property.
+
+  Is a Boolean that controls spell-checking. It is present on all
+  elements, though it doesn't have an effect on all of them."
+  [this]
+  (-> this (.-spellcheck)))
+
+(defn set-spellcheck!
+  "Property.
+
+  Is a Boolean that controls spell-checking. It is present on all
+  elements, though it doesn't have an effect on all of them."
+  [this val]
+  (aset this "spellcheck" val))
+
+(defn style
+  "Property.
+
+  The HTMLElement.style property is used to get as well as set
+  inline style of an element. When getting, it returns a `web.cssdom.CSSStyleDeclaration`
+  that contains a list of all styles properties for that element
+  values assigned for the attributes that are defined in the element's
+  `style`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style`"
+  [this]
+  (-> this (.-style)))
+
+(defn set-style!
+  "Property.
+
+  The HTMLElement.style property is used to get as well as set
+  inline style of an element. When getting, it returns a `web.cssdom.CSSStyleDeclaration`
+  that contains a list of all styles properties for that element
+  values assigned for the attributes that are defined in the element's
+  `style`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style`"
+  [this val]
+  (aset this "style" val))
+
+(defn tab-index
+  "Property.
+
+  The tabIndex property of the `web.dom.HTMLElement` interface
+  the tab order of the current element.
+
+  `element.tabIndex = index;
+  var index = element.tabIndex;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex`"
+  [this]
+  (-> this (.-tabIndex)))
+
+(defn set-tab-index!
+  "Property.
+
+  The tabIndex property of the `web.dom.HTMLElement` interface
+  the tab order of the current element.
+
+  `element.tabIndex = index;
+  var index = element.tabIndex;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex`"
+  [this val]
+  (aset this "tabIndex" val))
+
+(defn title
+  "Property.
+
+  The HTMLElement.title property represents the title of the element:
+  text usually displayed in a 'tooltip' popup when the mouse is
+  the node.
+
+  `var str = element.title;
+  element.title = str;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title`"
+  [this]
+  (-> this (.-title)))
+
+(defn set-title!
+  "Property.
+
+  The HTMLElement.title property represents the title of the element:
+  text usually displayed in a 'tooltip' popup when the mouse is
+  the node.
+
+  `var str = element.title;
+  element.title = str;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title`"
+  [this val]
+  (aset this "title" val))
+
+(defn translate
+  "Property.
+
+  Is a Boolean representing the translation."
+  [this]
+  (-> this (.-translate)))
+
+(defn set-translate!
+  "Property.
+
+  Is a Boolean representing the translation."
+  [this val]
+  (aset this "translate" val))
+
+(defn oncopy
+  "Property.
+
+  The oncopy property of the `web.dom.HTMLElement` interface is
+  `EventHandler` that processes copy events.
+
+  `target.oncopy = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy`"
+  [this]
+  (-> this (.-oncopy)))
+
+(defn set-oncopy!
+  "Property.
+
+  The oncopy property of the `web.dom.HTMLElement` interface is
+  `EventHandler` that processes copy events.
+
+  `target.oncopy = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy`"
+  [this val]
+  (aset this "oncopy" val))
+
+(defn oncut
+  "Property.
+
+  The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
+  an `EventHandler` that processes cut events.
+
+  `target.oncut = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut`"
+  [this]
+  (-> this (.-oncut)))
+
+(defn set-oncut!
+  "Property.
+
+  The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
+  an `EventHandler` that processes cut events.
+
+  `target.oncut = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut`"
+  [this val]
+  (aset this "oncut" val))
+
+(defn onpaste
+  "Property.
+
+  The HTMLElement.onpaste property of the `web.dom.HTMLElement`
+  is an `EventHandler` that processes paste events.
+
+  `target.onpaste = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onpaste`"
+  [this]
+  (-> this (.-onpaste)))
+
+(defn set-onpaste!
+  "Property.
+
+  The HTMLElement.onpaste property of the `web.dom.HTMLElement`
+  is an `EventHandler` that processes paste events.
+
+  `target.onpaste = functionRef;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onpaste`"
+  [this val]
+  (aset this "onpaste" val))
+
+(defn ontouchstart
+  "Property.
+
+  Returns the event handling code for the touchstart event."
+  [this]
+  (-> this (.-ontouchstart)))
+
+(defn set-ontouchstart!
+  "Property.
+
+  Returns the event handling code for the touchstart event."
+  [this val]
+  (aset this "ontouchstart" val))
+
+(defn ontouchend
+  "Property.
+
+  Returns the event handling code for the touchend event."
+  [this]
+  (-> this (.-ontouchend)))
+
+(defn set-ontouchend!
+  "Property.
+
+  Returns the event handling code for the touchend event."
+  [this val]
+  (aset this "ontouchend" val))
+
+(defn ontouchmove
+  "Property.
+
+  Returns the event handling code for the touchmove event."
+  [this]
+  (-> this (.-ontouchmove)))
+
+(defn set-ontouchmove!
+  "Property.
+
+  Returns the event handling code for the touchmove event."
+  [this val]
+  (aset this "ontouchmove" val))
+
+(defn ontouchenter
+  "Property.
+
+  Returns the event handling code for the touchenter event."
+  [this]
+  (-> this (.-ontouchenter)))
+
+(defn set-ontouchenter!
+  "Property.
+
+  Returns the event handling code for the touchenter event."
+  [this val]
+  (aset this "ontouchenter" val))
+
+(defn ontouchleave
+  "Property.
+
+  Returns the event handling code for the touchleave event."
+  [this]
+  (-> this (.-ontouchleave)))
+
+(defn set-ontouchleave!
+  "Property.
+
+  Returns the event handling code for the touchleave event."
+  [this val]
+  (aset this "ontouchleave" val))
+
+(defn ontouchcancel
+  "Property.
+
+  Returns the event handling code for the touchcancel event."
+  [this]
+  (-> this (.-ontouchcancel)))
+
+(defn set-ontouchcancel!
+  "Property.
+
+  Returns the event handling code for the touchcancel event."
+  [this val]
+  (aset this "ontouchcancel" val))
 
 (defn onabort
   "Property.
@@ -460,7 +890,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -486,7 +916,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationcancel`"
   [this]
-  (-> this (.onanimationcancel)))
+  (-> this (.-onanimationcancel)))
 
 (defn set-onanimationcancel!
   "Property.
@@ -514,7 +944,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationend`"
   [this]
-  (-> this (.onanimationend)))
+  (-> this (.-onanimationend)))
 
 (defn set-onanimationend!
   "Property.
@@ -542,7 +972,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationiteration`"
   [this]
-  (-> this (.onanimationiteration)))
+  (-> this (.-onanimationiteration)))
 
 (defn set-onanimationiteration!
   "Property.
@@ -568,7 +998,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onauxclick`"
   [this]
-  (-> this (.onauxclick)))
+  (-> this (.-onauxclick)))
 
 (defn set-onauxclick!
   "Property.
@@ -593,7 +1023,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur`"
   [this]
-  (-> this (.onblur)))
+  (-> this (.-onblur)))
 
 (defn set-onblur!
   "Property.
@@ -618,7 +1048,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncancel`"
   [this]
-  (-> this (.oncancel)))
+  (-> this (.-oncancel)))
 
 (defn set-oncancel!
   "Property.
@@ -645,7 +1075,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay`"
   [this]
-  (-> this (.oncanplay)))
+  (-> this (.-oncanplay)))
 
 (defn set-oncanplay!
   "Property.
@@ -675,7 +1105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough`"
   [this]
-  (-> this (.oncanplaythrough)))
+  (-> this (.-oncanplaythrough)))
 
 (defn set-oncanplaythrough!
   "Property.
@@ -704,7 +1134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -730,7 +1160,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick`"
   [this]
-  (-> this (.onclick)))
+  (-> this (.-onclick)))
 
 (defn set-onclick!
   "Property.
@@ -754,7 +1184,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -778,7 +1208,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu`"
   [this]
-  (-> this (.oncontextmenu)))
+  (-> this (.-oncontextmenu)))
 
 (defn set-oncontextmenu!
   "Property.
@@ -805,7 +1235,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncuechange`"
   [this]
-  (-> this (.oncuechange)))
+  (-> this (.-oncuechange)))
 
 (defn set-oncuechange!
   "Property.
@@ -822,30 +1252,6 @@
   [this val]
   (aset this "oncuechange" val))
 
-(defn oncut
-  "Property.
-
-  The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
-  an `EventHandler` that processes cut events.
-
-  `target.oncut = functionRef;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut`"
-  [this]
-  (-> this (.oncut)))
-
-(defn set-oncut!
-  "Property.
-
-  The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
-  an `EventHandler` that processes cut events.
-
-  `target.oncut = functionRef;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut`"
-  [this val]
-  (aset this "oncut" val))
-
 (defn ondblclick
   "Property.
 
@@ -856,7 +1262,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick`"
   [this]
-  (-> this (.ondblclick)))
+  (-> this (.-ondblclick)))
 
 (defn set-ondblclick!
   "Property.
@@ -883,7 +1289,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange`"
   [this]
-  (-> this (.ondurationchange)))
+  (-> this (.-ondurationchange)))
 
 (defn set-ondurationchange!
   "Property.
@@ -913,7 +1319,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.
@@ -940,7 +1346,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -964,7 +1370,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus`"
   [this]
-  (-> this (.onfocus)))
+  (-> this (.-onfocus)))
 
 (defn set-onfocus!
   "Property.
@@ -988,7 +1394,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ongotpointercapture`"
   [this]
-  (-> this (.ongotpointercapture)))
+  (-> this (.-ongotpointercapture)))
 
 (defn set-ongotpointercapture!
   "Property.
@@ -1014,7 +1420,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput`"
   [this]
-  (-> this (.oninput)))
+  (-> this (.-oninput)))
 
 (defn set-oninput!
   "Property.
@@ -1041,7 +1447,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid`"
   [this]
-  (-> this (.oninvalid)))
+  (-> this (.-oninvalid)))
 
 (defn set-oninvalid!
   "Property.
@@ -1066,7 +1472,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown`"
   [this]
-  (-> this (.onkeydown)))
+  (-> this (.-onkeydown)))
 
 (defn set-onkeydown!
   "Property.
@@ -1090,7 +1496,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress`"
   [this]
-  (-> this (.onkeypress)))
+  (-> this (.-onkeypress)))
 
 (defn set-onkeypress!
   "Property.
@@ -1114,7 +1520,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup`"
   [this]
-  (-> this (.onkeyup)))
+  (-> this (.-onkeyup)))
 
 (defn set-onkeyup!
   "Property.
@@ -1139,7 +1545,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload`"
   [this]
-  (-> this (.onload)))
+  (-> this (.-onload)))
 
 (defn set-onload!
   "Property.
@@ -1167,7 +1573,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata`"
   [this]
-  (-> this (.onloadeddata)))
+  (-> this (.-onloadeddata)))
 
 (defn set-onloadeddata!
   "Property.
@@ -1197,7 +1603,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata`"
   [this]
-  (-> this (.onloadedmetadata)))
+  (-> this (.-onloadedmetadata)))
 
 (defn set-onloadedmetadata!
   "Property.
@@ -1226,7 +1632,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend`"
   [this]
-  (-> this (.onloadend)))
+  (-> this (.-onloadend)))
 
 (defn set-onloadend!
   "Property.
@@ -1254,7 +1660,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadstart`"
   [this]
-  (-> this (.onloadstart)))
+  (-> this (.-onloadstart)))
 
 (defn set-onloadstart!
   "Property.
@@ -1280,7 +1686,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onlostpointercapture`"
   [this]
-  (-> this (.onlostpointercapture)))
+  (-> this (.-onlostpointercapture)))
 
 (defn set-onlostpointercapture!
   "Property.
@@ -1304,7 +1710,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown`"
   [this]
-  (-> this (.onmousedown)))
+  (-> this (.-onmousedown)))
 
 (defn set-onmousedown!
   "Property.
@@ -1331,7 +1737,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter`"
   [this]
-  (-> this (.onmouseenter)))
+  (-> this (.-onmouseenter)))
 
 (defn set-onmouseenter!
   "Property.
@@ -1361,7 +1767,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave`"
   [this]
-  (-> this (.onmouseleave)))
+  (-> this (.-onmouseleave)))
 
 (defn set-onmouseleave!
   "Property.
@@ -1388,7 +1794,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove`"
   [this]
-  (-> this (.onmousemove)))
+  (-> this (.-onmousemove)))
 
 (defn set-onmousemove!
   "Property.
@@ -1412,7 +1818,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout`"
   [this]
-  (-> this (.onmouseout)))
+  (-> this (.-onmouseout)))
 
 (defn set-onmouseout!
   "Property.
@@ -1436,7 +1842,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover`"
   [this]
-  (-> this (.onmouseover)))
+  (-> this (.-onmouseover)))
 
 (defn set-onmouseover!
   "Property.
@@ -1460,7 +1866,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup`"
   [this]
-  (-> this (.onmouseup)))
+  (-> this (.-onmouseup)))
 
 (defn set-onmouseup!
   "Property.
@@ -1473,30 +1879,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup`"
   [this val]
   (aset this "onmouseup" val))
-
-(defn onpaste
-  "Property.
-
-  The HTMLElement.onpaste property of the `web.dom.HTMLElement`
-  is an `EventHandler` that processes paste events.
-
-  `target.onpaste = functionRef;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onpaste`"
-  [this]
-  (-> this (.onpaste)))
-
-(defn set-onpaste!
-  "Property.
-
-  The HTMLElement.onpaste property of the `web.dom.HTMLElement`
-  is an `EventHandler` that processes paste events.
-
-  `target.onpaste = functionRef;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onpaste`"
-  [this val]
-  (aset this "onpaste" val))
 
 (defn onpause
   "Property.
@@ -1511,7 +1893,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause`"
   [this]
-  (-> this (.onpause)))
+  (-> this (.-onpause)))
 
 (defn set-onpause!
   "Property.
@@ -1541,7 +1923,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay`"
   [this]
-  (-> this (.onplay)))
+  (-> this (.-onplay)))
 
 (defn set-onplay!
   "Property.
@@ -1570,7 +1952,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointercancel`"
   [this]
-  (-> this (.onpointercancel)))
+  (-> this (.-onpointercancel)))
 
 (defn set-onpointercancel!
   "Property.
@@ -1600,7 +1982,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerdown`"
   [this]
-  (-> this (.onpointerdown)))
+  (-> this (.-onpointerdown)))
 
 (defn set-onpointerdown!
   "Property.
@@ -1630,7 +2012,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerenter`"
   [this]
-  (-> this (.onpointerenter)))
+  (-> this (.-onpointerenter)))
 
 (defn set-onpointerenter!
   "Property.
@@ -1661,7 +2043,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerleave`"
   [this]
-  (-> this (.onpointerleave)))
+  (-> this (.-onpointerleave)))
 
 (defn set-onpointerleave!
   "Property.
@@ -1692,7 +2074,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointermove`"
   [this]
-  (-> this (.onpointermove)))
+  (-> this (.-onpointermove)))
 
 (defn set-onpointermove!
   "Property.
@@ -1720,7 +2102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout`"
   [this]
-  (-> this (.onpointerout)))
+  (-> this (.-onpointerout)))
 
 (defn set-onpointerout!
   "Property.
@@ -1748,7 +2130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerover`"
   [this]
-  (-> this (.onpointerover)))
+  (-> this (.-onpointerover)))
 
 (defn set-onpointerover!
   "Property.
@@ -1776,7 +2158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerup`"
   [this]
-  (-> this (.onpointerup)))
+  (-> this (.-onpointerup)))
 
 (defn set-onpointerup!
   "Property.
@@ -1802,7 +2184,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset`"
   [this]
-  (-> this (.onreset)))
+  (-> this (.-onreset)))
 
 (defn set-onreset!
   "Property.
@@ -1826,7 +2208,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize`"
   [this]
-  (-> this (.onresize)))
+  (-> this (.-onresize)))
 
 (defn set-onresize!
   "Property.
@@ -1850,7 +2232,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll`"
   [this]
-  (-> this (.onscroll)))
+  (-> this (.-onscroll)))
 
 (defn set-onscroll!
   "Property.
@@ -1874,7 +2256,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect`"
   [this]
-  (-> this (.onselect)))
+  (-> this (.-onselect)))
 
 (defn set-onselect!
   "Property.
@@ -1898,7 +2280,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectionchange`"
   [this]
-  (-> this (.onselectionchange)))
+  (-> this (.-onselectionchange)))
 
 (defn set-onselectionchange!
   "Property.
@@ -1922,7 +2304,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectstart`"
   [this]
-  (-> this (.onselectstart)))
+  (-> this (.-onselectstart)))
 
 (defn set-onselectstart!
   "Property.
@@ -1946,7 +2328,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit`"
   [this]
-  (-> this (.onsubmit)))
+  (-> this (.-onsubmit)))
 
 (defn set-onsubmit!
   "Property.
@@ -1960,54 +2342,6 @@
   [this val]
   (aset this "onsubmit" val))
 
-(defn ontouchcancel
-  "Property.
-
-  The ontouchcancel property of the `web.dom.GlobalEventHandlers`
-  is an `EventHandler` that processes touchcancel events.
-
-  `var cancelHandler = someElement.ontouchcancel;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchcancel`"
-  [this]
-  (-> this (.ontouchcancel)))
-
-(defn set-ontouchcancel!
-  "Property.
-
-  The ontouchcancel property of the `web.dom.GlobalEventHandlers`
-  is an `EventHandler` that processes touchcancel events.
-
-  `var cancelHandler = someElement.ontouchcancel;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchcancel`"
-  [this val]
-  (aset this "ontouchcancel" val))
-
-(defn ontouchstart
-  "Property.
-
-  The ontouchstart property of the `web.dom.GlobalEventHandlers`
-  is an `EventHandler` that processes touchstart events.
-
-  `var startHandler = someElement.ontouchstart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchstart`"
-  [this]
-  (-> this (.ontouchstart)))
-
-(defn set-ontouchstart!
-  "Property.
-
-  The ontouchstart property of the `web.dom.GlobalEventHandlers`
-  is an `EventHandler` that processes touchstart events.
-
-  `var startHandler = someElement.ontouchstart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchstart`"
-  [this val]
-  (aset this "ontouchstart" val))
-
 (defn ontransitioncancel
   "Property.
 
@@ -2020,7 +2354,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitioncancel`"
   [this]
-  (-> this (.ontransitioncancel)))
+  (-> this (.-ontransitioncancel)))
 
 (defn set-ontransitioncancel!
   "Property.
@@ -2048,7 +2382,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitionend`"
   [this]
-  (-> this (.ontransitionend)))
+  (-> this (.-ontransitionend)))
 
 (defn set-ontransitionend!
   "Property.
@@ -2074,7 +2408,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel`"
   [this]
-  (-> this (.onwheel)))
+  (-> this (.-onwheel)))
 
 (defn set-onwheel!
   "Property.
@@ -2097,7 +2431,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText`"
   [this]
-  (-> this (.outerText)))
+  (-> this (.-outerText)))
 
 (defn set-outer-text!
   "Property.
@@ -2109,84 +2443,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText`"
   [this val]
   (aset this "outerText" val))
-
-(defn style
-  "Property.
-
-  The HTMLElement.style property is used to get as well as set
-  inline style of an element. When getting, it returns a `web.cssdom.CSSStyleDeclaration`
-  that contains a list of all styles properties for that element
-  values assigned for the attributes that are defined in the element's
-  `style`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style`"
-  [this]
-  (-> this (.style)))
-
-(defn set-style!
-  "Property.
-
-  The HTMLElement.style property is used to get as well as set
-  inline style of an element. When getting, it returns a `web.cssdom.CSSStyleDeclaration`
-  that contains a list of all styles properties for that element
-  values assigned for the attributes that are defined in the element's
-  `style`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style`"
-  [this val]
-  (aset this "style" val))
-
-(defn tab-index
-  "Property.
-
-  The tabIndex property of the `web.dom.HTMLElement` interface
-  the tab order of the current element.
-
-  `element.tabIndex = index;
-  var index = element.tabIndex;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex`"
-  [this]
-  (-> this (.tabIndex)))
-
-(defn set-tab-index!
-  "Property.
-
-  The tabIndex property of the `web.dom.HTMLElement` interface
-  the tab order of the current element.
-
-  `element.tabIndex = index;
-  var index = element.tabIndex;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex`"
-  [this val]
-  (aset this "tabIndex" val))
-
-(defn title
-  "Property.
-
-  The HTMLElement.title property represents the title of the element:
-  text usually displayed in a 'tooltip' popup when the mouse is
-  the node.
-
-  `var str = element.title;
-  element.title = str;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title`"
-  [this]
-  (-> this (.title)))
-
-(defn set-title!
-  "Property.
-
-  The HTMLElement.title property represents the title of the element:
-  text usually displayed in a 'tooltip' popup when the mouse is
-  the node.
-
-  `var str = element.title;
-  element.title = str;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title`"
-  [this val]
-  (aset this "title" val))
 

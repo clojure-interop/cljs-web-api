@@ -29,7 +29,7 @@
   Is a DOMString containing the name CSS property associated with
   transition."
   [this]
-  (-> this (.propertyName)))
+  (-> this (.-propertyName)))
 
 (defn set-property-name!
   "Property.
@@ -38,30 +38,6 @@
   transition."
   [this val]
   (aset this "propertyName" val))
-
-(defn animation-name
-  "Property.
-
-  The TransitionEvent.transitionName read-only property is a `web.dom.DOMString`
-  the name of the CSS property associated with the transition.
-
-  `name = TransitionEvent.transitionName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/animationName`"
-  [this]
-  (-> this (.animationName)))
-
-(defn set-animation-name!
-  "Property.
-
-  The TransitionEvent.transitionName read-only property is a `web.dom.DOMString`
-  the name of the CSS property associated with the transition.
-
-  `name = TransitionEvent.transitionName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/animationName`"
-  [this val]
-  (aset this "animationName" val))
 
 (defn elapsed-time
   "Property.
@@ -74,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/elapsedTime`"
   [this]
-  (-> this (.elapsedTime)))
+  (-> this (.-elapsedTime)))
 
 (defn set-elapsed-time!
   "Property.
@@ -101,7 +77,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/pseudoElement`"
   [this]
-  (-> this (.pseudoElement)))
+  (-> this (.-pseudoElement)))
 
 (defn set-pseudo-element!
   "Property.
@@ -116,4 +92,28 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/pseudoElement`"
   [this val]
   (aset this "pseudoElement" val))
+
+(defn animation-name
+  "Property.
+
+  The TransitionEvent.transitionName read-only property is a `web.dom.DOMString`
+  the name of the CSS property associated with the transition.
+
+  `name = TransitionEvent.transitionName`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/animationName`"
+  [this]
+  (-> this (.-animationName)))
+
+(defn set-animation-name!
+  "Property.
+
+  The TransitionEvent.transitionName read-only property is a `web.dom.DOMString`
+  the name of the CSS property associated with the transition.
+
+  `name = TransitionEvent.transitionName`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/animationName`"
+  [this val]
+  (aset this "animationName" val))
 

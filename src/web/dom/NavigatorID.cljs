@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName`"
   [this]
-  (-> this (.appCodeName)))
+  (-> this (.-appCodeName)))
 
 (defn set-app-code-name!
   "Property.
@@ -48,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName`"
   [this]
-  (-> this (.appName)))
+  (-> this (.-appName)))
 
 (defn set-app-name!
   "Property.
@@ -72,7 +72,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion`"
   [this]
-  (-> this (.appVersion)))
+  (-> this (.-appVersion)))
 
 (defn set-app-version!
   "Property.
@@ -97,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform`"
   [this]
-  (-> this (.platform)))
+  (-> this (.-platform)))
 
 (defn set-platform!
   "Property.
@@ -122,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product`"
   [this]
-  (-> this (.product)))
+  (-> this (.-product)))
 
 (defn set-product!
   "Property.
@@ -146,5 +146,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent`"
   [this]
-  (-> this (.userAgent)))
+  (-> this (.-userAgent)))
 

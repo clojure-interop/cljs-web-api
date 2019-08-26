@@ -18,6 +18,23 @@
   [this ]
   (-> this (.getBBox)))
 
+(defn get-ctm
+  "Method.
+
+  Returns a DOMMatrix representing the matrix that transforms the
+  element's coordinate system to its SVG viewport's coordinate"
+  [this & args]
+  (apply (-> this .-getCTM) (concat [this] args)))
+
+(defn get-screen-ctm
+  "Method.
+
+  Returns a DOMMatrix representing the matrix that transforms the
+  element's coordinate system to the coordinate system of the SVG
+  for the SVG document fragment."
+  [this & args]
+  (apply (-> this .-getScreenCTM) (concat [this] args)))
+
 (defn transform
   "Property.
 
@@ -25,7 +42,7 @@
   transform property and its corresponding transform attribute
   the given element."
   [this]
-  (-> this (.transform)))
+  (-> this (.-transform)))
 
 (defn set-transform!
   "Property.

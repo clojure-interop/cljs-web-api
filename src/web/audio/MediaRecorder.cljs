@@ -42,19 +42,6 @@
   [this ]
   (-> this (.pause)))
 
-(defn is-type-supported
-  "Method.
-
-  The MediaRecorder.isTypeSupported() static method returns a Boolean
-  is true if the MIME type specified is one the user agent should
-  able to successfully record.
-
-  `var canRecord = MediaRecorder.isTypeSupported(mimeType)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported`"
-  [this mime-type]
-  (-> this (.isTypeSupported mime-type)))
-
 (defn request-data
   "Method.
 
@@ -105,6 +92,19 @@
   [this ]
   (-> this (.stop)))
 
+(defn is-type-supported
+  "Method.
+
+  The MediaRecorder.isTypeSupported() static method returns a Boolean
+  is true if the MIME type specified is one the user agent should
+  able to successfully record.
+
+  `var canRecord = MediaRecorder.isTypeSupported(mimeType)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported`"
+  [this mime-type]
+  (-> this (.isTypeSupported mime-type)))
+
 (defn mime-type
   "Property.
 
@@ -116,7 +116,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/mimeType`"
   [this]
-  (-> this (.mimeType)))
+  (-> this (.-mimeType)))
 
 (defn set-mime-type!
   "Property.
@@ -131,29 +131,55 @@
   [this val]
   (aset this "mimeType" val))
 
-(defn audio-bits-per-second
+(defn state
   "Property.
 
-  The audioBitsPerSecond read-only property of the `web.audio.MediaRecorder`
-  returns the audio encoding bit rate in use.
+  The MediaRecorder.state read-only property returns the current
+  of the current MediaRecorder object.
 
-  `var audioBitsPerSecond = MediaRecorder.audioBitsPerSecond`
+  `var state = MediaRecorder.state`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitsPerSecond`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/state`"
   [this]
-  (-> this (.audioBitsPerSecond)))
+  (-> this (.-state)))
 
-(defn set-audio-bits-per-second!
+(defn set-state!
   "Property.
 
-  The audioBitsPerSecond read-only property of the `web.audio.MediaRecorder`
-  returns the audio encoding bit rate in use.
+  The MediaRecorder.state read-only property returns the current
+  of the current MediaRecorder object.
 
-  `var audioBitsPerSecond = MediaRecorder.audioBitsPerSecond`
+  `var state = MediaRecorder.state`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitsPerSecond`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/state`"
   [this val]
-  (aset this "audioBitsPerSecond" val))
+  (aset this "state" val))
+
+(defn stream
+  "Property.
+
+  The MediaRecorder.stream read-only property returns the stream
+  was passed into the MediaRecorder() constructor when the MediaRecorder
+  created.
+
+  `var stream = MediaRecorder.stream`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stream`"
+  [this]
+  (-> this (.-stream)))
+
+(defn set-stream!
+  "Property.
+
+  The MediaRecorder.stream read-only property returns the stream
+  was passed into the MediaRecorder() constructor when the MediaRecorder
+  created.
+
+  `var stream = MediaRecorder.stream`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stream`"
+  [this val]
+  (aset this "stream" val))
 
 (defn ignore-muted-media
   "Property.
@@ -167,7 +193,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/ignoreMutedMedia`"
   [this]
-  (-> this (.ignoreMutedMedia)))
+  (-> this (.-ignoreMutedMedia)))
 
 (defn set-ignore-muted-media!
   "Property.
@@ -183,6 +209,54 @@
   [this val]
   (aset this "ignoreMutedMedia" val))
 
+(defn video-bits-per-second
+  "Property.
+
+  The videoBitsPerSecond read-only property of the `web.audio.MediaRecorder`
+  returns the video encoding bit rate in use.
+
+  `var videoBitsPerSecond = MediaRecorder.videoBitsPerSecond`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/videoBitsPerSecond`"
+  [this]
+  (-> this (.-videoBitsPerSecond)))
+
+(defn set-video-bits-per-second!
+  "Property.
+
+  The videoBitsPerSecond read-only property of the `web.audio.MediaRecorder`
+  returns the video encoding bit rate in use.
+
+  `var videoBitsPerSecond = MediaRecorder.videoBitsPerSecond`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/videoBitsPerSecond`"
+  [this val]
+  (aset this "videoBitsPerSecond" val))
+
+(defn audio-bits-per-second
+  "Property.
+
+  The audioBitsPerSecond read-only property of the `web.audio.MediaRecorder`
+  returns the audio encoding bit rate in use.
+
+  `var audioBitsPerSecond = MediaRecorder.audioBitsPerSecond`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitsPerSecond`"
+  [this]
+  (-> this (.-audioBitsPerSecond)))
+
+(defn set-audio-bits-per-second!
+  "Property.
+
+  The audioBitsPerSecond read-only property of the `web.audio.MediaRecorder`
+  returns the audio encoding bit rate in use.
+
+  `var audioBitsPerSecond = MediaRecorder.audioBitsPerSecond`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitsPerSecond`"
+  [this val]
+  (aset this "audioBitsPerSecond" val))
+
 (defn ondataavailable
   "Property.
 
@@ -195,7 +269,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/ondataavailable`"
   [this]
-  (-> this (.ondataavailable)))
+  (-> this (.-ondataavailable)))
 
 (defn set-ondataavailable!
   "Property.
@@ -223,7 +297,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -251,7 +325,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onpause`"
   [this]
-  (-> this (.onpause)))
+  (-> this (.-onpause)))
 
 (defn set-onpause!
   "Property.
@@ -279,7 +353,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onresume`"
   [this]
-  (-> this (.onresume)))
+  (-> this (.-onresume)))
 
 (defn set-onresume!
   "Property.
@@ -307,7 +381,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onstart`"
   [this]
-  (-> this (.onstart)))
+  (-> this (.-onstart)))
 
 (defn set-onstart!
   "Property.
@@ -335,7 +409,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onstop`"
   [this]
-  (-> this (.onstop)))
+  (-> this (.-onstop)))
 
 (defn set-onstop!
   "Property.
@@ -364,7 +438,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onwarning`"
   [this]
-  (-> this (.onwarning)))
+  (-> this (.-onwarning)))
 
 (defn set-onwarning!
   "Property.
@@ -380,54 +454,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/onwarning`"
   [this val]
   (aset this "onwarning" val))
-
-(defn state
-  "Property.
-
-  The MediaRecorder.state read-only property returns the current
-  of the current MediaRecorder object.
-
-  `var state = MediaRecorder.state`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/state`"
-  [this]
-  (-> this (.state)))
-
-(defn set-state!
-  "Property.
-
-  The MediaRecorder.state read-only property returns the current
-  of the current MediaRecorder object.
-
-  `var state = MediaRecorder.state`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/state`"
-  [this val]
-  (aset this "state" val))
-
-(defn stream
-  "Property.
-
-  The MediaRecorder.stream read-only property returns the stream
-  was passed into the MediaRecorder() constructor when the MediaRecorder
-  created.
-
-  `var stream = MediaRecorder.stream`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stream`"
-  [this]
-  (-> this (.stream)))
-
-(defn set-stream!
-  "Property.
-
-  The MediaRecorder.stream read-only property returns the stream
-  was passed into the MediaRecorder() constructor when the MediaRecorder
-  created.
-
-  `var stream = MediaRecorder.stream`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stream`"
-  [this val]
-  (aset this "stream" val))
 

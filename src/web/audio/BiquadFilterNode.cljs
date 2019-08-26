@@ -126,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/frequency`"
   [this]
-  (-> this (.frequency)))
+  (-> this (.-frequency)))
 
 (defn set-frequency!
   "Property.
@@ -158,7 +158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/detune`"
   [this]
-  (-> this (.detune)))
+  (-> this (.-detune)))
 
 (defn set-detune!
   "Property.
@@ -176,6 +176,38 @@
   [this val]
   (aset this "detune" val))
 
+(defn q
+  "Property.
+
+  An `web.audio.AudioParam`.
+
+  `var audioCtx = new AudioContext();
+  var biquadFilter = audioCtx.createBiquadFilter();
+  biquadfilter.Q.value = 100;
+
+
+  Note: Though the AudioParam returned is read-only, the value it represents is not.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/Q`"
+  [this]
+  (-> this (.-Q)))
+
+(defn set-q!
+  "Property.
+
+  An `web.audio.AudioParam`.
+
+  `var audioCtx = new AudioContext();
+  var biquadFilter = audioCtx.createBiquadFilter();
+  biquadfilter.Q.value = 100;
+
+
+  Note: Though the AudioParam returned is read-only, the value it represents is not.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/Q`"
+  [this val]
+  (aset this "Q" val))
+
 (defn gain
   "Property.
 
@@ -190,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/gain`"
   [this]
-  (-> this (.gain)))
+  (-> this (.-gain)))
 
 (defn set-gain!
   "Property.
@@ -219,7 +251,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

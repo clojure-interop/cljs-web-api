@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/currentTime`"
   [this]
-  (-> this (.currentTime)))
+  (-> this (.-currentTime)))
 
 (defn set-current-time!
   "Property.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/timelineTime`"
   [this]
-  (-> this (.timelineTime)))
+  (-> this (.-timelineTime)))
 
 (defn set-timeline-time!
   "Property.

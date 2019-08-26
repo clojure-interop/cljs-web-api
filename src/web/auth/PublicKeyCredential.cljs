@@ -38,7 +38,7 @@
 
   Inherited from Credential. Always set to \"public-key\" for PublicKeyCredential"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -83,7 +83,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId`"
   [this]
-  (-> this (.rawId)))
+  (-> this (.-rawId)))
 
 (defn set-raw-id!
   "Property.
@@ -110,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response`"
   [this]
-  (-> this (.response)))
+  (-> this (.-response)))
 
 (defn set-response!
   "Property.

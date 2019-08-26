@@ -11,7 +11,7 @@
   the element's contents with respect to the surrounding context.
   possible values are \"left\", \"right\", \"justify\", and \"center\"."
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.

@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue/variable`"
   [this]
-  (-> this (.variable)))
+  (-> this (.-variable)))
 
 (defn set-variable!
   "Property.
@@ -48,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue/fallback`"
   [this]
-  (-> this (.fallback)))
+  (-> this (.-fallback)))
 
 (defn set-fallback!
   "Property.

@@ -11,7 +11,7 @@
   decryption algorithms, this key is used to decrypt. For signing
   verification algorithms it is used to sign."
   [this]
-  (-> this (.privateKey)))
+  (-> this (.-privateKey)))
 
 (defn set-private-key!
   "Property.
@@ -21,4 +21,22 @@
   verification algorithms it is used to sign."
   [this val]
   (aset this "privateKey" val))
+
+(defn public-key
+  "Property.
+
+  A CryptoKey object representing the public key. For encryption
+  decryption algorithms, this key is used to encrypt. For signing
+  verification algorithms it is used to verify signatures."
+  [this]
+  (-> this (.-publicKey)))
+
+(defn set-public-key!
+  "Property.
+
+  A CryptoKey object representing the public key. For encryption
+  decryption algorithms, this key is used to encrypt. For signing
+  verification algorithms it is used to verify signatures."
+  [this val]
+  (aset this "publicKey" val))
 

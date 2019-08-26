@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar/src`"
   [this]
-  (-> this (.src)))
+  (-> this (.-src)))
 
 (defn set-src!
   "Property.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar/weight`"
   [this]
-  (-> this (.weight)))
+  (-> this (.-weight)))
 
 (defn set-weight!
   "Property.

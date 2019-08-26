@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/promise`"
   [this]
-  (-> this (.promise)))
+  (-> this (.-promise)))
 
 (defn set-promise!
   "Property.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/reason`"
   [this]
-  (-> this (.reason)))
+  (-> this (.-reason)))
 
 (defn set-reason!
   "Property.

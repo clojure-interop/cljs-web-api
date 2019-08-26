@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/focused`"
   [this]
-  (-> this (.focused)))
+  (-> this (.-focused)))
 
 (defn set-focused!
   "Property.
@@ -70,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState`"
   [this]
-  (-> this (.visibilityState)))
+  (-> this (.-visibilityState)))
 
 (defn set-visibility-state!
   "Property.

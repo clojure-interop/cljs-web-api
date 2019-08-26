@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/root`"
   [this]
-  (-> this (.root)))
+  (-> this (.-root)))
 
 (defn set-root!
   "Property.

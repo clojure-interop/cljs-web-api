@@ -15,7 +15,7 @@
   states that externalResourcesRequired cannot be animated, the
   will always be the same as the baseVal."
   [this]
-  (-> this (.externalResourcesRequired)))
+  (-> this (.-externalResourcesRequired)))
 
 (defn set-external-resources-required!
   "Property.

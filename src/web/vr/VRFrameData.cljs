@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/leftProjectionMatrix`"
   [this]
-  (-> this (.leftProjectionMatrix)))
+  (-> this (.-leftProjectionMatrix)))
 
 (defn set-left-projection-matrix!
   "Property.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/leftViewMatrix`"
   [this]
-  (-> this (.leftViewMatrix)))
+  (-> this (.-leftViewMatrix)))
 
 (defn set-left-view-matrix!
   "Property.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/pose`"
   [this]
-  (-> this (.pose)))
+  (-> this (.-pose)))
 
 (defn set-pose!
   "Property.
@@ -100,7 +100,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/rightProjectionMatrix`"
   [this]
-  (-> this (.rightProjectionMatrix)))
+  (-> this (.-rightProjectionMatrix)))
 
 (defn set-right-projection-matrix!
   "Property.
@@ -126,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/rightViewMatrix`"
   [this]
-  (-> this (.rightViewMatrix)))
+  (-> this (.-rightViewMatrix)))
 
 (defn set-right-view-matrix!
   "Property.
@@ -152,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFrameData/timestamp`"
   [this]
-  (-> this (.timestamp)))
+  (-> this (.-timestamp)))
 
 (defn set-timestamp!
   "Property.

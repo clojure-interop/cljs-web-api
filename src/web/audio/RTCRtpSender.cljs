@@ -32,18 +32,6 @@
   [this ]
   (-> this (.getStats)))
 
-(defn replace-track
-  "Method.
-
-  The `web.audio.RTCRtpSender` method replaceTrack() replaces the
-  currently being used as the sender's source with a new `web.audio.MediaStreamTrack`.
-
-  `trackReplacedPromise = sender.replaceTrack(newTrack);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/replaceTrack`"
-  [this new-track]
-  (-> this (.replaceTrack new-track)))
-
 (defn set-parameters
   "Method.
 
@@ -57,6 +45,18 @@
   [this parameters]
   (-> this (.setParameters parameters)))
 
+(defn replace-track
+  "Method.
+
+  The `web.audio.RTCRtpSender` method replaceTrack() replaces the
+  currently being used as the sender's source with a new `web.audio.MediaStreamTrack`.
+
+  `trackReplacedPromise = sender.replaceTrack(newTrack);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/replaceTrack`"
+  [this new-track]
+  (-> this (.replaceTrack new-track)))
+
 (defn dtmf
   "Property.
 
@@ -69,7 +69,29 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/dtmf`"
   [this]
-  (-> this (.dtmf)))
+  (-> this (.-dtmf)))
+
+(defn rtcp-transport
+  "Property.
+
+  The transport over which Real-time Transport Control Protocol
+  information is exchanged. This value is null before the RTCDtlsTransport
+  is created. When bundling is in use, more than one RTCRtpSender
+  share the same transport, sending all RTP and RTCP information
+  that one transport."
+  [this]
+  (-> this (.-rtcpTransport)))
+
+(defn set-rtcp-transport!
+  "Property.
+
+  The transport over which Real-time Transport Control Protocol
+  information is exchanged. This value is null before the RTCDtlsTransport
+  is created. When bundling is in use, more than one RTCRtpSender
+  share the same transport, sending all RTP and RTCP information
+  that one transport."
+  [this val]
+  (aset this "rtcpTransport" val))
 
 (defn track
   "Property.
@@ -83,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track`"
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 
 (defn set-track!
   "Property.
@@ -98,4 +120,22 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track`"
   [this val]
   (aset this "track" val))
+
+(defn transport
+  "Property.
+
+  The RTCDtlsTransport over which media data for the track is being
+  The data is transmitted using RTP packets. Before the transport
+  established, this value is null."
+  [this]
+  (-> this (.-transport)))
+
+(defn set-transport!
+  "Property.
+
+  The RTCDtlsTransport over which media data for the track is being
+  The data is transmitted using RTP packets. Before the transport
+  established, this value is null."
+  [this val]
+  (aset this "transport" val))
 

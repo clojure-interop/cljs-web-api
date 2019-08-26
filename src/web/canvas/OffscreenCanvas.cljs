@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.

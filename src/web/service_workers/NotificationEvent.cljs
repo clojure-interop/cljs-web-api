@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/notification`"
   [this]
-  (-> this (.notification)))
+  (-> this (.-notification)))
 
 (defn set-notification!
   "Property.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action`"
   [this]
-  (-> this (.action)))
+  (-> this (.-action)))
 
 (defn set-action!
   "Property.

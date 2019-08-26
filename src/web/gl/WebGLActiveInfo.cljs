@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

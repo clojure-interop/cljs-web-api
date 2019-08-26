@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/address`"
   [this]
-  (-> this (.address)))
+  (-> this (.-address)))
 
 (defn set-address!
   "Property.
@@ -31,6 +31,30 @@
   [this val]
   (aset this "address" val))
 
+(defn candidate-type
+  "Property.
+
+  The `web.rtc.RTCIceCandidateStats` interface's candidateType
+  is a string which indicates the type of ICE candidate the object
+
+  `candidateType = rtcIceCandidateStats.candidateType;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/candidateType`"
+  [this]
+  (-> this (.-candidateType)))
+
+(defn set-candidate-type!
+  "Property.
+
+  The `web.rtc.RTCIceCandidateStats` interface's candidateType
+  is a string which indicates the type of ICE candidate the object
+
+  `candidateType = rtcIceCandidateStats.candidateType;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/candidateType`"
+  [this val]
+  (aset this "candidateType" val))
+
 (defn deleted
   "Property.
 
@@ -41,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/deleted`"
   [this]
-  (-> this (.deleted)))
+  (-> this (.-deleted)))
 
 (defn set-deleted!
   "Property.
@@ -55,40 +79,6 @@
   [this val]
   (aset this "deleted" val))
 
-(defn moz-local-transport
-  "Property.
-
-  The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
-  mozLocalTransport, has been supplanted by the standard `protocol`
-  `relayProtocol` properties.
-
-  `Instead of using mozLocalTransport, you should use code like this:
-
-
-
-  localTransport = rtcIceCandidateStats.relayProtocol || rtcIceCandidateStats.protocol;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/mozLocalTransport`"
-  [this]
-  (-> this (.mozLocalTransport)))
-
-(defn set-moz-local-transport!
-  "Property.
-
-  The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
-  mozLocalTransport, has been supplanted by the standard `protocol`
-  `relayProtocol` properties.
-
-  `Instead of using mozLocalTransport, you should use code like this:
-
-
-
-  localTransport = rtcIceCandidateStats.relayProtocol || rtcIceCandidateStats.protocol;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/mozLocalTransport`"
-  [this val]
-  (aset this "mozLocalTransport" val))
-
 (defn network-type
   "Property.
 
@@ -100,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/networkType`"
   [this]
-  (-> this (.networkType)))
+  (-> this (.-networkType)))
 
 (defn set-network-type!
   "Property.
@@ -125,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -139,6 +129,32 @@
   [this val]
   (aset this "port" val))
 
+(defn priority
+  "Property.
+
+  The `web.rtc.RTCIceCandidateStats` dictionary's priority property
+  a positive integer value indicating the priority (or desirability)
+  the described candidate.
+
+  `priority = rtcIceCandidateStats.priority;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/priority`"
+  [this]
+  (-> this (.-priority)))
+
+(defn set-priority!
+  "Property.
+
+  The `web.rtc.RTCIceCandidateStats` dictionary's priority property
+  a positive integer value indicating the priority (or desirability)
+  the described candidate.
+
+  `priority = rtcIceCandidateStats.priority;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/priority`"
+  [this val]
+  (aset this "priority" val))
+
 (defn protocol
   "Property.
 
@@ -150,7 +166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.
@@ -176,7 +192,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/relayProtocol`"
   [this]
-  (-> this (.relayProtocol)))
+  (-> this (.-relayProtocol)))
 
 (defn set-relay-protocol!
   "Property.
@@ -203,7 +219,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/transportId`"
   [this]
-  (-> this (.transportId)))
+  (-> this (.-transportId)))
 
 (defn set-transport-id!
   "Property.
@@ -230,7 +246,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.
@@ -244,4 +260,38 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/url`"
   [this val]
   (aset this "url" val))
+
+(defn moz-local-transport
+  "Property.
+
+  The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
+  mozLocalTransport, has been supplanted by the standard `protocol`
+  `relayProtocol` properties.
+
+  `Instead of using mozLocalTransport, you should use code like this:
+
+
+
+  localTransport = rtcIceCandidateStats.relayProtocol || rtcIceCandidateStats.protocol;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/mozLocalTransport`"
+  [this]
+  (-> this (.-mozLocalTransport)))
+
+(defn set-moz-local-transport!
+  "Property.
+
+  The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
+  mozLocalTransport, has been supplanted by the standard `protocol`
+  `relayProtocol` properties.
+
+  `Instead of using mozLocalTransport, you should use code like this:
+
+
+
+  localTransport = rtcIceCandidateStats.relayProtocol || rtcIceCandidateStats.protocol;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateStats/mozLocalTransport`"
+  [this val]
+  (aset this "mozLocalTransport" val))
 

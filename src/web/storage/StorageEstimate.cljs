@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/quota`"
   [this]
-  (-> this (.quota)))
+  (-> this (.-quota)))
 
 (defn set-quota!
   "Property.
@@ -38,4 +38,54 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/quota`"
   [this val]
   (aset this "quota" val))
+
+(defn usage
+  "Property.
+
+  The `web.storage.StorageEstimate` dictionary's usage property
+  a conservative approximation of how much storage is allotted
+  the origin or Web app that called `StorageManager.estimate()`;
+  may be more space available, but there will not be less. The
+  is an estimate because the user agent may use compression, duplication
+  techniques, and other methods to improve storage efficiency.
+
+  `usage = StorageEstimate.usage;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/usage`"
+  [this]
+  (-> this (.-usage)))
+
+(defn set-usage!
+  "Property.
+
+  The `web.storage.StorageEstimate` dictionary's usage property
+  a conservative approximation of how much storage is allotted
+  the origin or Web app that called `StorageManager.estimate()`;
+  may be more space available, but there will not be less. The
+  is an estimate because the user agent may use compression, duplication
+  techniques, and other methods to improve storage efficiency.
+
+  `usage = StorageEstimate.usage;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/usage`"
+  [this val]
+  (aset this "usage" val))
+
+(defn usage-details
+  "Property.
+
+  A dictionary containing a breakdown of usage by storage system.
+  included members will have a usage greater than 0 and any storage
+  with 0 usage will be excluded from the dictionary."
+  [this]
+  (-> this (.-usageDetails)))
+
+(defn set-usage-details!
+  "Property.
+
+  A dictionary containing a breakdown of usage by storage system.
+  included members will have a usage greater than 0 and any storage
+  with 0 usage will be excluded from the dictionary."
+  [this val]
+  (aset this "usageDetails" val))
 

@@ -21,7 +21,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCTrackEventInit/receiver`"
   [this]
-  (-> this (.receiver)))
+  (-> this (.-receiver)))
 
 (defn set-receiver!
   "Property.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCTrackEventInit/streams`"
   [this]
-  (-> this (.streams)))
+  (-> this (.-streams)))
 
 (defn set-streams!
   "Property.
@@ -99,7 +99,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCTrackEventInit/track`"
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 
 (defn set-track!
   "Property.

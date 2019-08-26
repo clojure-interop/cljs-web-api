@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/averageRtcpInterval`"
   [this]
-  (-> this (.averageRtcpInterval)))
+  (-> this (.-averageRtcpInterval)))
 
 (defn set-average-rtcp-interval!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/firCount`"
   [this]
-  (-> this (.firCount)))
+  (-> this (.-firCount)))
 
 (defn set-fir-count!
   "Property.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/framesEncoded`"
   [this]
-  (-> this (.framesEncoded)))
+  (-> this (.-framesEncoded)))
 
 (defn set-frames-encoded!
   "Property.
@@ -94,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/lastPacketSentTimestamp`"
   [this]
-  (-> this (.lastPacketSentTimestamp)))
+  (-> this (.-lastPacketSentTimestamp)))
 
 (defn set-last-packet-sent-timestamp!
   "Property.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/nackCount`"
   [this]
-  (-> this (.nackCount)))
+  (-> this (.-nackCount)))
 
 (defn set-nack-count!
   "Property.
@@ -148,7 +148,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/perDscpPacketsSent`"
   [this]
-  (-> this (.perDscpPacketsSent)))
+  (-> this (.-perDscpPacketsSent)))
 
 (defn set-per-dscp-packets-sent!
   "Property.
@@ -176,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/pliCount`"
   [this]
-  (-> this (.pliCount)))
+  (-> this (.-pliCount)))
 
 (defn set-pli-count!
   "Property.
@@ -204,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/qpSum`"
   [this]
-  (-> this (.qpSum)))
+  (-> this (.-qpSum)))
 
 (defn set-qp-sum!
   "Property.
@@ -220,6 +220,24 @@
   [this val]
   (aset this "qpSum" val))
 
+(defn quality-limitation-durations
+  "Property.
+
+  A record mapping each of the quality limitation reasons in the
+  enumeration to a floating-point value indicating the number of
+  the stream has spent with its quality limited for that reason."
+  [this]
+  (-> this (.-qualityLimitationDurations)))
+
+(defn set-quality-limitation-durations!
+  "Property.
+
+  A record mapping each of the quality limitation reasons in the
+  enumeration to a floating-point value indicating the number of
+  the stream has spent with its quality limited for that reason."
+  [this val]
+  (aset this "qualityLimitationDurations" val))
+
 (defn quality-limitation-reason
   "Property.
 
@@ -232,7 +250,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/qualityLimitationReason`"
   [this]
-  (-> this (.qualityLimitationReason)))
+  (-> this (.-qualityLimitationReason)))
 
 (defn set-quality-limitation-reason!
   "Property.
@@ -260,7 +278,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/remoteId`"
   [this]
-  (-> this (.remoteId)))
+  (-> this (.-remoteId)))
 
 (defn set-remote-id!
   "Property.
@@ -276,6 +294,58 @@
   [this val]
   (aset this "remoteId" val))
 
+(defn retransmitted-bytes-sent
+  "Property.
+
+  The total number of bytes that have been retransmitted for this
+  as of the time the statistics were sampled. These retransmitted
+  comprise the packets included in the value returned by retransmittedPacketsSent."
+  [this]
+  (-> this (.-retransmittedBytesSent)))
+
+(defn set-retransmitted-bytes-sent!
+  "Property.
+
+  The total number of bytes that have been retransmitted for this
+  as of the time the statistics were sampled. These retransmitted
+  comprise the packets included in the value returned by retransmittedPacketsSent."
+  [this val]
+  (aset this "retransmittedBytesSent" val))
+
+(defn retransmitted-packets-sent
+  "Property.
+
+  The total number of packets that have needed to be retransmitted
+  this source as of the time the statistics were sampled. These
+  packets are included in the value returned by packetsSent."
+  [this]
+  (-> this (.-retransmittedPacketsSent)))
+
+(defn set-retransmitted-packets-sent!
+  "Property.
+
+  The total number of packets that have needed to be retransmitted
+  this source as of the time the statistics were sampled. These
+  packets are included in the value returned by packetsSent."
+  [this val]
+  (aset this "retransmittedPacketsSent" val))
+
+(defn sender-id
+  "Property.
+
+  The {domxref(\"RTCStats.id\", \"id\")}} of the RTCAudioSenderStats
+  RTCVideoSenderStats object containing statistics about this stream's"
+  [this]
+  (-> this (.-senderId)))
+
+(defn set-sender-id!
+  "Property.
+
+  The {domxref(\"RTCStats.id\", \"id\")}} of the RTCAudioSenderStats
+  RTCVideoSenderStats object containing statistics about this stream's"
+  [this val]
+  (aset this "senderId" val))
+
 (defn sli-count
   "Property.
 
@@ -288,7 +358,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/sliCount`"
   [this]
-  (-> this (.sliCount)))
+  (-> this (.-sliCount)))
 
 (defn set-sli-count!
   "Property.
@@ -304,6 +374,58 @@
   [this val]
   (aset this "sliCount" val))
 
+(defn target-bitrate
+  "Property.
+
+  A value indicating the bit rate the RTCRtpSender's codec is configured
+  attempt to achieve in its output media."
+  [this]
+  (-> this (.-targetBitrate)))
+
+(defn set-target-bitrate!
+  "Property.
+
+  A value indicating the bit rate the RTCRtpSender's codec is configured
+  attempt to achieve in its output media."
+  [this val]
+  (aset this "targetBitrate" val))
+
+(defn total-encoded-bytes-target
+  "Property.
+
+  A cumulative sum of the target frame sizes (the targeted maximum
+  of the frame in bytes when the codec is asked to compress it)
+  all of the frames encoded so far. This will likely differ from
+  total of the actual frame sizes."
+  [this]
+  (-> this (.-totalEncodedBytesTarget)))
+
+(defn set-total-encoded-bytes-target!
+  "Property.
+
+  A cumulative sum of the target frame sizes (the targeted maximum
+  of the frame in bytes when the codec is asked to compress it)
+  all of the frames encoded so far. This will likely differ from
+  total of the actual frame sizes."
+  [this val]
+  (aset this "totalEncodedBytesTarget" val))
+
+(defn total-encode-time
+  "Property.
+
+  A floating-point value indicating the total number of seconds
+  have been spent encoding the frames encoded so far by this RTCRtpSender."
+  [this]
+  (-> this (.-totalEncodeTime)))
+
+(defn set-total-encode-time!
+  "Property.
+
+  A floating-point value indicating the total number of seconds
+  have been spent encoding the frames encoded so far by this RTCRtpSender."
+  [this val]
+  (aset this "totalEncodeTime" val))
+
 (defn track-id
   "Property.
 
@@ -316,7 +438,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOutboundRtpStreamStats/trackId`"
   [this]
-  (-> this (.trackId)))
+  (-> this (.-trackId)))
 
 (defn set-track-id!
   "Property.

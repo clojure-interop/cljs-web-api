@@ -8,7 +8,7 @@
   An SVGAnimatedNumber corresponding to the azimuth attribute of
   given element."
   [this]
-  (-> this (.azimuth)))
+  (-> this (.-azimuth)))
 
 (defn set-azimuth!
   "Property.
@@ -17,4 +17,20 @@
   given element."
   [this val]
   (aset this "azimuth" val))
+
+(defn elevation
+  "Property.
+
+  An SVGAnimatedNumber corresponding to the elevation attribute
+  the given element."
+  [this]
+  (-> this (.-elevation)))
+
+(defn set-elevation!
+  "Property.
+
+  An SVGAnimatedNumber corresponding to the elevation attribute
+  the given element."
+  [this val]
+  (aset this "elevation" val))
 

@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/cssText`"
   [this]
-  (-> this (.cssText)))
+  (-> this (.-cssText)))
 
 (defn set-css-text!
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/parentStyleSheet`"
   [this]
-  (-> this (.parentStyleSheet)))
+  (-> this (.-parentStyleSheet)))
 
 (defn set-parent-style-sheet!
   "Property.

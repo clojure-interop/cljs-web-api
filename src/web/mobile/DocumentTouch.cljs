@@ -12,3 +12,10 @@
   [this & args]
   (apply (-> this .-createTouch) (concat [this] args)))
 
+(defn create-touch-list
+  "Method.
+
+  Creates a new TouchList object."
+  [this & args]
+  (apply (-> this .-createTouchList) (concat [this] args)))
+

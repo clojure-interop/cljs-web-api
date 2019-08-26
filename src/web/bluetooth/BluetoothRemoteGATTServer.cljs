@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connected`"
   [this]
-  (-> this (.connected)))
+  (-> this (.-connected)))
 
 (defn set-connected!
   "Property.
@@ -92,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device`"
   [this]
-  (-> this (.device)))
+  (-> this (.-device)))
 
 (defn set-device!
   "Property.

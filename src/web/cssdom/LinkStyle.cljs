@@ -9,7 +9,7 @@
   Returns the CSSStyleSheet object associated with the given element,
   null if there is none."
   [this]
-  (-> this (.sheet)))
+  (-> this (.-sheet)))
 
 (defn set-sheet!
   "Property.

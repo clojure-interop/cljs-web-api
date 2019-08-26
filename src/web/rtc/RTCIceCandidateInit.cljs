@@ -12,7 +12,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateInit/candidate`"
   [this]
-  (-> this (.candidate)))
+  (-> this (.-candidate)))
 
 (defn set-candidate!
   "Property.
@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateInit/sdpMid`"
   [this]
-  (-> this (.sdpMid)))
+  (-> this (.-sdpMid)))
 
 (defn set-sdp-mid!
   "Property.
@@ -56,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateInit/sdpMLineIndex`"
   [this]
-  (-> this (.sdpMLineIndex)))
+  (-> this (.-sdpMLineIndex)))
 
 (defn set-sdp-m-line-index!
   "Property.
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidateInit/usernameFragment`"
   [this]
-  (-> this (.usernameFragment)))
+  (-> this (.-usernameFragment)))
 
 (defn set-username-fragment!
   "Property.

@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceOptions/mediaStream`"
   [this]
-  (-> this (.mediaStream)))
+  (-> this (.-mediaStream)))
 
 (defn set-media-stream!
   "Property.

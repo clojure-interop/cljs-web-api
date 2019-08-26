@@ -11,7 +11,7 @@
   Is a DOMString reflecting the cite HTML attribute, containing
   URL for the source of the quotation."
   [this]
-  (-> this (.cite)))
+  (-> this (.-cite)))
 
 (defn set-cite!
   "Property.

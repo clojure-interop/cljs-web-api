@@ -66,6 +66,19 @@
   [this id]
   (-> this (.getTrackById id)))
 
+(defn get-tracks
+  "Method.
+
+  The getTracks() method of the `web.streams.MediaStream` interface
+  a sequence that represents all the `web.audio.MediaStreamTrack`
+  in this stream's track set, regardless of `MediaStreamTrack.kind`.
+
+  `var mediaStreamTracks = mediaStream.getTracks()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/getTracks`"
+  [this ]
+  (-> this (.getTracks)))
+
 (defn get-video-tracks
   "Method.
 
@@ -87,19 +100,6 @@
   [this & args]
   (apply (-> this .-removeTrack) (concat [this] args)))
 
-(defn get-tracks
-  "Method.
-
-  The getTracks() method of the `web.streams.MediaStream` interface
-  a sequence that represents all the `web.audio.MediaStreamTrack`
-  in this stream's track set, regardless of `MediaStreamTrack.kind`.
-
-  `var mediaStreamTracks = mediaStream.getTracks()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/getTracks`"
-  [this ]
-  (-> this (.getTracks)))
-
 (defn active
   "Property.
 
@@ -114,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/active`"
   [this]
-  (-> this (.active)))
+  (-> this (.-active)))
 
 (defn set-active!
   "Property.
@@ -132,44 +132,6 @@
   [this val]
   (aset this "active" val))
 
-(defn id
-  "Property.
-
-  The MediaStream.id() read-only property is a `web.dom.DOMString`
-  36 characters denoting a unique identifier (GUID) for the object.
-
-  `var id = mediaStream.id;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id`"
-  [this]
-  (-> this (.id)))
-
-(defn onaddtrack
-  "Property.
-
-  The MediaStream.onaddtrack property is an `EventHandler` which
-  a function to be called when the addtrack event occurs on a `web.streams.MediaStream`
-  This happens when a new track of any kind is added to the media
-
-  `MediaStream.onaddtrack = eventHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack`"
-  [this]
-  (-> this (.onaddtrack)))
-
-(defn set-onaddtrack!
-  "Property.
-
-  The MediaStream.onaddtrack property is an `EventHandler` which
-  a function to be called when the addtrack event occurs on a `web.streams.MediaStream`
-  This happens when a new track of any kind is added to the media
-
-  `MediaStream.onaddtrack = eventHandler;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack`"
-  [this val]
-  (aset this "onaddtrack" val))
-
 (defn ended
   "Property.
 
@@ -182,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/ended`"
   [this]
-  (-> this (.ended)))
+  (-> this (.-ended)))
 
 (defn set-ended!
   "Property.
@@ -198,6 +160,44 @@
   [this val]
   (aset this "ended" val))
 
+(defn id
+  "Property.
+
+  The MediaStream.id() read-only property is a `web.dom.DOMString`
+  36 characters denoting a unique identifier (GUID) for the object.
+
+  `var id = mediaStream.id;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id`"
+  [this]
+  (-> this (.-id)))
+
+(defn onaddtrack
+  "Property.
+
+  The MediaStream.onaddtrack property is an `EventHandler` which
+  a function to be called when the addtrack event occurs on a `web.streams.MediaStream`
+  This happens when a new track of any kind is added to the media
+
+  `MediaStream.onaddtrack = eventHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack`"
+  [this]
+  (-> this (.-onaddtrack)))
+
+(defn set-onaddtrack!
+  "Property.
+
+  The MediaStream.onaddtrack property is an `EventHandler` which
+  a function to be called when the addtrack event occurs on a `web.streams.MediaStream`
+  This happens when a new track of any kind is added to the media
+
+  `MediaStream.onaddtrack = eventHandler;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onaddtrack`"
+  [this val]
+  (aset this "onaddtrack" val))
+
 (defn onremovetrack
   "Property.
 
@@ -210,7 +210,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/onremovetrack`"
   [this]
-  (-> this (.onremovetrack)))
+  (-> this (.-onremovetrack)))
 
 (defn set-onremovetrack!
   "Property.

@@ -12,6 +12,16 @@
 
   "scroll")
 
+(def wheel
+  "Event.
+
+  The wheel event fires when the user rotates a wheel button on
+  pointing device (typically a mouse).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/wheel_event`"
+
+  "wheel")
+
 (def animationcancel
   "Event.
 
@@ -25,77 +35,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/animationcancel_event`"
 
   "animationcancel")
-
-(def copy
-  "Event.
-
-  The copy event fires when the user initiates a copy action through
-  browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event`"
-
-  "copy")
-
-(def drag
-  "Event.
-
-  The drag event is fired every few hundred milliseconds as an
-  or text selection is being dragged by the user.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event`"
-
-  "drag")
-
-(def fullscreenchange
-  "Event.
-
-  The fullscreenchange event is fired immediately after the browser
-  into or out of full-screen mode.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event`"
-
-  "fullscreenchange")
-
-(def dom-content-loaded
-  "Event.
-
-  The DOMContentLoaded event fires when the initial HTML document
-  been completely loaded and parsed, without waiting for stylesheets,
-  and subframes to finish loading.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event`"
-
-  "DOMContentLoaded")
-
-(def gotpointercapture
-  "Event.
-
-  The gotpointercapture event is fired when an element captures
-  pointer using `setPointerCapture()`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/gotpointercapture_event`"
-
-  "gotpointercapture")
-
-(def selectionchange
-  "Event.
-
-
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event`"
-
-  "selectionchange")
-
-(def touchcancel
-  "Event.
-
-  The touchcancel event is fired when one or more touch points
-  been disrupted in an implementation-specific manner (for example,
-  many touch points are created).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/touchcancel_event`"
-
-  "touchcancel")
 
 (def animationend
   "Event.
@@ -134,6 +73,16 @@
 
   "animationstart")
 
+(def copy
+  "Event.
+
+  The copy event fires when the user initiates a copy action through
+  browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event`"
+
+  "copy")
+
 (def cut
   "Event.
 
@@ -143,6 +92,26 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/cut_event`"
 
   "cut")
+
+(def paste
+  "Event.
+
+  The paste event is fired when the user has initiated a \\\"paste\\\"
+  through the browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/paste_event`"
+
+  "paste")
+
+(def drag
+  "Event.
+
+  The drag event is fired every few hundred milliseconds as an
+  or text selection is being dragged by the user.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event`"
+
+  "drag")
 
 (def dragend
   "Event.
@@ -214,33 +183,74 @@
 
   "drop")
 
-(def keydown
+(def fullscreenchange
   "Event.
 
-  The keydown event is fired when a key is pressed.
+  The fullscreenchange event is fired immediately after the browser
+  into or out of full-screen mode.
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenchange_event`"
 
-  "keydown")
+  "fullscreenchange")
 
-(def keypress
+(def fullscreenerror
   "Event.
 
-  The keypress event is fired when a key that produces a character
-  is pressed down.
+  Fired if an error occurs while attempting to switch into or out
+  full-screen mode.
+  Also available via the onfullscreenerror property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event`"
+  "fullscreenerror")
 
-  "keypress")
-
-(def keyup
+(def onkeydown
   "Event.
 
-  The keyup event is fired when a key is released.
+  keypress"
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event`"
+  "onkeydown")
 
-  "keyup")
+(def onkeypress
+  "Event.
+
+  keyup"
+
+  "onkeypress")
+
+(def onkeyup
+  "Event."
+
+  "onkeyup")
+
+(def dom-content-loaded
+  "Event.
+
+  The DOMContentLoaded event fires when the initial HTML document
+  been completely loaded and parsed, without waiting for stylesheets,
+  and subframes to finish loading.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event`"
+
+  "DOMContentLoaded")
+
+(def readystatechange
+  "Event.
+
+  The readystatechange event is fired when the `readyState` attribute
+  a document has changed.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event`"
+
+  "readystatechange")
+
+(def gotpointercapture
+  "Event.
+
+  The gotpointercapture event is fired when an element captures
+  pointer using `setPointerCapture()`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/gotpointercapture_event`"
+
+  "gotpointercapture")
 
 (def lostpointercapture
   "Event.
@@ -251,16 +261,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/lostpointercapture_event`"
 
   "lostpointercapture")
-
-(def paste
-  "Event.
-
-  The paste event is fired when the user has initiated a \\\"paste\\\"
-  through the browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/paste_event`"
-
-  "paste")
 
 (def pointercancel
   "Event.
@@ -372,15 +372,34 @@
 
   "pointerup")
 
-(def readystatechange
+(def selectionchange
   "Event.
 
-  The readystatechange event is fired when the `readyState` attribute
-  a document has changed.
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event`"
 
-  "readystatechange")
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event`"
+
+  "selectionchange")
+
+(def selectstart
+  "Event.
+
+
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectstart_event`"
+
+  "selectstart")
+
+(def touchcancel
+  "Event.
+
+  The touchcancel event is fired when one or more touch points
+  been disrupted in an implementation-specific manner (for example,
+  many touch points are created).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/touchcancel_event`"
+
+  "touchcancel")
 
 (def touchend
   "Event.
@@ -411,6 +430,60 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/touchstart_event`"
 
   "touchstart")
+
+(def ontransitioncancel
+  "Event.
+
+  transitionend"
+
+  "ontransitioncancel")
+
+(def ontransitionend
+  "Event.
+
+  transitionrun"
+
+  "ontransitionend")
+
+(def ontransitionrun
+  "Event.
+
+  transitionstart"
+
+  "ontransitionrun")
+
+(def ontransitionstart
+  "Event."
+
+  "ontransitionstart")
+
+(def keydown
+  "Event.
+
+  The keydown event is fired when a key is pressed.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event`"
+
+  "keydown")
+
+(def keypress
+  "Event.
+
+  The keypress event is fired when a key that produces a character
+  is pressed down.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event`"
+
+  "keypress")
+
+(def keyup
+  "Event.
+
+  The keyup event is fired when a key is released.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event`"
+
+  "keyup")
 
 (def transitioncancel
   "Event.

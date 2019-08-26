@@ -56,18 +56,6 @@
   [this ]
   (-> this (.getSelection)))
 
-(defn ms-elements-from-rect
-  "Method.
-
-  The msElementsFromRect method returns the node list of elements
-  are under a rectangle defined by left, top, width, and height.
-
-  `object.msElementsFromRect(left, top, width, height, retVal)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/msElementsFromRect`"
-  [this left top width height ret-val]
-  (-> this (.msElementsFromRect left top width height ret-val)))
-
 (defn node-from-point
   "Method.
 
@@ -94,6 +82,18 @@
   [this x y]
   (-> this (.nodesFromPoint x y)))
 
+(defn ms-elements-from-rect
+  "Method.
+
+  The msElementsFromRect method returns the node list of elements
+  are under a rectangle defined by left, top, width, and height.
+
+  `object.msElementsFromRect(left, top, width, height, retVal)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/msElementsFromRect`"
+  [this left top width height ret-val]
+  (-> this (.msElementsFromRect left top width height ret-val)))
+
 (defn active-element
   "Property.
 
@@ -105,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
   [this]
-  (-> this (.activeElement)))
+  (-> this (.-activeElement)))
 
 (defn set-active-element!
   "Property.
@@ -132,7 +132,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/fullscreenElement`"
   [this]
-  (-> this (.fullscreenElement)))
+  (-> this (.-fullscreenElement)))
 
 (defn pointer-lock-element
   "Property.
@@ -146,7 +146,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/pointerLockElement`"
   [this]
-  (-> this (.pointerLockElement)))
+  (-> this (.-pointerLockElement)))
 
 (defn set-pointer-lock-element!
   "Property.
@@ -171,7 +171,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
   [this]
-  (-> this (.styleSheets)))
+  (-> this (.-styleSheets)))
 
 (defn set-style-sheets!
   "Property.

@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/axes`"
   [this]
-  (-> this (.axes)))
+  (-> this (.-axes)))
 
 (defn set-axes!
   "Property.
@@ -30,32 +30,6 @@
   [this val]
   (aset this "axes" val))
 
-(defn hand
-  "Property.
-
-  The hand read-only property of the `web.gamepad.Gamepad` interface
-  an enum defining what hand the controller is being held in, or
-  most likely to be held in.
-
-  `var myHand = gamepadInstance.hand;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hand`"
-  [this]
-  (-> this (.hand)))
-
-(defn set-hand!
-  "Property.
-
-  The hand read-only property of the `web.gamepad.Gamepad` interface
-  an enum defining what hand the controller is being held in, or
-  most likely to be held in.
-
-  `var myHand = gamepadInstance.hand;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hand`"
-  [this val]
-  (aset this "hand" val))
-
 (defn buttons
   "Property.
 
@@ -67,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/buttons`"
   [this]
-  (-> this (.buttons)))
+  (-> this (.-buttons)))
 
 (defn set-buttons!
   "Property.
@@ -93,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/connected`"
   [this]
-  (-> this (.connected)))
+  (-> this (.-connected)))
 
 (defn set-connected!
   "Property.
@@ -119,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/displayId`"
   [this]
-  (-> this (.displayId)))
+  (-> this (.-displayId)))
 
 (defn set-display-id!
   "Property.
@@ -134,32 +108,6 @@
   [this val]
   (aset this "displayId" val))
 
-(defn haptic-actuators
-  "Property.
-
-  The hapticActuators read-only property of the `web.gamepad.Gamepad`
-  returns an array containing `web.vr.GamepadHapticActuator` objects,
-  of which represents haptic feedback hardware available on the
-
-  `var myHapticActuators = gamepadInstance.hapticActuators;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hapticActuators`"
-  [this]
-  (-> this (.hapticActuators)))
-
-(defn set-haptic-actuators!
-  "Property.
-
-  The hapticActuators read-only property of the `web.gamepad.Gamepad`
-  returns an array containing `web.vr.GamepadHapticActuator` objects,
-  of which represents haptic feedback hardware available on the
-
-  `var myHapticActuators = gamepadInstance.hapticActuators;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hapticActuators`"
-  [this val]
-  (aset this "hapticActuators" val))
-
 (defn id
   "Property.
 
@@ -170,7 +118,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -195,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/index`"
   [this]
-  (-> this (.index)))
+  (-> this (.-index)))
 
 (defn set-index!
   "Property.
@@ -221,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/mapping`"
   [this]
-  (-> this (.mapping)))
+  (-> this (.-mapping)))
 
 (defn set-mapping!
   "Property.
@@ -236,6 +184,84 @@
   [this val]
   (aset this "mapping" val))
 
+(defn timestamp
+  "Property.
+
+  The Gamepad.timestamp property of the `web.gamepad.Gamepad` interface
+  a `web.dom.DOMHighResTimeStamp` representing the last time the
+  for this gamepad was updated.
+
+  `readonly    attribute DOMHighResTimeStamp timestamp;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/timestamp`"
+  [this]
+  (-> this (.-timestamp)))
+
+(defn set-timestamp!
+  "Property.
+
+  The Gamepad.timestamp property of the `web.gamepad.Gamepad` interface
+  a `web.dom.DOMHighResTimeStamp` representing the last time the
+  for this gamepad was updated.
+
+  `readonly    attribute DOMHighResTimeStamp timestamp;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/timestamp`"
+  [this val]
+  (aset this "timestamp" val))
+
+(defn hand
+  "Property.
+
+  The hand read-only property of the `web.gamepad.Gamepad` interface
+  an enum defining what hand the controller is being held in, or
+  most likely to be held in.
+
+  `var myHand = gamepadInstance.hand;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hand`"
+  [this]
+  (-> this (.-hand)))
+
+(defn set-hand!
+  "Property.
+
+  The hand read-only property of the `web.gamepad.Gamepad` interface
+  an enum defining what hand the controller is being held in, or
+  most likely to be held in.
+
+  `var myHand = gamepadInstance.hand;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hand`"
+  [this val]
+  (aset this "hand" val))
+
+(defn haptic-actuators
+  "Property.
+
+  The hapticActuators read-only property of the `web.gamepad.Gamepad`
+  returns an array containing `web.vr.GamepadHapticActuator` objects,
+  of which represents haptic feedback hardware available on the
+
+  `var myHapticActuators = gamepadInstance.hapticActuators;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hapticActuators`"
+  [this]
+  (-> this (.-hapticActuators)))
+
+(defn set-haptic-actuators!
+  "Property.
+
+  The hapticActuators read-only property of the `web.gamepad.Gamepad`
+  returns an array containing `web.vr.GamepadHapticActuator` objects,
+  of which represents haptic feedback hardware available on the
+
+  `var myHapticActuators = gamepadInstance.hapticActuators;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hapticActuators`"
+  [this val]
+  (aset this "hapticActuators" val))
+
 (defn pose
   "Property.
 
@@ -248,7 +274,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/pose`"
   [this]
-  (-> this (.pose)))
+  (-> this (.-pose)))
 
 (defn set-pose!
   "Property.
@@ -263,30 +289,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/pose`"
   [this val]
   (aset this "pose" val))
-
-(defn timestamp
-  "Property.
-
-  The Gamepad.timestamp property of the `web.gamepad.Gamepad` interface
-  a `web.dom.DOMHighResTimeStamp` representing the last time the
-  for this gamepad was updated.
-
-  `readonly    attribute DOMHighResTimeStamp timestamp;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/timestamp`"
-  [this]
-  (-> this (.timestamp)))
-
-(defn set-timestamp!
-  "Property.
-
-  The Gamepad.timestamp property of the `web.gamepad.Gamepad` interface
-  a `web.dom.DOMHighResTimeStamp` representing the last time the
-  for this gamepad was updated.
-
-  `readonly    attribute DOMHighResTimeStamp timestamp;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/timestamp`"
-  [this val]
-  (aset this "timestamp" val))
 

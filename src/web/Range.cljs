@@ -22,29 +22,93 @@
   [this start-node start-offset]
   (-> this (.setStart start-node start-offset)))
 
-(defn clone-contents
+(defn set-end
   "Method.
 
-  The Range.cloneContents() returns a `web.web-components.DocumentFragment`
-  the objects of type `web.Node` included in the `web.Range`.
+  The Range.setEnd() method sets the end position of a `web.Range`.
 
-  `documentFragment = range.cloneContents();`
+  `range.setEnd(endNode, endOffset);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/cloneContents`"
-  [this ]
-  (-> this (.cloneContents)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEnd`"
+  [this end-node end-offset]
+  (-> this (.setEnd end-node end-offset)))
 
-(defn clone-range
+(defn set-start-before
   "Method.
 
-  The Range.cloneRange() method returns a `web.Range` object with
-  points identical to the cloned `web.Range`.
+  The Range.setStartBefore() method sets the start position of
+  `web.Range` relative to another `web.Node`. The parent `web.Node`
+  the start of the `web.Range` will be the same as that for the
 
-  `clone = range.cloneRange();`
+  `range.setStartBefore(referenceNode);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/cloneRange`"
-  [this ]
-  (-> this (.cloneRange)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStartBefore`"
+  [this reference-node]
+  (-> this (.setStartBefore reference-node)))
+
+(defn set-start-after
+  "Method.
+
+  The Range.setStartAfter() method sets the start position of a
+  relative to a `web.Node`. The parent `web.Node` of the start
+  the `web.Range` will be the same as that for the referenceNode.
+
+  `range.setStartAfter(referenceNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStartAfter`"
+  [this reference-node]
+  (-> this (.setStartAfter reference-node)))
+
+(defn set-end-before
+  "Method.
+
+  The Range.setEndBefore() method sets the end position of a Range
+  to another `web.Node`. The parent Node of end of the Range will
+  the same as that for the referenceNode.
+
+  `range.setEndBefore(referenceNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEndBefore`"
+  [this reference-node]
+  (-> this (.setEndBefore reference-node)))
+
+(defn set-end-after
+  "Method.
+
+  The Range.setEndAfter() method sets the end position of a `web.Range`
+  to another `web.Node`. The parent Node of end of the Range will
+  the same as that for the referenceNode.
+
+  `range.setEndAfter(referenceNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEndAfter`"
+  [this reference-node]
+  (-> this (.setEndAfter reference-node)))
+
+(defn select-node
+  "Method.
+
+  The Range.selectNode() method sets the `web.Range` to contain
+  `web.Node` and its contents. The parent `web.Node` of the start
+  end of the `web.Range` will be the same as the parent of the
+
+  `range.selectNode(referenceNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/selectNode`"
+  [this reference-node]
+  (-> this (.selectNode reference-node)))
+
+(defn select-node-contents
+  "Method.
+
+  The Range.selectNodeContents() method sets the `web.Range` to
+  the contents of a `web.Node`.
+
+  `range.selectNodeContents(referenceNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/selectNodeContents`"
+  [this reference-node]
+  (-> this (.selectNodeContents reference-node)))
 
 (defn collapse
   "Method.
@@ -58,6 +122,66 @@
   [this to-start]
   (-> this (.collapse to-start)))
 
+(defn clone-contents
+  "Method.
+
+  The Range.cloneContents() returns a `web.web-components.DocumentFragment`
+  the objects of type `web.Node` included in the `web.Range`.
+
+  `documentFragment = range.cloneContents();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/cloneContents`"
+  [this ]
+  (-> this (.cloneContents)))
+
+(defn delete-contents
+  "Method.
+
+  The Range.deleteContents() method removes the contents of the
+  from the `web.Document`.
+
+  `range.deleteContents()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/deleteContents`"
+  [this ]
+  (-> this (.deleteContents)))
+
+(defn extract-contents
+  "Method.
+
+  The Range.extractContents() method moves contents of the `web.Range`
+  the document tree into a `web.web-components.DocumentFragment`.
+
+  `documentFragment = range.extractContents();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/extractContents`"
+  [this ]
+  (-> this (.extractContents)))
+
+(defn insert-node
+  "Method.
+
+  The Range.insertNode() method inserts a node at the start of
+  `web.Range`.
+
+  `range.insertNode(newNode);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/insertNode`"
+  [this new-node]
+  (-> this (.insertNode new-node)))
+
+(defn surround-contents
+  "Method.
+
+  The Range.surroundContents() method moves content of the `web.Range`
+  a new node, placing the new node at the start of the specified
+
+  `range.surroundContents(newParent);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/surroundContents`"
+  [this new-parent]
+  (-> this (.surroundContents new-parent)))
+
 (defn compare-boundary-points
   "Method.
 
@@ -69,6 +193,43 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/compareBoundaryPoints`"
   [this how source-range]
   (-> this (.compareBoundaryPoints how source-range)))
+
+(defn clone-range
+  "Method.
+
+  The Range.cloneRange() method returns a `web.Range` object with
+  points identical to the cloned `web.Range`.
+
+  `clone = range.cloneRange();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/cloneRange`"
+  [this ]
+  (-> this (.cloneRange)))
+
+(defn detach
+  "Method.
+
+  The Range.detach() method does nothing. It used to disable the
+  object and enable the browser to release associated resources.
+  method has been kept for compatibility.
+
+  `range.detach();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/detach`"
+  [this ]
+  (-> this (.detach)))
+
+(defn to-string
+  "Method.
+
+  The Range.toString() method is a stringifier returning the text
+  the `web.Range`.
+
+  `text = range.toString();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/toString`"
+  [this ]
+  (-> this (.toString)))
 
 (defn compare-node
   "Method.
@@ -111,43 +272,6 @@
   [this tag-string]
   (-> this (.createContextualFragment tag-string)))
 
-(defn delete-contents
-  "Method.
-
-  The Range.deleteContents() method removes the contents of the
-  from the `web.Document`.
-
-  `range.deleteContents()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/deleteContents`"
-  [this ]
-  (-> this (.deleteContents)))
-
-(defn detach
-  "Method.
-
-  The Range.detach() method does nothing. It used to disable the
-  object and enable the browser to release associated resources.
-  method has been kept for compatibility.
-
-  `range.detach();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/detach`"
-  [this ]
-  (-> this (.detach)))
-
-(defn extract-contents
-  "Method.
-
-  The Range.extractContents() method moves contents of the `web.Range`
-  the document tree into a `web.web-components.DocumentFragment`.
-
-  `documentFragment = range.extractContents();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/extractContents`"
-  [this ]
-  (-> this (.extractContents)))
-
 (defn get-bounding-client-rect
   "Method.
 
@@ -175,18 +299,6 @@
   [this ]
   (-> this (.getClientRects)))
 
-(defn insert-node
-  "Method.
-
-  The Range.insertNode() method inserts a node at the start of
-  `web.Range`.
-
-  `range.insertNode(newNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/insertNode`"
-  [this new-node]
-  (-> this (.insertNode new-node)))
-
 (defn intersects-node
   "Method.
 
@@ -212,118 +324,6 @@
   [this & args]
   (apply (-> this .-isPointInRange) (concat [this] args)))
 
-(defn select-node
-  "Method.
-
-  The Range.selectNode() method sets the `web.Range` to contain
-  `web.Node` and its contents. The parent `web.Node` of the start
-  end of the `web.Range` will be the same as the parent of the
-
-  `range.selectNode(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/selectNode`"
-  [this reference-node]
-  (-> this (.selectNode reference-node)))
-
-(defn select-node-contents
-  "Method.
-
-  The Range.selectNodeContents() method sets the `web.Range` to
-  the contents of a `web.Node`.
-
-  `range.selectNodeContents(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/selectNodeContents`"
-  [this reference-node]
-  (-> this (.selectNodeContents reference-node)))
-
-(defn set-end
-  "Method.
-
-  The Range.setEnd() method sets the end position of a `web.Range`.
-
-  `range.setEnd(endNode, endOffset);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEnd`"
-  [this end-node end-offset]
-  (-> this (.setEnd end-node end-offset)))
-
-(defn set-end-after
-  "Method.
-
-  The Range.setEndAfter() method sets the end position of a `web.Range`
-  to another `web.Node`. The parent Node of end of the Range will
-  the same as that for the referenceNode.
-
-  `range.setEndAfter(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEndAfter`"
-  [this reference-node]
-  (-> this (.setEndAfter reference-node)))
-
-(defn set-end-before
-  "Method.
-
-  The Range.setEndBefore() method sets the end position of a Range
-  to another `web.Node`. The parent Node of end of the Range will
-  the same as that for the referenceNode.
-
-  `range.setEndBefore(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setEndBefore`"
-  [this reference-node]
-  (-> this (.setEndBefore reference-node)))
-
-(defn set-start-after
-  "Method.
-
-  The Range.setStartAfter() method sets the start position of a
-  relative to a `web.Node`. The parent `web.Node` of the start
-  the `web.Range` will be the same as that for the referenceNode.
-
-  `range.setStartAfter(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStartAfter`"
-  [this reference-node]
-  (-> this (.setStartAfter reference-node)))
-
-(defn set-start-before
-  "Method.
-
-  The Range.setStartBefore() method sets the start position of
-  `web.Range` relative to another `web.Node`. The parent `web.Node`
-  the start of the `web.Range` will be the same as that for the
-
-  `range.setStartBefore(referenceNode);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/setStartBefore`"
-  [this reference-node]
-  (-> this (.setStartBefore reference-node)))
-
-(defn surround-contents
-  "Method.
-
-  The Range.surroundContents() method moves content of the `web.Range`
-  a new node, placing the new node at the start of the specified
-
-  `range.surroundContents(newParent);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/surroundContents`"
-  [this new-parent]
-  (-> this (.surroundContents new-parent)))
-
-(defn to-string
-  "Method.
-
-  The Range.toString() method is a stringifier returning the text
-  the `web.Range`.
-
-  `text = range.toString();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/toString`"
-  [this ]
-  (-> this (.toString)))
-
 (defn collapsed
   "Property.
 
@@ -336,7 +336,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/collapsed`"
   [this]
-  (-> this (.collapsed)))
+  (-> this (.-collapsed)))
 
 (defn set-collapsed!
   "Property.
@@ -365,7 +365,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/commonAncestorContainer`"
   [this]
-  (-> this (.commonAncestorContainer)))
+  (-> this (.-commonAncestorContainer)))
 
 (defn set-common-ancestor-container!
   "Property.
@@ -393,7 +393,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/endContainer`"
   [this]
-  (-> this (.endContainer)))
+  (-> this (.-endContainer)))
 
 (defn set-end-container!
   "Property.
@@ -418,7 +418,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/endOffset`"
   [this]
-  (-> this (.endOffset)))
+  (-> this (.-endOffset)))
 
 (defn set-end-offset!
   "Property.
@@ -443,7 +443,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/startContainer`"
   [this]
-  (-> this (.startContainer)))
+  (-> this (.-startContainer)))
 
 (defn set-start-container!
   "Property.
@@ -468,7 +468,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/startOffset`"
   [this]
-  (-> this (.startOffset)))
+  (-> this (.-startOffset)))
 
 (defn set-start-offset!
   "Property.

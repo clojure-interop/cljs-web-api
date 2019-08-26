@@ -17,18 +17,6 @@
   [this ]
   (-> this (.createQueryEXT)))
 
-(defn begin-query-ext
-  "Method.
-
-  The EXT_disjoint_timer_query.beginQueryEXT() method of the WebGL
-  starts a timer query.
-
-  `void ext.beginQueryEXT(target, query);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/beginQueryEXT`"
-  [this target query]
-  (-> this (.beginQueryEXT target query)))
-
 (defn delete-query-ext
   "Method.
 
@@ -41,6 +29,30 @@
   [this query]
   (-> this (.deleteQueryEXT query)))
 
+(defn is-query-ext
+  "Method.
+
+  The EXT_disjoint_timer_query.isQueryEXT() method of the WebGL
+  returns true if the passed object is a `web.gl.WebGLQuery` object.
+
+  `GLBoolean ext.isQueryEXT(query);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/isQueryEXT`"
+  [this query]
+  (-> this (.isQueryEXT query)))
+
+(defn begin-query-ext
+  "Method.
+
+  The EXT_disjoint_timer_query.beginQueryEXT() method of the WebGL
+  starts a timer query.
+
+  `void ext.beginQueryEXT(target, query);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/beginQueryEXT`"
+  [this target query]
+  (-> this (.beginQueryEXT target query)))
+
 (defn end-query-ext
   "Method.
 
@@ -52,6 +64,18 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/endQueryEXT`"
   [this target]
   (-> this (.endQueryEXT target)))
+
+(defn query-counter-ext
+  "Method.
+
+  The EXT_disjoint_timer_query.queryCounterEXT() method of the
+  API records the current time into the corresponding query object.
+
+  `void ext.queryCounterEXT(query, target);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/queryCounterEXT`"
+  [this query target]
+  (-> this (.queryCounterEXT query target)))
 
 (defn get-query-ext
   "Method.
@@ -76,28 +100,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryObjectEXT`"
   [this query pname]
   (-> this (.getQueryObjectEXT query pname)))
-
-(defn is-query-ext
-  "Method.
-
-  The EXT_disjoint_timer_query.isQueryEXT() method of the WebGL
-  returns true if the passed object is a `web.gl.WebGLQuery` object.
-
-  `GLBoolean ext.isQueryEXT(query);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/isQueryEXT`"
-  [this query]
-  (-> this (.isQueryEXT query)))
-
-(defn query-counter-ext
-  "Method.
-
-  The EXT_disjoint_timer_query.queryCounterEXT() method of the
-  API records the current time into the corresponding query object.
-
-  `void ext.queryCounterEXT(query, target);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/queryCounterEXT`"
-  [this query target]
-  (-> this (.queryCounterEXT query target)))
 

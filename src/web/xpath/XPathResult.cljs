@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/booleanValue`"
   [this]
-  (-> this (.booleanValue)))
+  (-> this (.-booleanValue)))
 
 (defn set-boolean-value!
   "Property.
@@ -69,7 +69,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/invalidIteratorState`"
   [this]
-  (-> this (.invalidIteratorState)))
+  (-> this (.-invalidIteratorState)))
 
 (defn set-invalid-iterator-state!
   "Property.
@@ -96,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/numberValue`"
   [this]
-  (-> this (.numberValue)))
+  (-> this (.-numberValue)))
 
 (defn set-number-value!
   "Property.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/resultType`"
   [this]
-  (-> this (.resultType)))
+  (-> this (.-resultType)))
 
 (defn set-result-type!
   "Property.
@@ -147,7 +147,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/singleNodeValue`"
   [this]
-  (-> this (.singleNodeValue)))
+  (-> this (.-singleNodeValue)))
 
 (defn set-single-node-value!
   "Property.
@@ -173,7 +173,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/snapshotLength`"
   [this]
-  (-> this (.snapshotLength)))
+  (-> this (.-snapshotLength)))
 
 (defn set-snapshot-length!
   "Property.
@@ -198,7 +198,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathResult/stringValue`"
   [this]
-  (-> this (.stringValue)))
+  (-> this (.-stringValue)))
 
 (defn set-string-value!
   "Property.

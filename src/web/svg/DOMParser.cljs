@@ -21,3 +21,8 @@
   [this & args]
   (apply (-> this .-string) (concat [this] args)))
 
+(defn dom-string
+  "Method."
+  [this & args]
+  (apply (-> this .-DOMString) (concat [this] args)))
+

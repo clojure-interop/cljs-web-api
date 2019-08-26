@@ -26,7 +26,7 @@
   of the audio block being processed. It is incremented by 128
   size of a render quantum) after the processing of each audio"
   [this]
-  (-> this (.currentFrame)))
+  (-> this (.-currentFrame)))
 
 (defn set-current-frame!
   "Property.
@@ -36,4 +36,36 @@
   size of a render quantum) after the processing of each audio"
   [this val]
   (aset this "currentFrame" val))
+
+(defn current-time
+  "Property.
+
+  Returns a double that represents the ever-increasing context
+  of the audio block being processed. It is equal to the currentTime
+  of the BaseAudioContext the worklet belongs to."
+  [this]
+  (-> this (.-currentTime)))
+
+(defn set-current-time!
+  "Property.
+
+  Returns a double that represents the ever-increasing context
+  of the audio block being processed. It is equal to the currentTime
+  of the BaseAudioContext the worklet belongs to."
+  [this val]
+  (aset this "currentTime" val))
+
+(defn sample-rate
+  "Property.
+
+  Returns a float that represents the sample rate of the associated"
+  [this]
+  (-> this (.-sampleRate)))
+
+(defn set-sample-rate!
+  "Property.
+
+  Returns a float that represents the sample rate of the associated"
+  [this val]
+  (aset this "sampleRate" val))
 

@@ -3,7 +3,7 @@
   <groupId>clojure-interop</groupId>
   <artifactId>cljs-web-api</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
+  <version>1.0.5</version>
   <name>cljs-web-api</name>
   <description>All Browser Classes (MDN) ClojureScript Bingings with Docs</description>
   <url/>
@@ -17,7 +17,7 @@
     <url>https://github.com/clojure-interop/cljs-web-api</url>
     <connection>scm:git:git://github.com/clojure-interop/cljs-web-api.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/clojure-interop/cljs-web-api.git</developerConnection>
-    <tag>a7aa2c49511504c2d2b24cd1cd2c8e7d4afbe784</tag>
+    <tag>5418d9cccc3665c008c00443c20d1444810bdb43</tag>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>

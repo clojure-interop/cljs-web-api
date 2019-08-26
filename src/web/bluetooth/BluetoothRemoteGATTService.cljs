@@ -18,6 +18,45 @@
   [this characteristic]
   (-> this (.getCharacteristic characteristic)))
 
+(defn get-characteristics
+  "Method.
+
+  The BluetoothGATTService.getCharacteristics() method returns
+  `js.Promise` to a list of `BluetoothGATTCharacteristic` instances
+  a given universally unique identifier (UUID).
+
+  `bluetoothGATTServiceInstance.getCharacteristics(characteristics).then(function(BluetoothGATTCharacteristic[]) { ... } )`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getCharacteristics`"
+  [this characteristics]
+  (-> this (.getCharacteristics characteristics)))
+
+(defn get-included-service
+  "Method.
+
+  The BluetoothGATTService.getIncludedService() method returns
+  `js.Promise` to an instance of `BluetoothGATTService` for a given
+  unique identifier (UUID).
+
+  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedService`"
+  [this service]
+  (-> this (.getIncludedService service)))
+
+(defn get-included-services
+  "Method.
+
+  The BluetoothGATTService.getIncludedServices() method returns
+  `js.Promise` to an `js.Array` of `BluetoothGATTService` instances
+  an optional universally unique identifier (UUID).
+
+  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedServices`"
+  [this service]
+  (-> this (.getIncludedServices service)))
+
 (defn device
   "Property.
 
@@ -28,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/device`"
   [this]
-  (-> this (.device)))
+  (-> this (.-device)))
 
 (defn set-device!
   "Property.
@@ -42,84 +81,6 @@
   [this val]
   (aset this "device" val))
 
-(defn get-characteristics
-  "Property.
-
-  The BluetoothGATTService.getCharacteristics() method returns
-  `js.Promise` to a list of `BluetoothGATTCharacteristic` instances
-  a given universally unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getCharacteristics(characteristics).then(function(BluetoothGATTCharacteristic[]) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getCharacteristics`"
-  [this]
-  (-> this (.getCharacteristics)))
-
-(defn set-get-characteristics!
-  "Property.
-
-  The BluetoothGATTService.getCharacteristics() method returns
-  `js.Promise` to a list of `BluetoothGATTCharacteristic` instances
-  a given universally unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getCharacteristics(characteristics).then(function(BluetoothGATTCharacteristic[]) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getCharacteristics`"
-  [this val]
-  (aset this "getCharacteristics" val))
-
-(defn get-included-service
-  "Property.
-
-  The BluetoothGATTService.getIncludedService() method returns
-  `js.Promise` to an instance of `BluetoothGATTService` for a given
-  unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedService`"
-  [this]
-  (-> this (.getIncludedService)))
-
-(defn set-get-included-service!
-  "Property.
-
-  The BluetoothGATTService.getIncludedService() method returns
-  `js.Promise` to an instance of `BluetoothGATTService` for a given
-  unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedService`"
-  [this val]
-  (aset this "getIncludedService" val))
-
-(defn get-included-services
-  "Property.
-
-  The BluetoothGATTService.getIncludedServices() method returns
-  `js.Promise` to an `js.Array` of `BluetoothGATTService` instances
-  an optional universally unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedServices`"
-  [this]
-  (-> this (.getIncludedServices)))
-
-(defn set-get-included-services!
-  "Property.
-
-  The BluetoothGATTService.getIncludedServices() method returns
-  `js.Promise` to an `js.Array` of `BluetoothGATTService` instances
-  an optional universally unique identifier (UUID).
-
-  `bluetoothGATTServiceInstance.getIncludedService(service).then(function(BluetoothGATTService) { ... } )`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getIncludedServices`"
-  [this val]
-  (aset this "getIncludedServices" val))
-
 (defn is-primary
   "Property.
 
@@ -131,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/isPrimary`"
   [this]
-  (-> this (.isPrimary)))
+  (-> this (.-isPrimary)))
 
 (defn set-is-primary!
   "Property.
@@ -156,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid`"
   [this]
-  (-> this (.uuid)))
+  (-> this (.-uuid)))
 
 (defn set-uuid!
   "Property.

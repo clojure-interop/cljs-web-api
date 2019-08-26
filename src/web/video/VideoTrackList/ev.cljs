@@ -13,10 +13,16 @@
 (def change
   "Event.
 
-  The change event is fired when a video track is made active or
-  for example by changing the track's selected property.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/change_event`"
+  Fired when a video track has been made active or inactive.
+  Also available via the onchange property."
 
   "change")
+
+(def removetrack
+  "Event.
+
+  Fired when a new video track has been removed from the media
+  Also available via the onremovetrack property."
+
+  "removetrack")
 

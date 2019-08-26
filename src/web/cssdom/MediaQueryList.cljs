@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches`"
   [this]
-  (-> this (.matches)))
+  (-> this (.-matches)))
 
 (defn set-matches!
   "Property.
@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media`"
   [this]
-  (-> this (.media)))
+  (-> this (.-media)))
 
 (defn set-media!
   "Property.
@@ -93,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.

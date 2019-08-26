@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/view`"
   [this]
-  (-> this (.view)))
+  (-> this (.-view)))
 
 (defn set-view!
   "Property.

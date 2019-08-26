@@ -19,7 +19,7 @@
   values indicate clockwise rotation; negative values indicate
   rotation. Initial value: 0.0"
   [this]
-  (-> this (.rotation)))
+  (-> this (.-rotation)))
 
 (defn set-rotation!
   "Property.
@@ -29,4 +29,26 @@
   rotation. Initial value: 0.0"
   [this val]
   (aset this "rotation" val))
+
+(defn scale
+  "Property.
+
+  Distance between two digits since the event's beginning. Expressed
+  a floating-point multiple of the initial distance between the
+  at the beginning of the gesture. Values below 1.0 indicate an
+  pinch (zoom out). Values above 1.0 indicate an outward unpinch
+  in). Initial value: 1.0"
+  [this]
+  (-> this (.-scale)))
+
+(defn set-scale!
+  "Property.
+
+  Distance between two digits since the event's beginning. Expressed
+  a floating-point multiple of the initial distance between the
+  at the beginning of the gesture. Values below 1.0 indicate an
+  pinch (zoom out). Values above 1.0 indicate an outward unpinch
+  in). Initial value: 1.0"
+  [this val]
+  (aset this "scale" val))
 

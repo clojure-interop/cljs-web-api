@@ -16,7 +16,7 @@
   If the property can't be set to one of the listed values, matching
   fail."
   [this]
-  (-> this (.exact)))
+  (-> this (.-exact)))
 
 (defn set-exact!
   "Property.
@@ -27,4 +27,24 @@
   fail."
   [this val]
   (aset this "exact" val))
+
+(defn ideal
+  "Property.
+
+  Either a single DOMString or an arrray of DOMStrings specifying
+  values for the property. If possible, one of the listed values
+  be used, but if it's not possible, the user agent will use the
+  possible match."
+  [this]
+  (-> this (.-ideal)))
+
+(defn set-ideal!
+  "Property.
+
+  Either a single DOMString or an arrray of DOMStrings specifying
+  values for the property. If possible, one of the listed values
+  be used, but if it's not possible, the user agent will use the
+  possible match."
+  [this val]
+  (aset this "ideal" val))
 

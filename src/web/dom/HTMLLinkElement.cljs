@@ -6,12 +6,82 @@
   object inherits all of the properties and methods of the `web.dom.HTMLElement`"
   (:refer-clojure :exclude []))
 
+(defn dom-string
+  "Property.
+
+  HTMLLinkElement.crossOrigin"
+  [this]
+  (-> this (.-DOMString)))
+
+(defn set-dom-string!
+  "Property.
+
+  HTMLLinkElement.crossOrigin"
+  [this val]
+  (aset this "DOMString" val))
+
+(defn boolean
+  "Property.
+
+  HTMLLinkElement.href"
+  [this]
+  (-> this (.-Boolean)))
+
+(defn set-boolean!
+  "Property.
+
+  HTMLLinkElement.href"
+  [this val]
+  (aset this "Boolean" val))
+
+(defn dom-token-list
+  "Property.
+
+  HTMLLinkElement.sizes Read only"
+  [this]
+  (-> this (.-DOMTokenList)))
+
+(defn set-dom-token-list!
+  "Property.
+
+  HTMLLinkElement.sizes Read only"
+  [this val]
+  (aset this "DOMTokenList" val))
+
+(defn dom-settable-token-list
+  "Property.
+
+  LinkStyle.sheet Read only"
+  [this]
+  (-> this (.-DOMSettableTokenList)))
+
+(defn set-dom-settable-token-list!
+  "Property.
+
+  LinkStyle.sheet Read only"
+  [this val]
+  (aset this "DOMSettableTokenList" val))
+
+(defn style-sheet
+  "Property.
+
+  HTMLLinkElement.type"
+  [this]
+  (-> this (.-StyleSheet)))
+
+(defn set-style-sheet!
+  "Property.
+
+  HTMLLinkElement.type"
+  [this val]
+  (aset this "StyleSheet" val))
+
 (defn charset
   "Property.
 
   Is a DOMString representing the character encoding for the target"
   [this]
-  (-> this (.charset)))
+  (-> this (.-charset)))
 
 (defn set-charset!
   "Property.
@@ -19,6 +89,46 @@
   Is a DOMString representing the character encoding for the target"
   [this val]
   (aset this "charset" val))
+
+(defn rev
+  "Property.
+
+  Is a DOMString representing the reverse relationship of the linked
+  from the resource to the document.
+  Note: Currently the W3C HTML 5.2 spec states that rev is no
+  obsolete, whereas the WHATWG living standard still has it labeled
+  Until this discrepancy is resolved, you should still assume it
+  obsolete."
+  [this]
+  (-> this (.-rev)))
+
+(defn set-rev!
+  "Property.
+
+  Is a DOMString representing the reverse relationship of the linked
+  from the resource to the document.
+  Note: Currently the W3C HTML 5.2 spec states that rev is no
+  obsolete, whereas the WHATWG living standard still has it labeled
+  Until this discrepancy is resolved, you should still assume it
+  obsolete."
+  [this val]
+  (aset this "rev" val))
+
+(defn target
+  "Property.
+
+  Is a DOMString representing the name of the target frame to which
+  resource applies."
+  [this]
+  (-> this (.-target)))
+
+(defn set-target!
+  "Property.
+
+  Is a DOMString representing the name of the target frame to which
+  resource applies."
+  [this val]
+  (aset this "target" val))
 
 (defn as
   "Property.
@@ -33,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/as`"
   [this]
-  (-> this (.as)))
+  (-> this (.-as)))
 
 (defn set-as!
   "Property.
@@ -61,7 +171,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/referrerPolicy`"
   [this]
-  (-> this (.referrerPolicy)))
+  (-> this (.-referrerPolicy)))
 
 (defn set-referrer-policy!
   "Property.
@@ -89,7 +199,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/rel`"
   [this]
-  (-> this (.rel)))
+  (-> this (.-rel)))
 
 (defn set-rel!
   "Property.
@@ -118,5 +228,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/relList`"
   [this]
-  (-> this (.relList)))
+  (-> this (.-relList)))
 

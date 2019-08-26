@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLDocument/async`"
   [this]
-  (-> this (.async)))
+  (-> this (.-async)))
 
 (defn set-async!
   "Property.

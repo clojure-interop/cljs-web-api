@@ -38,6 +38,19 @@
   [this name]
   (-> this (.objectStore name)))
 
+(defn commit
+  "Method.
+
+  The commit() method of the `web.storage.IDBTransaction` interface
+  the transaction if it is alled on an active transaction. If it
+  called on a transaction that is not active, it throws and `InvalidStateError`
+
+  `transaction.commit();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/commit`"
+  [this ]
+  (-> this (.commit)))
+
 (defn db
   "Property.
 
@@ -47,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/db`"
   [this]
-  (-> this (.db)))
+  (-> this (.-db)))
 
 (defn set-db!
   "Property.
@@ -74,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.
@@ -102,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/mode`"
   [this]
-  (-> this (.mode)))
+  (-> this (.-mode)))
 
 (defn set-mode!
   "Property.
@@ -126,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/ObjectStoreNames`"
   [this]
-  (-> this (.objectStoreNames)))
+  (-> this (.-objectStoreNames)))
 
 (defn set-object-store-names!
   "Property.
@@ -155,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -184,7 +197,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/oncomplete`"
   [this]
-  (-> this (.oncomplete)))
+  (-> this (.-oncomplete)))
 
 (defn set-oncomplete!
   "Property.
@@ -209,7 +222,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.

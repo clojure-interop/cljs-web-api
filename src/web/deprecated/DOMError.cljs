@@ -9,7 +9,7 @@
   Returns a DOMString representing one of the error type names
   below)."
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -18,4 +18,20 @@
   below)."
   [this val]
   (aset this "name" val))
+
+(defn message
+  "Property.
+
+  Returns a DOMString representing a message or description associated
+  the given error type name."
+  [this]
+  (-> this (.-message)))
+
+(defn set-message!
+  "Property.
+
+  Returns a DOMString representing a message or description associated
+  the given error type name."
+  [this val]
+  (aset this "message" val))
 

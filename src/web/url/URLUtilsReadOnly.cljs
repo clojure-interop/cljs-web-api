@@ -26,20 +26,19 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
-(defn hash
+(defn protocol
   "Property.
 
-  The URLUtilsReadOnly.hash read-only property returns a `web.dom.DOMString`
-  a '#' followed by the fragment identifier of the URL. The hash
-  not percent encoded.
+  The URLUtilsReadOnly.protocol read-only property returns a `web.dom.DOMString`
+  the protocol scheme of the URL, including the final ':'.
 
-  `string = object.hash;`
+  `string = object.protocol;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/hash`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/protocol`"
   [this]
-  (-> this (.hash)))
+  (-> this (.-protocol)))
 
 (defn host
   "Property.
@@ -51,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn hostname
   "Property.
@@ -63,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/hostname`"
   [this]
-  (-> this (.hostname)))
+  (-> this (.-hostname)))
 
 (defn origin
   "Property.
@@ -79,19 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/origin`"
   [this]
-  (-> this (.origin)))
-
-(defn pathname
-  "Property.
-
-  The URLUtilsReadOnly.pathname read-only property returns a `web.dom.DOMString`
-  an initial '/' followed by the path of the URL.
-
-  `string = object.pathname;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/pathname`"
-  [this]
-  (-> this (.pathname)))
+  (-> this (.-origin)))
 
 (defn port
   "Property.
@@ -103,19 +90,19 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
-(defn protocol
+(defn pathname
   "Property.
 
-  The URLUtilsReadOnly.protocol read-only property returns a `web.dom.DOMString`
-  the protocol scheme of the URL, including the final ':'.
+  The URLUtilsReadOnly.pathname read-only property returns a `web.dom.DOMString`
+  an initial '/' followed by the path of the URL.
 
-  `string = object.protocol;`
+  `string = object.pathname;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/protocol`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/pathname`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-pathname)))
 
 (defn search
   "Property.
@@ -127,5 +114,18 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/search`"
   [this]
-  (-> this (.search)))
+  (-> this (.-search)))
+
+(defn hash
+  "Property.
+
+  The URLUtilsReadOnly.hash read-only property returns a `web.dom.DOMString`
+  a '#' followed by the fragment identifier of the URL. The hash
+  not percent encoded.
+
+  `string = object.hash;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/hash`"
+  [this]
+  (-> this (.-hash)))
 

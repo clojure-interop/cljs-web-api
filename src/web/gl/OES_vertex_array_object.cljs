@@ -19,19 +19,6 @@
   [this ]
   (-> this (.createVertexArrayOES)))
 
-(defn bind-vertex-array-oes
-  "Method.
-
-  The OES_vertex_array_object.bindVertexArrayOES() method of the
-  API binds a passed `web.gl.WebGLVertexArrayObject` object to
-  buffer.
-
-  `void ext.bindVertexArrayOES(arrayObject);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/bindVertexArrayOES`"
-  [this array-object]
-  (-> this (.bindVertexArrayOES array-object)))
-
 (defn delete-vertex-array-oes
   "Method.
 
@@ -55,4 +42,17 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/isVertexArrayOES`"
   [this array-object]
   (-> this (.isVertexArrayOES array-object)))
+
+(defn bind-vertex-array-oes
+  "Method.
+
+  The OES_vertex_array_object.bindVertexArrayOES() method of the
+  API binds a passed `web.gl.WebGLVertexArrayObject` object to
+  buffer.
+
+  `void ext.bindVertexArrayOES(arrayObject);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/bindVertexArrayOES`"
+  [this array-object]
+  (-> this (.bindVertexArrayOES array-object)))
 

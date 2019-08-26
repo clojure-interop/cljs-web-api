@@ -108,7 +108,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/currentTime`"
   [this]
-  (-> this (.currentTime)))
+  (-> this (.-currentTime)))
 
 (defn set-current-time!
   "Property.
@@ -138,7 +138,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/effect`"
   [this]
-  (-> this (.effect)))
+  (-> this (.-effect)))
 
 (defn set-effect!
   "Property.
@@ -156,6 +156,32 @@
   [this val]
   (aset this "effect" val))
 
+(defn finished
+  "Property.
+
+  The Animation.finished read-only property of the Web Animations
+  returns a `js.Promise` which resolves once the animation has
+  playing.
+
+  `var animationsPromise = Animation.finished;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished`"
+  [this]
+  (-> this (.-finished)))
+
+(defn set-finished!
+  "Property.
+
+  The Animation.finished read-only property of the Web Animations
+  returns a `js.Promise` which resolves once the animation has
+  playing.
+
+  `var animationsPromise = Animation.finished;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished`"
+  [this val]
+  (aset this "finished" val))
+
 (defn id
   "Property.
 
@@ -168,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
 
 (defn set-id!
   "Property.
@@ -184,6 +210,60 @@
   [this val]
   (aset this "id" val))
 
+(defn pending
+  "Property.
+
+  The read-only Animation.pending property of the Web Animations
+  indicates whether the animation is currently waiting for an asynchronous
+  such as initiating playback or pausing a running animation.
+
+  `var pending = Animation.pending;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending`"
+  [this]
+  (-> this (.-pending)))
+
+(defn set-pending!
+  "Property.
+
+  The read-only Animation.pending property of the Web Animations
+  indicates whether the animation is currently waiting for an asynchronous
+  such as initiating playback or pausing a running animation.
+
+  `var pending = Animation.pending;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending`"
+  [this val]
+  (aset this "pending" val))
+
+(defn play-state
+  "Property.
+
+  The Animation.playState property of the Web Animations API returns
+  sets an enumerated value describing the playback state of an
+
+  `var currentPlayState = Animation.playState;
+
+  Animation.playState = newState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState`"
+  [this]
+  (-> this (.-playState)))
+
+(defn set-play-state!
+  "Property.
+
+  The Animation.playState property of the Web Animations API returns
+  sets an enumerated value describing the playback state of an
+
+  `var currentPlayState = Animation.playState;
+
+  Animation.playState = newState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState`"
+  [this val]
+  (aset this "playState" val))
+
 (defn playback-rate
   "Property.
 
@@ -196,7 +276,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playbackRate`"
   [this]
-  (-> this (.playbackRate)))
+  (-> this (.-playbackRate)))
 
 (defn set-playback-rate!
   "Property.
@@ -225,7 +305,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/ready`"
   [this]
-  (-> this (.ready)))
+  (-> this (.-ready)))
 
 (defn set-ready!
   "Property.
@@ -255,7 +335,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/startTime`"
   [this]
-  (-> this (.startTime)))
+  (-> this (.-startTime)))
 
 (defn set-start-time!
   "Property.
@@ -287,7 +367,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/timeline`"
   [this]
-  (-> this (.timeline)))
+  (-> this (.-timeline)))
 
 (defn set-timeline!
   "Property.
@@ -318,7 +398,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/oncancel`"
   [this]
-  (-> this (.oncancel)))
+  (-> this (.-oncancel)))
 
 (defn set-oncancel!
   "Property.
@@ -334,32 +414,6 @@
   [this val]
   (aset this "oncancel" val))
 
-(defn finished
-  "Property.
-
-  The Animation.finished read-only property of the Web Animations
-  returns a `js.Promise` which resolves once the animation has
-  playing.
-
-  `var animationsPromise = Animation.finished;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished`"
-  [this]
-  (-> this (.finished)))
-
-(defn set-finished!
-  "Property.
-
-  The Animation.finished read-only property of the Web Animations
-  returns a `js.Promise` which resolves once the animation has
-  playing.
-
-  `var animationsPromise = Animation.finished;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished`"
-  [this val]
-  (aset this "finished" val))
-
 (defn onfinish
   "Property.
 
@@ -373,7 +427,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/onfinish`"
   [this]
-  (-> this (.onfinish)))
+  (-> this (.-onfinish)))
 
 (defn set-onfinish!
   "Property.
@@ -389,58 +443,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/onfinish`"
   [this val]
   (aset this "onfinish" val))
-
-(defn pending
-  "Property.
-
-  The read-only Animation.pending property of the Web Animations
-  indicates whether the animation is currently waiting for an asynchronous
-  such as initiating playback or pausing a running animation.
-
-  `var pending = Animation.pending;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending`"
-  [this]
-  (-> this (.pending)))
-
-(defn set-pending!
-  "Property.
-
-  The read-only Animation.pending property of the Web Animations
-  indicates whether the animation is currently waiting for an asynchronous
-  such as initiating playback or pausing a running animation.
-
-  `var pending = Animation.pending;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending`"
-  [this val]
-  (aset this "pending" val))
-
-(defn play-state
-  "Property.
-
-  The Animation.playState property of the Web Animations API returns
-  sets an enumerated value describing the playback state of an
-
-  `var currentPlayState = Animation.playState;
-
-  Animation.playState = newState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState`"
-  [this]
-  (-> this (.playState)))
-
-(defn set-play-state!
-  "Property.
-
-  The Animation.playState property of the Web Animations API returns
-  sets an enumerated value describing the playback state of an
-
-  `var currentPlayState = Animation.playState;
-
-  Animation.playState = newState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState`"
-  [this val]
-  (aset this "playState" val))
 

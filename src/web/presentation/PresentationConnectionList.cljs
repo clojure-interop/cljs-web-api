@@ -8,7 +8,7 @@
   Returns the non-terminated set of presentation connections in
   set of presentation controllers."
   [this]
-  (-> this (.connections)))
+  (-> this (.-connections)))
 
 (defn set-connections!
   "Property.
@@ -23,7 +23,7 @@
 
   Fired whenever a new presentation connection becomes available."
   [this]
-  (-> this (.onconnectionavailable)))
+  (-> this (.-onconnectionavailable)))
 
 (defn set-onconnectionavailable!
   "Property.

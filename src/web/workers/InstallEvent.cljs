@@ -32,7 +32,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent/activeWorker`"
   [this]
-  (-> this (.activeWorker)))
+  (-> this (.-activeWorker)))
 
 (defn set-active-worker!
   "Property.

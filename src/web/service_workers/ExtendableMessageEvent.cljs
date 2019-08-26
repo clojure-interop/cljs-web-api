@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -48,30 +48,6 @@
   [this val]
   (aset this "data" val))
 
-(defn last-event-id
-  "Property.
-
-  The lastEventID read-only property of the `web.service-workers.ExtendableMessageEvent`
-  represents, in server-sent events, the last event ID of the event
-
-  `var myLastEventId = ExtendableMessageEventInstance.lastEventId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId`"
-  [this]
-  (-> this (.lastEventId)))
-
-(defn set-last-event-id!
-  "Property.
-
-  The lastEventID read-only property of the `web.service-workers.ExtendableMessageEvent`
-  represents, in server-sent events, the last event ID of the event
-
-  `var myLastEventId = ExtendableMessageEventInstance.lastEventId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId`"
-  [this val]
-  (aset this "lastEventId" val))
-
 (defn origin
   "Property.
 
@@ -82,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/origin`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-origin)))
 
 (defn set-origin!
   "Property.
@@ -96,6 +72,56 @@
   [this val]
   (aset this "origin" val))
 
+(defn last-event-id
+  "Property.
+
+  The lastEventID read-only property of the `web.service-workers.ExtendableMessageEvent`
+  represents, in server-sent events, the last event ID of the event
+
+  `var myLastEventId = ExtendableMessageEventInstance.lastEventId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId`"
+  [this]
+  (-> this (.-lastEventId)))
+
+(defn set-last-event-id!
+  "Property.
+
+  The lastEventID read-only property of the `web.service-workers.ExtendableMessageEvent`
+  represents, in server-sent events, the last event ID of the event
+
+  `var myLastEventId = ExtendableMessageEventInstance.lastEventId;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/lastEventId`"
+  [this val]
+  (aset this "lastEventId" val))
+
+(defn source
+  "Property.
+
+  The source read-only property of the `web.service-workers.ExtendableMessageEvent`
+  a reference to the `web.service-workers.Client` object from which
+  message was sent.
+
+  `var mySource = ExtendableMessageEventInstance.source;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source`"
+  [this]
+  (-> this (.-source)))
+
+(defn set-source!
+  "Property.
+
+  The source read-only property of the `web.service-workers.ExtendableMessageEvent`
+  a reference to the `web.service-workers.Client` object from which
+  message was sent.
+
+  `var mySource = ExtendableMessageEventInstance.source;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source`"
+  [this val]
+  (aset this "source" val))
+
 (defn ports
   "Property.
 
@@ -108,7 +134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ports`"
   [this]
-  (-> this (.ports)))
+  (-> this (.-ports)))
 
 (defn set-ports!
   "Property.
@@ -123,30 +149,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ports`"
   [this val]
   (aset this "ports" val))
-
-(defn source
-  "Property.
-
-  The source read-only property of the `web.service-workers.ExtendableMessageEvent`
-  a reference to the `web.service-workers.Client` object from which
-  message was sent.
-
-  `var mySource = ExtendableMessageEventInstance.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source`"
-  [this]
-  (-> this (.source)))
-
-(defn set-source!
-  "Property.
-
-  The source read-only property of the `web.service-workers.ExtendableMessageEvent`
-  a reference to the `web.service-workers.Client` object from which
-  message was sent.
-
-  `var mySource = ExtendableMessageEventInstance.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/source`"
-  [this val]
-  (aset this "source" val))
 

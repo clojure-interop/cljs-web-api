@@ -12,3 +12,12 @@
 
   "error")
 
+(def success
+  "Event.
+
+  The success event is fired when an IDBRequest succeeds.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/success_event`"
+
+  "success")
+

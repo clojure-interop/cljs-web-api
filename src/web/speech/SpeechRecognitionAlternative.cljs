@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript`"
   [this]
-  (-> this (.transcript)))
+  (-> this (.-transcript)))
 
 (defn set-transcript!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/confidence`"
   [this]
-  (-> this (.confidence)))
+  (-> this (.-confidence)))
 
 (defn set-confidence!
   "Property.

@@ -15,20 +15,6 @@
   [this ]
   (-> this (.remove)))
 
-(defn after
-  "Method.
-
-  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
-  in the children list of this ChildNode's parent, just after this
-  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
-
-  `[Throws, Unscopable]
-  void ChildNode.after((Node or DOMString)... nodes);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
-  [this & args]
-  (apply (-> this .-after) (concat [this] args)))
-
 (defn before
   "Method.
 
@@ -43,6 +29,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
   [this & args]
   (apply (-> this .-before) (concat [this] args)))
+
+(defn after
+  "Method.
+
+  The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
+  in the children list of this ChildNode's parent, just after this
+  `web.dom.DOMString` objects are inserted as equivalent `web.Text`
+
+  `[Throws, Unscopable]
+  void ChildNode.after((Node or DOMString)... nodes);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
+  [this & args]
+  (apply (-> this .-after) (concat [this] args)))
 
 (defn replace-with
   "Method.

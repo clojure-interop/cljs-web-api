@@ -9,7 +9,7 @@
 
   Represents the text of the condition of the rule."
   [this]
-  (-> this (.conditionText)))
+  (-> this (.-conditionText)))
 
 (defn set-condition-text!
   "Property.

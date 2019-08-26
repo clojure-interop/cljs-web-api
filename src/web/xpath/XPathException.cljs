@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XPathException/code`"
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn set-code!
   "Property.

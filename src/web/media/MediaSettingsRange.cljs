@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSettingsRange/max`"
   [this]
-  (-> this (.max)))
+  (-> this (.-max)))
 
 (defn set-max!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSettingsRange/min`"
   [this]
-  (-> this (.min)))
+  (-> this (.-min)))
 
 (defn set-min!
   "Property.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSettingsRange/step`"
   [this]
-  (-> this (.step)))
+  (-> this (.-step)))
 
 (defn set-step!
   "Property.

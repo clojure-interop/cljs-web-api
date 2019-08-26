@@ -18,6 +18,18 @@
   [this space base-space]
   (-> this (.getPose space base-space)))
 
+(defn get-viewer-pose
+  "Method.
+
+  The XRFrame.getViewerPose() method of the `web.ar.XRFrame` interface
+  an `XRViewerPose` corresponding to the viewer's pose in a given
+
+  `var xrViewerPose = XRFrame.getViewerPose(referenceSpace);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/getViewerPose`"
+  [this reference-space]
+  (-> this (.getViewerPose reference-space)))
+
 (defn session
   "Property.
 
@@ -28,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session`"
   [this]
-  (-> this (.session)))
+  (-> this (.-session)))
 
 (defn set-session!
   "Property.

@@ -17,6 +17,19 @@
   [this name class]
   (-> this (.registerPaint name class)))
 
+(defn add-module
+  "Method.
+
+  The addModule() method of the `web.other.Worklet` interface loads
+  module in the given JavaScript file and adds it to the current
+
+  `addPromise = worklet.addModule(moduleURL);
+  addPromise = worklet.addModule(moduleURL, options);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule`"
+  [this & args]
+  (apply (-> this .-addModule) (concat [this] args)))
+
 (defn device-pixel-ratio
   "Property.
 
@@ -27,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaintWorklet/devicePixelRatio`"
   [this]
-  (-> this (.devicePixelRatio)))
+  (-> this (.-devicePixelRatio)))
 
 (defn set-device-pixel-ratio!
   "Property.
@@ -51,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaintWorklet/Paint%E2%80%8BWorklet%E2%80%8B.device%E2%80%8BPixel%E2%80%8BRatio`"
   [this]
-  (-> this (.Paint)))
+  (-> this (.-Paint)))
 
 (defn set-paint!
   "Property.

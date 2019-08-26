@@ -10,3 +10,11 @@
 
   "rejectionhandled")
 
+(def unhandledrejection
+  "Event.
+
+  Fired when a JavaScript Promise is rejected but there is no rejection
+  to deal with the rejection."
+
+  "unhandledrejection")
+

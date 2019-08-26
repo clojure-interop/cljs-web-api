@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn onaddtrack
   "Property.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/onaddtrack`"
   [this]
-  (-> this (.onaddtrack)))
+  (-> this (.-onaddtrack)))
 
 (defn set-onaddtrack!
   "Property.
@@ -70,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -98,7 +98,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/onremovetrack`"
   [this]
-  (-> this (.onremovetrack)))
+  (-> this (.-onremovetrack)))
 
 (defn set-onremovetrack!
   "Property.

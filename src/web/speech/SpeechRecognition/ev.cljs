@@ -23,89 +23,81 @@
 (def end
   "Event.
 
-  You can use the end event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/end_event`"
+  Fired when the speech recognition service has disconnected.
+  Also available via the onend property."
 
   "end")
 
 (def error
   "Event.
 
-  You can use the error event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/error_event`"
+  Fired when a speech recognition error occurs.
+  Also available via the onerror property."
 
   "error")
 
 (def nomatch
   "Event.
 
-  The nomatch event of the Web Speech API is fired when the speech
-  service returns a final result with no significant recognition.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/nomatch_event`"
+  Fired when the speech recognition service returns a final result
+  no significant recognition. This may involve some degree of recognition,
+  doesn't meet or exceed the confidence threshold.
+  Also available via the onnomatch property."
 
   "nomatch")
 
 (def result
   "Event.
 
-  The result event of the Web Speech API is fired when the speech
-  service returns a result — a word or phrase has been positively
-  and this has been communicated back to the app
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/result_event`"
+  Fired when the speech recognition service returns a result —
+  word or phrase has been positively recognized and this has been
+  back to the app.
+  Also available via the onresult property."
 
   "result")
-
-(def soundend
-  "Event.
-
-  You can use the soundend event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/soundend_event`"
-
-  "soundend")
 
 (def soundstart
   "Event.
 
-  The soundstart event of the Web Speech API is fired when any
-  — recognisable speech or not — has been detected.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/soundstart_event`"
+  Fired when any sound — recognisable speech or not — has been
+  Also available via the onsoundstart property."
 
   "soundstart")
 
-(def speechend
+(def soundend
   "Event.
 
-  The speechend event of the Web Speech API is fired when speech
-  by the speech recognition service has stopped being detected.
+  Fired when any sound — recognisable speech or not — has stopped
+  detected.
+  Also available via the onsoundend property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/speechend_event`"
-
-  "speechend")
+  "soundend")
 
 (def speechstart
   "Event.
 
-  You can use the speechstart event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/speechstart_event`"
+  Fired when sound that is recognised by the speech recognition
+  as speech has been detected.
+  Also available via the onspeechstart property."
 
   "speechstart")
+
+(def speechend
+  "Event.
+
+  Fired when speech recognised by the speech recognition service
+  stopped being detected.
+  Also available via the onspeechend property."
+
+  "speechend")
 
 (def start
   "Event.
 
-  The start event of the Web Speech API `web.speech.SpeechRecognition`
-  is fired when the speech recognition service has begun listening
+  Fired when the speech recognition service has begun listening
   incoming audio with intent to recognize grammars associated with
   current SpeechRecognition.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/start_event`"
+  Also available via the onstart property."
 
   "start")
 

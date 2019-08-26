@@ -33,17 +33,6 @@
   [this & args]
   (apply (-> this .-close) (concat [this] args)))
 
-(defn create-java-script-node
-  "Method.
-
-  The following script illustrates the use of createJavaScriptNode():
-
-  `var jsNode = audioCtx.createJavaScriptNode(bufferSize, numInputChannels, numOutputChannels);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createJavaScriptNode`"
-  [this buffer-size num-input-channels num-output-channels]
-  (-> this (.createJavaScriptNode buffer-size num-input-channels num-output-channels)))
-
 (defn create-media-element-source
   "Method.
 
@@ -56,6 +45,18 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource`"
   [this & args]
   (apply (-> this .-createMediaElementSource) (concat [this] args)))
+
+(defn create-media-stream-source
+  "Method.
+
+  For more details about media stream audio source nodes, check
+  the `web.audio.MediaStreamAudioSourceNode` reference page.
+
+  `audioSourceNode = audioContext.createMediaStreamSource(stream);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource`"
+  [this stream]
+  (-> this (.createMediaStreamSource stream)))
 
 (defn create-media-stream-destination
   "Method.
@@ -73,18 +74,6 @@
   [this & args]
   (apply (-> this .-createMediaStreamDestination) (concat [this] args)))
 
-(defn create-media-stream-source
-  "Method.
-
-  For more details about media stream audio source nodes, check
-  the `web.audio.MediaStreamAudioSourceNode` reference page.
-
-  `audioSourceNode = audioContext.createMediaStreamSource(stream);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource`"
-  [this stream]
-  (-> this (.createMediaStreamSource stream)))
-
 (defn create-media-stream-track-source
   "Method.
 
@@ -97,16 +86,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamTrackSource`"
   [this & args]
   (apply (-> this .-createMediaStreamTrackSource) (concat [this] args)))
-
-(defn create-wave-table
-  "Method.
-
-  The `web.audio.AudioContext` method createWaveTable() is now
-  you should instead use the method `createPeriodicWave()`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveTable`"
-  [this & args]
-  (apply (-> this .-createWaveTable) (concat [this] args)))
 
 (defn get-output-timestamp
   "Method.
@@ -150,6 +129,27 @@
   [this & args]
   (apply (-> this .-suspend) (concat [this] args)))
 
+(defn create-java-script-node
+  "Method.
+
+  The following script illustrates the use of createJavaScriptNode():
+
+  `var jsNode = audioCtx.createJavaScriptNode(bufferSize, numInputChannels, numOutputChannels);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createJavaScriptNode`"
+  [this buffer-size num-input-channels num-output-channels]
+  (-> this (.createJavaScriptNode buffer-size num-input-channels num-output-channels)))
+
+(defn create-wave-table
+  "Method.
+
+  The `web.audio.AudioContext` method createWaveTable() is now
+  you should instead use the method `createPeriodicWave()`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveTable`"
+  [this & args]
+  (apply (-> this .-createWaveTable) (concat [this] args)))
+
 (defn base-latency
   "Property.
 
@@ -162,7 +162,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency`"
   [this]
-  (-> this (.baseLatency)))
+  (-> this (.-baseLatency)))
 
 (defn set-base-latency!
   "Property.
@@ -188,7 +188,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency`"
   [this]
-  (-> this (.outputLatency)))
+  (-> this (.-outputLatency)))
 
 (defn set-output-latency!
   "Property.

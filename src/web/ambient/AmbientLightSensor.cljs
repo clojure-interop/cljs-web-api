@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AmbientLightSensor/illuminance`"
   [this]
-  (-> this (.illuminance)))
+  (-> this (.-illuminance)))
 
 (defn set-illuminance!
   "Property.

@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/currency`"
   [this]
-  (-> this (.currency)))
+  (-> this (.-currency)))
 
 (defn set-currency!
   "Property.
@@ -28,32 +28,6 @@
   [this val]
   (aset this "currency" val))
 
-(defn currency-system
-  "Property.
-
-  The obsolete `web.payments.PaymentCurrencyAmount` property currencySystem
-  a string which specifies the standard being used to specify the
-  the `value` is specified in.
-
-  `currencySystem = paymentCurrencyAmount.currencySystem;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/currencySystem`"
-  [this]
-  (-> this (.currencySystem)))
-
-(defn set-currency-system!
-  "Property.
-
-  The obsolete `web.payments.PaymentCurrencyAmount` property currencySystem
-  a string which specifies the standard being used to specify the
-  the `value` is specified in.
-
-  `currencySystem = paymentCurrencyAmount.currencySystem;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/currencySystem`"
-  [this val]
-  (aset this "currencySystem" val))
-
 (defn value
   "Property.
 
@@ -65,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -79,4 +53,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/value`"
   [this val]
   (aset this "value" val))
+
+(defn currency-system
+  "Property.
+
+  The obsolete `web.payments.PaymentCurrencyAmount` property currencySystem
+  a string which specifies the standard being used to specify the
+  the `value` is specified in.
+
+  `currencySystem = paymentCurrencyAmount.currencySystem;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/currencySystem`"
+  [this]
+  (-> this (.-currencySystem)))
+
+(defn set-currency-system!
+  "Property.
+
+  The obsolete `web.payments.PaymentCurrencyAmount` property currencySystem
+  a string which specifies the standard being used to specify the
+  the `value` is specified in.
+
+  `currencySystem = paymentCurrencyAmount.currencySystem;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentCurrencyAmount/currencySystem`"
+  [this val]
+  (aset this "currencySystem" val))
 

@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardRequest/supportedNetworks`"
   [this]
-  (-> this (.supportedNetworks)))
+  (-> this (.-supportedNetworks)))
 
 (defn set-supported-networks!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BasicCardRequest/supportedTypes`"
   [this]
-  (-> this (.supportedTypes)))
+  (-> this (.-supportedTypes)))
 
 (defn set-supported-types!
   "Property.

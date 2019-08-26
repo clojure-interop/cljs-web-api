@@ -30,6 +30,33 @@
   [this ]
   (-> this (.getLocalParameters)))
 
+(defn get-remote-candidates
+  "Method.
+
+  The `web.audio.RTCIceTransport` method getRemoteCandidates()
+  an array which contains one `web.rtc.RTCIceCandidate` for each
+  the candidates that have been received from the remote peer so
+  during the current ICE gathering session.
+
+  `remoteCandidates = RTCIceTransport.getRemoteCandidates();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/getRemoteCandidates`"
+  [this ]
+  (-> this (.getRemoteCandidates)))
+
+(defn get-remote-parameters
+  "Method.
+
+  The `web.audio.RTCIceTransport` method getRemoteParameters()
+  an `web.rtc.RTCIceParameters` object which provides information
+  identifying the remote peer for the duration of the ICE session.
+
+  `parameters = RTCIceTransport.getRemoteParameters();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/getRemoteParameters`"
+  [this ]
+  (-> this (.getRemoteParameters)))
+
 (defn get-selected-candidate-pair
   "Method.
 
@@ -55,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/component`"
   [this]
-  (-> this (.component)))
+  (-> this (.-component)))
 
 (defn gathering-state
   "Property.
@@ -69,35 +96,33 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/gatheringState`"
   [this]
-  (-> this (.gatheringState)))
+  (-> this (.-gatheringState)))
 
-(defn get-remote-candidates
+(defn role
   "Property.
 
-  The `web.audio.RTCIceTransport` method getRemoteCandidates()
-  an array which contains one `web.rtc.RTCIceCandidate` for each
-  the candidates that have been received from the remote peer so
-  during the current ICE gathering session.
+  The read-only `web.audio.RTCIceTransport` property role indicates
+  ICE role the transport is fulfilling: that of the controlling
+  or the agent that is being controlled.
 
-  `remoteCandidates = RTCIceTransport.getRemoteCandidates();`
+  `iceRole = RTCIceTransport.role;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/getRemoteCandidates`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/role`"
   [this]
-  (-> this (.getRemoteCandidates)))
+  (-> this (.-role)))
 
-(defn set-get-remote-candidates!
+(defn state
   "Property.
 
-  The `web.audio.RTCIceTransport` method getRemoteCandidates()
-  an array which contains one `web.rtc.RTCIceCandidate` for each
-  the candidates that have been received from the remote peer so
-  during the current ICE gathering session.
+  The read-only `web.audio.RTCIceTransport` property state returns
+  current state of the ICE transport, so you can determine the
+  of ICE gathering in which the ICE agent currently is operating.
 
-  `remoteCandidates = RTCIceTransport.getRemoteCandidates();`
+  `iceState = iceTransport.state;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/getRemoteCandidates`"
-  [this val]
-  (aset this "getRemoteCandidates" val))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/state`"
+  [this]
+  (-> this (.-state)))
 
 (defn ongatheringstatechange
   "Property.
@@ -110,7 +135,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/ongatheringstatechange`"
   [this]
-  (-> this (.ongatheringstatechange)))
+  (-> this (.-ongatheringstatechange)))
 
 (defn set-ongatheringstatechange!
   "Property.
@@ -137,7 +162,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onselectedcandidatepairchange`"
   [this]
-  (-> this (.onselectedcandidatepairchange)))
+  (-> this (.-onselectedcandidatepairchange)))
 
 (defn set-onselectedcandidatepairchange!
   "Property.
@@ -165,7 +190,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onstatechange`"
   [this]
-  (-> this (.onstatechange)))
+  (-> this (.-onstatechange)))
 
 (defn set-onstatechange!
   "Property.
@@ -180,30 +205,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/onstatechange`"
   [this val]
   (aset this "onstatechange" val))
-
-(defn role
-  "Property.
-
-  The read-only `web.audio.RTCIceTransport` property role indicates
-  ICE role the transport is fulfilling: that of the controlling
-  or the agent that is being controlled.
-
-  `iceRole = RTCIceTransport.role;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/role`"
-  [this]
-  (-> this (.role)))
-
-(defn state
-  "Property.
-
-  The read-only `web.audio.RTCIceTransport` property state returns
-  current state of the ICE transport, so you can determine the
-  of ICE gathering in which the ICE agent currently is operating.
-
-  `iceState = iceTransport.state;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceTransport/state`"
-  [this]
-  (-> this (.state)))
 

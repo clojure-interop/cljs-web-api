@@ -3,7 +3,7 @@
   (beyond those of the regular object `web.dom.HTMLElement` interface
   also has available to it by inheritance) for manipulating the
   and presentation of `<area>` elements."
-  (:refer-clojure :exclude [hash]))
+  (:refer-clojure :exclude [hash type]))
 
 (defn to-string
   "Method.
@@ -24,7 +24,7 @@
   Is a DOMString containing a single character that switches input
   to the control."
   [this]
-  (-> this (.accessKey)))
+  (-> this (.-accessKey)))
 
 (defn set-access-key!
   "Property.
@@ -33,6 +33,58 @@
   to the control."
   [this val]
   (aset this "accessKey" val))
+
+(defn alt
+  "Property.
+
+  Is a DOMString that reflects the alt HTML attribute, containing
+  text for the element."
+  [this]
+  (-> this (.-alt)))
+
+(defn set-alt!
+  "Property.
+
+  Is a DOMString that reflects the alt HTML attribute, containing
+  text for the element."
+  [this val]
+  (aset this "alt" val))
+
+(defn coords
+  "Property.
+
+  Is a DOMString that reflects the coords HTML attribute, containing
+  to define the hot-spot region."
+  [this]
+  (-> this (.-coords)))
+
+(defn set-coords!
+  "Property.
+
+  Is a DOMString that reflects the coords HTML attribute, containing
+  to define the hot-spot region."
+  [this val]
+  (aset this "coords" val))
+
+(defn download
+  "Property.
+
+  Is a DOMString indicating that the linked resource is intended
+  be downloaded rather than displayed in the browser. The value
+  the proposed name of the file. If the name is not a valid filename
+  the underlying OS, browser will adapt it."
+  [this]
+  (-> this (.-download)))
+
+(defn set-download!
+  "Property.
+
+  Is a DOMString indicating that the linked resource is intended
+  be downloaded rather than displayed in the browser. The value
+  the proposed name of the file. If the name is not a valid filename
+  the underlying OS, browser will adapt it."
+  [this val]
+  (aset this "download" val))
 
 (defn hash
   "Property.
@@ -44,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash`"
   [this]
-  (-> this (.hash)))
+  (-> this (.-hash)))
 
 (defn set-hash!
   "Property.
@@ -70,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn set-host!
   "Property.
@@ -97,7 +149,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hostname`"
   [this]
-  (-> this (.hostname)))
+  (-> this (.-hostname)))
 
 (defn set-hostname!
   "Property.
@@ -120,7 +172,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -132,17 +184,53 @@
   [this val]
   (aset this "href" val))
 
-(defn origin
+(defn hreflang
   "Property.
 
-  The HTMLHyperlinkElementUtils.origin read-only property is a
-  containing the Unicode serialization of the origin of the represented
-
-  `string = object.origin;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
+  Is a DOMString containing that reflects the hreflang HTML attribute,
+  the language of the linked resource."
   [this]
-  (-> this (.origin)))
+  (-> this (.-hreflang)))
+
+(defn set-hreflang!
+  "Property.
+
+  Is a DOMString containing that reflects the hreflang HTML attribute,
+  the language of the linked resource."
+  [this val]
+  (aset this "hreflang" val))
+
+(defn media
+  "Property.
+
+  Is a DOMString containing that reflects the media HTML attribute,
+  target media of the linked resource."
+  [this]
+  (-> this (.-media)))
+
+(defn set-media!
+  "Property.
+
+  Is a DOMString containing that reflects the media HTML attribute,
+  target media of the linked resource."
+  [this val]
+  (aset this "media" val))
+
+(defn no-href
+  "Property.
+
+  Is a Boolean flag indicating if the area is inactive (true) or
+  (false)."
+  [this]
+  (-> this (.-noHref)))
+
+(defn set-no-href!
+  "Property.
+
+  Is a Boolean flag indicating if the area is inactive (true) or
+  (false)."
+  [this val]
+  (aset this "noHref" val))
 
 (defn password
   "Property.
@@ -155,7 +243,19 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/password`"
   [this]
-  (-> this (.password)))
+  (-> this (.-password)))
+
+(defn origin
+  "Property.
+
+  The HTMLHyperlinkElementUtils.origin read-only property is a
+  containing the Unicode serialization of the origin of the represented
+
+  `string = object.origin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin`"
+  [this]
+  (-> this (.-origin)))
 
 (defn pathname
   "Property.
@@ -169,7 +269,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/pathname`"
   [this]
-  (-> this (.pathname)))
+  (-> this (.-pathname)))
 
 (defn set-pathname!
   "Property.
@@ -197,7 +297,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -224,7 +324,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.
@@ -251,7 +351,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/referrerPolicy`"
   [this]
-  (-> this (.referrerPolicy)))
+  (-> this (.-referrerPolicy)))
 
 (defn set-referrer-policy!
   "Property.
@@ -280,7 +380,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/rel`"
   [this]
-  (-> this (.rel)))
+  (-> this (.-rel)))
 
 (defn set-rel!
   "Property.
@@ -309,7 +409,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/relList`"
   [this]
-  (-> this (.relList)))
+  (-> this (.-relList)))
 
 (defn set-rel-list!
   "Property.
@@ -337,7 +437,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search`"
   [this]
-  (-> this (.search)))
+  (-> this (.-search)))
 
 (defn set-search!
   "Property.
@@ -353,6 +453,68 @@
   [this val]
   (aset this "search" val))
 
+(defn shape
+  "Property.
+
+  Is a DOMString that reflects the shape HTML attribute, indicating
+  shape of the hot-spot, limited to known values."
+  [this]
+  (-> this (.-shape)))
+
+(defn set-shape!
+  "Property.
+
+  Is a DOMString that reflects the shape HTML attribute, indicating
+  shape of the hot-spot, limited to known values."
+  [this val]
+  (aset this "shape" val))
+
+(defn tab-index
+  "Property.
+
+  Is a long containing the element's position in the tabbing order."
+  [this]
+  (-> this (.-tabIndex)))
+
+(defn set-tab-index!
+  "Property.
+
+  Is a long containing the element's position in the tabbing order."
+  [this val]
+  (aset this "tabIndex" val))
+
+(defn target
+  "Property.
+
+  Is a DOMString that reflects the target HTML attribute, indicating
+  browsing context in which to open the linked resource."
+  [this]
+  (-> this (.-target)))
+
+(defn set-target!
+  "Property.
+
+  Is a DOMString that reflects the target HTML attribute, indicating
+  browsing context in which to open the linked resource."
+  [this val]
+  (aset this "target" val))
+
+(defn type
+  "Property.
+
+  Is a DOMString that reflects the type HTML attribute, indicating
+  MIME type of the linked resource."
+  [this]
+  (-> this (.-type)))
+
+(defn set-type!
+  "Property.
+
+  Is a DOMString that reflects the type HTML attribute, indicating
+  MIME type of the linked resource."
+  [this val]
+  (aset this "type" val))
+
 (defn username
   "Property.
 
@@ -364,7 +526,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/username`"
   [this]
-  (-> this (.username)))
+  (-> this (.-username)))
 
 (defn set-username!
   "Property.

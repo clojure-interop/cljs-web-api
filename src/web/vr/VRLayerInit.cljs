@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRLayerInit/leftBounds`"
   [this]
-  (-> this (.leftBounds)))
+  (-> this (.-leftBounds)))
 
 (defn set-left-bounds!
   "Property.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRLayerInit/rightBounds`"
   [this]
-  (-> this (.rightBounds)))
+  (-> this (.-rightBounds)))
 
 (defn set-right-bounds!
   "Property.
@@ -71,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRLayerInit/source`"
   [this]
-  (-> this (.source)))
+  (-> this (.-source)))
 
 (defn set-source!
   "Property.

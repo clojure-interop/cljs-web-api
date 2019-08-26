@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/methodName`"
   [this]
-  (-> this (.methodName)))
+  (-> this (.-methodName)))
 
 (defn set-method-name!
   "Property.
@@ -77,7 +77,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/validationURL`"
   [this]
-  (-> this (.validationURL)))
+  (-> this (.-validationURL)))
 
 (defn set-validation-url!
   "Property.

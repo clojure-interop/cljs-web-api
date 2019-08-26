@@ -12,7 +12,7 @@
   other context. If the id attribute is set, this must have the
   value; and it cannot be null or empty."
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -22,4 +22,20 @@
   value; and it cannot be null or empty."
   [this val]
   (aset this "name" val))
+
+(defn areas
+  "Property.
+
+  Is a live HTMLCollection representing the <area> elements associated
+  this <map>."
+  [this]
+  (-> this (.-areas)))
+
+(defn set-areas!
+  "Property.
+
+  Is a live HTMLCollection representing the <area> elements associated
+  this <map>."
+  [this val]
+  (aset this "areas" val))
 

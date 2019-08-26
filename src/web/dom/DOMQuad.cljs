@@ -13,17 +13,25 @@
   [this & args]
   (apply (-> this .-fromRect) (concat [this] args)))
 
-(defn p1
-  "Property.
+(defn from-quad
+  "Method.
 
-  are DOMPoint objects for each of the DOMQuad object's four corners."
-  [this]
-  (-> this (.p1)))
+  Returns a new DOMQuad object based on the passed set of coordinates."
+  [this & args]
+  (apply (-> this .-fromQuad) (concat [this] args)))
 
-(defn set-p1!
-  "Property.
+(defn get-bounds
+  "Method.
 
-  are DOMPoint objects for each of the DOMQuad object's four corners."
-  [this val]
-  (aset this "p1" val))
+  Returns a DOMRect object with the coordinates and dimensions
+  the DOMQuad object."
+  [this & args]
+  (apply (-> this .-getBounds) (concat [this] args)))
+
+(defn to-json
+  "Method.
+
+  Returns a JSON representation of the DOMQuad object."
+  [this & args]
+  (apply (-> this .-toJSON) (concat [this] args)))
 

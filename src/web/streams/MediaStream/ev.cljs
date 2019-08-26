@@ -13,10 +13,8 @@
 (def removetrack
   "Event.
 
-  The removetrack event is fired when a new MediaStreamTrack object
-  been removed from a MediaStream.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/removetrack_event`"
+  Fired when a MediaStreamTrack object has been removed.
+  Also available via the onremovetrack property."
 
   "removetrack")
 

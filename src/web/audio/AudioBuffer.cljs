@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/sampleRate`"
   [this]
-  (-> this (.sampleRate)))
+  (-> this (.-sampleRate)))
 
 (defn set-sample-rate!
   "Property.
@@ -99,30 +99,6 @@
   [this val]
   (aset this "sampleRate" val))
 
-(defn duration
-  "Property.
-
-  A double.
-
-  `var myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
-  myArrayBuffer.duration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration`"
-  [this]
-  (-> this (.duration)))
-
-(defn set-duration!
-  "Property.
-
-  A double.
-
-  `var myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
-  myArrayBuffer.duration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration`"
-  [this val]
-  (aset this "duration" val))
-
 (defn length
   "Property.
 
@@ -135,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.
@@ -151,6 +127,30 @@
   [this val]
   (aset this "length" val))
 
+(defn duration
+  "Property.
+
+  A double.
+
+  `var myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
+  myArrayBuffer.duration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration`"
+  [this]
+  (-> this (.-duration)))
+
+(defn set-duration!
+  "Property.
+
+  A double.
+
+  `var myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
+  myArrayBuffer.duration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration`"
+  [this val]
+  (aset this "duration" val))
+
 (defn number-of-channels
   "Property.
 
@@ -161,7 +161,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/numberOfChannels`"
   [this]
-  (-> this (.numberOfChannels)))
+  (-> this (.-numberOfChannels)))
 
 (defn set-number-of-channels!
   "Property.

@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRStageParameters/sittingToStandingTransform`"
   [this]
-  (-> this (.sittingToStandingTransform)))
+  (-> this (.-sittingToStandingTransform)))
 
 (defn set-sitting-to-standing-transform!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRStageParameters/sizeX`"
   [this]
-  (-> this (.sizeX)))
+  (-> this (.-sizeX)))
 
 (defn set-size-x!
   "Property.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRStageParameters/sizeY`"
   [this]
-  (-> this (.sizeY)))
+  (-> this (.-sizeY)))
 
 (defn set-size-y!
   "Property.

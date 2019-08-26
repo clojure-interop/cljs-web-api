@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint`"
   [this]
-  (-> this (.onafterprint)))
+  (-> this (.-onafterprint)))
 
 (defn set-onafterprint!
   "Property.
@@ -48,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint`"
   [this]
-  (-> this (.onbeforeprint)))
+  (-> this (.-onbeforeprint)))
 
 (defn set-onbeforeprint!
   "Property.
@@ -80,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this]
-  (-> this (.onbeforeunload)))
+  (-> this (.-onbeforeunload)))
 
 (defn set-onbeforeunload!
   "Property.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange`"
   [this]
-  (-> this (.onhashchange)))
+  (-> this (.-onhashchange)))
 
 (defn set-onhashchange!
   "Property.
@@ -169,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange`"
   [this]
-  (-> this (.onlanguagechange)))
+  (-> this (.-onlanguagechange)))
 
 (defn set-onlanguagechange!
   "Property.
@@ -194,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -221,7 +221,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.
@@ -237,6 +237,70 @@
   [this val]
   (aset this "onmessageerror" val))
 
+(defn onoffline
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this]
+  (-> this (.-onoffline)))
+
+(defn set-onoffline!
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this val]
+  (aset this "onoffline" val))
+
+(defn ononline
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this]
+  (-> this (.-ononline)))
+
+(defn set-ononline!
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this val]
+  (aset this "ononline" val))
+
+(defn onpagehide
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this]
+  (-> this (.-onpagehide)))
+
+(defn set-onpagehide!
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this val]
+  (aset this "onpagehide" val))
+
+(defn onpageshow
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this]
+  (-> this (.-onpageshow)))
+
+(defn set-onpageshow!
+  "Property.
+
+  Is an EventHandler representing the code to be called when the
+  event is raised."
+  [this val]
+  (aset this "onpageshow" val))
+
 (defn onpopstate
   "Property.
 
@@ -250,7 +314,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate`"
   [this]
-  (-> this (.onpopstate)))
+  (-> this (.-onpopstate)))
 
 (defn set-onpopstate!
   "Property.
@@ -267,34 +331,6 @@
   [this val]
   (aset this "onpopstate" val))
 
-(defn onrejectionhandled
-  "Property.
-
-  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
-  is the `EventHandler` for processing rejectionhandled events.
-  events are raised when `js.Promise`s are rejected.
-
-  `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
-  window.onrejectionhandled = function(event) { ...};`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
-  [this]
-  (-> this (.onrejectionhandled)))
-
-(defn set-onrejectionhandled!
-  "Property.
-
-  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
-  is the `EventHandler` for processing rejectionhandled events.
-  events are raised when `js.Promise`s are rejected.
-
-  `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
-  window.onrejectionhandled = function(event) { ...};`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
-  [this val]
-  (aset this "onrejectionhandled" val))
-
 (defn onstorage
   "Property.
 
@@ -305,7 +341,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage`"
   [this]
-  (-> this (.onstorage)))
+  (-> this (.-onstorage)))
 
 (defn set-onstorage!
   "Property.
@@ -330,7 +366,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection`"
   [this]
-  (-> this (.onunhandledrejection)))
+  (-> this (.-onunhandledrejection)))
 
 (defn set-onunhandledrejection!
   "Property.
@@ -360,7 +396,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this]
-  (-> this (.onunload)))
+  (-> this (.-onunload)))
 
 (defn set-onunload!
   "Property.
@@ -378,4 +414,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this val]
   (aset this "onunload" val))
+
+(defn onrejectionhandled
+  "Property.
+
+  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing rejectionhandled events.
+  events are raised when `js.Promise`s are rejected.
+
+  `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
+  window.onrejectionhandled = function(event) { ...};`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
+  [this]
+  (-> this (.-onrejectionhandled)))
+
+(defn set-onrejectionhandled!
+  "Property.
+
+  The onrejectionhandled property of the `web.dom.WindowEventHandlers`
+  is the `EventHandler` for processing rejectionhandled events.
+  events are raised when `js.Promise`s are rejected.
+
+  `window.addEventListener(\\\"rejectionhandled\\\", function(event) { ... });
+  window.onrejectionhandled = function(event) { ...};`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
+  [this val]
+  (aset this "onrejectionhandled" val))
 

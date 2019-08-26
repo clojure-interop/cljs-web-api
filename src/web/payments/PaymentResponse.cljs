@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/details`"
   [this]
-  (-> this (.details)))
+  (-> this (.-details)))
 
 (defn set-details!
   "Property.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/methodName`"
   [this]
-  (-> this (.methodName)))
+  (-> this (.-methodName)))
 
 (defn set-method-name!
   "Property.
@@ -83,34 +83,6 @@
   [this val]
   (aset this "methodName" val))
 
-(defn onpayerdetailchange
-  "Property.
-
-  The `web.payments.PaymentResponse` object's onpayerdetailchange
-  is an event handler which is called to handle the payerdetailchange
-  which is sent to the PaymentResponse when the user makes changes
-  their personal information while filling out a payment request
-
-  `paymentResponse.onpayerdetailchange = eventHandlerFunction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange`"
-  [this]
-  (-> this (.onpayerdetailchange)))
-
-(defn set-onpayerdetailchange!
-  "Property.
-
-  The `web.payments.PaymentResponse` object's onpayerdetailchange
-  is an event handler which is called to handle the payerdetailchange
-  which is sent to the PaymentResponse when the user makes changes
-  their personal information while filling out a payment request
-
-  `paymentResponse.onpayerdetailchange = eventHandlerFunction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange`"
-  [this val]
-  (aset this "onpayerdetailchange" val))
-
 (defn payer-email
   "Property.
 
@@ -123,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerEmail`"
   [this]
-  (-> this (.payerEmail)))
+  (-> this (.-payerEmail)))
 
 (defn set-payer-email!
   "Property.
@@ -151,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerName`"
   [this]
-  (-> this (.payerName)))
+  (-> this (.-payerName)))
 
 (defn set-payer-name!
   "Property.
@@ -179,7 +151,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerPhone`"
   [this]
-  (-> this (.payerPhone)))
+  (-> this (.-payerPhone)))
 
 (defn set-payer-phone!
   "Property.
@@ -206,7 +178,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/requestId`"
   [this]
-  (-> this (.requestId)))
+  (-> this (.-requestId)))
 
 (defn set-request-id!
   "Property.
@@ -232,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingAddress`"
   [this]
-  (-> this (.shippingAddress)))
+  (-> this (.-shippingAddress)))
 
 (defn set-shipping-address!
   "Property.
@@ -259,7 +231,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingOption`"
   [this]
-  (-> this (.shippingOption)))
+  (-> this (.-shippingOption)))
 
 (defn set-shipping-option!
   "Property.
@@ -274,4 +246,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingOption`"
   [this val]
   (aset this "shippingOption" val))
+
+(defn onpayerdetailchange
+  "Property.
+
+  The `web.payments.PaymentResponse` object's onpayerdetailchange
+  is an event handler which is called to handle the payerdetailchange
+  which is sent to the PaymentResponse when the user makes changes
+  their personal information while filling out a payment request
+
+  `paymentResponse.onpayerdetailchange = eventHandlerFunction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange`"
+  [this]
+  (-> this (.-onpayerdetailchange)))
+
+(defn set-onpayerdetailchange!
+  "Property.
+
+  The `web.payments.PaymentResponse` object's onpayerdetailchange
+  is an event handler which is called to handle the payerdetailchange
+  which is sent to the PaymentResponse when the user makes changes
+  their personal information while filling out a payment request
+
+  `paymentResponse.onpayerdetailchange = eventHandlerFunction;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/onpayerdetailchange`"
+  [this val]
+  (aset this "onpayerdetailchange" val))
 

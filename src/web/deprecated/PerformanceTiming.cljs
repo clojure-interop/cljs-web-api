@@ -6,350 +6,392 @@
   page using the `window.performance.timing` property."
   (:refer-clojure :exclude []))
 
-(defn connect-end
-  "Property.
+(defn to-json
+  "Method.
 
-  The legacy PerformanceTiming.connectEnd read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, where the connection is opened network. If the transport
-  reports an error and the connection establishment is started
-  the last connection establisment end time is given. If a persistent
-  is used, the value will be the same as `PerformanceTiming.fetchStart`.
-  connection is considered as opened when all secure connection
-  or SOCKS authentication, is terminated.
-
-  `time = performanceTiming.connectEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/connectEnd`"
-  [this]
-  (-> this (.connectEnd)))
-
-(defn connect-start
-  "Property.
-
-  The legacy PerformanceTiming.connectStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, where the request to open a connection is sent
-  the network. If the transport layer reports an error and the
-  establishment is started again, the last connection establisment
-  time is given. If a persistent connection is used, the value
-  be the same as `PerformanceTiming.fetchStart`.
-
-  `time = performanceTiming.connectStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/connectStart`"
-  [this]
-  (-> this (.connectStart)))
-
-(defn domain-lookup-end
-  "Property.
-
-  The legacy PerformanceTiming.domainLookupEnd read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, where the domain lookup is finished. If a persistent
-  is used, or the information is stored in a cache or a local resource,
-  value will be the same as `PerformanceTiming.fetchStart`.
-
-  `time = performanceTiming.domainLookupEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domainLookupEnd`"
-  [this]
-  (-> this (.domainLookupEnd)))
-
-(defn set-domain-lookup-end!
-  "Property.
-
-  The legacy PerformanceTiming.domainLookupEnd read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, where the domain lookup is finished. If a persistent
-  is used, or the information is stored in a cache or a local resource,
-  value will be the same as `PerformanceTiming.fetchStart`.
-
-  `time = performanceTiming.domainLookupEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domainLookupEnd`"
-  [this val]
-  (aset this "domainLookupEnd" val))
-
-(defn domain-lookup-start
-  "Property.
-
-  The legacy PerformanceTiming.domainLookupStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, where the domain lookup starts. If a persistent
-  is used, or the information is stored in a cache or a local resource,
-  value will be the same as `PerformanceTiming.fetchStart`.
-
-  `time = performanceTiming.domainLookupStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domainLookupStart`"
-  [this]
-  (-> this (.domainLookupStart)))
-
-(defn dom-complete
-  "Property.
-
-  The legacy PerformanceTiming.domComplete read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, when the parser finished its work on the main document,
-  is when its `Document.readyState` changes to 'complete' and the
-  readystatechange event is thrown.
-
-  `time = performanceTiming.domComplete;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domComplete`"
-  [this]
-  (-> this (.domComplete)))
-
-(defn dom-content-loaded-event-end
-  "Property.
-
-  The legacy PerformanceTiming.domContentLoadedEventEnd read-only
-  returns an unsigned long long representing the moment, in milliseconds
-  the UNIX epoch, right after all the scripts that need to be executed
-  soon as possible, in order or not, has been executed.
-
-  `time = performanceTiming.domContentLoadedEventEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domContentLoadedEventEnd`"
-  [this]
-  (-> this (.domContentLoadedEventEnd)))
-
-(defn dom-content-loaded-event-start
-  "Property.
-
-  The legacy PerformanceTiming.domContentLoadedEventStart read-only
-  returns an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, right before the parser sent the DOMContentLoaded
-  that is right after all the scripts that need to be executed
-  after parsing has been executed.
-
-  `time = performanceTiming.domContentLoadedEventStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domContentLoadedEventStart`"
-  [this]
-  (-> this (.domContentLoadedEventStart)))
-
-(defn dom-interactive
-  "Property.
-
-  The legacy PerformanceTiming.domInteractive read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, when the parser finished its work on the main
-  that is when its `Document.readyState` changes to 'interactive'
-  the corresponding readystatechange event is thrown.
-
-  `time = performanceTiming.domInteractive;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domInteractive`"
-  [this]
-  (-> this (.domInteractive)))
-
-(defn dom-loading
-  "Property.
-
-  The legacy PerformanceTiming.domLoading read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, when the parser started its work, that is when its
-  changes to 'loading' and the corresponding readystatechange event
-  thrown.
-
-  `time = performanceTiming.domLoading;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domLoading`"
-  [this]
-  (-> this (.domLoading)))
-
-(defn set-dom-loading!
-  "Property.
-
-  The legacy PerformanceTiming.domLoading read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, when the parser started its work, that is when its
-  changes to 'loading' and the corresponding readystatechange event
-  thrown.
-
-  `time = performanceTiming.domLoading;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domLoading`"
-  [this val]
-  (aset this "domLoading" val))
-
-(defn fetch-start
-  "Property.
-
-  The legacy PerformanceTiming.fetchStart read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, the browser is ready to fetch the document using
-  HTTP request. This moment is before the check to any application
-
-  `time = performance.timing.fetchStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/fetchStart`"
-  [this]
-  (-> this (.fetchStart)))
-
-(defn load-event-end
-  "Property.
-
-  The legacy PerformanceTiming.loadEventEnd read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, when the load event handler terminated, that
-  when the load event is completed. If this event has not yet been
-  or is not yet completed, it returns 0.
-
-  `time = performanceTiming.loadEventEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/loadEventEnd`"
-  [this]
-  (-> this (.loadEventEnd)))
-
-(defn load-event-start
-  "Property.
-
-  The legacy PerformanceTiming.loadEventStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, when the load event was sent for the current
-  If this event has not yet been sent, it returns 0.
-
-  `time = performanceTiming.loadEventStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/loadEventStart`"
-  [this]
-  (-> this (.loadEventStart)))
+  Returns a JSON object representing this PerformanceTiming object."
+  [this & args]
+  (apply (-> this .-toJSON) (concat [this] args)))
 
 (defn navigation-start
   "Property.
 
-  The legacy PerformanceTiming.navigationStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, right after the prompt for unload terminates
-  the previous document in the same browsing context. If there
-  no previous document, this value will be the same as `PerformanceTiming.fetchStart`.
-
-  `time = performanceTiming.navigationStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/navigationStart`"
+  When the prompt for unload terminates on the previous document
+  the same browsing context. If there is no previous document,
+  value will be the same as PerformanceTiming.fetchStart."
   [this]
-  (-> this (.navigationStart)))
+  (-> this (.-navigationStart)))
 
-(defn redirect-end
+(defn set-navigation-start!
   "Property.
 
-  The legacy PerformanceTiming.redirectEnd read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, the last HTTP redirect is completed, that is when
-  last byte of the HTTP response has been received. If there is
-  redirect, or if one of the redirect is not of the same origin,
-  value returned is 0.
-
-  `time = performanceTiming.redirectEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/redirectEnd`"
-  [this]
-  (-> this (.redirectEnd)))
-
-(defn redirect-start
-  "Property.
-
-  The legacy PerformanceTiming.redirectStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, the first HTTP redirect starts. If there is no
-  or if one of the redirect is not of the same origin, the value
-  is 0.
-
-  `time = performanceTiming.redirectStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/redirectStart`"
-  [this]
-  (-> this (.redirectStart)))
-
-(defn request-start
-  "Property.
-
-  The legacy PerformanceTiming.requestStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, when the browser sent the request to obtain the
-  document, from the server or from a cache. If the transport layer
-  after the start of the request and the connection is reopened,
-  property will be set to the time corresponding to the new request.
-
-  `time = performanceTiming.requestStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/requestStart`"
-  [this]
-  (-> this (.requestStart)))
-
-(defn response-end
-  "Property.
-
-  The legacy PerformanceTiming.responseEnd read-only property returns
-  unsigned long long representing the moment, in miliseconds since
-  UNIX epoch, when the browser received the last byte of the response,
-  when the connection is closed if this happened first, from the
-  from a cache or from a local resource.
-
-  `time = performanceTiming.responseEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/responseEnd`"
-  [this]
-  (-> this (.responseEnd)))
-
-(defn response-start
-  "Property.
-
-  The legacy PerformanceTiming.responseStart read-only property
-  an unsigned long long representing the moment in time (in milliseconds
-  the UNIX epoch) when the browser received the first byte of the
-  from the server, cache, or local resource.
-
-  `time = performanceTiming.responseStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/responseStart`"
-  [this]
-  (-> this (.responseStart)))
-
-(defn secure-connection-start
-  "Property.
-
-  The legacy PerformanceTiming.secureConnectionStart read-only
-  returns an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, where the secure connection handshake starts.
-  no such connection is requested, it returns 0.
-
-  `time = performanceTiming.secureConnectionStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/secureConnectionStart`"
-  [this]
-  (-> this (.secureConnectionStart)))
-
-(defn unload-event-end
-  "Property.
-
-  The legacy PerformanceTiming.unloadEventEnd read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, the unload event handler finishes. If there is
-  previous document, or if the previous document, or one of the
-  redirects, is not of the same origin, the value returned is 0.
-
-  `time = performanceTiming.unloadEventEnd;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/unloadEventEnd`"
-  [this]
-  (-> this (.unloadEventEnd)))
+  When the prompt for unload terminates on the previous document
+  the same browsing context. If there is no previous document,
+  value will be the same as PerformanceTiming.fetchStart."
+  [this val]
+  (aset this "navigationStart" val))
 
 (defn unload-event-start
   "Property.
 
-  The legacy PerformanceTiming.unloadEventStart read-only property
-  an unsigned long long representing the moment, in miliseconds
-  the UNIX epoch, the unload event has been thrown. If there is
-  previous document, or if the previous document, or one of the
-  redirects, is not of the same origin, the value returned is 0.
-
-  `time = performanceTiming.unloadEventStart;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/unloadEventStart`"
+  When the unload event has been thrown, indicating the time at
+  the previous document in the window began to unload. If there
+  no previous document, or if the previous document or one of the
+  redirects is not of the same origin, the value returned is 0."
   [this]
-  (-> this (.unloadEventStart)))
+  (-> this (.-unloadEventStart)))
+
+(defn set-unload-event-start!
+  "Property.
+
+  When the unload event has been thrown, indicating the time at
+  the previous document in the window began to unload. If there
+  no previous document, or if the previous document or one of the
+  redirects is not of the same origin, the value returned is 0."
+  [this val]
+  (aset this "unloadEventStart" val))
+
+(defn unload-event-end
+  "Property.
+
+  When the unload event handler finishes. If there is no previous
+  or if the previous document, or one of the needed redirects,
+  not of the same origin, the value returned is 0."
+  [this]
+  (-> this (.-unloadEventEnd)))
+
+(defn set-unload-event-end!
+  "Property.
+
+  When the unload event handler finishes. If there is no previous
+  or if the previous document, or one of the needed redirects,
+  not of the same origin, the value returned is 0."
+  [this val]
+  (aset this "unloadEventEnd" val))
+
+(defn redirect-start
+  "Property.
+
+  When the first HTTP redirect starts. If there is no redirect,
+  if one of the redirects is not of the same origin, the value
+  is 0."
+  [this]
+  (-> this (.-redirectStart)))
+
+(defn set-redirect-start!
+  "Property.
+
+  When the first HTTP redirect starts. If there is no redirect,
+  if one of the redirects is not of the same origin, the value
+  is 0."
+  [this val]
+  (aset this "redirectStart" val))
+
+(defn redirect-end
+  "Property.
+
+  When the last HTTP redirect is completed, that is when the last
+  of the HTTP response has been received. If there is no redirect,
+  if one of the redirects is not of the same origin, the value
+  is 0."
+  [this]
+  (-> this (.-redirectEnd)))
+
+(defn set-redirect-end!
+  "Property.
+
+  When the last HTTP redirect is completed, that is when the last
+  of the HTTP response has been received. If there is no redirect,
+  if one of the redirects is not of the same origin, the value
+  is 0."
+  [this val]
+  (aset this "redirectEnd" val))
+
+(defn fetch-start
+  "Property.
+
+  When the browser is ready to fetch the document using an HTTP
+  This moment is before the check to any application cache."
+  [this]
+  (-> this (.-fetchStart)))
+
+(defn set-fetch-start!
+  "Property.
+
+  When the browser is ready to fetch the document using an HTTP
+  This moment is before the check to any application cache."
+  [this val]
+  (aset this "fetchStart" val))
+
+(defn domain-lookup-start
+  "Property.
+
+  When the domain lookup starts. If a persistent connection is
+  or the information is stored in a cache or a local resource,
+  value will be the same as PerformanceTiming.fetchStart."
+  [this]
+  (-> this (.-domainLookupStart)))
+
+(defn set-domain-lookup-start!
+  "Property.
+
+  When the domain lookup starts. If a persistent connection is
+  or the information is stored in a cache or a local resource,
+  value will be the same as PerformanceTiming.fetchStart."
+  [this val]
+  (aset this "domainLookupStart" val))
+
+(defn domain-lookup-end
+  "Property.
+
+  When the domain lookup is finished. If a persistent connection
+  used, or the information is stored in a cache or a local resource,
+  value will be the same as PerformanceTiming.fetchStart."
+  [this]
+  (-> this (.-domainLookupEnd)))
+
+(defn set-domain-lookup-end!
+  "Property.
+
+  When the domain lookup is finished. If a persistent connection
+  used, or the information is stored in a cache or a local resource,
+  value will be the same as PerformanceTiming.fetchStart."
+  [this val]
+  (aset this "domainLookupEnd" val))
+
+(defn connect-start
+  "Property.
+
+  When the request to open a connection is sent to the network.
+  the transport layer reports an error and the connection establishment
+  started again, the last connection establishment start time is
+  If a persistent connection is used, the value will be the same
+  PerformanceTiming.fetchStart."
+  [this]
+  (-> this (.-connectStart)))
+
+(defn set-connect-start!
+  "Property.
+
+  When the request to open a connection is sent to the network.
+  the transport layer reports an error and the connection establishment
+  started again, the last connection establishment start time is
+  If a persistent connection is used, the value will be the same
+  PerformanceTiming.fetchStart."
+  [this val]
+  (aset this "connectStart" val))
+
+(defn connect-end
+  "Property.
+
+  When the connection is opened network. If the transport layer
+  an error and the connection establishment is started again, the
+  connection establishment end time is given. If a persistent connection
+  used, the value will be the same as PerformanceTiming.fetchStart.
+  connection is considered as opened when all secure connection
+  or SOCKS authentication, is terminated."
+  [this]
+  (-> this (.-connectEnd)))
+
+(defn set-connect-end!
+  "Property.
+
+  When the connection is opened network. If the transport layer
+  an error and the connection establishment is started again, the
+  connection establishment end time is given. If a persistent connection
+  used, the value will be the same as PerformanceTiming.fetchStart.
+  connection is considered as opened when all secure connection
+  or SOCKS authentication, is terminated."
+  [this val]
+  (aset this "connectEnd" val))
+
+(defn secure-connection-start
+  "Property.
+
+  When the secure connection handshake starts. If no such connection
+  requested, it returns 0."
+  [this]
+  (-> this (.-secureConnectionStart)))
+
+(defn set-secure-connection-start!
+  "Property.
+
+  When the secure connection handshake starts. If no such connection
+  requested, it returns 0."
+  [this val]
+  (aset this "secureConnectionStart" val))
+
+(defn request-start
+  "Property.
+
+  When the browser sent the request to obtain the actual document,
+  the server or from a cache. If the transport layer fails after
+  start of the request and the connection is reopened, this property
+  be set to the time corresponding to the new request."
+  [this]
+  (-> this (.-requestStart)))
+
+(defn set-request-start!
+  "Property.
+
+  When the browser sent the request to obtain the actual document,
+  the server or from a cache. If the transport layer fails after
+  start of the request and the connection is reopened, this property
+  be set to the time corresponding to the new request."
+  [this val]
+  (aset this "requestStart" val))
+
+(defn response-start
+  "Property.
+
+  When the browser received the first byte of the response, from
+  server from a cache, or from a local resource."
+  [this]
+  (-> this (.-responseStart)))
+
+(defn set-response-start!
+  "Property.
+
+  When the browser received the first byte of the response, from
+  server from a cache, or from a local resource."
+  [this val]
+  (aset this "responseStart" val))
+
+(defn response-end
+  "Property.
+
+  When the browser received the last byte of the response, or when
+  connection is closed if this happened first, from the server,
+  cache, or from a local resource."
+  [this]
+  (-> this (.-responseEnd)))
+
+(defn set-response-end!
+  "Property.
+
+  When the browser received the last byte of the response, or when
+  connection is closed if this happened first, from the server,
+  cache, or from a local resource."
+  [this val]
+  (aset this "responseEnd" val))
+
+(defn dom-loading
+  "Property.
+
+  When the parser started its work, that is when its Document.readyState
+  to 'loading' and the corresponding readystatechange event is"
+  [this]
+  (-> this (.-domLoading)))
+
+(defn set-dom-loading!
+  "Property.
+
+  When the parser started its work, that is when its Document.readyState
+  to 'loading' and the corresponding readystatechange event is"
+  [this val]
+  (aset this "domLoading" val))
+
+(defn dom-interactive
+  "Property.
+
+  When the parser finished its work on the main document, that
+  when its Document.readyState changes to 'interactive' and the
+  readystatechange event is thrown."
+  [this]
+  (-> this (.-domInteractive)))
+
+(defn set-dom-interactive!
+  "Property.
+
+  When the parser finished its work on the main document, that
+  when its Document.readyState changes to 'interactive' and the
+  readystatechange event is thrown."
+  [this val]
+  (aset this "domInteractive" val))
+
+(defn dom-content-loaded-event-start
+  "Property.
+
+  Right before the parser sent the DOMContentLoaded event, that
+  right after all the scripts that need to be executed right after
+  have been executed."
+  [this]
+  (-> this (.-domContentLoadedEventStart)))
+
+(defn set-dom-content-loaded-event-start!
+  "Property.
+
+  Right before the parser sent the DOMContentLoaded event, that
+  right after all the scripts that need to be executed right after
+  have been executed."
+  [this val]
+  (aset this "domContentLoadedEventStart" val))
+
+(defn dom-content-loaded-event-end
+  "Property.
+
+  Right after all the scripts that need to be executed as soon
+  possible, in order or not, have been executed."
+  [this]
+  (-> this (.-domContentLoadedEventEnd)))
+
+(defn set-dom-content-loaded-event-end!
+  "Property.
+
+  Right after all the scripts that need to be executed as soon
+  possible, in order or not, have been executed."
+  [this val]
+  (aset this "domContentLoadedEventEnd" val))
+
+(defn dom-complete
+  "Property.
+
+  When the parser finished its work on the main document, that
+  when its Document.readyState changes to 'complete' and the corresponding
+  event is thrown."
+  [this]
+  (-> this (.-domComplete)))
+
+(defn set-dom-complete!
+  "Property.
+
+  When the parser finished its work on the main document, that
+  when its Document.readyState changes to 'complete' and the corresponding
+  event is thrown."
+  [this val]
+  (aset this "domComplete" val))
+
+(defn load-event-start
+  "Property.
+
+  When the load event was sent for the current document. If this
+  has not yet been sent, it returns 0."
+  [this]
+  (-> this (.-loadEventStart)))
+
+(defn set-load-event-start!
+  "Property.
+
+  When the load event was sent for the current document. If this
+  has not yet been sent, it returns 0."
+  [this val]
+  (aset this "loadEventStart" val))
+
+(defn load-event-end
+  "Property.
+
+  When the load event handler terminated, that is when the load
+  is completed. If this event has not yet been sent, or is not
+  completed, it returns 0."
+  [this]
+  (-> this (.-loadEventEnd)))
+
+(defn set-load-event-end!
+  "Property.
+
+  When the load event handler terminated, that is when the load
+  is completed. If this event has not yet been sent, or is not
+  completed, it returns 0."
+  [this val]
+  (aset this "loadEventEnd" val))
 

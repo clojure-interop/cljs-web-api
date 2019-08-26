@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/emma`"
   [this]
-  (-> this (.emma)))
+  (-> this (.-emma)))
 
 (defn set-emma!
   "Property.
@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/interpretation`"
   [this]
-  (-> this (.interpretation)))
+  (-> this (.-interpretation)))
 
 (defn set-interpretation!
   "Property.
@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/resultIndex`"
   [this]
-  (-> this (.resultIndex)))
+  (-> this (.-resultIndex)))
 
 (defn set-result-index!
   "Property.
@@ -91,7 +91,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionEvent/results`"
   [this]
-  (-> this (.results)))
+  (-> this (.-results)))
 
 (defn set-results!
   "Property.

@@ -41,21 +41,6 @@
   [this suspend-time]
   (-> this (.suspend suspend-time)))
 
-(defn resume
-  "Method.
-
-  The resume() method of the `web.audio.OfflineAudioContext` interface
-  the progression of time in an audio context that has been suspended.
-  promise resolves immediately because the OfflineAudioContext
-  not require the audio hardware. If the context is not currently
-  or the rendering has not started, the promise is rejected with
-
-  `OfflineAudioContext.resume().then(function() { ... });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/resume`"
-  [this & args]
-  (apply (-> this .-resume) (concat [this] args)))
-
 (defn start-rendering
   "Method.
 
@@ -84,6 +69,21 @@
   [this & args]
   (apply (-> this .-startRendering) (concat [this] args)))
 
+(defn resume
+  "Method.
+
+  The resume() method of the `web.audio.OfflineAudioContext` interface
+  the progression of time in an audio context that has been suspended.
+  promise resolves immediately because the OfflineAudioContext
+  not require the audio hardware. If the context is not currently
+  or the rendering has not started, the promise is rejected with
+
+  `OfflineAudioContext.resume().then(function() { ... });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/resume`"
+  [this & args]
+  (apply (-> this .-resume) (concat [this] args)))
+
 (defn length
   "Property.
 
@@ -94,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.
@@ -120,7 +120,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/oncomplete`"
   [this]
-  (-> this (.oncomplete)))
+  (-> this (.-oncomplete)))
 
 (defn set-oncomplete!
   "Property.

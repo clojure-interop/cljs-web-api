@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer`"
   [this]
-  (-> this (.dataTransfer)))
+  (-> this (.-dataTransfer)))
 
 (defn set-data-transfer!
   "Property.
@@ -89,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType`"
   [this]
-  (-> this (.inputType)))
+  (-> this (.-inputType)))
 
 (defn set-input-type!
   "Property.
@@ -114,5 +114,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/isComposing`"
   [this]
-  (-> this (.isComposing)))
+  (-> this (.-isComposing)))
 

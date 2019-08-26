@@ -15,6 +15,28 @@
   [this & args]
   (apply (-> this .-stepDown) (concat [this] args)))
 
+(defn step-up
+  "Method.
+
+  Increments the value by (step * n), where n defaults to 1 if
+  specified. Throws an INVALID_STATE_ERR exception:
+  if the method is not applicable to for the current type value.,
+  if the element has no step value,
+  if the value cannot be converted to a number,
+  if the resulting value is above the max or below the min."
+  [this & args]
+  (apply (-> this .-stepUp) (concat [this] args)))
+
+(defn moz-set-file-array
+  "Method.
+
+  Sets the files selected on the input to the given array of File
+  This is an alternative to mozSetFileNameArray() which can be
+  in frame scripts: a chrome script can open files as File objects
+  send them via message manager."
+  [this & args]
+  (apply (-> this .-mozSetFileArray) (concat [this] args)))
+
 (defn moz-get-file-name-array
   "Method.
 
@@ -84,7 +106,7 @@
 
   string: Represents the alignment of the element. Use CSS instead."
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.
@@ -92,6 +114,20 @@
   string: Represents the alignment of the element. Use CSS instead."
   [this val]
   (aset this "align" val))
+
+(defn use-map
+  "Property.
+
+  string: Represents a client-side image map."
+  [this]
+  (-> this (.-useMap)))
+
+(defn set-use-map!
+  "Property.
+
+  string: Represents a client-side image map."
+  [this val]
+  (aset this "useMap" val))
 
 (defn labels
   "Property.
@@ -103,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/labels`"
   [this]
-  (-> this (.labels)))
+  (-> this (.-labels)))
 
 (defn set-labels!
   "Property.
@@ -126,7 +162,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/multiple`"
   [this]
-  (-> this (.multiple)))
+  (-> this (.-multiple)))
 
 (defn set-multiple!
   "Property.
@@ -153,7 +189,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory`"
   [this]
-  (-> this (.webkitdirectory)))
+  (-> this (.-webkitdirectory)))
 
 (defn set-webkitdirectory!
   "Property.
@@ -185,7 +221,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitEntries`"
   [this]
-  (-> this (.webkitEntries)))
+  (-> this (.-webkitEntries)))
 
 (defn set-webkit-entries!
   "Property.

@@ -15,20 +15,6 @@
   [this count]
   (-> this (.advance count)))
 
-(defn delete
-  "Method.
-
-  The delete() method of the `web.storage.IDBCursor` interface
-  an `web.storage.IDBRequest` object, and, in a separate thread,
-  the record at the cursor's position, without changing the cursor's
-  Once the record is deleted, the cursor's value is set to null.
-
-  `myIDBCursor.delete();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/delete`"
-  [this ]
-  (-> this (.delete)))
-
 (defn continue
   "Method.
 
@@ -56,6 +42,20 @@
   [this key primary-key]
   (-> this (.continuePrimaryKey key primary-key)))
 
+(defn delete
+  "Method.
+
+  The delete() method of the `web.storage.IDBCursor` interface
+  an `web.storage.IDBRequest` object, and, in a separate thread,
+  the record at the cursor's position, without changing the cursor's
+  Once the record is deleted, the cursor's value is set to null.
+
+  `myIDBCursor.delete();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/delete`"
+  [this ]
+  (-> this (.delete)))
+
 (defn update
   "Method.
 
@@ -81,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source`"
   [this]
-  (-> this (.source)))
+  (-> this (.-source)))
 
 (defn set-source!
   "Property.
@@ -106,7 +106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/direction`"
   [this]
-  (-> this (.direction)))
+  (-> this (.-direction)))
 
 (defn set-direction!
   "Property.
@@ -130,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/key`"
   [this]
-  (-> this (.key)))
+  (-> this (.-key)))
 
 (defn set-key!
   "Property.
@@ -152,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/primaryKey`"
   [this]
-  (-> this (.primaryKey)))
+  (-> this (.-primaryKey)))
 
 (defn set-primary-key!
   "Property.
@@ -175,7 +175,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request`"
   [this]
-  (-> this (.request)))
+  (-> this (.-request)))
 
 (defn set-request!
   "Property.

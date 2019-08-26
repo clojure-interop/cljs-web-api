@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionError/error`"
   [this]
-  (-> this (.error)))
+  (-> this (.-error)))
 
 (defn set-error!
   "Property.
@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionError/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.

@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCOfferAnswerOptions/voiceActivityDetection`"
   [this]
-  (-> this (.voiceActivityDetection)))
+  (-> this (.-voiceActivityDetection)))
 
 (defn set-voice-activity-detection!
   "Property.

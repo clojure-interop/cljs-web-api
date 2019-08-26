@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTimeElement/dateTime`"
   [this]
-  (-> this (.dateTime)))
+  (-> this (.-dateTime)))
 
 (defn set-date-time!
   "Property.

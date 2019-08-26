@@ -16,12 +16,22 @@
   [this index]
   (-> this (.item index)))
 
+(defn named-item
+  "Method.
+
+  Returns the specific node whose ID or, as a fallback, name matches
+  string specified by name. Matching by name is only done as a
+  resort, only in HTML, and only if the referenced element supports
+  name attribute. Returns null if no node exists by the given name."
+  [this & args]
+  (apply (-> this .-namedItem) (concat [this] args)))
+
 (defn length
   "Property.
 
   Returns the number of items in the collection."
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

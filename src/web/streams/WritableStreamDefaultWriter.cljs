@@ -42,20 +42,6 @@
   [this ]
   (-> this (.close)))
 
-(defn ready
-  "Method.
-
-  The ready getter property of the `web.streams.WritableStreamDefaultWriter`
-  returns a `js.Promise` that resolves when the desired size of
-  stream's internal queue transitions from non-positive to positive,
-  that it is no longer applying backpressure.
-
-  `var promise = defaultWriter.ready`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/ready`"
-  [this ]
-  (-> this (.ready)))
-
 (defn release-lock
   "Method.
 
@@ -85,6 +71,20 @@
   [this chunk]
   (-> this (.write chunk)))
 
+(defn ready
+  "Method.
+
+  The ready getter property of the `web.streams.WritableStreamDefaultWriter`
+  returns a `js.Promise` that resolves when the desired size of
+  stream's internal queue transitions from non-positive to positive,
+  that it is no longer applying backpressure.
+
+  `var promise = defaultWriter.ready`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/ready`"
+  [this ]
+  (-> this (.ready)))
+
 (defn closed
   "Property.
 
@@ -96,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/closed`"
   [this]
-  (-> this (.closed)))
+  (-> this (.-closed)))
 
 (defn set-closed!
   "Property.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/desiredSize`"
   [this]
-  (-> this (.desiredSize)))
+  (-> this (.-desiredSize)))
 
 (defn set-desired-size!
   "Property.

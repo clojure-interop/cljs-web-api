@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code`"
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn message
   "Property.
@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaError/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.

@@ -15,20 +15,6 @@
   [this & args]
   (apply (-> this .-getSubscription) (concat [this] args)))
 
-(defn has-permission
-  "Method.
-
-  The PushManager.hasPermission() method of the `web.service-workers.PushManager`
-  returns a `js.Promise` that resolves to the PushPermissionStatus
-  the requesting webapp, which will be one of granted, denied,
-  default.
-
-  `​PushManager.hasPermission().then(function(pushPermissionStatus) { ... } );`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/hasPermission`"
-  [this & args]
-  (apply (-> this .-hasPermission) (concat [this] args)))
-
 (defn permission-state
   "Method.
 
@@ -42,6 +28,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/permissionState`"
   [this options]
   (-> this (.permissionState options)))
+
+(defn subscribe
+  "Method.
+
+  The subscribe() method of the `web.service-workers.PushManager`
+  subscribes to a push service.
+
+  `​PushManager.subscribe(options).then(function(pushSubscription) { ... } );`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe`"
+  [this options]
+  (-> this (.subscribe options)))
+
+(defn has-permission
+  "Method.
+
+  The PushManager.hasPermission() method of the `web.service-workers.PushManager`
+  returns a `js.Promise` that resolves to the PushPermissionStatus
+  the requesting webapp, which will be one of granted, denied,
+  default.
+
+  `​PushManager.hasPermission().then(function(pushPermissionStatus) { ... } );`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/hasPermission`"
+  [this & args]
+  (apply (-> this .-hasPermission) (concat [this] args)))
 
 (defn register
   "Method.
@@ -67,18 +79,6 @@
   [this ]
   (-> this (.registrations)))
 
-(defn subscribe
-  "Method.
-
-  The subscribe() method of the `web.service-workers.PushManager`
-  subscribes to a push service.
-
-  `​PushManager.subscribe(options).then(function(pushSubscription) { ... } );`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/subscribe`"
-  [this options]
-  (-> this (.subscribe options)))
-
 (defn unregister
   "Method.
 
@@ -103,7 +103,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings`"
   [this]
-  (-> this (.supportedContentEncodings)))
+  (-> this (.-supportedContentEncodings)))
 
 (defn set-supported-content-encodings!
   "Property.

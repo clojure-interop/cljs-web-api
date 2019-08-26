@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this]
-  (-> this (.childElementCount)))
+  (-> this (.-childElementCount)))
 
 (defn set-child-element-count!
   "Property.
@@ -105,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
   [this]
-  (-> this (.children)))
+  (-> this (.-children)))
 
 (defn set-children!
   "Property.
@@ -130,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
   [this]
-  (-> this (.firstElementChild)))
+  (-> this (.-firstElementChild)))
 
 (defn set-first-element-child!
   "Property.
@@ -154,7 +154,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
   [this]
-  (-> this (.lastElementChild)))
+  (-> this (.-lastElementChild)))
 
 (defn set-last-element-child!
   "Property.

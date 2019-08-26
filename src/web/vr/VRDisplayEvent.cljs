@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayEvent/display`"
   [this]
-  (-> this (.display)))
+  (-> this (.-display)))
 
 (defn set-display!
   "Property.
@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplayEvent/reason`"
   [this]
-  (-> this (.reason)))
+  (-> this (.-reason)))
 
 (defn set-reason!
   "Property.

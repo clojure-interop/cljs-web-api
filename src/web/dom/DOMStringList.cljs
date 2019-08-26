@@ -9,12 +9,19 @@
   [this & args]
   (apply (-> this .-item) (concat [this] args)))
 
+(defn contains
+  "Method.
+
+  Returns Boolean indicating if the given string is in the list"
+  [this & args]
+  (apply (-> this .-contains) (concat [this] args)))
+
 (defn length
   "Property.
 
   Returns the length of the list."
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

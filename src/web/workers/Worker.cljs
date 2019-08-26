@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -90,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -119,7 +119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worker/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.

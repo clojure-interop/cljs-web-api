@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/instrumentKey`"
   [this]
-  (-> this (.instrumentKey)))
+  (-> this (.-instrumentKey)))
 
 (defn set-instrument-key!
   "Property.
@@ -82,6 +82,58 @@
   [this val]
   (aset this "instrumentKey" val))
 
+(defn method-data
+  "Property.
+
+  The methodData read-only property of the `web.payments.PaymentRequestEvent`
+  returns an array of `PaymentMethodData` objects containing payment
+  identifers for the payment methods that the web site accepts
+  any associated payment method specific data.
+
+  `var methodData[] = paymentRequestEvent.methodData`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData`"
+  [this]
+  (-> this (.-methodData)))
+
+(defn set-method-data!
+  "Property.
+
+  The methodData read-only property of the `web.payments.PaymentRequestEvent`
+  returns an array of `PaymentMethodData` objects containing payment
+  identifers for the payment methods that the web site accepts
+  any associated payment method specific data.
+
+  `var methodData[] = paymentRequestEvent.methodData`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData`"
+  [this val]
+  (aset this "methodData" val))
+
+(defn modifiers
+  "Property.
+
+  The modifiers read-only property of the `web.payments.PaymentRequestEvent`
+  returns an array of objects containing changes to payment details.
+
+  `var modifiers[] = paymentDetailsEvent.modifiers`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers`"
+  [this]
+  (-> this (.-modifiers)))
+
+(defn set-modifiers!
+  "Property.
+
+  The modifiers read-only property of the `web.payments.PaymentRequestEvent`
+  returns an array of objects containing changes to payment details.
+
+  `var modifiers[] = paymentDetailsEvent.modifiers`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers`"
+  [this val]
+  (aset this "modifiers" val))
+
 (defn payment-request-id
   "Property.
 
@@ -92,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestId`"
   [this]
-  (-> this (.paymentRequestId)))
+  (-> this (.-paymentRequestId)))
 
 (defn set-payment-request-id!
   "Property.
@@ -117,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin`"
   [this]
-  (-> this (.paymentRequestOrigin)))
+  (-> this (.-paymentRequestOrigin)))
 
 (defn set-payment-request-origin!
   "Property.
@@ -135,26 +187,16 @@
 (defn top-origin
   "Property.
 
-  The topOrigin read-only property of the `web.payments.PaymentRequestEvent`
-  returns the top level payee origin where the `web.payments.PaymentRequest`
-  was initialized.
-
-  `var aUsvString = paymentRequestEvent.topOrigin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/topLevelOrigin`"
+  Returns the top-level origin where the PaymentRequest object
+  initialized."
   [this]
-  (-> this (.topOrigin)))
+  (-> this (.-topOrigin)))
 
 (defn set-top-origin!
   "Property.
 
-  The topOrigin read-only property of the `web.payments.PaymentRequestEvent`
-  returns the top level payee origin where the `web.payments.PaymentRequest`
-  was initialized.
-
-  `var aUsvString = paymentRequestEvent.topOrigin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/topLevelOrigin`"
+  Returns the top-level origin where the PaymentRequest object
+  initialized."
   [this val]
   (aset this "topOrigin" val))
 
@@ -169,7 +211,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/total`"
   [this]
-  (-> this (.total)))
+  (-> this (.-total)))
 
 (defn set-total!
   "Property.

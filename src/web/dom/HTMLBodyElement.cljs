@@ -9,7 +9,7 @@
 
   Is a DOMString that represents the color of active hyperlinks."
   [this]
-  (-> this (.aLink)))
+  (-> this (.-aLink)))
 
 (defn set-a-link!
   "Property.
@@ -17,6 +17,80 @@
   Is a DOMString that represents the color of active hyperlinks."
   [this val]
   (aset this "aLink" val))
+
+(defn background
+  "Property.
+
+  Is a DOMString that represents the description of the location
+  the background image resource. Note that this is not an URI,
+  some older version of some browsers do expect it."
+  [this]
+  (-> this (.-background)))
+
+(defn set-background!
+  "Property.
+
+  Is a DOMString that represents the description of the location
+  the background image resource. Note that this is not an URI,
+  some older version of some browsers do expect it."
+  [this val]
+  (aset this "background" val))
+
+(defn bg-color
+  "Property.
+
+  Is a DOMString that represents the background color for the document."
+  [this]
+  (-> this (.-bgColor)))
+
+(defn set-bg-color!
+  "Property.
+
+  Is a DOMString that represents the background color for the document."
+  [this val]
+  (aset this "bgColor" val))
+
+(defn link
+  "Property.
+
+  Is a DOMString that represents the color of unvisited links."
+  [this]
+  (-> this (.-link)))
+
+(defn set-link!
+  "Property.
+
+  Is a DOMString that represents the color of unvisited links."
+  [this val]
+  (aset this "link" val))
+
+(defn text
+  "Property.
+
+  Is a DOMString that represents the foreground color of text."
+  [this]
+  (-> this (.-text)))
+
+(defn set-text!
+  "Property.
+
+  Is a DOMString that represents the foreground color of text."
+  [this val]
+  (aset this "text" val))
+
+(defn v-link
+  "Property.
+
+  Is a DOMString that represents the color of visited links."
+  [this]
+  (-> this (.-vLink)))
+
+(defn set-v-link!
+  "Property.
+
+  Is a DOMString that represents the color of visited links."
+  [this val]
+  (aset this "vLink" val))
 
 (defn onafterprint
   "Property.
@@ -31,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint`"
   [this]
-  (-> this (.onafterprint)))
+  (-> this (.-onafterprint)))
 
 (defn set-onafterprint!
   "Property.
@@ -61,7 +135,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint`"
   [this]
-  (-> this (.onbeforeprint)))
+  (-> this (.-onbeforeprint)))
 
 (defn set-onbeforeprint!
   "Property.
@@ -93,7 +167,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this]
-  (-> this (.onbeforeunload)))
+  (-> this (.-onbeforeunload)))
 
 (defn set-onbeforeunload!
   "Property.
@@ -140,7 +214,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange`"
   [this]
-  (-> this (.onhashchange)))
+  (-> this (.-onhashchange)))
 
 (defn set-onhashchange!
   "Property.
@@ -182,7 +256,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange`"
   [this]
-  (-> this (.onlanguagechange)))
+  (-> this (.-onlanguagechange)))
 
 (defn set-onlanguagechange!
   "Property.
@@ -207,7 +281,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -234,7 +308,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.
@@ -263,7 +337,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate`"
   [this]
-  (-> this (.onpopstate)))
+  (-> this (.-onpopstate)))
 
 (defn set-onpopstate!
   "Property.
@@ -292,7 +366,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
   [this]
-  (-> this (.onrejectionhandled)))
+  (-> this (.-onrejectionhandled)))
 
 (defn set-onrejectionhandled!
   "Property.
@@ -318,7 +392,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage`"
   [this]
-  (-> this (.onstorage)))
+  (-> this (.-onstorage)))
 
 (defn set-onstorage!
   "Property.
@@ -343,7 +417,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection`"
   [this]
-  (-> this (.onunhandledrejection)))
+  (-> this (.-onunhandledrejection)))
 
 (defn set-onunhandledrejection!
   "Property.
@@ -373,7 +447,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this]
-  (-> this (.onunload)))
+  (-> this (.-onunload)))
 
 (defn set-onunload!
   "Property.

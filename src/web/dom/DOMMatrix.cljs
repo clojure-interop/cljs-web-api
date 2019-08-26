@@ -30,13 +30,116 @@
   [this & args]
   (apply (-> this .-multiplySelf) (concat [this] args)))
 
+(defn pre-multiply-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the given DOMMatrix being multiplied by the original matrix."
+  [this & args]
+  (apply (-> this .-preMultiplySelf) (concat [this] args)))
+
+(defn translate-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the matrix being translated by the given vector."
+  [this & args]
+  (apply (-> this .-translateSelf) (concat [this] args)))
+
+(defn scale-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the matrix x and y dimensions being scaled by the given factor,
+  on the origin given."
+  [this & args]
+  (apply (-> this .-scaleSelf) (concat [this] args)))
+
+(defn scale3d-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the matrix x, y and z dimension being scaled by the given factor,
+  on the origin given."
+  [this & args]
+  (apply (-> this .-scale3dSelf) (concat [this] args)))
+
+(defn scale-non-uniform-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the matrix x, y and z dimension being scaled by the given factor
+  each dimension, centered on the origin given."
+  [this & args]
+  (apply (-> this .-scaleNonUniformSelf) (concat [this] args)))
+
+(defn rotate-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being rotated by the given angle, with the
+  centered on the origin given."
+  [this & args]
+  (apply (-> this .-rotateSelf) (concat [this] args)))
+
+(defn rotate-from-vector-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being rotated by the angle between the given
+  and (1,0), centered on the origin given."
+  [this & args]
+  (apply (-> this .-rotateFromVectorSelf) (concat [this] args)))
+
+(defn rotate-axis-angle-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being rotated by the given angle and the
+  vector."
+  [this & args]
+  (apply (-> this .-rotateAxisAngleSelf) (concat [this] args)))
+
+(defn skew-x-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being skewed along the x-axis by the given"
+  [this & args]
+  (apply (-> this .-skewXSelf) (concat [this] args)))
+
+(defn skew-y-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being skewed along the y-axis by the given"
+  [this & args]
+  (apply (-> this .-skewYSelf) (concat [this] args)))
+
+(defn invert-self
+  "Method.
+
+  Returns itself, a DOMMatrix, with its new content being the result
+  the original matrix being inverted. If the matrix cannot be inverted,
+  its components are set to NaN and is2D() returns false."
+  [this & args]
+  (apply (-> this .-invertSelf) (concat [this] args)))
+
+(defn set-matrix-value
+  "Method.
+
+  Returns itself, a DOMMatrix, with its describing the matrix representing
+  same transformation as the CSS transform functions given in parameter."
+  [this & args]
+  (apply (-> this .-setMatrixValue) (concat [this] args)))
+
 (defn is2d
   "Property.
 
   A boolean flag set to true if current matrix was initialized
   a 2D matrix"
   [this]
-  (-> this (.is2D)))
+  (-> this (.-is2D)))
 
 (defn set-is2d!
   "Property.
@@ -45,4 +148,78 @@
   a 2D matrix"
   [this val]
   (aset this "is2D" val))
+
+(defn is-identity
+  "Property.
+
+  A boolean flag returning true if the current matrix is identity."
+  [this]
+  (-> this (.-isIdentity)))
+
+(defn set-is-identity!
+  "Property.
+
+  A boolean flag returning true if the current matrix is identity."
+  [this val]
+  (aset this "isIdentity" val))
+
+(defn m11
+  "Property.
+
+  Are double representing each component of a 4x4 matrix."
+  [this]
+  (-> this (.-m11)))
+
+(defn set-m11!
+  "Property.
+
+  Are double representing each component of a 4x4 matrix."
+  [this val]
+  (aset this "m11" val))
+
+(defn a
+  "Property.
+
+  Are double representing each component of a 4x4 matrix needed
+  2D rotations and translations. They are aliases for some components
+  the 4x4 matrix:
+  2D
+  3D equivalent
+  a
+  m11
+  b
+  m12
+  c
+  m21
+  d
+  m22
+  e
+  m41
+  f
+  m42"
+  [this]
+  (-> this (.-a)))
+
+(defn set-a!
+  "Property.
+
+  Are double representing each component of a 4x4 matrix needed
+  2D rotations and translations. They are aliases for some components
+  the 4x4 matrix:
+  2D
+  3D equivalent
+  a
+  m11
+  b
+  m12
+  c
+  m21
+  d
+  m22
+  e
+  m41
+  f
+  m42"
+  [this val]
+  (aset this "a" val))
 

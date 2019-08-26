@@ -11,7 +11,7 @@
   Is a boolean representing whether or not the whole list of children
   is disabled (true) or not (false)."
   [this]
-  (-> this (.disabled)))
+  (-> this (.-disabled)))
 
 (defn set-disabled!
   "Property.
@@ -20,4 +20,18 @@
   is disabled (true) or not (false)."
   [this val]
   (aset this "disabled" val))
+
+(defn label
+  "Property.
+
+  Is a DOMString representing the label for the group."
+  [this]
+  (-> this (.-label)))
+
+(defn set-label!
+  "Property.
+
+  Is a DOMString representing the label for the group."
+  [this val]
+  (aset this "label" val))
 

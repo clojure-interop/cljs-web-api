@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/messageType`"
   [this]
-  (-> this (.messageType)))
+  (-> this (.-messageType)))
 
 (defn set-message-type!
   "Property.

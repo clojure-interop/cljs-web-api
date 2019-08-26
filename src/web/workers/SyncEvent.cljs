@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/tag`"
   [this]
-  (-> this (.tag)))
+  (-> this (.-tag)))
 
 (defn set-tag!
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/lastChance`"
   [this]
-  (-> this (.lastChance)))
+  (-> this (.-lastChance)))
 
 (defn set-last-chance!
   "Property.
@@ -83,7 +83,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SyncEvent/registration`"
   [this]
-  (-> this (.registration)))
+  (-> this (.-registration)))
 
 (defn set-registration!
   "Property.

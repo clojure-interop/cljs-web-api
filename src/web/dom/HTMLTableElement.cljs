@@ -18,18 +18,17 @@
   [this ]
   (-> this (.createTHead)))
 
-(defn create-caption
+(defn delete-t-head
   "Method.
 
-  The HTMLTableElement.createCaption() method returns the `<caption>`
-  associated with a given `<table>`. If no <caption> element exists
-  the table, this method creates it, and then returns it.
+  The HTMLTableElement.deleteTHead() removes the `<thead>` element
+  a given `<table>`.
 
-  `HTMLTableElement = table.createCaption();`
+  `HTMLTableElement.deleteTHead();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createCaption`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteTHead`"
   [this ]
-  (-> this (.createCaption)))
+  (-> this (.deleteTHead)))
 
 (defn create-t-foot
   "Method.
@@ -44,31 +43,6 @@
   [this ]
   (-> this (.createTFoot)))
 
-(defn delete-caption
-  "Method.
-
-  The HTMLTableElement.deleteCaption() method removes the `<caption>`
-  from a given `<table>`. If there is no <caption> element associated
-  the table, this method does nothing.
-
-  `HTMLTableElement.deleteCaption()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteCaption`"
-  [this ]
-  (-> this (.deleteCaption)))
-
-(defn delete-row
-  "Method.
-
-  The HTMLTableElement.deleteRow() method removes a specific row
-  from a given `<table>`.
-
-  `HTMLTableElement.deleteRow(index)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteRow`"
-  [this index]
-  (-> this (.deleteRow index)))
-
 (defn delete-t-foot
   "Method.
 
@@ -81,17 +55,31 @@
   [this ]
   (-> this (.deleteTFoot)))
 
-(defn delete-t-head
+(defn create-caption
   "Method.
 
-  The HTMLTableElement.deleteTHead() removes the `<thead>` element
-  a given `<table>`.
+  The HTMLTableElement.createCaption() method returns the `<caption>`
+  associated with a given `<table>`. If no <caption> element exists
+  the table, this method creates it, and then returns it.
 
-  `HTMLTableElement.deleteTHead();`
+  `HTMLTableElement = table.createCaption();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteTHead`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createCaption`"
   [this ]
-  (-> this (.deleteTHead)))
+  (-> this (.createCaption)))
+
+(defn delete-caption
+  "Method.
+
+  The HTMLTableElement.deleteCaption() method removes the `<caption>`
+  from a given `<table>`. If there is no <caption> element associated
+  the table, this method does nothing.
+
+  `HTMLTableElement.deleteCaption()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteCaption`"
+  [this ]
+  (-> this (.deleteCaption)))
 
 (defn insert-row
   "Method.
@@ -107,6 +95,25 @@
   [this & args]
   (apply (-> this .-insertRow) (concat [this] args)))
 
+(defn delete-row
+  "Method.
+
+  The HTMLTableElement.deleteRow() method removes a specific row
+  from a given `<table>`.
+
+  `HTMLTableElement.deleteRow(index)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteRow`"
+  [this index]
+  (-> this (.deleteRow index)))
+
+(defn stop-sorting
+  "Method.
+
+  Removes the sortable attribute to all <th> elements of the table."
+  [this & args]
+  (apply (-> this .-stopSorting) (concat [this] args)))
+
 (defn caption
   "Property.
 
@@ -118,7 +125,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/caption`"
   [this]
-  (-> this (.caption)))
+  (-> this (.-caption)))
 
 (defn set-caption!
   "Property.
@@ -133,6 +140,101 @@
   [this val]
   (aset this "caption" val))
 
+(defn t-head
+  "Property.
+
+  The HTMLTableElement.tHead represents the `<thead>` element of
+  `<table>` . Its value will be null if there is no such element.
+
+  `thead_element = table.tHead;
+  table.tHead = thead_element;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tHead`"
+  [this]
+  (-> this (.-tHead)))
+
+(defn set-t-head!
+  "Property.
+
+  The HTMLTableElement.tHead represents the `<thead>` element of
+  `<table>` . Its value will be null if there is no such element.
+
+  `thead_element = table.tHead;
+  table.tHead = thead_element;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tHead`"
+  [this val]
+  (aset this "tHead" val))
+
+(defn t-foot
+  "Property.
+
+  The HTMLTableElement.tFoot property represents the `<tfoot>`
+  of a `<table>`. Its value will be null if there is no such element.
+
+  `HTMLTableSectionElementObject = table.tFoot
+  table.tFoot = HTMLTableSectionElementObject`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tFoot`"
+  [this]
+  (-> this (.-tFoot)))
+
+(defn set-t-foot!
+  "Property.
+
+  The HTMLTableElement.tFoot property represents the `<tfoot>`
+  of a `<table>`. Its value will be null if there is no such element.
+
+  `HTMLTableSectionElementObject = table.tFoot
+  table.tFoot = HTMLTableSectionElementObject`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tFoot`"
+  [this val]
+  (aset this "tFoot" val))
+
+(defn rows
+  "Property.
+
+  The read-only `web.dom.HTMLTableElement` property rows returns
+  live `web.dom.HTMLCollection` of all the rows in the table, including
+  rows contained within any `<thead>`, `<tfoot>`, and `<tbody>`
+
+  `HTMLCollectionObject = table.rows;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rows`"
+  [this]
+  (-> this (.-rows)))
+
+(defn t-bodies
+  "Property.
+
+  The HTMLTableElement.tBodies read-only property returns a live
+  of the bodies in a `<table>`.
+
+  `HTMLCollectionObject = table.tBodies`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tBodies`"
+  [this]
+  (-> this (.-tBodies)))
+
+(defn sortable
+  "Property.
+
+  Is a Boolean value indicating if the user agent is allowed to
+  sorting mechanism for the table, if it supports such a feature.
+  property reflects the sortable attribute."
+  [this]
+  (-> this (.-sortable)))
+
+(defn set-sortable!
+  "Property.
+
+  Is a Boolean value indicating if the user agent is allowed to
+  sorting mechanism for the table, if it supports such a feature.
+  property reflects the sortable attribute."
+  [this val]
+  (aset this "sortable" val))
+
 (defn align
   "Property.
 
@@ -144,7 +246,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/align`"
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.
@@ -170,7 +272,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/bgColor`"
   [this]
-  (-> this (.bgColor)))
+  (-> this (.-bgColor)))
 
 (defn set-bg-color!
   "Property.
@@ -199,7 +301,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/border`"
   [this]
-  (-> this (.border)))
+  (-> this (.-border)))
 
 (defn set-border!
   "Property.
@@ -231,7 +333,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/cellPadding`"
   [this]
-  (-> this (.cellPadding)))
+  (-> this (.-cellPadding)))
 
 (defn set-cell-padding!
   "Property.
@@ -262,7 +364,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/cellSpacing`"
   [this]
-  (-> this (.cellSpacing)))
+  (-> this (.-cellSpacing)))
 
 (defn set-cell-spacing!
   "Property.
@@ -291,7 +393,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/frame`"
   [this]
-  (-> this (.frame)))
+  (-> this (.-frame)))
 
 (defn set-frame!
   "Property.
@@ -307,19 +409,6 @@
   [this val]
   (aset this "frame" val))
 
-(defn rows
-  "Property.
-
-  The read-only `web.dom.HTMLTableElement` property rows returns
-  live `web.dom.HTMLCollection` of all the rows in the table, including
-  rows contained within any `<thead>`, `<tfoot>`, and `<tbody>`
-
-  `HTMLCollectionObject = table.rows;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rows`"
-  [this]
-  (-> this (.rows)))
-
 (defn rules
   "Property.
 
@@ -331,7 +420,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rules`"
   [this]
-  (-> this (.rules)))
+  (-> this (.-rules)))
 
 (defn set-rules!
   "Property.
@@ -356,7 +445,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/summary`"
   [this]
-  (-> this (.summary)))
+  (-> this (.-summary)))
 
 (defn set-summary!
   "Property.
@@ -369,70 +458,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/summary`"
   [this val]
   (aset this "summary" val))
-
-(defn t-bodies
-  "Property.
-
-  The HTMLTableElement.tBodies read-only property returns a live
-  of the bodies in a `<table>`.
-
-  `HTMLCollectionObject = table.tBodies`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tBodies`"
-  [this]
-  (-> this (.tBodies)))
-
-(defn t-foot
-  "Property.
-
-  The HTMLTableElement.tFoot property represents the `<tfoot>`
-  of a `<table>`. Its value will be null if there is no such element.
-
-  `HTMLTableSectionElementObject = table.tFoot
-  table.tFoot = HTMLTableSectionElementObject`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tFoot`"
-  [this]
-  (-> this (.tFoot)))
-
-(defn set-t-foot!
-  "Property.
-
-  The HTMLTableElement.tFoot property represents the `<tfoot>`
-  of a `<table>`. Its value will be null if there is no such element.
-
-  `HTMLTableSectionElementObject = table.tFoot
-  table.tFoot = HTMLTableSectionElementObject`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tFoot`"
-  [this val]
-  (aset this "tFoot" val))
-
-(defn t-head
-  "Property.
-
-  The HTMLTableElement.tHead represents the `<thead>` element of
-  `<table>` . Its value will be null if there is no such element.
-
-  `thead_element = table.tHead;
-  table.tHead = thead_element;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tHead`"
-  [this]
-  (-> this (.tHead)))
-
-(defn set-t-head!
-  "Property.
-
-  The HTMLTableElement.tHead represents the `<thead>` element of
-  `<table>` . Its value will be null if there is no such element.
-
-  `thead_element = table.tHead;
-  table.tHead = thead_element;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tHead`"
-  [this val]
-  (aset this "tHead" val))
 
 (defn width
   "Property.
@@ -447,7 +472,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.

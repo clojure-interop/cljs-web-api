@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/matches`"
   [this]
-  (-> this (.matches)))
+  (-> this (.-matches)))
 
 (defn set-matches!
   "Property.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/media`"
   [this]
-  (-> this (.media)))
+  (-> this (.-media)))
 
 (defn set-media!
   "Property.

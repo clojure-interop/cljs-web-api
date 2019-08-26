@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLContentElement/select`"
   [this]
-  (-> this (.select)))
+  (-> this (.-select)))
 
 (defn set-select!
   "Property.

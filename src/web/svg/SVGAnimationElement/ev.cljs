@@ -10,3 +10,20 @@
 
   "beginEvent")
 
+(def end-event
+  "Event.
+
+  Fired when at the active end of the animation is reached.
+  Also available via the onend property."
+
+  "endEvent")
+
+(def repeat-event
+  "Event.
+
+  Fired when the element's local timeline repeats. It will be fired
+  time the element repeats, after the first iteration.
+  Also available via the onrepeat property."
+
+  "repeatEvent")
+

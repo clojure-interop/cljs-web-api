@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/binaryType`"
   [this]
-  (-> this (.binaryType)))
+  (-> this (.-binaryType)))
 
 (defn set-binary-type!
   "Property.
@@ -67,19 +67,23 @@
   [this val]
   (aset this "binaryType" val))
 
-(defn onclose
+(defn id
   "Property.
 
-  Fired when there is a call to PresentationConnection.close()."
+  The id attribute specifies the presentation identifier of a presentation
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-id)))
 
-(defn set-onclose!
+(defn set-id!
   "Property.
 
-  Fired when there is a call to PresentationConnection.close()."
+  The id attribute specifies the presentation identifier of a presentation
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id`"
   [this val]
-  (aset this "onclose" val))
+  (aset this "id" val))
 
 (defn state
   "Property.
@@ -90,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
 
 (defn set-state!
   "Property.
@@ -113,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.
@@ -126,4 +130,60 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/url`"
   [this val]
   (aset this "url" val))
+
+(defn onclose
+  "Property.
+
+  Fired when there is a call to PresentationConnection.close()."
+  [this]
+  (-> this (.-onclose)))
+
+(defn set-onclose!
+  "Property.
+
+  Fired when there is a call to PresentationConnection.close()."
+  [this val]
+  (aset this "onclose" val))
+
+(defn onconnect
+  "Property.
+
+  Fired when a presentation connection is established."
+  [this]
+  (-> this (.-onconnect)))
+
+(defn set-onconnect!
+  "Property.
+
+  Fired when a presentation connection is established."
+  [this val]
+  (aset this "onconnect" val))
+
+(defn onmessage
+  "Property.
+
+  Fired when there is a call to PresentationConnection.send()."
+  [this]
+  (-> this (.-onmessage)))
+
+(defn set-onmessage!
+  "Property.
+
+  Fired when there is a call to PresentationConnection.send()."
+  [this val]
+  (aset this "onmessage" val))
+
+(defn onterminated
+  "Property.
+
+  Fired when there is a call to PresentationConnection.terminate()."
+  [this]
+  (-> this (.-onterminated)))
+
+(defn set-onterminated!
+  "Property.
+
+  Fired when there is a call to PresentationConnection.terminate()."
+  [this val]
+  (aset this "onterminated" val))
 

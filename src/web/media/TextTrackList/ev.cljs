@@ -13,10 +13,16 @@
 (def change
   "Event.
 
-  The change event is fired when a text track is made active or
-  or a `textTrackList` is otherwise changed
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TextTrackList/change_event`"
+  Fired when a text track has been made active or inactive.
+  Also available via the onchange property."
 
   "change")
+
+(def removetrack
+  "Event.
+
+  Fired when a new text track has been removed from the media element.
+  Also available via the onremovetrack property."
+
+  "removetrack")
 

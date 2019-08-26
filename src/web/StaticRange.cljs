@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startContainer`"
   [this]
-  (-> this (.startContainer)))
+  (-> this (.-startContainer)))
 
 (defn set-start-container!
   "Property.
@@ -58,29 +58,31 @@
   [this val]
   (aset this "startContainer" val))
 
-(defn collapsed
+(defn start-offset
   "Property.
 
-  The collapsed read-only property of the `web.StaticRange` interface
-  true if the range's start position and end position are the same.
+  The startOffset property of the `web.StaticRange` interface returns
+  offset into the start node of the range's start position.
 
-  `var boolean = staticRange.collapsed`
+  `var startOffset = staticRange.startOffset
+  staticRange.startOffset = startOffset`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startOffset`"
   [this]
-  (-> this (.collapsed)))
+  (-> this (.-startOffset)))
 
-(defn set-collapsed!
+(defn set-start-offset!
   "Property.
 
-  The collapsed read-only property of the `web.StaticRange` interface
-  true if the range's start position and end position are the same.
+  The startOffset property of the `web.StaticRange` interface returns
+  offset into the start node of the range's start position.
 
-  `var boolean = staticRange.collapsed`
+  `var startOffset = staticRange.startOffset
+  staticRange.startOffset = startOffset`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startOffset`"
   [this val]
-  (aset this "collapsed" val))
+  (aset this "startOffset" val))
 
 (defn end-container
   "Property.
@@ -93,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/endContainer`"
   [this]
-  (-> this (.endContainer)))
+  (-> this (.-endContainer)))
 
 (defn set-end-container!
   "Property.
@@ -119,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/endOffset`"
   [this]
-  (-> this (.endOffset)))
+  (-> this (.-endOffset)))
 
 (defn set-end-offset!
   "Property.
@@ -134,29 +136,27 @@
   [this val]
   (aset this "endOffset" val))
 
-(defn start-offset
+(defn collapsed
   "Property.
 
-  The startOffset property of the `web.StaticRange` interface returns
-  offset into the start node of the range's start position.
+  The collapsed read-only property of the `web.StaticRange` interface
+  true if the range's start position and end position are the same.
 
-  `var startOffset = staticRange.startOffset
-  staticRange.startOffset = startOffset`
+  `var boolean = staticRange.collapsed`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startOffset`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
   [this]
-  (-> this (.startOffset)))
+  (-> this (.-collapsed)))
 
-(defn set-start-offset!
+(defn set-collapsed!
   "Property.
 
-  The startOffset property of the `web.StaticRange` interface returns
-  offset into the start node of the range's start position.
+  The collapsed read-only property of the `web.StaticRange` interface
+  true if the range's start position and end position are the same.
 
-  `var startOffset = staticRange.startOffset
-  staticRange.startOffset = startOffset`
+  `var boolean = staticRange.collapsed`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/startOffset`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
   [this val]
-  (aset this "startOffset" val))
+  (aset this "collapsed" val))
 

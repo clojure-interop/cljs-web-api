@@ -48,19 +48,6 @@
   [this encoded-data]
   (-> this (.atob encoded-data)))
 
-(defn close
-  "Method.
-
-  The close() method of the `web.workers.WorkerGlobalScope` interface
-  any tasks queued in the WorkerGlobalScope's event loop, effectively
-  this particular scope.
-
-  `self.close();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/close`"
-  [this ]
-  (-> this (.close)))
-
 (defn btoa
   "Method.
 
@@ -128,18 +115,6 @@
   [this resource init]
   (-> this (.fetch resource init)))
 
-(defn queue-microtask
-  "Method.
-
-  The queueMicrotask() method of the `web.WindowOrWorkerGlobalScope`
-  queues a microtask.
-
-  `scope.queueMicrotask(function);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask`"
-  [this function]
-  (-> this (.queueMicrotask function)))
-
 (defn set-interval
   "Method.
 
@@ -169,33 +144,68 @@
   [this & args]
   (apply (-> this .-setTimeout) (concat [this] args)))
 
-(defn self
+(defn close
+  "Method.
+
+  The close() method of the `web.workers.WorkerGlobalScope` interface
+  any tasks queued in the WorkerGlobalScope's event loop, effectively
+  this particular scope.
+
+  `self.close();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/close`"
+  [this ]
+  (-> this (.close)))
+
+(defn queue-microtask
+  "Method.
+
+  The queueMicrotask() method of the `web.WindowOrWorkerGlobalScope`
+  queues a microtask.
+
+  `scope.queueMicrotask(function);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask`"
+  [this function]
+  (-> this (.queueMicrotask function)))
+
+(defn worker-navigator
   "Property.
 
-  The self read-only property of the `web.workers.WorkerGlobalScope`
-  returns a reference to the WorkerGlobalScope itself. Most of
-  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
-  or `web.workers.ServiceWorkerGlobalScope`.
-
-  `var selfRef = self;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
+  WorkerGlobalScope.self Read only"
   [this]
-  (-> this (.self)))
+  (-> this (.-WorkerNavigator)))
 
-(defn set-self!
+(defn set-worker-navigator!
   "Property.
 
-  The self read-only property of the `web.workers.WorkerGlobalScope`
-  returns a reference to the WorkerGlobalScope itself. Most of
-  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
-  or `web.workers.ServiceWorkerGlobalScope`.
-
-  `var selfRef = self;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
+  WorkerGlobalScope.self Read only"
   [this val]
-  (aset this "self" val))
+  (aset this "WorkerNavigator" val))
+
+(defn worker-global-scope
+  "Property.
+
+  WorkerGlobalScope.location Read only"
+  [this]
+  (-> this (.-WorkerGlobalScope)))
+
+(defn set-worker-global-scope!
+  "Property.
+
+  WorkerGlobalScope.location Read only"
+  [this val]
+  (aset this "WorkerGlobalScope" val))
+
+(defn worker-location
+  "Property."
+  [this]
+  (-> this (.-WorkerLocation)))
+
+(defn set-worker-location!
+  "Property."
+  [this val]
+  (aset this "WorkerLocation" val))
 
 (defn performance
   "Property.
@@ -208,7 +218,20 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/performance`"
   [this]
-  (-> this (.performance)))
+  (-> this (.-performance)))
+
+(defn console
+  "Property.
+
+  The console read-only property of the `web.workers.WorkerGlobalScope`
+  returns a `Console` object providing access to the browser console
+  the worker.
+
+  `var consoleObj = self.console;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/console`"
+  [this]
+  (-> this (.-console)))
 
 (defn caches
   "Property.
@@ -222,20 +245,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/caches`"
   [this]
-  (-> this (.caches)))
-
-(defn console
-  "Property.
-
-  The console read-only property of the `web.workers.WorkerGlobalScope`
-  returns a `Console` object providing access to the browser console
-  the worker.
-
-  `var consoleObj = self.console;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/console`"
-  [this]
-  (-> this (.console)))
+  (-> this (.-caches)))
 
 (defn indexed-db
   "Property.
@@ -248,7 +258,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/indexedDB`"
   [this]
-  (-> this (.indexedDB)))
+  (-> this (.-indexedDB)))
 
 (defn is-secure-context
   "Property.
@@ -261,7 +271,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext`"
   [this]
-  (-> this (.isSecureContext)))
+  (-> this (.-isSecureContext)))
 
 (defn set-is-secure-context!
   "Property.
@@ -276,6 +286,30 @@
   [this val]
   (aset this "isSecureContext" val))
 
+(defn origin
+  "Property.
+
+  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the origin of the global scope, serialized as a string.
+
+  `var myOrigin = self.origin; // or just origin`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  [this]
+  (-> this (.-origin)))
+
+(defn set-origin!
+  "Property.
+
+  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
+  returns the origin of the global scope, serialized as a string.
+
+  `var myOrigin = self.origin; // or just origin`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  [this val]
+  (aset this "origin" val))
+
 (defn location
   "Property.
 
@@ -288,7 +322,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/location`"
   [this]
-  (-> this (.location)))
+  (-> this (.-location)))
 
 (defn set-location!
   "Property.
@@ -316,7 +350,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/navigator`"
   [this]
-  (-> this (.navigator)))
+  (-> this (.-navigator)))
 
 (defn set-navigator!
   "Property.
@@ -343,7 +377,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -369,7 +403,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -395,7 +429,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/onlanguagechange`"
   [this]
-  (-> this (.onlanguagechange)))
+  (-> this (.-onlanguagechange)))
 
 (defn set-onlanguagechange!
   "Property.
@@ -421,7 +455,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/onoffline`"
   [this]
-  (-> this (.onoffline)))
+  (-> this (.-onoffline)))
 
 (defn set-onoffline!
   "Property.
@@ -447,7 +481,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/ononline`"
   [this]
-  (-> this (.ononline)))
+  (-> this (.-ononline)))
 
 (defn set-ononline!
   "Property.
@@ -462,27 +496,31 @@
   [this val]
   (aset this "ononline" val))
 
-(defn origin
+(defn self
   "Property.
 
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
+  The self read-only property of the `web.workers.WorkerGlobalScope`
+  returns a reference to the WorkerGlobalScope itself. Most of
+  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
+  or `web.workers.ServiceWorkerGlobalScope`.
 
-  `var myOrigin = self.origin; // or just origin`
+  `var selfRef = self;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-self)))
 
-(defn set-origin!
+(defn set-self!
   "Property.
 
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
+  The self read-only property of the `web.workers.WorkerGlobalScope`
+  returns a reference to the WorkerGlobalScope itself. Most of
+  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
+  or `web.workers.ServiceWorkerGlobalScope`.
 
-  `var myOrigin = self.origin; // or just origin`
+  `var selfRef = self;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
   [this val]
-  (aset this "origin" val))
+  (aset this "self" val))
 

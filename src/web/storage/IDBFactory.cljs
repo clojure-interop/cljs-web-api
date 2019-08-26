@@ -21,6 +21,29 @@
   [this & args]
   (apply (-> this .-open) (concat [this] args)))
 
+(defn delete-database
+  "Method.
+
+  The deleteDatabase() method of the `web.storage.IDBFactory` interface
+  the deletion of a database. The method returns an `web.storage.IDBOpenDBRequest`
+  immediately, and performs the deletion operation asynchronously.
+
+  `For the current standard:
+
+
+
+  var request = indexedDB.deleteDatabase(name);
+
+  For the experimental version with options (see below):
+
+
+
+  var request = indexedDB.deleteDatabase(name, options);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase`"
+  [this & args]
+  (apply (-> this .-deleteDatabase) (concat [this] args)))
+
 (defn cmp
   "Method.
 
@@ -45,27 +68,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/databases`"
   [this ]
   (-> this (.databases)))
-
-(defn delete-database
-  "Method.
-
-  The deleteDatabase() method of the `web.storage.IDBFactory` interface
-  the deletion of a database. The method returns an `web.storage.IDBOpenDBRequest`
-  immediately, and performs the deletion operation asynchronously.
-
-  `For the current standard:
-
-
-
-  var request = indexedDB.deleteDatabase(name);
-
-  For the experimental version with options (see below):
-
-
-
-  var request = indexedDB.deleteDatabase(name, options);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase`"
-  [this & args]
-  (apply (-> this .-deleteDatabase) (concat [this] args)))
 

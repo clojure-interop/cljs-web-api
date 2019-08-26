@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNamespaceRule/namespaceURI`"
   [this]
-  (-> this (.namespaceURI)))
+  (-> this (.-namespaceURI)))
 
 (defn set-namespace-uri!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNamespaceRule/prefix`"
   [this]
-  (-> this (.prefix)))
+  (-> this (.-prefix)))
 
 (defn set-prefix!
   "Property.

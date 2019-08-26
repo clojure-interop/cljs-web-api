@@ -27,20 +27,6 @@
   [this & args]
   (apply (-> this .-addEventListener) (concat [this] args)))
 
-(defn dispatch-event
-  "Method.
-
-  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
-  invoking the affected `web.EventListener`s in the appropriate
-  The normal event processing rules (including the capturing and
-  bubbling phase) also apply to events dispatched manually with
-
-  `cancelled = !target.dispatchEvent(event)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
-  [this event]
-  (-> this (.dispatchEvent event)))
-
 (defn remove-event-listener
   "Method.
 
@@ -57,4 +43,18 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
   (apply (-> this .-removeEventListener) (concat [this] args)))
+
+(defn dispatch-event
+  "Method.
+
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
+  invoking the affected `web.EventListener`s in the appropriate
+  The normal event processing rules (including the capturing and
+  bubbling phase) also apply to events dispatched manually with
+
+  `cancelled = !target.dispatchEvent(event)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
+  [this event]
+  (-> this (.dispatchEvent event)))
 

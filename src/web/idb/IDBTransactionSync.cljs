@@ -3,7 +3,7 @@
   synchronous transaction on a database. When an application creates
   IDBTransactionSync object, it blocks until the browser is able
   reserve the require database objects."
-  (:refer-clojure :exclude [name]))
+  (:refer-clojure :exclude []))
 
 (defn non-transient-err
   "Method.
@@ -12,12 +12,13 @@
   [this & args]
   (apply (-> this .-NON_TRANSIENT_ERR) (concat [this] args)))
 
-(defn name
+(defn recoverable-err
   "Method.
 
-  The name of the requested object store."
+  If this transaction's scope is dynamic, and the browser cannot
+  all of the changes due to another transaction."
   [this & args]
-  (apply (-> this .-name) (concat [this] args)))
+  (apply (-> this .-RECOVERABLE_ERR) (concat [this] args)))
 
 (defn idb-object-store-sync
   "Method.

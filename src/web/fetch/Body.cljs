@@ -91,7 +91,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
   [this]
-  (-> this (.body)))
+  (-> this (.-body)))
 
 (defn set-body!
   "Property.
@@ -116,7 +116,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
   [this]
-  (-> this (.bodyUsed)))
+  (-> this (.-bodyUsed)))
 
 (defn set-body-used!
   "Property.

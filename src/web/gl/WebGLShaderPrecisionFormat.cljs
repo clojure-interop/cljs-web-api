@@ -12,7 +12,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMin`"
   [this]
-  (-> this (.rangeMin)))
+  (-> this (.-rangeMin)))
 
 (defn set-range-min!
   "Property.
@@ -25,26 +25,6 @@
   [this val]
   (aset this "rangeMin" val))
 
-(defn precision
-  "Property.
-
-  The read-only WebGLShaderPrecisionFormat.precision property returns
-  number of bits of precision that can be represented.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision`"
-  [this]
-  (-> this (.precision)))
-
-(defn set-precision!
-  "Property.
-
-  The read-only WebGLShaderPrecisionFormat.precision property returns
-  number of bits of precision that can be represented.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision`"
-  [this val]
-  (aset this "precision" val))
-
 (defn range-max
   "Property.
 
@@ -54,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax`"
   [this]
-  (-> this (.rangeMax)))
+  (-> this (.-rangeMax)))
 
 (defn set-range-max!
   "Property.
@@ -66,4 +46,24 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/rangeMax`"
   [this val]
   (aset this "rangeMax" val))
+
+(defn precision
+  "Property.
+
+  The read-only WebGLShaderPrecisionFormat.precision property returns
+  number of bits of precision that can be represented.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision`"
+  [this]
+  (-> this (.-precision)))
+
+(defn set-precision!
+  "Property.
+
+  The read-only WebGLShaderPrecisionFormat.precision property returns
+  number of bits of precision that can be represented.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat/precision`"
+  [this val]
+  (aset this "precision" val))
 

@@ -98,7 +98,7 @@
   as to what type of content the track contains to guide how it
   be treated by API consumers."
   [this]
-  (-> this (.contentHint)))
+  (-> this (.-contentHint)))
 
 (defn set-content-hint!
   "Property.
@@ -122,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/enabled`"
   [this]
-  (-> this (.enabled)))
+  (-> this (.-enabled)))
 
 (defn set-enabled!
   "Property.
@@ -150,7 +150,27 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/id`"
   [this]
-  (-> this (.id)))
+  (-> this (.-id)))
+
+(defn isolated
+  "Property.
+
+  Returns a Boolean value which is true if the track is isolated;
+  is, the track cannot be accessed by the document that owns the
+  This happens when the peerIdentity property is set, or if the
+  comes from a cross-origin source."
+  [this]
+  (-> this (.-isolated)))
+
+(defn set-isolated!
+  "Property.
+
+  Returns a Boolean value which is true if the track is isolated;
+  is, the track cannot be accessed by the document that owns the
+  This happens when the peerIdentity property is set, or if the
+  comes from a cross-origin source."
+  [this val]
+  (aset this "isolated" val))
 
 (defn kind
   "Property.
@@ -164,7 +184,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/kind`"
   [this]
-  (-> this (.kind)))
+  (-> this (.-kind)))
 
 (defn label
   "Property.
@@ -179,7 +199,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/label`"
   [this]
-  (-> this (.label)))
+  (-> this (.-label)))
 
 (defn muted
   "Property.
@@ -192,7 +212,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/muted`"
   [this]
-  (-> this (.muted)))
+  (-> this (.-muted)))
 
 (defn set-muted!
   "Property.
@@ -206,6 +226,51 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/muted`"
   [this val]
   (aset this "muted" val))
+
+(defn readonly
+  "Property.
+
+  Returns a Boolean value with a value of true if the track is
+  (such a video file source or a camera that settings can't be
+  false otherwise."
+  [this]
+  (-> this (.-readonly)))
+
+(defn set-readonly!
+  "Property.
+
+  Returns a Boolean value with a value of true if the track is
+  (such a video file source or a camera that settings can't be
+  false otherwise."
+  [this val]
+  (aset this "readonly" val))
+
+(defn ready-state
+  "Property.
+
+  The read-only property MediaStreamTrack.readyState returns an
+  value giving the status of the track.
+
+  `var state = track.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/readyState`"
+  [this]
+  (-> this (.-readyState)))
+
+(defn remote
+  "Property.
+
+  The MediaStreamTrack.remote read-only property allows Javascript
+  know whether a WebRTC MediaStreamTrack is from a remote source
+  a local one. It returns a `js.Boolean` with a value of true if
+  track is sourced remotely (that is, sourced by an RTCPeerConnection),
+  false if it is sourced locally.
+
+  `var bool ​= track.remote;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/remote`"
+  [this]
+  (-> this (.-remote)))
 
 (defn onended
   "Property.
@@ -221,7 +286,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.
@@ -249,7 +314,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onmute`"
   [this]
-  (-> this (.onmute)))
+  (-> this (.-onmute)))
 
 (defn set-onmute!
   "Property.
@@ -274,7 +339,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onoverconstrained`"
   [this]
-  (-> this (.onoverconstrained)))
+  (-> this (.-onoverconstrained)))
 
 (defn set-onoverconstrained!
   "Property.
@@ -300,7 +365,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onunmute`"
   [this]
-  (-> this (.onunmute)))
+  (-> this (.-onunmute)))
 
 (defn set-onunmute!
   "Property.
@@ -314,31 +379,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/onunmute`"
   [this val]
   (aset this "onunmute" val))
-
-(defn ready-state
-  "Property.
-
-  The read-only property MediaStreamTrack.readyState returns an
-  value giving the status of the track.
-
-  `var state = track.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/readyState`"
-  [this]
-  (-> this (.readyState)))
-
-(defn remote
-  "Property.
-
-  The MediaStreamTrack.remote read-only property allows Javascript
-  know whether a WebRTC MediaStreamTrack is from a remote source
-  a local one. It returns a `js.Boolean` with a value of true if
-  track is sourced remotely (that is, sourced by an RTCPeerConnection),
-  false if it is sourced locally.
-
-  `var bool ​= track.remote;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/remote`"
-  [this]
-  (-> this (.remote)))
 

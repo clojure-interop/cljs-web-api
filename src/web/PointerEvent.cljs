@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerId`"
   [this]
-  (-> this (.pointerId)))
+  (-> this (.-pointerId)))
 
 (defn set-pointer-id!
   "Property.
@@ -56,6 +56,34 @@
   [this val]
   (aset this "pointerId" val))
 
+(defn width
+  "Property.
+
+  The width read-only property of the `web.PointerEvent` interface
+  the width of the pointer's contact geometry along the x-axis,
+  in CSS pixels. Depending on the source of the pointer device
+  as a finger), for a given pointer, each event may produce a different
+
+  `var contactWidth = pointerEvent.width;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/width`"
+  [this]
+  (-> this (.-width)))
+
+(defn set-width!
+  "Property.
+
+  The width read-only property of the `web.PointerEvent` interface
+  the width of the pointer's contact geometry along the x-axis,
+  in CSS pixels. Depending on the source of the pointer device
+  as a finger), for a given pointer, each event may produce a different
+
+  `var contactWidth = pointerEvent.width;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/width`"
+  [this val]
+  (aset this "width" val))
+
 (defn height
   "Property.
 
@@ -68,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -84,60 +112,6 @@
   [this val]
   (aset this "height" val))
 
-(defn is-primary
-  "Property.
-
-  The isPrimary read-only property of the `web.PointerEvent` interface
-  whether or not the pointer device that created the event is the
-  pointer. It returns true if the pointer that caused the event
-  be fired is the primary device and returns false otherwise.
-
-  `var isPrimary = pointerEvent.isPrimary;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary`"
-  [this]
-  (-> this (.isPrimary)))
-
-(defn set-is-primary!
-  "Property.
-
-  The isPrimary read-only property of the `web.PointerEvent` interface
-  whether or not the pointer device that created the event is the
-  pointer. It returns true if the pointer that caused the event
-  be fired is the primary device and returns false otherwise.
-
-  `var isPrimary = pointerEvent.isPrimary;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary`"
-  [this val]
-  (aset this "isPrimary" val))
-
-(defn pointer-type
-  "Property.
-
-  The pointerType read-only property of the `web.PointerEvent`
-  indicates the device type (mouse, pen, or touch) that caused
-  given pointer event.
-
-  `var pType = pointerEvent.pointerType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerType`"
-  [this]
-  (-> this (.pointerType)))
-
-(defn set-pointer-type!
-  "Property.
-
-  The pointerType read-only property of the `web.PointerEvent`
-  indicates the device type (mouse, pen, or touch) that caused
-  given pointer event.
-
-  `var pType = pointerEvent.pointerType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerType`"
-  [this val]
-  (aset this "pointerType" val))
-
 (defn pressure
   "Property.
 
@@ -148,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pressure`"
   [this]
-  (-> this (.pressure)))
+  (-> this (.-pressure)))
 
 (defn set-pressure!
   "Property.
@@ -173,7 +147,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/tangentialPressure`"
   [this]
-  (-> this (.tangentialPressure)))
+  (-> this (.-tangentialPressure)))
 
 (defn set-tangential-pressure!
   "Property.
@@ -200,7 +174,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/tiltX`"
   [this]
-  (-> this (.tiltX)))
+  (-> this (.-tiltX)))
 
 (defn set-tilt-x!
   "Property.
@@ -228,7 +202,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/tiltY`"
   [this]
-  (-> this (.tiltY)))
+  (-> this (.-tiltY)))
 
 (defn set-tilt-y!
   "Property.
@@ -255,7 +229,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/twist`"
   [this]
-  (-> this (.twist)))
+  (-> this (.-twist)))
 
 (defn set-twist!
   "Property.
@@ -270,31 +244,57 @@
   [this val]
   (aset this "twist" val))
 
-(defn width
+(defn pointer-type
   "Property.
 
-  The width read-only property of the `web.PointerEvent` interface
-  the width of the pointer's contact geometry along the x-axis,
-  in CSS pixels. Depending on the source of the pointer device
-  as a finger), for a given pointer, each event may produce a different
+  The pointerType read-only property of the `web.PointerEvent`
+  indicates the device type (mouse, pen, or touch) that caused
+  given pointer event.
 
-  `var contactWidth = pointerEvent.width;`
+  `var pType = pointerEvent.pointerType;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/width`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerType`"
   [this]
-  (-> this (.width)))
+  (-> this (.-pointerType)))
 
-(defn set-width!
+(defn set-pointer-type!
   "Property.
 
-  The width read-only property of the `web.PointerEvent` interface
-  the width of the pointer's contact geometry along the x-axis,
-  in CSS pixels. Depending on the source of the pointer device
-  as a finger), for a given pointer, each event may produce a different
+  The pointerType read-only property of the `web.PointerEvent`
+  indicates the device type (mouse, pen, or touch) that caused
+  given pointer event.
 
-  `var contactWidth = pointerEvent.width;`
+  `var pType = pointerEvent.pointerType;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/width`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pointerType`"
   [this val]
-  (aset this "width" val))
+  (aset this "pointerType" val))
+
+(defn is-primary
+  "Property.
+
+  The isPrimary read-only property of the `web.PointerEvent` interface
+  whether or not the pointer device that created the event is the
+  pointer. It returns true if the pointer that caused the event
+  be fired is the primary device and returns false otherwise.
+
+  `var isPrimary = pointerEvent.isPrimary;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary`"
+  [this]
+  (-> this (.-isPrimary)))
+
+(defn set-is-primary!
+  "Property.
+
+  The isPrimary read-only property of the `web.PointerEvent` interface
+  whether or not the pointer device that created the event is the
+  pointer. It returns true if the pointer that caused the event
+  be fired is the primary device and returns false otherwise.
+
+  `var isPrimary = pointerEvent.isPrimary;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary`"
+  [this val]
+  (aset this "isPrimary" val))
 

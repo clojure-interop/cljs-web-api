@@ -31,33 +31,18 @@
   [this & args]
   (apply (-> this .-getContext) (concat [this] args)))
 
-(defn moz-fetch-as-stream
+(defn to-data-url
   "Method.
 
-  The HTMLCanvasElement.mozFetchAsStream() internal method used
-  create a new input stream that, when ready, would provide the
-  of the canvas as image data. However, this non-standard and internal
-  has been removed.
+  The HTMLCanvasElement.toDataURL() method returns a data URI containing
+  representation of the image in the format specified by the type
+  (defaults to PNG). The returned image is in a resolution of 96
 
-  `void canvas.mozFetchAsStream(callback, type);`
+  `canvas.toDataURL(type, encoderOptions);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozFetchAsStream`"
-  [this callback type]
-  (-> this (.mozFetchAsStream callback type)))
-
-(defn moz-get-as-file
-  "Method.
-
-  The HTMLCanvasElement.mozGetAsFile() method returns a `web.files.File`
-  representing the image contained in the canvas; this file is
-  memory-based file, with the specified name. If type is not specified,
-  image type is image/png.
-
-  `canvas.mozGetAsFile(name, type);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozGetAsFile`"
-  [this name type]
-  (-> this (.mozGetAsFile name type)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL`"
+  [this type encoder-options]
+  (-> this (.toDataURL type encoder-options)))
 
 (defn to-blob
   "Method.
@@ -74,19 +59,6 @@
   [this callback mime-type quality-argument]
   (-> this (.toBlob callback mime-type quality-argument)))
 
-(defn to-data-url
-  "Method.
-
-  The HTMLCanvasElement.toDataURL() method returns a data URI containing
-  representation of the image in the format specified by the type
-  (defaults to PNG). The returned image is in a resolution of 96
-
-  `canvas.toDataURL(type, encoderOptions);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL`"
-  [this type encoder-options]
-  (-> this (.toDataURL type encoder-options)))
-
 (defn transfer-control-to-offscreen
   "Method.
 
@@ -99,6 +71,34 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen`"
   [this ]
   (-> this (.transferControlToOffscreen)))
+
+(defn moz-get-as-file
+  "Method.
+
+  The HTMLCanvasElement.mozGetAsFile() method returns a `web.files.File`
+  representing the image contained in the canvas; this file is
+  memory-based file, with the specified name. If type is not specified,
+  image type is image/png.
+
+  `canvas.mozGetAsFile(name, type);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozGetAsFile`"
+  [this name type]
+  (-> this (.mozGetAsFile name type)))
+
+(defn moz-fetch-as-stream
+  "Method.
+
+  The HTMLCanvasElement.mozFetchAsStream() internal method used
+  create a new input stream that, when ready, would provide the
+  of the canvas as image data. However, this non-standard and internal
+  has been removed.
+
+  `void canvas.mozFetchAsStream(callback, type);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozFetchAsStream`"
+  [this callback type]
+  (-> this (.mozFetchAsStream callback type)))
 
 (defn height
   "Property.
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -130,6 +130,36 @@
   [this val]
   (aset this "height" val))
 
+(defn width
+  "Property.
+
+  The HTMLCanvasElement.width property is a positive integer reflecting
+  width HTML attribute of the `<canvas>` element interpreted in
+  pixels. When the attribute is not specified, or if it is set
+  an invalid value, like a negative, the default value of 300 is
+
+  `var pxl = canvas.width;
+  canvas.width = pxl;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width`"
+  [this]
+  (-> this (.-width)))
+
+(defn set-width!
+  "Property.
+
+  The HTMLCanvasElement.width property is a positive integer reflecting
+  width HTML attribute of the `<canvas>` element interpreted in
+  pixels. When the attribute is not specified, or if it is set
+  an invalid value, like a negative, the default value of 300 is
+
+  `var pxl = canvas.width;
+  canvas.width = pxl;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width`"
+  [this val]
+  (aset this "width" val))
+
 (defn moz-opaque
   "Property.
 
@@ -144,7 +174,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozOpaque`"
   [this]
-  (-> this (.mozOpaque)))
+  (-> this (.-mozOpaque)))
 
 (defn set-moz-opaque!
   "Property.
@@ -162,33 +192,31 @@
   [this val]
   (aset this "mozOpaque" val))
 
-(defn width
+(defn moz-print-callback
   "Property.
 
-  The HTMLCanvasElement.width property is a positive integer reflecting
-  width HTML attribute of the `<canvas>` element interpreted in
-  pixels. When the attribute is not specified, or if it is set
-  an invalid value, like a negative, the default value of 300 is
-
-  `var pxl = canvas.width;
-  canvas.width = pxl;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width`"
+  Is a function that is Initially null. Web content can set this
+  a JavaScript function that will be called when the canvas is
+  be redrawn while the page is being printed. When called, the
+  is passed a \"printState\" object that implements the MozCanvasPrintState
+  The callback can get the context to draw to from the printState
+  and must then call done() on it when finished. The purpose of
+  is to obtain a higher resolution rendering of the canvas at the
+  of the printer being used. See this blog post."
   [this]
-  (-> this (.width)))
+  (-> this (.-mozPrintCallback)))
 
-(defn set-width!
+(defn set-moz-print-callback!
   "Property.
 
-  The HTMLCanvasElement.width property is a positive integer reflecting
-  width HTML attribute of the `<canvas>` element interpreted in
-  pixels. When the attribute is not specified, or if it is set
-  an invalid value, like a negative, the default value of 300 is
-
-  `var pxl = canvas.width;
-  canvas.width = pxl;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width`"
+  Is a function that is Initially null. Web content can set this
+  a JavaScript function that will be called when the canvas is
+  be redrawn while the page is being printed. When called, the
+  is passed a \"printState\" object that implements the MozCanvasPrintState
+  The callback can get the context to draw to from the printState
+  and must then call done() on it when finished. The purpose of
+  is to obtain a higher resolution rendering of the canvas at the
+  of the printer being used. See this blog post."
   [this val]
-  (aset this "width" val))
+  (aset this "mozPrintCallback" val))
 

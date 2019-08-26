@@ -83,7 +83,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/frequency`"
   [this]
-  (-> this (.frequency)))
+  (-> this (.-frequency)))
 
 (defn set-frequency!
   "Property.
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/detune`"
   [this]
-  (-> this (.detune)))
+  (-> this (.-detune)))
 
 (defn set-detune!
   "Property.
@@ -140,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -166,7 +166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.

@@ -32,7 +32,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFToneChangeEvent/tone`"
   [this]
-  (-> this (.tone)))
+  (-> this (.-tone)))
 
 (defn set-tone!
   "Property.

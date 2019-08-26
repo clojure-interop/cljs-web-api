@@ -33,5 +33,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StereoPannerNode/pan`"
   [this]
-  (-> this (.pan)))
+  (-> this (.-pan)))
 

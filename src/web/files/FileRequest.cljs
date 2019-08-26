@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileRequest/lockedFile`"
   [this]
-  (-> this (.lockedFile)))
+  (-> this (.-lockedFile)))
 
 (defn set-locked-file!
   "Property.
@@ -26,22 +26,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileRequest/lockedFile`"
   [this val]
   (aset this "lockedFile" val))
-
-(defn onsuccess
-  "Property.
-
-  A callback handler called when the operation represented by the
-  is completed."
-  [this]
-  (-> this (.onsuccess)))
-
-(defn set-onsuccess!
-  "Property.
-
-  A callback handler called when the operation represented by the
-  is completed."
-  [this val]
-  (aset this "onsuccess" val))
 
 (defn onprogress
   "Property.
@@ -64,7 +48,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileRequest/onprogress`"
   [this]
-  (-> this (.onprogress)))
+  (-> this (.-onprogress)))
 
 (defn set-onprogress!
   "Property.
@@ -88,4 +72,80 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileRequest/onprogress`"
   [this val]
   (aset this "onprogress" val))
+
+(defn onsuccess
+  "Property.
+
+  A callback handler called when the operation represented by the
+  is completed."
+  [this]
+  (-> this (.-onsuccess)))
+
+(defn set-onsuccess!
+  "Property.
+
+  A callback handler called when the operation represented by the
+  is completed."
+  [this val]
+  (aset this "onsuccess" val))
+
+(defn onerror
+  "Property.
+
+  A callback handler that gets called when an error occurs while
+  the operation."
+  [this]
+  (-> this (.-onerror)))
+
+(defn set-onerror!
+  "Property.
+
+  A callback handler that gets called when an error occurs while
+  the operation."
+  [this val]
+  (aset this "onerror" val))
+
+(defn ready-state
+  "Property.
+
+  A string indicating whether or not the operation is finished
+  Its value is either \"done\" or \"pending\"."
+  [this]
+  (-> this (.-readyState)))
+
+(defn set-ready-state!
+  "Property.
+
+  A string indicating whether or not the operation is finished
+  Its value is either \"done\" or \"pending\"."
+  [this val]
+  (aset this "readyState" val))
+
+(defn result
+  "Property.
+
+  The operation's result."
+  [this]
+  (-> this (.-result)))
+
+(defn set-result!
+  "Property.
+
+  The operation's result."
+  [this val]
+  (aset this "result" val))
+
+(defn error
+  "Property.
+
+  Error information, if any."
+  [this]
+  (-> this (.-error)))
+
+(defn set-error!
+  "Property.
+
+  Error information, if any."
+  [this val]
+  (aset this "error" val))
 

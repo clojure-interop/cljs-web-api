@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/disabled`"
   [this]
-  (-> this (.disabled)))
+  (-> this (.-disabled)))
 
 (defn set-disabled!
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/media`"
   [this]
-  (-> this (.media)))
+  (-> this (.-media)))
 
 (defn set-media!
   "Property.
@@ -86,7 +86,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/ownerNode`"
   [this]
-  (-> this (.ownerNode)))
+  (-> this (.-ownerNode)))
 
 (defn set-owner-node!
   "Property.
@@ -111,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/parentStyleSheet`"
   [this]
-  (-> this (.parentStyleSheet)))
+  (-> this (.-parentStyleSheet)))
 
 (defn set-parent-style-sheet!
   "Property.
@@ -134,7 +134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/title`"
   [this]
-  (-> this (.title)))
+  (-> this (.-title)))
 
 (defn set-title!
   "Property.
@@ -156,7 +156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

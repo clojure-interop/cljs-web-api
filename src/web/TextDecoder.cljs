@@ -1,6 +1,6 @@
 (ns web.TextDecoder
   "The TextDecoder interface represents a decoder for a specific
-  that is a specific character encoding, like utf-8, iso-8859-2,
+  is, a specific character encoding—such as utf-8, iso-8859-2,
   cp1261, gbk, etc. A decoder takes a stream of bytes as input
   emits a stream of code points. For a more scalable, non-native
   see StringView – a C-like representation of strings based on
@@ -234,5 +234,33 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/encoding`"
   [this]
-  (-> this (.encoding)))
+  (-> this (.-encoding)))
+
+(defn fatal
+  "Property.
+
+  Is a Boolean indicating whether the error mode is fatal."
+  [this]
+  (-> this (.-fatal)))
+
+(defn set-fatal!
+  "Property.
+
+  Is a Boolean indicating whether the error mode is fatal."
+  [this val]
+  (aset this "fatal" val))
+
+(defn ignore-bom
+  "Property.
+
+  Is a Boolean indicating whether the byte order marker is ignored."
+  [this]
+  (-> this (.-ignoreBOM)))
+
+(defn set-ignore-bom!
+  "Property.
+
+  Is a Boolean indicating whether the byte order marker is ignored."
+  [this val]
+  (aset this "ignoreBOM" val))
 

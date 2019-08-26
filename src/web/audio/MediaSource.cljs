@@ -53,19 +53,6 @@
   [this end-of-stream-error]
   (-> this (.endOfStream end-of-stream-error)))
 
-(defn is-type-supported
-  "Method.
-
-  The MediaSource.isTypeSupported() static method returns a `js.Boolean`
-  which is true if the given MIME type is likely to be supported
-  the current user agent.
-
-  `var isItSupported = MediaSource.isTypeSupported(mimeType);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/isTypeSupported`"
-  [this mime-type]
-  (-> this (.isTypeSupported mime-type)))
-
 (defn remove-source-buffer
   "Method.
 
@@ -91,6 +78,19 @@
   [this start end]
   (-> this (.setLiveSeekableRange start end)))
 
+(defn is-type-supported
+  "Method.
+
+  The MediaSource.isTypeSupported() static method returns a `js.Boolean`
+  which is true if the given MIME type is likely to be supported
+  the current user agent.
+
+  `var isItSupported = MediaSource.isTypeSupported(mimeType);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/isTypeSupported`"
+  [this mime-type]
+  (-> this (.isTypeSupported mime-type)))
+
 (defn source-buffers
   "Property.
 
@@ -102,7 +102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceBuffers`"
   [this]
-  (-> this (.sourceBuffers)))
+  (-> this (.-sourceBuffers)))
 
 (defn set-source-buffers!
   "Property.
@@ -117,20 +117,6 @@
   [this val]
   (aset this "sourceBuffers" val))
 
-(defn onsourceclose
-  "Property.
-
-  The event handler for the sourceclose event."
-  [this]
-  (-> this (.onsourceclose)))
-
-(defn set-onsourceclose!
-  "Property.
-
-  The event handler for the sourceclose event."
-  [this val]
-  (aset this "onsourceclose" val))
-
 (defn active-source-buffers
   "Property.
 
@@ -144,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/activeSourceBuffers`"
   [this]
-  (-> this (.activeSourceBuffers)))
+  (-> this (.-activeSourceBuffers)))
 
 (defn set-active-source-buffers!
   "Property.
@@ -161,6 +147,32 @@
   [this val]
   (aset this "activeSourceBuffers" val))
 
+(defn ready-state
+  "Property.
+
+  The readyState read-only property of the `web.audio.MediaSource`
+  returns an enum representing the state of the current MediaSource.
+  three possible values are:
+
+  `var myReadyState = mediaSource.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState`"
+  [this]
+  (-> this (.-readyState)))
+
+(defn set-ready-state!
+  "Property.
+
+  The readyState read-only property of the `web.audio.MediaSource`
+  returns an enum representing the state of the current MediaSource.
+  three possible values are:
+
+  `var myReadyState = mediaSource.readyState;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState`"
+  [this val]
+  (aset this "readyState" val))
+
 (defn duration
   "Property.
 
@@ -173,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration`"
   [this]
-  (-> this (.duration)))
+  (-> this (.-duration)))
 
 (defn set-duration!
   "Property.
@@ -189,29 +201,45 @@
   [this val]
   (aset this "duration" val))
 
-(defn ready-state
+(defn onsourceclose
   "Property.
 
-  The readyState read-only property of the `web.audio.MediaSource`
-  returns an enum representing the state of the current MediaSource.
-  three possible values are:
-
-  `var myReadyState = mediaSource.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState`"
+  The event handler for the sourceclose event."
   [this]
-  (-> this (.readyState)))
+  (-> this (.-onsourceclose)))
 
-(defn set-ready-state!
+(defn set-onsourceclose!
   "Property.
 
-  The readyState read-only property of the `web.audio.MediaSource`
-  returns an enum representing the state of the current MediaSource.
-  three possible values are:
-
-  `var myReadyState = mediaSource.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState`"
+  The event handler for the sourceclose event."
   [this val]
-  (aset this "readyState" val))
+  (aset this "onsourceclose" val))
+
+(defn onsourceended
+  "Property.
+
+  The event handler for the sourceended event."
+  [this]
+  (-> this (.-onsourceended)))
+
+(defn set-onsourceended!
+  "Property.
+
+  The event handler for the sourceended event."
+  [this val]
+  (aset this "onsourceended" val))
+
+(defn onsourceopen
+  "Property.
+
+  The event handler for the sourceopen event."
+  [this]
+  (-> this (.-onsourceopen)))
+
+(defn set-onsourceopen!
+  "Property.
+
+  The event handler for the sourceopen event."
+  [this val]
+  (aset this "onsourceopen" val))
 

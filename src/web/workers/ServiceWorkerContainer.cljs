@@ -48,6 +48,21 @@
   [this & args]
   (apply (-> this .-getRegistrations) (concat [this] args)))
 
+(defn start-messages
+  "Method.
+
+  The startMessages() method of the `web.workers.ServiceWorkerContainer`
+  explicitly starts the flow of messages being dispatched from
+  service worker to pages under its control (e.g. sent via `Client.postMessage()`).
+  can be used to react to sent messages earlier, even before that
+  content has finished loading.
+
+  `ServiceWorkerContainer.startMessages();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/startMessages`"
+  [this ]
+  (-> this (.startMessages)))
+
 (defn controller
   "Property.
 
@@ -61,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller`"
   [this]
-  (-> this (.controller)))
+  (-> this (.-controller)))
 
 (defn set-controller!
   "Property.
@@ -92,7 +107,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready`"
   [this]
-  (-> this (.ready)))
+  (-> this (.-ready)))
 
 (defn set-ready!
   "Property.
@@ -122,7 +137,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/oncontrollerchange`"
   [this]
-  (-> this (.oncontrollerchange)))
+  (-> this (.-oncontrollerchange)))
 
 (defn set-oncontrollerchange!
   "Property.
@@ -149,7 +164,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -176,7 +191,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.

@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language`"
   [this]
-  (-> this (.language)))
+  (-> this (.-language)))
 
 (defn languages
   "Property.
@@ -28,5 +28,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages`"
   [this]
-  (-> this (.languages)))
+  (-> this (.-languages)))
 

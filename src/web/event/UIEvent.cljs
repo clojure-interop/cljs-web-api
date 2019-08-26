@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/cancelBubble`"
   [this]
-  (-> this (.cancelBubble)))
+  (-> this (.-cancelBubble)))
 
 (defn set-cancel-bubble!
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail`"
   [this]
-  (-> this (.detail)))
+  (-> this (.-detail)))
 
 (defn is-char
   "Property.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/isChar`"
   [this]
-  (-> this (.isChar)))
+  (-> this (.-isChar)))
 
 (defn layer-x
   "Property.
@@ -89,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/layerX`"
   [this]
-  (-> this (.layerX)))
+  (-> this (.-layerX)))
 
 (defn layer-y
   "Property.
@@ -104,7 +104,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/layerY`"
   [this]
-  (-> this (.layerY)))
+  (-> this (.-layerY)))
 
 (defn page-x
   "Property.
@@ -116,7 +116,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/pageX`"
   [this]
-  (-> this (.pageX)))
+  (-> this (.-pageX)))
 
 (defn page-y
   "Property.
@@ -130,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/pageY`"
   [this]
-  (-> this (.pageY)))
+  (-> this (.-pageY)))
 
 (defn source-capabilities
   "Property.
@@ -144,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/sourceCapabilities`"
   [this]
-  (-> this (.sourceCapabilities)))
+  (-> this (.-sourceCapabilities)))
 
 (defn set-source-capabilities!
   "Property.
@@ -174,5 +174,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/view`"
   [this]
-  (-> this (.view)))
+  (-> this (.-view)))
+
+(defn which
+  "Property.
+
+  Returns the numeric keyCode of the key pressed, or the character
+  (charCode) for an alphanumeric key pressed."
+  [this]
+  (-> this (.-which)))
+
+(defn set-which!
+  "Property.
+
+  Returns the numeric keyCode of the key pressed, or the character
+  (charCode) for an alphanumeric key pressed."
+  [this val]
+  (aset this "which" val))
 

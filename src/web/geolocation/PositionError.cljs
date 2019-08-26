@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionError/code`"
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn set-code!
   "Property.
@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionError/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.

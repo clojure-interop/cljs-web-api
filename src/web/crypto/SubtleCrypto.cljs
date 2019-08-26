@@ -31,21 +31,57 @@
   [this algorithm key data]
   (-> this (.decrypt algorithm key data)))
 
-(defn derive-bits
+(defn sign
   "Method.
 
-  The deriveBits() method of the `web.crypto.SubtleCrypto` interface
-  be used to derive an array of bits from a base key.
+  The sign() method of the `web.crypto.SubtleCrypto` interface
+  a digital signature.
 
-  `const result = crypto.subtle.deriveBits(
-  algorithm,
-  baseKey,
-  length
-  );`
+  `const signature = crypto.subtle.sign(algorithm, key, data);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveBits`"
-  [this & args]
-  (apply (-> this .-deriveBits) (concat [this] args)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign`"
+  [this algorithm key data]
+  (-> this (.sign algorithm key data)))
+
+(defn verify
+  "Method.
+
+  The verify() method of the `web.crypto.SubtleCrypto` interface
+  a digital signature.
+
+  `const result = crypto.subtle.verify(algorithm, key, signature, data);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify`"
+  [this algorithm key signature data]
+  (-> this (.verify algorithm key signature data)))
+
+(defn digest
+  "Method.
+
+  The digest() method of the `web.crypto.SubtleCrypto` interface
+  a digest of the given data. A digest is a short fixed-length
+  derived from some variable-length input. Cryptographic digests
+  exhibit collision-resistance, meaning that it's hard to come
+  with two different inputs that have the same digest value.
+
+  `const digest = crypto.subtle.digest(algorithm, data);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest`"
+  [this algorithm data]
+  (-> this (.digest algorithm data)))
+
+(defn generate-key
+  "Method.
+
+  Use the generateKey() method of the `web.crypto.SubtleCrypto`
+  to generate a new key (for symmetric algorithms) or key pair
+  public-key algorithms).
+
+  `const result = crypto.subtle.generateKey(algorithm, extractable, keyUsages);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey`"
+  [this algorithm extractable key-usages]
+  (-> this (.generateKey algorithm extractable key-usages)))
 
 (defn derive-key
   "Method.
@@ -65,46 +101,21 @@
   [this & args]
   (apply (-> this .-deriveKey) (concat [this] args)))
 
-(defn digest
+(defn derive-bits
   "Method.
 
-  The digest() method of the `web.crypto.SubtleCrypto` interface
-  a digest of the given data. A digest is a short fixed-length
-  derived from some variable-length input. Cryptographic digests
-  exhibit collision-resistance, meaning that it's hard to come
-  with two different inputs that have the same digest value.
+  The deriveBits() method of the `web.crypto.SubtleCrypto` interface
+  be used to derive an array of bits from a base key.
 
-  `const digest = crypto.subtle.digest(algorithm, data);`
+  `const result = crypto.subtle.deriveBits(
+  algorithm,
+  baseKey,
+  length
+  );`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest`"
-  [this algorithm data]
-  (-> this (.digest algorithm data)))
-
-(defn export-key
-  "Method.
-
-  The exportKey() method of the `web.crypto.SubtleCrypto` interface
-  a key: that is, it takes as input a `web.crypto.CryptoKey` object
-  gives you the key in an external, portable format.
-
-  `const result = crypto.subtle.exportKey(format, key);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/exportKey`"
-  [this format key]
-  (-> this (.exportKey format key)))
-
-(defn generate-key
-  "Method.
-
-  Use the generateKey() method of the `web.crypto.SubtleCrypto`
-  to generate a new key (for symmetric algorithms) or key pair
-  public-key algorithms).
-
-  `const result = crypto.subtle.generateKey(algorithm, extractable, keyUsages);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey`"
-  [this algorithm extractable key-usages]
-  (-> this (.generateKey algorithm extractable key-usages)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveBits`"
+  [this & args]
+  (apply (-> this .-deriveBits) (concat [this] args)))
 
 (defn import-key
   "Method.
@@ -126,17 +137,38 @@
   [this & args]
   (apply (-> this .-importKey) (concat [this] args)))
 
-(defn sign
+(defn export-key
   "Method.
 
-  The sign() method of the `web.crypto.SubtleCrypto` interface
-  a digital signature.
+  The exportKey() method of the `web.crypto.SubtleCrypto` interface
+  a key: that is, it takes as input a `web.crypto.CryptoKey` object
+  gives you the key in an external, portable format.
 
-  `const signature = crypto.subtle.sign(algorithm, key, data);`
+  `const result = crypto.subtle.exportKey(format, key);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign`"
-  [this algorithm key data]
-  (-> this (.sign algorithm key data)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/exportKey`"
+  [this format key]
+  (-> this (.exportKey format key)))
+
+(defn wrap-key
+  "Method.
+
+  The wrapKey() method of the `web.crypto.SubtleCrypto` interface
+  a key. This means that it exports the key in an external, portable
+  then encrypts the exported key. Wrapping a key helps protect
+  in untrusted environments, such as inside an otherwise unprotected
+  store or in transmission over an unprotected network.
+
+  `const result = crypto.subtle.wrapKey(
+  format,
+  key,
+  wrappingKey,
+  wrapAlgo
+  );`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey`"
+  [this & args]
+  (apply (-> this .-wrapKey) (concat [this] args)))
 
 (defn unwrap-key
   "Method.
@@ -160,36 +192,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/unwrapKey`"
   [this & args]
   (apply (-> this .-unwrapKey) (concat [this] args)))
-
-(defn verify
-  "Method.
-
-  The verify() method of the `web.crypto.SubtleCrypto` interface
-  a digital signature.
-
-  `const result = crypto.subtle.verify(algorithm, key, signature, data);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify`"
-  [this algorithm key signature data]
-  (-> this (.verify algorithm key signature data)))
-
-(defn wrap-key
-  "Method.
-
-  The wrapKey() method of the `web.crypto.SubtleCrypto` interface
-  a key. This means that it exports the key in an external, portable
-  then encrypts the exported key. Wrapping a key helps protect
-  in untrusted environments, such as inside an otherwise unprotected
-  store or in transmission over an unprotected network.
-
-  `const result = crypto.subtle.wrapKey(
-  format,
-  key,
-  wrappingKey,
-  wrapAlgo
-  );`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey`"
-  [this & args]
-  (apply (-> this .-wrapKey) (concat [this] args)))
 

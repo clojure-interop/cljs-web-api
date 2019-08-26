@@ -9,7 +9,7 @@
 
   An unsigned short representing the value of the zoomAndPan attribute."
   [this]
-  (-> this (.zoomAndPan)))
+  (-> this (.-zoomAndPan)))
 
 (defn set-zoom-and-pan!
   "Property.

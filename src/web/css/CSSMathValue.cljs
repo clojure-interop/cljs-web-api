@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue/operator`"
   [this]
-  (-> this (.operator)))
+  (-> this (.-operator)))
 
 (defn set-operator!
   "Property.

@@ -4,7 +4,7 @@
   `HTMLAreaElement.relList`, `HTMLIframeElement.sandbox`, or `HTMLOutputElement.htmlFor`.
   is indexed beginning with 0 as with JavaScript `js.Array` objects.
   is always case-sensitive."
-  (:refer-clojure :exclude [keys remove replace]))
+  (:refer-clojure :exclude [remove replace keys]))
 
 (defn item
   "Method.
@@ -17,18 +17,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/item`"
   [this index]
   (-> this (.item index)))
-
-(defn add
-  "Method.
-
-  The add() method of the `web.dom.DOMTokenList` interface adds
-  given token to the list.
-
-  `tokenList.add(token1[, token2[, ...]]);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add`"
-  [this & args]
-  (apply (-> this .-add) (concat [this] args)))
 
 (defn contains
   "Method.
@@ -43,45 +31,17 @@
   [this token]
   (-> this (.contains token)))
 
-(defn entries
+(defn add
   "Method.
 
-  The DOMTokenList.entries() method returns an `iterator` allowing
-  to go through all key/value pairs contained in this object. The
-  are `web.dom.DOMString` objects, each representing a single token.
+  The add() method of the `web.dom.DOMTokenList` interface adds
+  given token to the list.
 
-  `tokenList.entries();`
+  `tokenList.add(token1[, token2[, ...]]);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/entries`"
-  [this ]
-  (-> this (.entries)))
-
-(defn for-each
-  "Method.
-
-  The forEach() method of the `web.dom.DOMTokenList` interface
-  the callback given in parameter once for each value pair in the
-  in insertion order.
-
-  `tokenList.forEach(callback);
-  tokenList.forEach(callback, argument);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add`"
   [this & args]
-  (apply (-> this .-forEach) (concat [this] args)))
-
-(defn keys
-  "Method.
-
-  The keys() method of the `web.dom.DOMTokenList` interface returns
-  `iterator` allowing to go through all keys contained in this
-  The keys are of type unsigned integer.
-
-  `tokenList.keys();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/keys`"
-  [this ]
-  (-> this (.keys)))
+  (apply (-> this .-add) (concat [this] args)))
 
 (defn remove
   "Method.
@@ -133,18 +93,45 @@
   [this token force]
   (-> this (.toggle token force)))
 
-(defn value
+(defn entries
   "Method.
 
-  The value property of the `web.dom.DOMTokenList` interface returns
-  value of the list as a `web.dom.DOMString`, or clears and sets
-  list to the given value.
+  The DOMTokenList.entries() method returns an `iterator` allowing
+  to go through all key/value pairs contained in this object. The
+  are `web.dom.DOMString` objects, each representing a single token.
 
-  `tokenList.value;`
+  `tokenList.entries();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/entries`"
   [this ]
-  (-> this (.value)))
+  (-> this (.entries)))
+
+(defn for-each
+  "Method.
+
+  The forEach() method of the `web.dom.DOMTokenList` interface
+  the callback given in parameter once for each value pair in the
+  in insertion order.
+
+  `tokenList.forEach(callback);
+  tokenList.forEach(callback, argument);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach`"
+  [this & args]
+  (apply (-> this .-forEach) (concat [this] args)))
+
+(defn keys
+  "Method.
+
+  The keys() method of the `web.dom.DOMTokenList` interface returns
+  `iterator` allowing to go through all keys contained in this
+  The keys are of type unsigned integer.
+
+  `tokenList.keys();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/keys`"
+  [this ]
+  (-> this (.keys)))
 
 (defn values
   "Method.
@@ -159,6 +146,19 @@
   [this ]
   (-> this (.values)))
 
+(defn value
+  "Method.
+
+  The value property of the `web.dom.DOMTokenList` interface returns
+  value of the list as a `web.dom.DOMString`, or clears and sets
+  list to the given value.
+
+  `tokenList.value;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value`"
+  [this ]
+  (-> this (.value)))
+
 (defn length
   "Property.
 
@@ -169,7 +169,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

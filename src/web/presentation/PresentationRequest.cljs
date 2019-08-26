@@ -32,6 +32,26 @@
   [this & args]
   (apply (-> this .-start) (concat [this] args)))
 
+(defn reconnect
+  "Method.
+
+  When the reconnect(presentationId) method is called on a PresentationRequest
+  the user agent MUST run the following steps to reconnect to a
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/reconnect`"
+  [this & args]
+  (apply (-> this .-reconnect) (concat [this] args)))
+
+(defn get-availability
+  "Method.
+
+  When the getAvailability() method is called, the user agent MUST
+  the following steps:
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/getAvailability`"
+  [this & args]
+  (apply (-> this .-getAvailability) (concat [this] args)))
+
 (defn onconnectionavailable
   "Property.
 
@@ -41,7 +61,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/onconnectionavailable`"
   [this]
-  (-> this (.onconnectionavailable)))
+  (-> this (.-onconnectionavailable)))
 
 (defn set-onconnectionavailable!
   "Property.

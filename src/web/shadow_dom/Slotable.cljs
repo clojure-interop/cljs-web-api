@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
   [this]
-  (-> this (.assignedSlot)))
+  (-> this (.-assignedSlot)))
 
 (defn set-assigned-slot!
   "Property.

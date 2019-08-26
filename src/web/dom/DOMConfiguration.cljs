@@ -12,12 +12,26 @@
   [this & args]
   (apply (-> this .-canSetParameter) (concat [this] args)))
 
+(defn get-parameter
+  "Method.
+
+  Returns a DOMUserData"
+  [this & args]
+  (apply (-> this .-getParameter) (concat [this] args)))
+
+(defn set-parameter
+  "Method.
+
+  Sets a parameter"
+  [this & args]
+  (apply (-> this .-setParameter) (concat [this] args)))
+
 (defn parameter-names
   "Property.
 
   Is a DOMStringList"
   [this]
-  (-> this (.parameterNames)))
+  (-> this (.-parameterNames)))
 
 (defn set-parameter-names!
   "Property.

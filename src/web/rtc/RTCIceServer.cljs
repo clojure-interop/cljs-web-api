@@ -23,7 +23,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/credential`"
   [this]
-  (-> this (.credential)))
+  (-> this (.-credential)))
 
 (defn set-credential!
   "Property.
@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/credentialType`"
   [this]
-  (-> this (.credentialType)))
+  (-> this (.-credentialType)))
 
 (defn set-credential-type!
   "Property.
@@ -90,56 +90,6 @@
   [this val]
   (aset this "credentialType" val))
 
-(defn url
-  "Property.
-
-  The obsolete `web.rtc.RTCIceServer` dictionary's url property
-  the URL of a single ICE server to be used while negotiating connections.
-  was removed from the specification in June 2013 but is still
-  used in older examples and books, so we include documentation
-  to help adapt old code to new browsers.
-
-  `var iceServer = {
-  ...
-  url = iceServerUrl,
-  ...
-  };
-
-  var serverUrl = iceServer.url;
-
-  iceServer.url = iceServerUrl;
-
-  The value of this property is a `web.dom.DOMString` containing the full URL of a server to use during ICE negotiation.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/url`"
-  [this]
-  (-> this (.url)))
-
-(defn set-url!
-  "Property.
-
-  The obsolete `web.rtc.RTCIceServer` dictionary's url property
-  the URL of a single ICE server to be used while negotiating connections.
-  was removed from the specification in June 2013 but is still
-  used in older examples and books, so we include documentation
-  to help adapt old code to new browsers.
-
-  `var iceServer = {
-  ...
-  url = iceServerUrl,
-  ...
-  };
-
-  var serverUrl = iceServer.url;
-
-  iceServer.url = iceServerUrl;
-
-  The value of this property is a `web.dom.DOMString` containing the full URL of a server to use during ICE negotiation.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/url`"
-  [this val]
-  (aset this "url" val))
-
 (defn urls
   "Property.
 
@@ -159,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/urls`"
   [this]
-  (-> this (.urls)))
+  (-> this (.-urls)))
 
 (defn set-urls!
   "Property.
@@ -201,7 +151,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/username`"
   [this]
-  (-> this (.username)))
+  (-> this (.-username)))
 
 (defn set-username!
   "Property.
@@ -223,4 +173,54 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/username`"
   [this val]
   (aset this "username" val))
+
+(defn url
+  "Property.
+
+  The obsolete `web.rtc.RTCIceServer` dictionary's url property
+  the URL of a single ICE server to be used while negotiating connections.
+  was removed from the specification in June 2013 but is still
+  used in older examples and books, so we include documentation
+  to help adapt old code to new browsers.
+
+  `var iceServer = {
+  ...
+  url = iceServerUrl,
+  ...
+  };
+
+  var serverUrl = iceServer.url;
+
+  iceServer.url = iceServerUrl;
+
+  The value of this property is a `web.dom.DOMString` containing the full URL of a server to use during ICE negotiation.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/url`"
+  [this]
+  (-> this (.-url)))
+
+(defn set-url!
+  "Property.
+
+  The obsolete `web.rtc.RTCIceServer` dictionary's url property
+  the URL of a single ICE server to be used while negotiating connections.
+  was removed from the specification in June 2013 but is still
+  used in older examples and books, so we include documentation
+  to help adapt old code to new browsers.
+
+  `var iceServer = {
+  ...
+  url = iceServerUrl,
+  ...
+  };
+
+  var serverUrl = iceServer.url;
+
+  iceServer.url = iceServerUrl;
+
+  The value of this property is a `web.dom.DOMString` containing the full URL of a server to use during ICE negotiation.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceServer/url`"
+  [this val]
+  (aset this "url" val))
 

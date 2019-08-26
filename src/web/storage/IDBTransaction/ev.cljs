@@ -20,3 +20,13 @@
 
   "complete")
 
+(def error
+  "Event.
+
+  The error event is fired on IDBTransaction when a request returns
+  error and the event bubbles up to the transaction object.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error_event`"
+
+  "error")
+

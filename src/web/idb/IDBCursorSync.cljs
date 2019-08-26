@@ -5,14 +5,7 @@
   have an unlimited number of cursors at the same time. Operations
   performed on the underlying index or object store. It enables
   application to synchronously process all the records in the cursor's"
-  (:refer-clojure :exclude [key]))
-
-(defn key
-  "Method.
-
-  The key to which to move the cursor's position."
-  [this & args]
-  (apply (-> this .-key) (concat [this] args)))
+  (:refer-clojure :exclude []))
 
 (defn not-allowed-err
   "Method.

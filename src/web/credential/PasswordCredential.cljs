@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/additionalData`"
   [this]
-  (-> this (.additionalData)))
+  (-> this (.-additionalData)))
 
 (defn set-additional-data!
   "Property.
@@ -72,7 +72,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/iconURL`"
   [this]
-  (-> this (.iconURL)))
+  (-> this (.-iconURL)))
 
 (defn set-icon-url!
   "Property.
@@ -100,7 +100,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/idName`"
   [this]
-  (-> this (.idName)))
+  (-> this (.-idName)))
 
 (defn set-id-name!
   "Property.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -152,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/password`"
   [this]
-  (-> this (.password)))
+  (-> this (.-password)))
 
 (defn set-password!
   "Property.
@@ -177,7 +177,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/passwordName`"
   [this]
-  (-> this (.passwordName)))
+  (-> this (.-passwordName)))
 
 (defn set-password-name!
   "Property.

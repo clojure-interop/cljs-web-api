@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer`"
   [this]
-  (-> this (.dataTransfer)))
+  (-> this (.-dataTransfer)))
 
 (defn set-data-transfer!
   "Property.

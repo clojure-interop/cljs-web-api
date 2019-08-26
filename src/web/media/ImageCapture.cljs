@@ -80,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/track`"
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 
 (defn set-track!
   "Property.

@@ -17,6 +17,20 @@
   [this ]
   (-> this (.getDevices)))
 
+(defn request-device
+  "Method.
+
+  The requestDevice() method of the `web.usb.USB` interface returns
+  `js.Promise` that resolves with an instance of `web.usb.USBDevice`
+  the specified device is found. Calling this function triggers
+  user agent's pairing flow.
+
+  `var promise = USB.requestDevice([filters])`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USB/requestDevice`"
+  [this & args]
+  (apply (-> this .-requestDevice) (concat [this] args)))
+
 (defn onconnect
   "Method.
 
@@ -40,18 +54,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USB/ondisconnect`"
   [this ]
   (-> this (.ondisconnect)))
-
-(defn request-device
-  "Method.
-
-  The requestDevice() method of the `web.usb.USB` interface returns
-  `js.Promise` that resolves with an instance of `web.usb.USBDevice`
-  the specified device is found. Calling this function triggers
-  user agent's pairing flow.
-
-  `var promise = USB.requestDevice([filters])`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USB/requestDevice`"
-  [this & args]
-  (apply (-> this .-requestDevice) (concat [this] args)))
 

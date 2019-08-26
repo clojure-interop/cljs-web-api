@@ -10,7 +10,7 @@
   Returns a Promise that resolves with a PresentationConnectionList
   containing a list of incoming presentation connections."
   [this]
-  (-> this (.connectionList)))
+  (-> this (.-connectionList)))
 
 (defn set-connection-list!
   "Property.

@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/redEyeReduction`"
   [this]
-  (-> this (.redEyeReduction)))
+  (-> this (.-redEyeReduction)))
 
 (defn set-red-eye-reduction!
   "Property.
@@ -30,32 +30,6 @@
   [this val]
   (aset this "redEyeReduction" val))
 
-(defn fill-light-mode
-  "Property.
-
-  The fillLightMode read-only property of the `web.media.PhotoCapabilities`
-  returns an array of available fill light options. Options may
-  auto, off, or flash.
-
-  `var lightModes[] = photoCapabilities.fillLightMode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
-  [this]
-  (-> this (.fillLightMode)))
-
-(defn set-fill-light-mode!
-  "Property.
-
-  The fillLightMode read-only property of the `web.media.PhotoCapabilities`
-  returns an array of available fill light options. Options may
-  auto, off, or flash.
-
-  `var lightModes[] = photoCapabilities.fillLightMode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
-  [this val]
-  (aset this "fillLightMode" val))
-
 (defn image-height
   "Property.
 
@@ -67,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/imageHeight`"
   [this]
-  (-> this (.imageHeight)))
+  (-> this (.-imageHeight)))
 
 (defn set-image-height!
   "Property.
@@ -93,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/imageWidth`"
   [this]
-  (-> this (.imageWidth)))
+  (-> this (.-imageWidth)))
 
 (defn set-image-width!
   "Property.
@@ -107,4 +81,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/imageWidth`"
   [this val]
   (aset this "imageWidth" val))
+
+(defn fill-light-mode
+  "Property.
+
+  The fillLightMode read-only property of the `web.media.PhotoCapabilities`
+  returns an array of available fill light options. Options may
+  auto, off, or flash.
+
+  `var lightModes[] = photoCapabilities.fillLightMode`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
+  [this]
+  (-> this (.-fillLightMode)))
+
+(defn set-fill-light-mode!
+  "Property.
+
+  The fillLightMode read-only property of the `web.media.PhotoCapabilities`
+  returns an array of available fill light options. Options may
+  auto, off, or flash.
+
+  `var lightModes[] = photoCapabilities.fillLightMode`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
+  [this val]
+  (aset this "fillLightMode" val))
 

@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/availableIncomingBitrate`"
   [this]
-  (-> this (.availableIncomingBitrate)))
+  (-> this (.-availableIncomingBitrate)))
 
 (defn set-available-incoming-bitrate!
   "Property.
@@ -31,58 +31,6 @@
   [this val]
   (aset this "availableIncomingBitrate" val))
 
-(defn priority
-  "Property.
-
-  The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
-  the priority of the candidate pair as an integer value.
-
-  `pairPriority = rtcIceCandidatePairStats.priority;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/priority`"
-  [this]
-  (-> this (.priority)))
-
-(defn set-priority!
-  "Property.
-
-  The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
-  the priority of the candidate pair as an integer value.
-
-  `pairPriority = rtcIceCandidatePairStats.priority;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/priority`"
-  [this val]
-  (aset this "priority" val))
-
-(defn selected
-  "Property.
-
-  The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
-  selected indicates whether or not the candidate pair described
-  the object is the one currently being used to communicate with
-  remote peer.
-
-  `isSelected = icpStats.selected;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/selected`"
-  [this]
-  (-> this (.selected)))
-
-(defn set-selected!
-  "Property.
-
-  The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
-  selected indicates whether or not the candidate pair described
-  the object is the one currently being used to communicate with
-  remote peer.
-
-  `isSelected = icpStats.selected;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/selected`"
-  [this val]
-  (aset this "selected" val))
-
 (defn available-outgoing-bitrate
   "Property.
 
@@ -94,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/availableOutgoingBitrate`"
   [this]
-  (-> this (.availableOutgoingBitrate)))
+  (-> this (.-availableOutgoingBitrate)))
 
 (defn set-available-outgoing-bitrate!
   "Property.
@@ -112,30 +60,48 @@
 (defn bytes-receieved
   "Property.
 
-  The `web.rtc.RTCIceCandidatePairStats` property bytesReceived
-  the total number of payload bytes—that is, bytes which aren't
-  such as headers or padding—that hve been received to date on
-  connection described by the candidate pair.
-
-  `received = rtcIceCandidatePairStats.bytesReceived;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/bytesReceived`"
+  The total number of payload bytes received (that is, the total
+  of bytes received minus any headers, padding, or other administrative
+  on this candidate pair so far."
   [this]
-  (-> this (.bytesReceieved)))
+  (-> this (.-bytesReceieved)))
 
 (defn set-bytes-receieved!
   "Property.
 
-  The `web.rtc.RTCIceCandidatePairStats` property bytesReceived
-  the total number of payload bytes—that is, bytes which aren't
-  such as headers or padding—that hve been received to date on
-  connection described by the candidate pair.
-
-  `received = rtcIceCandidatePairStats.bytesReceived;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/bytesReceived`"
+  The total number of payload bytes received (that is, the total
+  of bytes received minus any headers, padding, or other administrative
+  on this candidate pair so far."
   [this val]
   (aset this "bytesReceieved" val))
+
+(defn bytes-sent
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property bytesSent indicates
+  total number of payload bytes—that is, bytes which aren't overhead
+  as headers or padding—that hve been sent so far on the connection
+  by the candidate pair.
+
+  `sent = rtcIceCandidatePairStats.bytesSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/bytesSent`"
+  [this]
+  (-> this (.-bytesSent)))
+
+(defn set-bytes-sent!
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property bytesSent indicates
+  total number of payload bytes—that is, bytes which aren't overhead
+  as headers or padding—that hve been sent so far on the connection
+  by the candidate pair.
+
+  `sent = rtcIceCandidatePairStats.bytesSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/bytesSent`"
+  [this val]
+  (aset this "bytesSent" val))
 
 (defn circuit-breaker-trigger-count
   "Property.
@@ -149,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/circuitBreakerTriggerCount`"
   [this]
-  (-> this (.circuitBreakerTriggerCount)))
+  (-> this (.-circuitBreakerTriggerCount)))
 
 (defn set-circuit-breaker-trigger-count!
   "Property.
@@ -175,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/consentExpiredTimestamp`"
   [this]
-  (-> this (.consentExpiredTimestamp)))
+  (-> this (.-consentExpiredTimestamp)))
 
 (defn set-consent-expired-timestamp!
   "Property.
@@ -189,6 +155,60 @@
   [this val]
   (aset this "consentExpiredTimestamp" val))
 
+(defn consent-requests-sent
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property consentRequestsSent
+  the number of consent requests that have been sent by this peer
+  the remote peer on the connection described by the pair of candidates.
+
+  `consentRequestsSent = rtcIceCandidatePairStats.consentRequestsSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/consentRequestsSent`"
+  [this]
+  (-> this (.-consentRequestsSent)))
+
+(defn set-consent-requests-sent!
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property consentRequestsSent
+  the number of consent requests that have been sent by this peer
+  the remote peer on the connection described by the pair of candidates.
+
+  `consentRequestsSent = rtcIceCandidatePairStats.consentRequestsSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/consentRequestsSent`"
+  [this val]
+  (aset this "consentRequestsSent" val))
+
+(defn current-round-trip-time
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property currentRoundTripTime
+  a floating-point value indicating the number of seconds it takes
+  data to be sent by this peer to the remote peer and back over
+  connection described by this pair of ICE candidates.
+
+  `rtt = rtcIceCandidatePairStats.currentRoundTripTime;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/currentRoundTripTime`"
+  [this]
+  (-> this (.-currentRoundTripTime)))
+
+(defn set-current-round-trip-time!
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` property currentRoundTripTime
+  a floating-point value indicating the number of seconds it takes
+  data to be sent by this peer to the remote peer and back over
+  connection described by this pair of ICE candidates.
+
+  `rtt = rtcIceCandidatePairStats.currentRoundTripTime;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/currentRoundTripTime`"
+  [this val]
+  (aset this "currentRoundTripTime" val))
+
 (defn first-request-timestamp
   "Property.
 
@@ -200,7 +220,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/firstRequestTimestamp`"
   [this]
-  (-> this (.firstRequestTimestamp)))
+  (-> this (.-firstRequestTimestamp)))
 
 (defn set-first-request-timestamp!
   "Property.
@@ -226,7 +246,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/lastPacketReceivedTimestamp`"
   [this]
-  (-> this (.lastPacketReceivedTimestamp)))
+  (-> this (.-lastPacketReceivedTimestamp)))
 
 (defn set-last-packet-received-timestamp!
   "Property.
@@ -252,7 +272,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/lastPacketSentTimestamp`"
   [this]
-  (-> this (.lastPacketSentTimestamp)))
+  (-> this (.-lastPacketSentTimestamp)))
 
 (defn set-last-packet-sent-timestamp!
   "Property.
@@ -278,7 +298,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/lastRequestTimestamp`"
   [this]
-  (-> this (.lastRequestTimestamp)))
+  (-> this (.-lastRequestTimestamp)))
 
 (defn set-last-request-timestamp!
   "Property.
@@ -304,7 +324,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/lastResponseTimestamp`"
   [this]
-  (-> this (.lastResponseTimestamp)))
+  (-> this (.-lastResponseTimestamp)))
 
 (defn set-last-response-timestamp!
   "Property.
@@ -331,7 +351,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/localCandidateId`"
   [this]
-  (-> this (.localCandidateId)))
+  (-> this (.-localCandidateId)))
 
 (defn set-local-candidate-id!
   "Property.
@@ -358,7 +378,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/nominated`"
   [this]
-  (-> this (.nominated)))
+  (-> this (.-nominated)))
 
 (defn set-nominated!
   "Property.
@@ -384,7 +404,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/packetsReceived`"
   [this]
-  (-> this (.packetsReceived)))
+  (-> this (.-packetsReceived)))
 
 (defn set-packets-received!
   "Property.
@@ -410,7 +430,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/packetsSent`"
   [this]
-  (-> this (.packetsSent)))
+  (-> this (.-packetsSent)))
 
 (defn set-packets-sent!
   "Property.
@@ -425,32 +445,6 @@
   [this val]
   (aset this "packetsSent" val))
 
-(defn readable
-  "Property.
-
-  The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
-  whether or not the connection described by the candidate pair
-  received at least one valid incoming ICE request.
-
-  `isReadable = rtcIceCandidatePairStats.readable;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/readable`"
-  [this]
-  (-> this (.readable)))
-
-(defn set-readable!
-  "Property.
-
-  The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
-  whether or not the connection described by the candidate pair
-  received at least one valid incoming ICE request.
-
-  `isReadable = rtcIceCandidatePairStats.readable;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/readable`"
-  [this val]
-  (aset this "readable" val))
-
 (defn remote-candidate-id
   "Property.
 
@@ -463,7 +457,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/remoteCandidateId`"
   [this]
-  (-> this (.remoteCandidateId)))
+  (-> this (.-remoteCandidateId)))
 
 (defn set-remote-candidate-id!
   "Property.
@@ -491,7 +485,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/requestsReceived`"
   [this]
-  (-> this (.requestsReceived)))
+  (-> this (.-requestsReceived)))
 
 (defn set-requests-received!
   "Property.
@@ -519,7 +513,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/requestsSent`"
   [this]
-  (-> this (.requestsSent)))
+  (-> this (.-requestsSent)))
 
 (defn set-requests-sent!
   "Property.
@@ -546,7 +540,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/responsesReceived`"
   [this]
-  (-> this (.responsesReceived)))
+  (-> this (.-responsesReceived)))
 
 (defn set-responses-received!
   "Property.
@@ -573,7 +567,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/responsesSent`"
   [this]
-  (-> this (.responsesSent)))
+  (-> this (.-responsesSent)))
 
 (defn set-responses-sent!
   "Property.
@@ -600,7 +594,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/retransmissionsReceived`"
   [this]
-  (-> this (.retransmissionsReceived)))
+  (-> this (.-retransmissionsReceived)))
 
 (defn set-retransmissions-received!
   "Property.
@@ -615,6 +609,32 @@
   [this val]
   (aset this "retransmissionsReceived" val))
 
+(defn retransmissions-sent
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` dictionary's retransmissionsSent
+  indicates the total number of STUN connectivity check request
+  that have been sent so far on the pair of candidates.
+
+  `retransmissionsSent = rtcIceCandidatePairStats.retransmissionsSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/retransmissionsSent`"
+  [this]
+  (-> this (.-retransmissionsSent)))
+
+(defn set-retransmissions-sent!
+  "Property.
+
+  The `web.rtc.RTCIceCandidatePairStats` dictionary's retransmissionsSent
+  indicates the total number of STUN connectivity check request
+  that have been sent so far on the pair of candidates.
+
+  `retransmissionsSent = rtcIceCandidatePairStats.retransmissionsSent;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/retransmissionsSent`"
+  [this val]
+  (aset this "retransmissionsSent" val))
+
 (defn state
   "Property.
 
@@ -625,7 +645,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/state`"
   [this]
-  (-> this (.state)))
+  (-> this (.-state)))
 
 (defn set-state!
   "Property.
@@ -651,7 +671,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/totalRoundTripTime`"
   [this]
-  (-> this (.totalRoundTripTime)))
+  (-> this (.-totalRoundTripTime)))
 
 (defn set-total-round-trip-time!
   "Property.
@@ -678,7 +698,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/transportId`"
   [this]
-  (-> this (.transportId)))
+  (-> this (.-transportId)))
 
 (defn set-transport-id!
   "Property.
@@ -693,6 +713,56 @@
   [this val]
   (aset this "transportId" val))
 
+(defn priority
+  "Property.
+
+  The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
+  the priority of the candidate pair as an integer value.
+
+  `pairPriority = rtcIceCandidatePairStats.priority;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/priority`"
+  [this]
+  (-> this (.-priority)))
+
+(defn set-priority!
+  "Property.
+
+  The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
+  the priority of the candidate pair as an integer value.
+
+  `pairPriority = rtcIceCandidatePairStats.priority;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/priority`"
+  [this val]
+  (aset this "priority" val))
+
+(defn readable
+  "Property.
+
+  The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
+  whether or not the connection described by the candidate pair
+  received at least one valid incoming ICE request.
+
+  `isReadable = rtcIceCandidatePairStats.readable;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/readable`"
+  [this]
+  (-> this (.-readable)))
+
+(defn set-readable!
+  "Property.
+
+  The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
+  whether or not the connection described by the candidate pair
+  received at least one valid incoming ICE request.
+
+  `isReadable = rtcIceCandidatePairStats.readable;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/readable`"
+  [this val]
+  (aset this "readable" val))
+
 (defn writable
   "Property.
 
@@ -704,7 +774,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/writable`"
   [this]
-  (-> this (.writable)))
+  (-> this (.-writable)))
 
 (defn set-writable!
   "Property.
@@ -718,4 +788,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/writable`"
   [this val]
   (aset this "writable" val))
+
+(defn selected
+  "Property.
+
+  The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
+  selected indicates whether or not the candidate pair described
+  the object is the one currently being used to communicate with
+  remote peer.
+
+  `isSelected = icpStats.selected;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/selected`"
+  [this]
+  (-> this (.-selected)))
+
+(defn set-selected!
+  "Property.
+
+  The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
+  selected indicates whether or not the candidate pair described
+  the object is the one currently being used to communicate with
+  remote peer.
+
+  `isSelected = icpStats.selected;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidatePairStats/selected`"
+  [this val]
+  (aset this "selected" val))
 

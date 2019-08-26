@@ -31,6 +31,46 @@
   [this & args]
   (apply (-> this .-slice) (concat [this] args)))
 
+(defn stream
+  "Method.
+
+  The stream() method of the `web.files.Blob` interface transforms
+  Blob into a `web.files.ReadableStream` of its data.
+
+  `var stream = blob.stream();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream`"
+  [this ]
+  (-> this (.stream)))
+
+(defn text
+  "Method.
+
+
+
+  `blob.text().then(function (text) {
+  // do something with the text
+  });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/text`"
+  [this & args]
+  (apply (-> this .-text) (concat [this] args)))
+
+(defn array-buffer
+  "Method.
+
+  The arrayBuffer() method of the `web.files.Blob` interface is
+  to read the contents of a Blob as binary data. It returns a promise
+  resolves with an `js.ArrayBuffer`.
+
+  `blob.arrayBuffer().then(function (buffer) {
+  // do something with buffer
+  });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer`"
+  [this & args]
+  (apply (-> this .-arrayBuffer) (concat [this] args)))
+
 (defn size
   "Property.
 
@@ -41,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.
@@ -65,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.

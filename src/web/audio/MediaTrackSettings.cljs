@@ -23,7 +23,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/deviceId`"
   [this]
-  (-> this (.deviceId)))
+  (-> this (.-deviceId)))
 
 (defn set-device-id!
   "Property.
@@ -42,284 +42,6 @@
   [this val]
   (aset this "deviceId" val))
 
-(defn auto-gain-control
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's autoGainControl
-  is a Boolean value whose value indicates whether or not automatic
-  control (AGC) is enabled on an audio track. This lets you determine
-  value was selected to comply with your specified constraints
-  this property's value as described in the `MediaTrackConstraints.autoGainControl`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var autoGainControl = MediaTrackSettings.autoGainControl;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/autoGainControl`"
-  [this]
-  (-> this (.autoGainControl)))
-
-(defn set-auto-gain-control!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's autoGainControl
-  is a Boolean value whose value indicates whether or not automatic
-  control (AGC) is enabled on an audio track. This lets you determine
-  value was selected to comply with your specified constraints
-  this property's value as described in the `MediaTrackConstraints.autoGainControl`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var autoGainControl = MediaTrackSettings.autoGainControl;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/autoGainControl`"
-  [this val]
-  (aset this "autoGainControl" val))
-
-(defn sample-rate
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's sampleRate property
-  an integer indicating how many audio samples per second the `web.audio.MediaStreamTrack`
-  currently configured for. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.sampleRate` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var sampleRate = MediaTrackSettings.sampleRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleRate`"
-  [this]
-  (-> this (.sampleRate)))
-
-(defn set-sample-rate!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's sampleRate property
-  an integer indicating how many audio samples per second the `web.audio.MediaStreamTrack`
-  currently configured for. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.sampleRate` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var sampleRate = MediaTrackSettings.sampleRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleRate`"
-  [this val]
-  (aset this "sampleRate" val))
-
-(defn aspect-ratio
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's aspectRatio property
-  a double-precision floating-point number indicating the aspect
-  of the `web.audio.MediaStreamTrack` as currently configured.
-  lets you determine what value was selected to comply with your
-  constraints for this property's value as described in the `MediaTrackConstraints.aspectRatio`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var aspectRatio = MediaTrackSettings.aspectRatio;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/aspectRatio`"
-  [this]
-  (-> this (.aspectRatio)))
-
-(defn set-aspect-ratio!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's aspectRatio property
-  a double-precision floating-point number indicating the aspect
-  of the `web.audio.MediaStreamTrack` as currently configured.
-  lets you determine what value was selected to comply with your
-  constraints for this property's value as described in the `MediaTrackConstraints.aspectRatio`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var aspectRatio = MediaTrackSettings.aspectRatio;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/aspectRatio`"
-  [this val]
-  (aset this "aspectRatio" val))
-
-(defn cursor
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's cursor property
-  whether or not the cursor should be captured as part of the video
-  included in the `web.streams.MediaStream` returned by `getDisplayMedia()`.
-
-  `cursorSetting = mediaTrackSettings.cursor;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/cursor`"
-  [this]
-  (-> this (.cursor)))
-
-(defn set-cursor!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's cursor property
-  whether or not the cursor should be captured as part of the video
-  included in the `web.streams.MediaStream` returned by `getDisplayMedia()`.
-
-  `cursorSetting = mediaTrackSettings.cursor;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/cursor`"
-  [this val]
-  (aset this "cursor" val))
-
-(defn channel-count
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's channelCount
-  is an integer indicating how many audio channel the `web.audio.MediaStreamTrack`
-  currently configured to have. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.channelCount` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var channelCount = MediaTrackSettings.channelCount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/channelCount`"
-  [this]
-  (-> this (.channelCount)))
-
-(defn set-channel-count!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's channelCount
-  is an integer indicating how many audio channel the `web.audio.MediaStreamTrack`
-  currently configured to have. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.channelCount` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var channelCount = MediaTrackSettings.channelCount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/channelCount`"
-  [this val]
-  (aset this "channelCount" val))
-
-(defn display-surface
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's displaySurface
-  indicates the type of display surface being captured.
-
-  `displaySurface = mediaTrackSettings.displaySurface;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/displaySurface`"
-  [this]
-  (-> this (.displaySurface)))
-
-(defn set-display-surface!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's displaySurface
-  indicates the type of display surface being captured.
-
-  `displaySurface = mediaTrackSettings.displaySurface;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/displaySurface`"
-  [this val]
-  (aset this "displaySurface" val))
-
-(defn echo-cancellation
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's echoCancellation
-  is a Boolean value whose value indicates whether or not echo
-  is enabled on an audio track. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.echoCancellation`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var echoCancellation = MediaTrackSettings.echoCancellation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/echoCancellation`"
-  [this]
-  (-> this (.echoCancellation)))
-
-(defn set-echo-cancellation!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's echoCancellation
-  is a Boolean value whose value indicates whether or not echo
-  is enabled on an audio track. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.echoCancellation`
-  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var echoCancellation = MediaTrackSettings.echoCancellation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/echoCancellation`"
-  [this val]
-  (aset this "echoCancellation" val))
-
-(defn facing-mode
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's facingMode property
-  a `web.dom.DOMString` indicating the direction in which the camera
-  the video track represented by the `web.audio.MediaStreamTrack`
-  currently facing. This lets you determine what value was selected
-  comply with your specified constraints for this property's value
-  described in the `MediaTrackConstraints.facingMode` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var facingMode = MediaTrackSettings.facingMode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/facingMode`"
-  [this]
-  (-> this (.facingMode)))
-
-(defn set-facing-mode!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's facingMode property
-  a `web.dom.DOMString` indicating the direction in which the camera
-  the video track represented by the `web.audio.MediaStreamTrack`
-  currently facing. This lets you determine what value was selected
-  comply with your specified constraints for this property's value
-  described in the `MediaTrackConstraints.facingMode` property
-  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var facingMode = MediaTrackSettings.facingMode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/facingMode`"
-  [this val]
-  (aset this "facingMode" val))
-
-(defn frame-rate
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's frameRate property
-  a double-precision floating-point number indicating the frame
-  in frames per second, of the `web.audio.MediaStreamTrack` as
-  configured. This lets you determine what value was selected to
-  with your specified constraints for this property's value as
-  in the `MediaTrackConstraints.frameRate` property you provided
-  calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var frameRate = MediaTrackSettings.frameRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/frameRate`"
-  [this]
-  (-> this (.frameRate)))
-
-(defn set-frame-rate!
-  "Property.
-
-  The `web.audio.MediaTrackSettings` dictionary's frameRate property
-  a double-precision floating-point number indicating the frame
-  in frames per second, of the `web.audio.MediaStreamTrack` as
-  configured. This lets you determine what value was selected to
-  with your specified constraints for this property's value as
-  in the `MediaTrackConstraints.frameRate` property you provided
-  calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
-
-  `var frameRate = MediaTrackSettings.frameRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/frameRate`"
-  [this val]
-  (aset this "frameRate" val))
-
 (defn group-id
   "Property.
 
@@ -334,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/groupId`"
   [this]
-  (-> this (.groupId)))
+  (-> this (.-groupId)))
 
 (defn set-group-id!
   "Property.
@@ -352,37 +74,101 @@
   [this val]
   (aset this "groupId" val))
 
-(defn height
+(defn auto-gain-control
   "Property.
 
-  The `web.audio.MediaTrackSettings` dictionary's height property
-  an integer indicating the number of pixels tall `web.audio.MediaStreamTrack`
-  currently configured to be. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.height` property you
-  when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+  The `web.audio.MediaTrackSettings` dictionary's autoGainControl
+  is a Boolean value whose value indicates whether or not automatic
+  control (AGC) is enabled on an audio track. This lets you determine
+  value was selected to comply with your specified constraints
+  this property's value as described in the `MediaTrackConstraints.autoGainControl`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
 
-  `var height = MediaTrackSettings.height;`
+  `var autoGainControl = MediaTrackSettings.autoGainControl;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/height`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/autoGainControl`"
   [this]
-  (-> this (.height)))
+  (-> this (.-autoGainControl)))
 
-(defn set-height!
+(defn set-auto-gain-control!
   "Property.
 
-  The `web.audio.MediaTrackSettings` dictionary's height property
-  an integer indicating the number of pixels tall `web.audio.MediaStreamTrack`
-  currently configured to be. This lets you determine what value
-  selected to comply with your specified constraints for this property's
-  as described in the `MediaTrackConstraints.height` property you
-  when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+  The `web.audio.MediaTrackSettings` dictionary's autoGainControl
+  is a Boolean value whose value indicates whether or not automatic
+  control (AGC) is enabled on an audio track. This lets you determine
+  value was selected to comply with your specified constraints
+  this property's value as described in the `MediaTrackConstraints.autoGainControl`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
 
-  `var height = MediaTrackSettings.height;`
+  `var autoGainControl = MediaTrackSettings.autoGainControl;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/height`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/autoGainControl`"
   [this val]
-  (aset this "height" val))
+  (aset this "autoGainControl" val))
+
+(defn channel-count
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's channelCount
+  is an integer indicating how many audio channel the `web.audio.MediaStreamTrack`
+  currently configured to have. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.channelCount` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var channelCount = MediaTrackSettings.channelCount;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/channelCount`"
+  [this]
+  (-> this (.-channelCount)))
+
+(defn set-channel-count!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's channelCount
+  is an integer indicating how many audio channel the `web.audio.MediaStreamTrack`
+  currently configured to have. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.channelCount` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var channelCount = MediaTrackSettings.channelCount;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/channelCount`"
+  [this val]
+  (aset this "channelCount" val))
+
+(defn echo-cancellation
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's echoCancellation
+  is a Boolean value whose value indicates whether or not echo
+  is enabled on an audio track. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.echoCancellation`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var echoCancellation = MediaTrackSettings.echoCancellation;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/echoCancellation`"
+  [this]
+  (-> this (.-echoCancellation)))
+
+(defn set-echo-cancellation!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's echoCancellation
+  is a Boolean value whose value indicates whether or not echo
+  is enabled on an audio track. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.echoCancellation`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var echoCancellation = MediaTrackSettings.echoCancellation;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/echoCancellation`"
+  [this val]
+  (aset this "echoCancellation" val))
 
 (defn latency
   "Property.
@@ -399,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/latency`"
   [this]
-  (-> this (.latency)))
+  (-> this (.-latency)))
 
 (defn set-latency!
   "Property.
@@ -432,7 +218,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/noiseSuppression`"
   [this]
-  (-> this (.noiseSuppression)))
+  (-> this (.-noiseSuppression)))
 
 (defn set-noise-suppression!
   "Property.
@@ -450,6 +236,38 @@
   [this val]
   (aset this "noiseSuppression" val))
 
+(defn sample-rate
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's sampleRate property
+  an integer indicating how many audio samples per second the `web.audio.MediaStreamTrack`
+  currently configured for. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.sampleRate` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var sampleRate = MediaTrackSettings.sampleRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleRate`"
+  [this]
+  (-> this (.-sampleRate)))
+
+(defn set-sample-rate!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's sampleRate property
+  an integer indicating how many audio samples per second the `web.audio.MediaStreamTrack`
+  currently configured for. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.sampleRate` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var sampleRate = MediaTrackSettings.sampleRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleRate`"
+  [this val]
+  (aset this "sampleRate" val))
+
 (defn sample-size
   "Property.
 
@@ -464,7 +282,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleSize`"
   [this]
-  (-> this (.sampleSize)))
+  (-> this (.-sampleSize)))
 
 (defn set-sample-size!
   "Property.
@@ -498,7 +316,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/volume`"
   [this]
-  (-> this (.volume)))
+  (-> this (.-volume)))
 
 (defn set-volume!
   "Property.
@@ -518,6 +336,138 @@
   [this val]
   (aset this "volume" val))
 
+(defn aspect-ratio
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's aspectRatio property
+  a double-precision floating-point number indicating the aspect
+  of the `web.audio.MediaStreamTrack` as currently configured.
+  lets you determine what value was selected to comply with your
+  constraints for this property's value as described in the `MediaTrackConstraints.aspectRatio`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var aspectRatio = MediaTrackSettings.aspectRatio;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/aspectRatio`"
+  [this]
+  (-> this (.-aspectRatio)))
+
+(defn set-aspect-ratio!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's aspectRatio property
+  a double-precision floating-point number indicating the aspect
+  of the `web.audio.MediaStreamTrack` as currently configured.
+  lets you determine what value was selected to comply with your
+  constraints for this property's value as described in the `MediaTrackConstraints.aspectRatio`
+  you provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var aspectRatio = MediaTrackSettings.aspectRatio;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/aspectRatio`"
+  [this val]
+  (aset this "aspectRatio" val))
+
+(defn facing-mode
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's facingMode property
+  a `web.dom.DOMString` indicating the direction in which the camera
+  the video track represented by the `web.audio.MediaStreamTrack`
+  currently facing. This lets you determine what value was selected
+  comply with your specified constraints for this property's value
+  described in the `MediaTrackConstraints.facingMode` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var facingMode = MediaTrackSettings.facingMode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/facingMode`"
+  [this]
+  (-> this (.-facingMode)))
+
+(defn set-facing-mode!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's facingMode property
+  a `web.dom.DOMString` indicating the direction in which the camera
+  the video track represented by the `web.audio.MediaStreamTrack`
+  currently facing. This lets you determine what value was selected
+  comply with your specified constraints for this property's value
+  described in the `MediaTrackConstraints.facingMode` property
+  provided when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var facingMode = MediaTrackSettings.facingMode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/facingMode`"
+  [this val]
+  (aset this "facingMode" val))
+
+(defn frame-rate
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's frameRate property
+  a double-precision floating-point number indicating the frame
+  in frames per second, of the `web.audio.MediaStreamTrack` as
+  configured. This lets you determine what value was selected to
+  with your specified constraints for this property's value as
+  in the `MediaTrackConstraints.frameRate` property you provided
+  calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var frameRate = MediaTrackSettings.frameRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/frameRate`"
+  [this]
+  (-> this (.-frameRate)))
+
+(defn set-frame-rate!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's frameRate property
+  a double-precision floating-point number indicating the frame
+  in frames per second, of the `web.audio.MediaStreamTrack` as
+  configured. This lets you determine what value was selected to
+  with your specified constraints for this property's value as
+  in the `MediaTrackConstraints.frameRate` property you provided
+  calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var frameRate = MediaTrackSettings.frameRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/frameRate`"
+  [this val]
+  (aset this "frameRate" val))
+
+(defn height
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's height property
+  an integer indicating the number of pixels tall `web.audio.MediaStreamTrack`
+  currently configured to be. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.height` property you
+  when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var height = MediaTrackSettings.height;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/height`"
+  [this]
+  (-> this (.-height)))
+
+(defn set-height!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's height property
+  an integer indicating the number of pixels tall `web.audio.MediaStreamTrack`
+  currently configured to be. This lets you determine what value
+  selected to comply with your specified constraints for this property's
+  as described in the `MediaTrackConstraints.height` property you
+  when calling either `getUserMedia()` or `MediaStreamTrack.applyConstraints()`.
+
+  `var height = MediaTrackSettings.height;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/height`"
+  [this val]
+  (aset this "height" val))
+
 (defn width
   "Property.
 
@@ -532,7 +482,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.
@@ -549,4 +499,116 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/width`"
   [this val]
   (aset this "width" val))
+
+(defn resize-mode
+  "Property.
+
+  A DOMString indicating the current value of the resizeMode property,
+  the mode used by the user agent to derive the resolution of the
+  The value will be one of:
+  \"none\"
+  The track has the resolution offered by the camera, its driver
+  the OS.
+  \"crop-and-scale\"
+  The track's resolution might be the result of the user agent
+  cropping or downscaling from a higher camera resolution."
+  [this]
+  (-> this (.-resizeMode)))
+
+(defn set-resize-mode!
+  "Property.
+
+  A DOMString indicating the current value of the resizeMode property,
+  the mode used by the user agent to derive the resolution of the
+  The value will be one of:
+  \"none\"
+  The track has the resolution offered by the camera, its driver
+  the OS.
+  \"crop-and-scale\"
+  The track's resolution might be the result of the user agent
+  cropping or downscaling from a higher camera resolution."
+  [this val]
+  (aset this "resizeMode" val))
+
+(defn cursor
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's cursor property
+  whether or not the cursor should be captured as part of the video
+  included in the `web.streams.MediaStream` returned by `getDisplayMedia()`.
+
+  `cursorSetting = mediaTrackSettings.cursor;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/cursor`"
+  [this]
+  (-> this (.-cursor)))
+
+(defn set-cursor!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's cursor property
+  whether or not the cursor should be captured as part of the video
+  included in the `web.streams.MediaStream` returned by `getDisplayMedia()`.
+
+  `cursorSetting = mediaTrackSettings.cursor;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/cursor`"
+  [this val]
+  (aset this "cursor" val))
+
+(defn display-surface
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's displaySurface
+  indicates the type of display surface being captured.
+
+  `displaySurface = mediaTrackSettings.displaySurface;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/displaySurface`"
+  [this]
+  (-> this (.-displaySurface)))
+
+(defn set-display-surface!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's displaySurface
+  indicates the type of display surface being captured.
+
+  `displaySurface = mediaTrackSettings.displaySurface;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/displaySurface`"
+  [this val]
+  (aset this "displaySurface" val))
+
+(defn logical-surface
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's logicalSurface
+  indicates whether or not the display area being captured is a
+  surface. Logical surfaces are those which are not necessarily
+  onscreen, or may even be off-screen, such as windows' backing
+  (where only part of the buffer is visible without scrolling the
+  window) and offscreen rendering contexts.
+
+  `isLogicalSurface = mediaTrackSettings.logicalSurface;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/logicalSurface`"
+  [this]
+  (-> this (.-logicalSurface)))
+
+(defn set-logical-surface!
+  "Property.
+
+  The `web.audio.MediaTrackSettings` dictionary's logicalSurface
+  indicates whether or not the display area being captured is a
+  surface. Logical surfaces are those which are not necessarily
+  onscreen, or may even be off-screen, such as windows' backing
+  (where only part of the buffer is visible without scrolling the
+  window) and offscreen rendering contexts.
+
+  `isLogicalSurface = mediaTrackSettings.logicalSurface;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/logicalSurface`"
+  [this val]
+  (aset this "logicalSurface" val))
 

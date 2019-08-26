@@ -20,30 +20,6 @@
   [this & args]
   (apply (-> this .-isPointInFill) (concat [this] args)))
 
-(defn get-point-at-length
-  "Method.
-
-  The SVGGeometryElement.getPointAtLength() method returns the
-  at a given distance along the path.
-
-  `DOMPoint someElement.getPointAtLength(float distance);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength`"
-  [this & args]
-  (apply (-> this .-getPointAtLength) (concat [this] args)))
-
-(defn get-total-length
-  "Method.
-
-  The SVGGeometryElement.getTotalLength() method returns the user
-  computed value for the total length of the path in user units.
-
-  `float someElement.getTotalLength();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength`"
-  [this ]
-  (-> this (.getTotalLength)))
-
 (defn is-point-in-stroke
   "Method.
 
@@ -60,6 +36,30 @@
   [this & args]
   (apply (-> this .-isPointInStroke) (concat [this] args)))
 
+(defn get-total-length
+  "Method.
+
+  The SVGGeometryElement.getTotalLength() method returns the user
+  computed value for the total length of the path in user units.
+
+  `float someElement.getTotalLength();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getTotalLength`"
+  [this ]
+  (-> this (.getTotalLength)))
+
+(defn get-point-at-length
+  "Method.
+
+  The SVGGeometryElement.getPointAtLength() method returns the
+  at a given distance along the path.
+
+  `DOMPoint someElement.getPointAtLength(float distance);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength`"
+  [this & args]
+  (apply (-> this .-getPointAtLength) (concat [this] args)))
+
 (defn path-length
   "Property.
 
@@ -70,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/pathLength`"
   [this]
-  (-> this (.pathLength)))
+  (-> this (.-pathLength)))
 
 (defn set-path-length!
   "Property.

@@ -16,6 +16,19 @@
   [this orientation]
   (-> this (.lockOrientation orientation)))
 
+(defn unlock-orientation
+  "Method.
+
+  The Screen.unlockOrientation() method removes all the previous
+  locks set by the page/app. The `ScreenOrientation.unlock()` method
+  be used instead.
+
+  `var unlocked = window.screen.unlockOrientation();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/unlockOrientation`"
+  [this ]
+  (-> this (.unlockOrientation)))
+
 (defn add-event-listener
   "Method.
 
@@ -30,18 +43,36 @@
   [this & args]
   (apply (-> this .-addEventListener) (concat [this] args)))
 
-(defn unlock-orientation
+(defn remove-event-listener
   "Method.
 
-  The Screen.unlockOrientation() method removes all the previous
-  locks set by the page/app. The `ScreenOrientation.unlock()` method
-  be used instead.
+  The EventTarget.removeEventListener() method removes from the
+  an event listener previously registered with `EventTarget.addEventListener()`.
+  event listener to be removed is identified using a combination
+  the event type, the event listener function itself, and various
+  options that may affect the matching process; see Matching event
+  for removal
 
-  `var unlocked = window.screen.unlockOrientation();`
+  `target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/unlockOrientation`"
-  [this ]
-  (-> this (.unlockOrientation)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
+  [this & args]
+  (apply (-> this .-removeEventListener) (concat [this] args)))
+
+(defn dispatch-event
+  "Method.
+
+  Dispatches an `web.event.Event` at the specified `web.EventTarget`,
+  invoking the affected `web.EventListener`s in the appropriate
+  The normal event processing rules (including the capturing and
+  bubbling phase) also apply to events dispatched manually with
+
+  `cancelled = !target.dispatchEvent(event)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent`"
+  [this event]
+  (-> this (.dispatchEvent event)))
 
 (defn avail-top
   "Property.
@@ -53,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availTop`"
   [this]
-  (-> this (.availTop)))
+  (-> this (.-availTop)))
 
 (defn set-avail-top!
   "Property.
@@ -67,33 +98,29 @@
   [this val]
   (aset this "availTop" val))
 
-(defn onorientationchange
+(defn avail-left
   "Property.
 
-  An event handler for the orientationchange events sent to the
-  object. The `ScreenOrientation.onchange` handler should be used
+  Returns the first available pixel available from the left side
+  the screen.
 
-  `screen.onorientationchange = funcRef;
+  `let availLeft = window.screen.availLeft;`
 
-  Where funcRef is a reference to a function.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/onorientationchange`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availLeft`"
   [this]
-  (-> this (.onorientationchange)))
+  (-> this (.-availLeft)))
 
-(defn set-onorientationchange!
+(defn set-avail-left!
   "Property.
 
-  An event handler for the orientationchange events sent to the
-  object. The `ScreenOrientation.onchange` handler should be used
+  Returns the first available pixel available from the left side
+  the screen.
 
-  `screen.onorientationchange = funcRef;
+  `let availLeft = window.screen.availLeft;`
 
-  Where funcRef is a reference to a function.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/onorientationchange`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availLeft`"
   [this val]
-  (aset this "onorientationchange" val))
+  (aset this "availLeft" val))
 
 (defn avail-height
   "Property.
@@ -107,7 +134,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availHeight`"
   [this]
-  (-> this (.availHeight)))
+  (-> this (.-availHeight)))
 
 (defn set-avail-height!
   "Property.
@@ -123,30 +150,6 @@
   [this val]
   (aset this "availHeight" val))
 
-(defn avail-left
-  "Property.
-
-  Returns the first available pixel available from the left side
-  the screen.
-
-  `let availLeft = window.screen.availLeft;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availLeft`"
-  [this]
-  (-> this (.availLeft)))
-
-(defn set-avail-left!
-  "Property.
-
-  Returns the first available pixel available from the left side
-  the screen.
-
-  `let availLeft = window.screen.availLeft;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availLeft`"
-  [this val]
-  (aset this "availLeft" val))
-
 (defn avail-width
   "Property.
 
@@ -157,7 +160,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availWidth`"
   [this]
-  (-> this (.availWidth)))
+  (-> this (.-availWidth)))
 
 (defn set-avail-width!
   "Property.
@@ -182,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth`"
   [this]
-  (-> this (.colorDepth)))
+  (-> this (.-colorDepth)))
 
 (defn set-color-depth!
   "Property.
@@ -207,7 +210,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -231,7 +234,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/left`"
   [this]
-  (-> this (.left)))
+  (-> this (.-left)))
 
 (defn set-left!
   "Property.
@@ -245,54 +248,6 @@
   [this val]
   (aset this "left" val))
 
-(defn moz-brightness
-  "Property.
-
-  Indicates how bright the screen's backlight is, on a scale from
-  (very dim) to 1 (full brightness); this value is a double-precision
-
-  `let screenBrightness = window.screen.mozBrightness;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozBrightness`"
-  [this]
-  (-> this (.mozBrightness)))
-
-(defn set-moz-brightness!
-  "Property.
-
-  Indicates how bright the screen's backlight is, on a scale from
-  (very dim) to 1 (full brightness); this value is a double-precision
-
-  `let screenBrightness = window.screen.mozBrightness;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozBrightness`"
-  [this val]
-  (aset this "mozBrightness" val))
-
-(defn moz-enabled
-  "Property.
-
-  This Boolean attribute controls the device's screen. Setting
-  to false will turn off the screen.
-
-  `let screenEnabled = window.screen.mozEnabled`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozEnabled`"
-  [this]
-  (-> this (.mozEnabled)))
-
-(defn set-moz-enabled!
-  "Property.
-
-  This Boolean attribute controls the device's screen. Setting
-  to false will turn off the screen.
-
-  `let screenEnabled = window.screen.mozEnabled`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozEnabled`"
-  [this val]
-  (aset this "mozEnabled" val))
-
 (defn orientation
   "Property.
 
@@ -303,7 +258,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation`"
   [this]
-  (-> this (.orientation)))
+  (-> this (.-orientation)))
 
 (defn pixel-depth
   "Property.
@@ -316,7 +271,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/pixelDepth`"
   [this]
-  (-> this (.pixelDepth)))
+  (-> this (.-pixelDepth)))
 
 (defn set-pixel-depth!
   "Property.
@@ -340,7 +295,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/top`"
   [this]
-  (-> this (.top)))
+  (-> this (.-top)))
 
 (defn set-top!
   "Property.
@@ -362,7 +317,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.
@@ -374,4 +329,80 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/width`"
   [this val]
   (aset this "width" val))
+
+(defn moz-enabled
+  "Property.
+
+  This Boolean attribute controls the device's screen. Setting
+  to false will turn off the screen.
+
+  `let screenEnabled = window.screen.mozEnabled`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozEnabled`"
+  [this]
+  (-> this (.-mozEnabled)))
+
+(defn set-moz-enabled!
+  "Property.
+
+  This Boolean attribute controls the device's screen. Setting
+  to false will turn off the screen.
+
+  `let screenEnabled = window.screen.mozEnabled`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozEnabled`"
+  [this val]
+  (aset this "mozEnabled" val))
+
+(defn moz-brightness
+  "Property.
+
+  Indicates how bright the screen's backlight is, on a scale from
+  (very dim) to 1 (full brightness); this value is a double-precision
+
+  `let screenBrightness = window.screen.mozBrightness;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozBrightness`"
+  [this]
+  (-> this (.-mozBrightness)))
+
+(defn set-moz-brightness!
+  "Property.
+
+  Indicates how bright the screen's backlight is, on a scale from
+  (very dim) to 1 (full brightness); this value is a double-precision
+
+  `let screenBrightness = window.screen.mozBrightness;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/mozBrightness`"
+  [this val]
+  (aset this "mozBrightness" val))
+
+(defn onorientationchange
+  "Property.
+
+  An event handler for the orientationchange events sent to the
+  object. The `ScreenOrientation.onchange` handler should be used
+
+  `screen.onorientationchange = funcRef;
+
+  Where funcRef is a reference to a function.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/onorientationchange`"
+  [this]
+  (-> this (.-onorientationchange)))
+
+(defn set-onorientationchange!
+  "Property.
+
+  An event handler for the orientationchange events sent to the
+  object. The `ScreenOrientation.onchange` handler should be used
+
+  `screen.onorientationchange = funcRef;
+
+  Where funcRef is a reference to a function.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/onorientationchange`"
+  [this val]
+  (aset this "onorientationchange" val))
 

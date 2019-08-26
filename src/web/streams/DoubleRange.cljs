@@ -4,7 +4,7 @@
   minimum value specified. The `web.rtc.ConstrainDouble` dictionary
   based on this, augmenting it to support exact and ideal values
   well."
-  (:refer-clojure :exclude [max]))
+  (:refer-clojure :exclude [max min]))
 
 (defn max
   "Property.
@@ -12,7 +12,7 @@
   A floating-point value specifying the largest permissible value
   the property it describes."
   [this]
-  (-> this (.max)))
+  (-> this (.-max)))
 
 (defn set-max!
   "Property.
@@ -21,4 +21,20 @@
   the property it describes."
   [this val]
   (aset this "max" val))
+
+(defn min
+  "Property.
+
+  A floating-point value specifying the smallest permissible value
+  the property it describes."
+  [this]
+  (-> this (.-min)))
+
+(defn set-min!
+  "Property.
+
+  A floating-point value specifying the smallest permissible value
+  the property it describes."
+  [this val]
+  (aset this "min" val))
 

@@ -11,7 +11,7 @@
   not the element’s contents (not counting the <summary>) is to
   shown to the user."
   [this]
-  (-> this (.open)))
+  (-> this (.-open)))
 
 (defn set-open!
   "Property.

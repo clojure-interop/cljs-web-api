@@ -1,7 +1,7 @@
 (ns web.css.CSSNumericValue
   "The CSSNumericValue interface of the CSS Typed Object Model API
   operations that all numeric values can perform."
-  (:refer-clojure :exclude [type max min]))
+  (:refer-clojure :exclude [type min max]))
 
 (defn add
   "Method.
@@ -15,6 +15,30 @@
   [this & args]
   (apply (-> this .-add) (concat [this] args)))
 
+(defn sub
+  "Method.
+
+  The sub() method of the `web.css.CSSNumericValue` interface subtracts
+  supplied number from the CSSNumericValue.
+
+  `var cssMathSum = CSSNumericValue.sub(number);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/sub`"
+  [this number]
+  (-> this (.sub number)))
+
+(defn mul
+  "Method.
+
+  The mul() method of the `web.css.CSSNumericValue` interface multiplies
+  CSSNumericValue by the supplied value.
+
+  `var cssMathProduct = CSSNumericValue.mul(number);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/mul`"
+  [this number]
+  (-> this (.mul number)))
+
 (defn div
   "Method.
 
@@ -26,6 +50,32 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/div`"
   [this number]
   (-> this (.div number)))
+
+(defn min
+  "Method.
+
+  The min() method of the `web.css.CSSNumericValue` interface returns
+  lowest value from among those values passed. The passed values
+  be of the same type.
+
+  `var cssUnitValue = CSSNumericValue.min(number1 ... numbern);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/min`"
+  [this & args]
+  (apply (-> this .-min) (concat [this] args)))
+
+(defn max
+  "Method.
+
+  The max() method of the `web.css.CSSNumericValue` interface returns
+  highest value from among the values passed. The passed values
+  be of the same type.
+
+  `var cssUnitValue = CSSNumericValue.man(number1 ... numbern);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/max`"
+  [this & args]
+  (apply (-> this .-max) (concat [this] args)))
 
 (defn equals
   "Method.
@@ -41,80 +91,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/equals`"
   [this number]
   (-> this (.equals number)))
-
-(defn max
-  "Method.
-
-  The max() method of the `web.css.CSSNumericValue` interface returns
-  highest value from among the values passed. The passed values
-  be of the same type.
-
-  `var cssUnitValue = CSSNumericValue.man(number1 ... numbern);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/max`"
-  [this & args]
-  (apply (-> this .-max) (concat [this] args)))
-
-(defn min
-  "Method.
-
-  The min() method of the `web.css.CSSNumericValue` interface returns
-  lowest value from among those values passed. The passed values
-  be of the same type.
-
-  `var cssUnitValue = CSSNumericValue.min(number1 ... numbern);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/min`"
-  [this & args]
-  (apply (-> this .-min) (concat [this] args)))
-
-(defn mul
-  "Method.
-
-  The mul() method of the `web.css.CSSNumericValue` interface multiplies
-  CSSNumericValue by the supplied value.
-
-  `var cssMathProduct = CSSNumericValue.mul(number);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/mul`"
-  [this number]
-  (-> this (.mul number)))
-
-(defn parse
-  "Method.
-
-  The parse() method of the `web.css.CSSNumericValue` interface
-  a value string into an object whose members are value and the
-
-  `var cssNumericValue = CSSNumericValue.parse(cssText);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/parse`"
-  [this css-text]
-  (-> this (.parse css-text)))
-
-(defn sub
-  "Method.
-
-  The sub() method of the `web.css.CSSNumericValue` interface subtracts
-  supplied number from the CSSNumericValue.
-
-  `var cssMathSum = CSSNumericValue.sub(number);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/sub`"
-  [this number]
-  (-> this (.sub number)))
-
-(defn sum
-  "Method.
-
-  The sub() method of the `web.css.CSSNumericValue` interface subtracts
-  supplied number from the CSSNumericValue.
-
-  `var cssMathSum = CSSNumericValue.sub(number);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/sum`"
-  [this number]
-  (-> this (.sum number)))
 
 (defn to
   "Method.
@@ -142,7 +118,7 @@
   (-> this (.toSum units)))
 
 (defn type
-  "Property.
+  "Method.
 
   The type() method of the `web.css.CSSNumericValue` interface
   the type of CSSNumericValue, one of angle, flex, frequency, length,
@@ -151,19 +127,30 @@
   `var cssNumericType = CSSNumericValue.type();`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/type`"
-  [this]
+  [this ]
   (-> this (.type)))
 
-(defn set-type!
-  "Property.
+(defn parse
+  "Method.
 
-  The type() method of the `web.css.CSSNumericValue` interface
-  the type of CSSNumericValue, one of angle, flex, frequency, length,
-  percent, percentHint, or time.
+  The parse() method of the `web.css.CSSNumericValue` interface
+  a value string into an object whose members are value and the
 
-  `var cssNumericType = CSSNumericValue.type();`
+  `var cssNumericValue = CSSNumericValue.parse(cssText);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/type`"
-  [this val]
-  (aset this "type" val))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/parse`"
+  [this css-text]
+  (-> this (.parse css-text)))
+
+(defn sum
+  "Method.
+
+  The sub() method of the `web.css.CSSNumericValue` interface subtracts
+  supplied number from the CSSNumericValue.
+
+  `var cssMathSum = CSSNumericValue.sub(number);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/sum`"
+  [this number]
+  (-> this (.sum number)))
 

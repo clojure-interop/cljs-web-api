@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/color`"
   [this]
-  (-> this (.color)))
+  (-> this (.-color)))
 
 (defn set-color!
   "Property.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/face`"
   [this]
-  (-> this (.face)))
+  (-> this (.-face)))
 
 (defn set-face!
   "Property.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.

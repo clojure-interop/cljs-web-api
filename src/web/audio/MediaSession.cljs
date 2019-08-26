@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata`"
   [this]
-  (-> this (.metadata)))
+  (-> this (.-metadata)))
 
 (defn set-metadata!
   "Property.
@@ -54,7 +54,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/playbackState`"
   [this]
-  (-> this (.playbackState)))
+  (-> this (.-playbackState)))
 
 (defn set-playback-state!
   "Property.

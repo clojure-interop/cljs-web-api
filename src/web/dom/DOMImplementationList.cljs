@@ -16,7 +16,7 @@
 
   Returns an integer."
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

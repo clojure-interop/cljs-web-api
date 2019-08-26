@@ -31,17 +31,18 @@
   [this key-name]
   (-> this (.getItem key-name)))
 
-(defn clear
+(defn set-item
   "Method.
 
-  The clear() method of the `web.storage.Storage` interface clears
-  keys stored in a given Storage object.
+  The setItem() method of the `web.storage.Storage` interface,
+  passed a key name and value, will add that key to the given Storage
+  or update that key's value if it already exists.
 
-  `storage.clear();`
+  `storage.setItem(keyName, keyValue);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear`"
-  [this ]
-  (-> this (.clear)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem`"
+  [this key-name key-value]
+  (-> this (.setItem key-name key-value)))
 
 (defn remove-item
   "Method.
@@ -57,18 +58,17 @@
   [this key-name]
   (-> this (.removeItem key-name)))
 
-(defn set-item
+(defn clear
   "Method.
 
-  The setItem() method of the `web.storage.Storage` interface,
-  passed a key name and value, will add that key to the given Storage
-  or update that key's value if it already exists.
+  The clear() method of the `web.storage.Storage` interface clears
+  keys stored in a given Storage object.
 
-  `storage.setItem(keyName, keyValue);`
+  `storage.clear();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem`"
-  [this key-name key-value]
-  (-> this (.setItem key-name key-value)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear`"
+  [this ]
+  (-> this (.clear)))
 
 (defn length
   "Property.
@@ -80,5 +80,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Storage/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 

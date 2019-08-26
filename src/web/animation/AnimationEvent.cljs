@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animationName`"
   [this]
-  (-> this (.animationName)))
+  (-> this (.-animationName)))
 
 (defn set-animation-name!
   "Property.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/elapsedTime`"
   [this]
-  (-> this (.elapsedTime)))
+  (-> this (.-elapsedTime)))
 
 (defn set-elapsed-time!
   "Property.
@@ -105,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/pseudoElement`"
   [this]
-  (-> this (.pseudoElement)))
+  (-> this (.-pseudoElement)))
 
 (defn set-pseudo-element!
   "Property.

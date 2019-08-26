@@ -27,6 +27,19 @@
   [this ]
   (-> this (.item)))
 
+(defn add-from-uri
+  "Method.
+
+  The addFromURI() method of the `web.speech.SpeechGrammarList`
+  takes a grammar present at a specific URI and adds it to the
+  as a new `web.speech.SpeechGrammar` object.
+
+  `speechGrammarListInstance.addFromURI(src,weight);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/addFromURI`"
+  [this src weight]
+  (-> this (.addFromURI src weight)))
+
 (defn add-from-string
   "Method.
 
@@ -41,19 +54,6 @@
   [this string weight]
   (-> this (.addFromString string weight)))
 
-(defn add-from-uri
-  "Method.
-
-  The addFromURI() method of the `web.speech.SpeechGrammarList`
-  takes a grammar present at a specific URI and adds it to the
-  as a new `web.speech.SpeechGrammar` object.
-
-  `speechGrammarListInstance.addFromURI(src,weight);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/addFromURI`"
-  [this src weight]
-  (-> this (.addFromURI src weight)))
-
 (defn length
   "Property.
 
@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

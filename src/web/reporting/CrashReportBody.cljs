@@ -11,7 +11,7 @@
   oom: The browser ran out of memory.
   unresponsive: The page was killed due to being unresponsive."
   [this]
-  (-> this (.reason)))
+  (-> this (.-reason)))
 
 (defn set-reason!
   "Property.

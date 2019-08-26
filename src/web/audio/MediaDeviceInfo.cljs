@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/deviceId`"
   [this]
-  (-> this (.deviceId)))
+  (-> this (.-deviceId)))
 
 (defn set-device-id!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/groupId`"
   [this]
-  (-> this (.groupId)))
+  (-> this (.-groupId)))
 
 (defn set-group-id!
   "Property.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/kind`"
   [this]
-  (-> this (.kind)))
+  (-> this (.-kind)))
 
 (defn set-kind!
   "Property.
@@ -90,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/label`"
   [this]
-  (-> this (.label)))
+  (-> this (.-label)))
 
 (defn set-label!
   "Property.

@@ -13,7 +13,7 @@
   Returns a reference to a MIDIPort instance for a port that has
   connected or disconnected.\""
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.

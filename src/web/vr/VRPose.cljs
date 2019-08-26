@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/position`"
   [this]
-  (-> this (.position)))
+  (-> this (.-position)))
 
 (defn set-position!
   "Property.
@@ -30,59 +30,85 @@
   [this val]
   (aset this "position" val))
 
-(defn timestamp
+(defn linear-velocity
   "Property.
 
-  The timestamp read-only property of the `web.vr.VRPose` interface
-  the current time stamp of the system — a monotonically increasing
-  representing the time since the current app was started.
+  The linearVelocity read-only property of the `web.vr.VRPose`
+  returns an array representing the linear velocity vector of the
+  at the current `VRPose.timestamp`, in meters per second.
 
-  `var myTimeStamp = VRPose.timestamp;`
+  `var myLinearVelocity = VRPose.linearVelocity;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/timeStamp`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearVelocity`"
   [this]
-  (-> this (.timestamp)))
+  (-> this (.-linearVelocity)))
 
-(defn set-timestamp!
+(defn set-linear-velocity!
   "Property.
 
-  The timestamp read-only property of the `web.vr.VRPose` interface
-  the current time stamp of the system — a monotonically increasing
-  representing the time since the current app was started.
+  The linearVelocity read-only property of the `web.vr.VRPose`
+  returns an array representing the linear velocity vector of the
+  at the current `VRPose.timestamp`, in meters per second.
 
-  `var myTimeStamp = VRPose.timestamp;`
+  `var myLinearVelocity = VRPose.linearVelocity;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/timeStamp`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearVelocity`"
   [this val]
-  (aset this "timestamp" val))
+  (aset this "linearVelocity" val))
 
-(defn angular-acceleration
+(defn linear-acceleration
   "Property.
 
-  The angularAcceleration read-only property of the `web.vr.VRPose`
-  returns an array representing the angular acceleration vector
+  The linearAcceleration read-only property of the `web.vr.VRPose`
+  returns an array representing the linear acceleration vector
   the `web.media.VRDisplay` at the current `VRPose.timestamp`,
   meters per second per second.
 
-  `var myAngularAcceleration = VRPose.angularAcceleration;`
+  `var myLinearAcceleration = VRPose.linearAcceleration;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/angularAcceleration`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearAcceleration`"
   [this]
-  (-> this (.angularAcceleration)))
+  (-> this (.-linearAcceleration)))
 
-(defn set-angular-acceleration!
+(defn set-linear-acceleration!
   "Property.
 
-  The angularAcceleration read-only property of the `web.vr.VRPose`
-  returns an array representing the angular acceleration vector
+  The linearAcceleration read-only property of the `web.vr.VRPose`
+  returns an array representing the linear acceleration vector
   the `web.media.VRDisplay` at the current `VRPose.timestamp`,
   meters per second per second.
 
-  `var myAngularAcceleration = VRPose.angularAcceleration;`
+  `var myLinearAcceleration = VRPose.linearAcceleration;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/angularAcceleration`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearAcceleration`"
   [this val]
-  (aset this "angularAcceleration" val))
+  (aset this "linearAcceleration" val))
+
+(defn orientation
+  "Property.
+
+  The orientation read-only property of the `VRPositionState` interface
+  the orientation of the sensor at the current `VRPose.timestamp`,
+  a quarternion value.
+
+  `var myOrientation = VRPose.orientation;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/orientation`"
+  [this]
+  (-> this (.-orientation)))
+
+(defn set-orientation!
+  "Property.
+
+  The orientation read-only property of the `VRPositionState` interface
+  the orientation of the sensor at the current `VRPose.timestamp`,
+  a quarternion value.
+
+  `var myOrientation = VRPose.orientation;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/orientation`"
+  [this val]
+  (aset this "orientation" val))
 
 (defn angular-velocity
   "Property.
@@ -96,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/angularVelocity`"
   [this]
-  (-> this (.angularVelocity)))
+  (-> this (.-angularVelocity)))
 
 (defn set-angular-velocity!
   "Property.
@@ -112,6 +138,60 @@
   [this val]
   (aset this "angularVelocity" val))
 
+(defn angular-acceleration
+  "Property.
+
+  The angularAcceleration read-only property of the `web.vr.VRPose`
+  returns an array representing the angular acceleration vector
+  the `web.media.VRDisplay` at the current `VRPose.timestamp`,
+  meters per second per second.
+
+  `var myAngularAcceleration = VRPose.angularAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/angularAcceleration`"
+  [this]
+  (-> this (.-angularAcceleration)))
+
+(defn set-angular-acceleration!
+  "Property.
+
+  The angularAcceleration read-only property of the `web.vr.VRPose`
+  returns an array representing the angular acceleration vector
+  the `web.media.VRDisplay` at the current `VRPose.timestamp`,
+  meters per second per second.
+
+  `var myAngularAcceleration = VRPose.angularAcceleration;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/angularAcceleration`"
+  [this val]
+  (aset this "angularAcceleration" val))
+
+(defn timestamp
+  "Property.
+
+  The timestamp read-only property of the `web.vr.VRPose` interface
+  the current time stamp of the system — a monotonically increasing
+  representing the time since the current app was started.
+
+  `var myTimeStamp = VRPose.timestamp;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/timeStamp`"
+  [this]
+  (-> this (.-timestamp)))
+
+(defn set-timestamp!
+  "Property.
+
+  The timestamp read-only property of the `web.vr.VRPose` interface
+  the current time stamp of the system — a monotonically increasing
+  representing the time since the current app was started.
+
+  `var myTimeStamp = VRPose.timestamp;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/timeStamp`"
+  [this val]
+  (aset this "timestamp" val))
+
 (defn has-orientation
   "Property.
 
@@ -124,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/hasOrientation`"
   [this]
-  (-> this (.hasOrientation)))
+  (-> this (.-hasOrientation)))
 
 (defn set-has-orientation!
   "Property.
@@ -152,7 +232,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/hasPosition`"
   [this]
-  (-> this (.hasPosition)))
+  (-> this (.-hasPosition)))
 
 (defn set-has-position!
   "Property.
@@ -167,84 +247,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/hasPosition`"
   [this val]
   (aset this "hasPosition" val))
-
-(defn linear-acceleration
-  "Property.
-
-  The linearAcceleration read-only property of the `web.vr.VRPose`
-  returns an array representing the linear acceleration vector
-  the `web.media.VRDisplay` at the current `VRPose.timestamp`,
-  meters per second per second.
-
-  `var myLinearAcceleration = VRPose.linearAcceleration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearAcceleration`"
-  [this]
-  (-> this (.linearAcceleration)))
-
-(defn set-linear-acceleration!
-  "Property.
-
-  The linearAcceleration read-only property of the `web.vr.VRPose`
-  returns an array representing the linear acceleration vector
-  the `web.media.VRDisplay` at the current `VRPose.timestamp`,
-  meters per second per second.
-
-  `var myLinearAcceleration = VRPose.linearAcceleration;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearAcceleration`"
-  [this val]
-  (aset this "linearAcceleration" val))
-
-(defn linear-velocity
-  "Property.
-
-  The linearVelocity read-only property of the `web.vr.VRPose`
-  returns an array representing the linear velocity vector of the
-  at the current `VRPose.timestamp`, in meters per second.
-
-  `var myLinearVelocity = VRPose.linearVelocity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearVelocity`"
-  [this]
-  (-> this (.linearVelocity)))
-
-(defn set-linear-velocity!
-  "Property.
-
-  The linearVelocity read-only property of the `web.vr.VRPose`
-  returns an array representing the linear velocity vector of the
-  at the current `VRPose.timestamp`, in meters per second.
-
-  `var myLinearVelocity = VRPose.linearVelocity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/linearVelocity`"
-  [this val]
-  (aset this "linearVelocity" val))
-
-(defn orientation
-  "Property.
-
-  The orientation read-only property of the `VRPositionState` interface
-  the orientation of the sensor at the current `VRPose.timestamp`,
-  a quarternion value.
-
-  `var myOrientation = VRPose.orientation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/orientation`"
-  [this]
-  (-> this (.orientation)))
-
-(defn set-orientation!
-  "Property.
-
-  The orientation read-only property of the `VRPositionState` interface
-  the orientation of the sensor at the current `VRPose.timestamp`,
-  a quarternion value.
-
-  `var myOrientation = VRPose.orientation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRPose/orientation`"
-  [this val]
-  (aset this "orientation" val))
 

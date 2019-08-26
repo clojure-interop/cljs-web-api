@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/addressLine`"
   [this]
-  (-> this (.addressLine)))
+  (-> this (.-addressLine)))
 
 (defn set-address-line!
   "Property.
@@ -32,34 +32,6 @@
   [this val]
   (aset this "addressLine" val))
 
-(defn language-code
-  "Property.
-
-  An object based on `web.payments.AddressErrors` includes a languageCode
-  when the address's `languageCode` property couldn't be validated.
-  returned string explains the error and should offer suggestions
-  how to correct it.
-
-  `var languageError = AddressErrors.languageCode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/languageCode`"
-  [this]
-  (-> this (.languageCode)))
-
-(defn set-language-code!
-  "Property.
-
-  An object based on `web.payments.AddressErrors` includes a languageCode
-  when the address's `languageCode` property couldn't be validated.
-  returned string explains the error and should offer suggestions
-  how to correct it.
-
-  `var languageError = AddressErrors.languageCode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/languageCode`"
-  [this val]
-  (aset this "languageCode" val))
-
 (defn city
   "Property.
 
@@ -72,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/city`"
   [this]
-  (-> this (.city)))
+  (-> this (.-city)))
 
 (defn country
   "Property.
@@ -86,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/country`"
   [this]
-  (-> this (.country)))
+  (-> this (.-country)))
 
 (defn set-country!
   "Property.
@@ -114,7 +86,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/dependentLocality`"
   [this]
-  (-> this (.dependentLocality)))
+  (-> this (.-dependentLocality)))
 
 (defn organization
   "Property.
@@ -128,7 +100,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/organization`"
   [this]
-  (-> this (.organization)))
+  (-> this (.-organization)))
 
 (defn phone
   "Property.
@@ -142,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/phone`"
   [this]
-  (-> this (.phone)))
+  (-> this (.-phone)))
 
 (defn postal-code
   "Property.
@@ -156,7 +128,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/postalCode`"
   [this]
-  (-> this (.postalCode)))
+  (-> this (.-postalCode)))
 
 (defn recipient
   "Property.
@@ -170,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/recipient`"
   [this]
-  (-> this (.recipient)))
+  (-> this (.-recipient)))
 
 (defn region
   "Property.
@@ -184,7 +156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/region`"
   [this]
-  (-> this (.region)))
+  (-> this (.-region)))
 
 (defn region-code
   "Property.
@@ -198,7 +170,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/regionCode`"
   [this]
-  (-> this (.regionCode)))
+  (-> this (.-regionCode)))
 
 (defn sorting-code
   "Property.
@@ -212,5 +184,33 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/sortingCode`"
   [this]
-  (-> this (.sortingCode)))
+  (-> this (.-sortingCode)))
+
+(defn language-code
+  "Property.
+
+  An object based on `web.payments.AddressErrors` includes a languageCode
+  when the address's `languageCode` property couldn't be validated.
+  returned string explains the error and should offer suggestions
+  how to correct it.
+
+  `var languageError = AddressErrors.languageCode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/languageCode`"
+  [this]
+  (-> this (.-languageCode)))
+
+(defn set-language-code!
+  "Property.
+
+  An object based on `web.payments.AddressErrors` includes a languageCode
+  when the address's `languageCode` property couldn't be validated.
+  returned string explains the error and should offer suggestions
+  how to correct it.
+
+  `var languageError = AddressErrors.languageCode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AddressErrors/languageCode`"
+  [this val]
+  (aset this "languageCode" val))
 

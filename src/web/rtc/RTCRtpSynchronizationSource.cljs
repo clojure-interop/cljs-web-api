@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSynchronizationSource/voiceActivityFlag`"
   [this]
-  (-> this (.voiceActivityFlag)))
+  (-> this (.-voiceActivityFlag)))
 
 (defn set-voice-activity-flag!
   "Property.

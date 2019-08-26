@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/offsetleft`"
   [this]
-  (-> this (.offsetleft)))
+  (-> this (.-offsetleft)))
 
 (defn set-offsetleft!
   "Property.
@@ -32,30 +32,6 @@
   [this val]
   (aset this "offsetleft" val))
 
-(defn height
-  "Property.
-
-  The height read-only property of the `web.viewport.VisualViewport`
-  returns the height of the visual viewport, in CSS pixels.
-
-  `var height = VisualViewport.height`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/height`"
-  [this]
-  (-> this (.height)))
-
-(defn set-height!
-  "Property.
-
-  The height read-only property of the `web.viewport.VisualViewport`
-  returns the height of the visual viewport, in CSS pixels.
-
-  `var height = VisualViewport.height`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/height`"
-  [this val]
-  (aset this "height" val))
-
 (defn offset-top
   "Property.
 
@@ -67,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/offsetTop`"
   [this]
-  (-> this (.offsetTop)))
+  (-> this (.-offsetTop)))
 
 (defn set-offset-top!
   "Property.
@@ -93,7 +69,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/pageLeft`"
   [this]
-  (-> this (.pageLeft)))
+  (-> this (.-pageLeft)))
 
 (defn set-page-left!
   "Property.
@@ -119,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/pageTop`"
   [this]
-  (-> this (.pageTop)))
+  (-> this (.-pageTop)))
 
 (defn set-page-top!
   "Property.
@@ -134,30 +110,6 @@
   [this val]
   (aset this "pageTop" val))
 
-(defn scale
-  "Property.
-
-  The scale read-only property of the `web.viewport.VisualViewport`
-  returns the pinch-zoom scaling factor applied to the visual viewport.
-
-  `var scale = VisualViewport.scale`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/scale`"
-  [this]
-  (-> this (.scale)))
-
-(defn set-scale!
-  "Property.
-
-  The scale read-only property of the `web.viewport.VisualViewport`
-  returns the pinch-zoom scaling factor applied to the visual viewport.
-
-  `var scale = VisualViewport.scale`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/scale`"
-  [this val]
-  (aset this "scale" val))
-
 (defn width
   "Property.
 
@@ -168,7 +120,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.
@@ -181,4 +133,52 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/width`"
   [this val]
   (aset this "width" val))
+
+(defn height
+  "Property.
+
+  The height read-only property of the `web.viewport.VisualViewport`
+  returns the height of the visual viewport, in CSS pixels.
+
+  `var height = VisualViewport.height`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/height`"
+  [this]
+  (-> this (.-height)))
+
+(defn set-height!
+  "Property.
+
+  The height read-only property of the `web.viewport.VisualViewport`
+  returns the height of the visual viewport, in CSS pixels.
+
+  `var height = VisualViewport.height`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/height`"
+  [this val]
+  (aset this "height" val))
+
+(defn scale
+  "Property.
+
+  The scale read-only property of the `web.viewport.VisualViewport`
+  returns the pinch-zoom scaling factor applied to the visual viewport.
+
+  `var scale = VisualViewport.scale`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/scale`"
+  [this]
+  (-> this (.-scale)))
+
+(defn set-scale!
+  "Property.
+
+  The scale read-only property of the `web.viewport.VisualViewport`
+  returns the pinch-zoom scaling factor applied to the visual viewport.
+
+  `var scale = VisualViewport.scale`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/scale`"
+  [this val]
+  (aset this "scale" val))
 

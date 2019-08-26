@@ -14,7 +14,7 @@
   An integer specifying precise, required, value the property must
   to be considered acceptable."
   [this]
-  (-> this (.exact)))
+  (-> this (.-exact)))
 
 (defn set-exact!
   "Property.
@@ -23,4 +23,20 @@
   to be considered acceptable."
   [this val]
   (aset this "exact" val))
+
+(defn ideal
+  "Property.
+
+  An integer specifying a value the property would ideally have,
+  which can be considered optional if necessary to find a match."
+  [this]
+  (-> this (.-ideal)))
+
+(defn set-ideal!
+  "Property.
+
+  An integer specifying a value the property would ideally have,
+  which can be considered optional if necessary to find a match."
+  [this val]
+  (aset this "ideal" val))
 

@@ -109,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/appendWindowEnd`"
   [this]
-  (-> this (.appendWindowEnd)))
+  (-> this (.-appendWindowEnd)))
 
 (defn set-append-window-end!
   "Property.
@@ -128,24 +128,6 @@
   [this val]
   (aset this "appendWindowEnd" val))
 
-(defn onabort
-  "Property.
-
-  Fired whenever SourceBuffer.appendBuffer() or SourceBuffer.appendStream()
-  ended by a call to SourceBuffer.abort(). SourceBuffer.updating
-  from true to false."
-  [this]
-  (-> this (.onabort)))
-
-(defn set-onabort!
-  "Property.
-
-  Fired whenever SourceBuffer.appendBuffer() or SourceBuffer.appendStream()
-  ended by a call to SourceBuffer.abort(). SourceBuffer.updating
-  from true to false."
-  [this val]
-  (aset this "onabort" val))
-
 (defn append-window-start
   "Property.
 
@@ -161,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/appendWindowStart`"
   [this]
-  (-> this (.appendWindowStart)))
+  (-> this (.-appendWindowStart)))
 
 (defn set-append-window-start!
   "Property.
@@ -191,7 +173,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/audioTracks`"
   [this]
-  (-> this (.audioTracks)))
+  (-> this (.-audioTracks)))
 
 (defn set-audio-tracks!
   "Property.
@@ -217,7 +199,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/buffered`"
   [this]
-  (-> this (.buffered)))
+  (-> this (.-buffered)))
 
 (defn set-buffered!
   "Property.
@@ -245,7 +227,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/mode`"
   [this]
-  (-> this (.mode)))
+  (-> this (.-mode)))
 
 (defn set-mode!
   "Property.
@@ -273,7 +255,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/textTracks`"
   [this]
-  (-> this (.textTracks)))
+  (-> this (.-textTracks)))
 
 (defn set-text-tracks!
   "Property.
@@ -301,7 +283,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/timestampOffset`"
   [this]
-  (-> this (.timestampOffset)))
+  (-> this (.-timestampOffset)))
 
 (defn set-timestamp-offset!
   "Property.
@@ -332,7 +314,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/trackDefaults`"
   [this]
-  (-> this (.trackDefaults)))
+  (-> this (.-trackDefaults)))
 
 (defn set-track-defaults!
   "Property.
@@ -362,7 +344,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/updating`"
   [this]
-  (-> this (.updating)))
+  (-> this (.-updating)))
 
 (defn set-updating!
   "Property.
@@ -389,7 +371,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/videoTracks`"
   [this]
-  (-> this (.videoTracks)))
+  (-> this (.-videoTracks)))
 
 (defn set-video-tracks!
   "Property.
@@ -403,4 +385,90 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/videoTracks`"
   [this val]
   (aset this "videoTracks" val))
+
+(defn onabort
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() or SourceBuffer.appendStream()
+  ended by a call to SourceBuffer.abort(). SourceBuffer.updating
+  from true to false."
+  [this]
+  (-> this (.-onabort)))
+
+(defn set-onabort!
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() or SourceBuffer.appendStream()
+  ended by a call to SourceBuffer.abort(). SourceBuffer.updating
+  from true to false."
+  [this val]
+  (aset this "onabort" val))
+
+(defn onerror
+  "Property.
+
+  Fired whenever an error occurs during SourceBuffer.appendBuffer()
+  SourceBuffer.appendStream(). SourceBuffer.updating changes from
+  to false."
+  [this]
+  (-> this (.-onerror)))
+
+(defn set-onerror!
+  "Property.
+
+  Fired whenever an error occurs during SourceBuffer.appendBuffer()
+  SourceBuffer.appendStream(). SourceBuffer.updating changes from
+  to false."
+  [this val]
+  (aset this "onerror" val))
+
+(defn onupdate
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() method or the SourceBuffer.remove()
+  SourceBuffer.updating changes from true to false. This event
+  fired before onupdateend."
+  [this]
+  (-> this (.-onupdate)))
+
+(defn set-onupdate!
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() method or the SourceBuffer.remove()
+  SourceBuffer.updating changes from true to false. This event
+  fired before onupdateend."
+  [this val]
+  (aset this "onupdate" val))
+
+(defn onupdateend
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() method or the SourceBuffer.remove()
+  ended. This event is fired after onupdate."
+  [this]
+  (-> this (.-onupdateend)))
+
+(defn set-onupdateend!
+  "Property.
+
+  Fired whenever SourceBuffer.appendBuffer() method or the SourceBuffer.remove()
+  ended. This event is fired after onupdate."
+  [this val]
+  (aset this "onupdateend" val))
+
+(defn onupdatestart
+  "Property.
+
+  Fired whenever the value of SourceBuffer.updating transitions
+  false to true."
+  [this]
+  (-> this (.-onupdatestart)))
+
+(defn set-onupdatestart!
+  "Property.
+
+  Fired whenever the value of SourceBuffer.updating transitions
+  false to true."
+  [this val]
+  (aset this "onupdatestart" val))
 

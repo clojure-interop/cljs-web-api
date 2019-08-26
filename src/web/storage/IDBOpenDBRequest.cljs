@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onblocked`"
   [this]
-  (-> this (.onblocked)))
+  (-> this (.-onblocked)))
 
 (defn set-onblocked!
   "Property.
@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/onupgradeneeded`"
   [this]
-  (-> this (.onupgradeneeded)))
+  (-> this (.-onupgradeneeded)))
 
 (defn set-onupgradeneeded!
   "Property.

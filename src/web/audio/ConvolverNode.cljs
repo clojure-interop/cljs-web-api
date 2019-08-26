@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer`"
   [this]
-  (-> this (.buffer)))
+  (-> this (.-buffer)))
 
 (defn set-buffer!
   "Property.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/normalize`"
   [this]
-  (-> this (.normalize)))
+  (-> this (.-normalize)))
 
 (defn set-normalize!
   "Property.

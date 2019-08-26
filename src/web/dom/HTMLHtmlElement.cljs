@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement/version`"
   [this]
-  (-> this (.version)))
+  (-> this (.-version)))
 
 (defn set-version!
   "Property.

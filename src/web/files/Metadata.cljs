@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Metadata/modificationTime`"
   [this]
-  (-> this (.modificationTime)))
+  (-> this (.-modificationTime)))
 
 (defn set-modification-time!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Metadata/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.

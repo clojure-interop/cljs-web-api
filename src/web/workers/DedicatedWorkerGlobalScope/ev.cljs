@@ -13,10 +13,8 @@
 (def messageerror
   "Event.
 
-  The messageerror event is fired on a `web.workers.DedicatedWorkerGlobalScope`
-  when it receives a message that can't be deserialized.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event`"
+  Fired when a worker receives a message that can't be deserialized.
+  Also available via the onmessageerror property."
 
   "messageerror")
 

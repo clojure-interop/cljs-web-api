@@ -13,17 +13,31 @@
   [this & args]
   (apply (-> this .-item) (concat [this] args)))
 
-(defn length-read
+(defn named-item
+  "Method.
+
+  Returns the Plugin with the specified name."
+  [this & args]
+  (apply (-> this .-namedItem) (concat [this] args)))
+
+(defn refresh
+  "Method.
+
+  Refreshes all plugins on the current page, optionally reloading"
+  [this & args]
+  (apply (-> this .-refresh) (concat [this] args)))
+
+(defn length
   "Property.
 
   The number of plugins in the array."
   [this]
-  (-> this (.lengthRead)))
+  (-> this (.-length)))
 
-(defn set-length-read!
+(defn set-length!
   "Property.
 
   The number of plugins in the array."
   [this val]
-  (aset this "lengthRead" val))
+  (aset this "length" val))
 

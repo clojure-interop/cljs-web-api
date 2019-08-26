@@ -11,15 +11,6 @@
   [this & args]
   (apply (-> this .-DirectoryReaderSync) (concat [this] args)))
 
-(defn path
-  "Method.
-
-  Either an absolute path or a relative path from the directory
-  the file to be looked up or created. You cannot create a file
-  immediate parent does not exist. Create the parent directory"
-  [this & args]
-  (apply (-> this .-path) (concat [this] args)))
-
 (defn file-entry-sync
   "Method.
 

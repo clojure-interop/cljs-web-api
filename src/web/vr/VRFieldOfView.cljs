@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/upDegrees`"
   [this]
-  (-> this (.upDegrees)))
+  (-> this (.-upDegrees)))
 
 (defn set-up-degrees!
   "Property.
@@ -58,6 +58,32 @@
   [this val]
   (aset this "upDegrees" val))
 
+(defn right-degrees
+  "Property.
+
+  The rightDegrees read-only property of the `web.vr.VRFieldOfView`
+  returns the number of degrees to the right that the field of
+  extends in.
+
+  `var myRightDegrees = VRFieldOfView.rightDegrees;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/rightDegrees`"
+  [this]
+  (-> this (.-rightDegrees)))
+
+(defn set-right-degrees!
+  "Property.
+
+  The rightDegrees read-only property of the `web.vr.VRFieldOfView`
+  returns the number of degrees to the right that the field of
+  extends in.
+
+  `var myRightDegrees = VRFieldOfView.rightDegrees;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/rightDegrees`"
+  [this val]
+  (aset this "rightDegrees" val))
+
 (defn down-degrees
   "Property.
 
@@ -69,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/downDegrees`"
   [this]
-  (-> this (.downDegrees)))
+  (-> this (.-downDegrees)))
 
 (defn set-down-degrees!
   "Property.
@@ -95,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/leftDegrees`"
   [this]
-  (-> this (.leftDegrees)))
+  (-> this (.-leftDegrees)))
 
 (defn set-left-degrees!
   "Property.
@@ -109,30 +135,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/leftDegrees`"
   [this val]
   (aset this "leftDegrees" val))
-
-(defn right-degrees
-  "Property.
-
-  The rightDegrees read-only property of the `web.vr.VRFieldOfView`
-  returns the number of degrees to the right that the field of
-  extends in.
-
-  `var myRightDegrees = VRFieldOfView.rightDegrees;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/rightDegrees`"
-  [this]
-  (-> this (.rightDegrees)))
-
-(defn set-right-degrees!
-  "Property.
-
-  The rightDegrees read-only property of the `web.vr.VRFieldOfView`
-  returns the number of degrees to the right that the field of
-  extends in.
-
-  `var myRightDegrees = VRFieldOfView.rightDegrees;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRFieldOfView/rightDegrees`"
-  [this val]
-  (aset this "rightDegrees" val))
 

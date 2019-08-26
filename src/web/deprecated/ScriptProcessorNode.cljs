@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/bufferSize`"
   [this]
-  (-> this (.bufferSize)))
+  (-> this (.-bufferSize)))
 
 (defn set-buffer-size!
   "Property.
@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScriptProcessorNode/onaudioprocess`"
   [this]
-  (-> this (.onaudioprocess)))
+  (-> this (.-onaudioprocess)))
 
 (defn set-onaudioprocess!
   "Property.

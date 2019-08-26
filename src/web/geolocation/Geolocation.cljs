@@ -17,18 +17,6 @@
   [this & args]
   (apply (-> this .-getCurrentPosition) (concat [this] args)))
 
-(defn clear-watch
-  "Method.
-
-  The Geolocation.clearWatch() method is used to unregister location/error
-  handlers previously installed using `Geolocation.watchPosition()`.
-
-  `navigator.geolocation.clearWatch(id);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch`"
-  [this id]
-  (-> this (.clearWatch id)))
-
 (defn watch-position
   "Method.
 
@@ -41,4 +29,16 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition`"
   [this & args]
   (apply (-> this .-watchPosition) (concat [this] args)))
+
+(defn clear-watch
+  "Method.
+
+  The Geolocation.clearWatch() method is used to unregister location/error
+  handlers previously installed using `Geolocation.watchPosition()`.
+
+  `navigator.geolocation.clearWatch(id);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch`"
+  [this id]
+  (-> this (.clearWatch id)))
 

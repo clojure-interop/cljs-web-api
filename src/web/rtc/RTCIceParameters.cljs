@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceParameters/usernameFragment`"
   [this]
-  (-> this (.usernameFragment)))
+  (-> this (.-usernameFragment)))
 
 (defn set-username-fragment!
   "Property.
@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceParameters/password`"
   [this]
-  (-> this (.password)))
+  (-> this (.-password)))
 
 (defn set-password!
   "Property.

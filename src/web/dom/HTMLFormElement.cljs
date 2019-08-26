@@ -15,6 +15,31 @@
   [this ]
   (-> this (.submit)))
 
+(defn reset
+  "Method.
+
+  The HTMLFormElement.reset() method restores a form element's
+  values. This method does the same thing as clicking the form's
+  button.
+
+  `HTMLFormElement.reset()`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset`"
+  [this ]
+  (-> this (.reset)))
+
+(defn check-validity
+  "Method.
+
+  Returns true if the element's child controls are subject to constraint
+  and satisfy those contraints; returns false if some controls
+  not satisfy their constraints. Fires an event named invalid at
+  control that does not satisfy its constraints; such controls
+  considered invalid if the event is not canceled. It is up to
+  programmer to decide how to respond to false."
+  [this & args]
+  (apply (-> this .-checkValidity) (concat [this] args)))
+
 (defn report-validity
   "Method.
 
@@ -29,18 +54,18 @@
   [this ]
   (-> this (.reportValidity)))
 
-(defn reset
+(defn request-autocomplete
   "Method.
 
-  The HTMLFormElement.reset() method restores a form element's
-  values. This method does the same thing as clicking the form's
-  button.
-
-  `HTMLFormElement.reset()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset`"
-  [this ]
-  (-> this (.reset)))
+  Triggers a native browser interface to assist the user in completing
+  fields which have an autofill field name value that is not off
+  on. The form will receive an event once the user has finished
+  the interface, the event will either be autocomplete when the
+  have been filled or autocompleteerror when there was a problem.
+  method has been removed from Chrome and Firefox — see bug 1270740
+  background information on why."
+  [this & args]
+  (apply (-> this .-requestAutocomplete) (concat [this] args)))
 
 (defn elements
   "Property.
@@ -52,7 +77,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements`"
   [this]
-  (-> this (.elements)))
+  (-> this (.-elements)))
 
 (defn set-elements!
   "Property.
@@ -66,33 +91,97 @@
   [this val]
   (aset this "elements" val))
 
-(defn accept-charset
+(defn length
   "Property.
 
-  The HTMLFormElement.acceptCharset property represents a list
-  the supported character encodings for the given FORM element.
-  list can be comma- or space-separated.
+  The HTMLFormElement.length read-only property returns the number
+  controls in the `<form>` element.
 
-  `var string = form.acceptCharset;
-  form.acceptCharset = string;`
+  `numControls = form.length;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/acceptCharset`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/length`"
   [this]
-  (-> this (.acceptCharset)))
+  (-> this (.-length)))
 
-(defn set-accept-charset!
+(defn name
   "Property.
 
-  The HTMLFormElement.acceptCharset property represents a list
-  the supported character encodings for the given FORM element.
-  list can be comma- or space-separated.
+  The HTMLFormElement.name property represents the name of the
+  `<form>` element as a string.
 
-  `var string = form.acceptCharset;
-  form.acceptCharset = string;`
+  `var string = form.name;
+  form.name = string;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/acceptCharset`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/name`"
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  The HTMLFormElement.name property represents the name of the
+  `<form>` element as a string.
+
+  `var string = form.name;
+  form.name = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/name`"
   [this val]
-  (aset this "acceptCharset" val))
+  (aset this "name" val))
+
+(defn method
+  "Property.
+
+  The HTMLFormElement.method property represents the HTTP method
+  to submit the `<form>`.
+
+  `var string = form.method;
+  form.method = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/method`"
+  [this]
+  (-> this (.-method)))
+
+(defn set-method!
+  "Property.
+
+  The HTMLFormElement.method property represents the HTTP method
+  to submit the `<form>`.
+
+  `var string = form.method;
+  form.method = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/method`"
+  [this val]
+  (aset this "method" val))
+
+(defn target
+  "Property.
+
+  The target property of the `web.dom.HTMLFormElement` interface
+  the target of the form's action (i.e., the frame in which to
+  its output).
+
+  `string = HTMLFormElement.target
+  HTMLFormElement.target = string`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/target`"
+  [this]
+  (-> this (.-target)))
+
+(defn set-target!
+  "Property.
+
+  The target property of the `web.dom.HTMLFormElement` interface
+  the target of the form's action (i.e., the frame in which to
+  its output).
+
+  `string = HTMLFormElement.target
+  HTMLFormElement.target = string`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/target`"
+  [this val]
+  (aset this "target" val))
 
 (defn action
   "Property.
@@ -105,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/action`"
   [this]
-  (-> this (.action)))
+  (-> this (.-action)))
 
 (defn set-action!
   "Property.
@@ -128,7 +217,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/encoding`"
   [this]
-  (-> this (.encoding)))
+  (-> this (.-encoding)))
 
 (defn set-encoding!
   "Property.
@@ -139,6 +228,68 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/encoding`"
   [this val]
   (aset this "encoding" val))
+
+(defn accept-charset
+  "Property.
+
+  The HTMLFormElement.acceptCharset property represents a list
+  the supported character encodings for the given FORM element.
+  list can be comma- or space-separated.
+
+  `var string = form.acceptCharset;
+  form.acceptCharset = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/acceptCharset`"
+  [this]
+  (-> this (.-acceptCharset)))
+
+(defn set-accept-charset!
+  "Property.
+
+  The HTMLFormElement.acceptCharset property represents a list
+  the supported character encodings for the given FORM element.
+  list can be comma- or space-separated.
+
+  `var string = form.acceptCharset;
+  form.acceptCharset = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/acceptCharset`"
+  [this val]
+  (aset this "acceptCharset" val))
+
+(defn autocomplete
+  "Property.
+
+  A DOMString reflecting the value of the form's autocomplete HTML
+  indicating whether the controls in this form can have their values
+  populated by the browser."
+  [this]
+  (-> this (.-autocomplete)))
+
+(defn set-autocomplete!
+  "Property.
+
+  A DOMString reflecting the value of the form's autocomplete HTML
+  indicating whether the controls in this form can have their values
+  populated by the browser."
+  [this val]
+  (aset this "autocomplete" val))
+
+(defn no-validate
+  "Property.
+
+  A Boolean reflecting the value of the form's novalidate HTML
+  indicating whether the form should not be validated."
+  [this]
+  (-> this (.-noValidate)))
+
+(defn set-no-validate!
+  "Property.
+
+  A Boolean reflecting the value of the form's novalidate HTML
+  indicating whether the form should not be validated."
+  [this val]
+  (aset this "noValidate" val))
 
 (defn enctype
   "Property.
@@ -151,7 +302,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype`"
   [this]
-  (-> this (.enctype)))
+  (-> this (.-enctype)))
 
 (defn set-enctype!
   "Property.
@@ -165,96 +316,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype`"
   [this val]
   (aset this "enctype" val))
-
-(defn length
-  "Property.
-
-  The HTMLFormElement.length read-only property returns the number
-  controls in the `<form>` element.
-
-  `numControls = form.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/length`"
-  [this]
-  (-> this (.length)))
-
-(defn method
-  "Property.
-
-  The HTMLFormElement.method property represents the HTTP method
-  to submit the `<form>`.
-
-  `var string = form.method;
-  form.method = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/method`"
-  [this]
-  (-> this (.method)))
-
-(defn set-method!
-  "Property.
-
-  The HTMLFormElement.method property represents the HTTP method
-  to submit the `<form>`.
-
-  `var string = form.method;
-  form.method = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/method`"
-  [this val]
-  (aset this "method" val))
-
-(defn name
-  "Property.
-
-  The HTMLFormElement.name property represents the name of the
-  `<form>` element as a string.
-
-  `var string = form.name;
-  form.name = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/name`"
-  [this]
-  (-> this (.name)))
-
-(defn set-name!
-  "Property.
-
-  The HTMLFormElement.name property represents the name of the
-  `<form>` element as a string.
-
-  `var string = form.name;
-  form.name = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/name`"
-  [this val]
-  (aset this "name" val))
-
-(defn target
-  "Property.
-
-  The target property of the `web.dom.HTMLFormElement` interface
-  the target of the form's action (i.e., the frame in which to
-  its output).
-
-  `string = HTMLFormElement.target
-  HTMLFormElement.target = string`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/target`"
-  [this]
-  (-> this (.target)))
-
-(defn set-target!
-  "Property.
-
-  The target property of the `web.dom.HTMLFormElement` interface
-  the target of the form's action (i.e., the frame in which to
-  its output).
-
-  `string = HTMLFormElement.target
-  HTMLFormElement.target = string`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/target`"
-  [this val]
-  (aset this "target" val))
 

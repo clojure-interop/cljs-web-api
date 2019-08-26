@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/gripSpace`"
   [this]
-  (-> this (.gripSpace)))
+  (-> this (.-gripSpace)))
 
 (defn set-grip-space!
   "Property.
@@ -37,4 +37,68 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/gripSpace`"
   [this val]
   (aset this "gripSpace" val))
+
+(defn handedness
+  "Property.
+
+  Describes which hand the XRInputSource is associates with, if
+  This will be one of \"left\", \"right\", or \"none\"."
+  [this]
+  (-> this (.-handedness)))
+
+(defn set-handedness!
+  "Property.
+
+  Describes which hand the XRInputSource is associates with, if
+  This will be one of \"left\", \"right\", or \"none\"."
+  [this val]
+  (aset this "handedness" val))
+
+(defn profiles
+  "Property.
+
+  Returns an array of input profile names indicating both the preferred
+  representation and behavior of the input source."
+  [this]
+  (-> this (.-profiles)))
+
+(defn set-profiles!
+  "Property.
+
+  Returns an array of input profile names indicating both the preferred
+  representation and behavior of the input source."
+  [this val]
+  (aset this "profiles" val))
+
+(defn target-ray-mode
+  "Property.
+
+  Returns the method used to produce the target ray. This will
+  one of \"gaze\", \"tracked-pointer\", or \"screen\"."
+  [this]
+  (-> this (.-targetRayMode)))
+
+(defn set-target-ray-mode!
+  "Property.
+
+  Returns the method used to produce the target ray. This will
+  one of \"gaze\", \"tracked-pointer\", or \"screen\"."
+  [this val]
+  (aset this "targetRayMode" val))
+
+(defn target-ray-space
+  "Property.
+
+  Returns an XRSpace with a native origin tracking the position
+  orientation of the preferred point ray as defined by XRInputSource.targetRayMode."
+  [this]
+  (-> this (.-targetRaySpace)))
+
+(defn set-target-ray-space!
+  "Property.
+
+  Returns an XRSpace with a native origin tracking the position
+  orientation of the preferred point ray as defined by XRInputSource.targetRayMode."
+  [this val]
+  (aset this "targetRaySpace" val))
 

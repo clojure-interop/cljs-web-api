@@ -16,6 +16,19 @@
   [this ]
   (-> this (.detach)))
 
+(defn previous-node
+  "Method.
+
+  The NodeIterator.previousNode() method returns the previous node
+  the set represented by the `web.NodeIterator` and moves the position
+  the iterator backwards within the set.
+
+  `node = nodeIterator.previousNode();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/previousNode`"
+  [this ]
+  (-> this (.previousNode)))
+
 (defn next-node
   "Method.
 
@@ -30,19 +43,6 @@
   [this ]
   (-> this (.nextNode)))
 
-(defn previous-node
-  "Method.
-
-  The NodeIterator.previousNode() method returns the previous node
-  the set represented by the `web.NodeIterator` and moves the position
-  the iterator backwards within the set.
-
-  `node = nodeIterator.previousNode();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/previousNode`"
-  [this ]
-  (-> this (.previousNode)))
-
 (defn root
   "Property.
 
@@ -53,7 +53,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
   [this]
-  (-> this (.root)))
+  (-> this (.-root)))
 
 (defn set-root!
   "Property.
@@ -66,112 +66,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root`"
   [this val]
   (aset this "root" val))
-
-(defn expand-entity-references
-  "Property.
-
-  The NodeIterator.expandEntityReferences read-only property returns
-  `js.Boolean` flag indicating whether or not the children of entity
-  nodes are visible to the `web.NodeIterator`.
-
-  `expand = nodeIterator.expandEntityReferences;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/expandEntityReferences`"
-  [this]
-  (-> this (.expandEntityReferences)))
-
-(defn set-expand-entity-references!
-  "Property.
-
-  The NodeIterator.expandEntityReferences read-only property returns
-  `js.Boolean` flag indicating whether or not the children of entity
-  nodes are visible to the `web.NodeIterator`.
-
-  `expand = nodeIterator.expandEntityReferences;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/expandEntityReferences`"
-  [this val]
-  (aset this "expandEntityReferences" val))
-
-(defn filter
-  "Property.
-
-  The NodeIterator.filter read-only method returns a `web.NodeFilter`
-  that is an object implement an acceptNode(node) method, used
-  screen nodes.
-
-  `nodeFilter = nodeIterator.filter;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter`"
-  [this]
-  (-> this (.filter)))
-
-(defn set-filter!
-  "Property.
-
-  The NodeIterator.filter read-only method returns a `web.NodeFilter`
-  that is an object implement an acceptNode(node) method, used
-  screen nodes.
-
-  `nodeFilter = nodeIterator.filter;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter`"
-  [this val]
-  (aset this "filter" val))
-
-(defn pointer-before-reference-node
-  "Property.
-
-  The NodeIterator.pointerBeforeReferenceNode read-only property
-  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
-  anchored before (if this value is true) or after (if this value
-  false) the anchor node indicated by the `NodeIterator.referenceNode`
-
-  `flag = nodeIterator.pointerBeforeReferenceNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode`"
-  [this]
-  (-> this (.pointerBeforeReferenceNode)))
-
-(defn set-pointer-before-reference-node!
-  "Property.
-
-  The NodeIterator.pointerBeforeReferenceNode read-only property
-  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
-  anchored before (if this value is true) or after (if this value
-  false) the anchor node indicated by the `NodeIterator.referenceNode`
-
-  `flag = nodeIterator.pointerBeforeReferenceNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode`"
-  [this val]
-  (aset this "pointerBeforeReferenceNode" val))
-
-(defn reference-node
-  "Property.
-
-  The NodeIterator.referenceNode read-only returns the `web.Node`
-  which the iterator is anchored; as new nodes are inserted, the
-  remains anchored to the reference node as specified by this property.
-
-  `node = nodeIterator.referenceNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode`"
-  [this]
-  (-> this (.referenceNode)))
-
-(defn set-reference-node!
-  "Property.
-
-  The NodeIterator.referenceNode read-only returns the `web.Node`
-  which the iterator is anchored; as new nodes are inserted, the
-  remains anchored to the reference node as specified by this property.
-
-  `node = nodeIterator.referenceNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode`"
-  [this val]
-  (aset this "referenceNode" val))
 
 (defn what-to-show
   "Property.
@@ -258,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/whatToShow`"
   [this]
-  (-> this (.whatToShow)))
+  (-> this (.-whatToShow)))
 
 (defn set-what-to-show!
   "Property.
@@ -346,4 +240,110 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/whatToShow`"
   [this val]
   (aset this "whatToShow" val))
+
+(defn filter
+  "Property.
+
+  The NodeIterator.filter read-only method returns a `web.NodeFilter`
+  that is an object implement an acceptNode(node) method, used
+  screen nodes.
+
+  `nodeFilter = nodeIterator.filter;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter`"
+  [this]
+  (-> this (.-filter)))
+
+(defn set-filter!
+  "Property.
+
+  The NodeIterator.filter read-only method returns a `web.NodeFilter`
+  that is an object implement an acceptNode(node) method, used
+  screen nodes.
+
+  `nodeFilter = nodeIterator.filter;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter`"
+  [this val]
+  (aset this "filter" val))
+
+(defn expand-entity-references
+  "Property.
+
+  The NodeIterator.expandEntityReferences read-only property returns
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.NodeIterator`.
+
+  `expand = nodeIterator.expandEntityReferences;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/expandEntityReferences`"
+  [this]
+  (-> this (.-expandEntityReferences)))
+
+(defn set-expand-entity-references!
+  "Property.
+
+  The NodeIterator.expandEntityReferences read-only property returns
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.NodeIterator`.
+
+  `expand = nodeIterator.expandEntityReferences;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/expandEntityReferences`"
+  [this val]
+  (aset this "expandEntityReferences" val))
+
+(defn reference-node
+  "Property.
+
+  The NodeIterator.referenceNode read-only returns the `web.Node`
+  which the iterator is anchored; as new nodes are inserted, the
+  remains anchored to the reference node as specified by this property.
+
+  `node = nodeIterator.referenceNode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode`"
+  [this]
+  (-> this (.-referenceNode)))
+
+(defn set-reference-node!
+  "Property.
+
+  The NodeIterator.referenceNode read-only returns the `web.Node`
+  which the iterator is anchored; as new nodes are inserted, the
+  remains anchored to the reference node as specified by this property.
+
+  `node = nodeIterator.referenceNode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode`"
+  [this val]
+  (aset this "referenceNode" val))
+
+(defn pointer-before-reference-node
+  "Property.
+
+  The NodeIterator.pointerBeforeReferenceNode read-only property
+  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
+  anchored before (if this value is true) or after (if this value
+  false) the anchor node indicated by the `NodeIterator.referenceNode`
+
+  `flag = nodeIterator.pointerBeforeReferenceNode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode`"
+  [this]
+  (-> this (.-pointerBeforeReferenceNode)))
+
+(defn set-pointer-before-reference-node!
+  "Property.
+
+  The NodeIterator.pointerBeforeReferenceNode read-only property
+  a `js.Boolean` flag that indicates whether the `web.NodeFilter`
+  anchored before (if this value is true) or after (if this value
+  false) the anchor node indicated by the `NodeIterator.referenceNode`
+
+  `flag = nodeIterator.pointerBeforeReferenceNode;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode`"
+  [this val]
+  (aset this "pointerBeforeReferenceNode" val))
 

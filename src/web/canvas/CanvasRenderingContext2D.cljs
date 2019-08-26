@@ -645,7 +645,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas`"
   [this]
-  (-> this (.canvas)))
+  (-> this (.-canvas)))
 
 (defn set-canvas!
   "Property.
@@ -677,7 +677,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/currentTransform`"
   [this]
-  (-> this (.currentTransform)))
+  (-> this (.-currentTransform)))
 
 (defn set-current-transform!
   "Property.
@@ -707,7 +707,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction`"
   [this]
-  (-> this (.direction)))
+  (-> this (.-direction)))
 
 (defn set-direction!
   "Property.
@@ -734,7 +734,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle`"
   [this]
-  (-> this (.fillStyle)))
+  (-> this (.-fillStyle)))
 
 (defn set-fill-style!
   "Property.
@@ -763,7 +763,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter`"
   [this]
-  (-> this (.filter)))
+  (-> this (.-filter)))
 
 (defn set-filter!
   "Property.
@@ -790,7 +790,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font`"
   [this]
-  (-> this (.font)))
+  (-> this (.-font)))
 
 (defn set-font!
   "Property.
@@ -816,7 +816,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha`"
   [this]
-  (-> this (.globalAlpha)))
+  (-> this (.-globalAlpha)))
 
 (defn set-global-alpha!
   "Property.
@@ -844,7 +844,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation`"
   [this]
-  (-> this (.globalCompositeOperation)))
+  (-> this (.-globalCompositeOperation)))
 
 (defn set-global-composite-operation!
   "Property.
@@ -873,7 +873,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled`"
   [this]
-  (-> this (.imageSmoothingEnabled)))
+  (-> this (.-imageSmoothingEnabled)))
 
 (defn set-image-smoothing-enabled!
   "Property.
@@ -899,7 +899,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality`"
   [this]
-  (-> this (.imageSmoothingQuality)))
+  (-> this (.-imageSmoothingQuality)))
 
 (defn set-image-smoothing-quality!
   "Property.
@@ -923,7 +923,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap`"
   [this]
-  (-> this (.lineCap)))
+  (-> this (.-lineCap)))
 
 (defn set-line-cap!
   "Property.
@@ -951,7 +951,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset`"
   [this]
-  (-> this (.lineDashOffset)))
+  (-> this (.-lineDashOffset)))
 
 (defn set-line-dash-offset!
   "Property.
@@ -980,7 +980,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin`"
   [this]
-  (-> this (.lineJoin)))
+  (-> this (.-lineJoin)))
 
 (defn set-line-join!
   "Property.
@@ -1005,7 +1005,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth`"
   [this]
-  (-> this (.lineWidth)))
+  (-> this (.-lineWidth)))
 
 (defn set-line-width!
   "Property.
@@ -1029,7 +1029,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit`"
   [this]
-  (-> this (.miterLimit)))
+  (-> this (.-miterLimit)))
 
 (defn set-miter-limit!
   "Property.
@@ -1058,7 +1058,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur`"
   [this]
-  (-> this (.shadowBlur)))
+  (-> this (.-shadowBlur)))
 
 (defn set-shadow-blur!
   "Property.
@@ -1091,7 +1091,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor`"
   [this]
-  (-> this (.shadowColor)))
+  (-> this (.-shadowColor)))
 
 (defn set-shadow-color!
   "Property.
@@ -1123,7 +1123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX`"
   [this]
-  (-> this (.shadowOffsetX)))
+  (-> this (.-shadowOffsetX)))
 
 (defn set-shadow-offset-x!
   "Property.
@@ -1155,7 +1155,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY`"
   [this]
-  (-> this (.shadowOffsetY)))
+  (-> this (.-shadowOffsetY)))
 
 (defn set-shadow-offset-y!
   "Property.
@@ -1186,7 +1186,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle`"
   [this]
-  (-> this (.strokeStyle)))
+  (-> this (.-strokeStyle)))
 
 (defn set-stroke-style!
   "Property.
@@ -1213,7 +1213,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textAlign`"
   [this]
-  (-> this (.textAlign)))
+  (-> this (.-textAlign)))
 
 (defn set-text-align!
   "Property.
@@ -1237,7 +1237,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline`"
   [this]
-  (-> this (.textBaseline)))
+  (-> this (.-textBaseline)))
 
 (defn set-text-baseline!
   "Property.

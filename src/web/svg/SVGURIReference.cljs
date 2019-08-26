@@ -13,7 +13,7 @@
   if the element is defined to support the deprecated xlink:href
   additionally reflects that deprecated attribute."
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.

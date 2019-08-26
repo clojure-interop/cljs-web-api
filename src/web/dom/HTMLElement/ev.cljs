@@ -19,6 +19,30 @@
 
   "animationcancel")
 
+(def animationend
+  "Event.
+
+  Fired when an animation has completed normally.
+  Also available via the onanimationend property."
+
+  "animationend")
+
+(def animationiteration
+  "Event.
+
+  Fired when an animation iteration has completed.
+  Also available via the onanimationiteration property."
+
+  "animationiteration")
+
+(def animationstart
+  "Event.
+
+  Fired when an animation starts.
+  Also available via the onanimationstart property."
+
+  "animationstart")
+
 (def beforeinput
   "Event.
 
@@ -26,6 +50,15 @@
   about to be modified."
 
   "beforeinput")
+
+(def input
+  "Event.
+
+  Fired when the value of an <input>, <select>, or <textarea> element
+  been changed.
+  Also available via the oninput property."
+
+  "input")
 
 (def gotpointercapture
   "Event.
@@ -35,6 +68,81 @@
 
   "gotpointercapture")
 
+(def lostpointercapture
+  "Event.
+
+  Fired when a captured pointer is released.
+  Also available via the onlostpointercapture property."
+
+  "lostpointercapture")
+
+(def pointercancel
+  "Event.
+
+  Fired when a pointer event is canceled.
+  Also available via the onpointercancel property."
+
+  "pointercancel")
+
+(def pointerdown
+  "Event.
+
+  Fired when a pointer becomes active.
+  Also available via the onpointerdown property."
+
+  "pointerdown")
+
+(def pointerenter
+  "Event.
+
+  Fired when a pointer is moved into the hit test boundaries of
+  element or one of its descendants.
+  Also available via the onpointerenter property."
+
+  "pointerenter")
+
+(def pointerleave
+  "Event.
+
+  Fired when a pointer is moved out of the hit test boundaries
+  an element.
+  Also available via the onpointerleave property."
+
+  "pointerleave")
+
+(def pointermove
+  "Event.
+
+  Fired when a pointer changes coordinates.
+  Also available via the onpointermove property."
+
+  "pointermove")
+
+(def pointerout
+  "Event.
+
+  Fired when a pointer is moved out of the hit test boundaries
+  an element (among other reasons).
+  Also available via the onpointerout property."
+
+  "pointerout")
+
+(def pointerover
+  "Event.
+
+  Fired when a pointer is moved into an element's hit test boundaries.
+  Also available via the onpointerover property."
+
+  "pointerover")
+
+(def pointerup
+  "Event.
+
+  Fired when a pointer is no longer active.
+  Also available via the onpointerup property."
+
+  "pointerup")
+
 (def transitioncancel
   "Event.
 
@@ -43,42 +151,29 @@
 
   "transitioncancel")
 
-(def animationend
+(def transitionend
   "Event.
 
-  The animationend event is fired when a CSS Animation has completed
-  not if it aborts before reaching completion, such as if the element
-  invisible or the animation is removed from the element).
+  Fired when a CSS transition has completed.
+  Also available via the ontransitionend property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event`"
+  "transitionend")
 
-  "animationend")
-
-(def animationiteration
+(def transitionrun
   "Event.
 
-  The animationiteration event is fired when an iteration of a
-  Animation ends, and another one begins. This event does not occur
-  the same time as the animationend event, and therefore does not
-  for animations with an animation-iteration-count of one.
+  Fired when a CSS transition is first created.
+  Also available via the ontransitionrun property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationiteration_event`"
+  "transitionrun")
 
-  "animationiteration")
-
-(def animationstart
+(def transitionstart
   "Event.
 
-  The animationstart event is fired when a CSS Animation has started.
-  there is an `animation-delay`, this event will fire once the
-  period has expired. A negative delay will cause the event to
-  with an elapsedTime equal to the absolute value of the delay
-  correspondingly, the animation will begin playing at that time
-  into the sequence).
+  Fired when a CSS transition has actually started.
+  Also available via the ontransitionstart property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationstart_event`"
-
-  "animationstart")
+  "transitionstart")
 
 (def change
   "Event.
@@ -91,147 +186,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event`"
 
   "change")
-
-(def input
-  "Event.
-
-  The input event fires when the value of an `<input>`, `<select>`,
-  `<textarea>` element has been changed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event`"
-
-  "input")
-
-(def lostpointercapture
-  "Event.
-
-  The lostpointercapture event is fired when a captured pointer
-  released.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lostpointercapture_event`"
-
-  "lostpointercapture")
-
-(def pointercancel
-  "Event.
-
-  The pointercancel event is fired when the browser determines
-  there are unlikely to be any more pointer events, or if after
-  pointerdown event is fired, the pointer is then used to manipulate
-  viewport by panning, zooming, or scrolling.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointercancel_event`"
-
-  "pointercancel")
-
-(def pointerdown
-  "Event.
-
-  The pointerdown event is fired when a pointer becomes active.
-  mouse, it is fired when the device transitions from no buttons
-  to at least one button depressed. For touch, it is fired when
-  contact is made with the digitizer. For pen, it is fired when
-  stylus makes physical contact with the digitizer.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerdown_event`"
-
-  "pointerdown")
-
-(def pointerenter
-  "Event.
-
-  The pointerenter event fires when a pointing device is moved
-  the hit test boundaries of an element or one of its descendants,
-  as a result of a pointerdown event from a device that does not
-  hover (see pointerdown).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerenter_event`"
-
-  "pointerenter")
-
-(def pointerleave
-  "Event.
-
-  The pointerleave event is fired when a pointing device is moved
-  of the hit test boundaries of an element. For pen devices, this
-  is fired when the stylus leaves the hover range detectable by
-  digitizer.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerleave_event`"
-
-  "pointerleave")
-
-(def pointermove
-  "Event.
-
-  The pointermove event is fired when a pointer changes coordinates,
-  the pointer has not been canceled by a browser touch-action.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointermove_event`"
-
-  "pointermove")
-
-(def pointerout
-  "Event.
-
-  The pointerout event is fired for several reasons including:
-  device is moved out of the hit test boundaries of an element;
-  the pointerup event for a device that does not support hover
-  pointerup); after firing the pointercancel event (see pointercancel);
-  a pen stylus leaves the hover range detectable by the digitizer.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerout_event`"
-
-  "pointerout")
-
-(def pointerover
-  "Event.
-
-  The pointerover event is fired when a pointing device is moved
-  an element's hit test boundaries.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerover_event`"
-
-  "pointerover")
-
-(def pointerup
-  "Event.
-
-  The pointerup event is fired when a pointer is no longer active.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/pointerup_event`"
-
-  "pointerup")
-
-(def transitionend
-  "Event.
-
-  The transitionend event is fired when a CSS transition has completed.
-  the case where a transition is removed before completion, such
-  if the `transition-property` is removed or `display` is set to
-  then the event will not be generated.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/transitionend_event`"
-
-  "transitionend")
-
-(def transitionrun
-  "Event.
-
-  The transitionrun event is fired when a CSS transition is first
-  i.e. before any `transition-delay` has begun.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/transitionrun_event`"
-
-  "transitionrun")
-
-(def transitionstart
-  "Event.
-
-  The transitionstart event is fired when a CSS transition has
-  started, i.e., after any `transition-delay` has ended.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/transitionstart_event`"
-
-  "transitionstart")
 

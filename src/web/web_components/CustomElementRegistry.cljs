@@ -2,7 +2,7 @@
   "The CustomElementRegistry interface provides methods for registering
   elements and querying registered elements. To get an instance
   it, use the `window.customElements` property."
-  (:refer-clojure :exclude []))
+  (:refer-clojure :exclude [get]))
 
 (defn define
   "Method.
@@ -15,6 +15,43 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define`"
   [this name constructor options]
   (-> this (.define name constructor options)))
+
+(defn get
+  "Method.
+
+  The get() method of the `web.web-components.CustomElementRegistry`
+  returns the constructor for a previously-defined custom element.
+
+  `constructor = customElements.get(name);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get`"
+  [this name]
+  (-> this (.get name)))
+
+(defn upgrade
+  "Method.
+
+  The upgrade() method of the `web.web-components.CustomElementRegistry`
+  upgrades all shadow-containing custom elements in a `web.Node`
+  even before they are connected to the main document.
+
+  `customElements.upgrade(root);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/upgrade`"
+  [this root]
+  (-> this (.upgrade root)))
+
+(defn when-defined
+  "Method.
+
+  The whenDefined() method of the `web.web-components.CustomElementRegistry`
+  returns a `js.Promise` that resolves when the named element is
+
+  `Promise<> customElements.whenDefined(name);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined`"
+  [this name]
+  (-> this (.whenDefined name)))
 
 (defn create-element
   "Method.
@@ -64,7 +101,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot`"
   [this]
-  (-> this (.shadowRoot)))
+  (-> this (.-shadowRoot)))
 
 (defn set-shadow-root!
   "Property.
@@ -89,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/slot`"
   [this]
-  (-> this (.slot)))
+  (-> this (.-slot)))
 
 (defn set-slot!
   "Property.
@@ -115,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/composed`"
   [this]
-  (-> this (.composed)))
+  (-> this (.-composed)))
 
 (defn composed-path
   "Property.
@@ -129,7 +166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath`"
   [this]
-  (-> this (.composedPath)))
+  (-> this (.-composedPath)))
 
 (defn set-composed-path!
   "Property.
@@ -158,7 +195,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected`"
   [this]
-  (-> this (.isConnected)))
+  (-> this (.-isConnected)))
 
 (defn set-is-connected!
   "Property.
@@ -187,7 +224,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
   [this]
-  (-> this (.customElements)))
+  (-> this (.-customElements)))
 
 (defn set-custom-elements!
   "Property.

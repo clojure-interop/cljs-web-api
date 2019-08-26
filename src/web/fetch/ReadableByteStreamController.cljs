@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/byobRequest`"
   [this]
-  (-> this (.byobRequest)))
+  (-> this (.-byobRequest)))
 
 (defn set-byob-request!
   "Property.
@@ -89,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableByteStreamController/desiredSize`"
   [this]
-  (-> this (.desiredSize)))
+  (-> this (.-desiredSize)))
 
 (defn set-desired-size!
   "Property.

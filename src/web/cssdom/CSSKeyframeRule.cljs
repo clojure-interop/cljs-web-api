@@ -11,7 +11,7 @@
   Represents the key of the keyframe, like '10%', '75%'. The from
   maps to '0%' and the to keyword maps to '100%'."
   [this]
-  (-> this (.keyText)))
+  (-> this (.-keyText)))
 
 (defn set-key-text!
   "Property.
@@ -20,4 +20,20 @@
   maps to '0%' and the to keyword maps to '100%'."
   [this val]
   (aset this "keyText" val))
+
+(defn style
+  "Property.
+
+  Returns a CSSStyleDeclaration of the CSS style associated with
+  keyframe."
+  [this]
+  (-> this (.-style)))
+
+(defn set-style!
+  "Property.
+
+  Returns a CSSStyleDeclaration of the CSS style associated with
+  keyframe."
+  [this val]
+  (aset this "style" val))
 

@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey`"
   [this]
-  (-> this (.altKey)))
+  (-> this (.-altKey)))
 
 (defn button
   "Property.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button`"
   [this]
-  (-> this (.button)))
+  (-> this (.-button)))
 
 (defn buttons
   "Property.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons`"
   [this]
-  (-> this (.buttons)))
+  (-> this (.-buttons)))
 
 (defn client-x
   "Property.
@@ -89,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX`"
   [this]
-  (-> this (.clientX)))
+  (-> this (.-clientX)))
 
 (defn client-y
   "Property.
@@ -103,7 +103,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientY`"
   [this]
-  (-> this (.clientY)))
+  (-> this (.-clientY)))
 
 (defn ctrl-key
   "Property.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/ctrlKey`"
   [this]
-  (-> this (.ctrlKey)))
+  (-> this (.-ctrlKey)))
 
 (defn meta-key
   "Property.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/metaKey`"
   [this]
-  (-> this (.metaKey)))
+  (-> this (.-metaKey)))
 
 (defn movement-x
   "Property.
@@ -142,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX`"
   [this]
-  (-> this (.movementX)))
+  (-> this (.-movementX)))
 
 (defn movement-y
   "Property.
@@ -157,23 +157,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY`"
   [this]
-  (-> this (.movementY)))
-
-(defn moz-input-source
-  "Property.
-
-  The MouseEvent.mozInputSource read-only property on `web.MouseEvent`
-  information indicating the type of device that generated the
-  This lets you, for example, determine whether a mouse event was
-  by an actual mouse or by a touch event (which might affect the
-  of accuracy with which you interpret the coordinates associated
-  the event).
-
-  `var source = instanceOfMouseEvent.mozInputSource;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/mozInputSource`"
-  [this]
-  (-> this (.mozInputSource)))
+  (-> this (.-movementY)))
 
 (defn offset-x
   "Property.
@@ -186,7 +170,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX`"
   [this]
-  (-> this (.offsetX)))
+  (-> this (.-offsetX)))
 
 (defn offset-y
   "Property.
@@ -199,7 +183,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetY`"
   [this]
-  (-> this (.offsetY)))
+  (-> this (.-offsetY)))
 
 (defn page-x
   "Property.
@@ -212,7 +196,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX`"
   [this]
-  (-> this (.pageX)))
+  (-> this (.-pageX)))
 
 (defn page-y
   "Property.
@@ -228,7 +212,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY`"
   [this]
-  (-> this (.pageY)))
+  (-> this (.-pageY)))
 
 (defn region
   "Property.
@@ -241,7 +225,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/region`"
   [this]
-  (-> this (.region)))
+  (-> this (.-region)))
 
 (defn related-target
   "Property.
@@ -253,7 +237,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget`"
   [this]
-  (-> this (.relatedTarget)))
+  (-> this (.-relatedTarget)))
 
 (defn screen-x
   "Property.
@@ -266,7 +250,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX`"
   [this]
-  (-> this (.screenX)))
+  (-> this (.-screenX)))
 
 (defn screen-y
   "Property.
@@ -279,7 +263,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenY`"
   [this]
-  (-> this (.screenY)))
+  (-> this (.-screenY)))
 
 (defn shift-key
   "Property.
@@ -292,7 +276,114 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey`"
   [this]
-  (-> this (.shiftKey)))
+  (-> this (.-shiftKey)))
+
+(defn which
+  "Property.
+
+  The MouseEvent.which read-only property indicates which button
+  pressed on the mouse to trigger the event. The standard alternatives
+  this property are `MouseEvent.button` and `MouseEvent.buttons`.
+
+  `var buttonPressed = instanceOfMouseEvent.which`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/which`"
+  [this]
+  (-> this (.-which)))
+
+(defn moz-pressure
+  "Property.
+
+  The amount of pressure applied to a touch or tablet device when
+  the event; this value ranges between 0.0 (minimum pressure) and
+  (maximum pressure). Instead of using this deprecated (and non-standard)
+  you should instead use PointerEvent and look at its pressure"
+  [this]
+  (-> this (.-mozPressure)))
+
+(defn set-moz-pressure!
+  "Property.
+
+  The amount of pressure applied to a touch or tablet device when
+  the event; this value ranges between 0.0 (minimum pressure) and
+  (maximum pressure). Instead of using this deprecated (and non-standard)
+  you should instead use PointerEvent and look at its pressure"
+  [this val]
+  (aset this "mozPressure" val))
+
+(defn moz-input-source
+  "Property.
+
+  The MouseEvent.mozInputSource read-only property on `web.MouseEvent`
+  information indicating the type of device that generated the
+  This lets you, for example, determine whether a mouse event was
+  by an actual mouse or by a touch event (which might affect the
+  of accuracy with which you interpret the coordinates associated
+  the event).
+
+  `var source = instanceOfMouseEvent.mozInputSource;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/mozInputSource`"
+  [this]
+  (-> this (.-mozInputSource)))
+
+(defn webkit-force
+  "Property.
+
+  MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
+  whose value represents the amount of pressure that is being applied
+  the touchpad or touchscreen.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/webkitForce`"
+  [this]
+  (-> this (.-webkitForce)))
+
+(defn set-webkit-force!
+  "Property.
+
+  MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
+  whose value represents the amount of pressure that is being applied
+  the touchpad or touchscreen.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/webkitForce`"
+  [this val]
+  (aset this "webkitForce" val))
+
+(defn x
+  "Property.
+
+  The MouseEvent.x property is an alias for the `MouseEvent.clientX`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x`"
+  [this]
+  (-> this (.-x)))
+
+(defn set-x!
+  "Property.
+
+  The MouseEvent.x property is an alias for the `MouseEvent.clientX`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x`"
+  [this val]
+  (aset this "x" val))
+
+(defn y
+  "Property.
+
+  The MouseEvent.y property is an alias for the `MouseEvent.clientY`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y`"
+  [this]
+  (-> this (.-y)))
+
+(defn set-y!
+  "Property.
+
+  The MouseEvent.y property is an alias for the `MouseEvent.clientY`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y`"
+  [this val]
+  (aset this "y" val))
 
 (defn webkit-force-at-force-mouse-down
   "Property.
@@ -303,7 +394,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN`"
   [this]
-  (-> this (.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN)))
+  (-> this (.-WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN)))
 
 (defn set-webkit-force-at-force-mouse-down!
   "Property.
@@ -325,7 +416,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/WEBKIT_FORCE_AT_MOUSE_DOWN`"
   [this]
-  (-> this (.WEBKIT_FORCE_AT_MOUSE_DOWN)))
+  (-> this (.-WEBKIT_FORCE_AT_MOUSE_DOWN)))
 
 (defn set-webkit-force-at-mouse-down!
   "Property.
@@ -337,39 +428,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/WEBKIT_FORCE_AT_MOUSE_DOWN`"
   [this val]
   (aset this "WEBKIT_FORCE_AT_MOUSE_DOWN" val))
-
-(defn webkit-force
-  "Property.
-
-  MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
-  whose value represents the amount of pressure that is being applied
-  the touchpad or touchscreen.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/webkitForce`"
-  [this]
-  (-> this (.webkitForce)))
-
-(defn set-webkit-force!
-  "Property.
-
-  MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
-  whose value represents the amount of pressure that is being applied
-  the touchpad or touchscreen.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/webkitForce`"
-  [this val]
-  (aset this "webkitForce" val))
-
-(defn which
-  "Property.
-
-  The MouseEvent.which read-only property indicates which button
-  pressed on the mouse to trigger the event. The standard alternatives
-  this property are `MouseEvent.button` and `MouseEvent.buttons`.
-
-  `var buttonPressed = instanceOfMouseEvent.which`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/which`"
-  [this]
-  (-> this (.which)))
 

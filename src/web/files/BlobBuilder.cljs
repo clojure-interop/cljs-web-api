@@ -13,6 +13,15 @@
   [this & args]
   (apply (-> this .-data) (concat [this] args)))
 
+(defn endings
+  "Method.
+
+  Specifies how strings containing \\n are to be written out. This
+  be \"transparent\" (endings unchanged) or \"native\" (endings changed
+  match host OS filesystem convention). The default value is \"transparent\"."
+  [this & args]
+  (apply (-> this .-endings) (concat [this] args)))
+
 (defn content-type
   "Method.
 

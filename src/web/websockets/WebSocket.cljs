@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/binaryType`"
   [this]
-  (-> this (.binaryType)))
+  (-> this (.-binaryType)))
 
 (defn set-binary-type!
   "Property.
@@ -83,7 +83,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/bufferedAmount`"
   [this]
-  (-> this (.bufferedAmount)))
+  (-> this (.-bufferedAmount)))
 
 (defn set-buffered-amount!
   "Property.
@@ -112,7 +112,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/extensions`"
   [this]
-  (-> this (.extensions)))
+  (-> this (.-extensions)))
 
 (defn set-extensions!
   "Property.
@@ -140,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -167,7 +167,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -194,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -225,7 +225,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onopen`"
   [this]
-  (-> this (.onopen)))
+  (-> this (.-onopen)))
 
 (defn set-onopen!
   "Property.
@@ -255,7 +255,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.
@@ -281,7 +281,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/readyState`"
   [this]
-  (-> this (.readyState)))
+  (-> this (.-readyState)))
 
 (defn set-ready-state!
   "Property.
@@ -305,7 +305,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/url`"
   [this]
-  (-> this (.url)))
+  (-> this (.-url)))
 
 (defn set-url!
   "Property.

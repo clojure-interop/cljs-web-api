@@ -9,7 +9,7 @@
   element. A DOMException is raised with the code NO_MODIFICATION_ALLOWED_ERR
   an attempt to change the value of a read only attribut."
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -19,4 +19,20 @@
   an attempt to change the value of a read only attribut."
   [this val]
   (aset this "type" val))
+
+(defn cross-origin
+  "Property.
+
+  A DOMString corresponding to the crossorigin attribute of the
+  <script> element."
+  [this]
+  (-> this (.-crossOrigin)))
+
+(defn set-cross-origin!
+  "Property.
+
+  A DOMString corresponding to the crossorigin attribute of the
+  <script> element."
+  [this val]
+  (aset this "crossOrigin" val))
 

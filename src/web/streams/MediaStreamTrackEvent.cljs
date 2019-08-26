@@ -27,7 +27,7 @@
   A MediaStreamTrack object representing the track which was added
   the stream."
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 
 (defn set-track!
   "Property.

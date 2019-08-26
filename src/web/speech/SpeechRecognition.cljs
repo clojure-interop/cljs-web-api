@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/grammars`"
   [this]
-  (-> this (.grammars)))
+  (-> this (.-grammars)))
 
 (defn set-grammars!
   "Property.
@@ -81,6 +81,36 @@
   [this val]
   (aset this "grammars" val))
 
+(defn lang
+  "Property.
+
+  The lang property of the `web.speech.SpeechRecognition` interface
+  and sets the language of the current SpeechRecognition. If not
+  this defaults to the HTML lang attribute value, or the user agent's
+  setting if that isn't set either.
+
+  `var myLang = mySpeechRecognition.lang;
+  mySpeechRecognition.lang = 'en-US';`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/lang`"
+  [this]
+  (-> this (.-lang)))
+
+(defn set-lang!
+  "Property.
+
+  The lang property of the `web.speech.SpeechRecognition` interface
+  and sets the language of the current SpeechRecognition. If not
+  this defaults to the HTML lang attribute value, or the user agent's
+  setting if that isn't set either.
+
+  `var myLang = mySpeechRecognition.lang;
+  mySpeechRecognition.lang = 'en-US';`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/lang`"
+  [this val]
+  (aset this "lang" val))
+
 (defn continuous
   "Property.
 
@@ -93,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/continuous`"
   [this]
-  (-> this (.continuous)))
+  (-> this (.-continuous)))
 
 (defn set-continuous!
   "Property.
@@ -122,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/interimResults`"
   [this]
-  (-> this (.interimResults)))
+  (-> this (.-interimResults)))
 
 (defn set-interim-results!
   "Property.
@@ -139,36 +169,6 @@
   [this val]
   (aset this "interimResults" val))
 
-(defn lang
-  "Property.
-
-  The lang property of the `web.speech.SpeechRecognition` interface
-  and sets the language of the current SpeechRecognition. If not
-  this defaults to the HTML lang attribute value, or the user agent's
-  setting if that isn't set either.
-
-  `var myLang = mySpeechRecognition.lang;
-  mySpeechRecognition.lang = 'en-US';`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/lang`"
-  [this]
-  (-> this (.lang)))
-
-(defn set-lang!
-  "Property.
-
-  The lang property of the `web.speech.SpeechRecognition` interface
-  and sets the language of the current SpeechRecognition. If not
-  this defaults to the HTML lang attribute value, or the user agent's
-  setting if that isn't set either.
-
-  `var myLang = mySpeechRecognition.lang;
-  mySpeechRecognition.lang = 'en-US';`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/lang`"
-  [this val]
-  (aset this "lang" val))
-
 (defn max-alternatives
   "Property.
 
@@ -181,7 +181,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/maxAlternatives`"
   [this]
-  (-> this (.maxAlternatives)))
+  (-> this (.-maxAlternatives)))
 
 (defn set-max-alternatives!
   "Property.
@@ -197,6 +197,36 @@
   [this val]
   (aset this "maxAlternatives" val))
 
+(defn service-uri
+  "Property.
+
+  The serviceURI property of the `web.speech.SpeechRecognition`
+  specifies the location of the speech recognition service used
+  the current SpeechRecognition to handle the actual recognition.
+  default is the user agent's default speech service.
+
+  `var myServiceURI = mySpeechRecognition.serviceURI;
+  mySpeechRecognition.serviceURI = 'path/to/my/service/';`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/serviceURI`"
+  [this]
+  (-> this (.-serviceURI)))
+
+(defn set-service-uri!
+  "Property.
+
+  The serviceURI property of the `web.speech.SpeechRecognition`
+  specifies the location of the speech recognition service used
+  the current SpeechRecognition to handle the actual recognition.
+  default is the user agent's default speech service.
+
+  `var myServiceURI = mySpeechRecognition.serviceURI;
+  mySpeechRecognition.serviceURI = 'path/to/my/service/';`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/serviceURI`"
+  [this val]
+  (aset this "serviceURI" val))
+
 (defn onaudioend
   "Property.
 
@@ -208,7 +238,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onaudioend`"
   [this]
-  (-> this (.onaudioend)))
+  (-> this (.-onaudioend)))
 
 (defn set-onaudioend!
   "Property.
@@ -234,7 +264,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onaudiostart`"
   [this]
-  (-> this (.onaudiostart)))
+  (-> this (.-onaudiostart)))
 
 (defn set-onaudiostart!
   "Property.
@@ -260,7 +290,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onend`"
   [this]
-  (-> this (.onend)))
+  (-> this (.-onend)))
 
 (defn set-onend!
   "Property.
@@ -286,7 +316,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -313,7 +343,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onnomatch`"
   [this]
-  (-> this (.onnomatch)))
+  (-> this (.-onnomatch)))
 
 (defn set-onnomatch!
   "Property.
@@ -341,7 +371,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onresult`"
   [this]
-  (-> this (.onresult)))
+  (-> this (.-onresult)))
 
 (defn set-onresult!
   "Property.
@@ -368,7 +398,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onsoundend`"
   [this]
-  (-> this (.onsoundend)))
+  (-> this (.-onsoundend)))
 
 (defn set-onsoundend!
   "Property.
@@ -394,7 +424,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onsoundstart`"
   [this]
-  (-> this (.onsoundstart)))
+  (-> this (.-onsoundstart)))
 
 (defn set-onsoundstart!
   "Property.
@@ -421,7 +451,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onspeechend`"
   [this]
-  (-> this (.onspeechend)))
+  (-> this (.-onspeechend)))
 
 (defn set-onspeechend!
   "Property.
@@ -449,7 +479,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onspeechstart`"
   [this]
-  (-> this (.onspeechstart)))
+  (-> this (.-onspeechstart)))
 
 (defn set-onspeechstart!
   "Property.
@@ -477,7 +507,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onstart`"
   [this]
-  (-> this (.onstart)))
+  (-> this (.-onstart)))
 
 (defn set-onstart!
   "Property.
@@ -492,34 +522,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/onstart`"
   [this val]
   (aset this "onstart" val))
-
-(defn service-uri
-  "Property.
-
-  The serviceURI property of the `web.speech.SpeechRecognition`
-  specifies the location of the speech recognition service used
-  the current SpeechRecognition to handle the actual recognition.
-  default is the user agent's default speech service.
-
-  `var myServiceURI = mySpeechRecognition.serviceURI;
-  mySpeechRecognition.serviceURI = 'path/to/my/service/';`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/serviceURI`"
-  [this]
-  (-> this (.serviceURI)))
-
-(defn set-service-uri!
-  "Property.
-
-  The serviceURI property of the `web.speech.SpeechRecognition`
-  specifies the location of the speech recognition service used
-  the current SpeechRecognition to handle the actual recognition.
-  default is the user agent's default speech service.
-
-  `var myServiceURI = mySpeechRecognition.serviceURI;
-  mySpeechRecognition.serviceURI = 'path/to/my/service/';`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/serviceURI`"
-  [this val]
-  (aset this "serviceURI" val))
 

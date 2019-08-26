@@ -105,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size`"
   [this]
-  (-> this (.size)))
+  (-> this (.-size)))
 
 (defn set-size!
   "Property.

@@ -10,7 +10,7 @@
   this observer. Available types include deprecation, intervention,
   crash."
   [this]
-  (-> this (.types)))
+  (-> this (.-types)))
 
 (defn set-types!
   "Property.
@@ -20,4 +20,22 @@
   crash."
   [this val]
   (aset this "types" val))
+
+(defn buffered
+  "Property.
+
+  A boolean that defines whether the reports that were generated
+  the observer was able to be created should be observable (true)
+  not (false)."
+  [this]
+  (-> this (.-buffered)))
+
+(defn set-buffered!
+  "Property.
+
+  A boolean that defines whether the reports that were generated
+  the observer was able to be created should be observable (true)
+  not (false)."
+  [this val]
+  (aset this "buffered" val))
 

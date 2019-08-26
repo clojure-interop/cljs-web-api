@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioDestinationNode/stream`"
   [this]
-  (-> this (.stream)))
+  (-> this (.-stream)))
 
 (defn set-stream!
   "Property.

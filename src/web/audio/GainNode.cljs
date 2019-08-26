@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GainNode/gain`"
   [this]
-  (-> this (.gain)))
+  (-> this (.-gain)))
 
 (defn set-gain!
   "Property.

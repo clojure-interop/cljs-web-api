@@ -33,6 +33,19 @@
   [this ]
   (-> this (.toString)))
 
+(defn to-json
+  "Method.
+
+  The toJSON() method of the `web.url.URL` interface returns a
+  containing a serialized version of the URL, although in practice
+  seems to have the same effect as `URL.toString()`.
+
+  `json = url.toJSON();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/toJSON`"
+  [this ]
+  (-> this (.toJSON)))
+
 (defn create-object-url
   "Method.
 
@@ -60,19 +73,6 @@
   [this object-url]
   (-> this (.revokeObjectURL object-url)))
 
-(defn to-json
-  "Method.
-
-  The toJSON() method of the `web.url.URL` interface returns a
-  containing a serialized version of the URL, although in practice
-  seems to have the same effect as `URL.toString()`.
-
-  `json = url.toJSON();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/toJSON`"
-  [this ]
-  (-> this (.toJSON)))
-
 (defn hash
   "Property.
 
@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/hash`"
   [this]
-  (-> this (.hash)))
+  (-> this (.-hash)))
 
 (defn set-hash!
   "Property.
@@ -111,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn set-host!
   "Property.
@@ -138,7 +138,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname`"
   [this]
-  (-> this (.hostname)))
+  (-> this (.-hostname)))
 
 (defn set-hostname!
   "Property.
@@ -164,7 +164,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/href`"
   [this]
-  (-> this (.href)))
+  (-> this (.-href)))
 
 (defn set-href!
   "Property.
@@ -191,7 +191,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/origin`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-origin)))
 
 (defn password
   "Property.
@@ -204,7 +204,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/password`"
   [this]
-  (-> this (.password)))
+  (-> this (.-password)))
 
 (defn set-password!
   "Property.
@@ -231,7 +231,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname`"
   [this]
-  (-> this (.pathname)))
+  (-> this (.-pathname)))
 
 (defn set-pathname!
   "Property.
@@ -259,7 +259,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -286,7 +286,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn set-protocol!
   "Property.
@@ -313,7 +313,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/search`"
   [this]
-  (-> this (.search)))
+  (-> this (.-search)))
 
 (defn set-search!
   "Property.
@@ -340,7 +340,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams`"
   [this]
-  (-> this (.searchParams)))
+  (-> this (.-searchParams)))
 
 (defn username
   "Property.
@@ -353,7 +353,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/username`"
   [this]
-  (-> this (.username)))
+  (-> this (.-username)))
 
 (defn set-username!
   "Property.

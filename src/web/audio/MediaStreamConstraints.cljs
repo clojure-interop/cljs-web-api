@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints/audio`"
   [this]
-  (-> this (.audio)))
+  (-> this (.-audio)))
 
 (defn set-audio!
   "Property.
@@ -30,6 +30,32 @@
   [this val]
   (aset this "audio" val))
 
+(defn video
+  "Property.
+
+  The `web.audio.MediaStreamConstraints` dictionary's video property
+  used to indicate what kind of video track, if any, should be
+  in the `web.streams.MediaStream` returned by a call to `getUserMedia()`.
+
+  `var videoConstraints = true | false | MediaTrackConstraints;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints/video`"
+  [this]
+  (-> this (.-video)))
+
+(defn set-video!
+  "Property.
+
+  The `web.audio.MediaStreamConstraints` dictionary's video property
+  used to indicate what kind of video track, if any, should be
+  in the `web.streams.MediaStream` returned by a call to `getUserMedia()`.
+
+  `var videoConstraints = true | false | MediaTrackConstraints;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints/video`"
+  [this val]
+  (aset this "video" val))
+
 (defn peer-identity
   "Property.
 
@@ -41,7 +67,7 @@
   set, MediaStreamTracks from that peer have their isolated flag
   to true."
   [this]
-  (-> this (.peerIdentity)))
+  (-> this (.-peerIdentity)))
 
 (defn set-peer-identity!
   "Property.

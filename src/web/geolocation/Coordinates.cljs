@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/latitude`"
   [this]
-  (-> this (.latitude)))
+  (-> this (.-latitude)))
 
 (defn set-latitude!
   "Property.
@@ -28,31 +28,22 @@
   [this val]
   (aset this "latitude" val))
 
-(defn accuracy
+(defn longitude
   "Property.
 
-  The Coordinates.accuracy read-only property is a strictly positive
-  representing the accuracy, with a 95% confidence level, of the
-  and `Coordinates.longitude` properties expressed in meters.
+  The `web.geolocation.Coordinates` interface's read-only longitude
+  is a double-precision floating point value which represents the
+  of a geographical position, specified in decimal degrees. Together
+  a `web.dom.DOMTimeStamp` indicating a time of measurement, the
+  object is part of the `web.geolocation.Position` interface which
+  the object type returned by Geolocation API functions that obtain
+  return a geographical position.
 
-  `acc = coordinates.accuracy`
+  `longitude = coordinates.longitude`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/accuracy`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/longitude`"
   [this]
-  (-> this (.accuracy)))
-
-(defn set-accuracy!
-  "Property.
-
-  The Coordinates.accuracy read-only property is a strictly positive
-  representing the accuracy, with a 95% confidence level, of the
-  and `Coordinates.longitude` properties expressed in meters.
-
-  `acc = coordinates.accuracy`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/accuracy`"
-  [this val]
-  (aset this "accuracy" val))
+  (-> this (.-longitude)))
 
 (defn altitude
   "Property.
@@ -65,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/altitude`"
   [this]
-  (-> this (.altitude)))
+  (-> this (.-altitude)))
 
 (defn set-altitude!
   "Property.
@@ -80,6 +71,32 @@
   [this val]
   (aset this "altitude" val))
 
+(defn accuracy
+  "Property.
+
+  The Coordinates.accuracy read-only property is a strictly positive
+  representing the accuracy, with a 95% confidence level, of the
+  and `Coordinates.longitude` properties expressed in meters.
+
+  `acc = coordinates.accuracy`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/accuracy`"
+  [this]
+  (-> this (.-accuracy)))
+
+(defn set-accuracy!
+  "Property.
+
+  The Coordinates.accuracy read-only property is a strictly positive
+  representing the accuracy, with a 95% confidence level, of the
+  and `Coordinates.longitude` properties expressed in meters.
+
+  `acc = coordinates.accuracy`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/accuracy`"
+  [this val]
+  (aset this "accuracy" val))
+
 (defn altitude-accuracy
   "Property.
 
@@ -92,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/altitudeAccuracy`"
   [this]
-  (-> this (.altitudeAccuracy)))
+  (-> this (.-altitudeAccuracy)))
 
 (defn set-altitude-accuracy!
   "Property.
@@ -123,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/heading`"
   [this]
-  (-> this (.heading)))
+  (-> this (.-heading)))
 
 (defn set-heading!
   "Property.
@@ -142,23 +159,6 @@
   [this val]
   (aset this "heading" val))
 
-(defn longitude
-  "Property.
-
-  The `web.geolocation.Coordinates` interface's read-only longitude
-  is a double-precision floating point value which represents the
-  of a geographical position, specified in decimal degrees. Together
-  a `web.dom.DOMTimeStamp` indicating a time of measurement, the
-  object is part of the `web.geolocation.Position` interface which
-  the object type returned by Geolocation API functions that obtain
-  return a geographical position.
-
-  `longitude = coordinates.longitude`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/longitude`"
-  [this]
-  (-> this (.longitude)))
-
 (defn speed
   "Property.
 
@@ -170,7 +170,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/speed`"
   [this]
-  (-> this (.speed)))
+  (-> this (.-speed)))
 
 (defn set-speed!
   "Property.

@@ -26,7 +26,7 @@
   \"web\" or \"play\" which would allow the user to chose between a
   version or an Android version."
   [this]
-  (-> this (.platforms)))
+  (-> this (.-platforms)))
 
 (defn set-platforms!
   "Property.
@@ -38,4 +38,20 @@
   version or an Android version."
   [this val]
   (aset this "platforms" val))
+
+(defn user-choice
+  "Property.
+
+  Returns a Promise that resolves to a DOMString containing either
+  or \"dismissed\"."
+  [this]
+  (-> this (.-userChoice)))
+
+(defn set-user-choice!
+  "Property.
+
+  Returns a Promise that resolves to a DOMString containing either
+  or \"dismissed\"."
+  [this val]
+  (aset this "userChoice" val))
 

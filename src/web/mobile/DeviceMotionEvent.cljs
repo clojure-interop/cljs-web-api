@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/acceleration`"
   [this]
-  (-> this (.acceleration)))
+  (-> this (.-acceleration)))
 
 (defn set-acceleration!
   "Property.
@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity`"
   [this]
-  (-> this (.accelerationIncludingGravity)))
+  (-> this (.-accelerationIncludingGravity)))
 
 (defn set-acceleration-including-gravity!
   "Property.
@@ -77,6 +77,30 @@
   [this val]
   (aset this "accelerationIncludingGravity" val))
 
+(defn rotation-rate
+  "Property.
+
+  Returns the rate at which the device is rotating around each
+  its axes in degrees per second.
+
+  `var rotationRate = deviceMotionEvent.rotationRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate`"
+  [this]
+  (-> this (.-rotationRate)))
+
+(defn set-rotation-rate!
+  "Property.
+
+  Returns the rate at which the device is rotating around each
+  its axes in degrees per second.
+
+  `var rotationRate = deviceMotionEvent.rotationRate;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate`"
+  [this val]
+  (aset this "rotationRate" val))
+
 (defn interval
   "Property.
 
@@ -88,7 +112,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/interval`"
   [this]
-  (-> this (.interval)))
+  (-> this (.-interval)))
 
 (defn set-interval!
   "Property.
@@ -102,28 +126,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/interval`"
   [this val]
   (aset this "interval" val))
-
-(defn rotation-rate
-  "Property.
-
-  Returns the rate at which the device is rotating around each
-  its axes in degrees per second.
-
-  `var rotationRate = deviceMotionEvent.rotationRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate`"
-  [this]
-  (-> this (.rotationRate)))
-
-(defn set-rotation-rate!
-  "Property.
-
-  Returns the rate at which the device is rotating around each
-  its axes in degrees per second.
-
-  `var rotationRate = deviceMotionEvent.rotationRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate`"
-  [this val]
-  (aset this "rotationRate" val))
 

@@ -5,6 +5,7 @@
             [web.css.CSSMathSum]
             [web.css.CSSMathValue]
             [web.css.CSSNumericValue]
+            [web.css.CSSPositionValue]
             [web.css.CSSPrimitiveValue]
             [web.css.CSSPseudoElement]
             [web.css.CSSStyleValue]
@@ -14,5 +15,6 @@
             [web.css.CSSValueList]
             [web.css.CSSVariableReferenceValue]
             [web.css.PaintWorklet]
+            [web.css.Point]
             [web.css.StylePropertyMap]
             [web.css.StylePropertyMapReadOnly]))

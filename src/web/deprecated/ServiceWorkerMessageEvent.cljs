@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -50,30 +50,6 @@
   [this val]
   (aset this "data" val))
 
-(defn last-event-id
-  "Property.
-
-  The lastEventID read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
-  represents, in server-sent events, the last event ID of the event
-
-  `var myLastEventId = ServiceWorkerMessageEventInstance.lastEventId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/lastEventId`"
-  [this]
-  (-> this (.lastEventId)))
-
-(defn set-last-event-id!
-  "Property.
-
-  The lastEventID read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
-  represents, in server-sent events, the last event ID of the event
-
-  `var myLastEventId = ServiceWorkerMessageEventInstance.lastEventId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/lastEventId`"
-  [this val]
-  (aset this "lastEventId" val))
-
 (defn origin
   "Property.
 
@@ -84,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/origin`"
   [this]
-  (-> this (.origin)))
+  (-> this (.-origin)))
 
 (defn set-origin!
   "Property.
@@ -98,31 +74,29 @@
   [this val]
   (aset this "origin" val))
 
-(defn ports
+(defn last-event-id
   "Property.
 
-  The ports read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
-  returns an array of `web.other.MessagePort` objects connected
-  the message channel the message is being sent through.
+  The lastEventID read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
+  represents, in server-sent events, the last event ID of the event
 
-  `var myPorts = ServiceWorkerMessageEventInstance.ports;`
+  `var myLastEventId = ServiceWorkerMessageEventInstance.lastEventId;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/ports`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/lastEventId`"
   [this]
-  (-> this (.ports)))
+  (-> this (.-lastEventId)))
 
-(defn set-ports!
+(defn set-last-event-id!
   "Property.
 
-  The ports read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
-  returns an array of `web.other.MessagePort` objects connected
-  the message channel the message is being sent through.
+  The lastEventID read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
+  represents, in server-sent events, the last event ID of the event
 
-  `var myPorts = ServiceWorkerMessageEventInstance.ports;`
+  `var myLastEventId = ServiceWorkerMessageEventInstance.lastEventId;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/ports`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/lastEventId`"
   [this val]
-  (aset this "ports" val))
+  (aset this "lastEventId" val))
 
 (defn source
   "Property.
@@ -135,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/source`"
   [this]
-  (-> this (.source)))
+  (-> this (.-source)))
 
 (defn set-source!
   "Property.
@@ -149,4 +123,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/source`"
   [this val]
   (aset this "source" val))
+
+(defn ports
+  "Property.
+
+  The ports read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
+  returns an array of `web.other.MessagePort` objects connected
+  the message channel the message is being sent through.
+
+  `var myPorts = ServiceWorkerMessageEventInstance.ports;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/ports`"
+  [this]
+  (-> this (.-ports)))
+
+(defn set-ports!
+  "Property.
+
+  The ports read-only property of the `web.deprecated.ServiceWorkerMessageEvent`
+  returns an array of `web.other.MessagePort` objects connected
+  the message channel the message is being sent through.
+
+  `var myPorts = ServiceWorkerMessageEventInstance.ports;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerMessageEvent/ports`"
+  [this val]
+  (aset this "ports" val))
 

@@ -18,7 +18,7 @@
   An SVGStringList corresponding to the requiredFeatures attribute
   the given element."
   [this]
-  (-> this (.requiredFeatures)))
+  (-> this (.-requiredFeatures)))
 
 (defn set-required-features!
   "Property.
@@ -27,4 +27,36 @@
   the given element."
   [this val]
   (aset this "requiredFeatures" val))
+
+(defn required-extensions
+  "Property.
+
+  An SVGStringList corresponding to the requiredExtensions attribute
+  the given element."
+  [this]
+  (-> this (.-requiredExtensions)))
+
+(defn set-required-extensions!
+  "Property.
+
+  An SVGStringList corresponding to the requiredExtensions attribute
+  the given element."
+  [this val]
+  (aset this "requiredExtensions" val))
+
+(defn system-language
+  "Property.
+
+  An SVGStringList corresponding to the systemLanguage attribute
+  the given element."
+  [this]
+  (-> this (.-systemLanguage)))
+
+(defn set-system-language!
+  "Property.
+
+  An SVGStringList corresponding to the systemLanguage attribute
+  the given element."
+  [this val]
+  (aset this "systemLanguage" val))
 

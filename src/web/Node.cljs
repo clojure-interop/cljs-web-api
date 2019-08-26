@@ -18,11 +18,6 @@
   [this a-child]
   (-> this (.appendChild a-child)))
 
-(defn get-feature
-  "Method."
-  [this & args]
-  (apply (-> this .-getFeature) (concat [this] args)))
-
 (defn clone-node
   "Method.
 
@@ -87,18 +82,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode`"
   [this options]
   (-> this (.getRootNode options)))
-
-(defn get-user-data
-  "Method.
-
-  The Node.getUserData() method returns any user `web.dom.DOMUserData`
-  previously on the given node by `Node.setUserData()`.
-
-  `userData = someNode.getUserData(userKey);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/getUserData`"
-  [this user-key]
-  (-> this (.getUserData user-key)))
 
 (defn has-child-nodes
   "Method.
@@ -184,18 +167,16 @@
   [this other-node]
   (-> this (.isSameNode other-node)))
 
-(defn is-supported
+(defn lookup-prefix
   "Method.
 
-  The Node.isSupported()returns a `js.Boolean` flag containing
-  result of a test whether the DOM implementation implements a
-  feature and this feature is supported by the specific node.
+  The Node.lookupPrefix() method returns a `web.dom.DOMString`
+  the prefix for a given namespace URI, if present, and null if
+  When multiple prefixes are possible, the result is implementation-dependent.
 
-  `boolValue = element.isSupported(feature, version)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isSupported`"
-  [this feature version]
-  (-> this (.isSupported feature version)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix`"
+  [this & args]
+  (apply (-> this .-lookupPrefix) (concat [this] args)))
 
 (defn lookup-namespace-uri
   "Method.
@@ -209,17 +190,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupNamespaceURI`"
   [this prefix]
   (-> this (.lookupNamespaceURI prefix)))
-
-(defn lookup-prefix
-  "Method.
-
-  The Node.lookupPrefix() method returns a `web.dom.DOMString`
-  the prefix for a given namespace URI, if present, and null if
-  When multiple prefixes are possible, the result is implementation-dependent.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix`"
-  [this & args]
-  (apply (-> this .-lookupPrefix) (concat [this] args)))
 
 (defn normalize
   "Method.
@@ -278,6 +248,44 @@
   [this & args]
   (apply (-> this .-replaceChild) (concat [this] args)))
 
+(defn get-feature
+  "Method."
+  [this & args]
+  (apply (-> this .-getFeature) (concat [this] args)))
+
+(defn get-user-data
+  "Method.
+
+  The Node.getUserData() method returns any user `web.dom.DOMUserData`
+  previously on the given node by `Node.setUserData()`.
+
+  `userData = someNode.getUserData(userKey);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/getUserData`"
+  [this user-key]
+  (-> this (.getUserData user-key)))
+
+(defn has-attributes
+  "Method.
+
+  Returns a Boolean indicating if the element has any attributes,
+  not."
+  [this & args]
+  (apply (-> this .-hasAttributes) (concat [this] args)))
+
+(defn is-supported
+  "Method.
+
+  The Node.isSupported()returns a `js.Boolean` flag containing
+  result of a test whether the DOM implementation implements a
+  feature and this feature is supported by the specific node.
+
+  `boolValue = element.isSupported(feature, version)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isSupported`"
+  [this feature version]
+  (-> this (.isSupported feature version)))
+
 (defn set-user-data
   "Method.
 
@@ -304,37 +312,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURI`"
   [this]
-  (-> this (.baseURI)))
-
-(defn local-name
-  "Property.
-
-  The Node.localName read-only property returns the local part
-  the qualified name of this node.
-
-  `name = element.localName
-
-
-  name is the local name as a string (see Notes below for details)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
-  [this]
-  (-> this (.localName)))
-
-(defn set-local-name!
-  "Property.
-
-  The Node.localName read-only property returns the local part
-  the qualified name of this node.
-
-  `name = element.localName
-
-
-  name is the local name as a string (see Notes below for details)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
-  [this val]
-  (aset this "localName" val))
+  (-> this (.-baseURI)))
 
 (defn base-uri-object
   "Property.
@@ -347,7 +325,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURIObject`"
   [this]
-  (-> this (.baseURIObject)))
+  (-> this (.-baseURIObject)))
 
 (defn child-nodes
   "Property.
@@ -360,7 +338,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes`"
   [this]
-  (-> this (.childNodes)))
+  (-> this (.-childNodes)))
 
 (defn set-child-nodes!
   "Property.
@@ -385,7 +363,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild`"
   [this]
-  (-> this (.firstChild)))
+  (-> this (.-firstChild)))
 
 (defn set-first-child!
   "Property.
@@ -412,7 +390,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected`"
   [this]
-  (-> this (.isConnected)))
+  (-> this (.-isConnected)))
 
 (defn set-is-connected!
   "Property.
@@ -441,7 +419,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild`"
   [this]
-  (-> this (.lastChild)))
+  (-> this (.-lastChild)))
 
 (defn set-last-child!
   "Property.
@@ -457,32 +435,6 @@
   [this val]
   (aset this "lastChild" val))
 
-(defn namespace-uri
-  "Property.
-
-  The Node.namespaceURI read-only property returns the namespace
-  of the node, or null if the node is not in a namespace. When
-  node is a document, it returns the XML namespace for the current
-
-  `namespace = node.namespaceURI`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI`"
-  [this]
-  (-> this (.namespaceURI)))
-
-(defn set-namespace-uri!
-  "Property.
-
-  The Node.namespaceURI read-only property returns the namespace
-  of the node, or null if the node is not in a namespace. When
-  node is a document, it returns the XML namespace for the current
-
-  `namespace = node.namespaceURI`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI`"
-  [this val]
-  (aset this "namespaceURI" val))
-
 (defn next-sibling
   "Property.
 
@@ -494,7 +446,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling`"
   [this]
-  (-> this (.nextSibling)))
+  (-> this (.-nextSibling)))
 
 (defn set-next-sibling!
   "Property.
@@ -519,31 +471,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName`"
   [this]
-  (-> this (.nodeName)))
-
-(defn node-principal
-  "Property.
-
-  The Node.nodePrincipal read-only property returns the nsIPrincipal
-  representing current security context of the node.
-
-  `principalObj = Node.nodePrincipal`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal`"
-  [this]
-  (-> this (.nodePrincipal)))
-
-(defn set-node-principal!
-  "Property.
-
-  The Node.nodePrincipal read-only property returns the nsIPrincipal
-  representing current security context of the node.
-
-  `principalObj = Node.nodePrincipal`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal`"
-  [this val]
-  (aset this "nodePrincipal" val))
+  (-> this (.-nodeName)))
 
 (defn node-type
   "Property.
@@ -558,7 +486,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType`"
   [this]
-  (-> this (.nodeType)))
+  (-> this (.-nodeType)))
 
 (defn set-node-type!
   "Property.
@@ -586,7 +514,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue`"
   [this]
-  (-> this (.nodeValue)))
+  (-> this (.-nodeValue)))
 
 (defn set-node-value!
   "Property.
@@ -601,24 +529,6 @@
   [this val]
   (aset this "nodeValue" val))
 
-(defn outer-text
-  "Property.
-
-  See `HTMLElement.outerText`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
-  [this]
-  (-> this (.outerText)))
-
-(defn set-outer-text!
-  "Property.
-
-  See `HTMLElement.outerText`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
-  [this val]
-  (aset this "outerText" val))
-
 (defn owner-document
   "Property.
 
@@ -629,7 +539,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/ownerDocument`"
   [this]
-  (-> this (.ownerDocument)))
+  (-> this (.-ownerDocument)))
 
 (defn set-owner-document!
   "Property.
@@ -642,6 +552,34 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/ownerDocument`"
   [this val]
   (aset this "ownerDocument" val))
+
+(defn parent-node
+  "Property.
+
+  The Node.parentNode read-only property returns the parent of
+  specified node in the DOM tree.
+
+  `parentNode = node.parentNode
+
+  parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode`"
+  [this]
+  (-> this (.-parentNode)))
+
+(defn set-parent-node!
+  "Property.
+
+  The Node.parentNode read-only property returns the parent of
+  specified node in the DOM tree.
+
+  `parentNode = node.parentNode
+
+  parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode`"
+  [this val]
+  (aset this "parentNode" val))
 
 (defn parent-element
   "Property.
@@ -656,7 +594,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement`"
   [this]
-  (-> this (.parentElement)))
+  (-> this (.-parentElement)))
 
 (defn set-parent-element!
   "Property.
@@ -673,58 +611,6 @@
   [this val]
   (aset this "parentElement" val))
 
-(defn parent-node
-  "Property.
-
-  The Node.parentNode read-only property returns the parent of
-  specified node in the DOM tree.
-
-  `parentNode = node.parentNode
-
-  parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode`"
-  [this]
-  (-> this (.parentNode)))
-
-(defn set-parent-node!
-  "Property.
-
-  The Node.parentNode read-only property returns the parent of
-  specified node in the DOM tree.
-
-  `parentNode = node.parentNode
-
-  parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode`"
-  [this val]
-  (aset this "parentNode" val))
-
-(defn prefix
-  "Property.
-
-  The Node.prefix read-only property returns the namespace prefix
-  the specified node, or null if no prefix is specified.
-
-  `string = node.prefix`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix`"
-  [this]
-  (-> this (.prefix)))
-
-(defn set-prefix!
-  "Property.
-
-  The Node.prefix read-only property returns the namespace prefix
-  the specified node, or null if no prefix is specified.
-
-  `string = node.prefix`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix`"
-  [this val]
-  (aset this "prefix" val))
-
 (defn previous-sibling
   "Property.
 
@@ -736,7 +622,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling`"
   [this]
-  (-> this (.previousSibling)))
+  (-> this (.-previousSibling)))
 
 (defn set-previous-sibling!
   "Property.
@@ -751,6 +637,136 @@
   [this val]
   (aset this "previousSibling" val))
 
+(defn text-content
+  "Property.
+
+  The textContent property of the `web.Node` interface represents
+  text content of the node and its descendants.
+
+  `var text = Node.textContent;
+  Node.textContent = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent`"
+  [this]
+  (-> this (.-textContent)))
+
+(defn set-text-content!
+  "Property.
+
+  The textContent property of the `web.Node` interface represents
+  text content of the node and its descendants.
+
+  `var text = Node.textContent;
+  Node.textContent = string;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent`"
+  [this val]
+  (aset this "textContent" val))
+
+(defn local-name
+  "Property.
+
+  The Node.localName read-only property returns the local part
+  the qualified name of this node.
+
+  `name = element.localName
+
+
+  name is the local name as a string (see Notes below for details)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
+  [this]
+  (-> this (.-localName)))
+
+(defn set-local-name!
+  "Property.
+
+  The Node.localName read-only property returns the local part
+  the qualified name of this node.
+
+  `name = element.localName
+
+
+  name is the local name as a string (see Notes below for details)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
+  [this val]
+  (aset this "localName" val))
+
+(defn namespace-uri
+  "Property.
+
+  The Node.namespaceURI read-only property returns the namespace
+  of the node, or null if the node is not in a namespace. When
+  node is a document, it returns the XML namespace for the current
+
+  `namespace = node.namespaceURI`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI`"
+  [this]
+  (-> this (.-namespaceURI)))
+
+(defn set-namespace-uri!
+  "Property.
+
+  The Node.namespaceURI read-only property returns the namespace
+  of the node, or null if the node is not in a namespace. When
+  node is a document, it returns the XML namespace for the current
+
+  `namespace = node.namespaceURI`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI`"
+  [this val]
+  (aset this "namespaceURI" val))
+
+(defn node-principal
+  "Property.
+
+  The Node.nodePrincipal read-only property returns the nsIPrincipal
+  representing current security context of the node.
+
+  `principalObj = Node.nodePrincipal`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal`"
+  [this]
+  (-> this (.-nodePrincipal)))
+
+(defn set-node-principal!
+  "Property.
+
+  The Node.nodePrincipal read-only property returns the nsIPrincipal
+  representing current security context of the node.
+
+  `principalObj = Node.nodePrincipal`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal`"
+  [this val]
+  (aset this "nodePrincipal" val))
+
+(defn prefix
+  "Property.
+
+  The Node.prefix read-only property returns the namespace prefix
+  the specified node, or null if no prefix is specified.
+
+  `string = node.prefix`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix`"
+  [this]
+  (-> this (.-prefix)))
+
+(defn set-prefix!
+  "Property.
+
+  The Node.prefix read-only property returns the namespace prefix
+  the specified node, or null if no prefix is specified.
+
+  `string = node.prefix`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix`"
+  [this val]
+  (aset this "prefix" val))
+
 (defn root-node
   "Property.
 
@@ -763,7 +779,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/rootNode`"
   [this]
-  (-> this (.rootNode)))
+  (-> this (.-rootNode)))
 
 (defn set-root-node!
   "Property.
@@ -779,29 +795,21 @@
   [this val]
   (aset this "rootNode" val))
 
-(defn text-content
+(defn outer-text
   "Property.
 
-  The textContent property of the `web.Node` interface represents
-  text content of the node and its descendants.
+  See `HTMLElement.outerText`.
 
-  `var text = Node.textContent;
-  Node.textContent = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
   [this]
-  (-> this (.textContent)))
+  (-> this (.-outerText)))
 
-(defn set-text-content!
+(defn set-outer-text!
   "Property.
 
-  The textContent property of the `web.Node` interface represents
-  text content of the node and its descendants.
+  See `HTMLElement.outerText`.
 
-  `var text = Node.textContent;
-  Node.textContent = string;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText`"
   [this val]
-  (aset this "textContent" val))
+  (aset this "outerText" val))
 

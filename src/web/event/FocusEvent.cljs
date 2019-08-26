@@ -22,7 +22,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget`"
   [this]
-  (-> this (.relatedTarget)))
+  (-> this (.-relatedTarget)))
 
 (defn set-related-target!
   "Property.

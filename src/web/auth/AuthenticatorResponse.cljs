@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorResponse/clientDataJSON`"
   [this]
-  (-> this (.clientDataJSON)))
+  (-> this (.-clientDataJSON)))
 
 (defn set-client-data-json!
   "Property.

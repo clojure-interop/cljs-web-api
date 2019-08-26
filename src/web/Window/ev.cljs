@@ -12,6 +12,57 @@
 
   "error")
 
+(def languagechange
+  "Event.
+
+  Fired at the global scope object when the user's preferred language
+  Also available via the onlanguagechange property."
+
+  "languagechange")
+
+(def orientationchange
+  "Event.
+
+  Fired when the orientation of the device has changed.
+  Also available via the onorientationchange property."
+
+  "orientationchange")
+
+(def devicemotion
+  "Event.
+
+  Fired at a regular interval, indicating the amount of physical
+  of acceleration the device is receiving and the rate of rotation,
+  available."
+
+  "devicemotion")
+
+(def deviceorientation
+  "Event.
+
+  Fired when fresh data is available from the magnetometer orientation
+  about the current orientation of the device as compared to the
+  coordinate frame."
+
+  "deviceorientation")
+
+(def resize
+  "Event.
+
+  Fired when the window has been resized.
+  Also available via the onresize property."
+
+  "resize")
+
+(def storage
+  "Event.
+
+  Fired when a storage area (localStorage or sessionStorage) has
+  modified in the context of another document.
+  Also available via the onstorage property."
+
+  "storage")
+
 (def animationcancel
   "Event.
 
@@ -20,12 +71,63 @@
 
   "animationcancel")
 
+(def animationend
+  "Event.
+
+  Fired when an animation has completed normally.
+  Also available via the onanimationend property."
+
+  "animationend")
+
+(def animationiteration
+  "Event.
+
+  Fired when an animation iteration has completed.
+  Also available via the onanimationiteration property."
+
+  "animationiteration")
+
+(def animationstart
+  "Event.
+
+  Fired when an animation starts.
+  Also available via the onanimationstart property."
+
+  "animationstart")
+
 (def clipboardchange
   "Event.
 
   Fired when the system clipboard content changes."
 
   "clipboardchange")
+
+(def copy
+  "Event.
+
+  Fired when the user initiates a copy action through the browser's
+  interface.
+  Also available via the oncopy property."
+
+  "copy")
+
+(def cut
+  "Event.
+
+  Fired when the user initiates a cut action through the browser's
+  interface.
+  Also available via the oncut property."
+
+  "cut")
+
+(def paste
+  "Event.
+
+  Fired when the user initiates a paste action through the browser's
+  interface.
+  Also available via the onpaste property."
+
+  "paste")
 
 (def offline
   "Event.
@@ -36,6 +138,15 @@
 
   "offline")
 
+(def online
+  "Event.
+
+  Fired when the browser has gained access to the network and the
+  of navigator.onLine has switched to true.
+  Also available via the ononline property."
+
+  "online")
+
 (def blur
   "Event.
 
@@ -43,6 +154,14 @@
   Also available via the onblur property."
 
   "blur")
+
+(def focus
+  "Event.
+
+  Fired when an element has gained focus.
+  Also available via the onfocus property"
+
+  "focus")
 
 (def gamepadconnected
   "Event.
@@ -53,6 +172,14 @@
 
   "gamepadconnected")
 
+(def gamepaddisconnected
+  "Event.
+
+  Fired when the browser detects that a gamepad has been disconnected.
+  Also available via the ongamepaddisconnected property"
+
+  "gamepaddisconnected")
+
 (def hashchange
   "Event.
 
@@ -61,6 +188,37 @@
   Also available via the onhashchange property."
 
   "hashchange")
+
+(def pagehide
+  "Event.
+
+  Sent when the browser hides the current document while in the
+  of switching to displaying in its palce a different document
+  the session's history. This happens, for example, when the user
+  the Back button or when they click the Forward button to move
+  in session history.
+  Also available through the onpagehide event handler property."
+
+  "pagehide")
+
+(def pageshow
+  "Event.
+
+  Sent when the browser makes the document visible due to navigation
+  including not only when the page is first loaded, but also situations
+  as the user navigating back to the page after having navigated
+  another within the same tab.
+  Also available using the onpageshow event handler property."
+
+  "pageshow")
+
+(def popstate
+  "Event.
+
+  Fired when the active history entry changes.
+  Also available using the onpopstate event handler property."
+
+  "popstate")
 
 (def beforeunload
   "Event.
@@ -71,6 +229,31 @@
 
   "beforeunload")
 
+(def dom-content-loaded
+  "Event.
+
+  Fired when the document has been completely loaded and parsed,
+  waiting for stylesheets, images, and subframes to finish loading."
+
+  "DOMContentLoaded")
+
+(def load
+  "Event.
+
+  Fired when the whole page has loaded, including all dependent
+  such as stylesheets images.
+  Also available via the onload property."
+
+  "load")
+
+(def unload
+  "Event.
+
+  Fired when the document or a child resource is being unloaded.
+  Also available via the onunload property."
+
+  "unload")
+
 (def appinstalled
   "Event.
 
@@ -78,6 +261,14 @@
   Also available via the onappinstalled property."
 
   "appinstalled")
+
+(def beforeinstallprompt
+  "Event.
+
+  Fired when a user is about to be prompted to install a web application.
+  Also available via the onbeforeinstallprompt property."
+
+  "beforeinstallprompt")
 
 (def message
   "Event.
@@ -88,6 +279,14 @@
 
   "message")
 
+(def messageerror
+  "Event.
+
+  Fired when a Window object receives a message that can't be deserialized.
+  Also available via the onmessageerror property."
+
+  "messageerror")
+
 (def afterprint
   "Event.
 
@@ -96,6 +295,15 @@
   Also available via the onafterprint property."
 
   "afterprint")
+
+(def beforeprint
+  "Event.
+
+  Fired when the associated document is about to be printed or
+  for printing.
+  Also available via the onbeforeprint property."
+
+  "beforeprint")
 
 (def rejectionhandled
   "Event.
@@ -106,6 +314,15 @@
 
   "rejectionhandled")
 
+(def unhandledrejection
+  "Event.
+
+  Sent when a JavaScript Promise is rejected but there is no handler
+  place to catch the rejection.
+  Also available using the onunhandledrejection event handler"
+
+  "unhandledrejection")
+
 (def transitioncancel
   "Event.
 
@@ -113,6 +330,30 @@
   Also available via the ontransitioncancel property."
 
   "transitioncancel")
+
+(def transitionend
+  "Event.
+
+  Fired when a CSS transition has completed.
+  Also available via the ontransitionend property."
+
+  "transitionend")
+
+(def transitionrun
+  "Event.
+
+  Fired when a CSS transition is first created.
+  Also available via the ontransitionrun property."
+
+  "transitionrun")
+
+(def transitionstart
+  "Event.
+
+  Fired when a CSS transition has actually started.
+  Also available via the ontransitionstart property."
+
+  "transitionstart")
 
 (def vrdisplayactivate
   "Event.
@@ -124,206 +365,72 @@
 
   "vrdisplayactivate")
 
-(def beforeprint
+(def vrdisplayblur
   "Event.
 
-  The beforeprint event is fired when the associated document is
-  to be printed or previewed for printing.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event`"
-
-  "beforeprint")
-
-(def copy
-  "Event.
-
-  The copy event fires when the user initiates a copy action through
-  browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/copy_event`"
-
-  "copy")
-
-(def cut
-  "Event.
-
-  The cut event is fired when the user has initiated a \\\"cut\\\"
-  through the browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/cut_event`"
-
-  "cut")
-
-(def dom-content-loaded
-  "Event.
-
-  The DOMContentLoaded event fires when the initial HTML document
-  been completely loaded and parsed, without waiting for stylesheets,
-  and subframes to finish loading.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event`"
-
-  "DOMContentLoaded")
-
-(def focus
-  "Event.
-
-  The focus event fires when an element has received focus.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/focus_event`"
-
-  "focus")
-
-(def languagechange
-  "Event.
-
-  The languagechange event is fired at the global scope object
-  the user's preferred language changes.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/languagechange_event`"
-
-  "languagechange")
-
-(def load
-  "Event.
-
-  The load event is fired when the whole page has loaded, including
-  dependent resources such as stylesheets images. This is in contrast
-  DOMContentLoaded, which is fired as soon as the page DOM has
-  loaded, without waiting for resources finish loading
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event`"
-
-  "load")
-
-(def messageerror
-  "Event.
-
-  The messageerror event is fired on a `web.Window` object when
-  receives a message that can't be deserialized.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/messageerror_event`"
-
-  "messageerror")
-
-(def online
-  "Event.
-
-  The online event of the `web.Window` interface is fired when
-  browser has gained access to the network and the value of `Navigator.onLine`
-  to true.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event`"
-
-  "online")
-
-(def orientationchange
-  "Event.
-
-  The orientationchange event is fired when the orientation of
-  device has changed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientationchange_event`"
-
-  "orientationchange")
-
-(def pagehide
-  "Event.
-
-  The pagehide event is sent to a `web.Window` when the browser
-  the current page in the process of presenting a different page
-  the session's history.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pagehide_event`"
-
-  "pagehide")
-
-(def pageshow
-  "Event.
-
-  The pageshow event is sent to a `web.Window` when the browser
-  the window's document visible due to navigation tasks.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event`"
-
-  "pageshow")
-
-(def paste
-  "Event.
-
-  The paste event is fired when the user has initiated a \\\"paste\\\"
-  through the browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/paste_event`"
-
-  "paste")
-
-(def popstate
-  "Event.
-
-  The popstate event of the `web.Window` interface is fired when
-  active history entry changes.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/popstate_event`"
-
-  "popstate")
-
-(def storage
-  "Event.
-
-  The storage event of the `web.Window` interface fires when a
-  area (localStorage or sessionStorage) has been modified in the
-  of another document.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event`"
-
-  "storage")
-
-(def unhandledrejection
-  "Event.
-
-  The unhandledrejection event is sent to the global scope of a
-  when a JavaScript `js.Promise` that has no rejection handler
-  rejected; typically, this is the `window`, but may also be a
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event`"
-
-  "unhandledrejection")
-
-(def unload
-  "Event.
-
-  The unload event is fired when the document or a child resource
-  being unloaded.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event`"
-
-  "unload")
+  Fired when presentation to a VR display has been paused for some
+  by the browser, OS, or VR hardware.
+  Also available via the onvrdisplayblur property."
+
+  "vrdisplayblur")
 
 (def vrdisplayconnect
   "Event.
 
-  You can use the vrdisplayconnect event in an addEventListener
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/vrdisplayconnect_event`"
+  Fired when a compatible VR display is connected to the computer.
+  Also available via the onvrdisplayconnect property."
 
   "vrdisplayconnect")
+
+(def vrdisplaydeactivate
+  "Event.
+
+  Fired when a VR display can no longer be presented to, for example
+  an HMD has gone into standby or sleep mode due to a period of
+  Also available via the onvrdisplaydeactivate property."
+
+  "vrdisplaydeactivate")
 
 (def vrdisplaydisconnect
   "Event.
 
-  You can use the vrdisplaydisconnect event in an addEventListener
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/vrdisplaydisconnect_event`"
+  Fired when a compatible VR display is disconnected from the computer.
+  Also available via the onvrdisplaydisconnect property."
 
   "vrdisplaydisconnect")
+
+(def vrdisplayfocus
+  "Event.
+
+  Fired when presentation to a VR display has resumed after being
+  Also available via the onvrdisplayfocus property."
+
+  "vrdisplayfocus")
 
 (def vrdisplaypresentchange
   "Event.
 
-  You can use the vrdisplaypresentchange event in an addEventListener
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/vrdisplaypresentchange_event`"
+  fired when the presenting state of a VR display changes — i.e.
+  from presenting to not presenting, or vice versa.
+  Also available via the onvrdisplaypresentchange property."
 
   "vrdisplaypresentchange")
+
+(def vrdisplaypointerrestricted
+  "Event.
+
+  Fired when the VR display's pointer input is restricted to consumption
+  a pointerlocked element.
+  Also available via the onvrdisplaypointerrestricted property."
+
+  "vrdisplaypointerrestricted")
+
+(def vrdisplaypointerunrestricted
+  "Event.
+
+  Fired when the VR display's pointer input is no longer restricted
+  consumption via a pointerlocked element.
+  Also available via the onvrdisplaypointerunrestricted property."
+
+  "vrdisplaypointerunrestricted")
 

@@ -10,7 +10,7 @@
   Is a Boolean indicating that spacing between list items should
   reduced."
   [this]
-  (-> this (.compact)))
+  (-> this (.-compact)))
 
 (defn set-compact!
   "Property.

@@ -30,6 +30,20 @@
   [this & args]
   (apply (-> this .-createEvent) (concat [this] args)))
 
+(defn composed-path
+  "Method.
+
+  The composedPath() method of the `web.event.Event` interface
+  the event’s path which is an array of the objects on which listeners
+  be invoked. This does not include nodes in shadow trees if the
+  root was created with its `ShadowRoot.mode` closed.
+
+  `var composed = Event.composedPath();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath`"
+  [this ]
+  (-> this (.composedPath)))
+
 (defn init-event
   "Method.
 
@@ -49,42 +63,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/initEvent`"
   [this & args]
   (apply (-> this .-initEvent) (concat [this] args)))
-
-(defn get-prevent-default
-  "Method.
-
-  Non-standard. Returns the value of Event.defaultPrevented. Use
-  instead."
-  [this & args]
-  (apply (-> this .-getPreventDefault) (concat [this] args)))
-
-(defn composed-path
-  "Method.
-
-  The composedPath() method of the `web.event.Event` interface
-  the event’s path which is an array of the objects on which listeners
-  be invoked. This does not include nodes in shadow trees if the
-  root was created with its `ShadowRoot.mode` closed.
-
-  `var composed = Event.composedPath();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath`"
-  [this ]
-  (-> this (.composedPath)))
-
-(defn ms-convert-url
-  "Method.
-
-  The msConvertURL method instructs the HTML paste operation on
-  to modify the src attribute that corresponds to each file in
-  clipboardData.files collection, allowing otherwise inaccessible
-  to be converted to blob or data URIs.
-
-  `var retVal = DragEvent.msConvertURL(file, targetType, targetURL);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/msConvertURL`"
-  [this file target-type target-url]
-  (-> this (.msConvertURL file target-type target-url)))
 
 (defn prevent-default
   "Method.
@@ -124,6 +102,42 @@
   [this ]
   (-> this (.stopPropagation)))
 
+(defn get-prevent-default
+  "Method.
+
+  Non-standard. Returns the value of Event.defaultPrevented. Use
+  instead."
+  [this & args]
+  (apply (-> this .-getPreventDefault) (concat [this] args)))
+
+(defn prevent-bubble
+  "Method.
+
+  Prevents the event from bubbling. Obsolete, use event.stopPropagation"
+  [this & args]
+  (apply (-> this .-preventBubble) (concat [this] args)))
+
+(defn prevent-capture
+  "Method.
+
+  Obsolete, use event.stopPropagation instead."
+  [this & args]
+  (apply (-> this .-preventCapture) (concat [this] args)))
+
+(defn ms-convert-url
+  "Method.
+
+  The msConvertURL method instructs the HTML paste operation on
+  to modify the src attribute that corresponds to each file in
+  clipboardData.files collection, allowing otherwise inaccessible
+  to be converted to blob or data URIs.
+
+  `var retVal = DragEvent.msConvertURL(file, targetType, targetURL);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/msConvertURL`"
+  [this file target-type target-url]
+  (-> this (.msConvertURL file target-type target-url)))
+
 (defn bubbles
   "Property.
 
@@ -134,38 +148,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles`"
   [this]
-  (-> this (.bubbles)))
-
-(defn scoped
-  "Property.
-
-  A Boolean indicating whether the given event will bubble across
-  the shadow root into the standard DOM. This property has been
-  to composed."
-  [this]
-  (-> this (.scoped)))
-
-(defn set-scoped!
-  "Property.
-
-  A Boolean indicating whether the given event will bubble across
-  the shadow root into the standard DOM. This property has been
-  to composed."
-  [this val]
-  (aset this "scoped" val))
-
-(defn cancelable
-  "Property.
-
-  The cancelable read-only property of the `web.event.Event` interface
-  whether the event can be canceled, and therefore prevented as
-  the event never happened.
-
-  `bool = event.cancelable;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable`"
-  [this]
-  (-> this (.cancelable)))
+  (-> this (.-bubbles)))
 
 (defn cancel-bubble
   "Property.
@@ -181,7 +164,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelBubble`"
   [this]
-  (-> this (.cancelBubble)))
+  (-> this (.-cancelBubble)))
 
 (defn set-cancel-bubble!
   "Property.
@@ -199,6 +182,19 @@
   [this val]
   (aset this "cancelBubble" val))
 
+(defn cancelable
+  "Property.
+
+  The cancelable read-only property of the `web.event.Event` interface
+  whether the event can be canceled, and therefore prevented as
+  the event never happened.
+
+  `bool = event.cancelable;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable`"
+  [this]
+  (-> this (.-cancelable)))
+
 (defn composed
   "Property.
 
@@ -210,7 +206,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/composed`"
   [this]
-  (-> this (.composed)))
+  (-> this (.-composed)))
 
 (defn current-target
   "Property.
@@ -225,7 +221,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget`"
   [this]
-  (-> this (.currentTarget)))
+  (-> this (.-currentTarget)))
+
+(defn deep-path
+  "Property.
+
+  An Array of DOM Nodes through which the event has bubbled."
+  [this]
+  (-> this (.-deepPath)))
+
+(defn set-deep-path!
+  "Property.
+
+  An Array of DOM Nodes through which the event has bubbled."
+  [this val]
+  (aset this "deepPath" val))
 
 (defn default-prevented
   "Property.
@@ -238,7 +248,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented`"
   [this]
-  (-> this (.defaultPrevented)))
+  (-> this (.-defaultPrevented)))
 
 (defn event-phase
   "Property.
@@ -250,7 +260,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/eventPhase`"
   [this]
-  (-> this (.eventPhase)))
+  (-> this (.-eventPhase)))
 
 (defn explicit-original-target
   "Property.
@@ -259,7 +269,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/explicitOriginalTarget`"
   [this]
-  (-> this (.explicitOriginalTarget)))
+  (-> this (.-explicitOriginalTarget)))
 
 (defn set-explicit-original-target!
   "Property.
@@ -270,20 +280,6 @@
   [this val]
   (aset this "explicitOriginalTarget" val))
 
-(defn is-trusted
-  "Property.
-
-  The isTrusted read-only property of the `web.event.Event` interface
-  a `js.Boolean` that is true when the event was generated by a
-  action, and false when the event was created or modified by a
-  or dispatched via `EventTarget.dispatchEvent()`.
-
-  `var eventIsTrusted = event.isTrusted;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted`"
-  [this]
-  (-> this (.isTrusted)))
-
 (defn original-target
   "Property.
 
@@ -291,7 +287,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/originalTarget`"
   [this]
-  (-> this (.originalTarget)))
+  (-> this (.-originalTarget)))
 
 (defn set-original-target!
   "Property.
@@ -314,7 +310,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/returnValue`"
   [this]
-  (-> this (.returnValue)))
+  (-> this (.-returnValue)))
 
 (defn set-return-value!
   "Property.
@@ -339,7 +335,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement`"
   [this]
-  (-> this (.srcElement)))
+  (-> this (.-srcElement)))
 
 (defn set-src-element!
   "Property.
@@ -364,7 +360,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/target`"
   [this]
-  (-> this (.target)))
+  (-> this (.-target)))
 
 (defn set-target!
   "Property.
@@ -390,7 +386,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/timeStamp`"
   [this]
-  (-> this (.timeStamp)))
+  (-> this (.-timeStamp)))
 
 (defn set-time-stamp!
   "Property.
@@ -416,5 +412,37 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
+
+(defn is-trusted
+  "Property.
+
+  The isTrusted read-only property of the `web.event.Event` interface
+  a `js.Boolean` that is true when the event was generated by a
+  action, and false when the event was created or modified by a
+  or dispatched via `EventTarget.dispatchEvent()`.
+
+  `var eventIsTrusted = event.isTrusted;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted`"
+  [this]
+  (-> this (.-isTrusted)))
+
+(defn scoped
+  "Property.
+
+  A Boolean indicating whether the given event will bubble across
+  the shadow root into the standard DOM. This property has been
+  to composed."
+  [this]
+  (-> this (.-scoped)))
+
+(defn set-scoped!
+  "Property.
+
+  A Boolean indicating whether the given event will bubble across
+  the shadow root into the standard DOM. This property has been
+  to composed."
+  [this val]
+  (aset this "scoped" val))
 

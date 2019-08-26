@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/lang`"
   [this]
-  (-> this (.lang)))
+  (-> this (.-lang)))
 
 (defn set-lang!
   "Property.
@@ -42,190 +42,6 @@
   [this val]
   (aset this "lang" val))
 
-(defn onboundary
-  "Property.
-
-  The onboundary property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the spoken utterance
-  a word or sentence boundary (when the boundary event fires.)
-
-  `speechSynthesisUtteranceInstance.onboundary = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onboundary`"
-  [this]
-  (-> this (.onboundary)))
-
-(defn set-onboundary!
-  "Property.
-
-  The onboundary property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the spoken utterance
-  a word or sentence boundary (when the boundary event fires.)
-
-  `speechSynthesisUtteranceInstance.onboundary = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onboundary`"
-  [this val]
-  (aset this "onboundary" val))
-
-(defn onend
-  "Property.
-
-  The onend property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  finished being spoken (when the end event fires.)
-
-  `speechSynthesisUtteranceInstance.onend = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onend`"
-  [this]
-  (-> this (.onend)))
-
-(defn set-onend!
-  "Property.
-
-  The onend property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  finished being spoken (when the end event fires.)
-
-  `speechSynthesisUtteranceInstance.onend = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onend`"
-  [this val]
-  (aset this "onend" val))
-
-(defn onerror
-  "Property.
-
-  The onerror property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when an error occurs
-  prevents the utterance from being succesfully spoken (when the
-  event fires.)
-
-  `speechSynthesisUtteranceInstance.onerror = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onerror`"
-  [this]
-  (-> this (.onerror)))
-
-(defn set-onerror!
-  "Property.
-
-  The onerror property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when an error occurs
-  prevents the utterance from being succesfully spoken (when the
-  event fires.)
-
-  `speechSynthesisUtteranceInstance.onerror = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onerror`"
-  [this val]
-  (aset this "onerror" val))
-
-(defn onmark
-  "Property.
-
-  The onmark property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the spoken utterance
-  a named SSML mark tag (when the mark event fires.)
-
-  `speechSynthesisUtteranceInstance.onmark = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onmark`"
-  [this]
-  (-> this (.onmark)))
-
-(defn set-onmark!
-  "Property.
-
-  The onmark property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the spoken utterance
-  a named SSML mark tag (when the mark event fires.)
-
-  `speechSynthesisUtteranceInstance.onmark = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onmark`"
-  [this val]
-  (aset this "onmark" val))
-
-(defn onpause
-  "Property.
-
-  The onpause property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  paused part way through (when the pause event fires.)
-
-  `speechSynthesisUtteranceInstance.onpause = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onpause`"
-  [this]
-  (-> this (.onpause)))
-
-(defn set-onpause!
-  "Property.
-
-  The onpause property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  paused part way through (when the pause event fires.)
-
-  `speechSynthesisUtteranceInstance.onpause = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onpause`"
-  [this val]
-  (aset this "onpause" val))
-
-(defn onresume
-  "Property.
-
-  The onresume property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when a paused utterance
-  resumed (when the resume event fires.)
-
-  `speechSynthesisUtteranceInstance.onresume = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onresume`"
-  [this]
-  (-> this (.onresume)))
-
-(defn set-onresume!
-  "Property.
-
-  The onresume property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when a paused utterance
-  resumed (when the resume event fires.)
-
-  `speechSynthesisUtteranceInstance.onresume = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onresume`"
-  [this val]
-  (aset this "onresume" val))
-
-(defn onstart
-  "Property.
-
-  The onstart property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  begun to be spoken (when the start event fires.)
-
-  `speechSynthesisUtteranceInstance.onstart = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onstart`"
-  [this]
-  (-> this (.onstart)))
-
-(defn set-onstart!
-  "Property.
-
-  The onstart property of the `web.speech.SpeechSynthesisUtterance`
-  represents an event handler that will run when the utterance
-  begun to be spoken (when the start event fires.)
-
-  `speechSynthesisUtteranceInstance.onstart = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onstart`"
-  [this val]
-  (aset this "onstart" val))
-
 (defn pitch
   "Property.
 
@@ -237,7 +53,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/pitch`"
   [this]
-  (-> this (.pitch)))
+  (-> this (.-pitch)))
 
 (defn set-pitch!
   "Property.
@@ -263,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/rate`"
   [this]
-  (-> this (.rate)))
+  (-> this (.-rate)))
 
 (defn set-rate!
   "Property.
@@ -290,7 +106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/text`"
   [this]
-  (-> this (.text)))
+  (-> this (.-text)))
 
 (defn set-text!
   "Property.
@@ -317,7 +133,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/voice`"
   [this]
-  (-> this (.voice)))
+  (-> this (.-voice)))
 
 (defn set-voice!
   "Property.
@@ -343,7 +159,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/volume`"
   [this]
-  (-> this (.volume)))
+  (-> this (.-volume)))
 
 (defn set-volume!
   "Property.
@@ -357,4 +173,188 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/volume`"
   [this val]
   (aset this "volume" val))
+
+(defn onboundary
+  "Property.
+
+  The onboundary property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the spoken utterance
+  a word or sentence boundary (when the boundary event fires.)
+
+  `speechSynthesisUtteranceInstance.onboundary = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onboundary`"
+  [this]
+  (-> this (.-onboundary)))
+
+(defn set-onboundary!
+  "Property.
+
+  The onboundary property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the spoken utterance
+  a word or sentence boundary (when the boundary event fires.)
+
+  `speechSynthesisUtteranceInstance.onboundary = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onboundary`"
+  [this val]
+  (aset this "onboundary" val))
+
+(defn onend
+  "Property.
+
+  The onend property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  finished being spoken (when the end event fires.)
+
+  `speechSynthesisUtteranceInstance.onend = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onend`"
+  [this]
+  (-> this (.-onend)))
+
+(defn set-onend!
+  "Property.
+
+  The onend property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  finished being spoken (when the end event fires.)
+
+  `speechSynthesisUtteranceInstance.onend = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onend`"
+  [this val]
+  (aset this "onend" val))
+
+(defn onerror
+  "Property.
+
+  The onerror property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when an error occurs
+  prevents the utterance from being succesfully spoken (when the
+  event fires.)
+
+  `speechSynthesisUtteranceInstance.onerror = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onerror`"
+  [this]
+  (-> this (.-onerror)))
+
+(defn set-onerror!
+  "Property.
+
+  The onerror property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when an error occurs
+  prevents the utterance from being succesfully spoken (when the
+  event fires.)
+
+  `speechSynthesisUtteranceInstance.onerror = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onerror`"
+  [this val]
+  (aset this "onerror" val))
+
+(defn onmark
+  "Property.
+
+  The onmark property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the spoken utterance
+  a named SSML mark tag (when the mark event fires.)
+
+  `speechSynthesisUtteranceInstance.onmark = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onmark`"
+  [this]
+  (-> this (.-onmark)))
+
+(defn set-onmark!
+  "Property.
+
+  The onmark property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the spoken utterance
+  a named SSML mark tag (when the mark event fires.)
+
+  `speechSynthesisUtteranceInstance.onmark = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onmark`"
+  [this val]
+  (aset this "onmark" val))
+
+(defn onpause
+  "Property.
+
+  The onpause property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  paused part way through (when the pause event fires.)
+
+  `speechSynthesisUtteranceInstance.onpause = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onpause`"
+  [this]
+  (-> this (.-onpause)))
+
+(defn set-onpause!
+  "Property.
+
+  The onpause property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  paused part way through (when the pause event fires.)
+
+  `speechSynthesisUtteranceInstance.onpause = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onpause`"
+  [this val]
+  (aset this "onpause" val))
+
+(defn onresume
+  "Property.
+
+  The onresume property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when a paused utterance
+  resumed (when the resume event fires.)
+
+  `speechSynthesisUtteranceInstance.onresume = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onresume`"
+  [this]
+  (-> this (.-onresume)))
+
+(defn set-onresume!
+  "Property.
+
+  The onresume property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when a paused utterance
+  resumed (when the resume event fires.)
+
+  `speechSynthesisUtteranceInstance.onresume = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onresume`"
+  [this val]
+  (aset this "onresume" val))
+
+(defn onstart
+  "Property.
+
+  The onstart property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  begun to be spoken (when the start event fires.)
+
+  `speechSynthesisUtteranceInstance.onstart = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onstart`"
+  [this]
+  (-> this (.-onstart)))
+
+(defn set-onstart!
+  "Property.
+
+  The onstart property of the `web.speech.SpeechSynthesisUtterance`
+  represents an event handler that will run when the utterance
+  begun to be spoken (when the start event fires.)
+
+  `speechSynthesisUtteranceInstance.onstart = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/onstart`"
+  [this val]
+  (aset this "onstart" val))
 

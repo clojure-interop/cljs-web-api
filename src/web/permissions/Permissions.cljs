@@ -16,6 +16,14 @@
   [this permission-descriptor]
   (-> this (.query permission-descriptor)))
 
+(defn request
+  "Method.
+
+  Requests permission to use a given API. This is not currently
+  in any browser."
+  [this & args]
+  (apply (-> this .-request) (concat [this] args)))
+
 (defn revoke
   "Method.
 

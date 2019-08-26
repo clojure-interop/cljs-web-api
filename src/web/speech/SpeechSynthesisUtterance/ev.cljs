@@ -13,55 +13,49 @@
 (def end
   "Event.
 
-  You can use the end event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/end_event`"
+  Fired when the utterance has finished being spoken.
+  Also available via the onend property."
 
   "end")
 
 (def error
   "Event.
 
-  You can use the error event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/error_event`"
+  Fired when an error occurs that prevents the utterance from being
+  spoken.
+  Also available via the onerror property"
 
   "error")
 
 (def mark
   "Event.
 
-  You can use the mark event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/mark_event`"
+  Fired when the spoken utterance reaches a named SSML \"mark\" tag.
+  Also available via the onmark property."
 
   "mark")
 
 (def pause
   "Event.
 
-  You can use the pause event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/pause_event`"
+  Fired when the utterance is paused part way through.
+  Also available via the onpause property."
 
   "pause")
 
 (def resume
   "Event.
 
-  The resume event of the Web Speech API `web.speech.SpeechSynthesisUtterance`
-  is fired when a paused utterance is resumed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/resume_event`"
+  Fired when a paused utterance is resumed.
+  Also available via the onresume property."
 
   "resume")
 
 (def start
   "Event.
 
-  You can use the start event in an addEventListener method:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/start_event`"
+  Fired when the utterance has begun to be spoken.
+  Also available via the onstart property."
 
   "start")
 

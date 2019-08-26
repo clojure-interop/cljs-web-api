@@ -12,7 +12,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Presentation/defaultRequest`"
   [this]
-  (-> this (.defaultRequest)))
+  (-> this (.-defaultRequest)))
 
 (defn set-default-request!
   "Property.
@@ -43,5 +43,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Presentation/receiver`"
   [this]
-  (-> this (.receiver)))
+  (-> this (.-receiver)))
 

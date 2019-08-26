@@ -98,7 +98,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root`"
   [this]
-  (-> this (.root)))
+  (-> this (.-root)))
 
 (defn set-root!
   "Property.
@@ -132,7 +132,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin`"
   [this]
-  (-> this (.rootMargin)))
+  (-> this (.-rootMargin)))
 
 (defn set-root-margin!
   "Property.
@@ -166,7 +166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds`"
   [this]
-  (-> this (.thresholds)))
+  (-> this (.-thresholds)))
 
 (defn set-thresholds!
   "Property.

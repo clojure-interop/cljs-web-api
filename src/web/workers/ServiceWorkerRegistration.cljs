@@ -33,6 +33,21 @@
   [this & args]
   (apply (-> this .-showNotification) (concat [this] args)))
 
+(defn update
+  "Method.
+
+  The update method of the `web.workers.ServiceWorkerRegistration`
+  attempts to update the service worker. It fetches the worker's
+  URL, and if the new worker is not byte-by-byte identical to the
+  worker, it installs the new worker. The fetch of the worker bypasses
+  browser caches if the previous fetch occurred over 24 hours ago.
+
+  `ServiceWorkerRegistration.update();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/update`"
+  [this ]
+  (-> this (.update)))
+
 (defn unregister
   "Method.
 
@@ -51,21 +66,6 @@
   [this & args]
   (apply (-> this .-unregister) (concat [this] args)))
 
-(defn update
-  "Method.
-
-  The update method of the `web.workers.ServiceWorkerRegistration`
-  attempts to update the service worker. It fetches the worker's
-  URL, and if the new worker is not byte-by-byte identical to the
-  worker, it installs the new worker. The fetch of the worker bypasses
-  browser caches if the previous fetch occurred over 24 hours ago.
-
-  `ServiceWorkerRegistration.update();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/update`"
-  [this ]
-  (-> this (.update)))
-
 (defn scope
   "Property.
 
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/scope`"
   [this]
-  (-> this (.scope)))
+  (-> this (.-scope)))
 
 (defn set-scope!
   "Property.
@@ -94,86 +94,6 @@
   [this val]
   (aset this "scope" val))
 
-(defn periodic-sync
-  "Property.
-
-  The periodicSync read-only property of the `web.workers.ServiceWorkerRegistration`
-  returns a reference to the `PeriodicSyncManager` interface, which
-  periodic background synchronization processes.
-
-  `myPeriodicSync = ServiceWorker.periodicSync`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/periodicSync`"
-  [this]
-  (-> this (.periodicSync)))
-
-(defn set-periodic-sync!
-  "Property.
-
-  The periodicSync read-only property of the `web.workers.ServiceWorkerRegistration`
-  returns a reference to the `PeriodicSyncManager` interface, which
-  periodic background synchronization processes.
-
-  `myPeriodicSync = ServiceWorker.periodicSync`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/periodicSync`"
-  [this val]
-  (aset this "periodicSync" val))
-
-(defn onupdatefound
-  "Property.
-
-  The onupdatefound property of the `web.workers.ServiceWorkerRegistration`
-  is an EventListener property called whenever an event of type
-  is fired; it is fired any time the ServiceWorkerRegistration.installing
-  acquires a new service worker.
-
-  `ServiceWorkerRegistration.onupdatefound = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound`"
-  [this]
-  (-> this (.onupdatefound)))
-
-(defn set-onupdatefound!
-  "Property.
-
-  The onupdatefound property of the `web.workers.ServiceWorkerRegistration`
-  is an EventListener property called whenever an event of type
-  is fired; it is fired any time the ServiceWorkerRegistration.installing
-  acquires a new service worker.
-
-  `ServiceWorkerRegistration.onupdatefound = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound`"
-  [this val]
-  (aset this "onupdatefound" val))
-
-(defn active
-  "Property.
-
-  The active property of the `web.workers.ServiceWorkerRegistration`
-  returns a service worker whose `ServiceWorker.state` is activating
-  activated. This property is initially set to null.
-
-  `sw = ServiceWorker.active`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/active`"
-  [this]
-  (-> this (.active)))
-
-(defn set-active!
-  "Property.
-
-  The active property of the `web.workers.ServiceWorkerRegistration`
-  returns a service worker whose `ServiceWorker.state` is activating
-  activated. This property is initially set to null.
-
-  `sw = ServiceWorker.active`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/active`"
-  [this val]
-  (aset this "active" val))
-
 (defn installing
   "Property.
 
@@ -185,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/installing`"
   [this]
-  (-> this (.installing)))
+  (-> this (.-installing)))
 
 (defn set-installing!
   "Property.
@@ -200,6 +120,58 @@
   [this val]
   (aset this "installing" val))
 
+(defn waiting
+  "Property.
+
+  The waiting property of the `web.workers.ServiceWorkerRegistration`
+  returns a service worker whose `ServiceWorker.state` is installed.
+  property is initially set to null.
+
+  `var serviceWorker = ServiceWorker.waiting`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/waiting`"
+  [this]
+  (-> this (.-waiting)))
+
+(defn set-waiting!
+  "Property.
+
+  The waiting property of the `web.workers.ServiceWorkerRegistration`
+  returns a service worker whose `ServiceWorker.state` is installed.
+  property is initially set to null.
+
+  `var serviceWorker = ServiceWorker.waiting`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/waiting`"
+  [this val]
+  (aset this "waiting" val))
+
+(defn active
+  "Property.
+
+  The active property of the `web.workers.ServiceWorkerRegistration`
+  returns a service worker whose `ServiceWorker.state` is activating
+  activated. This property is initially set to null.
+
+  `sw = ServiceWorker.active`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/active`"
+  [this]
+  (-> this (.-active)))
+
+(defn set-active!
+  "Property.
+
+  The active property of the `web.workers.ServiceWorkerRegistration`
+  returns a service worker whose `ServiceWorker.state` is activating
+  activated. This property is initially set to null.
+
+  `sw = ServiceWorker.active`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/active`"
+  [this val]
+  (aset this "active" val))
+
 (defn navigation-preload
   "Property.
 
@@ -211,7 +183,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/navigationPreload`"
   [this]
-  (-> this (.navigationPreload)))
+  (-> this (.-navigationPreload)))
 
 (defn set-navigation-preload!
   "Property.
@@ -238,7 +210,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/pushManager`"
   [this]
-  (-> this (.pushManager)))
+  (-> this (.-pushManager)))
 
 (defn set-push-manager!
   "Property.
@@ -265,7 +237,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/sync`"
   [this]
-  (-> this (.sync)))
+  (-> this (.-sync)))
 
 (defn set-sync!
   "Property.
@@ -280,29 +252,57 @@
   [this val]
   (aset this "sync" val))
 
-(defn waiting
+(defn periodic-sync
   "Property.
 
-  The waiting property of the `web.workers.ServiceWorkerRegistration`
-  returns a service worker whose `ServiceWorker.state` is installed.
-  property is initially set to null.
+  The periodicSync read-only property of the `web.workers.ServiceWorkerRegistration`
+  returns a reference to the `PeriodicSyncManager` interface, which
+  periodic background synchronization processes.
 
-  `var serviceWorker = ServiceWorker.waiting`
+  `myPeriodicSync = ServiceWorker.periodicSync`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/waiting`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/periodicSync`"
   [this]
-  (-> this (.waiting)))
+  (-> this (.-periodicSync)))
 
-(defn set-waiting!
+(defn set-periodic-sync!
   "Property.
 
-  The waiting property of the `web.workers.ServiceWorkerRegistration`
-  returns a service worker whose `ServiceWorker.state` is installed.
-  property is initially set to null.
+  The periodicSync read-only property of the `web.workers.ServiceWorkerRegistration`
+  returns a reference to the `PeriodicSyncManager` interface, which
+  periodic background synchronization processes.
 
-  `var serviceWorker = ServiceWorker.waiting`
+  `myPeriodicSync = ServiceWorker.periodicSync`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/waiting`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/periodicSync`"
   [this val]
-  (aset this "waiting" val))
+  (aset this "periodicSync" val))
+
+(defn onupdatefound
+  "Property.
+
+  The onupdatefound property of the `web.workers.ServiceWorkerRegistration`
+  is an EventListener property called whenever an event of type
+  is fired; it is fired any time the ServiceWorkerRegistration.installing
+  acquires a new service worker.
+
+  `ServiceWorkerRegistration.onupdatefound = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound`"
+  [this]
+  (-> this (.-onupdatefound)))
+
+(defn set-onupdatefound!
+  "Property.
+
+  The onupdatefound property of the `web.workers.ServiceWorkerRegistration`
+  is an EventListener property called whenever an event of type
+  is fired; it is fired any time the ServiceWorkerRegistration.installing
+  acquires a new service worker.
+
+  `ServiceWorkerRegistration.onupdatefound = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound`"
+  [this val]
+  (aset this "onupdatefound" val))
 

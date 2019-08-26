@@ -17,18 +17,6 @@
   [this property]
   (-> this (.getPropertyPriority property)))
 
-(defn get-property-css-value
-  "Method.
-
-  The CSSStyleDeclaration.getPropertyCSSValue() method interface
-  a `web.css.CSSValue` containing the CSS value for a property.
-
-  `var value = style.getPropertyCSSValue(property);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyCSSValue`"
-  [this property]
-  (-> this (.getPropertyCSSValue property)))
-
 (defn get-property-value
   "Method.
 
@@ -77,6 +65,18 @@
   [this property-name value priority]
   (-> this (.setProperty property-name value priority)))
 
+(defn get-property-css-value
+  "Method.
+
+  The CSSStyleDeclaration.getPropertyCSSValue() method interface
+  a `web.css.CSSValue` containing the CSS value for a property.
+
+  `var value = style.getPropertyCSSValue(property);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyCSSValue`"
+  [this property]
+  (-> this (.getPropertyCSSValue property)))
+
 (defn length
   "Property.
 
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.
@@ -111,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/parentRule`"
   [this]
-  (-> this (.parentRule)))
+  (-> this (.-parentRule)))
 
 (defn set-parent-rule!
   "Property.

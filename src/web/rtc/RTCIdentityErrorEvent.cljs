@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityErrorEvent/idp`"
   [this]
-  (-> this (.idp)))
+  (-> this (.-idp)))
 
 (defn login-url
   "Property.
@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityErrorEvent/loginUrl`"
   [this]
-  (-> this (.loginUrl)))
+  (-> this (.-loginUrl)))
 
 (defn protocol
   "Property.
@@ -43,5 +43,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIdentityErrorEvent/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 

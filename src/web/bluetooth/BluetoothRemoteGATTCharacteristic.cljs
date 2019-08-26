@@ -17,6 +17,72 @@
   [this bluetooth-descriptor-uuid]
   (-> this (.getDescriptor bluetooth-descriptor-uuid)))
 
+(defn get-descriptors
+  "Method.
+
+  The BluetoothRemoteGATTCharacteristic.getDescriptors() method
+  a `js.Promise` that resolves to an `js.Array` of all `BluetoothGATTDescriptor`
+  for a given descriptor UUID.
+
+  `BluetoothRemoteGATTCharacteristic.getDescriptors(bluetoothDescriptorUUID).then(function(bluetoothGATTDescriptors[]) { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors`"
+  [this bluetooth-descriptor-uuid]
+  (-> this (.getDescriptors bluetooth-descriptor-uuid)))
+
+(defn read-value
+  "Method.
+
+  The BluetoothRemoteGATTCharacteristic.readValue() method returns
+  `js.Promise` that resolves to a `js.DataView` holding a duplicate
+  the value property if it is available and supported. Otherwise
+  throws an error.
+
+  `BluetoothRemoteGATTCharacteristic.readValue().then(function(dataView) { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue`"
+  [this & args]
+  (apply (-> this .-readValue) (concat [this] args)))
+
+(defn write-value
+  "Method.
+
+  The BluetoothRemoteGATTCharacteristic.writeValue() method sets
+  value property to the bytes contained in an `js.ArrayBuffer`
+  returns a `js.Promise`.
+
+  `BluetoothRemoteGATTCharacteristic.writeValue(value).then(function() { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue`"
+  [this value]
+  (-> this (.writeValue value)))
+
+(defn start-notifications
+  "Method.
+
+  The BluetoothRemoteGATTCharacteristic.startNotifications() method
+  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
+  there is an active notification on it.
+
+  `BluetoothRemoteGATTCharacteristic.startNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications`"
+  [this & args]
+  (apply (-> this .-startNotifications) (concat [this] args)))
+
+(defn stop-notifications
+  "Method.
+
+  The BluetoothRemoteGATTCharacteristic.stopNotifications() method
+  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
+  there is no longer an active notification on it.
+
+  `BluetoothRemoteGATTCharacteristic.stopNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications`"
+  [this & args]
+  (apply (-> this .-stopNotifications) (concat [this] args)))
+
 (defn service
   "Property.
 
@@ -27,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service`"
   [this]
-  (-> this (.service)))
+  (-> this (.-service)))
 
 (defn set-service!
   "Property.
@@ -41,138 +107,6 @@
   [this val]
   (aset this "service" val))
 
-(defn get-descriptors
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.getDescriptors() method
-  a `js.Promise` that resolves to an `js.Array` of all `BluetoothGATTDescriptor`
-  for a given descriptor UUID.
-
-  `BluetoothRemoteGATTCharacteristic.getDescriptors(bluetoothDescriptorUUID).then(function(bluetoothGATTDescriptors[]) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors`"
-  [this]
-  (-> this (.getDescriptors)))
-
-(defn set-get-descriptors!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.getDescriptors() method
-  a `js.Promise` that resolves to an `js.Array` of all `BluetoothGATTDescriptor`
-  for a given descriptor UUID.
-
-  `BluetoothRemoteGATTCharacteristic.getDescriptors(bluetoothDescriptorUUID).then(function(bluetoothGATTDescriptors[]) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors`"
-  [this val]
-  (aset this "getDescriptors" val))
-
-(defn properties
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.properties read-only property
-  a `web.bluetooth.BluetoothCharacteristicProperties` instance
-  the properties of this characteristic.
-
-  `var properties = BluetoothRemoteGATTCharacteristic.properties`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties`"
-  [this]
-  (-> this (.properties)))
-
-(defn set-properties!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.properties read-only property
-  a `web.bluetooth.BluetoothCharacteristicProperties` instance
-  the properties of this characteristic.
-
-  `var properties = BluetoothRemoteGATTCharacteristic.properties`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties`"
-  [this val]
-  (aset this "properties" val))
-
-(defn read-value
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.readValue() method returns
-  `js.Promise` that resolves to a `js.DataView` holding a duplicate
-  the value property if it is available and supported. Otherwise
-  throws an error.
-
-  `BluetoothRemoteGATTCharacteristic.readValue().then(function(dataView) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue`"
-  [this]
-  (-> this (.readValue)))
-
-(defn set-read-value!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.readValue() method returns
-  `js.Promise` that resolves to a `js.DataView` holding a duplicate
-  the value property if it is available and supported. Otherwise
-  throws an error.
-
-  `BluetoothRemoteGATTCharacteristic.readValue().then(function(dataView) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue`"
-  [this val]
-  (aset this "readValue" val))
-
-(defn start-notifications
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.startNotifications() method
-  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
-  there is an active notification on it.
-
-  `BluetoothRemoteGATTCharacteristic.startNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications`"
-  [this]
-  (-> this (.startNotifications)))
-
-(defn set-start-notifications!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.startNotifications() method
-  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
-  there is an active notification on it.
-
-  `BluetoothRemoteGATTCharacteristic.startNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications`"
-  [this val]
-  (aset this "startNotifications" val))
-
-(defn stop-notifications
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.stopNotifications() method
-  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
-  there is no longer an active notification on it.
-
-  `BluetoothRemoteGATTCharacteristic.stopNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications`"
-  [this]
-  (-> this (.stopNotifications)))
-
-(defn set-stop-notifications!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.stopNotifications() method
-  a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
-  there is no longer an active notification on it.
-
-  `BluetoothRemoteGATTCharacteristic.stopNotifications().then(function(BluetoothRemoteGATTCharacteristic) { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications`"
-  [this val]
-  (aset this "stopNotifications" val))
-
 (defn uuid
   "Property.
 
@@ -185,7 +119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid`"
   [this]
-  (-> this (.uuid)))
+  (-> this (.-uuid)))
 
 (defn set-uuid!
   "Property.
@@ -201,6 +135,32 @@
   [this val]
   (aset this "uuid" val))
 
+(defn properties
+  "Property.
+
+  The BluetoothRemoteGATTCharacteristic.properties read-only property
+  a `web.bluetooth.BluetoothCharacteristicProperties` instance
+  the properties of this characteristic.
+
+  `var properties = BluetoothRemoteGATTCharacteristic.properties`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties`"
+  [this]
+  (-> this (.-properties)))
+
+(defn set-properties!
+  "Property.
+
+  The BluetoothRemoteGATTCharacteristic.properties read-only property
+  a `web.bluetooth.BluetoothCharacteristicProperties` instance
+  the properties of this characteristic.
+
+  `var properties = BluetoothRemoteGATTCharacteristic.properties`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties`"
+  [this val]
+  (aset this "properties" val))
+
 (defn value
   "Property.
 
@@ -213,7 +173,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.
@@ -228,30 +188,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value`"
   [this val]
   (aset this "value" val))
-
-(defn write-value
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.writeValue() method sets
-  value property to the bytes contained in an `js.ArrayBuffer`
-  returns a `js.Promise`.
-
-  `BluetoothRemoteGATTCharacteristic.writeValue(value).then(function() { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue`"
-  [this]
-  (-> this (.writeValue)))
-
-(defn set-write-value!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.writeValue() method sets
-  value property to the bytes contained in an `js.ArrayBuffer`
-  returns a `js.Promise`.
-
-  `BluetoothRemoteGATTCharacteristic.writeValue(value).then(function() { ... })`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue`"
-  [this val]
-  (aset this "writeValue" val))
 

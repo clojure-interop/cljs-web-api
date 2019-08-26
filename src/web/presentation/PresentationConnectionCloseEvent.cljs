@@ -10,7 +10,7 @@
   A human-readable message that provides more information about
   the connection was closed."
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.
@@ -19,4 +19,20 @@
   the connection was closed."
   [this val]
   (aset this "message" val))
+
+(defn reason
+  "Property.
+
+  Indicates why the connection was closed. This property takes
+  of the following values: error, closed, or wentaway."
+  [this]
+  (-> this (.-reason)))
+
+(defn set-reason!
+  "Property.
+
+  Indicates why the connection was closed. This property takes
+  of the following values: error, closed, or wentaway."
+  [this val]
+  (aset this "reason" val))
 

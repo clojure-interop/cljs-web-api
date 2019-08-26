@@ -1,7 +1,7 @@
 (ns web.svg.SVGElement
   "All of the SVG DOM interfaces that correspond directly to elements
   the SVG language derive from the SVGElement interface."
-  (:refer-clojure :exclude []))
+  (:refer-clojure :exclude [load]))
 
 (defn focus
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGElement/dataset`"
   [this]
-  (-> this (.dataset)))
+  (-> this (.-dataset)))
 
 (defn set-dataset!
   "Property.
@@ -49,6 +49,70 @@
   [this val]
   (aset this "dataset" val))
 
+(defn id
+  "Property.
+
+  A DOMString representing the value of the id attribute on the
+  element, or the empty string if id is not present."
+  [this]
+  (-> this (.-id)))
+
+(defn set-id!
+  "Property.
+
+  A DOMString representing the value of the id attribute on the
+  element, or the empty string if id is not present."
+  [this val]
+  (aset this "id" val))
+
+(defn xmlbase
+  "Property.
+
+  A DOMString corresponding to the xml:base attribute on the given"
+  [this]
+  (-> this (.-xmlbase)))
+
+(defn set-xmlbase!
+  "Property.
+
+  A DOMString corresponding to the xml:base attribute on the given"
+  [this val]
+  (aset this "xmlbase" val))
+
+(defn owner-svg-element
+  "Property.
+
+  An SVGSVGElement referring to the nearest ancestor <svg> element.
+  if the given element is the outermost <svg> element."
+  [this]
+  (-> this (.-ownerSVGElement)))
+
+(defn set-owner-svg-element!
+  "Property.
+
+  An SVGSVGElement referring to the nearest ancestor <svg> element.
+  if the given element is the outermost <svg> element."
+  [this val]
+  (aset this "ownerSVGElement" val))
+
+(defn viewport-element
+  "Property.
+
+  The SVGElement, which established the current viewport. Often,
+  nearest ancestor <svg> element. null if the given element is
+  outermost <svg> element."
+  [this]
+  (-> this (.-viewportElement)))
+
+(defn set-viewport-element!
+  "Property.
+
+  The SVGElement, which established the current viewport. Often,
+  nearest ancestor <svg> element. null if the given element is
+  outermost <svg> element."
+  [this val]
+  (aset this "viewportElement" val))
+
 (defn onabort
   "Property.
 
@@ -59,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort`"
   [this]
-  (-> this (.onabort)))
+  (-> this (.-onabort)))
 
 (defn set-onabort!
   "Property.
@@ -85,7 +149,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationcancel`"
   [this]
-  (-> this (.onanimationcancel)))
+  (-> this (.-onanimationcancel)))
 
 (defn set-onanimationcancel!
   "Property.
@@ -113,7 +177,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationend`"
   [this]
-  (-> this (.onanimationend)))
+  (-> this (.-onanimationend)))
 
 (defn set-onanimationend!
   "Property.
@@ -141,7 +205,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationiteration`"
   [this]
-  (-> this (.onanimationiteration)))
+  (-> this (.-onanimationiteration)))
 
 (defn set-onanimationiteration!
   "Property.
@@ -167,7 +231,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onauxclick`"
   [this]
-  (-> this (.onauxclick)))
+  (-> this (.-onauxclick)))
 
 (defn set-onauxclick!
   "Property.
@@ -192,7 +256,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur`"
   [this]
-  (-> this (.onblur)))
+  (-> this (.-onblur)))
 
 (defn set-onblur!
   "Property.
@@ -217,7 +281,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncancel`"
   [this]
-  (-> this (.oncancel)))
+  (-> this (.-oncancel)))
 
 (defn set-oncancel!
   "Property.
@@ -244,7 +308,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay`"
   [this]
-  (-> this (.oncanplay)))
+  (-> this (.-oncanplay)))
 
 (defn set-oncanplay!
   "Property.
@@ -274,7 +338,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough`"
   [this]
-  (-> this (.oncanplaythrough)))
+  (-> this (.-oncanplaythrough)))
 
 (defn set-oncanplaythrough!
   "Property.
@@ -303,7 +367,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -329,7 +393,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick`"
   [this]
-  (-> this (.onclick)))
+  (-> this (.-onclick)))
 
 (defn set-onclick!
   "Property.
@@ -353,7 +417,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclose`"
   [this]
-  (-> this (.onclose)))
+  (-> this (.-onclose)))
 
 (defn set-onclose!
   "Property.
@@ -377,7 +441,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu`"
   [this]
-  (-> this (.oncontextmenu)))
+  (-> this (.-oncontextmenu)))
 
 (defn set-oncontextmenu!
   "Property.
@@ -404,7 +468,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncuechange`"
   [this]
-  (-> this (.oncuechange)))
+  (-> this (.-oncuechange)))
 
 (defn set-oncuechange!
   "Property.
@@ -431,7 +495,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick`"
   [this]
-  (-> this (.ondblclick)))
+  (-> this (.-ondblclick)))
 
 (defn set-ondblclick!
   "Property.
@@ -458,7 +522,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange`"
   [this]
-  (-> this (.ondurationchange)))
+  (-> this (.-ondurationchange)))
 
 (defn set-ondurationchange!
   "Property.
@@ -488,7 +552,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.
@@ -515,7 +579,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -539,7 +603,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus`"
   [this]
-  (-> this (.onfocus)))
+  (-> this (.-onfocus)))
 
 (defn set-onfocus!
   "Property.
@@ -563,7 +627,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ongotpointercapture`"
   [this]
-  (-> this (.ongotpointercapture)))
+  (-> this (.-ongotpointercapture)))
 
 (defn set-ongotpointercapture!
   "Property.
@@ -589,7 +653,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput`"
   [this]
-  (-> this (.oninput)))
+  (-> this (.-oninput)))
 
 (defn set-oninput!
   "Property.
@@ -616,7 +680,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid`"
   [this]
-  (-> this (.oninvalid)))
+  (-> this (.-oninvalid)))
 
 (defn set-oninvalid!
   "Property.
@@ -641,7 +705,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown`"
   [this]
-  (-> this (.onkeydown)))
+  (-> this (.-onkeydown)))
 
 (defn set-onkeydown!
   "Property.
@@ -665,7 +729,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress`"
   [this]
-  (-> this (.onkeypress)))
+  (-> this (.-onkeypress)))
 
 (defn set-onkeypress!
   "Property.
@@ -689,7 +753,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup`"
   [this]
-  (-> this (.onkeyup)))
+  (-> this (.-onkeyup)))
 
 (defn set-onkeyup!
   "Property.
@@ -714,7 +778,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload`"
   [this]
-  (-> this (.onload)))
+  (-> this (.-onload)))
 
 (defn set-onload!
   "Property.
@@ -742,7 +806,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata`"
   [this]
-  (-> this (.onloadeddata)))
+  (-> this (.-onloadeddata)))
 
 (defn set-onloadeddata!
   "Property.
@@ -772,7 +836,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata`"
   [this]
-  (-> this (.onloadedmetadata)))
+  (-> this (.-onloadedmetadata)))
 
 (defn set-onloadedmetadata!
   "Property.
@@ -801,7 +865,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend`"
   [this]
-  (-> this (.onloadend)))
+  (-> this (.-onloadend)))
 
 (defn set-onloadend!
   "Property.
@@ -829,7 +893,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadstart`"
   [this]
-  (-> this (.onloadstart)))
+  (-> this (.-onloadstart)))
 
 (defn set-onloadstart!
   "Property.
@@ -855,7 +919,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onlostpointercapture`"
   [this]
-  (-> this (.onlostpointercapture)))
+  (-> this (.-onlostpointercapture)))
 
 (defn set-onlostpointercapture!
   "Property.
@@ -879,7 +943,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown`"
   [this]
-  (-> this (.onmousedown)))
+  (-> this (.-onmousedown)))
 
 (defn set-onmousedown!
   "Property.
@@ -906,7 +970,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter`"
   [this]
-  (-> this (.onmouseenter)))
+  (-> this (.-onmouseenter)))
 
 (defn set-onmouseenter!
   "Property.
@@ -936,7 +1000,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave`"
   [this]
-  (-> this (.onmouseleave)))
+  (-> this (.-onmouseleave)))
 
 (defn set-onmouseleave!
   "Property.
@@ -963,7 +1027,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove`"
   [this]
-  (-> this (.onmousemove)))
+  (-> this (.-onmousemove)))
 
 (defn set-onmousemove!
   "Property.
@@ -987,7 +1051,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout`"
   [this]
-  (-> this (.onmouseout)))
+  (-> this (.-onmouseout)))
 
 (defn set-onmouseout!
   "Property.
@@ -1011,7 +1075,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover`"
   [this]
-  (-> this (.onmouseover)))
+  (-> this (.-onmouseover)))
 
 (defn set-onmouseover!
   "Property.
@@ -1035,7 +1099,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup`"
   [this]
-  (-> this (.onmouseup)))
+  (-> this (.-onmouseup)))
 
 (defn set-onmouseup!
   "Property.
@@ -1062,7 +1126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause`"
   [this]
-  (-> this (.onpause)))
+  (-> this (.-onpause)))
 
 (defn set-onpause!
   "Property.
@@ -1092,7 +1156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay`"
   [this]
-  (-> this (.onplay)))
+  (-> this (.-onplay)))
 
 (defn set-onplay!
   "Property.
@@ -1121,7 +1185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointercancel`"
   [this]
-  (-> this (.onpointercancel)))
+  (-> this (.-onpointercancel)))
 
 (defn set-onpointercancel!
   "Property.
@@ -1151,7 +1215,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerdown`"
   [this]
-  (-> this (.onpointerdown)))
+  (-> this (.-onpointerdown)))
 
 (defn set-onpointerdown!
   "Property.
@@ -1181,7 +1245,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerenter`"
   [this]
-  (-> this (.onpointerenter)))
+  (-> this (.-onpointerenter)))
 
 (defn set-onpointerenter!
   "Property.
@@ -1212,7 +1276,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerleave`"
   [this]
-  (-> this (.onpointerleave)))
+  (-> this (.-onpointerleave)))
 
 (defn set-onpointerleave!
   "Property.
@@ -1243,7 +1307,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointermove`"
   [this]
-  (-> this (.onpointermove)))
+  (-> this (.-onpointermove)))
 
 (defn set-onpointermove!
   "Property.
@@ -1271,7 +1335,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout`"
   [this]
-  (-> this (.onpointerout)))
+  (-> this (.-onpointerout)))
 
 (defn set-onpointerout!
   "Property.
@@ -1299,7 +1363,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerover`"
   [this]
-  (-> this (.onpointerover)))
+  (-> this (.-onpointerover)))
 
 (defn set-onpointerover!
   "Property.
@@ -1327,7 +1391,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerup`"
   [this]
-  (-> this (.onpointerup)))
+  (-> this (.-onpointerup)))
 
 (defn set-onpointerup!
   "Property.
@@ -1353,7 +1417,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset`"
   [this]
-  (-> this (.onreset)))
+  (-> this (.-onreset)))
 
 (defn set-onreset!
   "Property.
@@ -1377,7 +1441,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize`"
   [this]
-  (-> this (.onresize)))
+  (-> this (.-onresize)))
 
 (defn set-onresize!
   "Property.
@@ -1401,7 +1465,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll`"
   [this]
-  (-> this (.onscroll)))
+  (-> this (.-onscroll)))
 
 (defn set-onscroll!
   "Property.
@@ -1425,7 +1489,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect`"
   [this]
-  (-> this (.onselect)))
+  (-> this (.-onselect)))
 
 (defn set-onselect!
   "Property.
@@ -1449,7 +1513,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectionchange`"
   [this]
-  (-> this (.onselectionchange)))
+  (-> this (.-onselectionchange)))
 
 (defn set-onselectionchange!
   "Property.
@@ -1473,7 +1537,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselectstart`"
   [this]
-  (-> this (.onselectstart)))
+  (-> this (.-onselectstart)))
 
 (defn set-onselectstart!
   "Property.
@@ -1497,7 +1561,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit`"
   [this]
-  (-> this (.onsubmit)))
+  (-> this (.-onsubmit)))
 
 (defn set-onsubmit!
   "Property.
@@ -1521,7 +1585,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchcancel`"
   [this]
-  (-> this (.ontouchcancel)))
+  (-> this (.-ontouchcancel)))
 
 (defn set-ontouchcancel!
   "Property.
@@ -1545,7 +1609,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontouchstart`"
   [this]
-  (-> this (.ontouchstart)))
+  (-> this (.-ontouchstart)))
 
 (defn set-ontouchstart!
   "Property.
@@ -1571,7 +1635,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitioncancel`"
   [this]
-  (-> this (.ontransitioncancel)))
+  (-> this (.-ontransitioncancel)))
 
 (defn set-ontransitioncancel!
   "Property.
@@ -1599,7 +1663,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitionend`"
   [this]
-  (-> this (.ontransitionend)))
+  (-> this (.-ontransitionend)))
 
 (defn set-ontransitionend!
   "Property.
@@ -1625,7 +1689,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel`"
   [this]
-  (-> this (.onwheel)))
+  (-> this (.-onwheel)))
 
 (defn set-onwheel!
   "Property.

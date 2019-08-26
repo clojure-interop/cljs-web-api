@@ -23,6 +23,21 @@
   [this & args]
   (apply (-> this .-match) (concat [this] args)))
 
+(defn match-all
+  "Method.
+
+  The matchAll() method of the `web.service-workers.Cache` interface
+  a `js.Promise` that resolves to an array of all matching responses
+  the `web.service-workers.Cache` object.
+
+  `cache.matchAll(request,{options}).then(function(response) {
+  //do something with the response array
+  });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/matchAll`"
+  [this & args]
+  (apply (-> this .-matchAll) (concat [this] args)))
+
 (defn add
   "Method.
 
@@ -54,6 +69,20 @@
   [this & args]
   (apply (-> this .-addAll) (concat [this] args)))
 
+(defn put
+  "Method.
+
+  The put() method of the `web.service-workers.Cache` interface
+  key/value pairs to be added to the current `web.service-workers.Cache`
+
+  `cache.put(request, response).then(function() {
+  // request/response pair has been added to the cache
+  });`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/put`"
+  [this & args]
+  (apply (-> this .-put) (concat [this] args)))
+
 (defn delete
   "Method.
 
@@ -84,33 +113,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys`"
   [this & args]
   (apply (-> this .-keys) (concat [this] args)))
-
-(defn match-all
-  "Method.
-
-  The matchAll() method of the `web.service-workers.Cache` interface
-  a `js.Promise` that resolves to an array of all matching responses
-  the `web.service-workers.Cache` object.
-
-  `cache.matchAll(request,{options}).then(function(response) {
-  //do something with the response array
-  });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/matchAll`"
-  [this & args]
-  (apply (-> this .-matchAll) (concat [this] args)))
-
-(defn put
-  "Method.
-
-  The put() method of the `web.service-workers.Cache` interface
-  key/value pairs to be added to the current `web.service-workers.Cache`
-
-  `cache.put(request, response).then(function() {
-  // request/response pair has been added to the cache
-  });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/put`"
-  [this & args]
-  (apply (-> this .-put) (concat [this] args)))
 

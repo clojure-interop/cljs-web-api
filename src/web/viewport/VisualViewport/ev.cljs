@@ -10,6 +10,14 @@
 
   "resize")
 
+(def scroll
+  "Event.
+
+  Fired when the visual viewport is scrolled.
+  Also available via the VisualViewport.onscroll property."
+
+  "scroll")
+
 (def onresize
   "Event.
 

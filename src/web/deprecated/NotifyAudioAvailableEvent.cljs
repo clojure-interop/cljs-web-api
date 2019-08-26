@@ -1,7 +1,7 @@
 (ns web.deprecated.NotifyAudioAvailableEvent
   "The non-standard, obsolete, NotifyAudioAvailableEvent interface
   the event sent to audio elements when the audio buffer is full."
-  (:refer-clojure :exclude []))
+  (:refer-clojure :exclude [time]))
 
 (defn frame-buffer
   "Property.
@@ -14,7 +14,7 @@
   could be any length between 512 and 16384 samples if the user
   set a different length using the mozFrameBufferLength attribute."
   [this]
-  (-> this (.frameBuffer)))
+  (-> this (.-frameBuffer)))
 
 (defn set-frame-buffer!
   "Property.
@@ -28,4 +28,22 @@
   set a different length using the mozFrameBufferLength attribute."
   [this val]
   (aset this "frameBuffer" val))
+
+(defn time
+  "Property.
+
+  A floating-point value indicating the time in seconds at which
+  first sample in the frameBuffer occurs, relative to the start
+  the audio track."
+  [this]
+  (-> this (.-time)))
+
+(defn set-time!
+  "Property.
+
+  A floating-point value indicating the time in seconds at which
+  first sample in the frameBuffer occurs, relative to the start
+  the audio track."
+  [this val]
+  (aset this "time" val))
 

@@ -20,7 +20,7 @@
   A DOMString corresponding to the crossorigin attribute of the
   <image> element."
   [this]
-  (-> this (.crossOrigin)))
+  (-> this (.-crossOrigin)))
 
 (defn set-cross-origin!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/decoding`"
   [this]
-  (-> this (.decoding)))
+  (-> this (.-decoding)))
 
 (defn set-decoding!
   "Property.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -93,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/preserveAspectRatio`"
   [this]
-  (-> this (.preserveAspectRatio)))
+  (-> this (.-preserveAspectRatio)))
 
 (defn set-preserve-aspect-ratio!
   "Property.
@@ -119,7 +119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.
@@ -133,4 +133,56 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/width`"
   [this val]
   (aset this "width" val))
+
+(defn x
+  "Property.
+
+  The x read-only property of the `web.svg.SVGImageElement` interface
+  an `web.svg.SVGAnimatedLength` corresponding to the x attribute
+  the given `<image>` element.
+
+  `var x = svgImageElement.x;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/x`"
+  [this]
+  (-> this (.-x)))
+
+(defn set-x!
+  "Property.
+
+  The x read-only property of the `web.svg.SVGImageElement` interface
+  an `web.svg.SVGAnimatedLength` corresponding to the x attribute
+  the given `<image>` element.
+
+  `var x = svgImageElement.x;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/x`"
+  [this val]
+  (aset this "x" val))
+
+(defn y
+  "Property.
+
+  The y read-only property of the `web.svg.SVGImageElement` interface
+  an `web.svg.SVGAnimatedLength` corresponding to the y attribute
+  the given `<image>` element.
+
+  `var y = svgImageElement.y;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/y`"
+  [this]
+  (-> this (.-y)))
+
+(defn set-y!
+  "Property.
+
+  The y read-only property of the `web.svg.SVGImageElement` interface
+  an `web.svg.SVGAnimatedLength` corresponding to the y attribute
+  the given `<image>` element.
+
+  `var y = svgImageElement.y;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGImageElement/y`"
+  [this val]
+  (aset this "y" val))
 

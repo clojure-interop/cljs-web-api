@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/enableHighAccuracy`"
   [this]
-  (-> this (.enableHighAccuracy)))
+  (-> this (.-enableHighAccuracy)))
 
 (defn set-enable-high-accuracy!
   "Property.
@@ -40,6 +40,34 @@
   [this val]
   (aset this "enableHighAccuracy" val))
 
+(defn timeout
+  "Property.
+
+  The PositionOptions.timeout property is a positive long value
+  the maximum length of time (in milliseconds) the device is allowed
+  take in order to return a position. The default value is Infinity,
+  that getCurrentPosition() won't return until the position is
+
+  `positionOptions.timeout = timeLength`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/timeout`"
+  [this]
+  (-> this (.-timeout)))
+
+(defn set-timeout!
+  "Property.
+
+  The PositionOptions.timeout property is a positive long value
+  the maximum length of time (in milliseconds) the device is allowed
+  take in order to return a position. The default value is Infinity,
+  that getCurrentPosition() won't return until the position is
+
+  `positionOptions.timeout = timeLength`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/timeout`"
+  [this val]
+  (aset this "timeout" val))
+
 (defn maximum-age
   "Property.
 
@@ -54,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/maximumAge`"
   [this]
-  (-> this (.maximumAge)))
+  (-> this (.-maximumAge)))
 
 (defn set-maximum-age!
   "Property.
@@ -71,32 +99,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/maximumAge`"
   [this val]
   (aset this "maximumAge" val))
-
-(defn timeout
-  "Property.
-
-  The PositionOptions.timeout property is a positive long value
-  the maximum length of time (in milliseconds) the device is allowed
-  take in order to return a position. The default value is Infinity,
-  that getCurrentPosition() won't return until the position is
-
-  `positionOptions.timeout = timeLength`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/timeout`"
-  [this]
-  (-> this (.timeout)))
-
-(defn set-timeout!
-  "Property.
-
-  The PositionOptions.timeout property is a positive long value
-  the maximum length of time (in milliseconds) the device is allowed
-  take in order to return a position. The default value is Infinity,
-  that getCurrentPosition() won't return until the position is
-
-  `positionOptions.timeout = timeLength`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions/timeout`"
-  [this val]
-  (aset this "timeout" val))
 

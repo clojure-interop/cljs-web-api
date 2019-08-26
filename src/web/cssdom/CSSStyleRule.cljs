@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText`"
   [this]
-  (-> this (.selectorText)))
+  (-> this (.-selectorText)))
 
 (defn set-selector-text!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style`"
   [this]
-  (-> this (.style)))
+  (-> this (.-style)))
 
 (defn set-style!
   "Property.
@@ -54,4 +54,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style`"
   [this val]
   (aset this "style" val))
+
+(defn style-map
+  "Property.
+
+  The styleMap read-only property of the `web.cssdom.CSSStyleRule`
+  returns a `web.css.StylePropertyMap` object which provides access
+  rule's property-value pairs.
+
+  `var stylePropertyMap = CSSStyleRule.styleMap;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/styleMap`"
+  [this]
+  (-> this (.-styleMap)))
+
+(defn set-style-map!
+  "Property.
+
+  The styleMap read-only property of the `web.cssdom.CSSStyleRule`
+  returns a `web.css.StylePropertyMap` object which provides access
+  rule's property-value pairs.
+
+  `var stylePropertyMap = CSSStyleRule.styleMap;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/styleMap`"
+  [this val]
+  (aset this "styleMap" val))
 

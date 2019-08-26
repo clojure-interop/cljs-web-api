@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorStorage/storage`"
   [this]
-  (-> this (.storage)))
+  (-> this (.-storage)))
 
 (defn set-storage!
   "Property.

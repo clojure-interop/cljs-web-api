@@ -34,6 +34,19 @@
   [this & args]
   (apply (-> this .-start) (concat [this] args)))
 
+(defn stop
+  "Method.
+
+  The stop() method on `web.audio.AudioScheduledSourceNode` schedules
+  sound to cease playback at the specified time. If no time is
+  then the sound stops playing immediately.
+
+  `AudioScheduledSourceNode.stop([when]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/stop`"
+  [this & args]
+  (apply (-> this .-stop) (concat [this] args)))
+
 (defn offset
   "Property.
 
@@ -49,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceNode/offset`"
   [this]
-  (-> this (.offset)))
+  (-> this (.-offset)))
 
 (defn onended
   "Property.
@@ -64,7 +77,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/onended`"
   [this]
-  (-> this (.onended)))
+  (-> this (.-onended)))
 
 (defn set-onended!
   "Property.

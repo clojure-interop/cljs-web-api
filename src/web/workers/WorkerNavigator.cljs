@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/connection`"
   [this]
-  (-> this (.connection)))
+  (-> this (.-connection)))
 
 (defn set-connection!
   "Property.
@@ -46,6 +46,76 @@
   [this val]
   (aset this "connection" val))
 
+(defn locks
+  "Property.
+
+  The locks read-only property of the `web.workers.WorkerNavigator`
+  returns a `web.locks.LockManager` object which provides methods
+  requesting a new `web.locks.Lock` object and querying for an
+  Lock object.
+
+  `var lockManager = Navigator.locks`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/locks`"
+  [this]
+  (-> this (.-locks)))
+
+(defn set-locks!
+  "Property.
+
+  The locks read-only property of the `web.workers.WorkerNavigator`
+  returns a `web.locks.LockManager` object which provides methods
+  requesting a new `web.locks.Lock` object and querying for an
+  Lock object.
+
+  `var lockManager = Navigator.locks`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/locks`"
+  [this val]
+  (aset this "locks" val))
+
+(defn permissions
+  "Property.
+
+  The WorkerNavigator.permissions read-only property returns a
+  object that can be used to query and update permission status
+  APIs covered by the Permissions API.
+
+  `permissionsObj = self.permissions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/permissions`"
+  [this]
+  (-> this (.-permissions)))
+
+(defn set-permissions!
+  "Property.
+
+  The WorkerNavigator.permissions read-only property returns a
+  object that can be used to query and update permission status
+  APIs covered by the Permissions API.
+
+  `permissionsObj = self.permissions`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/permissions`"
+  [this val]
+  (aset this "permissions" val))
+
+(defn storage
+  "Property.
+
+  Returns a StorageManager interface for managing persistance permissions
+  estimating available storage."
+  [this]
+  (-> this (.-storage)))
+
+(defn set-storage!
+  "Property.
+
+  Returns a StorageManager interface for managing persistance permissions
+  estimating available storage."
+  [this val]
+  (aset this "storage" val))
+
 (defn app-code-name
   "Property.
 
@@ -56,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName`"
   [this]
-  (-> this (.appCodeName)))
+  (-> this (.-appCodeName)))
 
 (defn set-app-code-name!
   "Property.
@@ -80,7 +150,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName`"
   [this]
-  (-> this (.appName)))
+  (-> this (.-appName)))
 
 (defn set-app-name!
   "Property.
@@ -104,7 +174,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion`"
   [this]
-  (-> this (.appVersion)))
+  (-> this (.-appVersion)))
 
 (defn set-app-version!
   "Property.
@@ -118,6 +188,32 @@
   [this val]
   (aset this "appVersion" val))
 
+(defn hardware-concurrency
+  "Property.
+
+  The navigator.hardwareConcurrency read-only property returns
+  number of logical processors available to run threads on the
+  computer.
+
+  `logicalProcessors = window.navigator.hardwareConcurrency`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
+  [this]
+  (-> this (.-hardwareConcurrency)))
+
+(defn set-hardware-concurrency!
+  "Property.
+
+  The navigator.hardwareConcurrency read-only property returns
+  number of logical processors available to run threads on the
+  computer.
+
+  `logicalProcessors = window.navigator.hardwareConcurrency`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
+  [this val]
+  (aset this "hardwareConcurrency" val))
+
 (defn language
   "Property.
 
@@ -129,7 +225,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language`"
   [this]
-  (-> this (.language)))
+  (-> this (.-language)))
 
 (defn languages
   "Property.
@@ -143,35 +239,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages`"
   [this]
-  (-> this (.languages)))
-
-(defn locks
-  "Property.
-
-  The locks read-only property of the `web.workers.WorkerNavigator`
-  returns a `web.locks.LockManager` object which provides methods
-  requesting a new `web.locks.Lock` object and querying for an
-  Lock object.
-
-  `var lockManager = Navigator.locks`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/locks`"
-  [this]
-  (-> this (.locks)))
-
-(defn set-locks!
-  "Property.
-
-  The locks read-only property of the `web.workers.WorkerNavigator`
-  returns a `web.locks.LockManager` object which provides methods
-  requesting a new `web.locks.Lock` object and querying for an
-  Lock object.
-
-  `var lockManager = Navigator.locks`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/locks`"
-  [this val]
-  (aset this "locks" val))
+  (-> this (.-languages)))
 
 (defn on-line
   "Property.
@@ -187,7 +255,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine`"
   [this]
-  (-> this (.onLine)))
+  (-> this (.-onLine)))
 
 (defn set-on-line!
   "Property.
@@ -205,32 +273,6 @@
   [this val]
   (aset this "onLine" val))
 
-(defn permissions
-  "Property.
-
-  The WorkerNavigator.permissions read-only property returns a
-  object that can be used to query and update permission status
-  APIs covered by the Permissions API.
-
-  `permissionsObj = self.permissions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/permissions`"
-  [this]
-  (-> this (.permissions)))
-
-(defn set-permissions!
-  "Property.
-
-  The WorkerNavigator.permissions read-only property returns a
-  object that can be used to query and update permission status
-  APIs covered by the Permissions API.
-
-  `permissionsObj = self.permissions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator/permissions`"
-  [this val]
-  (aset this "permissions" val))
-
 (defn platform
   "Property.
 
@@ -242,7 +284,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform`"
   [this]
-  (-> this (.platform)))
+  (-> this (.-platform)))
 
 (defn set-platform!
   "Property.
@@ -267,7 +309,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product`"
   [this]
-  (-> this (.product)))
+  (-> this (.-product)))
 
 (defn set-product!
   "Property.
@@ -291,5 +333,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent`"
   [this]
-  (-> this (.userAgent)))
+  (-> this (.-userAgent)))
 

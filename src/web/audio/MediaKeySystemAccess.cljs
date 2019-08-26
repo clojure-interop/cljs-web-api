@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/keySystem`"
   [this]
-  (-> this (.keySystem)))
+  (-> this (.-keySystem)))
 
 (defn set-key-system!
   "Property.

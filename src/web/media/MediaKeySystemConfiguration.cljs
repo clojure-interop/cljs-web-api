@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/initDataTypes`"
   [this]
-  (-> this (.initDataTypes)))
+  (-> this (.-initDataTypes)))
 
 (defn set-init-data-types!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/audioCapabilities`"
   [this]
-  (-> this (.audioCapabilities)))
+  (-> this (.-audioCapabilities)))
 
 (defn set-audio-capabilities!
   "Property.
@@ -53,6 +53,30 @@
   [this val]
   (aset this "audioCapabilities" val))
 
+(defn video-capabilities
+  "Property.
+
+  The MediaKeySystemConfiguration.videoCapabilities read-only property
+  an array of supported video type and capability pairs.
+
+  `var videoCapabilities[{contentType: 'contentType', robustness:'robustness'}] = mediaSystemConfiguration.videoCapabilities;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/videoCapabilities`"
+  [this]
+  (-> this (.-videoCapabilities)))
+
+(defn set-video-capabilities!
+  "Property.
+
+  The MediaKeySystemConfiguration.videoCapabilities read-only property
+  an array of supported video type and capability pairs.
+
+  `var videoCapabilities[{contentType: 'contentType', robustness:'robustness'}] = mediaSystemConfiguration.videoCapabilities;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/videoCapabilities`"
+  [this val]
+  (aset this "videoCapabilities" val))
+
 (defn distinctive-identifier
   "Property.
 
@@ -63,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/distinctiveIdentifier`"
   [this]
-  (-> this (.distinctiveIdentifier)))
+  (-> this (.-distinctiveIdentifier)))
 
 (defn set-distinctive-identifier!
   "Property.
@@ -87,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/persistentState`"
   [this]
-  (-> this (.persistentState)))
+  (-> this (.-persistentState)))
 
 (defn set-persistent-state!
   "Property.
@@ -100,28 +124,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/persistentState`"
   [this val]
   (aset this "persistentState" val))
-
-(defn video-capabilities
-  "Property.
-
-  The MediaKeySystemConfiguration.videoCapabilities read-only property
-  an array of supported video type and capability pairs.
-
-  `var videoCapabilities[{contentType: 'contentType', robustness:'robustness'}] = mediaSystemConfiguration.videoCapabilities;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/videoCapabilities`"
-  [this]
-  (-> this (.videoCapabilities)))
-
-(defn set-video-capabilities!
-  "Property.
-
-  The MediaKeySystemConfiguration.videoCapabilities read-only property
-  an array of supported video type and capability pairs.
-
-  `var videoCapabilities[{contentType: 'contentType', robustness:'robustness'}] = mediaSystemConfiguration.videoCapabilities;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration/videoCapabilities`"
-  [this val]
-  (aset this "videoCapabilities" val))
 

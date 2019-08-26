@@ -18,19 +18,6 @@
   [this ]
   (-> this (.enumerateDevices)))
 
-(defn get-display-media
-  "Method.
-
-  The `web.audio.MediaDevices` interface's getDisplayMedia() method
-  the user to select and grant permission to capture the contents
-  a display or portion thereof (such as a window) as a `web.streams.MediaStream`.
-
-  `var promise = navigator.mediaDevices.getDisplayMedia(constraints);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia`"
-  [this constraints]
-  (-> this (.getDisplayMedia constraints)))
-
 (defn get-supported-constraints
   "Method.
 
@@ -44,6 +31,19 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getSupportedConstraints`"
   [this ]
   (-> this (.getSupportedConstraints)))
+
+(defn get-display-media
+  "Method.
+
+  The `web.audio.MediaDevices` interface's getDisplayMedia() method
+  the user to select and grant permission to capture the contents
+  a display or portion thereof (such as a window) as a `web.streams.MediaStream`.
+
+  `var promise = navigator.mediaDevices.getDisplayMedia(constraints);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia`"
+  [this constraints]
+  (-> this (.getDisplayMedia constraints)))
 
 (defn get-user-media
   "Method.
@@ -72,7 +72,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/ondevicechange`"
   [this]
-  (-> this (.ondevicechange)))
+  (-> this (.-ondevicechange)))
 
 (defn set-ondevicechange!
   "Property.

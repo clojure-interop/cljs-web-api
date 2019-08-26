@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent/connection`"
   [this]
-  (-> this (.connection)))
+  (-> this (.-connection)))
 
 (defn set-connection!
   "Property.

@@ -10,7 +10,7 @@
   Is a DOMString structured as a comma-seperated list specifing
   width of each column inside a frameset."
   [this]
-  (-> this (.cols)))
+  (-> this (.-cols)))
 
 (defn set-cols!
   "Property.
@@ -19,6 +19,22 @@
   width of each column inside a frameset."
   [this val]
   (aset this "cols" val))
+
+(defn rows
+  "Property.
+
+  Is a DOMString structured as a comma-seperated list specifing
+  height of each column inside a frameset."
+  [this]
+  (-> this (.-rows)))
+
+(defn set-rows!
+  "Property.
+
+  Is a DOMString structured as a comma-seperated list specifing
+  height of each column inside a frameset."
+  [this val]
+  (aset this "rows" val))
 
 (defn onafterprint
   "Property.
@@ -33,7 +49,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint`"
   [this]
-  (-> this (.onafterprint)))
+  (-> this (.-onafterprint)))
 
 (defn set-onafterprint!
   "Property.
@@ -63,7 +79,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint`"
   [this]
-  (-> this (.onbeforeprint)))
+  (-> this (.-onbeforeprint)))
 
 (defn set-onbeforeprint!
   "Property.
@@ -95,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload`"
   [this]
-  (-> this (.onbeforeunload)))
+  (-> this (.-onbeforeunload)))
 
 (defn set-onbeforeunload!
   "Property.
@@ -142,7 +158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange`"
   [this]
-  (-> this (.onhashchange)))
+  (-> this (.-onhashchange)))
 
 (defn set-onhashchange!
   "Property.
@@ -184,7 +200,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange`"
   [this]
-  (-> this (.onlanguagechange)))
+  (-> this (.-onlanguagechange)))
 
 (defn set-onlanguagechange!
   "Property.
@@ -209,7 +225,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessage`"
   [this]
-  (-> this (.onmessage)))
+  (-> this (.-onmessage)))
 
 (defn set-onmessage!
   "Property.
@@ -236,7 +252,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onmessageerror`"
   [this]
-  (-> this (.onmessageerror)))
+  (-> this (.-onmessageerror)))
 
 (defn set-onmessageerror!
   "Property.
@@ -265,7 +281,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate`"
   [this]
-  (-> this (.onpopstate)))
+  (-> this (.-onpopstate)))
 
 (defn set-onpopstate!
   "Property.
@@ -294,7 +310,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onrejectionhandled`"
   [this]
-  (-> this (.onrejectionhandled)))
+  (-> this (.-onrejectionhandled)))
 
 (defn set-onrejectionhandled!
   "Property.
@@ -320,7 +336,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onstorage`"
   [this]
-  (-> this (.onstorage)))
+  (-> this (.-onstorage)))
 
 (defn set-onstorage!
   "Property.
@@ -345,7 +361,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunhandledrejection`"
   [this]
-  (-> this (.onunhandledrejection)))
+  (-> this (.-onunhandledrejection)))
 
 (defn set-onunhandledrejection!
   "Property.
@@ -375,7 +391,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload`"
   [this]
-  (-> this (.onunload)))
+  (-> this (.-onunload)))
 
 (defn set-onunload!
   "Property.

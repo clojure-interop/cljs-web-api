@@ -8,7 +8,7 @@
 
   Returns the expiration date of the certificate."
   [this]
-  (-> this (.expires)))
+  (-> this (.-expires)))
 
 (defn set-expires!
   "Property.

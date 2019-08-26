@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/newURL`"
   [this]
-  (-> this (.newURL)))
+  (-> this (.-newURL)))
 
 (defn set-new-url!
   "Property.
@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/oldURL`"
   [this]
-  (-> this (.oldURL)))
+  (-> this (.-oldURL)))
 
 (defn set-old-url!
   "Property.

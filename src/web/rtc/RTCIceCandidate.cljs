@@ -2,7 +2,7 @@
   "The RTCIceCandidate interface—part of the WebRTC API—represents
   candidate Internet Connectivity Establishment (ICE) configuration
   may be used to establish an `web.audio.RTCPeerConnection`."
-  (:refer-clojure :exclude []))
+  (:refer-clojure :exclude [type]))
 
 (def constructor
   "Constructor.
@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/candidate`"
   [this]
-  (-> this (.candidate)))
+  (-> this (.-candidate)))
 
 (defn component
   "Property.
@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/component`"
   [this]
-  (-> this (.component)))
+  (-> this (.-component)))
 
 (defn foundation
   "Property.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/foundation`"
   [this]
-  (-> this (.foundation)))
+  (-> this (.-foundation)))
 
 (defn ip
   "Property.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/ip`"
   [this]
-  (-> this (.ip)))
+  (-> this (.-ip)))
 
 (defn port
   "Property.
@@ -76,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn priority
   "Property.
@@ -90,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/priority`"
   [this]
-  (-> this (.priority)))
+  (-> this (.-priority)))
 
 (defn protocol
   "Property.
@@ -103,7 +103,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/protocol`"
   [this]
-  (-> this (.protocol)))
+  (-> this (.-protocol)))
 
 (defn related-address
   "Property.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/relatedAddress`"
   [this]
-  (-> this (.relatedAddress)))
+  (-> this (.-relatedAddress)))
 
 (defn related-port
   "Property.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/relatedPort`"
   [this]
-  (-> this (.relatedPort)))
+  (-> this (.-relatedPort)))
 
 (defn set-related-port!
   "Property.
@@ -152,7 +152,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/sdpMid`"
   [this]
-  (-> this (.sdpMid)))
+  (-> this (.-sdpMid)))
 
 (defn sdp-m-line-index
   "Property.
@@ -165,7 +165,32 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/sdpMLineIndex`"
   [this]
-  (-> this (.sdpMLineIndex)))
+  (-> this (.-sdpMLineIndex)))
+
+(defn tcp-type
+  "Property.
+
+  The `web.rtc.RTCIceCandidate` interface's read-only tcpType property
+  included on TCP candidates to provide additional details about
+  candidate type.
+
+  `var tcpType = RTCIceCandidate.tcpType;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/tcpType`"
+  [this]
+  (-> this (.-tcpType)))
+
+(defn type
+  "Property.
+
+  The `web.rtc.RTCIceCandidate` interface's read-only type specifies
+  type of candidate the object represents.
+
+  `var type = RTCIceCandidate.type;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/type`"
+  [this]
+  (-> this (.-type)))
 
 (defn username-fragment
   "Property.
@@ -178,5 +203,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/usernameFragment`"
   [this]
-  (-> this (.usernameFragment)))
+  (-> this (.-usernameFragment)))
 

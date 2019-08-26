@@ -15,7 +15,7 @@
 
   Returns a DOMString indicating the type's name."
   [this]
-  (-> this (.typeName)))
+  (-> this (.-typeName)))
 
 (defn set-type-name!
   "Property.
@@ -23,4 +23,18 @@
   Returns a DOMString indicating the type's name."
   [this val]
   (aset this "typeName" val))
+
+(defn type-namespace
+  "Property.
+
+  Returns a DOMString indicating the type's namespace within the"
+  [this]
+  (-> this (.-typeNamespace)))
+
+(defn set-type-namespace!
+  "Property.
+
+  Returns a DOMString indicating the type's namespace within the"
+  [this val]
+  (aset this "typeNamespace" val))
 

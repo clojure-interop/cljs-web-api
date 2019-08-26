@@ -30,22 +30,6 @@
   [this & args]
   (apply (-> this .-getEntries) (concat [this] args)))
 
-(defn get-entries-by-name
-  "Method.
-
-  The getEntriesByName() method of the `web.performance.PerformanceObserverEntryList`
-  returns a list of explicitly observed performance entry objects
-  a given `name` and `entry type`. The list's members are determined
-  the set of entry types specified in the call to the `observe()`
-  The list is available in the observer's callback function (as
-  first parameter in the callback).
-
-  `entries = list.getEntriesByName(name, type);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntriesByName`"
-  [this name type]
-  (-> this (.getEntriesByName name type)))
-
 (defn get-entries-by-type
   "Method.
 
@@ -61,4 +45,20 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntriesByType`"
   [this type]
   (-> this (.getEntriesByType type)))
+
+(defn get-entries-by-name
+  "Method.
+
+  The getEntriesByName() method of the `web.performance.PerformanceObserverEntryList`
+  returns a list of explicitly observed performance entry objects
+  a given `name` and `entry type`. The list's members are determined
+  the set of entry types specified in the call to the `observe()`
+  The list is available in the observer's callback function (as
+  first parameter in the callback).
+
+  `entries = list.getEntriesByName(name, type);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntriesByName`"
+  [this name type]
+  (-> this (.getEntriesByName name type)))
 

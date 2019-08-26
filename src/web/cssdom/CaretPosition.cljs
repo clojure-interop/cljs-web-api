@@ -14,7 +14,7 @@
 
   Returns a Node containing the found node at the caret's position."
   [this]
-  (-> this (.offsetNode)))
+  (-> this (.-offsetNode)))
 
 (defn set-offset-node!
   "Property.
@@ -22,4 +22,20 @@
   Returns a Node containing the found node at the caret's position."
   [this val]
   (aset this "offsetNode" val))
+
+(defn offset
+  "Property.
+
+  Returns a long representing the character offset in the caret
+  node."
+  [this]
+  (-> this (.-offset)))
+
+(defn set-offset!
+  "Property.
+
+  Returns a long representing the character offset in the caret
+  node."
+  [this val]
+  (aset this "offset" val))
 

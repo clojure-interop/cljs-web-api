@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
   [this]
-  (-> this (.hardwareConcurrency)))
+  (-> this (.-hardwareConcurrency)))
 
 (defn set-hardware-concurrency!
   "Property.

@@ -18,17 +18,6 @@
   [this method url]
   (-> this (.open method url)))
 
-(defn abort
-  "Method.
-
-  Aborts an `web.ie.XDomainRequest`.
-
-  `xdr.abort();`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/abort`"
-  [this ]
-  (-> this (.abort)))
-
 (defn send
   "Method.
 
@@ -40,6 +29,17 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/send`"
   [this data]
   (-> this (.send data)))
+
+(defn abort
+  "Method.
+
+  Aborts an `web.ie.XDomainRequest`.
+
+  `xdr.abort();`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/abort`"
+  [this ]
+  (-> this (.abort)))
 
 (defn timeout
   "Property.
@@ -53,7 +53,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/timeout`"
   [this]
-  (-> this (.timeout)))
+  (-> this (.-timeout)))
 
 (defn set-timeout!
   "Property.
@@ -69,6 +69,32 @@
   [this val]
   (aset this "timeout" val))
 
+(defn response-text
+  "Property.
+
+  Returns the response body of an `web.ie.XDomainRequest` as a
+
+  `var response = xdr.responseText;
+
+  This sets response to contain the response body of the request, as a string.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/responseText`"
+  [this]
+  (-> this (.-responseText)))
+
+(defn set-response-text!
+  "Property.
+
+  Returns the response body of an `web.ie.XDomainRequest` as a
+
+  `var response = xdr.responseText;
+
+  This sets response to contain the response body of the request, as a string.`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/responseText`"
+  [this val]
+  (aset this "responseText" val))
+
 (defn onerror
   "Property.
 
@@ -79,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/onerror`"
   [this]
-  (-> this (.onerror)))
+  (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
@@ -104,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/onload`"
   [this]
-  (-> this (.onload)))
+  (-> this (.-onload)))
 
 (defn set-onload!
   "Property.
@@ -130,7 +156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/onprogress`"
   [this]
-  (-> this (.onprogress)))
+  (-> this (.-onprogress)))
 
 (defn set-onprogress!
   "Property.
@@ -155,7 +181,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/ontimeout`"
   [this]
-  (-> this (.ontimeout)))
+  (-> this (.-ontimeout)))
 
 (defn set-ontimeout!
   "Property.
@@ -168,30 +194,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/ontimeout`"
   [this val]
   (aset this "ontimeout" val))
-
-(defn response-text
-  "Property.
-
-  Returns the response body of an `web.ie.XDomainRequest` as a
-
-  `var response = xdr.responseText;
-
-  This sets response to contain the response body of the request, as a string.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/responseText`"
-  [this]
-  (-> this (.responseText)))
-
-(defn set-response-text!
-  "Property.
-
-  Returns the response body of an `web.ie.XDomainRequest` as a
-
-  `var response = xdr.responseText;
-
-  This sets response to contain the response body of the request, as a string.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XDomainRequest/responseText`"
-  [this val]
-  (aset this "responseText" val))
 

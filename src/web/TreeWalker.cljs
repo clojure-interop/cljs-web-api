@@ -45,19 +45,18 @@
   [this ]
   (-> this (.lastChild)))
 
-(defn next-node
+(defn previous-sibling
   "Method.
 
-  The TreeWalker.nextNode() method moves the current `web.Node`
-  the next visible node in the document order, and returns the
-  node. It also moves the current node to this one. If no such
-  exists, returns null and the current node is not changed.
+  The TreeWalker.previousSibling() method moves the current `web.Node`
+  its previous sibling, if any, and returns the found sibling.
+  there is no such node, return null and the current node is not
 
-  `node = treeWalker.nextNode();`
+  `node = treeWalker.previousSibling();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/nextNode`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/previousSibling`"
   [this ]
-  (-> this (.nextNode)))
+  (-> this (.previousSibling)))
 
 (defn next-sibling
   "Method.
@@ -87,18 +86,19 @@
   [this ]
   (-> this (.previousNode)))
 
-(defn previous-sibling
+(defn next-node
   "Method.
 
-  The TreeWalker.previousSibling() method moves the current `web.Node`
-  its previous sibling, if any, and returns the found sibling.
-  there is no such node, return null and the current node is not
+  The TreeWalker.nextNode() method moves the current `web.Node`
+  the next visible node in the document order, and returns the
+  node. It also moves the current node to this one. If no such
+  exists, returns null and the current node is not changed.
 
-  `node = treeWalker.previousSibling();`
+  `node = treeWalker.nextNode();`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/previousSibling`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/nextNode`"
   [this ]
-  (-> this (.previousSibling)))
+  (-> this (.nextNode)))
 
 (defn root
   "Property.
@@ -110,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
   [this]
-  (-> this (.root)))
+  (-> this (.-root)))
 
 (defn set-root!
   "Property.
@@ -124,82 +124,6 @@
   [this val]
   (aset this "root" val))
 
-(defn current-node
-  "Property.
-
-  The TreeWalker.currentNode property represents the `web.Node`
-  which the `web.TreeWalker` is currently pointing at.
-
-  `node = treeWalker.currentNode;
-  treeWalker.currentNode = node;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode`"
-  [this]
-  (-> this (.currentNode)))
-
-(defn set-current-node!
-  "Property.
-
-  The TreeWalker.currentNode property represents the `web.Node`
-  which the `web.TreeWalker` is currently pointing at.
-
-  `node = treeWalker.currentNode;
-  treeWalker.currentNode = node;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode`"
-  [this val]
-  (aset this "currentNode" val))
-
-(defn expand-entity-references
-  "Property.
-
-  The TreeWalker.expandEntityReferences read-only property returns
-  `js.Boolean` flag indicating whether or not the children of entity
-  nodes are visible to the `web.TreeWalker`.
-
-  `expand = treeWalker.expandEntityReferences;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
-  [this]
-  (-> this (.expandEntityReferences)))
-
-(defn set-expand-entity-references!
-  "Property.
-
-  The TreeWalker.expandEntityReferences read-only property returns
-  `js.Boolean` flag indicating whether or not the children of entity
-  nodes are visible to the `web.TreeWalker`.
-
-  `expand = treeWalker.expandEntityReferences;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
-  [this val]
-  (aset this "expandEntityReferences" val))
-
-(defn filter
-  "Property.
-
-  The TreeWalker.filter read-only property returns a `web.NodeFilter`
-  is the filtering object associated with the `web.TreeWalker`.
-
-  `nodeFilter = treeWalker.filter;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
-  [this]
-  (-> this (.filter)))
-
-(defn set-filter!
-  "Property.
-
-  The TreeWalker.filter read-only property returns a `web.NodeFilter`
-  is the filtering object associated with the `web.TreeWalker`.
-
-  `nodeFilter = treeWalker.filter;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
-  [this val]
-  (aset this "filter" val))
-
 (defn what-to-show
   "Property.
 
@@ -212,7 +136,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/whatToShow`"
   [this]
-  (-> this (.whatToShow)))
+  (-> this (.-whatToShow)))
 
 (defn set-what-to-show!
   "Property.
@@ -227,4 +151,80 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/whatToShow`"
   [this val]
   (aset this "whatToShow" val))
+
+(defn filter
+  "Property.
+
+  The TreeWalker.filter read-only property returns a `web.NodeFilter`
+  is the filtering object associated with the `web.TreeWalker`.
+
+  `nodeFilter = treeWalker.filter;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
+  [this]
+  (-> this (.-filter)))
+
+(defn set-filter!
+  "Property.
+
+  The TreeWalker.filter read-only property returns a `web.NodeFilter`
+  is the filtering object associated with the `web.TreeWalker`.
+
+  `nodeFilter = treeWalker.filter;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
+  [this val]
+  (aset this "filter" val))
+
+(defn expand-entity-references
+  "Property.
+
+  The TreeWalker.expandEntityReferences read-only property returns
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.TreeWalker`.
+
+  `expand = treeWalker.expandEntityReferences;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
+  [this]
+  (-> this (.-expandEntityReferences)))
+
+(defn set-expand-entity-references!
+  "Property.
+
+  The TreeWalker.expandEntityReferences read-only property returns
+  `js.Boolean` flag indicating whether or not the children of entity
+  nodes are visible to the `web.TreeWalker`.
+
+  `expand = treeWalker.expandEntityReferences;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
+  [this val]
+  (aset this "expandEntityReferences" val))
+
+(defn current-node
+  "Property.
+
+  The TreeWalker.currentNode property represents the `web.Node`
+  which the `web.TreeWalker` is currently pointing at.
+
+  `node = treeWalker.currentNode;
+  treeWalker.currentNode = node;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode`"
+  [this]
+  (-> this (.-currentNode)))
+
+(defn set-current-node!
+  "Property.
+
+  The TreeWalker.currentNode property represents the `web.Node`
+  which the `web.TreeWalker` is currently pointing at.
+
+  `node = treeWalker.currentNode;
+  treeWalker.currentNode = node;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/currentNode`"
+  [this val]
+  (aset this "currentNode" val))
 

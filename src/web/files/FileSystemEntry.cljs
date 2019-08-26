@@ -97,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem`"
   [this]
-  (-> this (.filesystem)))
+  (-> this (.-filesystem)))
 
 (defn set-filesystem!
   "Property.
@@ -123,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath`"
   [this]
-  (-> this (.fullPath)))
+  (-> this (.-fullPath)))
 
 (defn set-full-path!
   "Property.
@@ -149,7 +149,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory`"
   [this]
-  (-> this (.isDirectory)))
+  (-> this (.-isDirectory)))
 
 (defn set-is-directory!
   "Property.
@@ -175,7 +175,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile`"
   [this]
-  (-> this (.isFile)))
+  (-> this (.-isFile)))
 
 (defn set-is-file!
   "Property.
@@ -202,7 +202,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.

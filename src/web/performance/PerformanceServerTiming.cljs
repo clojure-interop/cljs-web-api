@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/description`"
   [this]
-  (-> this (.description)))
+  (-> this (.-description)))
 
 (defn set-description!
   "Property.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/duration`"
   [this]
-  (-> this (.duration)))
+  (-> this (.-duration)))
 
 (defn set-duration!
   "Property.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.

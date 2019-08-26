@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -57,36 +57,6 @@
   [this val]
   (aset this "port" val))
 
-(defn onprocessorerror
-  "Property.
-
-  The onprocessorerror property of the `web.audio.AudioWorkletNode`
-  defines an event handler function to be called when the `processorerror`
-  fires. This occurs when the underlying `web.audio.AudioWorkletProcessor`
-  the node throws an exception in its constructor, the `process`
-  or any user-defined class method.
-
-  `audioWorkletNode.onprocessorerror = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror`"
-  [this]
-  (-> this (.onprocessorerror)))
-
-(defn set-onprocessorerror!
-  "Property.
-
-  The onprocessorerror property of the `web.audio.AudioWorkletNode`
-  defines an event handler function to be called when the `processorerror`
-  fires. This occurs when the underlying `web.audio.AudioWorkletProcessor`
-  the node throws an exception in its constructor, the `process`
-  or any user-defined class method.
-
-  `audioWorkletNode.onprocessorerror = function() { ... };`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror`"
-  [this val]
-  (aset this "onprocessorerror" val))
-
 (defn parameters
   "Property.
 
@@ -100,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/parameters`"
   [this]
-  (-> this (.parameters)))
+  (-> this (.-parameters)))
 
 (defn set-parameters!
   "Property.
@@ -116,4 +86,34 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/parameters`"
   [this val]
   (aset this "parameters" val))
+
+(defn onprocessorerror
+  "Property.
+
+  The onprocessorerror property of the `web.audio.AudioWorkletNode`
+  defines an event handler function to be called when the `processorerror`
+  fires. This occurs when the underlying `web.audio.AudioWorkletProcessor`
+  the node throws an exception in its constructor, the `process`
+  or any user-defined class method.
+
+  `audioWorkletNode.onprocessorerror = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror`"
+  [this]
+  (-> this (.-onprocessorerror)))
+
+(defn set-onprocessorerror!
+  "Property.
+
+  The onprocessorerror property of the `web.audio.AudioWorkletNode`
+  defines an event handler function to be called when the `processorerror`
+  fires. This occurs when the underlying `web.audio.AudioWorkletProcessor`
+  the node throws an exception in its constructor, the `process`
+  or any user-defined class method.
+
+  `audioWorkletNode.onprocessorerror = function() { ... };`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/onprocessorerror`"
+  [this val]
+  (aset this "onprocessorerror" val))
 

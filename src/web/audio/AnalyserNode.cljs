@@ -109,7 +109,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize`"
   [this]
-  (-> this (.fftSize)))
+  (-> this (.-fftSize)))
 
 (defn set-fft-size!
   "Property.
@@ -138,7 +138,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/frequencyBinCount`"
   [this]
-  (-> this (.frequencyBinCount)))
+  (-> this (.-frequencyBinCount)))
 
 (defn set-frequency-bin-count!
   "Property.
@@ -154,38 +154,6 @@
   [this val]
   (aset this "frequencyBinCount" val))
 
-(defn max-decibels
-  "Property.
-
-  The maxDecibels property of the `web.audio.AnalyserNode` interface
-  a double value representing the maximum power value in the scaling
-  for the FFT analysis data, for conversion to unsigned byte/float
-  — basically, this specifies the maximum value for the range of
-  when using getFloatFrequencyData() or getByteFrequencyData().
-
-  `var curValue = analyserNode.maxDecibels;
-  analyserNode.maxDecibels = newValue;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/maxDecibels`"
-  [this]
-  (-> this (.maxDecibels)))
-
-(defn set-max-decibels!
-  "Property.
-
-  The maxDecibels property of the `web.audio.AnalyserNode` interface
-  a double value representing the maximum power value in the scaling
-  for the FFT analysis data, for conversion to unsigned byte/float
-  — basically, this specifies the maximum value for the range of
-  when using getFloatFrequencyData() or getByteFrequencyData().
-
-  `var curValue = analyserNode.maxDecibels;
-  analyserNode.maxDecibels = newValue;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/maxDecibels`"
-  [this val]
-  (aset this "maxDecibels" val))
-
 (defn min-decibels
   "Property.
 
@@ -200,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/minDecibels`"
   [this]
-  (-> this (.minDecibels)))
+  (-> this (.-minDecibels)))
 
 (defn set-min-decibels!
   "Property.
@@ -218,6 +186,38 @@
   [this val]
   (aset this "minDecibels" val))
 
+(defn max-decibels
+  "Property.
+
+  The maxDecibels property of the `web.audio.AnalyserNode` interface
+  a double value representing the maximum power value in the scaling
+  for the FFT analysis data, for conversion to unsigned byte/float
+  — basically, this specifies the maximum value for the range of
+  when using getFloatFrequencyData() or getByteFrequencyData().
+
+  `var curValue = analyserNode.maxDecibels;
+  analyserNode.maxDecibels = newValue;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/maxDecibels`"
+  [this]
+  (-> this (.-maxDecibels)))
+
+(defn set-max-decibels!
+  "Property.
+
+  The maxDecibels property of the `web.audio.AnalyserNode` interface
+  a double value representing the maximum power value in the scaling
+  for the FFT analysis data, for conversion to unsigned byte/float
+  — basically, this specifies the maximum value for the range of
+  when using getFloatFrequencyData() or getByteFrequencyData().
+
+  `var curValue = analyserNode.maxDecibels;
+  analyserNode.maxDecibels = newValue;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/maxDecibels`"
+  [this val]
+  (aset this "maxDecibels" val))
+
 (defn smoothing-time-constant
   "Property.
 
@@ -232,7 +232,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/smoothingTimeConstant`"
   [this]
-  (-> this (.smoothingTimeConstant)))
+  (-> this (.-smoothingTimeConstant)))
 
 (defn set-smoothing-time-constant!
   "Property.

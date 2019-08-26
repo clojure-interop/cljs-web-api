@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/referrerPolicy`"
   [this]
-  (-> this (.referrerPolicy)))
+  (-> this (.-referrerPolicy)))
 
 (defn set-referrer-policy!
   "Property.

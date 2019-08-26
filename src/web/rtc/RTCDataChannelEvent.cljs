@@ -32,5 +32,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannelEvent/channel`"
   [this]
-  (-> this (.channel)))
+  (-> this (.-channel)))
 

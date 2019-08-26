@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/mimeTypes`"
   [this]
-  (-> this (.mimeTypes)))
+  (-> this (.-mimeTypes)))
 
 (defn set-mime-types!
   "Property.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/plugins`"
   [this]
-  (-> this (.plugins)))
+  (-> this (.-plugins)))
 
 (defn set-plugins!
   "Property.

@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/isFinal`"
   [this]
-  (-> this (.isFinal)))
+  (-> this (.-isFinal)))
 
 (defn set-is-final!
   "Property.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
 
 (defn set-length!
   "Property.

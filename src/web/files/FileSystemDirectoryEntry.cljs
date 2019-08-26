@@ -18,19 +18,6 @@
   [this ]
   (-> this (.createReader)))
 
-(defn remove-recursively
-  "Method.
-
-  The `web.files.FileSystemDirectoryEntry` interface's method removeRecursively()
-  the directory as well as all of its content, hierarchically iterating
-  its entire subtree of descendant files and directories.
-
-  `FileSystemDirectoryEntry.removeRecursively(successCallback[, errorCallback]);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/removeRecursively`"
-  [this & args]
-  (apply (-> this .-removeRecursively) (concat [this] args)))
-
 (defn get-directory
   "Method.
 
@@ -58,4 +45,17 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getFile`"
   [this & args]
   (apply (-> this .-getFile) (concat [this] args)))
+
+(defn remove-recursively
+  "Method.
+
+  The `web.files.FileSystemDirectoryEntry` interface's method removeRecursively()
+  the directory as well as all of its content, hierarchically iterating
+  its entire subtree of descendant files and directories.
+
+  `FileSystemDirectoryEntry.removeRecursively(successCallback[, errorCallback]);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/removeRecursively`"
+  [this & args]
+  (apply (-> this .-removeRecursively) (concat [this] args)))
 

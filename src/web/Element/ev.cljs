@@ -13,6 +13,54 @@
 
   "cancel")
 
+(def error
+  "Event.
+
+  Fired when when a resource failed to load, or can't be used.
+  example, if a script has an execution error or an image can't
+  found or is invalid.
+  Also available via the onerror property."
+
+  "error")
+
+(def scroll
+  "Event.
+
+  The scroll event fires an element has been scrolled.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event`"
+
+  "scroll")
+
+(def select
+  "Event.
+
+  The select event fires when some text has been selected.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/select_event`"
+
+  "select")
+
+(def show
+  "Event.
+
+  The show event is fired when a contextmenu event was fired on/bubbled
+  an element that has a `contextmenu`.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/show_event`"
+
+  "show")
+
+(def wheel
+  "Event.
+
+  The wheel event fires when the user rotates a wheel button on
+  pointing device (typically a mouse).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event`"
+
+  "wheel")
+
 (def copy
   "Event.
 
@@ -23,6 +71,26 @@
 
   "copy")
 
+(def cut
+  "Event.
+
+  The cut event is fired when the user has initiated a \\\"cut\\\"
+  through the browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event`"
+
+  "cut")
+
+(def paste
+  "Event.
+
+  The paste event is fired when the user has initiated a \\\"paste\\\"
+  through the browser's user interface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event`"
+
+  "paste")
+
 (def compositionend
   "Event.
 
@@ -32,75 +100,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event`"
 
   "compositionend")
-
-(def blur
-  "Event.
-
-  The blur event fires when an element has lost focus. The main
-  between this event and `focusout` is that focusout bubbles while
-  does not.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event`"
-
-  "blur")
-
-(def fullscreenchange
-  "Event.
-
-  Sent to an Element when it transitions into or out of full-screen
-  Also available via the onfullscreenchange property."
-
-  "fullscreenchange")
-
-(def keydown
-  "Event.
-
-  Fired when a key is pressed.
-  Also available via the onkeydown property."
-
-  "keydown")
-
-(def auxclick
-  "Event.
-
-  The auxclick event is fired at an `web.Element` when a non-primary
-  device button (any mouse button other than the primary—usually
-  has been pressed and released both within the same element.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/auxclick_event`"
-
-  "auxclick")
-
-(def touchcancel
-  "Event.
-
-  The touchcancel event is fired when one or more touch points
-  been disrupted in an implementation-specific manner (for example,
-  many touch points are created).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event`"
-
-  "touchcancel")
-
-(def afterscriptexecute
-  "Event.
-
-  The afterscriptexecute event is fired after a script has been
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event`"
-
-  "afterscriptexecute")
-
-(def click
-  "Event.
-
-  An element receives a click event when a pointing device button
-  as a mouse's primary mouse button) is both pressed and released
-  the pointer is located inside the element.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event`"
-
-  "click")
 
 (def compositionstart
   "Event.
@@ -123,61 +122,16 @@
 
   "compositionupdate")
 
-(def contextmenu
+(def blur
   "Event.
 
-  The contextmenu event fires when the user attempts to open a
-  menu. This event is typically triggered by clicking the right
-  button, or by pressing the context menu key.
+  The blur event fires when an element has lost focus. The main
+  between this event and `focusout` is that focusout bubbles while
+  does not.
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event`"
 
-  "contextmenu")
-
-(def cut
-  "Event.
-
-  The cut event is fired when the user has initiated a \\\"cut\\\"
-  through the browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event`"
-
-  "cut")
-
-(def dblclick
-  "Event.
-
-  The dblclick event fires when a pointing device button (such
-  a mouse's primary button) is double-clicked; that is, when it's
-  clicked twice on a single element within a very short span of
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event`"
-
-  "dblclick")
-
-(def dom-mouse-scroll
-  "Event.
-
-  The DOM DOMMouseScroll event is fired asynchronously when mouse
-  or similar device is operated and the accumulated scroll amount
-  over 1 line or 1 page since last event. It's represented by the
-  interface. This event was only implemented by Firefox. You should
-  use the standard `wheel` event.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMMouseScroll_event`"
-
-  "DOMMouseScroll")
-
-(def error
-  "Event.
-
-  The error event is fired on an `web.Element` object when a resource
-  to load, or can't be used. For example, if a script has an execution
-  or an image can't be found or is invalid.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event`"
-
-  "error")
+  "blur")
 
 (def focus
   "Event.
@@ -212,36 +166,101 @@
 
   "focusout")
 
-(def gesturechange
+(def fullscreenchange
   "Event.
 
-  The gesturechange event is fired when digits move during a touch
+  Sent to an Element when it transitions into or out of full-screen
+  Also available via the onfullscreenchange property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturechange_event`"
+  "fullscreenchange")
 
-  "gesturechange")
-
-(def gestureend
+(def fullscreenerror
   "Event.
 
-  The gestureend event is fired when there are no longer multiple
-  contacting the touch surface, thus ending the gesture.
+  Sent to an Element if an error occurs while attempting to switch
+  into or out of full-screen mode.
+  Also available via the onfullscreenerror property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gestureend_event`"
+  "fullscreenerror")
 
-  "gestureend")
-
-(def gesturestart
+(def keydown
   "Event.
 
-  The gesturestart event is fired when multiple fingers contact
-  touch surface, thus starting a new gesture. During the gesture,
-  events will be fired. When the gesture has ended, a gestureend
-  will be fired.
+  Fired when a key is pressed.
+  Also available via the onkeydown property."
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturestart_event`"
+  "keydown")
 
-  "gesturestart")
+(def keypress
+  "Event.
+
+  Fired when a key that produces a character value is pressed down.
+  Also available via the onkeypress property."
+
+  "keypress")
+
+(def keyup
+  "Event.
+
+  Fired when a key is released.
+  Also available via the onkeyup property."
+
+  "keyup")
+
+(def auxclick
+  "Event.
+
+  The auxclick event is fired at an `web.Element` when a non-primary
+  device button (any mouse button other than the primary—usually
+  has been pressed and released both within the same element.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/auxclick_event`"
+
+  "auxclick")
+
+(def click
+  "Event.
+
+  An element receives a click event when a pointing device button
+  as a mouse's primary mouse button) is both pressed and released
+  the pointer is located inside the element.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event`"
+
+  "click")
+
+(def contextmenu
+  "Event.
+
+  The contextmenu event fires when the user attempts to open a
+  menu. This event is typically triggered by clicking the right
+  button, or by pressing the context menu key.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event`"
+
+  "contextmenu")
+
+(def dblclick
+  "Event.
+
+  The dblclick event fires when a pointing device button (such
+  a mouse's primary button) is double-clicked; that is, when it's
+  clicked twice on a single element within a very short span of
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event`"
+
+  "dblclick")
+
+(def dom-activate
+  "Event.
+
+  The DOMActivate event is fired at an element when it becomes
+  such as when it is clicked on using the mouse or a keypress is
+  to navigate to it.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMActivate_event`"
+
+  "DOMActivate")
 
 (def mousedown
   "Event.
@@ -263,6 +282,16 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event`"
 
   "mouseenter")
+
+(def mouseleave
+  "Event.
+
+  The mouseleave event is fired at an `web.Element` when the cursor
+  a pointing device (usually a mouse) is moved out of it.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event`"
+
+  "mouseleave")
 
 (def mousemove
   "Event.
@@ -306,6 +335,144 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event`"
 
   "mouseup")
+
+(def webkitmouseforcechanged
+  "Event.
+
+  The non-standard webkitmouseforcechanged event is fired by Safari
+  time the amount of pressure changes on the trackpad/touchscreen.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcechanged_event`"
+
+  "webkitmouseforcechanged")
+
+(def webkitmouseforcedown
+  "Event.
+
+  After a `mousedown` event has been fired at the element, if and
+  sufficient pressure has been applied to the mouse or trackpad
+  to qualify as a \\\"force click,\\\" Safari begins sending webkitmouseforcedown
+  to the element.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcedown_event`"
+
+  "webkitmouseforcedown")
+
+(def webkitmouseforcewillbegin
+  "Event.
+
+  Safari for macOS fires the non-standard webkitmouseforcewillbegin
+  at an `web.Element` before firing the initial mousedown event.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcewillbegin_event`"
+
+  "webkitmouseforcewillbegin")
+
+(def webkitmouseforceup
+  "Event.
+
+  The non-standard webkitmouseforceup event is fired by Safari
+  an `web.Element` some time after the webkitmouseforcedown event,
+  pressure on the button has been reduced sufficiently to end the
+  click\\\".
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforceup_event`"
+
+  "webkitmouseforceup")
+
+(def touchcancel
+  "Event.
+
+  The touchcancel event is fired when one or more touch points
+  been disrupted in an implementation-specific manner (for example,
+  many touch points are created).
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchcancel_event`"
+
+  "touchcancel")
+
+(def touchend
+  "Event.
+
+  The touchend event fires when one or more touch points are removed
+  the touch surface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchend_event`"
+
+  "touchend")
+
+(def touchmove
+  "Event.
+
+  The touchmove event is fired when one or more touch points are
+  along the touch surface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchmove_event`"
+
+  "touchmove")
+
+(def touchstart
+  "Event.
+
+  The touchstart event is fired when one or more touch points are
+  on the touch surface.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event`"
+
+  "touchstart")
+
+(def afterscriptexecute
+  "Event.
+
+  The afterscriptexecute event is fired after a script has been
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event`"
+
+  "afterscriptexecute")
+
+(def dom-mouse-scroll
+  "Event.
+
+  The DOM DOMMouseScroll event is fired asynchronously when mouse
+  or similar device is operated and the accumulated scroll amount
+  over 1 line or 1 page since last event. It's represented by the
+  interface. This event was only implemented by Firefox. You should
+  use the standard `wheel` event.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMMouseScroll_event`"
+
+  "DOMMouseScroll")
+
+(def gesturechange
+  "Event.
+
+  The gesturechange event is fired when digits move during a touch
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturechange_event`"
+
+  "gesturechange")
+
+(def gestureend
+  "Event.
+
+  The gestureend event is fired when there are no longer multiple
+  contacting the touch surface, thus ending the gesture.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gestureend_event`"
+
+  "gestureend")
+
+(def gesturestart
+  "Event.
+
+  The gesturestart event is fired when multiple fingers contact
+  touch surface, thus starting a new gesture. During the gesture,
+  events will be fired. When the gesture has ended, a gestureend
+  will be fired.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturestart_event`"
+
+  "gesturestart")
 
 (def mousewheel
   "Event.
@@ -428,45 +595,6 @@
 
   "overflow")
 
-(def paste
-  "Event.
-
-  The paste event is fired when the user has initiated a \\\"paste\\\"
-  through the browser's user interface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event`"
-
-  "paste")
-
-(def select
-  "Event.
-
-  The select event fires when some text has been selected.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/select_event`"
-
-  "select")
-
-(def show
-  "Event.
-
-  The show event is fired when a contextmenu event was fired on/bubbled
-  an element that has a `contextmenu`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/show_event`"
-
-  "show")
-
-(def touchstart
-  "Event.
-
-  The touchstart event is fired when one or more touch points are
-  on the touch surface.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event`"
-
-  "touchstart")
-
 (def underflow
   "Event.
 
@@ -476,58 +604,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/underflow_event`"
 
   "underflow")
-
-(def webkitmouseforcechanged
-  "Event.
-
-  The non-standard webkitmouseforcechanged event is fired by Safari
-  time the amount of pressure changes on the trackpad/touchscreen.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcechanged_event`"
-
-  "webkitmouseforcechanged")
-
-(def webkitmouseforcedown
-  "Event.
-
-  After a `mousedown` event has been fired at the element, if and
-  sufficient pressure has been applied to the mouse or trackpad
-  to qualify as a \\\"force click,\\\" Safari begins sending webkitmouseforcedown
-  to the element.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcedown_event`"
-
-  "webkitmouseforcedown")
-
-(def webkitmouseforceup
-  "Event.
-
-  The non-standard webkitmouseforceup event is fired by Safari
-  an `web.Element` some time after the webkitmouseforcedown event,
-  pressure on the button has been reduced sufficiently to end the
-  click\\\".
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforceup_event`"
-
-  "webkitmouseforceup")
-
-(def webkitmouseforcewillbegin
-  "Event.
-
-  Safari for macOS fires the non-standard webkitmouseforcewillbegin
-  at an `web.Element` before firing the initial mousedown event.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcewillbegin_event`"
-
-  "webkitmouseforcewillbegin")
-
-(def wheel
-  "Event.
-
-  The wheel event fires when the user rotates a wheel button on
-  pointing device (typically a mouse).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event`"
-
-  "wheel")
 

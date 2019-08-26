@@ -13,10 +13,17 @@
 (def webglcontextlost
   "Event.
 
-  With the help of the `web.gl.WEBGL_lose_context` extension, you
-  simulate the webglcontextlost event:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/webglcontextlost_event`"
+  Fired if the user agent detects that the drawing buffer associated
+  a WebGLRenderingContext or WebGL2RenderingContext object has
+  lost."
 
   "webglcontextlost")
+
+(def webglcontextrestored
+  "Event.
+
+  Fired if the user agent restores the drawing buffer for a WebGLRenderingContext
+  WebGL2RenderingContext object."
+
+  "webglcontextrestored")
 

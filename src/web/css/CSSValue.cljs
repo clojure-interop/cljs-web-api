@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSValue/cssText`"
   [this]
-  (-> this (.cssText)))
+  (-> this (.-cssText)))
 
 (defn set-css-text!
   "Property.
@@ -37,5 +37,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSValue/cssValueType`"
   [this]
-  (-> this (.cssValueType)))
+  (-> this (.-cssValueType)))
 

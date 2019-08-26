@@ -17,6 +17,45 @@
   [this ]
   (-> this (.getSelection)))
 
+(defn element-from-point
+  "Method.
+
+  The elementFromPoint() method—available on both the `web.Document`
+  `web.shadow-dom.ShadowRoot` objects—returns the topmost `web.Element`
+  the specified coordinates (relative to the viewport).
+
+  `var element = document.elementFromPoint(x, y);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/elementFromPoint`"
+  [this x y]
+  (-> this (.elementFromPoint x y)))
+
+(defn elements-from-point
+  "Method.
+
+  The elementsFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
+  returns an array of all elements at the specified coordinates
+  to the viewport).
+
+  `var elements = document.elementsFromPoint(x, y);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/elementsFromPoint`"
+  [this x y]
+  (-> this (.elementsFromPoint x y)))
+
+(defn caret-position-from-point
+  "Method.
+
+  The caretPositionFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
+  returns a `web.cssdom.CaretPosition` object, containing the DOM
+  along with the caret and caret's character offset within that
+
+  `var caretPosition = document.caretPositionFromPoint(float x, float y);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/caretPositionFromPoint`"
+  [this & args]
+  (apply (-> this .-caretPositionFromPoint) (concat [this] args)))
+
 (defn delegates-focus
   "Property.
 
@@ -28,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus`"
   [this]
-  (-> this (.delegatesFocus)))
+  (-> this (.-delegatesFocus)))
 
 (defn set-delegates-focus!
   "Property.
@@ -43,32 +82,6 @@
   [this val]
   (aset this "delegatesFocus" val))
 
-(defn active-element
-  "Property.
-
-  The activeElement read-only property of the `web.Document` and
-  interfaces returns the `web.Element` within the DOM or shadow
-  tree that currently has focus.
-
-  `var element = DocumentOrShadowRoot.activeElement`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
-  [this]
-  (-> this (.activeElement)))
-
-(defn set-active-element!
-  "Property.
-
-  The activeElement read-only property of the `web.Document` and
-  interfaces returns the `web.Element` within the DOM or shadow
-  tree that currently has focus.
-
-  `var element = DocumentOrShadowRoot.activeElement`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
-  [this val]
-  (aset this "activeElement" val))
-
 (defn host
   "Property.
 
@@ -79,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/host`"
   [this]
-  (-> this (.host)))
+  (-> this (.-host)))
 
 (defn set-host!
   "Property.
@@ -104,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/innerHTML`"
   [this]
-  (-> this (.innerHTML)))
+  (-> this (.-innerHTML)))
 
 (defn set-inner-html!
   "Property.
@@ -130,7 +143,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode`"
   [this]
-  (-> this (.mode)))
+  (-> this (.-mode)))
 
 (defn set-mode!
   "Property.
@@ -144,4 +157,52 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode`"
   [this val]
   (aset this "mode" val))
+
+(defn active-element
+  "Property.
+
+  The activeElement read-only property of the `web.Document` and
+  interfaces returns the `web.Element` within the DOM or shadow
+  tree that currently has focus.
+
+  `var element = DocumentOrShadowRoot.activeElement`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
+  [this]
+  (-> this (.-activeElement)))
+
+(defn set-active-element!
+  "Property.
+
+  The activeElement read-only property of the `web.Document` and
+  interfaces returns the `web.Element` within the DOM or shadow
+  tree that currently has focus.
+
+  `var element = DocumentOrShadowRoot.activeElement`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
+  [this val]
+  (aset this "activeElement" val))
+
+(defn style-sheets
+  "Property.
+
+  The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
+  returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
+  for stylesheets explicitly linked into or embedded in a document.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
+  [this]
+  (-> this (.-styleSheets)))
+
+(defn set-style-sheets!
+  "Property.
+
+  The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
+  returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
+  for stylesheets explicitly linked into or embedded in a document.
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
+  [this val]
+  (aset this "styleSheets" val))
 

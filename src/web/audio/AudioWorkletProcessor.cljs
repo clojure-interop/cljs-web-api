@@ -54,7 +54,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/port`"
   [this]
-  (-> this (.port)))
+  (-> this (.-port)))
 
 (defn set-port!
   "Property.
@@ -80,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/parameterDescriptors`"
   [this]
-  (-> this (.parameterDescriptors)))
+  (-> this (.-parameterDescriptors)))
 
 (defn set-parameter-descriptors!
   "Property.

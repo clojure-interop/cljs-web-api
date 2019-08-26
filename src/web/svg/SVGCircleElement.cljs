@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cx`"
   [this]
-  (-> this (.cx)))
+  (-> this (.-cx)))
 
 (defn set-cx!
   "Property.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cy`"
   [this]
-  (-> this (.cy)))
+  (-> this (.-cy)))
 
 (defn set-cy!
   "Property.
@@ -53,4 +53,30 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/cy`"
   [this val]
   (aset this "cy" val))
+
+(defn r
+  "Property.
+
+  The r read-only property of the `web.svg.SVGCircleElement` interface
+  the r attribute of a `<circle>` element and by that defines the
+  of the circle.
+
+  `var radius = element.r;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/r`"
+  [this]
+  (-> this (.-r)))
+
+(defn set-r!
+  "Property.
+
+  The r read-only property of the `web.svg.SVGCircleElement` interface
+  the r attribute of a `<circle>` element and by that defines the
+  of the circle.
+
+  `var radius = element.r;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGCircleElement/r`"
+  [this val]
+  (aset this "r" val))
 

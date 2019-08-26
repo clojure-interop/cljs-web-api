@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMException/code`"
   [this]
-  (-> this (.code)))
+  (-> this (.-code)))
 
 (defn set-code!
   "Property.
@@ -61,7 +61,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMException/message`"
   [this]
-  (-> this (.message)))
+  (-> this (.-message)))
 
 (defn set-message!
   "Property.
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMException/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.

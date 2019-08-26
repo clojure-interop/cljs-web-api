@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceRotationRate/alpha`"
   [this]
-  (-> this (.alpha)))
+  (-> this (.-alpha)))
 
 (defn set-alpha!
   "Property.
@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceRotationRate/beta`"
   [this]
-  (-> this (.beta)))
+  (-> this (.-beta)))
 
 (defn set-beta!
   "Property.
@@ -71,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DeviceRotationRate/gamma`"
   [this]
-  (-> this (.gamma)))
+  (-> this (.-gamma)))
 
 (defn set-gamma!
   "Property.

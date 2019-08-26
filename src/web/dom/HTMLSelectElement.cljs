@@ -2,7 +2,7 @@
   "The HTMLSelectElement interface represents a `<select>` HTML
   These elements also share all of the properties and methods of
   HTML elements via the `web.dom.HTMLElement` interface."
-  (:refer-clojure :exclude [type remove]))
+  (:refer-clojure :exclude [name type remove]))
 
 (defn add
   "Method.
@@ -15,6 +15,14 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/add`"
   [this & args]
   (apply (-> this .-add) (concat [this] args)))
+
+(defn blur
+  "Method.
+
+  Removes input focus from this element. This method is now implemented
+  HTMLElement."
+  [this & args]
+  (apply (-> this .-blur) (concat [this] args)))
 
 (defn check-validity
   "Method.
@@ -29,6 +37,14 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity`"
   [this ]
   (-> this (.checkValidity)))
+
+(defn focus
+  "Method.
+
+  Gives input focus to this element. This method is now implemented
+  HTMLElement."
+  [this & args]
+  (apply (-> this .-focus) (concat [this] args)))
 
 (defn item
   "Method.
@@ -95,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/autofocus`"
   [this]
-  (-> this (.autofocus)))
+  (-> this (.-autofocus)))
 
 (defn set-autofocus!
   "Property.
@@ -125,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled`"
   [this]
-  (-> this (.disabled)))
+  (-> this (.-disabled)))
 
 (defn set-disabled!
   "Property.
@@ -160,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/form`"
   [this]
-  (-> this (.form)))
+  (-> this (.-form)))
 
 (defn labels
   "Property.
@@ -172,7 +188,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels`"
   [this]
-  (-> this (.labels)))
+  (-> this (.-labels)))
 
 (defn set-labels!
   "Property.
@@ -186,6 +202,52 @@
   [this val]
   (aset this "labels" val))
 
+(defn length
+  "Property.
+
+  An unsigned long The number of <option> elements in this select"
+  [this]
+  (-> this (.-length)))
+
+(defn set-length!
+  "Property.
+
+  An unsigned long The number of <option> elements in this select"
+  [this val]
+  (aset this "length" val))
+
+(defn multiple
+  "Property.
+
+  A Boolean reflecting the multiple HTML attribute, which indicates
+  multiple items can be selected."
+  [this]
+  (-> this (.-multiple)))
+
+(defn set-multiple!
+  "Property.
+
+  A Boolean reflecting the multiple HTML attribute, which indicates
+  multiple items can be selected."
+  [this val]
+  (aset this "multiple" val))
+
+(defn name
+  "Property.
+
+  A DOMString reflecting the name HTML attribute, containing the
+  of this control used by servers and DOM search functions."
+  [this]
+  (-> this (.-name)))
+
+(defn set-name!
+  "Property.
+
+  A DOMString reflecting the name HTML attribute, containing the
+  of this control used by servers and DOM search functions."
+  [this val]
+  (aset this "name" val))
+
 (defn options
   "Property.
 
@@ -196,7 +258,23 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options`"
   [this]
-  (-> this (.options)))
+  (-> this (.-options)))
+
+(defn required
+  "Property.
+
+  A Boolean reflecting the required HTML attribute, which indicates
+  the user is required to select a value before submitting the"
+  [this]
+  (-> this (.-required)))
+
+(defn set-required!
+  "Property.
+
+  A Boolean reflecting the required HTML attribute, which indicates
+  the user is required to select a value before submitting the"
+  [this val]
+  (aset this "required" val))
 
 (defn selected-index
   "Property.
@@ -210,7 +288,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex`"
   [this]
-  (-> this (.selectedIndex)))
+  (-> this (.-selectedIndex)))
 
 (defn set-selected-index!
   "Property.
@@ -239,7 +317,25 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions`"
   [this]
-  (-> this (.selectedOptions)))
+  (-> this (.-selectedOptions)))
+
+(defn size
+  "Property.
+
+  A long reflecting the size HTML attribute, which contains the
+  of visible items in the control. The default is 1, unless multiple
+  true, in which case it is 4."
+  [this]
+  (-> this (.-size)))
+
+(defn set-size!
+  "Property.
+
+  A long reflecting the size HTML attribute, which contains the
+  of visible items in the control. The default is 1, unless multiple
+  true, in which case it is 4."
+  [this val]
+  (aset this "size" val))
 
 (defn type
   "Property.
@@ -257,5 +353,75 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
+
+(defn validation-message
+  "Property.
+
+  A DOMString representing a localized message that describes the
+  constraints that the control does not satisfy (if any). This
+  is the empty string if the control is not a candidate for constraint
+  (willValidate is false), or it satisfies its constraints."
+  [this]
+  (-> this (.-validationMessage)))
+
+(defn set-validation-message!
+  "Property.
+
+  A DOMString representing a localized message that describes the
+  constraints that the control does not satisfy (if any). This
+  is the empty string if the control is not a candidate for constraint
+  (willValidate is false), or it satisfies its constraints."
+  [this val]
+  (aset this "validationMessage" val))
+
+(defn validity
+  "Property.
+
+  A ValidityState reflecting the validity state that this control
+  in."
+  [this]
+  (-> this (.-validity)))
+
+(defn set-validity!
+  "Property.
+
+  A ValidityState reflecting the validity state that this control
+  in."
+  [this val]
+  (aset this "validity" val))
+
+(defn value
+  "Property.
+
+  A DOMString reflecting the value of the form control. Returns
+  value property of the first selected option element if there
+  one, otherwise the empty string."
+  [this]
+  (-> this (.-value)))
+
+(defn set-value!
+  "Property.
+
+  A DOMString reflecting the value of the form control. Returns
+  value property of the first selected option element if there
+  one, otherwise the empty string."
+  [this val]
+  (aset this "value" val))
+
+(defn will-validate
+  "Property.
+
+  A Boolean that indicates whether the button is a candidate for
+  validation. It is false if any conditions bar it from constraint"
+  [this]
+  (-> this (.-willValidate)))
+
+(defn set-will-validate!
+  "Property.
+
+  A Boolean that indicates whether the button is a candidate for
+  validation. It is false if any conditions bar it from constraint"
+  [this val]
+  (aset this "willValidate" val))
 

@@ -36,7 +36,7 @@
   this VRDevice is a part of. All devices that are part of the
   physical piece of hardware will have the same hardwareUnitId."
   [this]
-  (-> this (.hardwareUnitId)))
+  (-> this (.-hardwareUnitId)))
 
 (defn set-hardware-unit-id!
   "Property.
@@ -46,4 +46,36 @@
   physical piece of hardware will have the same hardwareUnitId."
   [this val]
   (aset this "hardwareUnitId" val))
+
+(defn device-id
+  "Property.
+
+  Returns the ID for this specific VRDevice. The ID shouldn’t change
+  browser restarts, allowing configuration data to be saved based
+  it."
+  [this]
+  (-> this (.-deviceId)))
+
+(defn set-device-id!
+  "Property.
+
+  Returns the ID for this specific VRDevice. The ID shouldn’t change
+  browser restarts, allowing configuration data to be saved based
+  it."
+  [this val]
+  (aset this "deviceId" val))
+
+(defn device-name
+  "Property.
+
+  A human-readable name to identify the VRDevice."
+  [this]
+  (-> this (.-deviceName)))
+
+(defn set-device-name!
+  "Property.
+
+  A human-readable name to identify the VRDevice."
+  [this val]
+  (aset this "deviceName" val))
 

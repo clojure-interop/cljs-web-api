@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DelayNode/delayTime`"
   [this]
-  (-> this (.delayTime)))
+  (-> this (.-delayTime)))
 
 (defn set-delay-time!
   "Property.

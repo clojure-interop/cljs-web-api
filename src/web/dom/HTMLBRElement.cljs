@@ -8,7 +8,7 @@
 
   Is a DOMString indicating the flow of text around floating objects."
   [this]
-  (-> this (.clear)))
+  (-> this (.-clear)))
 
 (defn set-clear!
   "Property.

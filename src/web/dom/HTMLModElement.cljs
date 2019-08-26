@@ -11,7 +11,7 @@
   Is a DOMString reflecting the cite HTML attribute, containing
   URI of a resource explaining the change."
   [this]
-  (-> this (.cite)))
+  (-> this (.-cite)))
 
 (defn set-cite!
   "Property.
@@ -20,4 +20,20 @@
   URI of a resource explaining the change."
   [this val]
   (aset this "cite" val))
+
+(defn date-time
+  "Property.
+
+  Is a DOMString reflecting the datetime HTML attribute, containing
+  date-and-time string representing a timestamp for the change."
+  [this]
+  (-> this (.-dateTime)))
+
+(defn set-date-time!
+  "Property.
+
+  Is a DOMString reflecting the datetime HTML attribute, containing
+  date-and-time string representing a timestamp for the change."
+  [this val]
+  (aset this "dateTime" val))
 

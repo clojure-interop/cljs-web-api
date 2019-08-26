@@ -17,30 +17,17 @@
   [this value start-time]
   (-> this (.setValueAtTime value start-time)))
 
-(defn cancel-and-hold-at-time
+(defn linear-ramp-to-value-at-time
   "Method.
 
-  The cancelAndHoldAtTime() property of the `web.audio.AudioParam`
-  cancels all scheduled future changes to the AudioParam but holds
-  value at a given time until further changes are made using other
+  A reference to this AudioParam object. In some browsers older
+  of this interface return void.
 
-  `var audioParam = AudioParam.cancelAndHoldAtTime(cancelTime)`
+  `var AudioParam = AudioParam.linearRampToValueAtTime(value, endTime)`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime`"
-  [this cancel-time]
-  (-> this (.cancelAndHoldAtTime cancel-time)))
-
-(defn cancel-scheduled-values
-  "Method.
-
-  A reference to this AudioParam object. In some older implementations
-  method returns void.
-
-  `var AudioParam = AudioParam.cancelScheduledValues(startTime)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelScheduledValues`"
-  [this start-time]
-  (-> this (.cancelScheduledValues start-time)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime`"
+  [this value end-time]
+  (-> this (.linearRampToValueAtTime value end-time)))
 
 (defn exponential-ramp-to-value-at-time
   "Method.
@@ -53,18 +40,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/exponentialRampToValueAtTime`"
   [this value end-time]
   (-> this (.exponentialRampToValueAtTime value end-time)))
-
-(defn linear-ramp-to-value-at-time
-  "Method.
-
-  A reference to this AudioParam object. In some browsers older
-  of this interface return void.
-
-  `var AudioParam = AudioParam.linearRampToValueAtTime(value, endTime)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime`"
-  [this value end-time]
-  (-> this (.linearRampToValueAtTime value end-time)))
 
 (defn set-target-at-time
   "Method.
@@ -92,6 +67,31 @@
   [this values start-time duration]
   (-> this (.setValueCurveAtTime values start-time duration)))
 
+(defn cancel-scheduled-values
+  "Method.
+
+  A reference to this AudioParam object. In some older implementations
+  method returns void.
+
+  `var AudioParam = AudioParam.cancelScheduledValues(startTime)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelScheduledValues`"
+  [this start-time]
+  (-> this (.cancelScheduledValues start-time)))
+
+(defn cancel-and-hold-at-time
+  "Method.
+
+  The cancelAndHoldAtTime() property of the `web.audio.AudioParam`
+  cancels all scheduled future changes to the AudioParam but holds
+  value at a given time until further changes are made using other
+
+  `var audioParam = AudioParam.cancelAndHoldAtTime(cancelTime)`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime`"
+  [this cancel-time]
+  (-> this (.cancelAndHoldAtTime cancel-time)))
+
 (defn default-value
   "Property.
 
@@ -103,7 +103,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/defaultValue`"
   [this]
-  (-> this (.defaultValue)))
+  (-> this (.-defaultValue)))
 
 (defn set-default-value!
   "Property.
@@ -129,7 +129,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/maxValue`"
   [this]
-  (-> this (.maxValue)))
+  (-> this (.-maxValue)))
 
 (defn set-max-value!
   "Property.
@@ -155,7 +155,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue`"
   [this]
-  (-> this (.minValue)))
+  (-> this (.-minValue)))
 
 (defn set-min-value!
   "Property.
@@ -182,7 +182,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value`"
   [this]
-  (-> this (.value)))
+  (-> this (.-value)))
 
 (defn set-value!
   "Property.

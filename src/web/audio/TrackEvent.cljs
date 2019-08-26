@@ -36,5 +36,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TrackEvent/track`"
   [this]
-  (-> this (.track)))
+  (-> this (.-track)))
 

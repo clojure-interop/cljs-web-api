@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion`"
   [this]
-  (-> this (.quaternion)))
+  (-> this (.-quaternion)))
 
 (defn set-quaternion!
   "Property.

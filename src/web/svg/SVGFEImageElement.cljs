@@ -8,7 +8,7 @@
   An SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio
   of the given element."
   [this]
-  (-> this (.preserveAspectRatio)))
+  (-> this (.-preserveAspectRatio)))
 
 (defn set-preserve-aspect-ratio!
   "Property.
@@ -17,4 +17,20 @@
   of the given element."
   [this val]
   (aset this "preserveAspectRatio" val))
+
+(defn cross-origin
+  "Property.
+
+  An SVGAnimatedString reflects the crossorigin attribute of the
+  element, limited to only known values."
+  [this]
+  (-> this (.-crossOrigin)))
+
+(defn set-cross-origin!
+  "Property.
+
+  An SVGAnimatedString reflects the crossorigin attribute of the
+  element, limited to only known values."
+  [this val]
+  (aset this "crossOrigin" val))
 

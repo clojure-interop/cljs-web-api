@@ -15,7 +15,7 @@
   A double-precision floating-point number specifying a specific,
   value the property must have to be considered acceptable."
   [this]
-  (-> this (.exact)))
+  (-> this (.-exact)))
 
 (defn set-exact!
   "Property.
@@ -24,4 +24,22 @@
   value the property must have to be considered acceptable."
   [this val]
   (aset this "exact" val))
+
+(defn ideal
+  "Property.
+
+  A double-precision floating-point number specifying a value the
+  would ideally have, but which can be considered optional if necessary
+  find a match."
+  [this]
+  (-> this (.-ideal)))
+
+(defn set-ideal!
+  "Property.
+
+  A double-precision floating-point number specifying a value the
+  would ideally have, but which can be considered optional if necessary
+  find a match."
+  [this val]
+  (aset this "ideal" val))
 

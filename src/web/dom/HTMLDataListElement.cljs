@@ -10,7 +10,7 @@
   Is a HTMLCollection representing a collection of the contained
   elements."
   [this]
-  (-> this (.options)))
+  (-> this (.-options)))
 
 (defn set-options!
   "Property.

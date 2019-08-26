@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/altKey`"
   [this]
-  (-> this (.altKey)))
+  (-> this (.-altKey)))
 
 (defn set-alt-key!
   "Property.
@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/changedTouches`"
   [this]
-  (-> this (.changedTouches)))
+  (-> this (.-changedTouches)))
 
 (defn ctrl-key
   "Property.
@@ -65,7 +65,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/ctrlKey`"
   [this]
-  (-> this (.ctrlKey)))
+  (-> this (.-ctrlKey)))
 
 (defn set-ctrl-key!
   "Property.
@@ -91,7 +91,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/metaKey`"
   [this]
-  (-> this (.metaKey)))
+  (-> this (.-metaKey)))
 
 (defn set-meta-key!
   "Property.
@@ -117,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/shiftKey`"
   [this]
-  (-> this (.shiftKey)))
+  (-> this (.-shiftKey)))
 
 (defn set-shift-key!
   "Property.
@@ -144,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/targetTouches`"
   [this]
-  (-> this (.targetTouches)))
+  (-> this (.-targetTouches)))
 
 (defn touches
   "Property.
@@ -158,5 +158,45 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches`"
   [this]
-  (-> this (.touches)))
+  (-> this (.-touches)))
+
+(defn rotation
+  "Property.
+
+  Change in rotation (in degrees) since the event's beginning.
+  values indicate clockwise rotation; negative values indicate
+  rotation. Initial value: 0.0"
+  [this]
+  (-> this (.-rotation)))
+
+(defn set-rotation!
+  "Property.
+
+  Change in rotation (in degrees) since the event's beginning.
+  values indicate clockwise rotation; negative values indicate
+  rotation. Initial value: 0.0"
+  [this val]
+  (aset this "rotation" val))
+
+(defn scale
+  "Property.
+
+  Distance between two digits since the event's beginning. Expressed
+  a floating-point multiple of the initial distance between the
+  at the beginning of the event. Values below 1.0 indicate an inward
+  (zoom out). Values above 1.0 indicate an outward unpinch (zoom
+  Initial value: 1.0"
+  [this]
+  (-> this (.-scale)))
+
+(defn set-scale!
+  "Property.
+
+  Distance between two digits since the event's beginning. Expressed
+  a floating-point multiple of the initial distance between the
+  at the beginning of the event. Values below 1.0 indicate an inward
+  (zoom out). Values above 1.0 indicate an outward unpinch (zoom
+  Initial value: 1.0"
+  [this val]
+  (aset this "scale" val))
 

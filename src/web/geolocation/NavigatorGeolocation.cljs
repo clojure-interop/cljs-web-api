@@ -9,7 +9,7 @@
   Returns a Geolocation object allowing accessing the location
   the device."
   [this]
-  (-> this (.geolocation)))
+  (-> this (.-geolocation)))
 
 (defn set-geolocation!
   "Property.

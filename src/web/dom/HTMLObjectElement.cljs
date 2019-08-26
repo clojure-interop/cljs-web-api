@@ -3,7 +3,7 @@
   (beyond those on the `web.dom.HTMLElement` interface it also
   available to it by inheritance) for manipulating the layout and
   of `<object>` element, representing external resources."
-  (:refer-clojure :exclude [name type]))
+  (:refer-clojure :exclude [declare name type]))
 
 (defn check-validity
   "Method.
@@ -37,7 +37,7 @@
   of the element's contents with respect to the surrounding context.
   possible values are \"left\", \"right\", \"justify\", and \"center\"."
   [this]
-  (-> this (.align)))
+  (-> this (.-align)))
 
 (defn set-align!
   "Property.
@@ -47,6 +47,88 @@
   possible values are \"left\", \"right\", \"justify\", and \"center\"."
   [this val]
   (aset this "align" val))
+
+(defn archive
+  "Property.
+
+  Is a DOMString that reflects the archive HTML attribute, containing
+  list of archives for resources for this object."
+  [this]
+  (-> this (.-archive)))
+
+(defn set-archive!
+  "Property.
+
+  Is a DOMString that reflects the archive HTML attribute, containing
+  list of archives for resources for this object."
+  [this val]
+  (aset this "archive" val))
+
+(defn border
+  "Property.
+
+  Is a DOMString that reflects the border HTML attribute, specifying
+  width of a border around the object."
+  [this]
+  (-> this (.-border)))
+
+(defn set-border!
+  "Property.
+
+  Is a DOMString that reflects the border HTML attribute, specifying
+  width of a border around the object."
+  [this val]
+  (aset this "border" val))
+
+(defn code
+  "Property.
+
+  Is a DOMString representing the name of an applet class file,
+  either the applet's subclass, or the path to get to the class,
+  the class file itself."
+  [this]
+  (-> this (.-code)))
+
+(defn set-code!
+  "Property.
+
+  Is a DOMString representing the name of an applet class file,
+  either the applet's subclass, or the path to get to the class,
+  the class file itself."
+  [this val]
+  (aset this "code" val))
+
+(defn code-base
+  "Property.
+
+  Is a DOMString that reflects the codebase HTML attribute, specifying
+  base path to use to resolve relative URIs."
+  [this]
+  (-> this (.-codeBase)))
+
+(defn set-code-base!
+  "Property.
+
+  Is a DOMString that reflects the codebase HTML attribute, specifying
+  base path to use to resolve relative URIs."
+  [this val]
+  (aset this "codeBase" val))
+
+(defn code-type
+  "Property.
+
+  Is a DOMString that reflects the codetype HTML attribute, specifying
+  content type of the data."
+  [this]
+  (-> this (.-codeType)))
+
+(defn set-code-type!
+  "Property.
+
+  Is a DOMString that reflects the codetype HTML attribute, specifying
+  content type of the data."
+  [this val]
+  (aset this "codeType" val))
 
 (defn content-document
   "Property.
@@ -59,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument`"
   [this]
-  (-> this (.contentDocument)))
+  (-> this (.-contentDocument)))
 
 (defn set-content-document!
   "Property.
@@ -85,7 +167,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow`"
   [this]
-  (-> this (.contentWindow)))
+  (-> this (.-contentWindow)))
 
 (defn set-content-window!
   "Property.
@@ -112,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data`"
   [this]
-  (-> this (.data)))
+  (-> this (.-data)))
 
 (defn set-data!
   "Property.
@@ -128,6 +210,22 @@
   [this val]
   (aset this "data" val))
 
+(defn declare
+  "Property.
+
+  Is a Boolean that reflects the declare HTML attribute, indicating
+  this is a declaration, not an instantiation, of the object."
+  [this]
+  (-> this (.-declare)))
+
+(defn set-declare!
+  "Property.
+
+  Is a Boolean that reflects the declare HTML attribute, indicating
+  this is a declaration, not an instantiation, of the object."
+  [this val]
+  (aset this "declare" val))
+
 (defn form
   "Property.
 
@@ -139,7 +237,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form`"
   [this]
-  (-> this (.form)))
+  (-> this (.-form)))
 
 (defn set-form!
   "Property.
@@ -166,7 +264,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/height`"
   [this]
-  (-> this (.height)))
+  (-> this (.-height)))
 
 (defn set-height!
   "Property.
@@ -182,6 +280,22 @@
   [this val]
   (aset this "height" val))
 
+(defn hspace
+  "Property.
+
+  Is a long representing the horizontal space in pixels around
+  control."
+  [this]
+  (-> this (.-hspace)))
+
+(defn set-hspace!
+  "Property.
+
+  Is a long representing the horizontal space in pixels around
+  control."
+  [this val]
+  (aset this "hspace" val))
+
 (defn name
   "Property.
 
@@ -194,7 +308,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -210,6 +324,38 @@
   [this val]
   (aset this "name" val))
 
+(defn standby
+  "Property.
+
+  Is a DOMString that reflects the standby HTML attribute, specifying
+  message to display while the object loads."
+  [this]
+  (-> this (.-standby)))
+
+(defn set-standby!
+  "Property.
+
+  Is a DOMString that reflects the standby HTML attribute, specifying
+  message to display while the object loads."
+  [this val]
+  (aset this "standby" val))
+
+(defn tabindex
+  "Property.
+
+  Is a long representing the position of the element in the tabbing
+  order for the current document."
+  [this]
+  (-> this (.-tabindex)))
+
+(defn set-tabindex!
+  "Property.
+
+  Is a long representing the position of the element in the tabbing
+  order for the current document."
+  [this val]
+  (aset this "tabindex" val))
+
 (defn type
   "Property.
 
@@ -222,7 +368,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -251,7 +397,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/typeMustMatch`"
   [this]
-  (-> this (.typeMustMatch)))
+  (-> this (.-typeMustMatch)))
 
 (defn set-type-must-match!
   "Property.
@@ -280,7 +426,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/useMap`"
   [this]
-  (-> this (.useMap)))
+  (-> this (.-useMap)))
 
 (defn set-use-map!
   "Property.
@@ -310,7 +456,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage`"
   [this]
-  (-> this (.validationMessage)))
+  (-> this (.-validationMessage)))
 
 (defn set-validation-message!
   "Property.
@@ -331,28 +477,34 @@
 (defn validity
   "Property.
 
-  The validity read-only property of the `web.dom.HTMLObjectElement`
-  returns a `web.dom.ValidityState` with the validity states that
-  element is in.
-
-  `var ValidityState = HTMLObjectElement.validity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/%5Cvalidity`"
+  Returns a ValidityState with the validity states that this element
+  in."
   [this]
-  (-> this (.validity)))
+  (-> this (.-validity)))
 
 (defn set-validity!
   "Property.
 
-  The validity read-only property of the `web.dom.HTMLObjectElement`
-  returns a `web.dom.ValidityState` with the validity states that
-  element is in.
-
-  `var ValidityState = HTMLObjectElement.validity;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/%5Cvalidity`"
+  Returns a ValidityState with the validity states that this element
+  in."
   [this val]
   (aset this "validity" val))
+
+(defn vspace
+  "Property.
+
+  Is a long representing the horizontal space in pixels around
+  control."
+  [this]
+  (-> this (.-vspace)))
+
+(defn set-vspace!
+  "Property.
+
+  Is a long representing the horizontal space in pixels around
+  control."
+  [this val]
+  (aset this "vspace" val))
 
 (defn width
   "Property.
@@ -366,7 +518,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/width`"
   [this]
-  (-> this (.width)))
+  (-> this (.-width)))
 
 (defn set-width!
   "Property.
@@ -393,7 +545,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/willValidate`"
   [this]
-  (-> this (.willValidate)))
+  (-> this (.-willValidate)))
 
 (defn set-will-validate!
   "Property.

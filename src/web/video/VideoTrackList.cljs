@@ -28,7 +28,19 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/length`"
   [this]
-  (-> this (.length)))
+  (-> this (.-length)))
+
+(defn selected-index
+  "Property.
+
+  The read-only `web.video.VideoTrackList` property selectedIndex
+  the index of the currently selected track, if any, or -1 otherwise.
+
+  `var index = VideoTrackList.selectedIndex;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/selectedIndex`"
+  [this]
+  (-> this (.-selectedIndex)))
 
 (defn onaddtrack
   "Property.
@@ -42,7 +54,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onaddtrack`"
   [this]
-  (-> this (.onaddtrack)))
+  (-> this (.-onaddtrack)))
 
 (defn set-onaddtrack!
   "Property.
@@ -69,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onchange`"
   [this]
-  (-> this (.onchange)))
+  (-> this (.-onchange)))
 
 (defn set-onchange!
   "Property.
@@ -96,7 +108,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onremovetrack`"
   [this]
-  (-> this (.onremovetrack)))
+  (-> this (.-onremovetrack)))
 
 (defn set-onremovetrack!
   "Property.
@@ -111,16 +123,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/onremovetrack`"
   [this val]
   (aset this "onremovetrack" val))
-
-(defn selected-index
-  "Property.
-
-  The read-only `web.video.VideoTrackList` property selectedIndex
-  the index of the currently selected track, if any, or -1 otherwise.
-
-  `var index = VideoTrackList.selectedIndex;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VideoTrackList/selectedIndex`"
-  [this]
-  (-> this (.selectedIndex)))
 

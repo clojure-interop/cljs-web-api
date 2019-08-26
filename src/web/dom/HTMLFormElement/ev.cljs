@@ -13,9 +13,8 @@
 (def submit
   "Event.
 
-  The submit event fires when a `<form>` is submitted.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event`"
+  The submit event fires when a form is submitted.
+  Also available via the onsubmit property."
 
   "submit")
 

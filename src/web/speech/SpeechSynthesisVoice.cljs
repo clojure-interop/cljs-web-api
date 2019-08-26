@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/default`"
   [this]
-  (-> this (.default)))
+  (-> this (.-default)))
 
 (defn set-default!
   "Property.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/lang`"
   [this]
-  (-> this (.lang)))
+  (-> this (.-lang)))
 
 (defn set-lang!
   "Property.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/localService`"
   [this]
-  (-> this (.localService)))
+  (-> this (.-localService)))
 
 (defn set-local-service!
   "Property.
@@ -93,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/name`"
   [this]
-  (-> this (.name)))
+  (-> this (.-name)))
 
 (defn set-name!
   "Property.
@@ -118,7 +118,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice/voiceURI`"
   [this]
-  (-> this (.voiceURI)))
+  (-> this (.-voiceURI)))
 
 (defn set-voice-uri!
   "Property.

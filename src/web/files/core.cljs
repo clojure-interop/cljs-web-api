@@ -19,7 +19,6 @@
             [web.files.FileSystemFlags]
             [web.files.IDBMutableFile]
             [web.files.IDBMutableFile.ev]
-            [web.files.LocalFileSystem]
             [web.files.LocalFileSystemSync]
             [web.files.LockedFile]
             [web.files.LockedFile.ev]

@@ -15,20 +15,17 @@
 (def invalid
   "Event.
 
-  The invalid event fires when a submittable element has been checked
-  validity and doesn't satisfy its constraints.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event`"
+  Fired when an element does not satisfy its constraints during
+  validation.
+  Also available via the oninvalid event handler property."
 
   "invalid")
 
 (def search
   "Event.
 
-  The search event is fired when a search is initiated usinng an
-  element of type=\\\"search\\\".
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/search_event`"
+  Fired when a search is initiated on an <input> of type=\"search\".
+  Also available via the onsearch event handler property."
 
   "search")
 

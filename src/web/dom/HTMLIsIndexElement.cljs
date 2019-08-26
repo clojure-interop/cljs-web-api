@@ -10,7 +10,7 @@
   Is a HTMLFormElement representing the <form> element it belongs
   It can have the null value, if <isindex> isn't part of any form."
   [this]
-  (-> this (.form)))
+  (-> this (.-form)))
 
 (defn set-form!
   "Property.
@@ -19,4 +19,18 @@
   It can have the null value, if <isindex> isn't part of any form."
   [this val]
   (aset this "form" val))
+
+(defn prompt
+  "Property.
+
+  Is a DOMString representing a text to be prompted for the field."
+  [this]
+  (-> this (.-prompt)))
+
+(defn set-prompt!
+  "Property.
+
+  Is a DOMString representing a text to be prompted for the field."
+  [this val]
+  (aset this "prompt" val))
 

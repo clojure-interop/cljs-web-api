@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/appearance`"
   [this]
-  (-> this (.appearance)))
+  (-> this (.-appearance)))
 
 (defn set-appearance!
   "Property.
@@ -27,29 +27,33 @@
   [this val]
   (aset this "appearance" val))
 
-(defn manufacturer-data
+(defn tx-power
   "Property.
 
-  The manufacturerData read-only property of the `web.bluetooth.BluetoothAdvertisingData`
-  returns a map that relates Company Identifier Codes to `ArrayBuffers`.
+  The txPower read-only property of the `web.bluetooth.BluetoothAdvertisingData`
+  returns the transmission power at which the device is broadcasting,
+  in dBm. This is used to compute the path loss as this.txPower
+  this.rssi.
 
-  `varmanufacturerData = BluetoothAdvertisingData.manufacturerData;`
+  `var power = BluetoothAdvertisingData.txPower;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/manufacturerData`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/txPower`"
   [this]
-  (-> this (.manufacturerData)))
+  (-> this (.-txPower)))
 
-(defn set-manufacturer-data!
+(defn set-tx-power!
   "Property.
 
-  The manufacturerData read-only property of the `web.bluetooth.BluetoothAdvertisingData`
-  returns a map that relates Company Identifier Codes to `ArrayBuffers`.
+  The txPower read-only property of the `web.bluetooth.BluetoothAdvertisingData`
+  returns the transmission power at which the device is broadcasting,
+  in dBm. This is used to compute the path loss as this.txPower
+  this.rssi.
 
-  `varmanufacturerData = BluetoothAdvertisingData.manufacturerData;`
+  `var power = BluetoothAdvertisingData.txPower;`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/manufacturerData`"
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/txPower`"
   [this val]
-  (aset this "manufacturerData" val))
+  (aset this "txPower" val))
 
 (defn rssi
   "Property.
@@ -63,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/rssi`"
   [this]
-  (-> this (.rssi)))
+  (-> this (.-rssi)))
 
 (defn set-rssi!
   "Property.
@@ -79,6 +83,30 @@
   [this val]
   (aset this "rssi" val))
 
+(defn manufacturer-data
+  "Property.
+
+  The manufacturerData read-only property of the `web.bluetooth.BluetoothAdvertisingData`
+  returns a map that relates Company Identifier Codes to `ArrayBuffers`.
+
+  `varmanufacturerData = BluetoothAdvertisingData.manufacturerData;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/manufacturerData`"
+  [this]
+  (-> this (.-manufacturerData)))
+
+(defn set-manufacturer-data!
+  "Property.
+
+  The manufacturerData read-only property of the `web.bluetooth.BluetoothAdvertisingData`
+  returns a map that relates Company Identifier Codes to `ArrayBuffers`.
+
+  `varmanufacturerData = BluetoothAdvertisingData.manufacturerData;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/manufacturerData`"
+  [this val]
+  (aset this "manufacturerData" val))
+
 (defn service-data
   "Property.
 
@@ -89,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/serviceData`"
   [this]
-  (-> this (.serviceData)))
+  (-> this (.-serviceData)))
 
 (defn set-service-data!
   "Property.
@@ -102,32 +130,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/serviceData`"
   [this val]
   (aset this "serviceData" val))
-
-(defn tx-power
-  "Property.
-
-  The txPower read-only property of the `web.bluetooth.BluetoothAdvertisingData`
-  returns the transmission power at which the device is broadcasting,
-  in dBm. This is used to compute the path loss as this.txPower
-  this.rssi.
-
-  `var power = BluetoothAdvertisingData.txPower;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/txPower`"
-  [this]
-  (-> this (.txPower)))
-
-(defn set-tx-power!
-  "Property.
-
-  The txPower read-only property of the `web.bluetooth.BluetoothAdvertisingData`
-  returns the transmission power at which the device is broadcasting,
-  in dBm. This is used to compute the path loss as this.txPower
-  this.rssi.
-
-  `var power = BluetoothAdvertisingData.txPower;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothAdvertisingData/txPower`"
-  [this val]
-  (aset this "txPower" val))
 

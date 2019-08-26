@@ -3,29 +3,62 @@
   how the navigation to the current document was done."
   (:refer-clojure :exclude [type]))
 
-(defn redirect-count
-  "Property.
+(defn to-json
+  "Method.
 
-  The legacy PerformanceNavigation.redirectCount read-only property
-  an unsigned short representing the number of REDIRECTs done before
-  the page.
-
-  `amount = performanceNavigation.redirectCount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/redirectCount`"
-  [this]
-  (-> this (.redirectCount)))
+  Is a jsonizer returning a json object representing the PerformanceNavigation"
+  [this & args]
+  (apply (-> this .-toJSON) (concat [this] args)))
 
 (defn type
   "Property.
 
-  The legacy PerformanceNavigation.type read-only property returns
-  unsigned short containing a constant describing how the navigation
-  this page was done. Possible values are:
-
-  `type = performanceNavigation.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/type`"
+  An unsigned short which indicates how the navigation to this
+  was done. Possible values are:
+  TYPE_NAVIGATE (0)
+  The page was accessed by following a link, a bookmark, a form
+  or a script, or by typing the URL in the address bar.
+  TYPE_RELOAD (1)
+  The page was accessed by clicking the Reload button or via the
+  method.
+  TYPE_BACK_FORWARD (2)
+  The page was accessed by navigating into the history.
+  TYPE_RESERVED (255)
+  Any other way."
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
+
+(defn set-type!
+  "Property.
+
+  An unsigned short which indicates how the navigation to this
+  was done. Possible values are:
+  TYPE_NAVIGATE (0)
+  The page was accessed by following a link, a bookmark, a form
+  or a script, or by typing the URL in the address bar.
+  TYPE_RELOAD (1)
+  The page was accessed by clicking the Reload button or via the
+  method.
+  TYPE_BACK_FORWARD (2)
+  The page was accessed by navigating into the history.
+  TYPE_RESERVED (255)
+  Any other way."
+  [this val]
+  (aset this "type" val))
+
+(defn redirect-count
+  "Property.
+
+  An unsigned short representing the number of REDIRECTs done before
+  the page."
+  [this]
+  (-> this (.-redirectCount)))
+
+(defn set-redirect-count!
+  "Property.
+
+  An unsigned short representing the number of REDIRECTs done before
+  the page."
+  [this val]
+  (aset this "redirectCount" val))
 

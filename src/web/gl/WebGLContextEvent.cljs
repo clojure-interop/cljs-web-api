@@ -13,5 +13,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLContextEvent/statusMessage`"
   [this]
-  (-> this (.statusMessage)))
+  (-> this (.-statusMessage)))
 

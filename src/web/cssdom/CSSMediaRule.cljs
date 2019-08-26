@@ -11,7 +11,7 @@
   Specifies a MediaList representing the intended destination medium
   style information."
   [this]
-  (-> this (.media)))
+  (-> this (.-media)))
 
 (defn set-media!
   "Property.

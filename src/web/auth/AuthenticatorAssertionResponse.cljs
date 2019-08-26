@@ -11,7 +11,7 @@
   The client data for the authentication, such as origin and challenge.
   clientDataJSON property is inherited from the AuthenticatorResponse."
   [this]
-  (-> this (.clientDataJSON)))
+  (-> this (.-clientDataJSON)))
 
 (defn set-client-data-json!
   "Property.
@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData`"
   [this]
-  (-> this (.authenticatorData)))
+  (-> this (.-authenticatorData)))
 
 (defn set-authenticator-data!
   "Property.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/signature`"
   [this]
-  (-> this (.signature)))
+  (-> this (.-signature)))
 
 (defn set-signature!
   "Property.
@@ -92,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/userHandle`"
   [this]
-  (-> this (.userHandle)))
+  (-> this (.-userHandle)))
 
 (defn set-user-handle!
   "Property.

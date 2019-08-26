@@ -13,10 +13,8 @@
 (def messageerror
   "Event.
 
-  The messageerror event is fired on a `web.broadcast.BroadcastChannel`
-  when a message arrives on the channel that can't be deserialized.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/messageerror_event`"
+  Fired when a message arrives that can't be deserialized.
+  Also available via the onmessageerror property."
 
   "messageerror")
 

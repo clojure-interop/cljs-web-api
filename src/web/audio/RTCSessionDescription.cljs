@@ -55,7 +55,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/type`"
   [this]
-  (-> this (.type)))
+  (-> this (.-type)))
 
 (defn set-type!
   "Property.
@@ -81,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/sdp`"
   [this]
-  (-> this (.sdp)))
+  (-> this (.-sdp)))
 
 (defn set-sdp!
   "Property.
