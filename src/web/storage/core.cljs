@@ -1,0 +1,23 @@
+(ns web.storage.core
+  "web.storage interfaces."
+  (:require [web.storage.IDBCursor]
+            [web.storage.IDBCursorWithValue]
+            [web.storage.IDBDatabase]
+            [web.storage.IDBDatabase.ev]
+            [web.storage.IDBEnvironment]
+            [web.storage.IDBFactory]
+            [web.storage.IDBIndex]
+            [web.storage.IDBKeyRange]
+            [web.storage.IDBOpenDBRequest]
+            [web.storage.IDBOpenDBRequest.ev]
+            [web.storage.IDBRequest]
+            [web.storage.IDBRequest.ev]
+            [web.storage.IDBTransaction]
+            [web.storage.IDBTransaction.ev]
+            [web.storage.IDBVersionChangeEvent]
+            [web.storage.NavigatorStorage]
+            [web.storage.Storage]
+            [web.storage.StorageEstimate]
+            [web.storage.StorageEvent]
+            [web.storage.StorageManager]
+            [web.storage.StorageQuota]))

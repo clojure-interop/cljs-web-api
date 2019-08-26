@@ -1,0 +1,22 @@
+(ns web.cssdom.core
+  "web.cssdom interfaces."
+  (:require [web.cssdom.CSS]
+            [web.cssdom.CSSConditionRule]
+            [web.cssdom.CSSKeyframeRule]
+            [web.cssdom.CSSKeyframesRule]
+            [web.cssdom.CSSMediaRule]
+            [web.cssdom.CSSNamespaceRule]
+            [web.cssdom.CSSPageRule]
+            [web.cssdom.CSSRule]
+            [web.cssdom.CSSStyleDeclaration]
+            [web.cssdom.CSSStyleRule]
+            [web.cssdom.CSSStyleSheet]
+            [web.cssdom.CaretPosition]
+            [web.cssdom.GeometryUtils]
+            [web.cssdom.LinkStyle]
+            [web.cssdom.MediaQueryList]
+            [web.cssdom.MediaQueryList.ev]
+            [web.cssdom.Screen]
+            [web.cssdom.ScrollToOptions]
+            [web.cssdom.StyleSheet]
+            [web.cssdom.TransitionEvent]))

@@ -4410,7 +4410,7 @@
   [this val]
   (aset this "personalbar" val))
 
-(defn pkcs-11
+(defn pkcs11
   "Property.
 
   Returns the pkcs11 object, which is used to install drivers and
@@ -4423,7 +4423,7 @@
   [this]
   (-> this (.pkcs11)))
 
-(defn set-pkcs-11!
+(defn set-pkcs11!
   "Property.
 
   Returns the pkcs11 object, which is used to install drivers and

@@ -1,0 +1,24 @@
+(ns web.dom.HTMLUListElement
+  "The HTMLUListElement interface provides special properties (beyond
+  defined on the regular `web.dom.HTMLElement` interface it also
+  available to it by inheritance) for manipulating unordered list"
+  (:refer-clojure :exclude [type]))
+
+(defn type
+  "Property.
+
+  Is a DOMString value reflecting the type and defining the kind
+  marker to be used to display. The values are browser dependent
+  have never been standardized."
+  [this]
+  (-> this (.type)))
+
+(defn set-type!
+  "Property.
+
+  Is a DOMString value reflecting the type and defining the kind
+  marker to be used to display. The values are browser dependent
+  have never been standardized."
+  [this val]
+  (aset this "type" val))
+

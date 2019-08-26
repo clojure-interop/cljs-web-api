@@ -1,0 +1,20 @@
+(ns web.payments.core
+  "web.payments interfaces."
+  (:require [web.payments.AddressErrors]
+            [web.payments.BasicCardRequest]
+            [web.payments.BasicCardResponse]
+            [web.payments.MerchantValidationEvent]
+            [web.payments.PayerErrors]
+            [web.payments.PaymentAddress]
+            [web.payments.PaymentCurrencyAmount]
+            [web.payments.PaymentDetailsBase]
+            [web.payments.PaymentDetailsUpdate]
+            [web.payments.PaymentItem]
+            [web.payments.PaymentMethodChangeEvent]
+            [web.payments.PaymentRequest]
+            [web.payments.PaymentRequest.ev]
+            [web.payments.PaymentRequestEvent]
+            [web.payments.PaymentRequestUpdateEvent]
+            [web.payments.PaymentResponse]
+            [web.payments.PaymentResponse.ev]
+            [web.payments.PaymentValidationErrors]))
