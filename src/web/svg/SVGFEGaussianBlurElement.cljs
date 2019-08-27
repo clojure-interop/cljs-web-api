@@ -7,7 +7,7 @@
 
   Sets the values for the stdDeviation attribute."
   [this & args]
-  (apply (-> this .-setStdDeviation) (concat [this] args)))
+  (-> this .-setStdDeviation (.apply this (clj->js args))))
 
 (defn in1
   "Property.

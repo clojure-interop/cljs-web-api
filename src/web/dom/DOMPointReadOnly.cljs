@@ -30,7 +30,7 @@
   Applies a matrix transform specified as a DOMMatrixInit object
   the DOMPointReadOnly object."
   [this & args]
-  (apply (-> this .-matrixTransform) (concat [this] args)))
+  (-> this .-matrixTransform (.apply this (clj->js args))))
 
 (defn to-json
   "Method.

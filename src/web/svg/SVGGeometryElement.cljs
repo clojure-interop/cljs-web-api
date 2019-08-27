@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/isPointInFill`"
   [this & args]
-  (apply (-> this .-isPointInFill) (concat [this] args)))
+  (-> this .-isPointInFill (.apply this (clj->js args))))
 
 (defn is-point-in-stroke
   "Method.
@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/isPointInStroke`"
   [this & args]
-  (apply (-> this .-isPointInStroke) (concat [this] args)))
+  (-> this .-isPointInStroke (.apply this (clj->js args))))
 
 (defn get-total-length
   "Method.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength`"
   [this & args]
-  (apply (-> this .-getPointAtLength) (concat [this] args)))
+  (-> this .-getPointAtLength (.apply this (clj->js args))))
 
 (defn path-length
   "Property.

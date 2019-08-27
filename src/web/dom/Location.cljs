@@ -51,7 +51,7 @@
   Returns a DOMString containing the whole URL. It is a synonym
   URLUtils.href, though it can't be used to modify the value."
   [this & args]
-  (apply (-> this .-toString) (concat [this] args)))
+  (-> this .-toString (.apply this (clj->js args))))
 
 (defn href
   "Property.

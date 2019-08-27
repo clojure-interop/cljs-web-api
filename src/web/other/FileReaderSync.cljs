@@ -8,7 +8,7 @@
 
   The DOM Blob or File to read into the ArrayBuffer."
   [this & args]
-  (apply (-> this .-blob) (concat [this] args)))
+  (-> this .-blob (.apply this (clj->js args))))
 
 (defn not-found-error
   "Method.
@@ -16,7 +16,7 @@
   is raised when the resource represented by the DOM Blob or File
   be found, e. g. because it has been erased."
   [this & args]
-  (apply (-> this .-NotFoundError) (concat [this] args)))
+  (-> this .-NotFoundError (.apply this (clj->js args))))
 
 (defn security-error
   "Method.
@@ -27,7 +27,7 @@
   the file pointed by the resource is unsafe for a use from the
   (like it is a system file)."
   [this & args]
-  (apply (-> this .-SecurityError) (concat [this] args)))
+  (-> this .-SecurityError (.apply this (clj->js args))))
 
 (defn not-readable-error
   "Method.
@@ -35,7 +35,7 @@
   is raised when the resource cannot be read due to a permission
   like a concurrent lock."
   [this & args]
-  (apply (-> this .-NotReadableError) (concat [this] args)))
+  (-> this .-NotReadableError (.apply this (clj->js args))))
 
 (defn encoding-error
   "Method.
@@ -43,7 +43,7 @@
   is raised when the resource is a data URL and exceed the limit
   defined by each browser."
   [this & args]
-  (apply (-> this .-EncodingError) (concat [this] args)))
+  (-> this .-EncodingError (.apply this (clj->js args))))
 
 (defn encoding
   "Method.
@@ -51,5 +51,5 @@
   Optional. A string representing the encoding to be used, like
   or UTF-8."
   [this & args]
-  (apply (-> this .-encoding) (concat [this] args)))
+  (-> this .-encoding (.apply this (clj->js args))))
 

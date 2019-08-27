@@ -11,5 +11,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MSManipulationEvent/initMSManipulationEvent`"
   [this & args]
-  (apply (-> this .-initMSManipulationEvent) (concat [this] args)))
+  (-> this .-initMSManipulationEvent (.apply this (clj->js args))))
 

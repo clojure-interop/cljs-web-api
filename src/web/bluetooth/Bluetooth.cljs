@@ -11,7 +11,7 @@
   the user configure an option that affects what is returned by
   value. If this option is set, that is the value returned by this"
   [this & args]
-  (apply (-> this .-getAvailability) (concat [this] args)))
+  (-> this .-getAvailability (.apply this (clj->js args))))
 
 (defn request-device
   "Method.
@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestDevice`"
   [this & args]
-  (apply (-> this .-requestDevice) (concat [this] args)))
+  (-> this .-requestDevice (.apply this (clj->js args))))
 
 (defn referring-device
   "Property.

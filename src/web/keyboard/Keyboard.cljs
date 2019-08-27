@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/lock`"
   [this & args]
-  (apply (-> this .-lock) (concat [this] args)))
+  (-> this .-lock (.apply this (clj->js args))))
 
 (defn unlock
   "Method.

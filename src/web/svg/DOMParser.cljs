@@ -19,10 +19,10 @@
   The DOMString to be parsed. It must contain either HTML, xml,
   or svg document."
   [this & args]
-  (apply (-> this .-string) (concat [this] args)))
+  (-> this .-string (.apply this (clj->js args))))
 
 (defn dom-string
   "Method."
   [this & args]
-  (apply (-> this .-DOMString) (concat [this] args)))
+  (-> this .-DOMString (.apply this (clj->js args))))
 

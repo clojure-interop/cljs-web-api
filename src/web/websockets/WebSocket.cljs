@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send`"
   [this & args]
-  (apply (-> this .-send) (concat [this] args)))
+  (-> this .-send (.apply this (clj->js args))))
 
 (defn binary-type
   "Property.

@@ -10,7 +10,7 @@
   Checks the validity of the element and returns a Boolean holding
   check result."
   [this & args]
-  (apply (-> this .-checkValidity) (concat [this] args)))
+  (-> this .-checkValidity (.apply this (clj->js args))))
 
 (defn report-validity
   "Method.
@@ -20,7 +20,7 @@
   at the element, and returns false; if there are no problems,
   returns true."
   [this & args]
-  (apply (-> this .-reportValidity) (concat [this] args)))
+  (-> this .-reportValidity (.apply this (clj->js args))))
 
 (defn default-value
   "Property.

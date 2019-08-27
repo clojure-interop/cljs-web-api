@@ -36,7 +36,7 @@
   the original matrix being flipped around the y-axis, that is
   by the DOMMatrix(1, 0, 0, -1, 0, 0). The original matrix is not"
   [this & args]
-  (apply (-> this .-flipY) (concat [this] args)))
+  (-> this .-flipY (.apply this (clj->js args))))
 
 (defn inverse
   "Method.
@@ -46,7 +46,7 @@
   If the matrix cannot be inverted, all its components are set
   NaN and is2D() returns false."
   [this & args]
-  (apply (-> this .-inverse) (concat [this] args)))
+  (-> this .-inverse (.apply this (clj->js args))))
 
 (defn multiply
   "Method.
@@ -55,7 +55,7 @@
   the original matrix being multiplied by the given DOMMatrix.
   original matrix is not modified."
   [this & args]
-  (apply (-> this .-multiply) (concat [this] args)))
+  (-> this .-multiply (.apply this (clj->js args))))
 
 (defn rotate-axis-angle
   "Method.
@@ -64,7 +64,7 @@
   the original matrix being rotated by the given angle and the
   vector. The original matrix is not modified."
   [this & args]
-  (apply (-> this .-rotateAxisAngle) (concat [this] args)))
+  (-> this .-rotateAxisAngle (.apply this (clj->js args))))
 
 (defn rotate
   "Method.
@@ -73,7 +73,7 @@
   the original matrix being rotated by the given angle, with the
   centered on the origin given. The original matrix is not modified."
   [this & args]
-  (apply (-> this .-rotate) (concat [this] args)))
+  (-> this .-rotate (.apply this (clj->js args))))
 
 (defn rotate-from-vector
   "Method.
@@ -83,7 +83,7 @@
   and (1,0), centered on the origin given. The original matrix
   not modified."
   [this & args]
-  (apply (-> this .-rotateFromVector) (concat [this] args)))
+  (-> this .-rotateFromVector (.apply this (clj->js args))))
 
 (defn scale
   "Method.
@@ -92,7 +92,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/scale`"
   [this & args]
-  (apply (-> this .-scale) (concat [this] args)))
+  (-> this .-scale (.apply this (clj->js args))))
 
 (defn scale3d
   "Method.
@@ -101,7 +101,7 @@
   the matrix x, y and z dimension being scaled by the given factor,
   on the origin given. The original matrix is not modified."
   [this & args]
-  (apply (-> this .-scale3d) (concat [this] args)))
+  (-> this .-scale3d (.apply this (clj->js args))))
 
 (defn scale-non-uniform
   "Method.
@@ -111,7 +111,7 @@
   each dimension, centered on the origin given. The original matrix
   not modified."
   [this & args]
-  (apply (-> this .-scaleNonUniform) (concat [this] args)))
+  (-> this .-scaleNonUniform (.apply this (clj->js args))))
 
 (defn skew-x
   "Method.
@@ -120,7 +120,7 @@
   the original matrix being skewed along the x-axis by the given
   The original matrix is not modified."
   [this & args]
-  (apply (-> this .-skewX) (concat [this] args)))
+  (-> this .-skewX (.apply this (clj->js args))))
 
 (defn skew-y
   "Method.
@@ -129,7 +129,7 @@
   the original matrix being skewed along the y-axis by the given
   The original matrix is not modified."
   [this & args]
-  (apply (-> this .-skewY) (concat [this] args)))
+  (-> this .-skewY (.apply this (clj->js args))))
 
 (defn to-float32array
   "Method.
@@ -139,7 +139,7 @@
   m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44)
   a 3D matrix."
   [this & args]
-  (apply (-> this .-toFloat32Array) (concat [this] args)))
+  (-> this .-toFloat32Array (.apply this (clj->js args))))
 
 (defn to-float64array
   "Method.
@@ -149,14 +149,14 @@
   m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44)
   a 3D matrix."
   [this & args]
-  (apply (-> this .-toFloat64Array) (concat [this] args)))
+  (-> this .-toFloat64Array (.apply this (clj->js args))))
 
 (defn to-json
   "Method.
 
   Returns a JSON representation of the DOMMatrixReadOnly object."
   [this & args]
-  (apply (-> this .-toJSON) (concat [this] args)))
+  (-> this .-toJSON (.apply this (clj->js args))))
 
 (defn to-string
   "Method.
@@ -167,7 +167,7 @@
   and the 16 components,'matrix3d(m11, m12, m13, m14, m21, m22,
   m24, m31, m32, m33, m34, m41, m42, m43, m44)', for a 3D matrix."
   [this & args]
-  (apply (-> this .-toString) (concat [this] args)))
+  (-> this .-toString (.apply this (clj->js args))))
 
 (defn transform-point
   "Method.
@@ -175,7 +175,7 @@
   Returns a DOMPoint that is the point given in parameter multiplied
   the matrix. But the original point and the matrix aren't modified."
   [this & args]
-  (apply (-> this .-transformPoint) (concat [this] args)))
+  (-> this .-transformPoint (.apply this (clj->js args))))
 
 (defn translate
   "Method.
@@ -191,7 +191,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/translate`"
   [this & args]
-  (apply (-> this .-translate) (concat [this] args)))
+  (-> this .-translate (.apply this (clj->js args))))
 
 (defn m11
   "Property.

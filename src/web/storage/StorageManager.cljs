@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist`"
   [this & args]
-  (apply (-> this .-persist) (concat [this] args)))
+  (-> this .-persist (.apply this (clj->js args))))
 
 (defn persisted
   "Method.
@@ -46,5 +46,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persisted`"
   [this & args]
-  (apply (-> this .-persisted) (concat [this] args)))
+  (-> this .-persisted (.apply this (clj->js args))))
 

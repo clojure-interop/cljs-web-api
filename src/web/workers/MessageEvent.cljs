@@ -32,7 +32,7 @@
   Initializes a message event. Do not use this anymore — use the
   constructor instead."
   [this & args]
-  (apply (-> this .-initMessageEvent) (concat [this] args)))
+  (-> this .-initMessageEvent (.apply this (clj->js args))))
 
 (defn data
   "Property.

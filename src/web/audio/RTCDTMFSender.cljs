@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/insertDTMF`"
   [this & args]
-  (apply (-> this .-insertDTMF) (concat [this] args)))
+  (-> this .-insertDTMF (.apply this (clj->js args))))
 
 (defn tone-buffer
   "Property.

@@ -84,7 +84,7 @@
   Removes all ranges from the selection. This is an alias for removeAllRanges()
   See Selection.removeAllRanges() for more details."
   [this & args]
-  (apply (-> this .-empty) (concat [this] args)))
+  (-> this .-empty (.apply this (clj->js args))))
 
 (defn extend
   "Method.
@@ -179,7 +179,7 @@
   Collapses the current selection to a single point. This is an
   for collapse() — See Selection.collapse() for more details."
   [this & args]
-  (apply (-> this .-setPosition) (concat [this] args)))
+  (-> this .-setPosition (.apply this (clj->js args))))
 
 (defn to-string
   "Method.

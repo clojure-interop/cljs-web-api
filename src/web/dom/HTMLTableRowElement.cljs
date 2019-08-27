@@ -13,7 +13,7 @@
   in the row, or is smaller than 0, it raises a DOMException with
   IndexSizeError value."
   [this & args]
-  (apply (-> this .-deleteCell) (concat [this] args)))
+  (-> this .-deleteCell (.apply this (clj->js args))))
 
 (defn insert-cell
   "Method.
@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/insertCell`"
   [this & args]
-  (apply (-> this .-insertCell) (concat [this] args)))
+  (-> this .-insertCell (.apply this (clj->js args))))
 
 (defn align
   "Property.

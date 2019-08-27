@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Path2D/addPath`"
   [this & args]
-  (apply (-> this .-addPath) (concat [this] args)))
+  (-> this .-addPath (.apply this (clj->js args))))
 
 (defn close-path
   "Method.
@@ -114,7 +114,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc`"
   [this & args]
-  (apply (-> this .-arc) (concat [this] args)))
+  (-> this .-arc (.apply this (clj->js args))))
 
 (defn arc-to
   "Method.
@@ -142,7 +142,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/ellipse`"
   [this & args]
-  (apply (-> this .-ellipse) (concat [this] args)))
+  (-> this .-ellipse (.apply this (clj->js args))))
 
 (defn rect
   "Method.
@@ -156,5 +156,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect`"
   [this & args]
-  (apply (-> this .-rect) (concat [this] args)))
+  (-> this .-rect (.apply this (clj->js args))))
 

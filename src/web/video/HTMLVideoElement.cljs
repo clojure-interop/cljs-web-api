@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/msInsertVideoEffect`"
   [this & args]
-  (apply (-> this .-msInsertVideoEffect) (concat [this] args)))
+  (-> this .-msInsertVideoEffect (.apply this (clj->js args))))
 
 (defn height
   "Property.

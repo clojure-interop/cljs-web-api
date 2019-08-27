@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/copyTo`"
   [this & args]
-  (apply (-> this .-copyTo) (concat [this] args)))
+  (-> this .-copyTo (.apply this (clj->js args))))
 
 (defn get-metadata
   "Method.
@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getMetadata`"
   [this & args]
-  (apply (-> this .-getMetadata) (concat [this] args)))
+  (-> this .-getMetadata (.apply this (clj->js args))))
 
 (defn get-parent
   "Method.
@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getParent`"
   [this & args]
-  (apply (-> this .-getParent) (concat [this] args)))
+  (-> this .-getParent (.apply this (clj->js args))))
 
 (defn move-to
   "Method.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/moveTo`"
   [this & args]
-  (apply (-> this .-moveTo) (concat [this] args)))
+  (-> this .-moveTo (.apply this (clj->js args))))
 
 (defn remove
   "Method.
@@ -70,7 +70,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/remove`"
   [this & args]
-  (apply (-> this .-remove) (concat [this] args)))
+  (-> this .-remove (.apply this (clj->js args))))
 
 (defn to-url
   "Method.
@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/toURL`"
   [this & args]
-  (apply (-> this .-toURL) (concat [this] args)))
+  (-> this .-toURL (.apply this (clj->js args))))
 
 (defn filesystem
   "Property.

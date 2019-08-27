@@ -24,7 +24,7 @@
   Returns a DOMMatrix representing the matrix that transforms the
   element's coordinate system to its SVG viewport's coordinate"
   [this & args]
-  (apply (-> this .-getCTM) (concat [this] args)))
+  (-> this .-getCTM (.apply this (clj->js args))))
 
 (defn get-screen-ctm
   "Method.
@@ -33,7 +33,7 @@
   element's coordinate system to the coordinate system of the SVG
   for the SVG document fragment."
   [this & args]
-  (apply (-> this .-getScreenCTM) (concat [this] args)))
+  (-> this .-getScreenCTM (.apply this (clj->js args))))
 
 (defn transform
   "Property.

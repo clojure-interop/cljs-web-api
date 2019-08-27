@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/getSubscription`"
   [this & args]
-  (apply (-> this .-getSubscription) (concat [this] args)))
+  (-> this .-getSubscription (.apply this (clj->js args))))
 
 (defn permission-state
   "Method.
@@ -53,7 +53,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/hasPermission`"
   [this & args]
-  (apply (-> this .-hasPermission) (concat [this] args)))
+  (-> this .-hasPermission (.apply this (clj->js args))))
 
 (defn register
   "Method.

@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FormData/append`"
   [this & args]
-  (apply (-> this .-append) (concat [this] args)))
+  (-> this .-append (.apply this (clj->js args))))
 
 (defn delete
   "Method.
@@ -141,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FormData/set`"
   [this & args]
-  (apply (-> this .-set) (concat [this] args)))
+  (-> this .-set (.apply this (clj->js args))))
 
 (defn values
   "Method.

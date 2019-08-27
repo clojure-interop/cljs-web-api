@@ -33,7 +33,7 @@
 
   Breaks the node into two nodes at a specified offset."
   [this & args]
-  (apply (-> this .-splitText) (concat [this] args)))
+  (-> this .-splitText (.apply this (clj->js args))))
 
 (defn is-element-content-whitespace
   "Property.

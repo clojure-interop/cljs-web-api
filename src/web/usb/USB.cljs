@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USB/requestDevice`"
   [this & args]
-  (apply (-> this .-requestDevice) (concat [this] args)))
+  (-> this .-requestDevice (.apply this (clj->js args))))
 
 (defn onconnect
   "Method.

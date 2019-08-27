@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SyncManager/register`"
   [this & args]
-  (apply (-> this .-register) (concat [this] args)))
+  (-> this .-register (.apply this (clj->js args))))
 
 (defn get-tags
   "Method.
@@ -25,5 +25,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SyncManager/getTags`"
   [this & args]
-  (apply (-> this .-getTags) (concat [this] args)))
+  (-> this .-getTags (.apply this (clj->js args))))
 

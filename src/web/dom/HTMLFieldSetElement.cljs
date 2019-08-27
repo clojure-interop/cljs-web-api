@@ -11,7 +11,7 @@
   Always returns true because <fieldset> objects are never candidates
   constraint validation."
   [this & args]
-  (apply (-> this .-checkValidity) (concat [this] args)))
+  (-> this .-checkValidity (.apply this (clj->js args))))
 
 (defn report-validity
   "Method.
@@ -19,7 +19,7 @@
   Always returns true because <fieldset> objects are never candidates
   constraint validation."
   [this & args]
-  (apply (-> this .-reportValidity) (concat [this] args)))
+  (-> this .-reportValidity (.apply this (clj->js args))))
 
 (defn set-custom-validity
   "Method.
@@ -28,7 +28,7 @@
   not the empty string, then the field set is suffering from a
   validity error, and does not validate."
   [this & args]
-  (apply (-> this .-setCustomValidity) (concat [this] args)))
+  (-> this .-setCustomValidity (.apply this (clj->js args))))
 
 (defn disabled
   "Property.

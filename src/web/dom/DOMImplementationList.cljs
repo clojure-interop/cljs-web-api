@@ -9,7 +9,7 @@
 
   Returns the pos item."
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn length
   "Property.

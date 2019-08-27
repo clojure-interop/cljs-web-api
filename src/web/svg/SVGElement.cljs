@@ -9,7 +9,7 @@
   Makes the element the currently-focused element; this makes it
   target for future keyboard events, among other things."
   [this & args]
-  (apply (-> this .-focus) (concat [this] args)))
+  (-> this .-focus (.apply this (clj->js args))))
 
 (defn dataset
   "Property.

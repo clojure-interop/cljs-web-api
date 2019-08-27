@@ -9,14 +9,14 @@
   A Promise that resolves to undefined or is rejected with an error
   advetisments can’t shown for any reason."
   [this & args]
-  (apply (-> this .-watchAdvertisments) (concat [this] args)))
+  (-> this .-watchAdvertisments (.apply this (clj->js args))))
 
 (defn unwatch-advertisments
   "Method.
 
   Stops watching for advertisments."
   [this & args]
-  (apply (-> this .-unwatchAdvertisments) (concat [this] args)))
+  (-> this .-unwatchAdvertisments (.apply this (clj->js args))))
 
 (defn connect-gatt
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/connectGATT`"
   [this & args]
-  (apply (-> this .-connectGATT) (concat [this] args)))
+  (-> this .-connectGATT (.apply this (clj->js args))))
 
 (defn id
   "Property.

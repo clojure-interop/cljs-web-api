@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply`"
   [this & args]
-  (apply (-> this .-apply) (concat [this] args)))
+  (-> this .-apply (.apply this (clj->js args))))
 
 (defn construct
   "Method.
@@ -43,7 +43,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/construct`"
   [this & args]
-  (apply (-> this .-construct) (concat [this] args)))
+  (-> this .-construct (.apply this (clj->js args))))
 
 (defn define-property
   "Method.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/defineProperty`"
   [this & args]
-  (apply (-> this .-defineProperty) (concat [this] args)))
+  (-> this .-defineProperty (.apply this (clj->js args))))
 
 (defn delete-property
   "Method.
@@ -71,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/deleteProperty`"
   [this & args]
-  (apply (-> this .-deleteProperty) (concat [this] args)))
+  (-> this .-deleteProperty (.apply this (clj->js args))))
 
 (defn enumerate
   "Method.
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/enumerate`"
   [this & args]
-  (apply (-> this .-enumerate) (concat [this] args)))
+  (-> this .-enumerate (.apply this (clj->js args))))
 
 (defn get
   "Method.
@@ -101,7 +101,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get`"
   [this & args]
-  (apply (-> this .-get) (concat [this] args)))
+  (-> this .-get (.apply this (clj->js args))))
 
 (defn get-own-property-descriptor
   "Method.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getOwnPropertyDescriptor`"
   [this & args]
-  (apply (-> this .-getOwnPropertyDescriptor) (concat [this] args)))
+  (-> this .-getOwnPropertyDescriptor (.apply this (clj->js args))))
 
 (defn get-prototype-of
   "Method.
@@ -131,7 +131,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getPrototypeOf`"
   [this & args]
-  (apply (-> this .-getPrototypeOf) (concat [this] args)))
+  (-> this .-getPrototypeOf (.apply this (clj->js args))))
 
 (defn has
   "Method.
@@ -145,7 +145,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/has`"
   [this & args]
-  (apply (-> this .-has) (concat [this] args)))
+  (-> this .-has (.apply this (clj->js args))))
 
 (defn is-extensible
   "Method.
@@ -159,7 +159,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/isExtensible`"
   [this & args]
-  (apply (-> this .-isExtensible) (concat [this] args)))
+  (-> this .-isExtensible (.apply this (clj->js args))))
 
 (defn own-keys
   "Method.
@@ -173,7 +173,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/ownKeys`"
   [this & args]
-  (apply (-> this .-ownKeys) (concat [this] args)))
+  (-> this .-ownKeys (.apply this (clj->js args))))
 
 (defn prevent-extensions
   "Method.
@@ -187,7 +187,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/preventExtensions`"
   [this & args]
-  (apply (-> this .-preventExtensions) (concat [this] args)))
+  (-> this .-preventExtensions (.apply this (clj->js args))))
 
 (defn set
   "Method.
@@ -201,7 +201,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/set`"
   [this & args]
-  (apply (-> this .-set) (concat [this] args)))
+  (-> this .-set (.apply this (clj->js args))))
 
 (defn set-prototype-of
   "Method.
@@ -215,5 +215,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/setPrototypeOf`"
   [this & args]
-  (apply (-> this .-setPrototypeOf) (concat [this] args)))
+  (-> this .-setPrototypeOf (.apply this (clj->js args))))
 

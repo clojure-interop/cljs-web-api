@@ -10,14 +10,14 @@
   A shortcut method to create and run an animation on a pseudo-element.
   the created Animation object instance."
   [this & args]
-  (apply (-> this .-animate) (concat [this] args)))
+  (-> this .-animate (.apply this (clj->js args))))
 
 (defn get-animations
   "Method.
 
   Returns an array of Animation objects currently active on the"
   [this & args]
-  (apply (-> this .-getAnimations) (concat [this] args)))
+  (-> this .-getAnimations (.apply this (clj->js args))))
 
 (defn add-event-listener
   "Method.
@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
   [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
+  (-> this .-addEventListener (.apply this (clj->js args))))
 
 (defn dispatch-event
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
+  (-> this .-removeEventListener (.apply this (clj->js args))))
 
 (defn element
   "Property.

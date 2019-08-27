@@ -8,7 +8,7 @@
 
   Sets the values of the filterRes attribute."
   [this & args]
-  (apply (-> this .-setFilterRes) (concat [this] args)))
+  (-> this .-setFilterRes (.apply this (clj->js args))))
 
 (defn filter-units
   "Property.

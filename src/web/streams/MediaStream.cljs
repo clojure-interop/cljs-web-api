@@ -51,7 +51,7 @@
   not defined, and may not only vary from one browser to another,
   also from one call to another."
   [this & args]
-  (apply (-> this .-getAudioTracks) (concat [this] args)))
+  (-> this .-getAudioTracks (.apply this (clj->js args))))
 
 (defn get-track-by-id
   "Method.
@@ -98,7 +98,7 @@
   Removes the MediaStreamTrack given as argument. If the track
   not part of the MediaStream object, nothing happens."
   [this & args]
-  (apply (-> this .-removeTrack) (concat [this] args)))
+  (-> this .-removeTrack (.apply this (clj->js args))))
 
 (defn active
   "Property.

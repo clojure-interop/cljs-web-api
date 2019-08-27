@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/supportedLocalesOf`"
   [this & args]
-  (apply (-> this .-supportedLocalesOf) (concat [this] args)))
+  (-> this .-supportedLocalesOf (.apply this (clj->js args))))
 
 (defn prototype
   "Property.

@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText`"
   [this & args]
-  (apply (-> this .-readAsText) (concat [this] args)))
+  (-> this .-readAsText (.apply this (clj->js args))))
 
 (defn error
   "Property.

@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode`"
   [this & args]
-  (apply (-> this .-cloneNode) (concat [this] args)))
+  (-> this .-cloneNode (.apply this (clj->js args))))
 
 (defn compare-document-position
   "Method.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/contains`"
   [this & args]
-  (apply (-> this .-contains) (concat [this] args)))
+  (-> this .-contains (.apply this (clj->js args))))
 
 (defn get-root-node
   "Method.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore`"
   [this & args]
-  (apply (-> this .-insertBefore) (concat [this] args)))
+  (-> this .-insertBefore (.apply this (clj->js args))))
 
 (defn is-default-namespace
   "Method.
@@ -153,7 +153,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isEqualNode`"
   [this & args]
-  (apply (-> this .-isEqualNode) (concat [this] args)))
+  (-> this .-isEqualNode (.apply this (clj->js args))))
 
 (defn is-same-node
   "Method.
@@ -176,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix`"
   [this & args]
-  (apply (-> this .-lookupPrefix) (concat [this] args)))
+  (-> this .-lookupPrefix (.apply this (clj->js args))))
 
 (defn lookup-namespace-uri
   "Method.
@@ -229,7 +229,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild`"
   [this & args]
-  (apply (-> this .-removeChild) (concat [this] args)))
+  (-> this .-removeChild (.apply this (clj->js args))))
 
 (defn replace-child
   "Method.
@@ -246,12 +246,12 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild`"
   [this & args]
-  (apply (-> this .-replaceChild) (concat [this] args)))
+  (-> this .-replaceChild (.apply this (clj->js args))))
 
 (defn get-feature
   "Method."
   [this & args]
-  (apply (-> this .-getFeature) (concat [this] args)))
+  (-> this .-getFeature (.apply this (clj->js args))))
 
 (defn get-user-data
   "Method.
@@ -271,7 +271,7 @@
   Returns a Boolean indicating if the element has any attributes,
   not."
   [this & args]
-  (apply (-> this .-hasAttributes) (concat [this] args)))
+  (-> this .-hasAttributes (.apply this (clj->js args))))
 
 (defn is-supported
   "Method.

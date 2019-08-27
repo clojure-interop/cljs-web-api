@@ -24,7 +24,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement/getPointAtLength`"
   [this & args]
-  (apply (-> this .-getPointAtLength) (concat [this] args)))
+  (-> this .-getPointAtLength (.apply this (clj->js args))))
 
 (defn get-path-seg-at-length
   "Method.
@@ -32,140 +32,140 @@
   Returns an unsigned long representing the index within the pathSegList
   the user agent's distance-along-a-path algorithm."
   [this & args]
-  (apply (-> this .-getPathSegAtLength) (concat [this] args)))
+  (-> this .-getPathSegAtLength (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-close-path
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegClosePath object."
   [this & args]
-  (apply (-> this .-createSVGPathSegClosePath) (concat [this] args)))
+  (-> this .-createSVGPathSegClosePath (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-moveto-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegMovetoAbs object."
   [this & args]
-  (apply (-> this .-createSVGPathSegMovetoAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegMovetoAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-moveto-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegMovetoRel object."
   [this & args]
-  (apply (-> this .-createSVGPathSegMovetoRel) (concat [this] args)))
+  (-> this .-createSVGPathSegMovetoRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoAbs object."
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoRel object."
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoRel) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-cubic-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoCubicAbs object."
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoCubicAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoCubicAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-cubic-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoCubicRel object."
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoCubicRel) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoCubicRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-quadratic-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticAbs"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoQuadraticAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoQuadraticAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-quadratic-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticRel"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoQuadraticRel) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoQuadraticRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-arc-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegArcAbs object."
   [this & args]
-  (apply (-> this .-createSVGPathSegArcAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegArcAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-arc-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegArcRel object."
   [this & args]
-  (apply (-> this .-createSVGPathSegArcRel) (concat [this] args)))
+  (-> this .-createSVGPathSegArcRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-horizontal-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoHorizontalAbs"
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoHorizontalAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoHorizontalAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-horizontal-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoHorizontalRel"
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoHorizontalRel) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoHorizontalRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-vertical-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoVerticalAbs"
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoVerticalAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoVerticalAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-lineto-vertical-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegLinetoVerticalRel"
   [this & args]
-  (apply (-> this .-createSVGPathSegLinetoVerticalRel) (concat [this] args)))
+  (-> this .-createSVGPathSegLinetoVerticalRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-cubic-smooth-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothAbs"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoCubicSmoothAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoCubicSmoothAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-cubic-smooth-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoCubicSmoothRel"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoCubicSmoothRel) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoCubicSmoothRel (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-quadratic-smooth-abs
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothAbs"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoQuadraticSmoothAbs) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoQuadraticSmoothAbs (.apply this (clj->js args))))
 
 (defn create-svg-path-seg-curveto-quadratic-smooth-rel
   "Method.
 
   Returns a stand-alone, parentless SVGPathSegCurvetoQuadraticSmoothRel"
   [this & args]
-  (apply (-> this .-createSVGPathSegCurvetoQuadraticSmoothRel) (concat [this] args)))
+  (-> this .-createSVGPathSegCurvetoQuadraticSmoothRel (.apply this (clj->js args))))
 
 (defn path-length
   "Property.

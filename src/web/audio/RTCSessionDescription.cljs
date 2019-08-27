@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/toJSON`"
   [this & args]
-  (apply (-> this .-toJSON) (concat [this] args)))
+  (-> this .-toJSON (.apply this (clj->js args))))
 
 (defn type
   "Property.

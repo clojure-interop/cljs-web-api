@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLDocument/load`"
   [this & args]
-  (apply (-> this .-load) (concat [this] args)))
+  (-> this .-load (.apply this (clj->js args))))
 
 (defn async
   "Property.

@@ -241,7 +241,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/compareNode`"
   [this & args]
-  (apply (-> this .-compareNode) (concat [this] args)))
+  (-> this .-compareNode (.apply this (clj->js args))))
 
 (defn compare-point
   "Method.
@@ -309,7 +309,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/intersectsNode`"
   [this & args]
-  (apply (-> this .-intersectsNode) (concat [this] args)))
+  (-> this .-intersectsNode (.apply this (clj->js args))))
 
 (defn is-point-in-range
   "Method.
@@ -322,7 +322,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/isPointInRange`"
   [this & args]
-  (apply (-> this .-isPointInRange) (concat [this] args)))
+  (-> this .-isPointInRange (.apply this (clj->js args))))
 
 (defn collapsed
   "Property.

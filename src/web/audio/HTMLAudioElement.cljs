@@ -9,5 +9,5 @@
 
   The src property of the constructed HTMLAudioElement."
   [this & args]
-  (apply (-> this .-URLString) (concat [this] args)))
+  (-> this .-URLString (.apply this (clj->js args))))
 

@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/clearMarks`"
   [this & args]
-  (apply (-> this .-clearMarks) (concat [this] args)))
+  (-> this .-clearMarks (.apply this (clj->js args))))
 
 (defn clear-measures
   "Method.
@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/clearMeasures`"
   [this & args]
-  (apply (-> this .-clearMeasures) (concat [this] args)))
+  (-> this .-clearMeasures (.apply this (clj->js args))))
 
 (defn clear-resource-timings
   "Method.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries`"
   [this & args]
-  (apply (-> this .-getEntries) (concat [this] args)))
+  (-> this .-getEntries (.apply this (clj->js args))))
 
 (defn get-entries-by-name
   "Method.
@@ -128,7 +128,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/measure`"
   [this & args]
-  (apply (-> this .-measure) (concat [this] args)))
+  (-> this .-measure (.apply this (clj->js args))))
 
 (defn now
   "Method.

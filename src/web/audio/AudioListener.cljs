@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/setOrientation`"
   [this & args]
-  (apply (-> this .-setOrientation) (concat [this] args)))
+  (-> this .-setOrientation (.apply this (clj->js args))))
 
 (defn set-position
   "Method.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/setPosition`"
   [this & args]
-  (apply (-> this .-setPosition) (concat [this] args)))
+  (-> this .-setPosition (.apply this (clj->js args))))
 
 (defn position-x
   "Property.

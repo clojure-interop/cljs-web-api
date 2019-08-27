@@ -190,7 +190,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave`"
   [this & args]
-  (apply (-> this .-createPeriodicWave) (concat [this] args)))
+  (-> this .-createPeriodicWave (.apply this (clj->js args))))
 
 (defn create-script-processor
   "Method.
@@ -246,7 +246,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData`"
   [this & args]
-  (apply (-> this .-decodeAudioData) (concat [this] args)))
+  (-> this .-decodeAudioData (.apply this (clj->js args))))
 
 (defn audio-worklet
   "Property.

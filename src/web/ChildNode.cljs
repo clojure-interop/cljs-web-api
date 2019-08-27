@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
   [this & args]
-  (apply (-> this .-before) (concat [this] args)))
+  (-> this .-before (.apply this (clj->js args))))
 
 (defn after
   "Method.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
   [this & args]
-  (apply (-> this .-after) (concat [this] args)))
+  (-> this .-after (.apply this (clj->js args))))
 
 (defn replace-with
   "Method.
@@ -56,5 +56,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
   [this & args]
-  (apply (-> this .-replaceWith) (concat [this] args)))
+  (-> this .-replaceWith (.apply this (clj->js args))))
 

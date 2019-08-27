@@ -12,7 +12,7 @@
   Appends the given DOMString to the CharacterData.data string;
   this method returns, data contains the concatenated DOMString."
   [this & args]
-  (apply (-> this .-appendData) (concat [this] args)))
+  (-> this .-appendData (.apply this (clj->js args))))
 
 (defn delete-data
   "Method.
@@ -21,7 +21,7 @@
   from the CharacterData.data string; when this method returns,
   contains the shortened DOMString."
   [this & args]
-  (apply (-> this .-deleteData) (concat [this] args)))
+  (-> this .-deleteData (.apply this (clj->js args))))
 
 (defn insert-data
   "Method.
@@ -30,7 +30,7 @@
   CharacterData.data string; when this method returns, data contains
   modified DOMString."
   [this & args]
-  (apply (-> this .-insertData) (concat [this] args)))
+  (-> this .-insertData (.apply this (clj->js args))))
 
 (defn remove
   "Method.
@@ -51,7 +51,7 @@
   offset, with the specified DOMString; when this method returns,
   contains the modified DOMString."
   [this & args]
-  (apply (-> this .-replaceData) (concat [this] args)))
+  (-> this .-replaceData (.apply this (clj->js args))))
 
 (defn substring-data
   "Method.
@@ -59,7 +59,7 @@
   Returns a DOMString containing the part of CharacterData.data
   the specified length and starting at the specified offset."
   [this & args]
-  (apply (-> this .-substringData) (concat [this] args)))
+  (-> this .-substringData (.apply this (clj->js args))))
 
 (defn after
   "Method.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
   [this & args]
-  (apply (-> this .-after) (concat [this] args)))
+  (-> this .-after (.apply this (clj->js args))))
 
 (defn before
   "Method.
@@ -88,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
   [this & args]
-  (apply (-> this .-before) (concat [this] args)))
+  (-> this .-before (.apply this (clj->js args))))
 
 (defn replace-with
   "Method.
@@ -102,7 +102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
   [this & args]
-  (apply (-> this .-replaceWith) (concat [this] args)))
+  (-> this .-replaceWith (.apply this (clj->js args))))
 
 (defn data
   "Property.

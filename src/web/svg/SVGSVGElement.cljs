@@ -25,7 +25,7 @@
   each such method call is treated independently of the other suspendRedraw
   calls."
   [this & args]
-  (apply (-> this .-suspendRedraw) (concat [this] args)))
+  (-> this .-suspendRedraw (.apply this (clj->js args))))
 
 (defn unsuspend-redraw
   "Method.
@@ -33,7 +33,7 @@
   Cancels a specified suspendRedraw() by providing a unique suspend
   ID that was returned by a previous suspendRedraw() call."
   [this & args]
-  (apply (-> this .-unsuspendRedraw) (concat [this] args)))
+  (-> this .-unsuspendRedraw (.apply this (clj->js args))))
 
 (defn unsuspend-redraw-all
   "Method.
@@ -42,7 +42,7 @@
   is most useful at the very end of a set of SVG DOM calls to ensure
   all pending suspendRedraw() method calls have been cancelled."
   [this & args]
-  (apply (-> this .-unsuspendRedrawAll) (concat [this] args)))
+  (-> this .-unsuspendRedrawAll (.apply this (clj->js args))))
 
 (defn force-redraw
   "Method.
@@ -51,7 +51,7 @@
   agent to immediately redraw all regions of the viewport that
   updating."
   [this & args]
-  (apply (-> this .-forceRedraw) (concat [this] args)))
+  (-> this .-forceRedraw (.apply this (clj->js args))))
 
 (defn pause-animations
   "Method.
@@ -61,7 +61,7 @@
   element, causing the animation clock corresponding to this document
   to stand still until it is unpaused."
   [this & args]
-  (apply (-> this .-pauseAnimations) (concat [this] args)))
+  (-> this .-pauseAnimations (.apply this (clj->js args))))
 
 (defn unpause-animations
   "Method.
@@ -70,14 +70,14 @@
   defined within the SVG document fragment, causing the animation
   to continue from the time at which it was suspended."
   [this & args]
-  (apply (-> this .-unpauseAnimations) (concat [this] args)))
+  (-> this .-unpauseAnimations (.apply this (clj->js args))))
 
 (defn animations-paused
   "Method.
 
   Returns true if this SVG document fragment is in a paused state."
   [this & args]
-  (apply (-> this .-animationsPaused) (concat [this] args)))
+  (-> this .-animationsPaused (.apply this (clj->js args))))
 
 (defn get-current-time
   "Method.
@@ -88,7 +88,7 @@
   a <script> element before the document's SVGLoad event is dispatched),
   0 is returned."
   [this & args]
-  (apply (-> this .-getCurrentTime) (concat [this] args)))
+  (-> this .-getCurrentTime (.apply this (clj->js args))))
 
 (defn set-current-time
   "Method.
@@ -100,7 +100,7 @@
   in the last invocation of the method gives the time that the
   will seek to once the document timeline has begun."
   [this & args]
-  (apply (-> this .-setCurrentTime) (concat [this] args)))
+  (-> this .-setCurrentTime (.apply this (clj->js args))))
 
 (defn get-intersection-list
   "Method.
@@ -110,7 +110,7 @@
   considered a match only if the same graphics element can be a
   of pointer events as defined in pointer-events processing."
   [this & args]
-  (apply (-> this .-getIntersectionList) (concat [this] args)))
+  (-> this .-getIntersectionList (.apply this (clj->js args))))
 
 (defn get-enclosure-list
   "Method.
@@ -120,7 +120,7 @@
   element is to be considered a match only if the same graphics
   can be a target of pointer events as defined in pointer-events"
   [this & args]
-  (apply (-> this .-getEnclosureList) (concat [this] args)))
+  (-> this .-getEnclosureList (.apply this (clj->js args))))
 
 (defn check-intersection
   "Method.
@@ -130,7 +130,7 @@
   a match only if the same graphics element can be a target of
   events as defined in pointer-events processing."
   [this & args]
-  (apply (-> this .-checkIntersection) (concat [this] args)))
+  (-> this .-checkIntersection (.apply this (clj->js args))))
 
 (defn check-enclosure
   "Method.
@@ -140,7 +140,7 @@
   is to be considered a match only if the same graphics element
   be a target of pointer events as defined in pointer-events processing."
   [this & args]
-  (apply (-> this .-checkEnclosure) (concat [this] args)))
+  (-> this .-checkEnclosure (.apply this (clj->js args))))
 
 (defn deselect-all
   "Method.
@@ -148,7 +148,7 @@
   Unselects any selected objects, including any selections of text
   and type-in bars."
   [this & args]
-  (apply (-> this .-deselectAll) (concat [this] args)))
+  (-> this .-deselectAll (.apply this (clj->js args))))
 
 (defn create-svg-number
   "Method.
@@ -156,7 +156,7 @@
   Creates an SVGNumber object outside of any document trees. The
   is initialized to a value of zero."
   [this & args]
-  (apply (-> this .-createSVGNumber) (concat [this] args)))
+  (-> this .-createSVGNumber (.apply this (clj->js args))))
 
 (defn create-svg-length
   "Method.
@@ -164,7 +164,7 @@
   Creates an SVGLength object outside of any document trees. The
   is initialized to a value of zero user units."
   [this & args]
-  (apply (-> this .-createSVGLength) (concat [this] args)))
+  (-> this .-createSVGLength (.apply this (clj->js args))))
 
 (defn create-svg-angle
   "Method.
@@ -172,7 +172,7 @@
   Creates an SVGAngle object outside of any document trees. The
   is initialized to a value of zero degrees (unitless)."
   [this & args]
-  (apply (-> this .-createSVGAngle) (concat [this] args)))
+  (-> this .-createSVGAngle (.apply this (clj->js args))))
 
 (defn create-svg-point
   "Method.
@@ -180,7 +180,7 @@
   Creates an SVGPoint object outside of any document trees. The
   is initialized to the point (0,0) in the user coordinate system."
   [this & args]
-  (apply (-> this .-createSVGPoint) (concat [this] args)))
+  (-> this .-createSVGPoint (.apply this (clj->js args))))
 
 (defn create-svg-matrix
   "Method.
@@ -188,7 +188,7 @@
   Creates an SVGMatrix object outside of any document trees. The
   is initialized to the identity matrix."
   [this & args]
-  (apply (-> this .-createSVGMatrix) (concat [this] args)))
+  (-> this .-createSVGMatrix (.apply this (clj->js args))))
 
 (defn create-svg-rect
   "Method.
@@ -196,7 +196,7 @@
   Creates an SVGRect object outside of any document trees. The
   is initialized such that all values are set to 0 user units."
   [this & args]
-  (apply (-> this .-createSVGRect) (concat [this] args)))
+  (-> this .-createSVGRect (.apply this (clj->js args))))
 
 (defn create-svg-transform
   "Method.
@@ -204,7 +204,7 @@
   Creates an SVGTransform object outside of any document trees.
   object is initialized to an identity matrix transform (SVG_TRANSFORM_MATRIX)."
   [this & args]
-  (apply (-> this .-createSVGTransform) (concat [this] args)))
+  (-> this .-createSVGTransform (.apply this (clj->js args))))
 
 (defn create-svg-transform-from-matrix
   "Method.
@@ -214,7 +214,7 @@
   values from the parameter matrix are copied, the matrix parameter
   not adopted as SVGTransform::matrix."
   [this & args]
-  (apply (-> this .-createSVGTransformFromMatrix) (concat [this] args)))
+  (-> this .-createSVGTransformFromMatrix (.apply this (clj->js args))))
 
 (defn get-element-by-id
   "Method.
@@ -225,7 +225,7 @@
   no such element exists, returns null. Behavior is not defined
   more than one element has this id."
   [this & args]
-  (apply (-> this .-getElementById) (concat [this] args)))
+  (-> this .-getElementById (.apply this (clj->js args))))
 
 (defn x
   "Property.

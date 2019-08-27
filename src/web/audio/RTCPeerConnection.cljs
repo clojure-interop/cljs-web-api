@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate`"
   [this & args]
-  (apply (-> this .-addIceCandidate) (concat [this] args)))
+  (-> this .-addIceCandidate (.apply this (clj->js args))))
 
 (defn add-stream
   "Method.
@@ -56,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addTrack`"
   [this & args]
-  (apply (-> this .-addTrack) (concat [this] args)))
+  (-> this .-addTrack (.apply this (clj->js args))))
 
 (defn close
   "Method.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/close`"
   [this & args]
-  (apply (-> this .-close) (concat [this] args)))
+  (-> this .-close (.apply this (clj->js args))))
 
 (defn create-answer
   "Method.
@@ -95,7 +95,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createAnswer`"
   [this & args]
-  (apply (-> this .-createAnswer) (concat [this] args)))
+  (-> this .-createAnswer (.apply this (clj->js args))))
 
 (defn create-data-channel
   "Method.
@@ -108,7 +108,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel`"
   [this & args]
-  (apply (-> this .-createDataChannel) (concat [this] args)))
+  (-> this .-createDataChannel (.apply this (clj->js args))))
 
 (defn create-offer
   "Method.
@@ -123,7 +123,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createOffer`"
   [this & args]
-  (apply (-> this .-createOffer) (concat [this] args)))
+  (-> this .-createOffer (.apply this (clj->js args))))
 
 (defn generate-certificate
   "Method.
@@ -167,7 +167,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/getIdentityAssertion`"
   [this & args]
-  (apply (-> this .-getIdentityAssertion) (concat [this] args)))
+  (-> this .-getIdentityAssertion (.apply this (clj->js args))))
 
 (defn get-local-streams
   "Method.
@@ -182,7 +182,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/getLocalStreams`"
   [this & args]
-  (apply (-> this .-getLocalStreams) (concat [this] args)))
+  (-> this .-getLocalStreams (.apply this (clj->js args))))
 
 (defn get-receivers
   "Method.
@@ -211,7 +211,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/getRemoteStreams`"
   [this & args]
-  (apply (-> this .-getRemoteStreams) (concat [this] args)))
+  (-> this .-getRemoteStreams (.apply this (clj->js args))))
 
 (defn get-senders
   "Method.
@@ -336,7 +336,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setIdentityProvider`"
   [this & args]
-  (apply (-> this .-setIdentityProvider) (concat [this] args)))
+  (-> this .-setIdentityProvider (.apply this (clj->js args))))
 
 (defn set-local-description
   "Method.
@@ -352,7 +352,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription`"
   [this & args]
-  (apply (-> this .-setLocalDescription) (concat [this] args)))
+  (-> this .-setLocalDescription (.apply this (clj->js args))))
 
 (defn set-remote-description
   "Method.

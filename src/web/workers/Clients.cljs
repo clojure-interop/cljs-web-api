@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/get`"
   [this & args]
-  (apply (-> this .-get) (concat [this] args)))
+  (-> this .-get (.apply this (clj->js args))))
 
 (defn match-all
   "Method.
@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll`"
   [this & args]
-  (apply (-> this .-matchAll) (concat [this] args)))
+  (-> this .-matchAll (.apply this (clj->js args))))
 
 (defn open-window
   "Method.
@@ -49,7 +49,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Clients/openWindow`"
   [this & args]
-  (apply (-> this .-openWindow) (concat [this] args)))
+  (-> this .-openWindow (.apply this (clj->js args))))
 
 (defn claim
   "Method.

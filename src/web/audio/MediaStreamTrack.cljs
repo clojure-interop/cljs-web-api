@@ -89,7 +89,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/stop`"
   [this & args]
-  (apply (-> this .-stop) (concat [this] args)))
+  (-> this .-stop (.apply this (clj->js args))))
 
 (defn content-hint
   "Property.

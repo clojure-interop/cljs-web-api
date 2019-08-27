@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/startRendering`"
   [this & args]
-  (apply (-> this .-startRendering) (concat [this] args)))
+  (-> this .-startRendering (.apply this (clj->js args))))
 
 (defn resume
   "Method.
@@ -82,7 +82,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/resume`"
   [this & args]
-  (apply (-> this .-resume) (concat [this] args)))
+  (-> this .-resume (.apply this (clj->js args))))
 
 (defn length
   "Property.

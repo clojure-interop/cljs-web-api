@@ -10,28 +10,28 @@
 
   Returns a Boolean."
   [this & args]
-  (apply (-> this .-contains) (concat [this] args)))
+  (-> this .-contains (.apply this (clj->js args))))
 
 (defn contains-ns
   "Method.
 
   Returns a Boolean."
   [this & args]
-  (apply (-> this .-containsNS) (concat [this] args)))
+  (-> this .-containsNS (.apply this (clj->js args))))
 
 (defn get-name
   "Method.
 
   Returns a DOMString."
   [this & args]
-  (apply (-> this .-getName) (concat [this] args)))
+  (-> this .-getName (.apply this (clj->js args))))
 
 (defn get-namespace-uri
   "Method.
 
   Returns a DOMString."
   [this & args]
-  (apply (-> this .-getNamespaceURI) (concat [this] args)))
+  (-> this .-getNamespaceURI (.apply this (clj->js args))))
 
 (defn length
   "Property."

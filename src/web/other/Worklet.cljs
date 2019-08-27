@@ -14,5 +14,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule`"
   [this & args]
-  (apply (-> this .-addModule) (concat [this] args)))
+  (-> this .-addModule (.apply this (clj->js args))))
 

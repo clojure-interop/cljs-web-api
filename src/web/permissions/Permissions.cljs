@@ -22,7 +22,7 @@
   Requests permission to use a given API. This is not currently
   in any browser."
   [this & args]
-  (apply (-> this .-request) (concat [this] args)))
+  (-> this .-request (.apply this (clj->js args))))
 
 (defn revoke
   "Method.
@@ -39,5 +39,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Permissions/revoke`"
   [this & args]
-  (apply (-> this .-revoke) (concat [this] args)))
+  (-> this .-revoke (.apply this (clj->js args))))
 

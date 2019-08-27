@@ -13,7 +13,7 @@
   an entry of a @keyframes at-rule. If it contains more than one
   rule, a DOMException with a SYNTAX_ERR is thrown."
   [this & args]
-  (apply (-> this .-appendRule) (concat [this] args)))
+  (-> this .-appendRule (.apply this (clj->js args))))
 
 (defn delete-rule
   "Method.
@@ -22,7 +22,7 @@
   is the index of the keyframe to be deleted, expressed as a DOMString
   as a number between 0% and 100%."
   [this & args]
-  (apply (-> this .-deleteRule) (concat [this] args)))
+  (-> this .-deleteRule (.apply this (clj->js args))))
 
 (defn find-rule
   "Method.
@@ -32,7 +32,7 @@
   to a percentage between 0% and 100%. If no such keyframe exists,
   returns null."
   [this & args]
-  (apply (-> this .-findRule) (concat [this] args)))
+  (-> this .-findRule (.apply this (clj->js args))))
 
 (defn name
   "Property.

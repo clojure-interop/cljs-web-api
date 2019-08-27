@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BudgetService/getCost`"
   [this & args]
-  (apply (-> this .-getCost) (concat [this] args)))
+  (-> this .-getCost (.apply this (clj->js args))))
 
 (defn get-budget
   "Method.
@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BudgetService/getBudget`"
   [this & args]
-  (apply (-> this .-getBudget) (concat [this] args)))
+  (-> this .-getBudget (.apply this (clj->js args))))
 
 (defn reserve
   "Method.
@@ -44,5 +44,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BudgetService/reserve`"
   [this & args]
-  (apply (-> this .-reserve) (concat [this] args)))
+  (-> this .-reserve (.apply this (clj->js args))))
 

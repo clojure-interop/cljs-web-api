@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getDirectory`"
   [this & args]
-  (apply (-> this .-getDirectory) (concat [this] args)))
+  (-> this .-getDirectory (.apply this (clj->js args))))
 
 (defn get-file
   "Method.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getFile`"
   [this & args]
-  (apply (-> this .-getFile) (concat [this] args)))
+  (-> this .-getFile (.apply this (clj->js args))))
 
 (defn remove-recursively
   "Method.
@@ -57,5 +57,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/removeRecursively`"
   [this & args]
-  (apply (-> this .-removeRecursively) (concat [this] args)))
+  (-> this .-removeRecursively (.apply this (clj->js args))))
 

@@ -9,7 +9,7 @@
 
   Adds a text track (such as a track for subtitles) to a media"
   [this & args]
-  (apply (-> this .-addTextTrack) (concat [this] args)))
+  (-> this .-addTextTrack (.apply this (clj->js args))))
 
 (defn capture-stream
   "Method.
@@ -68,14 +68,14 @@
 
   [enter description]"
   [this & args]
-  (apply (-> this .-mozCaptureStream) (concat [this] args)))
+  (-> this .-mozCaptureStream (.apply this (clj->js args))))
 
 (defn moz-capture-stream-until-ended
   "Method.
 
   [enter description]"
   [this & args]
-  (apply (-> this .-mozCaptureStreamUntilEnded) (concat [this] args)))
+  (-> this .-mozCaptureStreamUntilEnded (.apply this (clj->js args))))
 
 (defn moz-get-metadata
   "Method.
@@ -85,7 +85,7 @@
   of the data is returned each time the method is called. This
   must be called after the loadedmetadata event fires."
   [this & args]
-  (apply (-> this .-mozGetMetadata) (concat [this] args)))
+  (-> this .-mozGetMetadata (.apply this (clj->js args))))
 
 (defn pause
   "Method.
@@ -125,7 +125,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seekToNextFrame`"
   [this & args]
-  (apply (-> this .-seekToNextFrame) (concat [this] args)))
+  (-> this .-seekToNextFrame (.apply this (clj->js args))))
 
 (defn set-media-keys
   "Method.
@@ -163,7 +163,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/msInsertAudioEffect`"
   [this & args]
-  (apply (-> this .-msInsertAudioEffect) (concat [this] args)))
+  (-> this .-msInsertAudioEffect (.apply this (clj->js args))))
 
 (defn audio-tracks
   "Property.

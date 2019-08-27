@@ -10,7 +10,7 @@
 
   If this transaction has already been committed or aborted."
   [this & args]
-  (apply (-> this .-NON_TRANSIENT_ERR) (concat [this] args)))
+  (-> this .-NON_TRANSIENT_ERR (.apply this (clj->js args))))
 
 (defn recoverable-err
   "Method.
@@ -18,19 +18,19 @@
   If this transaction's scope is dynamic, and the browser cannot
   all of the changes due to another transaction."
   [this & args]
-  (apply (-> this .-RECOVERABLE_ERR) (concat [this] args)))
+  (-> this .-RECOVERABLE_ERR (.apply this (clj->js args))))
 
 (defn idb-object-store-sync
   "Method.
 
   An object for accessing the requested object store."
   [this & args]
-  (apply (-> this .-IDBObjectStoreSync) (concat [this] args)))
+  (-> this .-IDBObjectStoreSync (.apply this (clj->js args))))
 
 (defn not-found-err
   "Method.
 
   If the requested object store is not in this transaction's scope."
   [this & args]
-  (apply (-> this .-NOT_FOUND_ERR) (concat [this] args)))
+  (-> this .-NOT_FOUND_ERR (.apply this (clj->js args))))
 

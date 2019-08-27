@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HMDVRDevice/getEyeParameters`"
   [this & args]
-  (apply (-> this .-getEyeParameters) (concat [this] args)))
+  (-> this .-getEyeParameters (.apply this (clj->js args))))
 
 (defn set-field-of-view
   "Method.

@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/loseContext`"
   [this & args]
-  (apply (-> this .-loseContext) (concat [this] args)))
+  (-> this .-loseContext (.apply this (clj->js args))))
 
 (defn restore-context
   "Method.
@@ -25,5 +25,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/restoreContext`"
   [this & args]
-  (apply (-> this .-restoreContext) (concat [this] args)))
+  (-> this .-restoreContext (.apply this (clj->js args))))
 

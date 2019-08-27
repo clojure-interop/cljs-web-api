@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
   [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
+  (-> this .-addEventListener (.apply this (clj->js args))))
 
 (defn attach-shadow
   "Method.
@@ -130,7 +130,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute`"
   [this & args]
-  (apply (-> this .-getAttribute) (concat [this] args)))
+  (-> this .-getAttribute (.apply this (clj->js args))))
 
 (defn get-attribute-names
   "Method.
@@ -173,7 +173,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNode`"
   [this & args]
-  (apply (-> this .-getAttributeNode) (concat [this] args)))
+  (-> this .-getAttributeNode (.apply this (clj->js args))))
 
 (defn get-attribute-node-ns
   "Method.
@@ -193,7 +193,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNodeNS`"
   [this & args]
-  (apply (-> this .-getAttributeNodeNS) (concat [this] args)))
+  (-> this .-getAttributeNodeNS (.apply this (clj->js args))))
 
 (defn get-bounding-client-rect
   "Method.
@@ -248,7 +248,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName`"
   [this & args]
-  (apply (-> this .-getElementsByTagName) (concat [this] args)))
+  (-> this .-getElementsByTagName (.apply this (clj->js args))))
 
 (defn get-elements-by-tag-name-ns
   "Method.
@@ -268,7 +268,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagNameNS`"
   [this & args]
-  (apply (-> this .-getElementsByTagNameNS) (concat [this] args)))
+  (-> this .-getElementsByTagNameNS (.apply this (clj->js args))))
 
 (defn has-attribute
   "Method.
@@ -286,7 +286,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute`"
   [this & args]
-  (apply (-> this .-hasAttribute) (concat [this] args)))
+  (-> this .-hasAttribute (.apply this (clj->js args))))
 
 (defn has-attribute-ns
   "Method.
@@ -303,7 +303,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributeNS`"
   [this & args]
-  (apply (-> this .-hasAttributeNS) (concat [this] args)))
+  (-> this .-hasAttributeNS (.apply this (clj->js args))))
 
 (defn has-attributes
   "Method.
@@ -390,7 +390,7 @@
   Returns a CSSPseudoElement representing the child pseudo-element
   by the specified pseudo-element selector."
   [this & args]
-  (apply (-> this .-pseudo) (concat [this] args)))
+  (-> this .-pseudo (.apply this (clj->js args))))
 
 (defn query-selector
   "Method.
@@ -482,7 +482,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNode`"
   [this & args]
-  (apply (-> this .-removeAttributeNode) (concat [this] args)))
+  (-> this .-removeAttributeNode (.apply this (clj->js args))))
 
 (defn remove-event-listener
   "Method.
@@ -499,7 +499,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
+  (-> this .-removeEventListener (.apply this (clj->js args))))
 
 (defn request-fullscreen
   "Method.
@@ -536,7 +536,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll`"
   [this & args]
-  (apply (-> this .-scroll) (concat [this] args)))
+  (-> this .-scroll (.apply this (clj->js args))))
 
 (defn scroll-by
   "Method.
@@ -549,7 +549,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy`"
   [this & args]
-  (apply (-> this .-scrollBy) (concat [this] args)))
+  (-> this .-scrollBy (.apply this (clj->js args))))
 
 (defn scroll-into-view
   "Method.
@@ -564,7 +564,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView`"
   [this & args]
-  (apply (-> this .-scrollIntoView) (concat [this] args)))
+  (-> this .-scrollIntoView (.apply this (clj->js args))))
 
 (defn scroll-to
   "Method.
@@ -577,7 +577,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo`"
   [this & args]
-  (apply (-> this .-scrollTo) (concat [this] args)))
+  (-> this .-scrollTo (.apply this (clj->js args))))
 
 (defn set-attribute
   "Method.
@@ -607,7 +607,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS`"
   [this & args]
-  (apply (-> this .-setAttributeNS) (concat [this] args)))
+  (-> this .-setAttributeNS (.apply this (clj->js args))))
 
 (defn set-attribute-node
   "Method.
@@ -622,7 +622,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode`"
   [this & args]
-  (apply (-> this .-setAttributeNode) (concat [this] args)))
+  (-> this .-setAttributeNode (.apply this (clj->js args))))
 
 (defn set-attribute-node-ns
   "Method.
@@ -637,7 +637,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS`"
   [this & args]
-  (apply (-> this .-setAttributeNodeNS) (concat [this] args)))
+  (-> this .-setAttributeNodeNS (.apply this (clj->js args))))
 
 (defn set-capture
   "Method.
@@ -654,7 +654,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/setCapture`"
   [this & args]
-  (apply (-> this .-setCapture) (concat [this] args)))
+  (-> this .-setCapture (.apply this (clj->js args))))
 
 (defn set-pointer-capture
   "Method.
@@ -681,7 +681,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute`"
   [this & args]
-  (apply (-> this .-toggleAttribute) (concat [this] args)))
+  (-> this .-toggleAttribute (.apply this (clj->js args))))
 
 (defn after
   "Method.
@@ -695,7 +695,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/after`"
   [this & args]
-  (apply (-> this .-after) (concat [this] args)))
+  (-> this .-after (.apply this (clj->js args))))
 
 (defn append
   "Method.
@@ -709,7 +709,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
   [this & args]
-  (apply (-> this .-append) (concat [this] args)))
+  (-> this .-append (.apply this (clj->js args))))
 
 (defn before
   "Method.
@@ -724,7 +724,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before`"
   [this & args]
-  (apply (-> this .-before) (concat [this] args)))
+  (-> this .-before (.apply this (clj->js args))))
 
 (defn ms-zoom-to
   "Method.
@@ -734,7 +734,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/msZoomTo`"
   [this & args]
-  (apply (-> this .-msZoomTo) (concat [this] args)))
+  (-> this .-msZoomTo (.apply this (clj->js args))))
 
 (defn prepend
   "Method.
@@ -747,7 +747,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
   [this & args]
-  (apply (-> this .-prepend) (concat [this] args)))
+  (-> this .-prepend (.apply this (clj->js args))))
 
 (defn replace-with
   "Method.
@@ -761,7 +761,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith`"
   [this & args]
-  (apply (-> this .-replaceWith) (concat [this] args)))
+  (-> this .-replaceWith (.apply this (clj->js args))))
 
 (defn scroll-into-view-if-needed
   "Method.

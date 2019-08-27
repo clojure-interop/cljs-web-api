@@ -221,7 +221,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode`"
   [this & args]
-  (apply (-> this .-decode) (concat [this] args)))
+  (-> this .-decode (.apply this (clj->js args))))
 
 (defn encoding
   "Property.

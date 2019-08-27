@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntries`"
   [this & args]
-  (apply (-> this .-getEntries) (concat [this] args)))
+  (-> this .-getEntries (.apply this (clj->js args))))
 
 (defn get-entries-by-type
   "Method.

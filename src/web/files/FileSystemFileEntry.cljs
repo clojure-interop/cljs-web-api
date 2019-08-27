@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/file`"
   [this & args]
-  (apply (-> this .-file) (concat [this] args)))
+  (-> this .-file (.apply this (clj->js args))))
 
 (defn create-writer
   "Method.
@@ -29,5 +29,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/createWriter`"
   [this & args]
-  (apply (-> this .-createWriter) (concat [this] args)))
+  (-> this .-createWriter (.apply this (clj->js args))))
 

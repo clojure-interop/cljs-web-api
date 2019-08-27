@@ -13,5 +13,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_shaders/getTranslatedShaderSource`"
   [this & args]
-  (apply (-> this .-getTranslatedShaderSource) (concat [this] args)))
+  (-> this .-getTranslatedShaderSource (.apply this (clj->js args))))
 

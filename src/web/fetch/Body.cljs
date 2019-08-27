@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/arrayBuffer`"
   [this & args]
-  (apply (-> this .-arrayBuffer) (concat [this] args)))
+  (-> this .-arrayBuffer (.apply this (clj->js args))))
 
 (defn blob
   "Method.
@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/blob`"
   [this & args]
-  (apply (-> this .-blob) (concat [this] args)))
+  (-> this .-blob (.apply this (clj->js args))))
 
 (defn form-data
   "Method.
@@ -47,7 +47,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/formData`"
   [this & args]
-  (apply (-> this .-formData) (concat [this] args)))
+  (-> this .-formData (.apply this (clj->js args))))
 
 (defn json
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/json`"
   [this & args]
-  (apply (-> this .-json) (concat [this] args)))
+  (-> this .-json (.apply this (clj->js args))))
 
 (defn text
   "Method.
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/text`"
   [this & args]
-  (apply (-> this .-text) (concat [this] args)))
+  (-> this .-text (.apply this (clj->js args))))
 
 (defn body
   "Property.

@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/captureEvents`"
   [this & args]
-  (apply (-> this .-captureEvents) (concat [this] args)))
+  (-> this .-captureEvents (.apply this (clj->js args))))
 
 (defn clear-immediate
   "Method.
@@ -88,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/clearImmediate`"
   [this & args]
-  (apply (-> this .-clearImmediate) (concat [this] args)))
+  (-> this .-clearImmediate (.apply this (clj->js args))))
 
 (defn close
   "Method.
@@ -116,21 +116,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm`"
   [this & args]
-  (apply (-> this .-confirm) (concat [this] args)))
+  (-> this .-confirm (.apply this (clj->js args))))
 
 (defn disable-external-capture
   "Method.
 
   FIXME: NeedsContents"
   [this & args]
-  (apply (-> this .-disableExternalCapture) (concat [this] args)))
+  (-> this .-disableExternalCapture (.apply this (clj->js args))))
 
 (defn dispatch-event
   "Method.
 
   Used to trigger an event."
   [this & args]
-  (apply (-> this .-dispatchEvent) (concat [this] args)))
+  (-> this .-dispatchEvent (.apply this (clj->js args))))
 
 (defn dump
   "Method.
@@ -143,14 +143,14 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/dump`"
   [this & args]
-  (apply (-> this .-dump) (concat [this] args)))
+  (-> this .-dump (.apply this (clj->js args))))
 
 (defn enable-external-capture
   "Method.
 
   FIXME: NeedsContents"
   [this & args]
-  (apply (-> this .-enableExternalCapture) (concat [this] args)))
+  (-> this .-enableExternalCapture (.apply this (clj->js args))))
 
 (defn find
   "Method.
@@ -176,7 +176,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/find`"
   [this & args]
-  (apply (-> this .-find) (concat [this] args)))
+  (-> this .-find (.apply this (clj->js args))))
 
 (defn focus
   "Method.
@@ -221,7 +221,7 @@
 
   FIXME: NeedsContents"
   [this & args]
-  (apply (-> this .-getAttentionWithCycleCount) (concat [this] args)))
+  (-> this .-getAttentionWithCycleCount (.apply this (clj->js args))))
 
 (defn get-computed-style
   "Method.
@@ -243,7 +243,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle`"
   [this & args]
-  (apply (-> this .-getComputedStyle) (concat [this] args)))
+  (-> this .-getComputedStyle (.apply this (clj->js args))))
 
 (defn get-default-computed-style
   "Method.
@@ -256,7 +256,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/window/getDefaultComputedStyle`"
   [this & args]
-  (apply (-> this .-getDefaultComputedStyle) (concat [this] args)))
+  (-> this .-getDefaultComputedStyle (.apply this (clj->js args))))
 
 (defn get-selection
   "Method.
@@ -302,7 +302,7 @@
 
   FIXME: NeedsContents"
   [this & args]
-  (apply (-> this .-maximize) (concat [this] args)))
+  (-> this .-maximize (.apply this (clj->js args))))
 
 (defn minimize
   "Method.
@@ -311,7 +311,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/minimize`"
   [this & args]
-  (apply (-> this .-minimize) (concat [this] args)))
+  (-> this .-minimize (.apply this (clj->js args))))
 
 (defn move-by
   "Method.
@@ -349,7 +349,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/open`"
   [this & args]
-  (apply (-> this .-open) (concat [this] args)))
+  (-> this .-open (.apply this (clj->js args))))
 
 (defn open-dialog
   "Method.
@@ -374,7 +374,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/openDialog`"
   [this & args]
-  (apply (-> this .-openDialog) (concat [this] args)))
+  (-> this .-openDialog (.apply this (clj->js args))))
 
 (defn post-message
   "Method.
@@ -405,7 +405,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage`"
   [this & args]
-  (apply (-> this .-postMessage) (concat [this] args)))
+  (-> this .-postMessage (.apply this (clj->js args))))
 
 (defn print
   "Method.
@@ -441,7 +441,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/releaseEvents`"
   [this & args]
-  (apply (-> this .-releaseEvents) (concat [this] args)))
+  (-> this .-releaseEvents (.apply this (clj->js args))))
 
 (defn request-animation-frame
   "Method.
@@ -472,7 +472,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback`"
   [this & args]
-  (apply (-> this .-requestIdleCallback) (concat [this] args)))
+  (-> this .-requestIdleCallback (.apply this (clj->js args))))
 
 (defn resize-by
   "Method.
@@ -504,7 +504,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/restore`"
   [this & args]
-  (apply (-> this .-restore) (concat [this] args)))
+  (-> this .-restore (.apply this (clj->js args))))
 
 (defn route-event
   "Method.
@@ -515,7 +515,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/routeEvent`"
   [this & args]
-  (apply (-> this .-routeEvent) (concat [this] args)))
+  (-> this .-routeEvent (.apply this (clj->js args))))
 
 (defn scroll
   "Method.
@@ -528,7 +528,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll`"
   [this & args]
-  (apply (-> this .-scroll) (concat [this] args)))
+  (-> this .-scroll (.apply this (clj->js args))))
 
 (defn scroll-by
   "Method.
@@ -541,7 +541,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy`"
   [this & args]
-  (apply (-> this .-scrollBy) (concat [this] args)))
+  (-> this .-scrollBy (.apply this (clj->js args))))
 
 (defn scroll-by-lines
   "Method.
@@ -578,7 +578,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo`"
   [this & args]
-  (apply (-> this .-scrollTo) (concat [this] args)))
+  (-> this .-scrollTo (.apply this (clj->js args))))
 
 (defn set-cursor
   "Method.
@@ -587,7 +587,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/setCursor`"
   [this & args]
-  (apply (-> this .-setCursor) (concat [this] args)))
+  (-> this .-setCursor (.apply this (clj->js args))))
 
 (defn set-immediate
   "Method.
@@ -608,14 +608,14 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate`"
   [this & args]
-  (apply (-> this .-setImmediate) (concat [this] args)))
+  (-> this .-setImmediate (.apply this (clj->js args))))
 
 (defn set-resizable
   "Method.
 
   Toggles a user's ability to resize a window."
   [this & args]
-  (apply (-> this .-setResizable) (concat [this] args)))
+  (-> this .-setResizable (.apply this (clj->js args))))
 
 (defn size-to-content
   "Method.
@@ -652,7 +652,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/updateCommands`"
   [this & args]
-  (apply (-> this .-updateCommands) (concat [this] args)))
+  (-> this .-updateCommands (.apply this (clj->js args))))
 
 (defn add-event-listener
   "Method.
@@ -666,7 +666,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
   [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
+  (-> this .-addEventListener (.apply this (clj->js args))))
 
 (defn atob
   "Method.
@@ -736,7 +736,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
   [this & args]
-  (apply (-> this .-createImageBitmap) (concat [this] args)))
+  (-> this .-createImageBitmap (.apply this (clj->js args))))
 
 (defn fetch
   "Method.
@@ -766,7 +766,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
+  (-> this .-removeEventListener (.apply this (clj->js args))))
 
 (defn set-interval
   "Method.
@@ -780,7 +780,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
   [this & args]
-  (apply (-> this .-setInterval) (concat [this] args)))
+  (-> this .-setInterval (.apply this (clj->js args))))
 
 (defn set-timeout
   "Method.
@@ -795,7 +795,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout`"
   [this & args]
-  (apply (-> this .-setTimeout) (concat [this] args)))
+  (-> this .-setTimeout (.apply this (clj->js args))))
 
 (defn show-modal-dialog
   "Method.
@@ -855,7 +855,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/showModalDialog`"
   [this & args]
-  (apply (-> this .-showModalDialog) (concat [this] args)))
+  (-> this .-showModalDialog (.apply this (clj->js args))))
 
 (defn convert-point-from-node-to-page
   "Method.
@@ -914,7 +914,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/requestFileSystem`"
   [this & args]
-  (apply (-> this .-requestFileSystem) (concat [this] args)))
+  (-> this .-requestFileSystem (.apply this (clj->js args))))
 
 (defn closed
   "Property.

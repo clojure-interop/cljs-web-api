@@ -94,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/updatePlaybackRate`"
   [this & args]
-  (apply (-> this .-updatePlaybackRate) (concat [this] args)))
+  (-> this .-updatePlaybackRate (.apply this (clj->js args))))
 
 (defn current-time
   "Property.

@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRSession/updateRenderState`"
   [this & args]
-  (apply (-> this .-updateRenderState) (concat [this] args)))
+  (-> this .-updateRenderState (.apply this (clj->js args))))
 
 (defn request-reference-space
   "Method.

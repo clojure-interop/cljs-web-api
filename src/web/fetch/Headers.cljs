@@ -62,7 +62,7 @@
 
   Executes a provided function once for each array element."
   [this & args]
-  (apply (-> this .-forEach) (concat [this] args)))
+  (-> this .-forEach (.apply this (clj->js args))))
 
 (defn get
   "Method.

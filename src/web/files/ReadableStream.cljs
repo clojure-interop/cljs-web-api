@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/getReader`"
   [this & args]
-  (apply (-> this .-getReader) (concat [this] args)))
+  (-> this .-getReader (.apply this (clj->js args))))
 
 (defn pipe-through
   "Method.
@@ -76,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/pipeThrough`"
   [this & args]
-  (apply (-> this .-pipeThrough) (concat [this] args)))
+  (-> this .-pipeThrough (.apply this (clj->js args))))
 
 (defn pipe-to
   "Method.
@@ -90,7 +90,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/pipeTo`"
   [this & args]
-  (apply (-> this .-pipeTo) (concat [this] args)))
+  (-> this .-pipeTo (.apply this (clj->js args))))
 
 (defn tee
   "Method.

@@ -76,7 +76,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment`"
   [this & args]
-  (apply (-> this .-canMakePayment) (concat [this] args)))
+  (-> this .-canMakePayment (.apply this (clj->js args))))
 
 (defn show
   "Method.

@@ -217,7 +217,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot`"
   [this & args]
-  (apply (-> this .-hypot) (concat [this] args)))
+  (-> this .-hypot (.apply this (clj->js args))))
 
 (defn imul
   "Method.
@@ -288,7 +288,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max`"
   [this & args]
-  (apply (-> this .-max) (concat [this] args)))
+  (-> this .-max (.apply this (clj->js args))))
 
 (defn min
   "Method.
@@ -301,7 +301,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min`"
   [this & args]
-  (apply (-> this .-min) (concat [this] args)))
+  (-> this .-min (.apply this (clj->js args))))
 
 (defn pow
   "Method.
@@ -420,7 +420,7 @@
 
   Returns the string \"Math\"."
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn trunc
   "Method.

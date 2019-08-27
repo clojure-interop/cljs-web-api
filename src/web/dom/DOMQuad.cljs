@@ -11,14 +11,14 @@
 
   Returns a new DOMQuad object based on the passed set of coordinates."
   [this & args]
-  (apply (-> this .-fromRect) (concat [this] args)))
+  (-> this .-fromRect (.apply this (clj->js args))))
 
 (defn from-quad
   "Method.
 
   Returns a new DOMQuad object based on the passed set of coordinates."
   [this & args]
-  (apply (-> this .-fromQuad) (concat [this] args)))
+  (-> this .-fromQuad (.apply this (clj->js args))))
 
 (defn get-bounds
   "Method.
@@ -26,12 +26,12 @@
   Returns a DOMRect object with the coordinates and dimensions
   the DOMQuad object."
   [this & args]
-  (apply (-> this .-getBounds) (concat [this] args)))
+  (-> this .-getBounds (.apply this (clj->js args))))
 
 (defn to-json
   "Method.
 
   Returns a JSON representation of the DOMQuad object."
   [this & args]
-  (apply (-> this .-toJSON) (concat [this] args)))
+  (-> this .-toJSON (.apply this (clj->js args))))
 

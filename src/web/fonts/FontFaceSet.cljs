@@ -8,7 +8,7 @@
 
   Adds a font to the font set."
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn check
   "Method.
@@ -20,21 +20,21 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check`"
   [this & args]
-  (apply (-> this .-check) (concat [this] args)))
+  (-> this .-check (.apply this (clj->js args))))
 
 (defn clear
   "Method.
 
   Removes all fonts from the font set."
   [this & args]
-  (apply (-> this .-clear) (concat [this] args)))
+  (-> this .-clear (.apply this (clj->js args))))
 
 (defn delete
   "Method.
 
   Removes a font from the font set."
   [this & args]
-  (apply (-> this .-delete) (concat [this] args)))
+  (-> this .-delete (.apply this (clj->js args))))
 
 (defn load
   "Method.
@@ -49,7 +49,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/load`"
   [this & args]
-  (apply (-> this .-load) (concat [this] args)))
+  (-> this .-load (.apply this (clj->js args))))
 
 (defn status
   "Property.

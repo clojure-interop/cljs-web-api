@@ -14,5 +14,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeRequest/setVersion`"
   [this & args]
-  (apply (-> this .-setVersion) (concat [this] args)))
+  (-> this .-setVersion (.apply this (clj->js args))))
 

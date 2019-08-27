@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match`"
   [this & args]
-  (apply (-> this .-match) (concat [this] args)))
+  (-> this .-match (.apply this (clj->js args))))
 
 (defn has
   "Method.
@@ -32,7 +32,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/has`"
   [this & args]
-  (apply (-> this .-has) (concat [this] args)))
+  (-> this .-has (.apply this (clj->js args))))
 
 (defn open
   "Method.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open`"
   [this & args]
-  (apply (-> this .-open) (concat [this] args)))
+  (-> this .-open (.apply this (clj->js args))))
 
 (defn delete
   "Method.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/delete`"
   [this & args]
-  (apply (-> this .-delete) (concat [this] args)))
+  (-> this .-delete (.apply this (clj->js args))))
 
 (defn keys
   "Method.
@@ -84,5 +84,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/keys`"
   [this & args]
-  (apply (-> this .-keys) (concat [this] args)))
+  (-> this .-keys (.apply this (clj->js args))))
 

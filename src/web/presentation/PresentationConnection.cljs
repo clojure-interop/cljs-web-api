@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/close`"
   [this & args]
-  (apply (-> this .-close) (concat [this] args)))
+  (-> this .-close (.apply this (clj->js args))))
 
 (defn send
   "Method.
@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/terminate`"
   [this & args]
-  (apply (-> this .-terminate) (concat [this] args)))
+  (-> this .-terminate (.apply this (clj->js args))))
 
 (defn binary-type
   "Property.

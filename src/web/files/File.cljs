@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice`"
   [this & args]
-  (apply (-> this .-slice) (concat [this] args)))
+  (-> this .-slice (.apply this (clj->js args))))
 
 (defn stream
   "Method.
@@ -56,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/text`"
   [this & args]
-  (apply (-> this .-text) (concat [this] args)))
+  (-> this .-text (.apply this (clj->js args))))
 
 (defn array-buffer
   "Method.
@@ -71,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer`"
   [this & args]
-  (apply (-> this .-arrayBuffer) (concat [this] args)))
+  (-> this .-arrayBuffer (.apply this (clj->js args))))
 
 (defn get-as-binary
   "Method.

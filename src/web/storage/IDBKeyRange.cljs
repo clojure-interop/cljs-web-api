@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/bound`"
   [this & args]
-  (apply (-> this .-bound) (concat [this] args)))
+  (-> this .-bound (.apply this (clj->js args))))
 
 (defn only
   "Method.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerBound`"
   [this & args]
-  (apply (-> this .-lowerBound) (concat [this] args)))
+  (-> this .-lowerBound (.apply this (clj->js args))))
 
 (defn upper-bound
   "Method.
@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperBound`"
   [this & args]
-  (apply (-> this .-upperBound) (concat [this] args)))
+  (-> this .-upperBound (.apply this (clj->js args))))
 
 (defn includes
   "Method.

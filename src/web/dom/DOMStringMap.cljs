@@ -8,12 +8,12 @@
 
   The property for which to check for the existence of a value."
   [this & args]
-  (apply (-> this .-prop) (concat [this] args)))
+  (-> this .-prop (.apply this (clj->js args))))
 
 (defn attr
   "Method.
 
   The property to remove from the dataset."
   [this & args]
-  (apply (-> this .-attr) (concat [this] args)))
+  (-> this .-attr (.apply this (clj->js args))))
 

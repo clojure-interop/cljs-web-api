@@ -8,7 +8,7 @@
 
   The name of the event."
   [this & args]
-  (apply (-> this .-typeArg) (concat [this] args)))
+  (-> this .-typeArg (.apply this (clj->js args))))
 
 (defn can-bubble
   "Method.
@@ -16,42 +16,42 @@
   A boolean indicating whether the event bubbles up through the
   or not."
   [this & args]
-  (apply (-> this .-canBubble) (concat [this] args)))
+  (-> this .-canBubble (.apply this (clj->js args))))
 
 (defn cancelable
   "Method.
 
   A boolean indicating whether the event is cancelable."
   [this & args]
-  (apply (-> this .-cancelable) (concat [this] args)))
+  (-> this .-cancelable (.apply this (clj->js args))))
 
 (defn key
   "Method.
 
   The key whose value is changing as a result of this event."
   [this & args]
-  (apply (-> this .-key) (concat [this] args)))
+  (-> this .-key (.apply this (clj->js args))))
 
 (defn old-value
   "Method.
 
   The key's old value."
   [this & args]
-  (apply (-> this .-oldValue) (concat [this] args)))
+  (-> this .-oldValue (.apply this (clj->js args))))
 
 (defn new-value
   "Method.
 
   The key's new value."
   [this & args]
-  (apply (-> this .-newValue) (concat [this] args)))
+  (-> this .-newValue (.apply this (clj->js args))))
 
 (defn url
   "Method.
 
   The URL of the document initiating the change."
   [this & args]
-  (apply (-> this .-url) (concat [this] args)))
+  (-> this .-url (.apply this (clj->js args))))
 
 (defn storage-area
   "Method.
@@ -59,5 +59,5 @@
   The DOM Storage object representing the storage area on which
   event occurred."
   [this & args]
-  (apply (-> this .-storageArea) (concat [this] args)))
+  (-> this .-storageArea (.apply this (clj->js args))))
 

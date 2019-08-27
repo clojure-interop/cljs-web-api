@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule`"
   [this & args]
-  (apply (-> this .-insertRule) (concat [this] args)))
+  (-> this .-insertRule (.apply this (clj->js args))))
 
 (defn add-rule
   "Method.

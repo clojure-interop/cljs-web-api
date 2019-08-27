@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/slice`"
   [this & args]
-  (apply (-> this .-slice) (concat [this] args)))
+  (-> this .-slice (.apply this (clj->js args))))
 
 (defn length
   "Property.

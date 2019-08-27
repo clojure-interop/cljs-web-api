@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XR/requestSession`"
   [this & args]
-  (apply (-> this .-requestSession) (concat [this] args)))
+  (-> this .-requestSession (.apply this (clj->js args))))
 
 (defn supports-session
   "Method.

@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue`"
   [this & args]
-  (apply (-> this .-readValue) (concat [this] args)))
+  (-> this .-readValue (.apply this (clj->js args))))
 
 (defn write-value
   "Method.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications`"
   [this & args]
-  (apply (-> this .-startNotifications) (concat [this] args)))
+  (-> this .-startNotifications (.apply this (clj->js args))))
 
 (defn stop-notifications
   "Method.
@@ -81,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications`"
   [this & args]
-  (apply (-> this .-stopNotifications) (concat [this] args)))
+  (-> this .-stopNotifications (.apply this (clj->js args))))
 
 (defn service
   "Property.

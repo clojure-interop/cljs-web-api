@@ -52,7 +52,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/respondWith`"
   [this & args]
-  (apply (-> this .-respondWith) (concat [this] args)))
+  (-> this .-respondWith (.apply this (clj->js args))))
 
 (defn instrument-key
   "Property.

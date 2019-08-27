@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc`"
   [this & args]
-  (apply (-> this .-arc) (concat [this] args)))
+  (-> this .-arc (.apply this (clj->js args))))
 
 (defn arc-to
   "Method.
@@ -97,7 +97,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect`"
   [this & args]
-  (apply (-> this .-clearRect) (concat [this] args)))
+  (-> this .-clearRect (.apply this (clj->js args))))
 
 (defn clip
   "Method.
@@ -111,7 +111,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip`"
   [this & args]
-  (apply (-> this .-clip) (concat [this] args)))
+  (-> this .-clip (.apply this (clj->js args))))
 
 (defn close-path
   "Method.
@@ -140,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData`"
   [this & args]
-  (apply (-> this .-createImageData) (concat [this] args)))
+  (-> this .-createImageData (.apply this (clj->js args))))
 
 (defn create-linear-gradient
   "Method.
@@ -155,7 +155,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createLinearGradient`"
   [this & args]
-  (apply (-> this .-createLinearGradient) (concat [this] args)))
+  (-> this .-createLinearGradient (.apply this (clj->js args))))
 
 (defn create-pattern
   "Method.
@@ -183,7 +183,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient`"
   [this & args]
-  (apply (-> this .-createRadialGradient) (concat [this] args)))
+  (-> this .-createRadialGradient (.apply this (clj->js args))))
 
 (defn draw-focus-if-needed
   "Method.
@@ -197,7 +197,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded`"
   [this & args]
-  (apply (-> this .-drawFocusIfNeeded) (concat [this] args)))
+  (-> this .-drawFocusIfNeeded (.apply this (clj->js args))))
 
 (defn draw-image
   "Method.
@@ -211,7 +211,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage`"
   [this & args]
-  (apply (-> this .-drawImage) (concat [this] args)))
+  (-> this .-drawImage (.apply this (clj->js args))))
 
 (defn draw-widget-as-on-screen
   "Method.
@@ -240,7 +240,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawWindow`"
   [this & args]
-  (apply (-> this .-drawWindow) (concat [this] args)))
+  (-> this .-drawWindow (.apply this (clj->js args))))
 
 (defn ellipse
   "Method.
@@ -254,7 +254,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/ellipse`"
   [this & args]
-  (apply (-> this .-ellipse) (concat [this] args)))
+  (-> this .-ellipse (.apply this (clj->js args))))
 
 (defn fill
   "Method.
@@ -267,7 +267,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill`"
   [this & args]
-  (apply (-> this .-fill) (concat [this] args)))
+  (-> this .-fill (.apply this (clj->js args))))
 
 (defn fill-rect
   "Method.
@@ -281,7 +281,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect`"
   [this & args]
-  (apply (-> this .-fillRect) (concat [this] args)))
+  (-> this .-fillRect (.apply this (clj->js args))))
 
 (defn fill-text
   "Method.
@@ -297,7 +297,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText`"
   [this & args]
-  (apply (-> this .-fillText) (concat [this] args)))
+  (-> this .-fillText (.apply this (clj->js args))))
 
 (defn get-image-data
   "Method.
@@ -336,7 +336,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInPath`"
   [this & args]
-  (apply (-> this .-isPointInPath) (concat [this] args)))
+  (-> this .-isPointInPath (.apply this (clj->js args))))
 
 (defn is-point-in-stroke
   "Method.
@@ -350,7 +350,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke`"
   [this & args]
-  (apply (-> this .-isPointInStroke) (concat [this] args)))
+  (-> this .-isPointInStroke (.apply this (clj->js args))))
 
 (defn line-to
   "Method.
@@ -405,7 +405,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData`"
   [this & args]
-  (apply (-> this .-putImageData) (concat [this] args)))
+  (-> this .-putImageData (.apply this (clj->js args))))
 
 (defn quadratic-curve-to
   "Method.
@@ -435,7 +435,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect`"
   [this & args]
-  (apply (-> this .-rect) (concat [this] args)))
+  (-> this .-rect (.apply this (clj->js args))))
 
 (defn remove-hit-region
   "Method.
@@ -525,7 +525,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/scrollPathIntoView`"
   [this & args]
-  (apply (-> this .-scrollPathIntoView) (concat [this] args)))
+  (-> this .-scrollPathIntoView (.apply this (clj->js args))))
 
 (defn set-line-dash
   "Method.
@@ -556,7 +556,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setTransform`"
   [this & args]
-  (apply (-> this .-setTransform) (concat [this] args)))
+  (-> this .-setTransform (.apply this (clj->js args))))
 
 (defn stroke
   "Method.
@@ -570,7 +570,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke`"
   [this & args]
-  (apply (-> this .-stroke) (concat [this] args)))
+  (-> this .-stroke (.apply this (clj->js args))))
 
 (defn stroke-rect
   "Method.
@@ -585,7 +585,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeRect`"
   [this & args]
-  (apply (-> this .-strokeRect) (concat [this] args)))
+  (-> this .-strokeRect (.apply this (clj->js args))))
 
 (defn stroke-text
   "Method.
@@ -601,7 +601,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeText`"
   [this & args]
-  (apply (-> this .-strokeText) (concat [this] args)))
+  (-> this .-strokeText (.apply this (clj->js args))))
 
 (defn transform
   "Method.
@@ -617,7 +617,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/transform`"
   [this & args]
-  (apply (-> this .-transform) (concat [this] args)))
+  (-> this .-transform (.apply this (clj->js args))))
 
 (defn translate
   "Method.
@@ -631,7 +631,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate`"
   [this & args]
-  (apply (-> this .-translate) (concat [this] args)))
+  (-> this .-translate (.apply this (clj->js args))))
 
 (defn canvas
   "Property.

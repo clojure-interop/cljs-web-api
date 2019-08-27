@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toSource`"
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn to-string
   "Method.
@@ -56,7 +56,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toString`"
   [this & args]
-  (apply (-> this .-toString) (concat [this] args)))
+  (-> this .-toString (.apply this (clj->js args))))
 
 (defn value-of
   "Method.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/valueOf`"
   [this & args]
-  (apply (-> this .-valueOf) (concat [this] args)))
+  (-> this .-valueOf (.apply this (clj->js args))))
 
 (defn length
   "Property.

@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/close`"
   [this & args]
-  (apply (-> this .-close) (concat [this] args)))
+  (-> this .-close (.apply this (clj->js args))))
 
 (defn generate-request
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/generateRequest`"
   [this & args]
-  (apply (-> this .-generateRequest) (concat [this] args)))
+  (-> this .-generateRequest (.apply this (clj->js args))))
 
 (defn load
   "Method.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/remove`"
   [this & args]
-  (apply (-> this .-remove) (concat [this] args)))
+  (-> this .-remove (.apply this (clj->js args))))
 
 (defn update
   "Method.

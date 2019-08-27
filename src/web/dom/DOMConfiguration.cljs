@@ -10,21 +10,21 @@
 
   Returns a Boolean"
   [this & args]
-  (apply (-> this .-canSetParameter) (concat [this] args)))
+  (-> this .-canSetParameter (.apply this (clj->js args))))
 
 (defn get-parameter
   "Method.
 
   Returns a DOMUserData"
   [this & args]
-  (apply (-> this .-getParameter) (concat [this] args)))
+  (-> this .-getParameter (.apply this (clj->js args))))
 
 (defn set-parameter
   "Method.
 
   Sets a parameter"
   [this & args]
-  (apply (-> this .-setParameter) (concat [this] args)))
+  (-> this .-setParameter (.apply this (clj->js args))))
 
 (defn parameter-names
   "Property.

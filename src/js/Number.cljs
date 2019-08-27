@@ -60,7 +60,7 @@
   Used to evaluate the passed value and convert it to an integer
   Infinity), but has been removed."
   [this & args]
-  (apply (-> this .-toInteger) (concat [this] args)))
+  (-> this .-toInteger (.apply this (clj->js args))))
 
 (defn parse-float
   "Method.
@@ -84,7 +84,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt`"
   [this & args]
-  (apply (-> this .-parseInt) (concat [this] args)))
+  (-> this .-parseInt (.apply this (clj->js args))))
 
 (defn to-exponential
   "Method.
@@ -96,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential`"
   [this & args]
-  (apply (-> this .-toExponential) (concat [this] args)))
+  (-> this .-toExponential (.apply this (clj->js args))))
 
 (defn to-fixed
   "Method.
@@ -107,7 +107,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed`"
   [this & args]
-  (apply (-> this .-toFixed) (concat [this] args)))
+  (-> this .-toFixed (.apply this (clj->js args))))
 
 (defn to-locale-string
   "Method.
@@ -119,7 +119,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString`"
   [this & args]
-  (apply (-> this .-toLocaleString) (concat [this] args)))
+  (-> this .-toLocaleString (.apply this (clj->js args))))
 
 (defn to-precision
   "Method.
@@ -131,7 +131,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision`"
   [this & args]
-  (apply (-> this .-toPrecision) (concat [this] args)))
+  (-> this .-toPrecision (.apply this (clj->js args))))
 
 (defn to-source
   "Method.
@@ -144,7 +144,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toSource`"
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn to-string
   "Method.
@@ -156,7 +156,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString`"
   [this & args]
-  (apply (-> this .-toString) (concat [this] args)))
+  (-> this .-toString (.apply this (clj->js args))))
 
 (defn value-of
   "Method.

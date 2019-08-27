@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/count`"
   [this & args]
-  (apply (-> this .-count) (concat [this] args)))
+  (-> this .-count (.apply this (clj->js args))))
 
 (defn get
   "Method.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAll`"
   [this & args]
-  (apply (-> this .-getAll) (concat [this] args)))
+  (-> this .-getAll (.apply this (clj->js args))))
 
 (defn get-all-keys
   "Method.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys`"
   [this & args]
-  (apply (-> this .-getAllKeys) (concat [this] args)))
+  (-> this .-getAllKeys (.apply this (clj->js args))))
 
 (defn open-cursor
   "Method.
@@ -88,7 +88,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/openCursor`"
   [this & args]
-  (apply (-> this .-openCursor) (concat [this] args)))
+  (-> this .-openCursor (.apply this (clj->js args))))
 
 (defn open-key-cursor
   "Method.
@@ -102,7 +102,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/openKeyCursor`"
   [this & args]
-  (apply (-> this .-openKeyCursor) (concat [this] args)))
+  (-> this .-openKeyCursor (.apply this (clj->js args))))
 
 (defn is-auto-locale
   "Property.

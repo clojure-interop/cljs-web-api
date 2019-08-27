@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/dump`"
   [this & args]
-  (apply (-> this .-dump) (concat [this] args)))
+  (-> this .-dump (.apply this (clj->js args))))
 
 (defn import-scripts
   "Method.
@@ -58,49 +58,49 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts`"
   [this & args]
-  (apply (-> this .-importScripts) (concat [this] args)))
+  (-> this .-importScripts (.apply this (clj->js args))))
 
 (defn atob
   "Method.
 
   Decodes a string of data which has been encoded using base-64"
   [this & args]
-  (apply (-> this .-atob) (concat [this] args)))
+  (-> this .-atob (.apply this (clj->js args))))
 
 (defn btoa
   "Method.
 
   Creates a base-64 encoded ASCII string from a string of binary"
   [this & args]
-  (apply (-> this .-btoa) (concat [this] args)))
+  (-> this .-btoa (.apply this (clj->js args))))
 
 (defn clear-interval
   "Method.
 
   Cancels the repeated execution set using WindowTimers.setInterval()."
   [this & args]
-  (apply (-> this .-clearInterval) (concat [this] args)))
+  (-> this .-clearInterval (.apply this (clj->js args))))
 
 (defn clear-timeout
   "Method.
 
   Cancels the repeated execution set using WindowTimers.setTimeout()."
   [this & args]
-  (apply (-> this .-clearTimeout) (concat [this] args)))
+  (-> this .-clearTimeout (.apply this (clj->js args))))
 
 (defn set-interval
   "Method.
 
   Schedules the execution of a function every X milliseconds."
   [this & args]
-  (apply (-> this .-setInterval) (concat [this] args)))
+  (-> this .-setInterval (.apply this (clj->js args))))
 
 (defn set-timeout
   "Method.
 
   Sets a delay for executing a function."
   [this & args]
-  (apply (-> this .-setTimeout) (concat [this] args)))
+  (-> this .-setTimeout (.apply this (clj->js args))))
 
 (defn name
   "Property.

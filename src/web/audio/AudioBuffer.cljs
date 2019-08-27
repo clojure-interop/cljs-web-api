@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/getChannelData`"
   [this & args]
-  (apply (-> this .-getChannelData) (concat [this] args)))
+  (-> this .-getChannelData (.apply this (clj->js args))))
 
 (defn copy-from-channel
   "Method.

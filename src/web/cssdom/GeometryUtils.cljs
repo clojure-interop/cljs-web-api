@@ -9,26 +9,26 @@
   Returns a list of DOMQuad objects representing the CSS fragments
   the node."
   [this & args]
-  (apply (-> this .-getBoxQuads) (concat [this] args)))
+  (-> this .-getBoxQuads (.apply this (clj->js args))))
 
 (defn convert-quad-from-node
   "Method.
 
   FIXME: Needs a description"
   [this & args]
-  (apply (-> this .-convertQuadFromNode) (concat [this] args)))
+  (-> this .-convertQuadFromNode (.apply this (clj->js args))))
 
 (defn convert-rect-from-node
   "Method.
 
   FIXME: Needs a description"
   [this & args]
-  (apply (-> this .-convertRectFromNode) (concat [this] args)))
+  (-> this .-convertRectFromNode (.apply this (clj->js args))))
 
 (defn convert-point-from-node
   "Method.
 
   FIXME: Needs a description"
   [this & args]
-  (apply (-> this .-convertPointFromNode) (concat [this] args)))
+  (-> this .-convertPointFromNode (.apply this (clj->js args))))
 

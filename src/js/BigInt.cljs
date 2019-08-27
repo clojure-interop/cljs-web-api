@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toLocaleString`"
   [this & args]
-  (apply (-> this .-toLocaleString) (concat [this] args)))
+  (-> this .-toLocaleString (.apply this (clj->js args))))
 
 (defn to-string
   "Method.
@@ -51,7 +51,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString`"
   [this & args]
-  (apply (-> this .-toString) (concat [this] args)))
+  (-> this .-toString (.apply this (clj->js args))))
 
 (defn value-of
   "Method.

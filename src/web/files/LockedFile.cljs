@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/readAsText`"
   [this & args]
-  (apply (-> this .-readAsText) (concat [this] args)))
+  (-> this .-readAsText (.apply this (clj->js args))))
 
 (defn write
   "Method.

@@ -12,7 +12,7 @@
   Calling this method to go back beyond the first page in the
   history has no effect and doesn't raise an exception."
   [this & args]
-  (apply (-> this .-back) (concat [this] args)))
+  (-> this .-back (.apply this (clj->js args))))
 
 (defn forward
   "Method.
@@ -23,7 +23,7 @@
   Calling this method to go forward beyond the most recent page
   the session history has no effect and doesn't raise an exception."
   [this & args]
-  (apply (-> this .-forward) (concat [this] args)))
+  (-> this .-forward (.apply this (clj->js args))))
 
 (defn go
   "Method.
@@ -37,7 +37,7 @@
   specify a string, instead of an integer, to go to a specific
   in the history list."
   [this & args]
-  (apply (-> this .-go) (concat [this] args)))
+  (-> this .-go (.apply this (clj->js args))))
 
 (defn push-state
   "Method.
@@ -48,7 +48,7 @@
   that Firefox currently ignores the title parameter; for more
   see manipulating the browser history."
   [this & args]
-  (apply (-> this .-pushState) (concat [this] args)))
+  (-> this .-pushState (.apply this (clj->js args))))
 
 (defn replace-state
   "Method.
@@ -59,7 +59,7 @@
   that Firefox currently ignores the title parameter; for more
   see manipulating the browser history."
   [this & args]
-  (apply (-> this .-replaceState) (concat [this] args)))
+  (-> this .-replaceState (.apply this (clj->js args))))
 
 (defn length
   "Property.

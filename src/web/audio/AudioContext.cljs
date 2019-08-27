@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/close`"
   [this & args]
-  (apply (-> this .-close) (concat [this] args)))
+  (-> this .-close (.apply this (clj->js args))))
 
 (defn create-media-element-source
   "Method.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource`"
   [this & args]
-  (apply (-> this .-createMediaElementSource) (concat [this] args)))
+  (-> this .-createMediaElementSource (.apply this (clj->js args))))
 
 (defn create-media-stream-source
   "Method.
@@ -72,7 +72,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamDestination`"
   [this & args]
-  (apply (-> this .-createMediaStreamDestination) (concat [this] args)))
+  (-> this .-createMediaStreamDestination (.apply this (clj->js args))))
 
 (defn create-media-stream-track-source
   "Method.
@@ -85,7 +85,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamTrackSource`"
   [this & args]
-  (apply (-> this .-createMediaStreamTrackSource) (concat [this] args)))
+  (-> this .-createMediaStreamTrackSource (.apply this (clj->js args))))
 
 (defn get-output-timestamp
   "Method.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/suspend`"
   [this & args]
-  (apply (-> this .-suspend) (concat [this] args)))
+  (-> this .-suspend (.apply this (clj->js args))))
 
 (defn create-java-script-node
   "Method.
@@ -148,7 +148,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveTable`"
   [this & args]
-  (apply (-> this .-createWaveTable) (concat [this] args)))
+  (-> this .-createWaveTable (.apply this (clj->js args))))
 
 (defn base-latency
   "Property.

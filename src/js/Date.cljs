@@ -37,7 +37,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse`"
   [this & args]
-  (apply (-> this .-parse) (concat [this] args)))
+  (-> this .-parse (.apply this (clj->js args))))
 
 (defn utc
   "Method.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC`"
   [this & args]
-  (apply (-> this .-UTC) (concat [this] args)))
+  (-> this .-UTC (.apply this (clj->js args))))
 
 (defn get-date
   "Method.
@@ -316,7 +316,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear`"
   [this & args]
-  (apply (-> this .-setFullYear) (concat [this] args)))
+  (-> this .-setFullYear (.apply this (clj->js args))))
 
 (defn set-hours
   "Method.
@@ -329,7 +329,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours`"
   [this & args]
-  (apply (-> this .-setHours) (concat [this] args)))
+  (-> this .-setHours (.apply this (clj->js args))))
 
 (defn set-milliseconds
   "Method.
@@ -353,7 +353,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes`"
   [this & args]
-  (apply (-> this .-setMinutes) (concat [this] args)))
+  (-> this .-setMinutes (.apply this (clj->js args))))
 
 (defn set-month
   "Method.
@@ -365,7 +365,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth`"
   [this & args]
-  (apply (-> this .-setMonth) (concat [this] args)))
+  (-> this .-setMonth (.apply this (clj->js args))))
 
 (defn set-seconds
   "Method.
@@ -377,7 +377,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds`"
   [this & args]
-  (apply (-> this .-setSeconds) (concat [this] args)))
+  (-> this .-setSeconds (.apply this (clj->js args))))
 
 (defn set-time
   "Method.
@@ -413,7 +413,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCFullYear`"
   [this & args]
-  (apply (-> this .-setUTCFullYear) (concat [this] args)))
+  (-> this .-setUTCFullYear (.apply this (clj->js args))))
 
 (defn set-utc-hours
   "Method.
@@ -427,7 +427,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCHours`"
   [this & args]
-  (apply (-> this .-setUTCHours) (concat [this] args)))
+  (-> this .-setUTCHours (.apply this (clj->js args))))
 
 (defn set-utc-milliseconds
   "Method.
@@ -451,7 +451,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMinutes`"
   [this & args]
-  (apply (-> this .-setUTCMinutes) (concat [this] args)))
+  (-> this .-setUTCMinutes (.apply this (clj->js args))))
 
 (defn set-utc-month
   "Method.
@@ -463,7 +463,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCMonth`"
   [this & args]
-  (apply (-> this .-setUTCMonth) (concat [this] args)))
+  (-> this .-setUTCMonth (.apply this (clj->js args))))
 
 (defn set-utc-seconds
   "Method.
@@ -475,7 +475,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setUTCSeconds`"
   [this & args]
-  (apply (-> this .-setUTCSeconds) (concat [this] args)))
+  (-> this .-setUTCSeconds (.apply this (clj->js args))))
 
 (defn set-year
   "Method.
@@ -557,7 +557,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString`"
   [this & args]
-  (apply (-> this .-toLocaleDateString) (concat [this] args)))
+  (-> this .-toLocaleDateString (.apply this (clj->js args))))
 
 (defn to-locale-format
   "Method.
@@ -587,7 +587,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString`"
   [this & args]
-  (apply (-> this .-toLocaleString) (concat [this] args)))
+  (-> this .-toLocaleString (.apply this (clj->js args))))
 
 (defn to-locale-time-string
   "Method.
@@ -604,7 +604,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString`"
   [this & args]
-  (apply (-> this .-toLocaleTimeString) (concat [this] args)))
+  (-> this .-toLocaleTimeString (.apply this (clj->js args))))
 
 (defn to-source
   "Method.
@@ -617,7 +617,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toSource`"
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn to-string
   "Method.

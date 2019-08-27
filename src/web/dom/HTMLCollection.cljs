@@ -24,7 +24,7 @@
   resort, only in HTML, and only if the referenced element supports
   name attribute. Returns null if no node exists by the given name."
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 
 (defn length
   "Property.

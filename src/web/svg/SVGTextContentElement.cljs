@@ -12,7 +12,7 @@
   for rendering within the current element, regardless of whether
   will be rendered."
   [this & args]
-  (apply (-> this .-getNumberOfChars) (concat [this] args)))
+  (-> this .-getNumberOfChars (.apply this (clj->js args))))
 
 (defn get-computed-text-length
   "Method.
@@ -20,7 +20,7 @@
   Returns a float representing the computed length for the text
   the element."
   [this & args]
-  (apply (-> this .-getComputedTextLength) (concat [this] args)))
+  (-> this .-getComputedTextLength (.apply this (clj->js args))))
 
 (defn get-sub-string-length
   "Method.
@@ -32,7 +32,7 @@
   'word-spacing' properties. Visual spacing adjustments made by
   'x' attribute is ignored."
   [this & args]
-  (apply (-> this .-getSubStringLength) (concat [this] args)))
+  (-> this .-getSubStringLength (.apply this (clj->js args))))
 
 (defn get-start-position-of-char
   "Method.
@@ -41,7 +41,7 @@
   after text layout has been performed.
   Note: In SVG 1.1 this method returned an SVGPoint."
   [this & args]
-  (apply (-> this .-getStartPositionOfChar) (concat [this] args)))
+  (-> this .-getStartPositionOfChar (.apply this (clj->js args))))
 
 (defn get-end-position-of-char
   "Method.
@@ -50,7 +50,7 @@
   after text layout has been performed.
   Note: In SVG 1.1 this method returned an SVGPoint."
   [this & args]
-  (apply (-> this .-getEndPositionOfChar) (concat [this] args)))
+  (-> this .-getEndPositionOfChar (.apply this (clj->js args))))
 
 (defn get-extent-of-char
   "Method.
@@ -58,14 +58,14 @@
   Returns a DOMRect representing the computed tight bounding box
   the glyph cell that corresponds to a given typographic character."
   [this & args]
-  (apply (-> this .-getExtentOfChar) (concat [this] args)))
+  (-> this .-getExtentOfChar (.apply this (clj->js args))))
 
 (defn get-rotation-of-char
   "Method.
 
   Returns a float representing the rotation of typographic character."
   [this & args]
-  (apply (-> this .-getRotationOfChar) (concat [this] args)))
+  (-> this .-getRotationOfChar (.apply this (clj->js args))))
 
 (defn get-char-num-at-position
   "Method.
@@ -75,14 +75,14 @@
   the relationship between characters and glyphs is not one-to-one,
   the first character of the relevant typographic character is"
   [this & args]
-  (apply (-> this .-getCharNumAtPosition) (concat [this] args)))
+  (-> this .-getCharNumAtPosition (.apply this (clj->js args))))
 
 (defn select-sub-string
   "Method.
 
   Selects text within the element."
   [this & args]
-  (apply (-> this .-selectSubString) (concat [this] args)))
+  (-> this .-selectSubString (.apply this (clj->js args))))
 
 (defn text-length
   "Property.

@@ -9,14 +9,14 @@
 
   Returns the MimeType object with the specified index."
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn named-item
   "Method.
 
   Returns the MimeType object with the specified name."
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 
 (defn length
   "Property.

@@ -19,7 +19,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/open`"
   [this & args]
-  (apply (-> this .-open) (concat [this] args)))
+  (-> this .-open (.apply this (clj->js args))))
 
 (defn delete-database
   "Method.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase`"
   [this & args]
-  (apply (-> this .-deleteDatabase) (concat [this] args)))
+  (-> this .-deleteDatabase (.apply this (clj->js args))))
 
 (defn cmp
   "Method.

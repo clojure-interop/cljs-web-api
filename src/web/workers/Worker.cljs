@@ -35,7 +35,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage`"
   [this & args]
-  (apply (-> this .-postMessage) (concat [this] args)))
+  (-> this .-postMessage (.apply this (clj->js args))))
 
 (defn terminate
   "Method.

@@ -8,7 +8,7 @@
 
   The key for the stored record."
   [this & args]
-  (apply (-> this .-any) (concat [this] args)))
+  (-> this .-any (.apply this (clj->js args))))
 
 (defn constraint-err
   "Method.
@@ -18,12 +18,12 @@
   with a key corresponding to the value parameter in the index's
   object store."
   [this & args]
-  (apply (-> this .-CONSTRAINT_ERR) (concat [this] args)))
+  (-> this .-CONSTRAINT_ERR (.apply this (clj->js args))))
 
 (defn not-found-err
   "Method.
 
   If no record exists in this index for the given key."
   [this & args]
-  (apply (-> this .-NOT_FOUND_ERR) (concat [this] args)))
+  (-> this .-NOT_FOUND_ERR (.apply this (clj->js args))))
 

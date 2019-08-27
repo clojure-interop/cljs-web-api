@@ -19,7 +19,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/getNotifications`"
   [this & args]
-  (apply (-> this .-getNotifications) (concat [this] args)))
+  (-> this .-getNotifications (.apply this (clj->js args))))
 
 (defn show-notification
   "Method.
@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification`"
   [this & args]
-  (apply (-> this .-showNotification) (concat [this] args)))
+  (-> this .-showNotification (.apply this (clj->js args))))
 
 (defn update
   "Method.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/unregister`"
   [this & args]
-  (apply (-> this .-unregister) (concat [this] args)))
+  (-> this .-unregister (.apply this (clj->js args))))
 
 (defn scope
   "Property.

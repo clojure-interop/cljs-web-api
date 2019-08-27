@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create`"
   [this & args]
-  (apply (-> this .-create) (concat [this] args)))
+  (-> this .-create (.apply this (clj->js args))))
 
 (defn get
   "Method.
@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get`"
   [this & args]
-  (apply (-> this .-get) (concat [this] args)))
+  (-> this .-get (.apply this (clj->js args))))
 
 (defn prevent-silent-access
   "Method.

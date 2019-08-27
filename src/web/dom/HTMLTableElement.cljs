@@ -93,7 +93,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow`"
   [this & args]
-  (apply (-> this .-insertRow) (concat [this] args)))
+  (-> this .-insertRow (.apply this (clj->js args))))
 
 (defn delete-row
   "Method.
@@ -112,7 +112,7 @@
 
   Removes the sortable attribute to all <th> elements of the table."
   [this & args]
-  (apply (-> this .-stopSorting) (concat [this] args)))
+  (-> this .-stopSorting (.apply this (clj->js args))))
 
 (defn caption
   "Property.

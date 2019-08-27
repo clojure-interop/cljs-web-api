@@ -11,21 +11,21 @@
 
   Returns the Plugin at the specified index into the array."
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn named-item
   "Method.
 
   Returns the Plugin with the specified name."
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 
 (defn refresh
   "Method.
 
   Refreshes all plugins on the current page, optionally reloading"
   [this & args]
-  (apply (-> this .-refresh) (concat [this] args)))
+  (-> this .-refresh (.apply this (clj->js args))))
 
 (defn length
   "Property.

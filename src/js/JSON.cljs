@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse`"
   [this & args]
-  (apply (-> this .-parse) (concat [this] args)))
+  (-> this .-parse (.apply this (clj->js args))))
 
 (defn stringify
   "Method.
@@ -31,5 +31,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify`"
   [this & args]
-  (apply (-> this .-stringify) (concat [this] args)))
+  (-> this .-stringify (.apply this (clj->js args))))
 

@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open`"
   [this & args]
-  (apply (-> this .-open) (concat [this] args)))
+  (-> this .-open (.apply this (clj->js args))))
 
 (defn override-mime-type
   "Method.
@@ -110,7 +110,7 @@
 
   Initializes the object for use from C++ code."
   [this & args]
-  (apply (-> this .-init) (concat [this] args)))
+  (-> this .-init (.apply this (clj->js args))))
 
 (defn open-request
   "Method.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/openRequest`"
   [this & args]
-  (apply (-> this .-openRequest) (concat [this] args)))
+  (-> this .-openRequest (.apply this (clj->js args))))
 
 (defn send-as-binary
   "Method.

@@ -20,7 +20,7 @@
   Creates a new mutable DOMMatrix object given an existing matrix
   a DOMMatrixInit dictionary which provides the values for its"
   [this & args]
-  (apply (-> this .-fromMatrix) (concat [this] args)))
+  (-> this .-fromMatrix (.apply this (clj->js args))))
 
 (defn multiply-self
   "Method.
@@ -28,7 +28,7 @@
   Returns itself, a DOMMatrix, with its new content being the result
   the original matrix being multiplied by the given DOMMatrix."
   [this & args]
-  (apply (-> this .-multiplySelf) (concat [this] args)))
+  (-> this .-multiplySelf (.apply this (clj->js args))))
 
 (defn pre-multiply-self
   "Method.
@@ -36,7 +36,7 @@
   Returns itself, a DOMMatrix, with its new content being the result
   the given DOMMatrix being multiplied by the original matrix."
   [this & args]
-  (apply (-> this .-preMultiplySelf) (concat [this] args)))
+  (-> this .-preMultiplySelf (.apply this (clj->js args))))
 
 (defn translate-self
   "Method.
@@ -44,7 +44,7 @@
   Returns itself, a DOMMatrix, with its new content being the result
   the matrix being translated by the given vector."
   [this & args]
-  (apply (-> this .-translateSelf) (concat [this] args)))
+  (-> this .-translateSelf (.apply this (clj->js args))))
 
 (defn scale-self
   "Method.
@@ -53,7 +53,7 @@
   the matrix x and y dimensions being scaled by the given factor,
   on the origin given."
   [this & args]
-  (apply (-> this .-scaleSelf) (concat [this] args)))
+  (-> this .-scaleSelf (.apply this (clj->js args))))
 
 (defn scale3d-self
   "Method.
@@ -62,7 +62,7 @@
   the matrix x, y and z dimension being scaled by the given factor,
   on the origin given."
   [this & args]
-  (apply (-> this .-scale3dSelf) (concat [this] args)))
+  (-> this .-scale3dSelf (.apply this (clj->js args))))
 
 (defn scale-non-uniform-self
   "Method.
@@ -71,7 +71,7 @@
   the matrix x, y and z dimension being scaled by the given factor
   each dimension, centered on the origin given."
   [this & args]
-  (apply (-> this .-scaleNonUniformSelf) (concat [this] args)))
+  (-> this .-scaleNonUniformSelf (.apply this (clj->js args))))
 
 (defn rotate-self
   "Method.
@@ -80,7 +80,7 @@
   the original matrix being rotated by the given angle, with the
   centered on the origin given."
   [this & args]
-  (apply (-> this .-rotateSelf) (concat [this] args)))
+  (-> this .-rotateSelf (.apply this (clj->js args))))
 
 (defn rotate-from-vector-self
   "Method.
@@ -89,7 +89,7 @@
   the original matrix being rotated by the angle between the given
   and (1,0), centered on the origin given."
   [this & args]
-  (apply (-> this .-rotateFromVectorSelf) (concat [this] args)))
+  (-> this .-rotateFromVectorSelf (.apply this (clj->js args))))
 
 (defn rotate-axis-angle-self
   "Method.
@@ -98,7 +98,7 @@
   the original matrix being rotated by the given angle and the
   vector."
   [this & args]
-  (apply (-> this .-rotateAxisAngleSelf) (concat [this] args)))
+  (-> this .-rotateAxisAngleSelf (.apply this (clj->js args))))
 
 (defn skew-x-self
   "Method.
@@ -106,7 +106,7 @@
   Returns itself, a DOMMatrix, with its new content being the result
   the original matrix being skewed along the x-axis by the given"
   [this & args]
-  (apply (-> this .-skewXSelf) (concat [this] args)))
+  (-> this .-skewXSelf (.apply this (clj->js args))))
 
 (defn skew-y-self
   "Method.
@@ -114,7 +114,7 @@
   Returns itself, a DOMMatrix, with its new content being the result
   the original matrix being skewed along the y-axis by the given"
   [this & args]
-  (apply (-> this .-skewYSelf) (concat [this] args)))
+  (-> this .-skewYSelf (.apply this (clj->js args))))
 
 (defn invert-self
   "Method.
@@ -123,7 +123,7 @@
   the original matrix being inverted. If the matrix cannot be inverted,
   its components are set to NaN and is2D() returns false."
   [this & args]
-  (apply (-> this .-invertSelf) (concat [this] args)))
+  (-> this .-invertSelf (.apply this (clj->js args))))
 
 (defn set-matrix-value
   "Method.
@@ -131,7 +131,7 @@
   Returns itself, a DOMMatrix, with its describing the matrix representing
   same transformation as the CSS transform functions given in parameter."
   [this & args]
-  (apply (-> this .-setMatrixValue) (concat [this] args)))
+  (-> this .-setMatrixValue (.apply this (clj->js args))))
 
 (defn is2d
   "Property.

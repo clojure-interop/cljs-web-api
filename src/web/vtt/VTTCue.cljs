@@ -22,7 +22,7 @@
 
   Returns the cue text as a DocumentFragment."
   [this & args]
-  (apply (-> this .-getCueAsHTML) (concat [this] args)))
+  (-> this .-getCueAsHTML (.apply this (clj->js args))))
 
 (defn region
   "Property.

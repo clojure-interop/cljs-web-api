@@ -17,7 +17,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect`"
   [this & args]
-  (apply (-> this .-connect) (concat [this] args)))
+  (-> this .-connect (.apply this (clj->js args))))
 
 (defn disconnect
   "Method.
@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/disconnect`"
   [this & args]
-  (apply (-> this .-disconnect) (concat [this] args)))
+  (-> this .-disconnect (.apply this (clj->js args))))
 
 (defn context
   "Property.

@@ -10,12 +10,12 @@
 
   Creates a new Touch object."
   [this & args]
-  (apply (-> this .-createTouch) (concat [this] args)))
+  (-> this .-createTouch (.apply this (clj->js args))))
 
 (defn create-touch-list
   "Method.
 
   Creates a new TouchList object."
   [this & args]
-  (apply (-> this .-createTouchList) (concat [this] args)))
+  (-> this .-createTouchList (.apply this (clj->js args))))
 

@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/complete`"
   [this & args]
-  (apply (-> this .-complete) (concat [this] args)))
+  (-> this .-complete (.apply this (clj->js args))))
 
 (defn method-name
   "Property.

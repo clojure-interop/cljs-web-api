@@ -10,35 +10,35 @@
 
   ?"
   [this & args]
-  (apply (-> this .-entries) (concat [this] args)))
+  (-> this .-entries (.apply this (clj->js args))))
 
 (defn for-each
   "Method.
 
   ?"
   [this & args]
-  (apply (-> this .-forEach) (concat [this] args)))
+  (-> this .-forEach (.apply this (clj->js args))))
 
 (defn has
   "Method.
 
   ?"
   [this & args]
-  (apply (-> this .-has) (concat [this] args)))
+  (-> this .-has (.apply this (clj->js args))))
 
 (defn keys
   "Method.
 
   ?"
   [this & args]
-  (apply (-> this .-keys) (concat [this] args)))
+  (-> this .-keys (.apply this (clj->js args))))
 
 (defn values
   "Method.
 
   ?"
   [this & args]
-  (apply (-> this .-values) (concat [this] args)))
+  (-> this .-values (.apply this (clj->js args))))
 
 (defn size
   "Property.

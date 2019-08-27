@@ -8,14 +8,14 @@
   Returns the MIME type of a supported content type, given the
   number into a list of supported types."
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn named-item
   "Method.
 
   Returns the MIME type of a supported item."
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 
 (defn description
   "Property.

@@ -6,10 +6,10 @@
 (defn file-writer-sync
   "Method."
   [this & args]
-  (apply (-> this .-FileWriterSync) (concat [this] args)))
+  (-> this .-FileWriterSync (.apply this (clj->js args))))
 
 (defn file
   "Method."
   [this & args]
-  (apply (-> this .-File) (concat [this] args)))
+  (-> this .-File (.apply this (clj->js args))))
 

@@ -15,5 +15,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL`"
   [this & args]
-  (apply (-> this .-drawBuffersWEBGL) (concat [this] args)))
+  (-> this .-drawBuffersWEBGL (.apply this (clj->js args))))
 

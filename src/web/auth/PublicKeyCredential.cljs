@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable`"
   [this & args]
-  (apply (-> this .-isUserVerifyingPlatformAuthenticatorAvailable) (concat [this] args)))
+  (-> this .-isUserVerifyingPlatformAuthenticatorAvailable (.apply this (clj->js args))))
 
 (defn type
   "Property.

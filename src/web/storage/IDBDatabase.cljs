@@ -34,7 +34,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore`"
   [this & args]
-  (apply (-> this .-createObjectStore) (concat [this] args)))
+  (-> this .-createObjectStore (.apply this (clj->js args))))
 
 (defn delete-object-store
   "Method.
@@ -58,7 +58,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/transaction`"
   [this & args]
-  (apply (-> this .-transaction) (concat [this] args)))
+  (-> this .-transaction (.apply this (clj->js args))))
 
 (defn name
   "Property.

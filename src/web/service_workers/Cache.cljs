@@ -21,7 +21,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/match`"
   [this & args]
-  (apply (-> this .-match) (concat [this] args)))
+  (-> this .-match (.apply this (clj->js args))))
 
 (defn match-all
   "Method.
@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/matchAll`"
   [this & args]
-  (apply (-> this .-matchAll) (concat [this] args)))
+  (-> this .-matchAll (.apply this (clj->js args))))
 
 (defn add
   "Method.
@@ -51,7 +51,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/add`"
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn add-all
   "Method.
@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll`"
   [this & args]
-  (apply (-> this .-addAll) (concat [this] args)))
+  (-> this .-addAll (.apply this (clj->js args))))
 
 (defn put
   "Method.
@@ -81,7 +81,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/put`"
   [this & args]
-  (apply (-> this .-put) (concat [this] args)))
+  (-> this .-put (.apply this (clj->js args))))
 
 (defn delete
   "Method.
@@ -98,7 +98,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete`"
   [this & args]
-  (apply (-> this .-delete) (concat [this] args)))
+  (-> this .-delete (.apply this (clj->js args))))
 
 (defn keys
   "Method.
@@ -112,5 +112,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys`"
   [this & args]
-  (apply (-> this .-keys) (concat [this] args)))
+  (-> this .-keys (.apply this (clj->js args))))
 

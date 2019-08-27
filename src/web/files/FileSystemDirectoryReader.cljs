@@ -16,5 +16,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries`"
   [this & args]
-  (apply (-> this .-readEntries) (concat [this] args)))
+  (-> this .-readEntries (.apply this (clj->js args))))
 

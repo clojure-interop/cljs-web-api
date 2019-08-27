@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement`"
   [this & args]
-  (apply (-> this .-createElement) (concat [this] args)))
+  (-> this .-createElement (.apply this (clj->js args))))
 
 (defn attach-shadow
   "Method.

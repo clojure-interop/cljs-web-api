@@ -38,7 +38,7 @@
   considered invalid if the event is not canceled. It is up to
   programmer to decide how to respond to false."
   [this & args]
-  (apply (-> this .-checkValidity) (concat [this] args)))
+  (-> this .-checkValidity (.apply this (clj->js args))))
 
 (defn report-validity
   "Method.
@@ -65,7 +65,7 @@
   method has been removed from Chrome and Firefox — see bug 1270740
   background information on why."
   [this & args]
-  (apply (-> this .-requestAutocomplete) (concat [this] args)))
+  (-> this .-requestAutocomplete (.apply this (clj->js args))))
 
 (defn elements
   "Property.

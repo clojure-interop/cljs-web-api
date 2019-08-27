@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/unsubscribe`"
   [this & args]
-  (apply (-> this .-unsubscribe) (concat [this] args)))
+  (-> this .-unsubscribe (.apply this (clj->js args))))
 
 (defn endpoint
   "Property.

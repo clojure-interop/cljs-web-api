@@ -50,7 +50,7 @@
   Returns the first Element node within the DocumentFragment, in
   order, that matches the specified ID."
   [this & args]
-  (apply (-> this .-getElementById) (concat [this] args)))
+  (-> this .-getElementById (.apply this (clj->js args))))
 
 (defn append
   "Method.
@@ -64,7 +64,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
   [this & args]
-  (apply (-> this .-append) (concat [this] args)))
+  (-> this .-append (.apply this (clj->js args))))
 
 (defn prepend
   "Method.
@@ -77,7 +77,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
   [this & args]
-  (apply (-> this .-prepend) (concat [this] args)))
+  (-> this .-prepend (.apply this (clj->js args))))
 
 (defn children
   "Property.

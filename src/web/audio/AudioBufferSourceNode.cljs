@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start`"
   [this & args]
-  (apply (-> this .-start) (concat [this] args)))
+  (-> this .-start (.apply this (clj->js args))))
 
 (defn buffer
   "Property.

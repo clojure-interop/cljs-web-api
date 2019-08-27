@@ -13,7 +13,7 @@
   if the value cannot be converted to a number,
   if the resulting value is above the max or below the min."
   [this & args]
-  (apply (-> this .-stepDown) (concat [this] args)))
+  (-> this .-stepDown (.apply this (clj->js args))))
 
 (defn step-up
   "Method.
@@ -25,7 +25,7 @@
   if the value cannot be converted to a number,
   if the resulting value is above the max or below the min."
   [this & args]
-  (apply (-> this .-stepUp) (concat [this] args)))
+  (-> this .-stepUp (.apply this (clj->js args))))
 
 (defn moz-set-file-array
   "Method.
@@ -35,7 +35,7 @@
   in frame scripts: a chrome script can open files as File objects
   send them via message manager."
   [this & args]
-  (apply (-> this .-mozSetFileArray) (concat [this] args)))
+  (-> this .-mozSetFileArray (.apply this (clj->js args))))
 
 (defn moz-get-file-name-array
   "Method.
@@ -86,7 +86,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setRangeText`"
   [this & args]
-  (apply (-> this .-setRangeText) (concat [this] args)))
+  (-> this .-setRangeText (.apply this (clj->js args))))
 
 (defn set-selection-range
   "Method.
@@ -99,7 +99,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange`"
   [this & args]
-  (apply (-> this .-setSelectionRange) (concat [this] args)))
+  (-> this .-setSelectionRange (.apply this (clj->js args))))
 
 (defn align
   "Property.

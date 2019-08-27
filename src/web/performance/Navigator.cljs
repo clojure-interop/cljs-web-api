@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays`"
   [this & args]
-  (apply (-> this .-getVRDisplays) (concat [this] args)))
+  (-> this .-getVRDisplays (.apply this (clj->js args))))
 
 (defn get-user-media
   "Method.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerContentHandler`"
   [this & args]
-  (apply (-> this .-registerContentHandler) (concat [this] args)))
+  (-> this .-registerContentHandler (.apply this (clj->js args))))
 
 (defn register-protocol-handler
   "Method.
@@ -146,7 +146,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate`"
   [this & args]
-  (apply (-> this .-vibrate) (concat [this] args)))
+  (-> this .-vibrate (.apply this (clj->js args))))
 
 (defn moz-is-locally-available
   "Method.
@@ -165,7 +165,7 @@
 
   Allows in-app payment."
   [this & args]
-  (apply (-> this .-mozPay) (concat [this] args)))
+  (-> this .-mozPay (.apply this (clj->js args))))
 
 (defn get-battery
   "Method.

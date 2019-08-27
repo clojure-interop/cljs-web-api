@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys/createSession`"
   [this & args]
-  (apply (-> this .-createSession) (concat [this] args)))
+  (-> this .-createSession (.apply this (clj->js args))))
 
 (defn set-server-certificate
   "Method.
@@ -27,5 +27,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys/setServerCertificate`"
   [this & args]
-  (apply (-> this .-setServerCertificate) (concat [this] args)))
+  (-> this .-setServerCertificate (.apply this (clj->js args))))
 

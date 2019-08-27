@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode`"
   [this & args]
-  (apply (-> this .-fromCharCode) (concat [this] args)))
+  (-> this .-fromCharCode (.apply this (clj->js args))))
 
 (defn from-code-point
   "Method.
@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint`"
   [this & args]
-  (apply (-> this .-fromCodePoint) (concat [this] args)))
+  (-> this .-fromCodePoint (.apply this (clj->js args))))
 
 (defn raw
   "Method.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/raw`"
   [this & args]
-  (apply (-> this .-raw) (concat [this] args)))
+  (-> this .-raw (.apply this (clj->js args))))
 
 (defn anchor
   "Method.
@@ -139,7 +139,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat`"
   [this & args]
-  (apply (-> this .-concat) (concat [this] args)))
+  (-> this .-concat (.apply this (clj->js args))))
 
 (defn ends-with
   "Method.
@@ -151,7 +151,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith`"
   [this & args]
-  (apply (-> this .-endsWith) (concat [this] args)))
+  (-> this .-endsWith (.apply this (clj->js args))))
 
 (defn fixed
   "Method.
@@ -199,7 +199,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes`"
   [this & args]
-  (apply (-> this .-includes) (concat [this] args)))
+  (-> this .-includes (.apply this (clj->js args))))
 
 (defn index-of
   "Method.
@@ -213,7 +213,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf`"
   [this & args]
-  (apply (-> this .-indexOf) (concat [this] args)))
+  (-> this .-indexOf (.apply this (clj->js args))))
 
 (defn italics
   "Method.
@@ -238,7 +238,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf`"
   [this & args]
-  (apply (-> this .-lastIndexOf) (concat [this] args)))
+  (-> this .-lastIndexOf (.apply this (clj->js args))))
 
 (defn link
   "Method.
@@ -263,7 +263,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare`"
   [this & args]
-  (apply (-> this .-localeCompare) (concat [this] args)))
+  (-> this .-localeCompare (.apply this (clj->js args))))
 
 (defn match
   "Method.
@@ -300,7 +300,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize`"
   [this & args]
-  (apply (-> this .-normalize) (concat [this] args)))
+  (-> this .-normalize (.apply this (clj->js args))))
 
 (defn pad-end
   "Method.
@@ -313,7 +313,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd`"
   [this & args]
-  (apply (-> this .-padEnd) (concat [this] args)))
+  (-> this .-padEnd (.apply this (clj->js args))))
 
 (defn pad-start
   "Method.
@@ -325,7 +325,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart`"
   [this & args]
-  (apply (-> this .-padStart) (concat [this] args)))
+  (-> this .-padStart (.apply this (clj->js args))))
 
 (defn quote
   "Method.
@@ -363,7 +363,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace`"
   [this & args]
-  (apply (-> this .-replace) (concat [this] args)))
+  (-> this .-replace (.apply this (clj->js args))))
 
 (defn search
   "Method.
@@ -387,7 +387,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice`"
   [this & args]
-  (apply (-> this .-slice) (concat [this] args)))
+  (-> this .-slice (.apply this (clj->js args))))
 
 (defn small
   "Method.
@@ -415,7 +415,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split`"
   [this & args]
-  (apply (-> this .-split) (concat [this] args)))
+  (-> this .-split (.apply this (clj->js args))))
 
 (defn starts-with
   "Method.
@@ -427,7 +427,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith`"
   [this & args]
-  (apply (-> this .-startsWith) (concat [this] args)))
+  (-> this .-startsWith (.apply this (clj->js args))))
 
 (defn strike
   "Method.
@@ -463,7 +463,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr`"
   [this & args]
-  (apply (-> this .-substr) (concat [this] args)))
+  (-> this .-substr (.apply this (clj->js args))))
 
 (defn substring
   "Method.
@@ -475,7 +475,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring`"
   [this & args]
-  (apply (-> this .-substring) (concat [this] args)))
+  (-> this .-substring (.apply this (clj->js args))))
 
 (defn sup
   "Method.
@@ -501,7 +501,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase`"
   [this & args]
-  (apply (-> this .-toLocaleLowerCase) (concat [this] args)))
+  (-> this .-toLocaleLowerCase (.apply this (clj->js args))))
 
 (defn to-locale-upper-case
   "Method.
@@ -515,7 +515,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase`"
   [this & args]
-  (apply (-> this .-toLocaleUpperCase) (concat [this] args)))
+  (-> this .-toLocaleUpperCase (.apply this (clj->js args))))
 
 (defn to-lower-case
   "Method.
@@ -540,7 +540,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toSource`"
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn to-string
   "Method.
@@ -589,7 +589,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd`"
   [this & args]
-  (apply (-> this .-trimEnd) (concat [this] args)))
+  (-> this .-trimEnd (.apply this (clj->js args))))
 
 (defn trim-start
   "Method.
@@ -602,7 +602,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart`"
   [this & args]
-  (apply (-> this .-trimStart) (concat [this] args)))
+  (-> this .-trimStart (.apply this (clj->js args))))
 
 (defn value-of
   "Method.

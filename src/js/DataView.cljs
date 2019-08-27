@@ -38,7 +38,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getInt16`"
   [this & args]
-  (apply (-> this .-getInt16) (concat [this] args)))
+  (-> this .-getInt16 (.apply this (clj->js args))))
 
 (defn get-uint16
   "Method.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getUint16`"
   [this & args]
-  (apply (-> this .-getUint16) (concat [this] args)))
+  (-> this .-getUint16 (.apply this (clj->js args))))
 
 (defn get-int32
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getInt32`"
   [this & args]
-  (apply (-> this .-getInt32) (concat [this] args)))
+  (-> this .-getInt32 (.apply this (clj->js args))))
 
 (defn get-uint32
   "Method.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getUint32`"
   [this & args]
-  (apply (-> this .-getUint32) (concat [this] args)))
+  (-> this .-getUint32 (.apply this (clj->js args))))
 
 (defn get-float32
   "Method.
@@ -86,7 +86,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat32`"
   [this & args]
-  (apply (-> this .-getFloat32) (concat [this] args)))
+  (-> this .-getFloat32 (.apply this (clj->js args))))
 
 (defn get-float64
   "Method.
@@ -98,7 +98,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getFloat64`"
   [this & args]
-  (apply (-> this .-getFloat64) (concat [this] args)))
+  (-> this .-getFloat64 (.apply this (clj->js args))))
 
 (defn get-big-int64
   "Method.
@@ -110,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getBigInt64`"
   [this & args]
-  (apply (-> this .-getBigInt64) (concat [this] args)))
+  (-> this .-getBigInt64 (.apply this (clj->js args))))
 
 (defn get-big-uint64
   "Method.
@@ -122,7 +122,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/getBigUint64`"
   [this & args]
-  (apply (-> this .-getBigUint64) (concat [this] args)))
+  (-> this .-getBigUint64 (.apply this (clj->js args))))
 
 (defn set-int8
   "Method.
@@ -158,7 +158,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setInt16`"
   [this & args]
-  (apply (-> this .-setInt16) (concat [this] args)))
+  (-> this .-setInt16 (.apply this (clj->js args))))
 
 (defn set-uint16
   "Method.
@@ -170,7 +170,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setUint16`"
   [this & args]
-  (apply (-> this .-setUint16) (concat [this] args)))
+  (-> this .-setUint16 (.apply this (clj->js args))))
 
 (defn set-int32
   "Method.
@@ -182,7 +182,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setInt32`"
   [this & args]
-  (apply (-> this .-setInt32) (concat [this] args)))
+  (-> this .-setInt32 (.apply this (clj->js args))))
 
 (defn set-uint32
   "Method.
@@ -194,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setUint32`"
   [this & args]
-  (apply (-> this .-setUint32) (concat [this] args)))
+  (-> this .-setUint32 (.apply this (clj->js args))))
 
 (defn set-float32
   "Method.
@@ -206,7 +206,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat32`"
   [this & args]
-  (apply (-> this .-setFloat32) (concat [this] args)))
+  (-> this .-setFloat32 (.apply this (clj->js args))))
 
 (defn set-float64
   "Method.
@@ -218,7 +218,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setFloat64`"
   [this & args]
-  (apply (-> this .-setFloat64) (concat [this] args)))
+  (-> this .-setFloat64 (.apply this (clj->js args))))
 
 (defn set-big-int64
   "Method.
@@ -230,7 +230,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setBigInt64`"
   [this & args]
-  (apply (-> this .-setBigInt64) (concat [this] args)))
+  (-> this .-setBigInt64 (.apply this (clj->js args))))
 
 (defn set-big-uint64
   "Method.
@@ -242,7 +242,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/setBigUint64`"
   [this & args]
-  (apply (-> this .-setBigUint64) (concat [this] args)))
+  (-> this .-setBigUint64 (.apply this (clj->js args))))
 
 (defn buffer
   "Property.

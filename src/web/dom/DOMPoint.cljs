@@ -27,7 +27,7 @@
   Creates a new mutable DOMPoint object given an existing point
   a DOMPointInit dictionary which provides the values for its properties."
   [this & args]
-  (apply (-> this .-fromPoint) (concat [this] args)))
+  (-> this .-fromPoint (.apply this (clj->js args))))
 
 (defn x
   "Property.

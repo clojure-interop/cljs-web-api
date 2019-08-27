@@ -10,7 +10,7 @@
   Returns true if the browser supports the given extension, specified
   a URI."
   [this & args]
-  (apply (-> this .-hasExtension) (concat [this] args)))
+  (-> this .-hasExtension (.apply this (clj->js args))))
 
 (defn required-features
   "Property.

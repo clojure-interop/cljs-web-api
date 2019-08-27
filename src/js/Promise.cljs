@@ -35,7 +35,7 @@
 
   Promise.resolve(value)"
   [this & args]
-  (apply (-> this .-Promise) (concat [this] args)))
+  (-> this .-Promise (.apply this (clj->js args))))
 
 (defn all-settled
   "Method.
@@ -68,7 +68,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch`"
   [this & args]
-  (apply (-> this .-catch) (concat [this] args)))
+  (-> this .-catch (.apply this (clj->js args))))
 
 (defn finally
   "Method.
@@ -87,7 +87,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally`"
   [this & args]
-  (apply (-> this .-finally) (concat [this] args)))
+  (-> this .-finally (.apply this (clj->js args))))
 
 (defn then
   "Method.
@@ -105,7 +105,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then`"
   [this & args]
-  (apply (-> this .-then) (concat [this] args)))
+  (-> this .-then (.apply this (clj->js args))))
 
 (defn reject
   "Method.

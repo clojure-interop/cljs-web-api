@@ -11,5 +11,5 @@
 
   The zero-based index of the file to retrieve from the list."
   [this & args]
-  (apply (-> this .-index) (concat [this] args)))
+  (-> this .-index (.apply this (clj->js args))))
 

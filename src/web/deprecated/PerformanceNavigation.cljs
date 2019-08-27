@@ -8,7 +8,7 @@
 
   Is a jsonizer returning a json object representing the PerformanceNavigation"
   [this & args]
-  (apply (-> this .-toJSON) (concat [this] args)))
+  (-> this .-toJSON (.apply this (clj->js args))))
 
 (defn type
   "Property.

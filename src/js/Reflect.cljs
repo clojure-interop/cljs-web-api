@@ -27,7 +27,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/construct`"
   [this & args]
-  (apply (-> this .-construct) (concat [this] args)))
+  (-> this .-construct (.apply this (clj->js args))))
 
 (defn define-property
   "Method.
@@ -63,7 +63,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get`"
   [this & args]
-  (apply (-> this .-get) (concat [this] args)))
+  (-> this .-get (.apply this (clj->js args))))
 
 (defn get-own-property-descriptor
   "Method.
@@ -150,7 +150,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set`"
   [this & args]
-  (apply (-> this .-set) (concat [this] args)))
+  (-> this .-set (.apply this (clj->js args))))
 
 (defn set-prototype-of
   "Method.

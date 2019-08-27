@@ -23,7 +23,7 @@
   Returns an RTCRtpParameters object which contains information
   how the RTC data is to be decoded."
   [this & args]
-  (apply (-> this .-getParameters) (concat [this] args)))
+  (-> this .-getParameters (.apply this (clj->js args))))
 
 (defn get-stats
   "Method.

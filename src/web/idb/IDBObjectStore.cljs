@@ -20,7 +20,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/add`"
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn clear
   "Method.
@@ -47,7 +47,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/count`"
   [this & args]
-  (apply (-> this .-count) (concat [this] args)))
+  (-> this .-count (.apply this (clj->js args))))
 
 (defn create-index
   "Method.
@@ -60,7 +60,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/createIndex`"
   [this & args]
-  (apply (-> this .-createIndex) (concat [this] args)))
+  (-> this .-createIndex (.apply this (clj->js args))))
 
 (defn delete
   "Method.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete`"
   [this & args]
-  (apply (-> this .-delete) (concat [this] args)))
+  (-> this .-delete (.apply this (clj->js args))))
 
 (defn delete-index
   "Method.
@@ -126,7 +126,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll`"
   [this & args]
-  (apply (-> this .-getAll) (concat [this] args)))
+  (-> this .-getAll (.apply this (clj->js args))))
 
 (defn get-all-keys
   "Method.
@@ -140,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys`"
   [this & args]
-  (apply (-> this .-getAllKeys) (concat [this] args)))
+  (-> this .-getAllKeys (.apply this (clj->js args))))
 
 (defn index
   "Method.
@@ -165,7 +165,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openCursor`"
   [this & args]
-  (apply (-> this .-openCursor) (concat [this] args)))
+  (-> this .-openCursor (.apply this (clj->js args))))
 
 (defn open-key-cursor
   "Method.
@@ -179,7 +179,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openKeyCursor`"
   [this & args]
-  (apply (-> this .-openKeyCursor) (concat [this] args)))
+  (-> this .-openKeyCursor (.apply this (clj->js args))))
 
 (defn put
   "Method.
@@ -192,7 +192,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put`"
   [this & args]
-  (apply (-> this .-put) (concat [this] args)))
+  (-> this .-put (.apply this (clj->js args))))
 
 (defn index-names
   "Property.

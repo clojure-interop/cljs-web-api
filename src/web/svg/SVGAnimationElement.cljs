@@ -13,7 +13,7 @@
   whether the interval has begun yet. If there is no current interval,
   a DOMException with code INVALID_STATE_ERR is thrown."
   [this & args]
-  (apply (-> this .-getStartTime) (concat [this] args)))
+  (-> this .-getStartTime (.apply this (clj->js args))))
 
 (defn get-current-time
   "Method.
@@ -21,7 +21,7 @@
   Returns a float representing the current time in seconds relative
   time zero for the given time container."
   [this & args]
-  (apply (-> this .-getCurrentTime) (concat [this] args)))
+  (-> this .-getCurrentTime (.apply this (clj->js args))))
 
 (defn get-simple-duration
   "Method.
@@ -31,7 +31,7 @@
   end time is indefinite), then a DOMException with code NOT_SUPPORTED_ERR
   raised."
   [this & args]
-  (apply (-> this .-getSimpleDuration) (concat [this] args)))
+  (-> this .-getSimpleDuration (.apply this (clj->js args))))
 
 (defn begin-element
   "Method.
@@ -40,7 +40,7 @@
   is added to the begin instance times list. The behavior of this
   is equivalent to beginElementAt(0)."
   [this & args]
-  (apply (-> this .-beginElement) (concat [this] args)))
+  (-> this .-beginElement (.apply this (clj->js args))))
 
 (defn begin-element-at
   "Method.
@@ -49,7 +49,7 @@
   offset. The new instance time is added to the begin instance
   list."
   [this & args]
-  (apply (-> this .-beginElementAt) (concat [this] args)))
+  (-> this .-beginElementAt (.apply this (clj->js args))))
 
 (defn end-element
   "Method.
@@ -58,7 +58,7 @@
   is added to the end instance times list. The behavior of this
   is equivalent to endElementAt(0)."
   [this & args]
-  (apply (-> this .-endElement) (concat [this] args)))
+  (-> this .-endElement (.apply this (clj->js args))))
 
 (defn end-element-at
   "Method.
@@ -66,7 +66,7 @@
   Creates a end instance time for the current time plus the specified
   The new instance time is added to the end instance times list."
   [this & args]
-  (apply (-> this .-endElementAt) (concat [this] args)))
+  (-> this .-endElementAt (.apply this (clj->js args))))
 
 (defn target-element
   "Property.

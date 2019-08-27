@@ -8,5 +8,5 @@
 
   See nsIDOMMouseScrollEvent::initMouseScrollEvent()."
   [this & args]
-  (apply (-> this .-initMouseScrollEvent) (concat [this] args)))
+  (-> this .-initMouseScrollEvent (.apply this (clj->js args))))
 

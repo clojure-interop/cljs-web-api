@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign`"
   [this & args]
-  (apply (-> this .-assign) (concat [this] args)))
+  (-> this .-assign (.apply this (clj->js args))))
 
 (defn create
   "Method.
@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create`"
   [this & args]
-  (apply (-> this .-create) (concat [this] args)))
+  (-> this .-create (.apply this (clj->js args))))
 
 (defn define-properties
   "Method.
@@ -245,7 +245,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe`"
   [this & args]
-  (apply (-> this .-observe) (concat [this] args)))
+  (-> this .-observe (.apply this (clj->js args))))
 
 (defn prevent-extensions
   "Method.
@@ -381,7 +381,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource`"
   [this & args]
-  (apply (-> this .-toSource) (concat [this] args)))
+  (-> this .-toSource (.apply this (clj->js args))))
 
 (defn to-string
   "Method.

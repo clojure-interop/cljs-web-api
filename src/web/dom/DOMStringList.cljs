@@ -7,14 +7,14 @@
 
   Returns a DOMString."
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn contains
   "Method.
 
   Returns Boolean indicating if the given string is in the list"
   [this & args]
-  (apply (-> this .-contains) (concat [this] args)))
+  (-> this .-contains (.apply this (clj->js args))))
 
 (defn length
   "Property.

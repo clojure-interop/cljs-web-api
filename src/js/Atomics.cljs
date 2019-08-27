@@ -138,7 +138,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait`"
   [this & args]
-  (apply (-> this .-wait) (concat [this] args)))
+  (-> this .-wait (.apply this (clj->js args))))
 
 (defn notify
   "Method.

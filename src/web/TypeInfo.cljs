@@ -8,7 +8,7 @@
 
   Returns a Boolean."
   [this & args]
-  (apply (-> this .-isDerivedFrom) (concat [this] args)))
+  (-> this .-isDerivedFrom (.apply this (clj->js args))))
 
 (defn type-name
   "Property.

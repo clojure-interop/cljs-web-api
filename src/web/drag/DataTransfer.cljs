@@ -26,7 +26,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/clearData`"
   [this & args]
-  (apply (-> this .-clearData) (concat [this] args)))
+  (-> this .-clearData (.apply this (clj->js args))))
 
 (defn get-data
   "Method.
@@ -100,7 +100,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozClearDataAt`"
   [this & args]
-  (apply (-> this .-mozClearDataAt) (concat [this] args)))
+  (-> this .-mozClearDataAt (.apply this (clj->js args))))
 
 (defn moz-get-data-at
   "Method.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozGetDataAt`"
   [this & args]
-  (apply (-> this .-mozGetDataAt) (concat [this] args)))
+  (-> this .-mozGetDataAt (.apply this (clj->js args))))
 
 (defn moz-set-data-at
   "Method.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozSetDataAt`"
   [this & args]
-  (apply (-> this .-mozSetDataAt) (concat [this] args)))
+  (-> this .-mozSetDataAt (.apply this (clj->js args))))
 
 (defn moz-types-at
   "Method.

@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/setPosition`"
   [this & args]
-  (apply (-> this .-setPosition) (concat [this] args)))
+  (-> this .-setPosition (.apply this (clj->js args))))
 
 (defn set-orientation
   "Method.
@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/setOrientation`"
   [this & args]
-  (apply (-> this .-setOrientation) (concat [this] args)))
+  (-> this .-setOrientation (.apply this (clj->js args))))
 
 (defn set-velocity
   "Method.
@@ -74,7 +74,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/setVelocity`"
   [this & args]
-  (apply (-> this .-setVelocity) (concat [this] args)))
+  (-> this .-setVelocity (.apply this (clj->js args))))
 
 (defn cone-inner-angle
   "Property.

@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext`"
   [this & args]
-  (apply (-> this .-getContext) (concat [this] args)))
+  (-> this .-getContext (.apply this (clj->js args))))
 
 (defn to-data-url
   "Method.

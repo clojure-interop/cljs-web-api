@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/caretPositionFromPoint`"
   [this & args]
-  (apply (-> this .-caretPositionFromPoint) (concat [this] args)))
+  (-> this .-caretPositionFromPoint (.apply this (clj->js args))))
 
 (defn element-from-point
   "Method.

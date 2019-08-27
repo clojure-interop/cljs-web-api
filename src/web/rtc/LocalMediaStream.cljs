@@ -13,5 +13,5 @@
   LocalMediaStream. See Stopping a video stream in MediaStreamTrack
   learn how to stop an entire stream."
   [this & args]
-  (apply (-> this .-stop) (concat [this] args)))
+  (-> this .-stop (.apply this (clj->js args))))
 

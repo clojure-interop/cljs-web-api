@@ -12,7 +12,7 @@
   being dispatched, this method does nothing. This method is deprecated
   of Microsoft Edge."
   [this & args]
-  (apply (-> this .-initGestureEvent) (concat [this] args)))
+  (-> this .-initGestureEvent (.apply this (clj->js args))))
 
 (defn expansion
   "Property.

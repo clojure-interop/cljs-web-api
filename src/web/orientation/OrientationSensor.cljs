@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/populateMatrix`"
   [this & args]
-  (apply (-> this .-populateMatrix) (concat [this] args)))
+  (-> this .-populateMatrix (.apply this (clj->js args))))
 
 (defn quaternion
   "Property.

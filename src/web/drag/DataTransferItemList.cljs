@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/add`"
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn remove
   "Method.

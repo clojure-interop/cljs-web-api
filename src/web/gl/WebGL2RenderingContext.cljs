@@ -106,7 +106,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/blitFramebuffer`"
   [this & args]
-  (apply (-> this .-blitFramebuffer) (concat [this] args)))
+  (-> this .-blitFramebuffer (.apply this (clj->js args))))
 
 (defn clear-buffer
   "Method.
@@ -121,7 +121,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/clearBuffer`"
   [this & args]
-  (apply (-> this .-clearBuffer) (concat [this] args)))
+  (-> this .-clearBuffer (.apply this (clj->js args))))
 
 (defn client-wait-sync
   "Method.
@@ -150,7 +150,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/compressedTexSubImage3D`"
   [this & args]
-  (apply (-> this .-compressedTexSubImage3D) (concat [this] args)))
+  (-> this .-compressedTexSubImage3D (.apply this (clj->js args))))
 
 (defn copy-buffer-sub-data
   "Method.
@@ -438,7 +438,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/getBufferSubData`"
   [this & args]
-  (apply (-> this .-getBufferSubData) (concat [this] args)))
+  (-> this .-getBufferSubData (.apply this (clj->js args))))
 
 (defn get-frag-data-location
   "Method.
@@ -710,7 +710,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/samplerParameter`"
   [this & args]
-  (apply (-> this .-samplerParameter) (concat [this] args)))
+  (-> this .-samplerParameter (.apply this (clj->js args))))
 
 (defn tex-image3d
   "Method.
@@ -730,7 +730,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/texImage3D`"
   [this & args]
-  (apply (-> this .-texImage3D) (concat [this] args)))
+  (-> this .-texImage3D (.apply this (clj->js args))))
 
 (defn tex-storage2d
   "Method.
@@ -779,7 +779,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/texSubImage3D`"
   [this & args]
-  (apply (-> this .-texSubImage3D) (concat [this] args)))
+  (-> this .-texSubImage3D (.apply this (clj->js args))))
 
 (defn transform-feedback-varyings
   "Method.
@@ -818,7 +818,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniform`"
   [this & args]
-  (apply (-> this .-uniform) (concat [this] args)))
+  (-> this .-uniform (.apply this (clj->js args))))
 
 (defn uniform-block-binding
   "Method.
@@ -850,7 +850,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/uniformMatrix`"
   [this & args]
-  (apply (-> this .-uniformMatrix) (concat [this] args)))
+  (-> this .-uniformMatrix (.apply this (clj->js args))))
 
 (defn vertex-attrib-divisor
   "Method.
@@ -880,7 +880,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/vertexAttribI`"
   [this & args]
-  (apply (-> this .-vertexAttribI4) (concat [this] args)))
+  (-> this .-vertexAttribI4 (.apply this (clj->js args))))
 
 (defn vertex-attrib-i-pointer
   "Method.

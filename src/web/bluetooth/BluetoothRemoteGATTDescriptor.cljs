@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/readValue`"
   [this & args]
-  (apply (-> this .-readValue) (concat [this] args)))
+  (-> this .-readValue (.apply this (clj->js args))))
 
 (defn write-value
   "Method.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue`"
   [this & args]
-  (apply (-> this .-writeValue) (concat [this] args)))
+  (-> this .-writeValue (.apply this (clj->js args))))
 
 (defn characteristic
   "Property.

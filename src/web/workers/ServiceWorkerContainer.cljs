@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register`"
   [this & args]
-  (apply (-> this .-register) (concat [this] args)))
+  (-> this .-register (.apply this (clj->js args))))
 
 (defn get-registration
   "Method.
@@ -46,7 +46,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/getRegistrations`"
   [this & args]
-  (apply (-> this .-getRegistrations) (concat [this] args)))
+  (-> this .-getRegistrations (.apply this (clj->js args))))
 
 (defn start-messages
   "Method.

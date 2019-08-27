@@ -36,7 +36,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith`"
   [this & args]
-  (apply (-> this .-respondWith) (concat [this] args)))
+  (-> this .-respondWith (.apply this (clj->js args))))
 
 (defn wait-until
   "Method.

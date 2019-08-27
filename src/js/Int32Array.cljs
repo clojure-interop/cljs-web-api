@@ -31,7 +31,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/from`"
   [this & args]
-  (apply (-> this .-from) (concat [this] args)))
+  (-> this .-from (.apply this (clj->js args))))
 
 (defn of
   "Method.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/of`"
   [this & args]
-  (apply (-> this .-of) (concat [this] args)))
+  (-> this .-of (.apply this (clj->js args))))
 
 (defn copy-within
   "Method.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/copyWithin`"
   [this & args]
-  (apply (-> this .-copyWithin) (concat [this] args)))
+  (-> this .-copyWithin (.apply this (clj->js args))))
 
 (defn entries
   "Method.
@@ -99,7 +99,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/every`"
   [this & args]
-  (apply (-> this .-every) (concat [this] args)))
+  (-> this .-every (.apply this (clj->js args))))
 
 (defn fill
   "Method.
@@ -113,7 +113,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/fill`"
   [this & args]
-  (apply (-> this .-fill) (concat [this] args)))
+  (-> this .-fill (.apply this (clj->js args))))
 
 (defn filter
   "Method.
@@ -127,7 +127,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/filter`"
   [this & args]
-  (apply (-> this .-filter) (concat [this] args)))
+  (-> this .-filter (.apply this (clj->js args))))
 
 (defn find
   "Method.
@@ -140,7 +140,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/find`"
   [this & args]
-  (apply (-> this .-find) (concat [this] args)))
+  (-> this .-find (.apply this (clj->js args))))
 
 (defn find-index
   "Method.
@@ -153,7 +153,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/findIndex`"
   [this & args]
-  (apply (-> this .-findIndex) (concat [this] args)))
+  (-> this .-findIndex (.apply this (clj->js args))))
 
 (defn for-each
   "Method.
@@ -166,7 +166,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/forEach`"
   [this & args]
-  (apply (-> this .-forEach) (concat [this] args)))
+  (-> this .-forEach (.apply this (clj->js args))))
 
 (defn includes
   "Method.
@@ -180,7 +180,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes`"
   [this & args]
-  (apply (-> this .-includes) (concat [this] args)))
+  (-> this .-includes (.apply this (clj->js args))))
 
 (defn index-of
   "Method.
@@ -194,7 +194,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/indexOf`"
   [this & args]
-  (apply (-> this .-indexOf) (concat [this] args)))
+  (-> this .-indexOf (.apply this (clj->js args))))
 
 (defn join
   "Method.
@@ -207,7 +207,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/join`"
   [this & args]
-  (apply (-> this .-join) (concat [this] args)))
+  (-> this .-join (.apply this (clj->js args))))
 
 (defn keys
   "Method.
@@ -234,7 +234,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/lastIndexOf`"
   [this & args]
-  (apply (-> this .-lastIndexOf) (concat [this] args)))
+  (-> this .-lastIndexOf (.apply this (clj->js args))))
 
 (defn map
   "Method.
@@ -248,7 +248,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/map`"
   [this & args]
-  (apply (-> this .-map) (concat [this] args)))
+  (-> this .-map (.apply this (clj->js args))))
 
 (defn move
   "Method.
@@ -276,7 +276,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduce`"
   [this & args]
-  (apply (-> this .-reduce) (concat [this] args)))
+  (-> this .-reduce (.apply this (clj->js args))))
 
 (defn reduce-right
   "Method.
@@ -290,7 +290,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/reduceRight`"
   [this & args]
-  (apply (-> this .-reduceRight) (concat [this] args)))
+  (-> this .-reduceRight (.apply this (clj->js args))))
 
 (defn reverse
   "Method.
@@ -317,7 +317,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/set`"
   [this & args]
-  (apply (-> this .-set) (concat [this] args)))
+  (-> this .-set (.apply this (clj->js args))))
 
 (defn slice
   "Method.
@@ -331,7 +331,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/slice`"
   [this & args]
-  (apply (-> this .-slice) (concat [this] args)))
+  (-> this .-slice (.apply this (clj->js args))))
 
 (defn some
   "Method.
@@ -345,7 +345,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/some`"
   [this & args]
-  (apply (-> this .-some) (concat [this] args)))
+  (-> this .-some (.apply this (clj->js args))))
 
 (defn sort
   "Method.
@@ -359,7 +359,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort`"
   [this & args]
-  (apply (-> this .-sort) (concat [this] args)))
+  (-> this .-sort (.apply this (clj->js args))))
 
 (defn subarray
   "Method.
@@ -373,7 +373,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/subarray`"
   [this & args]
-  (apply (-> this .-subarray) (concat [this] args)))
+  (-> this .-subarray (.apply this (clj->js args))))
 
 (defn to-locale-string
   "Method.
@@ -390,7 +390,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/toLocaleString`"
   [this & args]
-  (apply (-> this .-toLocaleString) (concat [this] args)))
+  (-> this .-toLocaleString (.apply this (clj->js args))))
 
 (defn to-string
   "Method.

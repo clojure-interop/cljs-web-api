@@ -8,7 +8,7 @@
 
   Returns a LockedFile object to read or write the associated file"
   [this & args]
-  (apply (-> this .-open) (concat [this] args)))
+  (-> this .-open (.apply this (clj->js args))))
 
 (defn get-file
   "Method.
@@ -16,7 +16,7 @@
   Returns a DOMRequest object. In case of success, the request's
   is a File object representing a snapshot of the handled file."
   [this & args]
-  (apply (-> this .-getFile) (concat [this] args)))
+  (-> this .-getFile (.apply this (clj->js args))))
 
 (defn name
   "Property.

@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/createEvent`"
   [this & args]
-  (apply (-> this .-createEvent) (concat [this] args)))
+  (-> this .-createEvent (.apply this (clj->js args))))
 
 (defn composed-path
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/initEvent`"
   [this & args]
-  (apply (-> this .-initEvent) (concat [this] args)))
+  (-> this .-initEvent (.apply this (clj->js args))))
 
 (defn prevent-default
   "Method.
@@ -108,21 +108,21 @@
   Non-standard. Returns the value of Event.defaultPrevented. Use
   instead."
   [this & args]
-  (apply (-> this .-getPreventDefault) (concat [this] args)))
+  (-> this .-getPreventDefault (.apply this (clj->js args))))
 
 (defn prevent-bubble
   "Method.
 
   Prevents the event from bubbling. Obsolete, use event.stopPropagation"
   [this & args]
-  (apply (-> this .-preventBubble) (concat [this] args)))
+  (-> this .-preventBubble (.apply this (clj->js args))))
 
 (defn prevent-capture
   "Method.
 
   Obsolete, use event.stopPropagation instead."
   [this & args]
-  (apply (-> this .-preventCapture) (concat [this] args)))
+  (-> this .-preventCapture (.apply this (clj->js args))))
 
 (defn ms-convert-url
   "Method.

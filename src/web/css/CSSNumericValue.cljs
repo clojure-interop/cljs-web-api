@@ -13,7 +13,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/add`"
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn sub
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/min`"
   [this & args]
-  (apply (-> this .-min) (concat [this] args)))
+  (-> this .-min (.apply this (clj->js args))))
 
 (defn max
   "Method.
@@ -75,7 +75,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/max`"
   [this & args]
-  (apply (-> this .-max) (concat [this] args)))
+  (-> this .-max (.apply this (clj->js args))))
 
 (defn equals
   "Method.

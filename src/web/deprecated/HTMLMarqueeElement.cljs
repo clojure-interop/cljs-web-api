@@ -8,14 +8,14 @@
 
   Starts scrolling of the marquee."
   [this & args]
-  (apply (-> this .-start) (concat [this] args)))
+  (-> this .-start (.apply this (clj->js args))))
 
 (defn stop
   "Method.
 
   Stops scrolling of the marquee."
   [this & args]
-  (apply (-> this .-stop) (concat [this] args)))
+  (-> this .-stop (.apply this (clj->js args))))
 
 (defn behavior
   "Property.

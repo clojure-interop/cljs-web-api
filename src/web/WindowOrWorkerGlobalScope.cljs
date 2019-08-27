@@ -71,7 +71,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
   [this & args]
-  (apply (-> this .-createImageBitmap) (concat [this] args)))
+  (-> this .-createImageBitmap (.apply this (clj->js args))))
 
 (defn fetch
   "Method.
@@ -110,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval`"
   [this & args]
-  (apply (-> this .-setInterval) (concat [this] args)))
+  (-> this .-setInterval (.apply this (clj->js args))))
 
 (defn set-timeout
   "Method.
@@ -125,7 +125,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout`"
   [this & args]
-  (apply (-> this .-setTimeout) (concat [this] args)))
+  (-> this .-setTimeout (.apply this (clj->js args))))
 
 (defn caches
   "Property.

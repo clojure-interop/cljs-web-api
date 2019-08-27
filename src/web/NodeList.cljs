@@ -20,28 +20,28 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item`"
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn node-list
   "Method.
 
   NodeList.entries()"
   [this & args]
-  (apply (-> this .-nodeList) (concat [this] args)))
+  (-> this .-nodeList (.apply this (clj->js args))))
 
 (defn iterator
   "Method.
 
   NodeList.forEach()"
   [this & args]
-  (apply (-> this .-iterator) (concat [this] args)))
+  (-> this .-iterator (.apply this (clj->js args))))
 
 (defn node-list
   "Method.
 
   NodeList.keys()"
   [this & args]
-  (apply (-> this .-NodeList) (concat [this] args)))
+  (-> this .-NodeList (.apply this (clj->js args))))
 
 (defn entries
   "Method.
@@ -66,7 +66,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach`"
   [this & args]
-  (apply (-> this .-forEach) (concat [this] args)))
+  (-> this .-forEach (.apply this (clj->js args))))
 
 (defn keys
   "Method.

@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply`"
   [this & args]
-  (apply (-> this .-apply) (concat [this] args)))
+  (-> this .-apply (.apply this (clj->js args))))
 
 (defn bind
   "Method.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind`"
   [this & args]
-  (apply (-> this .-bind) (concat [this] args)))
+  (-> this .-bind (.apply this (clj->js args))))
 
 (defn call
   "Method.
@@ -41,7 +41,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call`"
   [this & args]
-  (apply (-> this .-call) (concat [this] args)))
+  (-> this .-call (.apply this (clj->js args))))
 
 (defn is-generator
   "Method.

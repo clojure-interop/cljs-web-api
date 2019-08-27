@@ -9,12 +9,12 @@
 
   An object that represents the file system."
   [this & args]
-  (apply (-> this .-FileSystemSync) (concat [this] args)))
+  (-> this .-FileSystemSync (.apply this (clj->js args))))
 
 (defn entry-sync
   "Method.
 
   An object that represents entries in the file system."
   [this & args]
-  (apply (-> this .-EntrySync) (concat [this] args)))
+  (-> this .-EntrySync (.apply this (clj->js args))))
 

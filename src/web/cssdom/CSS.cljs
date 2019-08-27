@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSS/supports`"
   [this & args]
-  (apply (-> this .-supports) (concat [this] args)))
+  (-> this .-supports (.apply this (clj->js args))))
 
 (defn escape
   "Method.

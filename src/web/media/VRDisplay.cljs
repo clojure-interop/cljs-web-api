@@ -96,7 +96,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/requestPresent`"
   [this & args]
-  (apply (-> this .-requestPresent) (concat [this] args)))
+  (-> this .-requestPresent (.apply this (clj->js args))))
 
 (defn exit-present
   "Method.
@@ -110,7 +110,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/exitPresent`"
   [this & args]
-  (apply (-> this .-exitPresent) (concat [this] args)))
+  (-> this .-exitPresent (.apply this (clj->js args))))
 
 (defn submit-frame
   "Method.

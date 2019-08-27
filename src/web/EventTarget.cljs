@@ -25,7 +25,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener`"
   [this & args]
-  (apply (-> this .-addEventListener) (concat [this] args)))
+  (-> this .-addEventListener (.apply this (clj->js args))))
 
 (defn remove-event-listener
   "Method.
@@ -42,7 +42,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener`"
   [this & args]
-  (apply (-> this .-removeEventListener) (concat [this] args)))
+  (-> this .-removeEventListener (.apply this (clj->js args))))
 
 (defn dispatch-event
   "Method.

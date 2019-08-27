@@ -39,7 +39,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/initKeyEvent`"
   [this & args]
-  (apply (-> this .-initKeyEvent) (concat [this] args)))
+  (-> this .-initKeyEvent (.apply this (clj->js args))))
 
 (defn init-keyboard-event
   "Method.
@@ -57,7 +57,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/initKeyboardEvent`"
   [this & args]
-  (apply (-> this .-initKeyboardEvent) (concat [this] args)))
+  (-> this .-initKeyboardEvent (.apply this (clj->js args))))
 
 (defn alt-key
   "Property.

@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getFloatFrequencyData`"
   [this & args]
-  (apply (-> this .-getFloatFrequencyData) (concat [this] args)))
+  (-> this .-getFloatFrequencyData (.apply this (clj->js args))))
 
 (defn get-byte-frequency-data
   "Method.
@@ -62,7 +62,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getByteFrequencyData`"
   [this & args]
-  (apply (-> this .-getByteFrequencyData) (concat [this] args)))
+  (-> this .-getByteFrequencyData (.apply this (clj->js args))))
 
 (defn get-float-time-domain-data
   "Method.
@@ -78,7 +78,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getFloatTimeDomainData`"
   [this & args]
-  (apply (-> this .-getFloatTimeDomainData) (concat [this] args)))
+  (-> this .-getFloatTimeDomainData (.apply this (clj->js args))))
 
 (defn get-byte-time-domain-data
   "Method.
@@ -94,7 +94,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/getByteTimeDomainData`"
   [this & args]
-  (apply (-> this .-getByteTimeDomainData) (concat [this] args)))
+  (-> this .-getByteTimeDomainData (.apply this (clj->js args))))
 
 (defn fft-size
   "Property.

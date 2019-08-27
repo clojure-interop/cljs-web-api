@@ -30,7 +30,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/start`"
   [this & args]
-  (apply (-> this .-start) (concat [this] args)))
+  (-> this .-start (.apply this (clj->js args))))
 
 (defn reconnect
   "Method.
@@ -40,7 +40,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/reconnect`"
   [this & args]
-  (apply (-> this .-reconnect) (concat [this] args)))
+  (-> this .-reconnect (.apply this (clj->js args))))
 
 (defn get-availability
   "Method.
@@ -50,7 +50,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/getAvailability`"
   [this & args]
-  (apply (-> this .-getAvailability) (concat [this] args)))
+  (-> this .-getAvailability (.apply this (clj->js args))))
 
 (defn onconnectionavailable
   "Property.

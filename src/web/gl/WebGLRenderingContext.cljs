@@ -168,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferData`"
   [this & args]
-  (apply (-> this .-bufferData) (concat [this] args)))
+  (-> this .-bufferData (.apply this (clj->js args))))
 
 (defn buffer-sub-data
   "Method.
@@ -185,7 +185,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/bufferSubData`"
   [this & args]
-  (apply (-> this .-bufferSubData) (concat [this] args)))
+  (-> this .-bufferSubData (.apply this (clj->js args))))
 
 (defn check-framebuffer-status
   "Method.
@@ -309,7 +309,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/compressedTexImage2D`"
   [this & args]
-  (apply (-> this .-compressedTexImage) (concat [this] args)))
+  (-> this .-compressedTexImage (.apply this (clj->js args))))
 
 (defn compressed-tex-sub-image2d
   "Method.
@@ -327,7 +327,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D`"
   [this & args]
-  (apply (-> this .-compressedTexSubImage2D) (concat [this] args)))
+  (-> this .-compressedTexSubImage2D (.apply this (clj->js args))))
 
 (defn copy-tex-image2d
   "Method.
@@ -1179,7 +1179,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/readPixels`"
   [this & args]
-  (apply (-> this .-readPixels) (concat [this] args)))
+  (-> this .-readPixels (.apply this (clj->js args))))
 
 (defn renderbuffer-storage
   "Method.
@@ -1329,7 +1329,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D`"
   [this & args]
-  (apply (-> this .-texImage2D) (concat [this] args)))
+  (-> this .-texImage2D (.apply this (clj->js args))))
 
 (defn tex-parameter
   "Method.
@@ -1342,7 +1342,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texParameter`"
   [this & args]
-  (apply (-> this .-texParameter) (concat [this] args)))
+  (-> this .-texParameter (.apply this (clj->js args))))
 
 (defn tex-sub-image2d
   "Method.
@@ -1369,7 +1369,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texSubImage2D`"
   [this & args]
-  (apply (-> this .-texSubImage2D) (concat [this] args)))
+  (-> this .-texSubImage2D (.apply this (clj->js args))))
 
 (defn uniform
   "Method.
@@ -1399,7 +1399,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/uniform`"
   [this & args]
-  (apply (-> this .-uniform) (concat [this] args)))
+  (-> this .-uniform (.apply this (clj->js args))))
 
 (defn uniform-matrix
   "Method.
@@ -1413,7 +1413,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/uniformMatrix`"
   [this & args]
-  (apply (-> this .-uniformMatrix) (concat [this] args)))
+  (-> this .-uniformMatrix (.apply this (clj->js args))))
 
 (defn use-program
   "Method.
@@ -1458,7 +1458,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/vertexAttrib`"
   [this & args]
-  (apply (-> this .-vertexAttrib) (concat [this] args)))
+  (-> this .-vertexAttrib (.apply this (clj->js args))))
 
 (defn vertex-attrib-pointer
   "Method.

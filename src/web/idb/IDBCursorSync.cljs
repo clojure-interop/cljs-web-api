@@ -13,5 +13,5 @@
   If the underlying index or object store does not support updating
   record because it is open in the READ_ONLY or SNAPSHOT_READ mode."
   [this & args]
-  (apply (-> this .-NOT_ALLOWED_ERR) (concat [this] args)))
+  (-> this .-NOT_ALLOWED_ERR (.apply this (clj->js args))))
 

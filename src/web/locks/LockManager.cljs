@@ -16,7 +16,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request`"
   [this & args]
-  (apply (-> this .-request) (concat [this] args)))
+  (-> this .-request (.apply this (clj->js args))))
 
 (defn query
   "Method.

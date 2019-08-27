@@ -11,7 +11,7 @@
 
   The data to append to the Blob being constructed."
   [this & args]
-  (apply (-> this .-data) (concat [this] args)))
+  (-> this .-data (.apply this (clj->js args))))
 
 (defn endings
   "Method.
@@ -20,7 +20,7 @@
   be \"transparent\" (endings unchanged) or \"native\" (endings changed
   match host OS filesystem convention). The default value is \"transparent\"."
   [this & args]
-  (apply (-> this .-endings) (concat [this] args)))
+  (-> this .-endings (.apply this (clj->js args))))
 
 (defn content-type
   "Method.
@@ -28,12 +28,12 @@
   The MIME type of the data to be returned in the Blob. This will
   the value of the Blob object's type property."
   [this & args]
-  (apply (-> this .-contentType) (concat [this] args)))
+  (-> this .-contentType (.apply this (clj->js args))))
 
 (defn name
   "Method.
 
   The file name."
   [this & args]
-  (apply (-> this .-name) (concat [this] args)))
+  (-> this .-name (.apply this (clj->js args))))
 

@@ -15,5 +15,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection/namedItem`"
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 

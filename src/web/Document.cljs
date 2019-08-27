@@ -32,7 +32,7 @@
 
   See Window.captureEvents."
   [this & args]
-  (apply (-> this .-captureEvents) (concat [this] args)))
+  (-> this .-captureEvents (.apply this (clj->js args))))
 
 (defn caret-range-from-point
   "Method.
@@ -44,7 +44,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/caretRangeFromPoint`"
   [this & args]
-  (apply (-> this .-caretRangeFromPoint) (concat [this] args)))
+  (-> this .-caretRangeFromPoint (.apply this (clj->js args))))
 
 (defn create-attribute
   "Method.
@@ -65,7 +65,7 @@
 
   Creates a new attribute node in a given namespace and returns"
   [this & args]
-  (apply (-> this .-createAttributeNS) (concat [this] args)))
+  (-> this .-createAttributeNS (.apply this (clj->js args))))
 
 (defn create-cdata-section
   "Method.
@@ -80,7 +80,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createCDATASection`"
   [this & args]
-  (apply (-> this .-createCDATASection) (concat [this] args)))
+  (-> this .-createCDATASection (.apply this (clj->js args))))
 
 (defn create-comment
   "Method.
@@ -104,7 +104,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment`"
   [this & args]
-  (apply (-> this .-createDocumentFragment) (concat [this] args)))
+  (-> this .-createDocumentFragment (.apply this (clj->js args))))
 
 (defn create-element
   "Method.
@@ -117,7 +117,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement`"
   [this & args]
-  (apply (-> this .-createElement) (concat [this] args)))
+  (-> this .-createElement (.apply this (clj->js args))))
 
 (defn create-element-ns
   "Method.
@@ -128,7 +128,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createElementNS`"
   [this & args]
-  (apply (-> this .-createElementNS) (concat [this] args)))
+  (-> this .-createElementNS (.apply this (clj->js args))))
 
 (defn create-entity-reference
   "Method.
@@ -141,7 +141,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createEntityReference`"
   [this & args]
-  (apply (-> this .-createEntityReference) (concat [this] args)))
+  (-> this .-createEntityReference (.apply this (clj->js args))))
 
 (defn create-event
   "Method.
@@ -157,7 +157,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createEvent`"
   [this & args]
-  (apply (-> this .-createEvent) (concat [this] args)))
+  (-> this .-createEvent (.apply this (clj->js args))))
 
 (defn create-node-iterator
   "Method.
@@ -193,7 +193,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createRange`"
   [this & args]
-  (apply (-> this .-createRange) (concat [this] args)))
+  (-> this .-createRange (.apply this (clj->js args))))
 
 (defn create-text-node
   "Method.
@@ -209,7 +209,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode`"
   [this & args]
-  (apply (-> this .-createTextNode) (concat [this] args)))
+  (-> this .-createTextNode (.apply this (clj->js args))))
 
 (defn create-touch
   "Method.
@@ -221,7 +221,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createTouch`"
   [this & args]
-  (apply (-> this .-createTouch) (concat [this] args)))
+  (-> this .-createTouch (.apply this (clj->js args))))
 
 (defn create-touch-list
   "Method.
@@ -233,7 +233,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createTouchList`"
   [this & args]
-  (apply (-> this .-createTouchList) (concat [this] args)))
+  (-> this .-createTouchList (.apply this (clj->js args))))
 
 (defn create-tree-walker
   "Method.
@@ -245,7 +245,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker`"
   [this & args]
-  (apply (-> this .-createTreeWalker) (concat [this] args)))
+  (-> this .-createTreeWalker (.apply this (clj->js args))))
 
 (defn enable-style-sheets-for-set
   "Method.
@@ -302,7 +302,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName`"
   [this & args]
-  (apply (-> this .-getElementsByClassName) (concat [this] args)))
+  (-> this .-getElementsByClassName (.apply this (clj->js args))))
 
 (defn get-elements-by-tag-name
   "Method.
@@ -321,7 +321,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagName`"
   [this & args]
-  (apply (-> this .-getElementsByTagName) (concat [this] args)))
+  (-> this .-getElementsByTagName (.apply this (clj->js args))))
 
 (defn get-elements-by-tag-name-ns
   "Method.
@@ -344,7 +344,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagNameNS`"
   [this & args]
-  (apply (-> this .-getElementsByTagNameNS) (concat [this] args)))
+  (-> this .-getElementsByTagNameNS (.apply this (clj->js args))))
 
 (defn has-storage-access
   "Method.
@@ -389,14 +389,14 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode`"
   [this & args]
-  (apply (-> this .-importNode) (concat [this] args)))
+  (-> this .-importNode (.apply this (clj->js args))))
 
 (defn normalize-document
   "Method.
 
   Replaces entities, normalizes text nodes, etc."
   [this & args]
-  (apply (-> this .-normalizeDocument) (concat [this] args)))
+  (-> this .-normalizeDocument (.apply this (clj->js args))))
 
 (defn release-capture
   "Method.
@@ -411,14 +411,14 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/releaseCapture`"
   [this & args]
-  (apply (-> this .-releaseCapture) (concat [this] args)))
+  (-> this .-releaseCapture (.apply this (clj->js args))))
 
 (defn release-events
   "Method.
 
   See Window.releaseEvents()."
   [this & args]
-  (apply (-> this .-releaseEvents) (concat [this] args)))
+  (-> this .-releaseEvents (.apply this (clj->js args))))
 
 (defn request-storage-access
   "Method.
@@ -438,7 +438,7 @@
 
   See Window.routeEvent()."
   [this & args]
-  (apply (-> this .-routeEvent) (concat [this] args)))
+  (-> this .-routeEvent (.apply this (clj->js args))))
 
 (defn moz-set-image-element
   "Method.
@@ -540,7 +540,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate`"
   [this & args]
-  (apply (-> this .-evaluate) (concat [this] args)))
+  (-> this .-evaluate (.apply this (clj->js args))))
 
 (defn clear
   "Method.
@@ -594,7 +594,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByName`"
   [this & args]
-  (apply (-> this .-getElementsByName) (concat [this] args)))
+  (-> this .-getElementsByName (.apply this (clj->js args))))
 
 (defn has-focus
   "Method.
@@ -638,7 +638,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandEnabled`"
   [this & args]
-  (apply (-> this .-queryCommandEnabled) (concat [this] args)))
+  (-> this .-queryCommandEnabled (.apply this (clj->js args))))
 
 (defn query-command-indeterm
   "Method.
@@ -646,7 +646,7 @@
   Returns true if the formating command is in an indeterminate
   on the current range."
   [this & args]
-  (apply (-> this .-queryCommandIndeterm) (concat [this] args)))
+  (-> this .-queryCommandIndeterm (.apply this (clj->js args))))
 
 (defn query-command-state
   "Method.
@@ -660,7 +660,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandState`"
   [this & args]
-  (apply (-> this .-queryCommandState) (concat [this] args)))
+  (-> this .-queryCommandState (.apply this (clj->js args))))
 
 (defn query-command-supported
   "Method.
@@ -679,14 +679,14 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandSupported`"
   [this & args]
-  (apply (-> this .-queryCommandSupported) (concat [this] args)))
+  (-> this .-queryCommandSupported (.apply this (clj->js args))))
 
 (defn query-command-value
   "Method.
 
   Returns the current value of the current range for a formating"
   [this & args]
-  (apply (-> this .-queryCommandValue) (concat [this] args)))
+  (-> this .-queryCommandValue (.apply this (clj->js args))))
 
 (defn write
   "Method.
@@ -761,7 +761,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/caretPositionFromPoint`"
   [this & args]
-  (apply (-> this .-caretPositionFromPoint) (concat [this] args)))
+  (-> this .-caretPositionFromPoint (.apply this (clj->js args))))
 
 (defn append
   "Method.
@@ -775,7 +775,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
   [this & args]
-  (apply (-> this .-append) (concat [this] args)))
+  (-> this .-append (.apply this (clj->js args))))
 
 (defn exit-fullscreen
   "Method.
@@ -804,7 +804,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/getBoxObjectFor`"
   [this & args]
-  (apply (-> this .-getBoxObjectFor) (concat [this] args)))
+  (-> this .-getBoxObjectFor (.apply this (clj->js args))))
 
 (defn prepend
   "Method.
@@ -817,7 +817,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
   [this & args]
-  (apply (-> this .-prepend) (concat [this] args)))
+  (-> this .-prepend (.apply this (clj->js args))))
 
 (defn register-element
   "Method.
@@ -829,7 +829,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement`"
   [this & args]
-  (apply (-> this .-registerElement) (concat [this] args)))
+  (-> this .-registerElement (.apply this (clj->js args))))
 
 (defn all
   "Property.

@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission`"
   [this & args]
-  (apply (-> this .-requestPermission) (concat [this] args)))
+  (-> this .-requestPermission (.apply this (clj->js args))))
 
 (defn close
   "Method.

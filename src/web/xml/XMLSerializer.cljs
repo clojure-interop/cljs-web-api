@@ -21,5 +21,5 @@
   The subtree rooted by the specified element is serialized to
   byte stream using the character set specified."
   [this & args]
-  (apply (-> this .-serializeToStream) (concat [this] args)))
+  (-> this .-serializeToStream (.apply this (clj->js args))))
 

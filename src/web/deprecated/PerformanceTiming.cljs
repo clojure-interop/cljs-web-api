@@ -11,7 +11,7 @@
 
   Returns a JSON object representing this PerformanceTiming object."
   [this & args]
-  (apply (-> this .-toJSON) (concat [this] args)))
+  (-> this .-toJSON (.apply this (clj->js args))))
 
 (defn navigation-start
   "Property.

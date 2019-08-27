@@ -10,7 +10,7 @@
   Initializes the value of an GestureEvent. If the event has already
   dispatched, this method does nothing."
   [this & args]
-  (apply (-> this .-initGestureEvent) (concat [this] args)))
+  (-> this .-initGestureEvent (.apply this (clj->js args))))
 
 (defn rotation
   "Property.

@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connect`"
   [this & args]
-  (apply (-> this .-connect) (concat [this] args)))
+  (-> this .-connect (.apply this (clj->js args))))
 
 (defn disconnect
   "Method.

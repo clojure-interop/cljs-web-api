@@ -67,7 +67,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/grabFrame`"
   [this & args]
-  (apply (-> this .-grabFrame) (concat [this] args)))
+  (-> this .-grabFrame (.apply this (clj->js args))))
 
 (defn track
   "Property.

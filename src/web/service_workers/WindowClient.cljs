@@ -18,7 +18,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/focus`"
   [this & args]
-  (apply (-> this .-focus) (concat [this] args)))
+  (-> this .-focus (.apply this (clj->js args))))
 
 (defn navigate
   "Method.
@@ -33,7 +33,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/navigate`"
   [this & args]
-  (apply (-> this .-navigate) (concat [this] args)))
+  (-> this .-navigate (.apply this (clj->js args))))
 
 (defn focused
   "Property.

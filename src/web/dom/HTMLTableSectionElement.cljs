@@ -13,7 +13,7 @@
   of rows in the section, or is smaller than 0, it raises a DOMException
   the IndexSizeError value."
   [this & args]
-  (apply (-> this .-deleteRow) (concat [this] args)))
+  (-> this .-deleteRow (.apply this (clj->js args))))
 
 (defn insert-row
   "Method.
@@ -24,7 +24,7 @@
   it starts at zero) than the amount of rows in the section, or
   smaller than -1, it raises a DOMException with the IndexSizeError"
   [this & args]
-  (apply (-> this .-insertRow) (concat [this] args)))
+  (-> this .-insertRow (.apply this (clj->js args))))
 
 (defn align
   "Property.

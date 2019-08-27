@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getTransports`"
   [this & args]
-  (apply (-> this .-getTransports) (concat [this] args)))
+  (-> this .-getTransports (.apply this (clj->js args))))
 
 (defn client-data-json
   "Property.

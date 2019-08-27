@@ -32,7 +32,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/start`"
   [this & args]
-  (apply (-> this .-start) (concat [this] args)))
+  (-> this .-start (.apply this (clj->js args))))
 
 (defn stop
   "Method.
@@ -45,7 +45,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/stop`"
   [this & args]
-  (apply (-> this .-stop) (concat [this] args)))
+  (-> this .-stop (.apply this (clj->js args))))
 
 (defn offset
   "Property.

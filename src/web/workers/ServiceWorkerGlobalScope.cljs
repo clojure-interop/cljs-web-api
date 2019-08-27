@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting`"
   [this & args]
-  (apply (-> this .-skipWaiting) (concat [this] args)))
+  (-> this .-skipWaiting (.apply this (clj->js args))))
 
 (defn fetch
   "Method.
@@ -25,7 +25,7 @@
   request. This algorithm is the entry point for the fetch handling
   to the service worker context."
   [this & args]
-  (apply (-> this .-fetch) (concat [this] args)))
+  (-> this .-fetch (.apply this (clj->js args))))
 
 (defn clients
   "Property.

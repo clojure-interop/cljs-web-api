@@ -8,7 +8,7 @@
   Adds a cue (specified as a TextTrackCue object to the track's
   of cues."
   [this & args]
-  (apply (-> this .-addCue) (concat [this] args)))
+  (-> this .-addCue (.apply this (clj->js args))))
 
 (defn remove-cue
   "Method.
@@ -16,7 +16,7 @@
   Removes a cue (specified as a TextTrackCue object from the track's
   of cues."
   [this & args]
-  (apply (-> this .-removeCue) (concat [this] args)))
+  (-> this .-removeCue (.apply this (clj->js args))))
 
 (defn active-cues
   "Property.

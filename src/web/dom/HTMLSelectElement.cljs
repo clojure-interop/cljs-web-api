@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/add`"
   [this & args]
-  (apply (-> this .-add) (concat [this] args)))
+  (-> this .-add (.apply this (clj->js args))))
 
 (defn blur
   "Method.
@@ -22,7 +22,7 @@
   Removes input focus from this element. This method is now implemented
   HTMLElement."
   [this & args]
-  (apply (-> this .-blur) (concat [this] args)))
+  (-> this .-blur (.apply this (clj->js args))))
 
 (defn check-validity
   "Method.
@@ -44,7 +44,7 @@
   Gives input focus to this element. This method is now implemented
   HTMLElement."
   [this & args]
-  (apply (-> this .-focus) (concat [this] args)))
+  (-> this .-focus (.apply this (clj->js args))))
 
 (defn item
   "Method.
@@ -59,7 +59,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/item`"
   [this & args]
-  (apply (-> this .-item) (concat [this] args)))
+  (-> this .-item (.apply this (clj->js args))))
 
 (defn named-item
   "Method.
@@ -73,7 +73,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/namedItem`"
   [this & args]
-  (apply (-> this .-namedItem) (concat [this] args)))
+  (-> this .-namedItem (.apply this (clj->js args))))
 
 (defn remove
   "Method.

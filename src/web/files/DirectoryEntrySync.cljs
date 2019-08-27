@@ -9,19 +9,19 @@
 
   Represents a directory in a file system."
   [this & args]
-  (apply (-> this .-DirectoryReaderSync) (concat [this] args)))
+  (-> this .-DirectoryReaderSync (.apply this (clj->js args))))
 
 (defn file-entry-sync
   "Method.
 
   Represents a file in a file system."
   [this & args]
-  (apply (-> this .-FileEntrySync) (concat [this] args)))
+  (-> this .-FileEntrySync (.apply this (clj->js args))))
 
 (defn directory-entry-sync
   "Method.
 
   Represents a directory in a file system."
   [this & args]
-  (apply (-> this .-DirectoryEntrySync) (concat [this] args)))
+  (-> this .-DirectoryEntrySync (.apply this (clj->js args))))
 

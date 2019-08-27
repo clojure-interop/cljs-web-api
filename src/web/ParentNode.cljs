@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append`"
   [this & args]
-  (apply (-> this .-append) (concat [this] args)))
+  (-> this .-append (.apply this (clj->js args))))
 
 (defn prepend
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend`"
   [this & args]
-  (apply (-> this .-prepend) (concat [this] args)))
+  (-> this .-prepend (.apply this (clj->js args))))
 
 (defn query-selector
   "Method.

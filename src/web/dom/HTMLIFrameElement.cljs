@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/setNfcFocus`"
   [this & args]
-  (apply (-> this .-setNfcFocus) (concat [this] args)))
+  (-> this .-setNfcFocus (.apply this (clj->js args))))
 
 (defn align
   "Property.

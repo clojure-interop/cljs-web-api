@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition`"
   [this & args]
-  (apply (-> this .-getCurrentPosition) (concat [this] args)))
+  (-> this .-getCurrentPosition (.apply this (clj->js args))))
 
 (defn watch-position
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition`"
   [this & args]
-  (apply (-> this .-watchPosition) (concat [this] args)))
+  (-> this .-watchPosition (.apply this (clj->js args))))
 
 (defn clear-watch
   "Method.

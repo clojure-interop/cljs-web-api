@@ -99,7 +99,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey`"
   [this & args]
-  (apply (-> this .-deriveKey) (concat [this] args)))
+  (-> this .-deriveKey (.apply this (clj->js args))))
 
 (defn derive-bits
   "Method.
@@ -115,7 +115,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveBits`"
   [this & args]
-  (apply (-> this .-deriveBits) (concat [this] args)))
+  (-> this .-deriveBits (.apply this (clj->js args))))
 
 (defn import-key
   "Method.
@@ -135,7 +135,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey`"
   [this & args]
-  (apply (-> this .-importKey) (concat [this] args)))
+  (-> this .-importKey (.apply this (clj->js args))))
 
 (defn export-key
   "Method.
@@ -168,7 +168,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/wrapKey`"
   [this & args]
-  (apply (-> this .-wrapKey) (concat [this] args)))
+  (-> this .-wrapKey (.apply this (clj->js args))))
 
 (defn unwrap-key
   "Method.
@@ -191,5 +191,5 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/unwrapKey`"
   [this & args]
-  (apply (-> this .-unwrapKey) (concat [this] args)))
+  (-> this .-unwrapKey (.apply this (clj->js args))))
 

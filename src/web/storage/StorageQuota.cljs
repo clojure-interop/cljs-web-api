@@ -15,7 +15,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/queryInfo`"
   [this & args]
-  (apply (-> this .-queryInfo) (concat [this] args)))
+  (-> this .-queryInfo (.apply this (clj->js args))))
 
 (defn request-persistent-quota
   "Method.
@@ -28,7 +28,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/requestPersistentQuota`"
   [this & args]
-  (apply (-> this .-requestPersistentQuota) (concat [this] args)))
+  (-> this .-requestPersistentQuota (.apply this (clj->js args))))
 
 (defn supported-types
   "Property.

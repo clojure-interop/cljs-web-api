@@ -14,7 +14,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ListFormat/supportedLocalesOf`"
   [this & args]
-  (apply (-> this .-supportedLocalesOf) (concat [this] args)))
+  (-> this .-supportedLocalesOf (.apply this (clj->js args))))
 
 (defn intl
   "Method.
@@ -29,7 +29,7 @@
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ListFormat/format`"
   [this & args]
-  (apply (-> this .-Intl) (concat [this] args)))
+  (-> this .-Intl (.apply this (clj->js args))))
 
 (defn prototype
   "Property.
