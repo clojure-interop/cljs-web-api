@@ -23,6 +23,8 @@
 (defn quaternion
   "Property.
 
+  [Read Only]
+
   The quaternion read-only property of the `web.orientation.OrientationSensor`
   returns a four element `js.Array` whose elements contain the
   of the unit quaternion representing the device's orientation.
@@ -34,19 +36,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion`"
   [this]
   (-> this (.-quaternion)))
-
-(defn set-quaternion!
-  "Property.
-
-  The quaternion read-only property of the `web.orientation.OrientationSensor`
-  returns a four element `js.Array` whose elements contain the
-  of the unit quaternion representing the device's orientation.
-
-  `var quaternion = orientationInstance.quaternion
-
-  Because `web.orientation.OrientationSensor` is a base class, quaternion may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion`"
-  [this val]
-  (aset this "quaternion" val))
 

@@ -7,6 +7,9 @@
 (defn onabort
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
 
@@ -18,6 +21,9 @@
 
 (defn set-onabort!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
@@ -87,6 +93,8 @@
 (defn onanimationiteration
   "Property.
 
+  [Draft]
+
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
 
@@ -100,6 +108,8 @@
 
 (defn set-onanimationiteration!
   "Property.
+
+  [Draft]
 
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
@@ -115,6 +125,8 @@
 (defn onauxclick
   "Property.
 
+  [Experimental]
+
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
 
@@ -126,6 +138,8 @@
 
 (defn set-onauxclick!
   "Property.
+
+  [Experimental]
 
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
@@ -301,6 +315,8 @@
 (defn onclose
   "Property.
 
+  [Experimental]
+
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
 
@@ -312,6 +328,8 @@
 
 (defn set-onclose!
   "Property.
+
+  [Experimental]
 
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
@@ -613,6 +631,8 @@
 (defn onkeypress
   "Property.
 
+  [Deprecated]
+
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
 
@@ -624,6 +644,8 @@
 
 (defn set-onkeypress!
   "Property.
+
+  [Deprecated]
 
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
@@ -1397,6 +1419,8 @@
 (defn onselectionchange
   "Property.
 
+  [Experimental]
+
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
 
@@ -1408,6 +1432,8 @@
 
 (defn set-onselectionchange!
   "Property.
+
+  [Experimental]
 
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
@@ -1421,6 +1447,8 @@
 (defn onselectstart
   "Property.
 
+  [Experimental]
+
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
 
@@ -1432,6 +1460,8 @@
 
 (defn set-onselectstart!
   "Property.
+
+  [Experimental]
 
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
@@ -1469,6 +1499,8 @@
 (defn ontouchcancel
   "Property.
 
+  [Experimental]
+
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
 
@@ -1480,6 +1512,8 @@
 
 (defn set-ontouchcancel!
   "Property.
+
+  [Experimental]
 
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
@@ -1493,6 +1527,8 @@
 (defn ontouchstart
   "Property.
 
+  [Experimental]
+
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.
 
@@ -1504,6 +1540,8 @@
 
 (defn set-ontouchstart!
   "Property.
+
+  [Experimental]
 
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.

@@ -7,6 +7,8 @@
 (defn for-each
   "Method.
 
+  [Experimental]
+
   The forEach() method of the `web.keyboard.KeyboardLayoutMap`
   executes a provided function once for each element of the map.
 
@@ -21,6 +23,8 @@
 (defn get
   "Method.
 
+  [Experimental]
+
   The get() method of the `web.keyboard.KeyboardLayoutMap` interface
   the element with the given key.
 
@@ -32,6 +36,8 @@
 
 (defn has
   "Method.
+
+  [Experimental]
 
   The has() method of the `web.keyboard.KeyboardLayoutMap` interface
   a boolean indicating whether the object has an element with the
@@ -46,6 +52,9 @@
 (defn entries
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The entries read-only property of the `web.keyboard.KeyboardLayoutMap`
   returns an array of a given object's own enumerable property
   value] pairs, in the same order as that provided by a `for...in`
@@ -58,23 +67,11 @@
   [this]
   (-> this (.-entries)))
 
-(defn set-entries!
-  "Property.
-
-  The entries read-only property of the `web.keyboard.KeyboardLayoutMap`
-  returns an array of a given object's own enumerable property
-  value] pairs, in the same order as that provided by a `for...in`
-  (the difference being that a for-in loop enumerates properties
-  the prototype chain as well).
-
-  `KeyboardLayoutMap.entries()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/entries`"
-  [this val]
-  (aset this "entries" val))
-
 (defn keys
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The keys read-only property of the `web.keyboard.KeyboardLayoutMap`
   returns a new object that contains the keys for each index in
@@ -86,21 +83,11 @@
   [this]
   (-> this (.-keys)))
 
-(defn set-keys!
-  "Property.
-
-  The keys read-only property of the `web.keyboard.KeyboardLayoutMap`
-  returns a new object that contains the keys for each index in
-  array.
-
-  `iterator = KeyboardLayoutMap.keys`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/keys`"
-  [this val]
-  (aset this "keys" val))
-
 (defn size
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The size read-only property of the `web.keyboard.KeyboardLayoutMap`
   returns the number of elements in the map.
@@ -111,20 +98,11 @@
   [this]
   (-> this (.-size)))
 
-(defn set-size!
-  "Property.
-
-  The size read-only property of the `web.keyboard.KeyboardLayoutMap`
-  returns the number of elements in the map.
-
-  `var size = KeyboardLayoutMap.size()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/size`"
-  [this val]
-  (aset this "size" val))
-
 (defn values
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The values read-only property of the `web.keyboard.KeyboardLayoutMap`
   returns a new object that contains the values for each index
@@ -135,17 +113,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/values`"
   [this]
   (-> this (.-values)))
-
-(defn set-values!
-  "Property.
-
-  The values read-only property of the `web.keyboard.KeyboardLayoutMap`
-  returns a new object that contains the values for each index
-  the .
-
-  `var iterator = KeyboardLayoutMap.values`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/values`"
-  [this val]
-  (aset this "values" val))
 

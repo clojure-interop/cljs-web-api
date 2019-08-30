@@ -6,14 +6,6 @@
   fired at all BroadcastChannel objects listening to the channel."
   (:refer-clojure :exclude [name]))
 
-(def constructor
-  "Constructor.
-
-  The BroadcastChannel() constructor creates a new `web.broadcast.BroadcastChannel` and connects it to the underlying channel.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/BroadcastChannel`"
-  js/BroadcastChannel)
-
 (defn post-message
   "Method.
 
@@ -45,6 +37,8 @@
 (defn name
   "Property.
 
+  [Read Only]
+
   The read-only BroadcastChannel.name property returns a `web.dom.DOMString`,
   uniquely identifies the given channel with its name. This name
   passed to the `BroadcastChannel()` constructor at creation time
@@ -55,20 +49,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name`"
   [this]
   (-> this (.-name)))
-
-(defn event-handler
-  "Property.
-
-  BroadcastChannel.onmessageerror"
-  [this]
-  (-> this (.-EventHandler)))
-
-(defn set-event-handler!
-  "Property.
-
-  BroadcastChannel.onmessageerror"
-  [this val]
-  (aset this "EventHandler" val))
 
 (defn onmessage
   "Property.

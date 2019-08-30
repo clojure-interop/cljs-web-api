@@ -70,6 +70,8 @@
 (defn elements
   "Property.
 
+  [Read Only]
+
   The `web.dom.HTMLFormElement` property elements returns an `web.dom.HTMLFormControlsCollection`
   all the form controls contained in the `<form>` element.
 
@@ -79,20 +81,10 @@
   [this]
   (-> this (.-elements)))
 
-(defn set-elements!
-  "Property.
-
-  The `web.dom.HTMLFormElement` property elements returns an `web.dom.HTMLFormControlsCollection`
-  all the form controls contained in the `<form>` element.
-
-  `nodeList = HTMLFormElement.elements`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements`"
-  [this val]
-  (aset this "elements" val))
-
 (defn length
   "Property.
+
+  [Read Only]
 
   The HTMLFormElement.length read-only property returns the number
   controls in the `<form>` element.

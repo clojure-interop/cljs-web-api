@@ -3,21 +3,10 @@
   represents values for properties that take a position, for example"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The CSSPositionValue constructor creates a new `web.css.CSSPositionValue` object which represents values for properties that take a position, for example `object-position`.
-
-  x
-  A position along the web page's horizontal axis.
-  y
-  A position along the web page's vertical axix.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionValue/CSSPositionValue`"
-  js/CSSPositionValue)
-
 (defn x
   "Property.
+
+  [Experimental]
 
   The x property of the `web.css.CSSPositionValue` interface returns
   the item's position along the web page's horizontal axis.
@@ -31,6 +20,8 @@
 (defn set-x!
   "Property.
 
+  [Experimental]
+
   The x property of the `web.css.CSSPositionValue` interface returns
   the item's position along the web page's horizontal axis.
 
@@ -43,6 +34,8 @@
 (defn y
   "Property.
 
+  [Experimental]
+
   The y property of the `web.css.CSSPositionValue` interface returns
   item's position along the vertical axis.
 
@@ -54,6 +47,8 @@
 
 (defn set-y!
   "Property.
+
+  [Experimental]
 
   The y property of the `web.css.CSSPositionValue` interface returns
   item's position along the vertical axis.

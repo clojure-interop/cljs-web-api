@@ -3,18 +3,10 @@
   allows you to abort one or more DOM requests as and when desired."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The AbortController() constructor creates a new AbortController object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbortController/AbortController`"
-  js/AbortController)
-
 (defn abort
   "Method.
+
+  [Experimental]
 
   The abort() method of the `web.dom.AbortController` interface
   a DOM request (e.g. a Fetch request) before it has completed.
@@ -30,6 +22,9 @@
 (defn signal
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The signal read-only property of the `web.dom.AbortController`
   returns an `web.AbortSignal` object instance, which can be used
   communicate with/abort a DOM request as desired.
@@ -39,17 +34,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal`"
   [this]
   (-> this (.-signal)))
-
-(defn set-signal!
-  "Property.
-
-  The signal read-only property of the `web.dom.AbortController`
-  returns an `web.AbortSignal` object instance, which can be used
-  communicate with/abort a DOM request as desired.
-
-  `var signal = abortController.signal;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal`"
-  [this val]
-  (aset this "signal" val))
 

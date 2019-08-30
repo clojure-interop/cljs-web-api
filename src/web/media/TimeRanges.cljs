@@ -29,6 +29,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The TimeRanges.length read-only property returns the number of
   in the object.
 

@@ -4,19 +4,6 @@
   track is specified as an instance of `web.audio.MediaStreamTrack`."
   (:refer-clojure :exclude [clone]))
 
-(def constructor
-  "Constructor.
-
-  The MediaStream() constructor returns a newly-created `web.streams.MediaStream`, which serves as a collection of media tracks, each represented by a `web.audio.MediaStreamTrack` object.
-
-  stream
-  A different `web.streams.MediaStream` object whose tracks are added to the newly-created stream automatically. The tracks are not removed from the original stream, so they're shared by the two streams.
-  tracks
-  An `js.Array` of `web.audio.MediaStreamTrack` objects, one for each track to add to the stream.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/MediaStream`"
-  js/MediaStream)
-
 (defn add-track
   "Method.
 
@@ -69,6 +56,8 @@
 (defn get-tracks
   "Method.
 
+  [Experimental]
+
   The getTracks() method of the `web.streams.MediaStream` interface
   a sequence that represents all the `web.audio.MediaStreamTrack`
   in this stream's track set, regardless of `MediaStreamTrack.kind`.
@@ -103,6 +92,8 @@
 (defn active
   "Property.
 
+  [Read Only]
+
   The active read-only property of the `web.streams.MediaStream`
   returns a Boolean value which is true if the stream is currently
   otherwise, it returns false. A stream is considered active if
@@ -116,24 +107,11 @@
   [this]
   (-> this (.-active)))
 
-(defn set-active!
-  "Property.
-
-  The active read-only property of the `web.streams.MediaStream`
-  returns a Boolean value which is true if the stream is currently
-  otherwise, it returns false. A stream is considered active if
-  least one of its `web.audio.MediaStreamTrack`s is not in the
-  state. Once every track has ended, the stream's active property
-  false.
-
-  `var isActive = MediaStream.active;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/active`"
-  [this val]
-  (aset this "active" val))
-
 (defn ended
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The ended read-only property of the `web.streams.MediaStream`
   returns a Boolean value which is true if the stream has been
@@ -146,22 +124,10 @@
   [this]
   (-> this (.-ended)))
 
-(defn set-ended!
-  "Property.
-
-  The ended read-only property of the `web.streams.MediaStream`
-  returns a Boolean value which is true if the stream has been
-  read, or false if the end of the stream has not been reached.
-  value once the ended event has been fired.
-
-  `var hasEnded = MediaStream.ended;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/ended`"
-  [this val]
-  (aset this "ended" val))
-
 (defn id
   "Property.
+
+  [Read Only]
 
   The MediaStream.id() read-only property is a `web.dom.DOMString`
   36 characters denoting a unique identifier (GUID) for the object.

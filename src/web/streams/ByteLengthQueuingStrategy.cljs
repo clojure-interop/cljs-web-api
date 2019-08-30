@@ -4,19 +4,11 @@
   streams."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ByteLengthQueuingStrategy() constructor creates and returns a ByteLengthQueuingStrategy() object instance.
-
-  {highWaterMark}
-  An object containing a highWaterMark property. This is a non-negative integer defining the total number of chunks that can be contained in the internal queue before backpressure is applied.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/ByteLengthQueuingStrategy`"
-  js/ByteLengthQueuingStrategy)
-
 (defn size
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The size() method of the `ByteLengthQueueingStrategy` interface
   the given chunk’s byteLength property.

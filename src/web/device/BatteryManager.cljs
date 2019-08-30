@@ -51,6 +51,9 @@
 (defn charging
   "Property.
 
+  [Read Only]
+  [Obsolute]
+
   A Boolean value indicating whether or not the device's battery
   currently being charged.
 
@@ -62,22 +65,11 @@
   [this]
   (-> this (.-charging)))
 
-(defn set-charging!
-  "Property.
-
-  A Boolean value indicating whether or not the device's battery
-  currently being charged.
-
-  `var charging = battery.charging
-
-  On return, charging indicates whether or not the battery, which is a `web.device.BatteryManager` object, is currently being charged; if the battery is charging, this value is true. Otherwise, the value is false.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging`"
-  [this val]
-  (aset this "charging" val))
-
 (defn charging-time
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   Indicates the amount of time, in seconds, that remain until the
   is fully charged.
@@ -90,22 +82,11 @@
   [this]
   (-> this (.-chargingTime)))
 
-(defn set-charging-time!
-  "Property.
-
-  Indicates the amount of time, in seconds, that remain until the
-  is fully charged.
-
-  `var time = battery.chargingTime
-
-  On return, time is the remaining time in seconds until the battery, which is a `web.device.BatteryManager` object, is fully charged, or 0 if the battery is already fully charged. If the battery is currently discharging, this value is Infinity.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingTime`"
-  [this val]
-  (aset this "chargingTime" val))
-
 (defn discharging-time
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   Indicates the amount of time, in seconds, that remains until
   battery is fully discharged.
@@ -118,22 +99,11 @@
   [this]
   (-> this (.-dischargingTime)))
 
-(defn set-discharging-time!
-  "Property.
-
-  Indicates the amount of time, in seconds, that remains until
-  battery is fully discharged.
-
-  `var time = battery.dischargingTime
-
-  On return, time is the remaining time in seconds until the battery, which is a `web.device.BatteryManager` object, is fully discharged and the system will suspend. This value is Infinity if the battery is currently charging rather than discharging, or if the system is unable to report the remaining discharging time.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingTime`"
-  [this val]
-  (aset this "dischargingTime" val))
-
 (defn level
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   Indicates the current battery charge level as a value between
   and 1.0.
@@ -146,22 +116,10 @@
   [this]
   (-> this (.-level)))
 
-(defn set-level!
-  "Property.
-
-  Indicates the current battery charge level as a value between
-  and 1.0.
-
-  `var level = battery.level
-
-  On return, level is a number representing the system's battery charge level scaled to a value between 0.0 and 1.0. A value of 0 means the battery, which is a `web.device.BatteryManager` object, is empty and the system is about to be suspended. A value of 1.0 means the battery is full. A value of 1.0 is also returned if the implementation isn't able to determine the battery charge level or if the system is not battery-powered.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/level`"
-  [this val]
-  (aset this "level" val))
-
 (defn onchargingchange
   "Property.
+
+  [Obsolute]
 
   Specifies an event listener to receive chargingchange events.
   events occur when the battery `charging` state is updated.
@@ -177,6 +135,8 @@
 (defn set-onchargingchange!
   "Property.
 
+  [Obsolute]
+
   Specifies an event listener to receive chargingchange events.
   events occur when the battery `charging` state is updated.
 
@@ -190,6 +150,8 @@
 
 (defn onchargingtimechange
   "Property.
+
+  [Obsolute]
 
   Specifies an event listener to receive chargingtimechange events.
   events occur when the battery `chargingTime` is updated.
@@ -205,6 +167,8 @@
 (defn set-onchargingtimechange!
   "Property.
 
+  [Obsolute]
+
   Specifies an event listener to receive chargingtimechange events.
   events occur when the battery `chargingTime` is updated.
 
@@ -218,6 +182,8 @@
 
 (defn ondischargingtimechange
   "Property.
+
+  [Obsolute]
 
   Specifies an event listener to receive dischargingtimechange
   These events occur when the battery `dischargingTime` is updated.
@@ -233,6 +199,8 @@
 (defn set-ondischargingtimechange!
   "Property.
 
+  [Obsolute]
+
   Specifies an event listener to receive dischargingtimechange
   These events occur when the battery `dischargingTime` is updated.
 
@@ -246,6 +214,8 @@
 
 (defn onlevelchange
   "Property.
+
+  [Obsolute]
 
   The BatteryManager.onlevelchange property specifies an event
   to receive levelchange events. These events occur when the battery
@@ -261,6 +231,8 @@
 
 (defn set-onlevelchange!
   "Property.
+
+  [Obsolute]
 
   The BatteryManager.onlevelchange property specifies an event
   to receive levelchange events. These events occur when the battery

@@ -30,6 +30,8 @@
 (defn css-value-type
   "Property.
 
+  [Read Only]
+
   The cssValueType read-only property of the `web.css.CSSValue`
   represents the type of the current computed CSS property value.
 

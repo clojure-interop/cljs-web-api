@@ -41,6 +41,8 @@
 (defn context
   "Property.
 
+  [Read Only]
+
   The read-only context property of the `web.audio.AudioNode` interface
   the associated `web.audio.BaseAudioContext`, that is the object
   the processing graph the node is participating in.
@@ -51,21 +53,10 @@
   [this]
   (-> this (.-context)))
 
-(defn set-context!
-  "Property.
-
-  The read-only context property of the `web.audio.AudioNode` interface
-  the associated `web.audio.BaseAudioContext`, that is the object
-  the processing graph the node is participating in.
-
-  `var aContext = anAudioNode.context;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context`"
-  [this val]
-  (aset this "context" val))
-
 (defn number-of-inputs
   "Property.
+
+  [Read Only]
 
   The numberOfInputs property of the `web.audio.AudioNode` interface
   the number of inputs feeding the node.
@@ -76,20 +67,10 @@
   [this]
   (-> this (.-numberOfInputs)))
 
-(defn set-number-of-inputs!
-  "Property.
-
-  The numberOfInputs property of the `web.audio.AudioNode` interface
-  the number of inputs feeding the node.
-
-  `var numInputs = audioNode.numberOfInputs;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfInputs`"
-  [this val]
-  (aset this "numberOfInputs" val))
-
 (defn number-of-outputs
   "Property.
+
+  [Read Only]
 
   The numberOfOutputs property of the `web.audio.AudioNode` interface
   the number of outputs coming out of the node.
@@ -99,18 +80,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfOutputs`"
   [this]
   (-> this (.-numberOfOutputs)))
-
-(defn set-number-of-outputs!
-  "Property.
-
-  The numberOfOutputs property of the `web.audio.AudioNode` interface
-  the number of outputs coming out of the node.
-
-  `var numOutputs = audioNode.numberOfOutputs;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfOutputs`"
-  [this val]
-  (aset this "numberOfOutputs" val))
 
 (defn channel-count
   "Property.

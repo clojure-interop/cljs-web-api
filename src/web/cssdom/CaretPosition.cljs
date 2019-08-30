@@ -4,11 +4,6 @@
   `document.caretPositionFromPoint` method."
   (:refer-clojure :exclude []))
 
-(defn get-client-rect
-  "Method."
-  [this & args]
-  (-> this .-getClientRect (.apply this (clj->js args))))
-
 (defn offset-node
   "Property.
 

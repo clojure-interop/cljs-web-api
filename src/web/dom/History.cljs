@@ -64,6 +64,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The History.length read-only property returns an Integer representing
   number of elements in the session history, including the currently
   page. For example, for a page loaded in a new tab this property

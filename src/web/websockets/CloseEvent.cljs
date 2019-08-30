@@ -4,16 +4,10 @@
   onclose attribute."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The CloseEvent() constructor creates a new `web.websockets.CloseEvent`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/CloseEvent`"
-  js/CloseEvent)
-
 (defn init-close-event
   "Method.
+
+  [Deprecated]
 
   The CloseEvent.initCloseEvent() method initializes the value
   a close event once it's been created (normally using the `Document.createEvent()`

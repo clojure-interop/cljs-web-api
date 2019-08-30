@@ -6,17 +6,6 @@
   to \\\"multipart/form-data\\\"."
   (:refer-clojure :exclude [get keys set]))
 
-(def constructor
-  "Constructor.
-
-  The FormData() constructor creates a new `web.FormData` object.
-
-  form Optional
-  An HTML `<form>` element — when specified, the `web.FormData` object will be populated with the form's current keys/values using the name property of each element for the keys and their submitted value for the values. It will also encode file input content.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData`"
-  js/FormData)
-
 (defn append
   "Method.
 

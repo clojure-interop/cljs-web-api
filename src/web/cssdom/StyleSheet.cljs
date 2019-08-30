@@ -31,6 +31,8 @@
 (defn href
   "Property.
 
+  [Read Only]
+
   The href property of the `web.cssdom.StyleSheet` interface returns
   location of the style sheet.
 
@@ -40,20 +42,10 @@
   [this]
   (-> this (.-href)))
 
-(defn set-href!
-  "Property.
-
-  The href property of the `web.cssdom.StyleSheet` interface returns
-  location of the style sheet.
-
-  `uri = stylesheet.href`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/href`"
-  [this val]
-  (aset this "href" val))
-
 (defn media
   "Property.
+
+  [Read Only]
 
   The media property of the `web.cssdom.StyleSheet` interface specifies
   intended destination media for style information. It is a read-only,
@@ -64,20 +56,10 @@
   [this]
   (-> this (.-media)))
 
-(defn set-media!
-  "Property.
-
-  The media property of the `web.cssdom.StyleSheet` interface specifies
-  intended destination media for style information. It is a read-only,
-  MediaList object and can be removed with deleteMedium() and added
-  appendMedium().
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/media`"
-  [this val]
-  (aset this "media" val))
-
 (defn owner-node
   "Property.
+
+  [Read Only]
 
   The ownerNode property of the `web.cssdom.StyleSheet` interface
   the node that associates this style sheet with the document.
@@ -88,20 +70,10 @@
   [this]
   (-> this (.-ownerNode)))
 
-(defn set-owner-node!
-  "Property.
-
-  The ownerNode property of the `web.cssdom.StyleSheet` interface
-  the node that associates this style sheet with the document.
-
-  `objRef = stylesheet.ownerNode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/ownerNode`"
-  [this val]
-  (aset this "ownerNode" val))
-
 (defn parent-style-sheet
   "Property.
+
+  [Read Only]
 
   The parentStyleSheet property of the `web.cssdom.StyleSheet`
   returns the style sheet, if any, that is including the given
@@ -113,21 +85,10 @@
   [this]
   (-> this (.-parentStyleSheet)))
 
-(defn set-parent-style-sheet!
-  "Property.
-
-  The parentStyleSheet property of the `web.cssdom.StyleSheet`
-  returns the style sheet, if any, that is including the given
-  sheet.
-
-  `objRef = stylesheet.parentStyleSheet`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/parentStyleSheet`"
-  [this val]
-  (aset this "parentStyleSheet" val))
-
 (defn title
   "Property.
+
+  [Read Only]
 
   The title property of the `web.cssdom.StyleSheet` interface returns
   advisory title of the current style sheet.
@@ -136,18 +97,10 @@
   [this]
   (-> this (.-title)))
 
-(defn set-title!
-  "Property.
-
-  The title property of the `web.cssdom.StyleSheet` interface returns
-  advisory title of the current style sheet.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/title`"
-  [this val]
-  (aset this "title" val))
-
 (defn type
   "Property.
+
+  [Read Only]
 
   The type property of the `web.cssdom.StyleSheet` interface specifies
   style sheet language for the given style sheet.
@@ -157,16 +110,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/type`"
   [this]
   (-> this (.-type)))
-
-(defn set-type!
-  "Property.
-
-  The type property of the `web.cssdom.StyleSheet` interface specifies
-  style sheet language for the given style sheet.
-
-  `string = stylesheet.type`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/type`"
-  [this val]
-  (aset this "type" val))
 

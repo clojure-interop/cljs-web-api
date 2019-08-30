@@ -6,6 +6,8 @@
 (defn to-json
   "Method.
 
+  [Experimental]
+
   The toJSON() property of the `web.payments.PaymentAddress` interface
   a standard serializer that returns a JSON representation of the
   object's properties.
@@ -18,6 +20,8 @@
 
 (defn address-line
   "Property.
+
+  [Read Only]
 
   The addressLine read-only property of the `web.payments.PaymentAddress`
   is an array of `web.dom.DOMString` objects, each specifying a
@@ -33,6 +37,8 @@
 (defn country
   "Property.
 
+  [Read Only]
+
   The country read-only property of the `web.payments.PaymentAddress`
   is a string identifying the address's country using the ISO 3166-1
   standard. The string is always in its canonical upper-case form.
@@ -43,21 +49,10 @@
   [this]
   (-> this (.-country)))
 
-(defn set-country!
-  "Property.
-
-  The country read-only property of the `web.payments.PaymentAddress`
-  is a string identifying the address's country using the ISO 3166-1
-  standard. The string is always in its canonical upper-case form.
-
-  `var paymentCountry = PaymentAddress.country;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/country`"
-  [this val]
-  (aset this "country" val))
-
 (defn city
   "Property.
+
+  [Read Only]
 
   The city read-only property of the `web.payments.PaymentAddress`
   returns a string containing the city or town portion of the address.
@@ -71,6 +66,8 @@
 (defn dependent-locality
   "Property.
 
+  [Read Only]
+
   The read-only dependentLocality property of the `web.payments.PaymentAddress`
   is a string containing a sublocality designation within a city,
   as a neighborhood, borough, district, or, in the United Kingdom,
@@ -82,22 +79,10 @@
   [this]
   (-> this (.-dependentLocality)))
 
-(defn set-dependent-locality!
-  "Property.
-
-  The read-only dependentLocality property of the `web.payments.PaymentAddress`
-  is a string containing a sublocality designation within a city,
-  as a neighborhood, borough, district, or, in the United Kingdom,
-  dependent locality. Also known as a post town.
-
-  `var paymentDependentLocality = PaymentAddress.dependentLocality;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/dependentLocality`"
-  [this val]
-  (aset this "dependentLocality" val))
-
 (defn organization
   "Property.
+
+  [Read Only]
 
   The organization read-only property of the `web.payments.PaymentAddress`
   returns a string containing the name of the organization, firm,
@@ -112,6 +97,8 @@
 (defn phone
   "Property.
 
+  [Read Only]
+
   The read-only phone property of the `web.payments.PaymentAddress`
   returns a string containing the telephone number of the recipient
   contact person.
@@ -124,6 +111,8 @@
 
 (defn postal-code
   "Property.
+
+  [Read Only]
 
   The postalCode read-only property of the `web.payments.PaymentAddress`
   returns a string containing a code used by a jurisdiction for
@@ -139,6 +128,8 @@
 (defn recipient
   "Property.
 
+  [Read Only]
+
   The read-only recipient property of the `web.payments.PaymentAddress`
   returns a string containing the name of the recipient, purchaser,
   contact person at the payment address.
@@ -149,21 +140,10 @@
   [this]
   (-> this (.-recipient)))
 
-(defn set-recipient!
-  "Property.
-
-  The read-only recipient property of the `web.payments.PaymentAddress`
-  returns a string containing the name of the recipient, purchaser,
-  contact person at the payment address.
-
-  `var paymentRecipient = PaymentAddress.recipient;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/recipient`"
-  [this val]
-  (aset this "recipient" val))
-
 (defn region
   "Property.
+
+  [Read Only]
 
   The read-only region property of the `web.payments.PaymentAddress`
   returns a string containing the top-level administrative subdivision
@@ -179,6 +159,8 @@
 (defn region-code
   "Property.
 
+  [Read Only]
+
   The regionCode read-only attribute of the `web.payments.PaymentAddress`
   returns a one-, two-, or three-alphanumeric code (`web.dom.DOMString`)
   the region of the address (e.g., \\\"CA\\\" for California, or \\\"11\\\"
@@ -193,6 +175,8 @@
 (defn sorting-code
   "Property.
 
+  [Read Only]
+
   The sortingCode read-only property of the `web.payments.PaymentAddress`
   returns a string containing a postal sorting code such as is
   in France.
@@ -206,6 +190,9 @@
 (defn language-code
   "Property.
 
+  [Read Only]
+  [Deprecated]
+
   The languageCode read-only property of the `web.payments.PaymentAddress`
   returns a string containing the BCP-47 language code for the
 
@@ -214,16 +201,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
   [this]
   (-> this (.-languageCode)))
-
-(defn set-language-code!
-  "Property.
-
-  The languageCode read-only property of the `web.payments.PaymentAddress`
-  returns a string containing the BCP-47 language code for the
-
-  `var paymentLanguageCode = PaymentAddress.languageCode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/languageCode`"
-  [this val]
-  (aset this "languageCode" val))
 

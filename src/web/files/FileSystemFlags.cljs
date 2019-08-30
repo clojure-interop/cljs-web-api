@@ -9,6 +9,9 @@
 (defn create
   "Property.
 
+  [Non Standard]
+  [Experimental]
+
   The create property on the `web.files.FileSystemFlags` dictionary
   used to indicate whether or not the file should be created if
   missing. FileSystemFlags is only used when calling `FileSystemDirectoryEntry.getFile()`
@@ -22,6 +25,9 @@
 
 (defn set-create!
   "Property.
+
+  [Non Standard]
+  [Experimental]
 
   The create property on the `web.files.FileSystemFlags` dictionary
   used to indicate whether or not the file should be created if
@@ -37,6 +43,9 @@
 (defn exclusive
   "Property.
 
+  [Non Standard]
+  [Experimental]
+
   The exclusive property on the `web.files.FileSystemFlags` dictionary
   used in tandem with the create property to determine whether
   not it's acceptable to require that the file not already exist
@@ -51,6 +60,9 @@
 
 (defn set-exclusive!
   "Property.
+
+  [Non Standard]
+  [Experimental]
 
   The exclusive property on the `web.files.FileSystemFlags` dictionary
   used in tandem with the create property to determine whether

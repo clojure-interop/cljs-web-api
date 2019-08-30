@@ -7,6 +7,8 @@
 (defn caret-position-from-point
   "Method.
 
+  [Experimental]
+
   The caretPositionFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.CaretPosition` object, containing the DOM
   along with the caret and caret's character offset within that
@@ -33,6 +35,8 @@
 (defn elements-from-point
   "Method.
 
+  [Experimental]
+
   The elementsFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns an array of all elements at the specified coordinates
   to the viewport).
@@ -45,6 +49,8 @@
 
 (defn get-selection
   "Method.
+
+  [Experimental]
 
   The getSelection() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.other.Selection` object representing the range
@@ -59,6 +65,8 @@
 (defn node-from-point
   "Method.
 
+  [Non Standard]
+
   The nodeFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns the topmost node at the specified coordinates (relative
   the viewport).
@@ -71,6 +79,8 @@
 
 (defn nodes-from-point
   "Method.
+
+  [Non Standard]
 
   The nodesFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns an array of all nodes at the specified coordinates (relative
@@ -85,6 +95,8 @@
 (defn ms-elements-from-rect
   "Method.
 
+  [Non Standard]
+
   The msElementsFromRect method returns the node list of elements
   are under a rectangle defined by left, top, width, and height.
 
@@ -97,6 +109,8 @@
 (defn active-element
   "Property.
 
+  [Read Only]
+
   The activeElement read-only property of the `web.Document` and
   interfaces returns the `web.Element` within the DOM or shadow
   tree that currently has focus.
@@ -107,21 +121,10 @@
   [this]
   (-> this (.-activeElement)))
 
-(defn set-active-element!
-  "Property.
-
-  The activeElement read-only property of the `web.Document` and
-  interfaces returns the `web.Element` within the DOM or shadow
-  tree that currently has focus.
-
-  `var element = DocumentOrShadowRoot.activeElement`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
-  [this val]
-  (aset this "activeElement" val))
-
 (defn fullscreen-element
   "Property.
+
+  [Read Only]
 
   The DocumentOrShadowRoot.fullscreenElement read-only property
   the `web.Element` that is currently being presented in full-screen
@@ -137,6 +140,8 @@
 (defn pointer-lock-element
   "Property.
 
+  [Read Only]
+
   The pointerLockElement property of the `web.Document` and `web.shadow-dom.ShadowRoot`
   provides the element set as the target for mouse events while
   pointer is locked. It is null if lock is pending, pointer is
@@ -148,22 +153,11 @@
   [this]
   (-> this (.-pointerLockElement)))
 
-(defn set-pointer-lock-element!
-  "Property.
-
-  The pointerLockElement property of the `web.Document` and `web.shadow-dom.ShadowRoot`
-  provides the element set as the target for mouse events while
-  pointer is locked. It is null if lock is pending, pointer is
-  or the target is in another document.
-
-  `var element = document.pointerLockElement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/pointerLockElement`"
-  [this val]
-  (aset this "pointerLockElement" val))
-
 (defn style-sheets
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
@@ -172,15 +166,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
   [this]
   (-> this (.-styleSheets)))
-
-(defn set-style-sheets!
-  "Property.
-
-  The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
-  returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
-  for stylesheets explicitly linked into or embedded in a document.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
-  [this val]
-  (aset this "styleSheets" val))
 

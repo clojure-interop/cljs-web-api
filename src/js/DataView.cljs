@@ -247,6 +247,8 @@
 (defn buffer
   "Property.
 
+  [Read Only]
+
   The buffer accessor property represents the `js.ArrayBuffer`
   `js.SharedArrayBuffer` referenced by the DataView at construction
 
@@ -256,20 +258,10 @@
   [this]
   (-> this (.-buffer)))
 
-(defn set-buffer!
-  "Property.
-
-  The buffer accessor property represents the `js.ArrayBuffer`
-  `js.SharedArrayBuffer` referenced by the DataView at construction
-
-  `dataview.buffer`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/buffer`"
-  [this val]
-  (aset this "buffer" val))
-
 (defn byte-length
   "Property.
+
+  [Read Only]
 
   The byteLength accessor property represents the length (in bytes)
   this view from the start of its `js.ArrayBuffer` or `js.SharedArrayBuffer`.
@@ -280,20 +272,10 @@
   [this]
   (-> this (.-byteLength)))
 
-(defn set-byte-length!
-  "Property.
-
-  The byteLength accessor property represents the length (in bytes)
-  this view from the start of its `js.ArrayBuffer` or `js.SharedArrayBuffer`.
-
-  `dataview.byteLength`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/byteLength`"
-  [this val]
-  (aset this "byteLength" val))
-
 (defn byte-offset
   "Property.
+
+  [Read Only]
 
   The byteOffset accessor property represents the offset (in bytes)
   this view from the start of its `js.ArrayBuffer` or `js.SharedArrayBuffer`.
@@ -303,18 +285,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/byteOffset`"
   [this]
   (-> this (.-byteOffset)))
-
-(defn set-byte-offset!
-  "Property.
-
-  The byteOffset accessor property represents the offset (in bytes)
-  this view from the start of its `js.ArrayBuffer` or `js.SharedArrayBuffer`.
-
-  `dataview.byteOffset`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView/byteOffset`"
-  [this val]
-  (aset this "byteOffset" val))
 
 (defn prototype
   "Property.

@@ -6,6 +6,8 @@
 (defn taint-enabled
   "Method.
 
+  [Deprecated]
+
   The NavigatorID.taintEnabled() method always returns false.
 
   `result = window.navigator.taintEnabled()`
@@ -17,6 +19,8 @@
 (defn app-code-name
   "Property.
 
+  [Read Only]
+
   The value of the NavigatorID.appCodeName property is always \\\"Mozilla\\\",
   any browser. This property is kept only for compatibility purposes.
 
@@ -26,20 +30,10 @@
   [this]
   (-> this (.-appCodeName)))
 
-(defn set-app-code-name!
-  "Property.
-
-  The value of the NavigatorID.appCodeName property is always \\\"Mozilla\\\",
-  any browser. This property is kept only for compatibility purposes.
-
-  `codeName = window.navigator.appCodeName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName`"
-  [this val]
-  (aset this "appCodeName" val))
-
 (defn app-name
   "Property.
+
+  [Read Only]
 
   The value of the NavigatorID.appName property is always \\\"Netscape\\\",
   any browser.
@@ -50,20 +44,10 @@
   [this]
   (-> this (.-appName)))
 
-(defn set-app-name!
-  "Property.
-
-  The value of the NavigatorID.appName property is always \\\"Netscape\\\",
-  any browser.
-
-  `appName = window.navigator.appName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName`"
-  [this val]
-  (aset this "appName" val))
-
 (defn app-version
   "Property.
+
+  [Read Only]
 
   Returns either \\\"4.0\\\" or a string representing version information
   the browser.
@@ -74,20 +58,10 @@
   [this]
   (-> this (.-appVersion)))
 
-(defn set-app-version!
-  "Property.
-
-  Returns either \\\"4.0\\\" or a string representing version information
-  the browser.
-
-  `window.navigator.appVersion`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion`"
-  [this val]
-  (aset this "appVersion" val))
-
 (defn platform
   "Property.
+
+  [Read Only]
 
   Returns a string representing the platform of the browser. The
   allows browsers to always return the empty string, so don't rely
@@ -99,21 +73,10 @@
   [this]
   (-> this (.-platform)))
 
-(defn set-platform!
-  "Property.
-
-  Returns a string representing the platform of the browser. The
-  allows browsers to always return the empty string, so don't rely
-  this property to get a reliable answer.
-
-  `platform = navigator.platform`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform`"
-  [this val]
-  (aset this "platform" val))
-
 (defn product
   "Property.
+
+  [Read Only]
 
   The value of the NavigatorID.product property is always \\\"Gecko\\\",
   any browser.
@@ -124,20 +87,10 @@
   [this]
   (-> this (.-product)))
 
-(defn set-product!
-  "Property.
-
-  The value of the NavigatorID.product property is always \\\"Gecko\\\",
-  any browser.
-
-  `productName = window.navigator.product`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product`"
-  [this val]
-  (aset this "product" val))
-
 (defn user-agent
   "Property.
+
+  [Read Only]
 
   The NavigatorID.userAgent read-only property returns the user
   string for the current browser.

@@ -5,19 +5,10 @@
   the properties and the methods to allow to have modifiable matrices."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOMMatrixReadOnly constructor creates a new `web.dom.DOMMatrixReadOnly` object which represents 4x4 matrices, suitable for 2D and 3D operations.
-
-  init Optional
-  \\tEither a string containing a sequence of numbers or an array of integers specifying the matrix you want to create.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly`"
-  js/DOMMatrixReadOnly)
-
 (defn flip-x
   "Method.
+
+  [Experimental]
 
   The flipX() method of the `web.dom.DOMMatrixReadOnly` interface
   a new matrix being the result of the original matrix flipped
@@ -88,7 +79,7 @@
 (defn scale
   "Method.
 
-
+  [Experimental]
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/scale`"
   [this & args]
@@ -179,6 +170,8 @@
 
 (defn translate
   "Method.
+
+  [Experimental]
 
   The translate() method of the `web.dom.DOMMatrixReadOnly` interface
   a new matrix being the result of the original matrix with a translation

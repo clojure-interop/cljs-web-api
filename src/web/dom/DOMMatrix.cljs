@@ -3,17 +3,6 @@
   and 3D operations including rotation and translation."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOMMatrix constructor creates a new `web.dom.DOMMatrix` object which represents 4x4 matrices, suitable for 2D and 3D operations..
-
-  init Optional
-  A string containing a sequence of numbers or an array of numbers specifying the matrix you want to create, or a CSS transform string.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix`"
-  js/DOMMatrix)
-
 (defn from-matrix
   "Method.
 

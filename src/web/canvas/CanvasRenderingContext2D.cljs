@@ -7,6 +7,8 @@
 (defn add-hit-region
   "Method.
 
+  [Experimental]
+
   The `web.canvas.CanvasRenderingContext2D` method addHitRegion()
   a hit region to the bitmap.
 
@@ -74,6 +76,8 @@
 
 (defn clear-hit-regions
   "Method.
+
+  [Experimental]
 
   The `web.canvas.CanvasRenderingContext2D` method clearHitRegions()
   all hit regions from the canvas.
@@ -216,6 +220,8 @@
 (defn draw-widget-as-on-screen
   "Method.
 
+  [Non Standard]
+
   The non-standard and internal only CanvasRenderingContext2D.drawWidgetAsOnScreen()
   of the Canvas 2D API renders the root widget of a window into
   canvas. Unlike `drawWindow()`, this API uses the operating system
@@ -230,6 +236,8 @@
 
 (defn draw-window
   "Method.
+
+  [Non Standard]
 
   The non-standard and internal only CanvasRenderingContext2D.drawWindow()
   of the Canvas 2D API renders a region of a window into the canvas.
@@ -440,6 +448,8 @@
 (defn remove-hit-region
   "Method.
 
+  [Experimental]
+
   The `web.canvas.CanvasRenderingContext2D` method removeHitRegion()
   a given hit region from the canvas.
 
@@ -451,6 +461,8 @@
 
 (defn reset-transform
   "Method.
+
+  [Experimental]
 
   The CanvasRenderingContext2D.resetTransform() method of the Canvas
   API resets the current transform to the identity matrix.
@@ -515,6 +527,8 @@
 
 (defn scroll-path-into-view
   "Method.
+
+  [Experimental]
 
   The CanvasRenderingContext2D.scrollPathIntoView() method of the
   2D API scrolls the current or given path into view. It is similar
@@ -636,6 +650,8 @@
 (defn canvas
   "Property.
 
+  [Read Only]
+
   The CanvasRenderingContext2D.canvas property, part of the Canvas
   is a read-only reference to the `web.canvas.HTMLCanvasElement`
   that is associated with a given context. It might be `js.null`
@@ -647,22 +663,10 @@
   [this]
   (-> this (.-canvas)))
 
-(defn set-canvas!
-  "Property.
-
-  The CanvasRenderingContext2D.canvas property, part of the Canvas
-  is a read-only reference to the `web.canvas.HTMLCanvasElement`
-  that is associated with a given context. It might be `js.null`
-  there is no associated `<canvas>` element.
-
-  `ctx.canvas;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas`"
-  [this val]
-  (aset this "canvas" val))
-
 (defn current-transform
   "Property.
+
+  [Experimental]
 
   The CanvasRenderingContext2D.currentTransform property of the
   2D API returns or sets a `web.dom.DOMMatrix` (current specification)
@@ -682,6 +686,8 @@
 (defn set-current-transform!
   "Property.
 
+  [Experimental]
+
   The CanvasRenderingContext2D.currentTransform property of the
   2D API returns or sets a `web.dom.DOMMatrix` (current specification)
   `web.deprecated.SVGMatrix` (old specification) object for the
@@ -700,6 +706,8 @@
 (defn direction
   "Property.
 
+  [Experimental]
+
   The CanvasRenderingContext2D.direction property of the Canvas
   API specifies the current text direction used to draw text.
 
@@ -711,6 +719,8 @@
 
 (defn set-direction!
   "Property.
+
+  [Experimental]
 
   The CanvasRenderingContext2D.direction property of the Canvas
   API specifies the current text direction used to draw text.
@@ -754,6 +764,8 @@
 (defn filter
   "Property.
 
+  [Experimental]
+
   The CanvasRenderingContext2D.filter property of the Canvas 2D
   provides filter effects such as blurring and grayscaling. It
   similar to the CSS `filter` property and accepts the same values.
@@ -767,6 +779,8 @@
 
 (defn set-filter!
   "Property.
+
+  [Experimental]
 
   The CanvasRenderingContext2D.filter property of the Canvas 2D
   provides filter effects such as blurring and grayscaling. It
@@ -892,6 +906,8 @@
 (defn image-smoothing-quality
   "Property.
 
+  [Experimental]
+
   The imageSmoothingQuality property of the `web.canvas.CanvasRenderingContext2D`
   part of the Canvas API, lets you set the quality of image smoothing.
 
@@ -903,6 +919,8 @@
 
 (defn set-image-smoothing-quality!
   "Property.
+
+  [Experimental]
 
   The imageSmoothingQuality property of the `web.canvas.CanvasRenderingContext2D`
   part of the Canvas API, lets you set the quality of image smoothing.

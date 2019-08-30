@@ -7,6 +7,9 @@
 (defn state
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The state read-only property of the `web.permissions.PermissionStatus`
   returns the state of a requested permission. This property returns
   of 'granted', 'denied', or 'prompt'.
@@ -16,19 +19,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state`"
   [this]
   (-> this (.-state)))
-
-(defn set-state!
-  "Property.
-
-  The state read-only property of the `web.permissions.PermissionStatus`
-  returns the state of a requested permission. This property returns
-  of 'granted', 'denied', or 'prompt'.
-
-  `var permission = PermissionStatus.state;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state`"
-  [this val]
-  (aset this "state" val))
 
 (defn status
   "Property.
@@ -51,6 +41,8 @@
 (defn onchange
   "Property.
 
+  [Experimental]
+
   The onchange event handler of the `web.permissions.PermissionStatus`
   is called whenever the `PermissionStatus.state` property changes.
 
@@ -63,6 +55,8 @@
 
 (defn set-onchange!
   "Property.
+
+  [Experimental]
 
   The onchange event handler of the `web.permissions.PermissionStatus`
   is called whenever the `PermissionStatus.state` property changes.

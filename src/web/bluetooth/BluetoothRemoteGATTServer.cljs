@@ -6,6 +6,8 @@
 (defn connect
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTServer.connect() method causes the script
   environment to connect to this.device.
 
@@ -19,6 +21,8 @@
 (defn disconnect
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTServer.disconnect() method causes the
   execution environment to disconnect from this.device.
 
@@ -30,6 +34,8 @@
 
 (defn get-primary-service
   "Method.
+
+  [Experimental]
 
   The BluetoothRemoteGATTServer.getPrimaryService() method returns
   promise to the primary `BluetoothGATTService` offered by the
@@ -44,6 +50,8 @@
 (defn get-primary-services
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTServer.getPrimaryServices() method returns
   promise to a list of primary `BluetoothGATTService` objects offered
   the bluetooth device for a specified BluetoothServiceUUID.
@@ -57,6 +65,9 @@
 (defn connected
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The BluetoothRemoteGATTServer.connected read-only property returns
   boolean value that returns true while this script execution environment
   connected to this.device. It can be false while the user agent
@@ -68,22 +79,11 @@
   [this]
   (-> this (.-connected)))
 
-(defn set-connected!
-  "Property.
-
-  The BluetoothRemoteGATTServer.connected read-only property returns
-  boolean value that returns true while this script execution environment
-  connected to this.device. It can be false while the user agent
-  physically connected.
-
-  `var connected = BluetoothRemoteGATTServer.connected`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connected`"
-  [this val]
-  (aset this "connected" val))
-
 (defn device
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothRemoteGATTServer.device read-only property returns
   reference to the `web.bluetooth.BluetoothDevice` running the
@@ -93,16 +93,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device`"
   [this]
   (-> this (.-device)))
-
-(defn set-device!
-  "Property.
-
-  The BluetoothRemoteGATTServer.device read-only property returns
-  reference to the `web.bluetooth.BluetoothDevice` running the
-
-  `var device = BluetoothRemoteGATTServer.device`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device`"
-  [this val]
-  (aset this "device" val))
 

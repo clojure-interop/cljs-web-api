@@ -38,6 +38,8 @@
 (defn focused
   "Property.
 
+  [Read Only]
+
   The focused read-only property of the `web.service-workers.WindowClient`
   is a `js.Boolean` that indicates whether the current client has
 
@@ -47,20 +49,10 @@
   [this]
   (-> this (.-focused)))
 
-(defn set-focused!
-  "Property.
-
-  The focused read-only property of the `web.service-workers.WindowClient`
-  is a `js.Boolean` that indicates whether the current client has
-
-  `myFocused = WindowClient.focused;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/focused`"
-  [this val]
-  (aset this "focused" val))
-
 (defn visibility-state
   "Property.
+
+  [Read Only]
 
   The visibilityState read-only property of the `web.service-workers.WindowClient`
   indicates the visibility of the current client. This value can
@@ -71,17 +63,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState`"
   [this]
   (-> this (.-visibilityState)))
-
-(defn set-visibility-state!
-  "Property.
-
-  The visibilityState read-only property of the `web.service-workers.WindowClient`
-  indicates the visibility of the current client. This value can
-  one of hidden, visible, prerender, or unloaded.
-
-  `myVisState = WindowClient.visibilityState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowClient/visibilityState`"
-  [this val]
-  (aset this "visibilityState" val))
 

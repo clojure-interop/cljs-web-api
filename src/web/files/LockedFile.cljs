@@ -6,6 +6,8 @@
 (defn get-metadata
   "Method.
 
+  [Non Standard]
+
   The getMetadata method allows to retrieve some metadata about
   locked file.
 
@@ -17,6 +19,8 @@
 
 (defn read-as-array-buffer
   "Method.
+
+  [Non Standard]
 
   The readAsArrayBuffer method is used to read the content of the
   object and provide the result of that reading as an `js.ArrayBuffer`.
@@ -31,6 +35,8 @@
 (defn read-as-text
   "Method.
 
+  [Non Standard]
+
   The readAsText method is used to read the content of the `web.files.LockedFile`
   and provide the result of that reading as a string. In many ways,
   performs like the `FileReader.readAsText()` method.
@@ -44,6 +50,8 @@
 (defn write
   "Method.
 
+  [Non Standard]
+
   The write method is used to write some data within the file.
 
   `var request = instanceOfLockedFile.write(data);`
@@ -54,6 +62,8 @@
 
 (defn append
   "Method.
+
+  [Non Standard]
 
   The append method is used to write some data at the end of the
 
@@ -66,6 +76,8 @@
 (defn truncate
   "Method.
 
+  [Non Standard]
+
   The truncate method is used to remove some data within the file.
 
   `var request = instanceOfLockedFile.truncate(start);`
@@ -76,6 +88,8 @@
 
 (defn flush
   "Method.
+
+  [Non Standard]
 
   The flush method is used to ensure any change made to a file
   properly written on disk.
@@ -88,6 +102,8 @@
 
 (defn abort
   "Method.
+
+  [Non Standard]
 
   The abort method is used to release the lock on the `web.files.LockedFile`
   making it inactive: its `active` property is set to false and
@@ -102,6 +118,9 @@
 (defn file-handle
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The fileHandle property gives access to the `FileHandle` object
   produced the `web.files.LockedFile` object.
 
@@ -111,20 +130,11 @@
   [this]
   (-> this (.-fileHandle)))
 
-(defn set-file-handle!
-  "Property.
-
-  The fileHandle property gives access to the `FileHandle` object
-  produced the `web.files.LockedFile` object.
-
-  `var handler = instanceOfLockedFile.fileHandle`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/fileHandle`"
-  [this val]
-  (aset this "fileHandle" val))
-
 (defn mode
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The mode property provides the read/write status of the `web.files.LockedFile`
 
@@ -134,19 +144,11 @@
   [this]
   (-> this (.-mode)))
 
-(defn set-mode!
-  "Property.
-
-  The mode property provides the read/write status of the `web.files.LockedFile`
-
-  `var mode = instanceOfLockedFile.mode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/mode`"
-  [this val]
-  (aset this "mode" val))
-
 (defn active
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The active property allows to know if the `web.files.LockedFile`
   is still usable (true) or not (false). If the object is inactive
@@ -160,23 +162,10 @@
   [this]
   (-> this (.-active)))
 
-(defn set-active!
-  "Property.
-
-  The active property allows to know if the `web.files.LockedFile`
-  is still usable (true) or not (false). If the object is inactive
-  it is impossible to perform any read or write operation with
-  Typically, a `web.files.LockedFile` object becomes inactive when
-  `LockedFile.abort()` method is called or if an error occurs.
-
-  `var state = instanceOfLockedFile.active`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/LockedFile/active`"
-  [this val]
-  (aset this "active" val))
-
 (defn location
   "Property.
+
+  [Non Standard]
 
   The location property is a zero-based index representing the
   of the read/write pointer within the file. Its value indicates
@@ -191,6 +180,8 @@
 (defn set-location!
   "Property.
 
+  [Non Standard]
+
   The location property is a zero-based index representing the
   of the read/write pointer within the file. Its value indicates
   which bytes within the file any write or read operation will
@@ -203,6 +194,8 @@
 
 (defn oncomplete
   "Property.
+
+  [Non Standard]
 
   Specifies an event listener to receive complete events. These
   occur each time a read or write operation is successful.
@@ -218,6 +211,8 @@
 (defn set-oncomplete!
   "Property.
 
+  [Non Standard]
+
   Specifies an event listener to receive complete events. These
   occur each time a read or write operation is successful.
 
@@ -231,6 +226,8 @@
 
 (defn onabort
   "Property.
+
+  [Non Standard]
 
   Specifies an event listener to receive abort events. These events
   when the locked file has been aborted with the `LockedFile.abort()`
@@ -246,6 +243,8 @@
 (defn set-onabort!
   "Property.
 
+  [Non Standard]
+
   Specifies an event listener to receive abort events. These events
   when the locked file has been aborted with the `LockedFile.abort()`
 
@@ -260,6 +259,8 @@
 (defn onerror
   "Property.
 
+  [Non Standard]
+
   Specifies an event listener to receive error events. These events
   when something goes wrong.
 
@@ -273,6 +274,8 @@
 
 (defn set-onerror!
   "Property.
+
+  [Non Standard]
 
   Specifies an event listener to receive error events. These events
   when something goes wrong.

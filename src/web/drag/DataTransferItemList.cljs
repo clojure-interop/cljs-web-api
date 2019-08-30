@@ -59,6 +59,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The read-only length property of the `web.drag.DataTransferItemList`
   returns the number of items currently in the drag item list.
 

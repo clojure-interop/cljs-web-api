@@ -7,6 +7,8 @@
 (defn clear
   "Method.
 
+  [Obsolute]
+
   The clear() method used to remove all elements from a WeakMap
   but is no longer part of ECMAScript and its implementations.
 

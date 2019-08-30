@@ -4,19 +4,10 @@
   may be used to establish an `web.audio.RTCPeerConnection`."
   (:refer-clojure :exclude [type]))
 
-(def constructor
-  "Constructor.
-
-  The RTCIceCandidate() constructor creates and returns a new `web.rtc.RTCIceCandidate` object, which can be configured to represent a single ICE candidate.
-
-  candidateInfo Optional
-  An optional `web.rtc.RTCIceCandidateInit` object providing information about the candidate; if this is provided, the candidate is initialized configured to represent the described candidate.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/RTCIceCandidate`"
-  js/RTCIceCandidate)
-
 (defn candidate
   "Property.
+
+  [Read Only]
 
   The read-only property candidate on the `web.rtc.RTCIceCandidate`
   returns a `web.dom.DOMString` describing the candidate in detail.
@@ -29,6 +20,8 @@
 
 (defn component
   "Property.
+
+  [Read Only]
 
   The read-only component property on the `web.rtc.RTCIceCandidate`
   is a string which indicates whether the candidate is an RTP or
@@ -43,6 +36,8 @@
 (defn foundation
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only foundation
   is a string which uniquely identifies the candidate across multiple
 
@@ -54,6 +49,8 @@
 
 (defn ip
   "Property.
+
+  [Read Only]
 
   The `web.rtc.RTCIceCandidate` interface's read-only ip property
   a string providing the address of the device which is the source
@@ -68,6 +65,8 @@
 (defn port
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only port property
   the port number on the device at the address given by `ip` at
   the candidate's peer can be reached.
@@ -80,6 +79,8 @@
 
 (defn priority
   "Property.
+
+  [Read Only]
 
   The `web.rtc.RTCIceCandidate` interface's read-only priority
   specifies the candidate's priority according to the remote peer;
@@ -95,6 +96,8 @@
 (defn protocol
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only protocol
   is a string which indicates whether the candidate uses UDP or
   as its transport protocol.
@@ -108,6 +111,8 @@
 (defn related-address
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only relatedAddress
   is a string indicating the related address of a relay or reflexive
 
@@ -120,6 +125,8 @@
 (defn related-port
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only relatedPort
   indicates the port number of reflexive or relay candidates.
 
@@ -129,20 +136,10 @@
   [this]
   (-> this (.-relatedPort)))
 
-(defn set-related-port!
-  "Property.
-
-  The `web.rtc.RTCIceCandidate` interface's read-only relatedPort
-  indicates the port number of reflexive or relay candidates.
-
-  `var relPort = RTCIceCandidate.relatedPort;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate/relatedPort`"
-  [this val]
-  (aset this "relatedPort" val))
-
 (defn sdp-mid
   "Property.
+
+  [Read Only]
 
   The read-only property sdpMid on the `web.rtc.RTCIceCandidate`
   returns a `web.dom.DOMString` specifying the media stream identification
@@ -157,6 +154,8 @@
 (defn sdp-m-line-index
   "Property.
 
+  [Read Only]
+
   The read-only sdpMLineIndex property on the `web.rtc.RTCIceCandidate`
   is a zero-based index of the m-line describing the media associated
   the candidate.
@@ -169,6 +168,8 @@
 
 (defn tcp-type
   "Property.
+
+  [Read Only]
 
   The `web.rtc.RTCIceCandidate` interface's read-only tcpType property
   included on TCP candidates to provide additional details about
@@ -183,6 +184,8 @@
 (defn type
   "Property.
 
+  [Read Only]
+
   The `web.rtc.RTCIceCandidate` interface's read-only type specifies
   type of candidate the object represents.
 
@@ -194,6 +197,8 @@
 
 (defn username-fragment
   "Property.
+
+  [Read Only]
 
   The read-only usernameFragment property on the `web.rtc.RTCIceCandidate`
   is a string indicating the username fragment (\\\"ufrag\\\") that

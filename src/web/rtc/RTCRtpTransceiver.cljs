@@ -33,6 +33,8 @@
 (defn current-direction
   "Property.
 
+  [Read Only]
+
   The read-only `web.rtc.RTCRtpTransceiver` property currentDirection
   a string which indicates the current directionality of the transceiver.
 
@@ -45,6 +47,8 @@
 (defn direction
   "Property.
 
+  [Read Only]
+
   The read-only `web.rtc.RTCRtpTransceiver` property direction
   a string which indicates the transceiver's preferred directionality.
 
@@ -54,20 +58,10 @@
   [this]
   (-> this (.-direction)))
 
-(defn set-direction!
-  "Property.
-
-  The read-only `web.rtc.RTCRtpTransceiver` property direction
-  a string which indicates the transceiver's preferred directionality.
-
-  `var direction = RTCRtpTransceiver.direction`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/direction`"
-  [this val]
-  (aset this "direction" val))
-
 (defn mid
   "Property.
+
+  [Read Only]
 
   The read-only `web.rtc.RTCRtpTransceiver` interface's mid property
   the negotiated media ID (mid) which the local and remote peers
@@ -83,6 +77,8 @@
 (defn receiver
   "Property.
 
+  [Read Only]
+
   The read-only receiver property of WebRTC's `web.rtc.RTCRtpTransceiver`
   indicates the `web.rtc.RTCRtpReceiver` responsible for receiving
   decoding incoming media data for the transceiver's stream.
@@ -93,21 +89,10 @@
   [this]
   (-> this (.-receiver)))
 
-(defn set-receiver!
-  "Property.
-
-  The read-only receiver property of WebRTC's `web.rtc.RTCRtpTransceiver`
-  indicates the `web.rtc.RTCRtpReceiver` responsible for receiving
-  decoding incoming media data for the transceiver's stream.
-
-  `var rtpReceiver = RTCRtpTransceiver.receiver;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/receiver`"
-  [this val]
-  (aset this "receiver" val))
-
 (defn sender
   "Property.
+
+  [Read Only]
 
   The read-only sender property of WebRTC's `web.rtc.RTCRtpTransceiver`
   indicates the `web.audio.RTCRtpSender` responsible for encoding
@@ -119,21 +104,11 @@
   [this]
   (-> this (.-sender)))
 
-(defn set-sender!
-  "Property.
-
-  The read-only sender property of WebRTC's `web.rtc.RTCRtpTransceiver`
-  indicates the `web.audio.RTCRtpSender` responsible for encoding
-  sending outgoing media data for the transceiver's stream.
-
-  `var rtpSender = RTCRtpTransceiver.sender;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/sender`"
-  [this val]
-  (aset this "sender" val))
-
 (defn stopped
   "Property.
+
+  [Read Only]
+  [Deprecated]
 
   The read-only stopped property on the `web.rtc.RTCRtpTransceiver`
   indicates whether or not the transceiver's associated sender
@@ -144,17 +119,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/stopped`"
   [this]
   (-> this (.-stopped)))
-
-(defn set-stopped!
-  "Property.
-
-  The read-only stopped property on the `web.rtc.RTCRtpTransceiver`
-  indicates whether or not the transceiver's associated sender
-  receiver have both been stopped.
-
-  `var isStopped = RTCRtpTransceiver.stopped;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpTransceiver/stopped`"
-  [this val]
-  (aset this "stopped" val))
 

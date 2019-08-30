@@ -4,23 +4,6 @@
   well as an optional perspective value."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOMPoint() constructor creates and returns a new `web.dom.DOMPoint` object, given the values for some or all of its properties.
-
-  x Optional
-  The x coordinate for the new DOMPoint.
-  y Optional
-  The y coordinate for the new DOMPoint.
-  z Optional
-  The z coordinate for the new DOMPoint.
-  w Optional
-  The perspective value of the new DOMPoint.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint`"
-  js/DOMPoint)
-
 (defn from-point
   "Method.
 
@@ -31,6 +14,8 @@
 
 (defn x
   "Property.
+
+  [Read Only]
 
   The DOMPointReadOnly interface's x property holds the horizontal
   x, for a read-only point in space. This property cannot be changed
@@ -45,6 +30,8 @@
 (defn y
   "Property.
 
+  [Read Only]
+
   The DOMPointReadOnly interface's y property holds the vertical
   y, for a read-only point in space.
 
@@ -57,6 +44,8 @@
 (defn z
   "Property.
 
+  [Read Only]
+
   The DOMPointReadOnly interface's z property holds the depth coordinate,
   for a read-only point in space.
 
@@ -68,6 +57,8 @@
 
 (defn w
   "Property.
+
+  [Read Only]
 
   The DOMPointReadOnly interface's w property holds the point's
   value, w, for a read-only point in space.

@@ -36,6 +36,8 @@
 (defn attestation-object
   "Property.
 
+  [Read Only]
+
   The attestationObject property of the `web.auth.AuthenticatorAttestationResponse`
   returns an `js.ArrayBuffer` containing the new public key, as
   as signature over the entire attestationObject with a private
@@ -46,18 +48,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject`"
   [this]
   (-> this (.-attestationObject)))
-
-(defn set-attestation-object!
-  "Property.
-
-  The attestationObject property of the `web.auth.AuthenticatorAttestationResponse`
-  returns an `js.ArrayBuffer` containing the new public key, as
-  as signature over the entire attestationObject with a private
-  that is stored in the authenticator when it is manufactured.
-
-  `attestObj = authenticatorAttestationResponse.attestationObject`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject`"
-  [this val]
-  (aset this "attestationObject" val))
 

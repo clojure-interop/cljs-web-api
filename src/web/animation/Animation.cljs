@@ -4,21 +4,10 @@
   for an animation node or source."
   (:refer-clojure :exclude [reverse]))
 
-(def constructor
-  "Constructor.
-
-  The Animation() constructor of the Web Animations API returns a new Animation object instance.
-
-  effect Optional
-  The target effect, as an object based on the `AnimationEffectReadOnly` interface, to assign to the animation. Although in the future other effects such as SequenceEffects or GroupEffects might be possible, the only kind of effect currently available is `web.animation.KeyframeEffect`. This can be null (which is the default) to indicate that there should be no effect applied.
-  timeline Optional
-  Specifies the timeline with which to associate the animation, as an object of a type based on the `web.animation.AnimationTimeline` interface. Currently the only timeline type available is `web.animation.DocumentTimeline`, but in the future there my be timelines associated with gestures or scrolling, for example. The default value is `Document.timeline`, but this can be set to null as well.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/Animation`"
-  js/Animation)
-
 (defn cancel
   "Method.
+
+  [Experimental]
 
   The Web Animations API's cancel() method of the `web.animation.Animation`
   clears all `web.animation.KeyframeEffect`s caused by this animation
@@ -33,6 +22,8 @@
 (defn finish
   "Method.
 
+  [Experimental]
+
   The finish() method of the Web Animations API's `web.animation.Animation`
   sets the current playback time to the end of the animation corresponding
   the current playback direction.
@@ -46,6 +37,8 @@
 (defn pause
   "Method.
 
+  [Experimental]
+
   The pause() method of the Web Animations API's `web.animation.Animation`
   suspends playback of the animation.
 
@@ -57,6 +50,8 @@
 
 (defn play
   "Method.
+
+  [Experimental]
 
   The play() method of the Web Animations API's `web.animation.Animation`
   starts or resumes playing of an animation. If the animation is
@@ -70,6 +65,8 @@
 
 (defn reverse
   "Method.
+
+  [Experimental]
 
   The Animation.reverse() method of the `web.animation.Animation`
   reverses the playback direction, meaning the animation ends at
@@ -86,6 +83,8 @@
 (defn update-playback-rate
   "Method.
 
+  [Experimental]
+
   The updatePlaybackRate() method of the Web Animations API's `web.animation.Animation`
   sets the speed of an animation after first synchronizing its
   position.
@@ -98,6 +97,8 @@
 
 (defn current-time
   "Property.
+
+  [Experimental]
 
   The Animation.currentTime property of the Web Animations API
   and sets the current time value of the animation in milliseconds,
@@ -113,6 +114,8 @@
 (defn set-current-time!
   "Property.
 
+  [Experimental]
+
   The Animation.currentTime property of the Web Animations API
   and sets the current time value of the animation in milliseconds,
   running or paused.
@@ -126,6 +129,8 @@
 
 (defn effect
   "Property.
+
+  [Experimental]
 
   The Animation.effect property of the Web Animations API gets
   sets the target effect of an animation. The target effect may
@@ -143,6 +148,8 @@
 (defn set-effect!
   "Property.
 
+  [Experimental]
+
   The Animation.effect property of the Web Animations API gets
   sets the target effect of an animation. The target effect may
   either an effect object of a type based on `AnimationEffectReadOnly`,
@@ -159,6 +166,9 @@
 (defn finished
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The Animation.finished read-only property of the Web Animations
   returns a `js.Promise` which resolves once the animation has
   playing.
@@ -169,21 +179,10 @@
   [this]
   (-> this (.-finished)))
 
-(defn set-finished!
-  "Property.
-
-  The Animation.finished read-only property of the Web Animations
-  returns a `js.Promise` which resolves once the animation has
-  playing.
-
-  `var animationsPromise = Animation.finished;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished`"
-  [this val]
-  (aset this "finished" val))
-
 (defn id
   "Property.
+
+  [Experimental]
 
   The Animation.id property of the Web Animations API returns or
   a string used to identify the animation.
@@ -199,6 +198,8 @@
 (defn set-id!
   "Property.
 
+  [Experimental]
+
   The Animation.id property of the Web Animations API returns or
   a string used to identify the animation.
 
@@ -213,6 +214,9 @@
 (defn pending
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only Animation.pending property of the Web Animations
   indicates whether the animation is currently waiting for an asynchronous
   such as initiating playback or pausing a running animation.
@@ -223,21 +227,11 @@
   [this]
   (-> this (.-pending)))
 
-(defn set-pending!
-  "Property.
-
-  The read-only Animation.pending property of the Web Animations
-  indicates whether the animation is currently waiting for an asynchronous
-  such as initiating playback or pausing a running animation.
-
-  `var pending = Animation.pending;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending`"
-  [this val]
-  (aset this "pending" val))
-
 (defn play-state
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Animation.playState property of the Web Animations API returns
   sets an enumerated value describing the playback state of an
@@ -250,22 +244,10 @@
   [this]
   (-> this (.-playState)))
 
-(defn set-play-state!
-  "Property.
-
-  The Animation.playState property of the Web Animations API returns
-  sets an enumerated value describing the playback state of an
-
-  `var currentPlayState = Animation.playState;
-
-  Animation.playState = newState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState`"
-  [this val]
-  (aset this "playState" val))
-
 (defn playback-rate
   "Property.
+
+  [Experimental]
 
   The Animation.playbackRate property of the Web Animations API
   or sets the playback rate of the animation.
@@ -281,6 +263,8 @@
 (defn set-playback-rate!
   "Property.
 
+  [Experimental]
+
   The Animation.playbackRate property of the Web Animations API
   or sets the playback rate of the animation.
 
@@ -295,6 +279,9 @@
 (defn ready
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only Animation.ready property of the Web Animations
   returns a `js.Promise` which resolves when the animation is ready
   play. A new promise is created every time the animation enters
@@ -307,23 +294,10 @@
   [this]
   (-> this (.-ready)))
 
-(defn set-ready!
-  "Property.
-
-  The read-only Animation.ready property of the Web Animations
-  returns a `js.Promise` which resolves when the animation is ready
-  play. A new promise is created every time the animation enters
-  \\\"pending\\\" play state as well as when the animation is canceled,
-  in both of those scenarios, the animation is ready to be started
-
-  `var readyPromise = Animation.ready;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Animation/ready`"
-  [this val]
-  (aset this "ready" val))
-
 (defn start-time
   "Property.
+
+  [Experimental]
 
   The Animation.startTime property of the `web.animation.Animation`
   is a double-precision floating-point value which indicates the
@@ -340,6 +314,8 @@
 (defn set-start-time!
   "Property.
 
+  [Experimental]
+
   The Animation.startTime property of the `web.animation.Animation`
   is a double-precision floating-point value which indicates the
   time when an animation's playback should begin.
@@ -354,6 +330,8 @@
 
 (defn timeline
   "Property.
+
+  [Experimental]
 
   The Animation.timeline property of the `web.animation.Animation`
   returns or sets the `timeline` associated with this animation.
@@ -372,6 +350,8 @@
 (defn set-timeline!
   "Property.
 
+  [Experimental]
+
   The Animation.timeline property of the `web.animation.Animation`
   returns or sets the `timeline` associated with this animation.
   timeline is a source of time values for synchronization purposes,
@@ -389,6 +369,8 @@
 (defn oncancel
   "Property.
 
+  [Experimental]
+
   The oncancel property of the Web Animations API's `web.animation.Animation`
   is the event handler for the cancel event.
 
@@ -402,6 +384,8 @@
 
 (defn set-oncancel!
   "Property.
+
+  [Experimental]
 
   The oncancel property of the Web Animations API's `web.animation.Animation`
   is the event handler for the cancel event.
@@ -417,6 +401,8 @@
 (defn onfinish
   "Property.
 
+  [Experimental]
+
   The `web.animation.Animation` interface's onfinish property (from
   Web Animations API) is the event handler for the finish event.
   event is sent when the animation finishes playing.
@@ -431,6 +417,8 @@
 
 (defn set-onfinish!
   "Property.
+
+  [Experimental]
 
   The `web.animation.Animation` interface's onfinish property (from
   Web Animations API) is the event handler for the finish event.

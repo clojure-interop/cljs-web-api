@@ -10,6 +10,9 @@
 (defn fires-touch-events
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The InputDeviceCapabilities.firesTouchEvents read-only property
   a `js.Boolean` that indicates whether the device dispatches touch
 
@@ -18,16 +21,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents`"
   [this]
   (-> this (.-firesTouchEvents)))
-
-(defn set-fires-touch-events!
-  "Property.
-
-  The InputDeviceCapabilities.firesTouchEvents read-only property
-  a `js.Boolean` that indicates whether the device dispatches touch
-
-  `var boolean = InputDeviceCapabilities.firesTouchEvents`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents`"
-  [this val]
-  (aset this "firesTouchEvents" val))
 

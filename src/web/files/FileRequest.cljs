@@ -6,6 +6,9 @@
 (defn locked-file
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The lockedFile property represents the `web.files.LockedFile`
   from which the request was started.
 
@@ -15,20 +18,10 @@
   [this]
   (-> this (.-lockedFile)))
 
-(defn set-locked-file!
-  "Property.
-
-  The lockedFile property represents the `web.files.LockedFile`
-  from which the request was started.
-
-  `var lockedFile = instanceOfFileRequest.lockedFile`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileRequest/lockedFile`"
-  [this val]
-  (aset this "lockedFile" val))
-
 (defn onprogress
   "Property.
+
+  [Non Standard]
 
   This property specifies a callback function to be run repeatedly
   the operation represented by a `web.files.FileRequest` object
@@ -52,6 +45,8 @@
 
 (defn set-onprogress!
   "Property.
+
+  [Non Standard]
 
   This property specifies a callback function to be run repeatedly
   the operation represented by a `web.files.FileRequest` object

@@ -19,6 +19,8 @@
 (defn transfer
   "Method.
 
+  [Experimental]
+
   The static ArrayBuffer.transfer() method returns a new ArrayBuffer
   contents have been taken from the oldBuffer's data and then is
   truncated or zero-extended by newByteLength. If newByteLength

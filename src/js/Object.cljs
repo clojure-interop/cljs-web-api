@@ -102,6 +102,8 @@
 (defn get-notifier
   "Method.
 
+  [Obsolute]
+
   The Object.getNotifer() method was used to create an object that
   to synthetically trigger a change, but has been deprecated and
   in browsers.
@@ -236,6 +238,8 @@
 (defn observe
   "Method.
 
+  [Obsolute]
+
   The Object.observe() method was used for asynchronously observing
   changes to an object. It provided a stream of changes in the
   in which they occur. However, this API has been deprecated and
@@ -287,6 +291,8 @@
 (defn lookup-getter
   "Method.
 
+  [Deprecated]
+
   The __lookupGetter__ method returns the function bound as a getter
   the specified property.
 
@@ -299,6 +305,8 @@
 (defn lookup-setter
   "Method.
 
+  [Deprecated]
+
   The __lookupSetter__ method returns the function bound as a setter
   the specified property.
 
@@ -310,6 +318,8 @@
 
 (defn eval
   "Method.
+
+  [Obsolute]
 
   The Object.eval() method used to evaluate a string of JavaScript
   in the context of an object, however, this method has been removed.
@@ -372,6 +382,8 @@
 
 (defn to-source
   "Method.
+
+  [Non Standard]
 
   The toSource() method returns a string representing the source
   of the object.
@@ -457,6 +469,8 @@
 (defn unobserve
   "Method.
 
+  [Obsolute]
+
   The Object.unobserve() method was used to remove observers set
   `Object.observe()`, but has been deprecated and removed from
   You can use the more general `js.Proxy` object instead.
@@ -504,6 +518,9 @@
 (defn count
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The __count__ property used to store the count of enumerable
   on the object, but it has been removed.
 
@@ -516,6 +533,9 @@
 (defn set-count!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The __count__ property used to store the count of enumerable
   on the object, but it has been removed.
 
@@ -527,6 +547,9 @@
 
 (defn no-such-method
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   The __noSuchMethod__ property used to reference a function to
   executed when a non-existent method is called on an object, but
@@ -541,6 +564,9 @@
 (defn set-no-such-method!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The __noSuchMethod__ property used to reference a function to
   executed when a non-existent method is called on an object, but
   function is no longer available.
@@ -554,6 +580,9 @@
 (defn parent
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The __parent__ property used to point to an object's context,
   it has been removed.
 
@@ -566,6 +595,9 @@
 (defn set-parent!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The __parent__ property used to point to an object's context,
   it has been removed.
 
@@ -577,6 +609,8 @@
 
 (defn proto
   "Property.
+
+  [Deprecated]
 
   The __proto__ property of `Object.prototype` is an accessor property
   getter function and a setter function) that exposes the internal
@@ -652,6 +686,8 @@
 
 (defn set-proto!
   "Property.
+
+  [Deprecated]
 
   The __proto__ property of `Object.prototype` is an accessor property
   getter function and a setter function) that exposes the internal

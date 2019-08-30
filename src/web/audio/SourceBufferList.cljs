@@ -6,6 +6,8 @@
 (defn source-buffer
   "Method.
 
+  [Experimental]
+
   The SourceBuffer() getter method of the `web.audio.SourceBufferList`
   allows the SourceBuffer objects in the list to be accessed with
   array operator (i.e. [].)
@@ -19,6 +21,10 @@
 (defn length
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The length read-only property of the `web.audio.SourceBufferList`
   returns the number of `web.audio.SourceBuffer` objects in the
 
@@ -27,18 +33,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBufferList/length`"
   [this]
   (-> this (.-length)))
-
-(defn set-length!
-  "Property.
-
-  The length read-only property of the `web.audio.SourceBufferList`
-  returns the number of `web.audio.SourceBuffer` objects in the
-
-  `var myListLength = SourceBufferList.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBufferList/length`"
-  [this val]
-  (aset this "length" val))
 
 (defn onaddsourcebuffer
   "Property.

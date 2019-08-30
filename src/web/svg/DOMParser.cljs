@@ -3,16 +3,6 @@
   source code from a string into a DOM `web.Document`."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOMParser() constructor creates a new DOMParser object.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/DOMParser`"
-  js/DOMParser)
-
 (defn string
   "Method.
 
@@ -20,9 +10,4 @@
   or svg document."
   [this & args]
   (-> this .-string (.apply this (clj->js args))))
-
-(defn dom-string
-  "Method."
-  [this & args]
-  (-> this .-DOMString (.apply this (clj->js args))))
 

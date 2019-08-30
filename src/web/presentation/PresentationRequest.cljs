@@ -5,19 +5,10 @@
   a controlling user agent."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The PresentationRequest constructor creates a new `web.presentation.PresentationRequest` object which creates a new PresentationRequest.
-
-  url or urls[]
-  A URL or array of URLs that are possible URLs used to create, or reconnect, a presentation for the PresentationRequest instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/PresentationRequest`"
-  js/PresentationRequest)
-
 (defn start
   "Method.
+
+  [Experimental]
 
   The start() property of the `web.presentation.PresentationRequest`
   returns a `js.Promise` that resolves with a `web.presentation.PresentationConnection`

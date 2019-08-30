@@ -34,6 +34,9 @@
 (defn binary-type
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The property binaryType on the `web.rtc.RTCDataChannel` interface
   a `web.dom.DOMString` which specifies the type of JavaScript
   which should be used to represent binary data received on the
@@ -51,6 +54,9 @@
 
 (defn set-binary-type!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The property binaryType on the `web.rtc.RTCDataChannel` interface
   a `web.dom.DOMString` which specifies the type of JavaScript
@@ -70,6 +76,9 @@
 (defn buffered-amount
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only RTCDataChannel property bufferedAmount returns
   number of bytes of data currently queued to be sent over the
   channel.
@@ -82,6 +91,8 @@
 
 (defn buffered-amount-low-threshold
   "Property.
+
+  [Experimental]
 
   The RTCDataChannel property bufferedAmountLowThreshold is used
   specify the number of bytes of buffered outgoing data that is
@@ -98,6 +109,8 @@
 (defn set-buffered-amount-low-threshold!
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel property bufferedAmountLowThreshold is used
   specify the number of bytes of buffered outgoing data that is
   \\\"low.\\\" The default value is 0.
@@ -113,6 +126,9 @@
 (defn id
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only RTCDataChannel property id returns an ID number
   0 and 65,534) which uniquely identifies the `web.rtc.RTCDataChannel`.
 
@@ -124,6 +140,9 @@
 
 (defn label
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only RTCDataChannel property label returns a `web.dom.DOMString`
   a name describing the data channel. These labels are not required
@@ -137,6 +156,9 @@
 
 (defn max-packet-life-time
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only RTCDataChannel property maxPacketLifeTime returns
   amount of time, in milliseconds, the browser is allowed to take
@@ -152,6 +174,9 @@
 (defn max-retransmits
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only RTCDataChannel property maxRetransmits returns
   maximum number of times the browser should try to retransmit
   message before giving up, as set when the data channel was created,
@@ -166,6 +191,8 @@
 (defn negotiated
   "Property.
 
+  [Read Only]
+
   The read-only RTCDataChannel property negotiated indicates whether
   `web.rtc.RTCDataChannel`'s connection was negotiated by the Web
   (true) or by the WebRTC layer (false).
@@ -178,6 +205,9 @@
 
 (defn ordered
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only RTCDataChannel property ordered indicates whether
   not the data channel guarantees in-order delivery of messages;
@@ -194,6 +224,9 @@
 (defn protocol
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only RTCDataChannel property protocol returns a `web.dom.DOMString`
   the name of the subprotocol in use. If no protocol was specified
   the data channel was created, then this property's value is \\\"\\\"
@@ -207,6 +240,9 @@
 
 (defn ready-state
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only RTCDataChannel property readyState returns an enum
   type RTCDataChannelState which indicates the state of the data
@@ -255,6 +291,8 @@
 (defn onbufferedamountlow
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onbufferedamountlow property is an `EventHandler`
   specifies a function the browser calls when the bufferedamountlow
   is sent to the `web.rtc.RTCDataChannel`. This event, which is
@@ -270,6 +308,8 @@
 
 (defn set-onbufferedamountlow!
   "Property.
+
+  [Experimental]
 
   The RTCDataChannel.onbufferedamountlow property is an `EventHandler`
   specifies a function the browser calls when the bufferedamountlow
@@ -287,6 +327,8 @@
 (defn onclose
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onclose property is an `EventHandler` which
   a function to be called by the browser when the close event is
   by the `web.rtc.RTCDataChannel`. This is a simple `web.event.Event`
@@ -300,6 +342,8 @@
 
 (defn set-onclose!
   "Property.
+
+  [Experimental]
 
   The RTCDataChannel.onclose property is an `EventHandler` which
   a function to be called by the browser when the close event is
@@ -315,6 +359,8 @@
 (defn onerror
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onerror property is an `EventHandler` which
   a function to be called when the error event is received. When
   error occurs on the data channel, the function receives as input
@@ -329,6 +375,8 @@
 (defn set-onerror!
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onerror property is an `EventHandler` which
   a function to be called when the error event is received. When
   error occurs on the data channel, the function receives as input
@@ -342,6 +390,8 @@
 
 (defn onmessage
   "Property.
+
+  [Experimental]
 
   The RTCDataChannel.onmessage property stores an `EventHandler`
   specifies a function to be called when the message event is fired
@@ -358,6 +408,8 @@
 (defn set-onmessage!
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onmessage property stores an `EventHandler`
   specifies a function to be called when the message event is fired
   the channel. This event is represented by the `web.workers.MessageEvent`
@@ -373,6 +425,8 @@
 (defn onopen
   "Property.
 
+  [Experimental]
+
   The RTCDataChannel.onopen property is an `EventHandler` which
   a function to be called when the open event is fired; this is
   simple `web.event.Event` which is sent when the data channel's
@@ -387,6 +441,8 @@
 
 (defn set-onopen!
   "Property.
+
+  [Experimental]
 
   The RTCDataChannel.onopen property is an `EventHandler` which
   a function to be called when the open event is fired; this is

@@ -7,6 +7,8 @@
 (defn latitude
   "Property.
 
+  [Read Only]
+
   The Coordinates.latitude read-only property is a double representing
   latitude of the position in decimal degrees.
 
@@ -16,20 +18,10 @@
   [this]
   (-> this (.-latitude)))
 
-(defn set-latitude!
-  "Property.
-
-  The Coordinates.latitude read-only property is a double representing
-  latitude of the position in decimal degrees.
-
-  `lat = coordinates.latitude`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/latitude`"
-  [this val]
-  (aset this "latitude" val))
-
 (defn longitude
   "Property.
+
+  [Read Only]
 
   The `web.geolocation.Coordinates` interface's read-only longitude
   is a double-precision floating point value which represents the
@@ -48,6 +40,8 @@
 (defn altitude
   "Property.
 
+  [Read Only]
+
   The Coordinates.altitude read-only property is a double representing
   altitude of the position in meters, relative to sea level. This
   is null if the implementation cannot provide this data.
@@ -58,21 +52,10 @@
   [this]
   (-> this (.-altitude)))
 
-(defn set-altitude!
-  "Property.
-
-  The Coordinates.altitude read-only property is a double representing
-  altitude of the position in meters, relative to sea level. This
-  is null if the implementation cannot provide this data.
-
-  `alt = coordinates.altitude`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/altitude`"
-  [this val]
-  (aset this "altitude" val))
-
 (defn accuracy
   "Property.
+
+  [Read Only]
 
   The Coordinates.accuracy read-only property is a strictly positive
   representing the accuracy, with a 95% confidence level, of the
@@ -84,21 +67,10 @@
   [this]
   (-> this (.-accuracy)))
 
-(defn set-accuracy!
-  "Property.
-
-  The Coordinates.accuracy read-only property is a strictly positive
-  representing the accuracy, with a 95% confidence level, of the
-  and `Coordinates.longitude` properties expressed in meters.
-
-  `acc = coordinates.accuracy`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/accuracy`"
-  [this val]
-  (aset this "accuracy" val))
-
 (defn altitude-accuracy
   "Property.
+
+  [Read Only]
 
   The Coordinates.altitudeAccuracy read-only property is a strictly
   double representing the accuracy, with a 95% confidence level,
@@ -111,22 +83,10 @@
   [this]
   (-> this (.-altitudeAccuracy)))
 
-(defn set-altitude-accuracy!
-  "Property.
-
-  The Coordinates.altitudeAccuracy read-only property is a strictly
-  double representing the accuracy, with a 95% confidence level,
-  the altitude expressed in meters. This value is null if the implementation
-  support measuring altitude.
-
-  `altAcc = coordinates.altitudeAccuracy`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/altitudeAccuracy`"
-  [this val]
-  (aset this "altitudeAccuracy" val))
-
 (defn heading
   "Property.
+
+  [Read Only]
 
   The Coordinates.heading read-only property is a double representing
   direction in which the device is traveling. This value, specified
@@ -142,25 +102,10 @@
   [this]
   (-> this (.-heading)))
 
-(defn set-heading!
-  "Property.
-
-  The Coordinates.heading read-only property is a double representing
-  direction in which the device is traveling. This value, specified
-  degrees, indicates how far off from heading due north the device
-  Zero degrees represents true true north, and the direction is
-  clockwise (which means that east is 90 degrees and west is 270
-  If `Coordinates.speed` is 0, heading is NaN. If the device is
-  able to provide heading information, this value is null.
-
-  `heading = coordinates.heading`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/heading`"
-  [this val]
-  (aset this "heading" val))
-
 (defn speed
   "Property.
+
+  [Read Only]
 
   The Coordinates.speed read-only property is a double representing
   velocity of the device in meters per second. This value is null
@@ -171,17 +116,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/speed`"
   [this]
   (-> this (.-speed)))
-
-(defn set-speed!
-  "Property.
-
-  The Coordinates.speed read-only property is a double representing
-  velocity of the device in meters per second. This value is null
-  the implementation is not able to measure it.
-
-  `speed = coordinates.speed`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Coordinates/speed`"
-  [this val]
-  (aset this "speed" val))
 

@@ -50,6 +50,8 @@
 (defn id
   "Property.
 
+  [Read Only]
+
   The id read-only property of the `web.auth.PublicKeyCredential`
   is a `web.dom.DOMString`, inherited from `web.credential.Credential`,
   represents the identifier of the current PublicKeyCredential
@@ -60,21 +62,10 @@
   [this]
   (-> this (.-id)))
 
-(defn set-id!
-  "Property.
-
-  The id read-only property of the `web.auth.PublicKeyCredential`
-  is a `web.dom.DOMString`, inherited from `web.credential.Credential`,
-  represents the identifier of the current PublicKeyCredential
-
-  `id = publicKeyCredential.id`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/id`"
-  [this val]
-  (aset this "id" val))
-
 (defn raw-id
   "Property.
+
+  [Read Only]
 
   The rawId read-only property of the `web.auth.PublicKeyCredential`
   is an `js.ArrayBuffer` object containing the identifier of the
@@ -85,20 +76,10 @@
   [this]
   (-> this (.-rawId)))
 
-(defn set-raw-id!
-  "Property.
-
-  The rawId read-only property of the `web.auth.PublicKeyCredential`
-  is an `js.ArrayBuffer` object containing the identifier of the
-
-  `rawId = publicKeyCredential.rawId`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/rawId`"
-  [this val]
-  (aset this "rawId" val))
-
 (defn response
   "Property.
+
+  [Read Only]
 
   The response read-only property of the `web.auth.PublicKeyCredential`
   is an `web.auth.AuthenticatorResponse` object which is sent from
@@ -111,19 +92,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response`"
   [this]
   (-> this (.-response)))
-
-(defn set-response!
-  "Property.
-
-  The response read-only property of the `web.auth.PublicKeyCredential`
-  is an `web.auth.AuthenticatorResponse` object which is sent from
-  authenticator to the user agent for the creation/fetching of
-  The information contained in this response will be used by the
-  party's server to verify the demand is legitimate.
-
-  `response = publicKeyCredential.response`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response`"
-  [this val]
-  (aset this "response" val))
 

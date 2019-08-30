@@ -30,6 +30,8 @@
 (defn add-rule
   "Method.
 
+  [Obsolute]
+
   The obsolete `web.cssdom.CSSStyleSheet` interface's addRule()
   method adds a new rule to the stylesheet. You should avoid using
   method, and should instead use the more standard `insertRule()`
@@ -43,6 +45,8 @@
 (defn remove-rule
   "Method.
 
+  [Obsolute]
+
   The obsolete `web.cssdom.CSSStyleSheet` method removeRule() removes
   rule from the stylesheet object.
 
@@ -54,6 +58,8 @@
 
 (defn css-rules
   "Property.
+
+  [Read Only]
 
   The read-only `web.cssdom.CSSStyleSheet` property cssRules returns
   live `web.cssdom.CSSRuleList` which provides a real-time, up-to-date
@@ -68,6 +74,8 @@
 (defn owner-rule
   "Property.
 
+  [Read Only]
+
   The read-only `web.cssdom.CSSStyleSheet` property ownerRule returns
   `CSSImportRule` corresponding to the `@import` at-rule which
   the stylesheet into the document.
@@ -80,6 +88,9 @@
 
 (defn rules
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   rules is a deprecated legacy property of the `web.cssdom.CSSStyleSheet`
   Functionally identical to the preferred `cssRules` property,

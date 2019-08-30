@@ -5,6 +5,8 @@
 (def addstream
   "Event.
 
+  [Obsolute]
+
   The obsolete addstream event is sent to an `web.audio.RTCPeerConnection`
   new media, in the form of a `web.streams.MediaStream` object,
   been added to it.
@@ -15,6 +17,8 @@
 
 (def identityresult
   "Event.
+
+  [Obsolute]
 
   An identityresult event is sent to an `web.audio.RTCPeerConnection`
   `onidentityresult` event handler to inform it that an assertion
@@ -37,6 +41,8 @@
 
 (def removestream
   "Event.
+
+  [Deprecated]
 
   The obsolete removestream event was sent to an `web.audio.RTCPeerConnection`
   inform it that a `web.streams.MediaStream` had been removed from

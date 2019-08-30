@@ -7,6 +7,8 @@
 (defn item
   "Method.
 
+  [Experimental]
+
   The item getter of the `web.speech.SpeechRecognitionResultList`
   is a standard getter — it allows `web.speech.SpeechRecognitionResult`
   in the list to be accessed via array syntax.
@@ -20,6 +22,9 @@
 (defn length
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The length read-only property of the `web.speech.SpeechRecognitionResultList`
   returns the length of the \\\"array\\\" — the number of `web.speech.SpeechRecognitionResult`
   in the list.
@@ -29,17 +34,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResultList/length`"
   [this]
   (-> this (.-length)))
-
-(defn set-length!
-  "Property.
-
-  The length read-only property of the `web.speech.SpeechRecognitionResultList`
-  returns the length of the \\\"array\\\" — the number of `web.speech.SpeechRecognitionResult`
-  in the list.
-
-  `var myLength = speechRecognitionResultListInstance.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResultList/length`"
-  [this val]
-  (aset this "length" val))
 

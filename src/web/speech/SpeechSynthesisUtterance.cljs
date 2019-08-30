@@ -5,19 +5,10 @@
   volume.)"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The SpeechSynthesisUtterance() constructor of the `web.speech.SpeechSynthesisUtterance` interface returns a new SpeechSynthesisUtterance object instance.
-
-  text
-  A `web.dom.DOMString` containing the text that will be synthesised when the utterance is spoken..
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/SpeechSynthesisUtterance`"
-  js/SpeechSynthesisUtterance)
-
 (defn lang
   "Property.
+
+  [Experimental]
 
   The lang property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the language of the utterance.
@@ -32,6 +23,8 @@
 (defn set-lang!
   "Property.
 
+  [Experimental]
+
   The lang property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the language of the utterance.
 
@@ -44,6 +37,8 @@
 
 (defn pitch
   "Property.
+
+  [Experimental]
 
   The pitch property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the pitch at which the utterance will be spoken
@@ -58,6 +53,8 @@
 (defn set-pitch!
   "Property.
 
+  [Experimental]
+
   The pitch property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the pitch at which the utterance will be spoken
 
@@ -70,6 +67,8 @@
 
 (defn rate
   "Property.
+
+  [Experimental]
 
   The rate property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the speed at which the utterance will be spoken
@@ -84,6 +83,8 @@
 (defn set-rate!
   "Property.
 
+  [Experimental]
+
   The rate property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the speed at which the utterance will be spoken
 
@@ -96,6 +97,8 @@
 
 (defn text
   "Property.
+
+  [Experimental]
 
   The text property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the text that will be synthesised when the utterance
@@ -111,6 +114,8 @@
 (defn set-text!
   "Property.
 
+  [Experimental]
+
   The text property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the text that will be synthesised when the utterance
   spoken.
@@ -125,6 +130,8 @@
 (defn voice
   "Property.
 
+  [Experimental]
+
   The voice property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the voice that will be used to speak the utterance.
 
@@ -137,6 +144,8 @@
 
 (defn set-voice!
   "Property.
+
+  [Experimental]
 
   The voice property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the voice that will be used to speak the utterance.
@@ -151,6 +160,8 @@
 (defn volume
   "Property.
 
+  [Experimental]
+
   The volume property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the volume that the utterance will be spoken at.
 
@@ -163,6 +174,8 @@
 
 (defn set-volume!
   "Property.
+
+  [Experimental]
 
   The volume property of the `web.speech.SpeechSynthesisUtterance`
   gets and sets the volume that the utterance will be spoken at.
@@ -177,6 +190,8 @@
 (defn onboundary
   "Property.
 
+  [Experimental]
+
   The onboundary property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the spoken utterance
   a word or sentence boundary (when the boundary event fires.)
@@ -189,6 +204,8 @@
 
 (defn set-onboundary!
   "Property.
+
+  [Experimental]
 
   The onboundary property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the spoken utterance
@@ -203,6 +220,8 @@
 (defn onend
   "Property.
 
+  [Experimental]
+
   The onend property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance
   finished being spoken (when the end event fires.)
@@ -216,6 +235,8 @@
 (defn set-onend!
   "Property.
 
+  [Experimental]
+
   The onend property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance
   finished being spoken (when the end event fires.)
@@ -228,6 +249,8 @@
 
 (defn onerror
   "Property.
+
+  [Experimental]
 
   The onerror property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when an error occurs
@@ -243,6 +266,8 @@
 (defn set-onerror!
   "Property.
 
+  [Experimental]
+
   The onerror property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when an error occurs
   prevents the utterance from being succesfully spoken (when the
@@ -257,6 +282,8 @@
 (defn onmark
   "Property.
 
+  [Experimental]
+
   The onmark property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the spoken utterance
   a named SSML mark tag (when the mark event fires.)
@@ -269,6 +296,8 @@
 
 (defn set-onmark!
   "Property.
+
+  [Experimental]
 
   The onmark property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the spoken utterance
@@ -283,6 +312,8 @@
 (defn onpause
   "Property.
 
+  [Experimental]
+
   The onpause property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance
   paused part way through (when the pause event fires.)
@@ -295,6 +326,8 @@
 
 (defn set-onpause!
   "Property.
+
+  [Experimental]
 
   The onpause property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance
@@ -309,6 +342,8 @@
 (defn onresume
   "Property.
 
+  [Experimental]
+
   The onresume property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when a paused utterance
   resumed (when the resume event fires.)
@@ -321,6 +356,8 @@
 
 (defn set-onresume!
   "Property.
+
+  [Experimental]
 
   The onresume property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when a paused utterance
@@ -335,6 +372,8 @@
 (defn onstart
   "Property.
 
+  [Experimental]
+
   The onstart property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance
   begun to be spoken (when the start event fires.)
@@ -347,6 +386,8 @@
 
 (defn set-onstart!
   "Property.
+
+  [Experimental]
 
   The onstart property of the `web.speech.SpeechSynthesisUtterance`
   represents an event handler that will run when the utterance

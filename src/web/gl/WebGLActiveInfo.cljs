@@ -7,6 +7,8 @@
 (defn name
   "Property.
 
+  [Read Only]
+
   The read-only WebGLActiveInfo.name property represents the name
   the requested data returned by calling the `getActiveAttrib()`
   `getActiveUniform()` methods.
@@ -15,19 +17,10 @@
   [this]
   (-> this (.-name)))
 
-(defn set-name!
-  "Property.
-
-  The read-only WebGLActiveInfo.name property represents the name
-  the requested data returned by calling the `getActiveAttrib()`
-  `getActiveUniform()` methods.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn size
   "Property.
+
+  [Read Only]
 
   The read-only WebGLActiveInfo.size property is a `js.Number`
   the size of the requested data returned by calling the `getActiveAttrib()`
@@ -37,19 +30,10 @@
   [this]
   (-> this (.-size)))
 
-(defn set-size!
-  "Property.
-
-  The read-only WebGLActiveInfo.size property is a `js.Number`
-  the size of the requested data returned by calling the `getActiveAttrib()`
-  `getActiveUniform()` methods.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/size`"
-  [this val]
-  (aset this "size" val))
-
 (defn type
   "Property.
+
+  [Read Only]
 
   The read-only WebGLActiveInfo.type property represents the type
   the requested data returned by calling the `getActiveAttrib()`
@@ -58,15 +42,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/type`"
   [this]
   (-> this (.-type)))
-
-(defn set-type!
-  "Property.
-
-  The read-only WebGLActiveInfo.type property represents the type
-  the requested data returned by calling the `getActiveAttrib()`
-  `getActiveUniform()` methods.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo/type`"
-  [this val]
-  (aset this "type" val))
 

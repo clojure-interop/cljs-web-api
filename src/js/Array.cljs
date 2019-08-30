@@ -42,6 +42,8 @@
 (defn observe
   "Method.
 
+  [Obsolute]
+
   The Array.observe() method was used for asynchronously observing
   to Arrays, similar to `Object.observe()` for objects. It provided
   stream of changes in order of occurrence. It's equivalent to
@@ -413,6 +415,8 @@
 (defn to-source
   "Method.
 
+  [Non Standard]
+
   The toSource() method returns a string representing the source
   of the array.
 
@@ -460,6 +464,8 @@
 
 (defn unobserve
   "Method.
+
+  [Obsolute]
 
   The Array.unobserve() method was used to remove observers set
   `Array.observe()`, but has been deprecated and removed from Browsers.

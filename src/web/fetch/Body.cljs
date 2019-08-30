@@ -83,6 +83,9 @@
 (defn body
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The body read-only property of the `web.fetch.Body` mixin is
   simple getter used to expose a `web.files.ReadableStream` of
   body contents.
@@ -93,21 +96,10 @@
   [this]
   (-> this (.-body)))
 
-(defn set-body!
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this val]
-  (aset this "body" val))
-
 (defn body-used
   "Property.
+
+  [Read Only]
 
   The bodyUsed read-only property of the `web.fetch.Body` mixin
   a `js.Boolean` that indicates whether the body has been read
@@ -117,16 +109,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
   [this]
   (-> this (.-bodyUsed)))
-
-(defn set-body-used!
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this val]
-  (aset this "bodyUsed" val))
 

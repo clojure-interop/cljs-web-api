@@ -7,6 +7,8 @@
 (defn prompt
   "Method.
 
+  [Experimental]
+
   The prompt() method of the `web.event.BeforeInstallPromptEvent`
   allows a developer to show the install prompt at a time of their
   choosing.

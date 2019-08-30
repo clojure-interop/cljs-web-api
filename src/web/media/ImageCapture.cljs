@@ -5,19 +5,10 @@
   from a photographic device referenced through a valid `web.audio.MediaStreamTrack`."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ImageCapture() constructor creates a new `web.media.ImageCapture` object which creates a new `web.media.ImageCapture` object.
-
-  videoTrack
-  A `web.audio.MediaStreamTrack` from which the still images will be taken. This can be any source, such as an incoming stream of a video conference, a playing movie, or the stream from a webcam.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/ImageCapture`"
-  js/ImageCapture)
-
 (defn take-photo
   "Method.
+
+  [Experimental]
 
   The takePhoto() method of the `web.media.ImageCapture` interface
   a single exposure using the video capture device sourcing a `web.audio.MediaStreamTrack`
@@ -33,6 +24,8 @@
 (defn get-photo-capabilities
   "Method.
 
+  [Experimental]
+
   The getPhotoCapabilities() method of the `web.media.ImageCapture`
   returns a `js.Promise` that resolves with a `web.media.PhotoCapabilities`
   containing the ranges of available configuration options.
@@ -45,6 +38,8 @@
 
 (defn get-photo-settings
   "Method.
+
+  [Experimental]
 
   The getPhotoSettings() property of the `web.media.ImageCapture`
   returns a `js.Promise` that resolves with a `PhotoSettings` object
@@ -59,6 +54,8 @@
 (defn grab-frame
   "Method.
 
+  [Experimental]
+
   The grabFrame() property of the `web.media.ImageCapture` interface
   a snapshot of the live video in a `web.audio.MediaStreamTrack`,
   an ImageBitmap, if successful.
@@ -72,6 +69,9 @@
 (defn track
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The track read-only property of the `web.media.ImageCapture`
   returns a reference to the `web.audio.MediaStreamTrack` passed
   the `ImageCapture()` constructor.
@@ -81,17 +81,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/track`"
   [this]
   (-> this (.-track)))
-
-(defn set-track!
-  "Property.
-
-  The track read-only property of the `web.media.ImageCapture`
-  returns a reference to the `web.audio.MediaStreamTrack` passed
-  the `ImageCapture()` constructor.
-
-  `var mediaStreamTrack = ImageCapture.track`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/track`"
-  [this val]
-  (aset this "track" val))
 

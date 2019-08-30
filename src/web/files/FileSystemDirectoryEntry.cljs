@@ -8,6 +8,9 @@
 (defn create-reader
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemDirectoryEntry` interface's method createReader()
   a `web.files.FileSystemDirectoryReader` object which can be used
   read the entries in the directory.
@@ -20,6 +23,9 @@
 
 (defn get-directory
   "Method.
+
+  [Non Standard]
+  [Experimental]
 
   The `web.files.FileSystemDirectoryEntry` interface's method getDirectory()
   a `web.files.FileSystemDirectoryEntry` object corresponding to
@@ -35,6 +41,9 @@
 (defn get-file
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemDirectoryEntry` interface's method getFile()
   a `web.files.FileSystemFileEntry` object corresponding to a file
   somewhere within the directory subtree rooted at the directory
@@ -48,6 +57,9 @@
 
 (defn remove-recursively
   "Method.
+
+  [Experimental]
+  [Obsolute]
 
   The `web.files.FileSystemDirectoryEntry` interface's method removeRecursively()
   the directory as well as all of its content, hierarchically iterating

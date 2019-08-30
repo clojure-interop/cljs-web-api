@@ -17,6 +17,8 @@
 (defn get-point-at-length
   "Method.
 
+  [Deprecated]
+
   The SVGPathElement.getPointAtLength() method returns the point
   a given distance along the path.
 
@@ -170,6 +172,8 @@
 (defn path-length
   "Property.
 
+  [Deprecated]
+
   The SVGPathElement.pathLength property reflects the pathLength
   and returns the total length of the path, in user units.
 
@@ -181,6 +185,8 @@
 
 (defn set-path-length!
   "Property.
+
+  [Deprecated]
 
   The SVGPathElement.pathLength property reflects the pathLength
   and returns the total length of the path, in user units.

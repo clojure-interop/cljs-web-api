@@ -103,6 +103,8 @@
 (defn primitive-type
   "Property.
 
+  [Read Only]
+
   The primitiveType read-only property of the `web.css.CSSPrimitiveValue`
   represents the type of a CSS value.
 

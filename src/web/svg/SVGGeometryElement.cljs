@@ -63,6 +63,8 @@
 (defn path-length
   "Property.
 
+  [Read Only]
+
   The SVGGeometryElement.pathLength property reflects the pathLength
   and returns the total length of the path, in user units.
 
@@ -71,16 +73,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/pathLength`"
   [this]
   (-> this (.-pathLength)))
-
-(defn set-path-length!
-  "Property.
-
-  The SVGGeometryElement.pathLength property reflects the pathLength
-  and returns the total length of the path, in user units.
-
-  `var pathLength = someElement.pathLength;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/pathLength`"
-  [this val]
-  (aset this "pathLength" val))
 

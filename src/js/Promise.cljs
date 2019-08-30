@@ -1,7 +1,7 @@
 (ns js.Promise
   "The Promise object represents the eventual completion (or failure)
   an asynchronous operation, and its resulting value."
-  (:refer-clojure :exclude [catch finally resolve]))
+  (:refer-clojure :exclude [resolve catch finally]))
 
 (defn all
   "Method.
@@ -9,13 +9,30 @@
   The Promise.all() method returns a single `js.Promise` that resolves
   all of the promises passed as an iterable have resolved or when
   iterable contains no promises. It rejects with the reason of
-  first promise that rejects.
+  first promise that rejects. There is no implied ordering in the
+  of the array of Promises given. On some computers, they may be
+  in parallel, or in some sense concurrently, while on others they
+  be executed serially. For this reason, there must be no dependency
+  any Promise on the order of execution of the Promises.
 
   `Promise.all(iterable);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all`"
   [this iterable]
   (-> this (.all iterable)))
+
+(defn all-settled
+  "Method.
+
+  The Promise.allSettled() method returns a promise that resolves
+  all of the given promises have either resolved or rejected, with
+  array of objects that each describe the outcome of each promise.
+
+  `promise.allSettled(iterable);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled`"
+  [this iterable]
+  (-> this (.allSettled iterable)))
 
 (defn race
   "Method.
@@ -30,25 +47,35 @@
   [this iterable]
   (-> this (.race iterable)))
 
-(defn promise
+(defn reject
   "Method.
 
-  Promise.resolve(value)"
-  [this & args]
-  (-> this .-Promise (.apply this (clj->js args))))
+  The Promise.reject() method returns a Promise object that is
+  with a given reason.
 
-(defn all-settled
+  `Promise.reject(reason);`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject`"
+  [this reason]
+  (-> this (.reject reason)))
+
+(defn resolve
   "Method.
 
-  The Promise.allSettled() method returns a promise that resolves
-  all of the given promises have either resolved or rejected, with
-  array of objects that each describe the outcome of each promise.
+  The Promise.resolve() method returns a `js.Promise` object that
+  resolved with a given value. If the value is a promise, that
+  is returned; if the value is a thenable (i.e. has a `\\\"then\\\"
+  the returned promise will \\\"follow\\\" that thenable, adopting
+  eventual state; otherwise the returned promise will be fulfilled
+  the value. This function flattens nested layers of promise-like
+  (e.g. a promise that resolves to a promise that resolves to something)
+  a single layer.
 
-  `promise.allSettled(iterable);`
+  `Promise.resolve(value);`
 
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled`"
-  [this iterable]
-  (-> this (.allSettled iterable)))
+  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve`"
+  [this value]
+  (-> this (.resolve value)))
 
 (defn catch
   "Method.
@@ -106,36 +133,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then`"
   [this & args]
   (-> this .-then (.apply this (clj->js args))))
-
-(defn reject
-  "Method.
-
-  The Promise.reject() method returns a Promise object that is
-  with a given reason.
-
-  `Promise.reject(reason);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject`"
-  [this reason]
-  (-> this (.reject reason)))
-
-(defn resolve
-  "Method.
-
-  The Promise.resolve() method returns a `js.Promise` object that
-  resolved with a given value. If the value is a promise, that
-  is returned; if the value is a thenable (i.e. has a `\\\"then\\\"
-  the returned promise will \\\"follow\\\" that thenable, adopting
-  eventual state; otherwise the returned promise will be fulfilled
-  the value. This function flattens nested layers of promise-like
-  (e.g. a promise that resolves to a promise that resolves to something)
-  a single layer.
-
-  `Promise.resolve(value);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve`"
-  [this value]
-  (-> this (.resolve value)))
 
 (defn length
   "Property.

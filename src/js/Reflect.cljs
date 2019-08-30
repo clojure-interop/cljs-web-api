@@ -170,6 +170,8 @@
 (defn enumerate
   "Method.
 
+  [Obsolute]
+
   The static Reflect.enumerate() method used to return an iterator
   the enumerable own and inherited properties of the target object,
   has been removed in ECMAScript 2016 and is deprecated in browsers.

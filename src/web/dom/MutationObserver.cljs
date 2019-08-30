@@ -5,17 +5,6 @@
   of the DOM3 Events specification."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOM MutationObserver() constructor — part of the `web.dom.MutationObserver` interface — creates and returns a new observer which invokes a specified callback when DOM events occur.
-
-  callback
-  A function which will be called on each DOM change that qualifies given the targeted node or subtree and options. The callback function takes as input two parameters: an array of `web.dom.MutationRecord` objects describing each change that occurred and the MutationObserver which invoked the callback. See the example below for more details.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/MutationObserver`"
-  js/MutationObserver)
-
 (defn disconnect
   "Method.
 

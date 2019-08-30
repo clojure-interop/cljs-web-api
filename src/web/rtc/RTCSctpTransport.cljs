@@ -42,6 +42,10 @@
 (defn state
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The state read-only property of the `web.rtc.RTCSctpTransport`
   provides information which describes a Stream Control Transmission
   (SCTP) transport state.

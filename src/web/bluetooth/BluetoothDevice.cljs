@@ -21,6 +21,9 @@
 (defn connect-gatt
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   The BluetoothDevice.connectGATT() method returns a `js.Promise`
   resolves to an instance of `BluetoothGATTRemoteServer`.
 
@@ -33,6 +36,9 @@
 (defn id
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The BluetoothDevice.id read-only property returns a `web.dom.DOMString`
   uniquely identifies a device.
 
@@ -42,20 +48,11 @@
   [this]
   (-> this (.-id)))
 
-(defn set-id!
-  "Property.
-
-  The BluetoothDevice.id read-only property returns a `web.dom.DOMString`
-  uniquely identifies a device.
-
-  `var id = instanceOfBluetoothDevice.id`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/id`"
-  [this val]
-  (aset this "id" val))
-
 (defn name
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothDevice.name read-only property returns a `web.dom.DOMString`
   provides a human-readable name for the device.
@@ -66,20 +63,11 @@
   [this]
   (-> this (.-name)))
 
-(defn set-name!
-  "Property.
-
-  The BluetoothDevice.name read-only property returns a `web.dom.DOMString`
-  provides a human-readable name for the device.
-
-  `var name = instanceOfBluetoothDevice.name`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn gatt
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothDevice.gatt read-only property returns a reference
   the device's `web.bluetooth.BluetoothRemoteGATTServer`.
@@ -90,20 +78,11 @@
   [this]
   (-> this (.-gatt)))
 
-(defn set-gatt!
-  "Property.
-
-  The BluetoothDevice.gatt read-only property returns a reference
-  the device's `web.bluetooth.BluetoothRemoteGATTServer`.
-
-  `var gattServer = instanceOfBluetoothDevice.gatt`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/gatt`"
-  [this val]
-  (aset this "gatt" val))
-
 (defn uuids
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothDevice.uuids read-only property lists the UUIDs
   GATT services provided by the device, that the current origin
@@ -114,19 +93,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/uuids`"
   [this]
   (-> this (.-uuids)))
-
-(defn set-uuids!
-  "Property.
-
-  The BluetoothDevice.uuids read-only property lists the UUIDs
-  GATT services provided by the device, that the current origin
-  allowed to access.
-
-  `var uuids[] =​ instanceOfBluetoothDevice.uuids`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/uuids`"
-  [this val]
-  (aset this "uuids" val))
 
 (defn watching-advertisements
   "Property.
@@ -145,6 +111,10 @@
 (defn ad-data
   "Property.
 
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
+
   The BluetoothDevice.adData read-only property returns instance
   `web.bluetooth.BluetoothAdvertisingData` containing the most
   advertising data received for the device.
@@ -155,21 +125,12 @@
   [this]
   (-> this (.-adData)))
 
-(defn set-ad-data!
-  "Property.
-
-  The BluetoothDevice.adData read-only property returns instance
-  `web.bluetooth.BluetoothAdvertisingData` containing the most
-  advertising data received for the device.
-
-  `var instanceOfBluetoothAdData = instanceOfBluetoothDevice.adData`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/adData`"
-  [this val]
-  (aset this "adData" val))
-
 (defn device-class
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.deviceClass read-only property returns a
   representing the Bluetooth devices \\\"Class of Device\\\".
@@ -180,20 +141,12 @@
   [this]
   (-> this (.-deviceClass)))
 
-(defn set-device-class!
-  "Property.
-
-  The BluetoothDevice.deviceClass read-only property returns a
-  representing the Bluetooth devices \\\"Class of Device\\\".
-
-  `var deviceClass = instanceOfBluetoothDevice.deviceClass`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/deviceClass`"
-  [this val]
-  (aset this "deviceClass" val))
-
 (defn vendor-id-source
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.vendorIDSource read-only property returns
   Vendor ID Source field in the pnp_id characteristic in the device_information
@@ -204,20 +157,12 @@
   [this]
   (-> this (.-vendorIDSource)))
 
-(defn set-vendor-id-source!
-  "Property.
-
-  The BluetoothDevice.vendorIDSource read-only property returns
-  Vendor ID Source field in the pnp_id characteristic in the device_information
-
-  `var vendorIDSource = instanceOfBluetoothDevice.vendorIDSource`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/vendorIDSource`"
-  [this val]
-  (aset this "vendorIDSource" val))
-
 (defn vendor-id
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.vendorID read-only property returns the 16-bit
   ID field in the pnp_id characteristic in the device_information
@@ -228,20 +173,12 @@
   [this]
   (-> this (.-vendorID)))
 
-(defn set-vendor-id!
-  "Property.
-
-  The BluetoothDevice.vendorID read-only property returns the 16-bit
-  ID field in the pnp_id characteristic in the device_information
-
-  `var vendorID = instanceOfBluetoothDevice.vendorID`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/vendorID`"
-  [this val]
-  (aset this "vendorID" val))
-
 (defn product-id
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.productID read-only property returns the
   Product ID field in the pnp_id characteristic in the device_information
@@ -252,20 +189,12 @@
   [this]
   (-> this (.-productID)))
 
-(defn set-product-id!
-  "Property.
-
-  The BluetoothDevice.productID read-only property returns the
-  Product ID field in the pnp_id characteristic in the device_information
-
-  `var productID = instanceOfBluetoothDevice.productID`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/productID`"
-  [this val]
-  (aset this "productID" val))
-
 (defn product-version
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.productVersion read-only property returns
   16-bit Product Version field in the pnp_id characteristic in
@@ -277,21 +206,12 @@
   [this]
   (-> this (.-productVersion)))
 
-(defn set-product-version!
-  "Property.
-
-  The BluetoothDevice.productVersion read-only property returns
-  16-bit Product Version field in the pnp_id characteristic in
-  device_information service.
-
-  `var productVersion = instanceOfBluetoothDevice.productVersion`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/productVersion`"
-  [this val]
-  (aset this "productVersion" val))
-
 (defn paired
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.paired read-only property returns a `js.Boolean`
   indicating whether the device is paired with the system.
@@ -302,20 +222,12 @@
   [this]
   (-> this (.-paired)))
 
-(defn set-paired!
-  "Property.
-
-  The BluetoothDevice.paired read-only property returns a `js.Boolean`
-  indicating whether the device is paired with the system.
-
-  `var paired = instanceOfBluetoothDevice.paired`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/paired`"
-  [this val]
-  (aset this "paired" val))
-
 (defn gatt-server
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The BluetoothDevice.gattServer read-only property returns a reference
   the device's GATT server or null if the device is disconnected.
@@ -325,16 +237,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/gattServer`"
   [this]
   (-> this (.-gattServer)))
-
-(defn set-gatt-server!
-  "Property.
-
-  The BluetoothDevice.gattServer read-only property returns a reference
-  the device's GATT server or null if the device is disconnected.
-
-  `var gattServer = instanceOfBluetoothDevice.gattServer`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/gattServer`"
-  [this val]
-  (aset this "gattServer" val))
 

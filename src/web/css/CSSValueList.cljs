@@ -18,6 +18,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The length read-only property of the `web.css.CSSValueList` interface
   the number of `web.css.CSSValue`s in the list. The range of valid
   of the indices is 0 to length-1 inclusive.

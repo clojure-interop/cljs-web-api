@@ -6,6 +6,8 @@
 (defn lock-orientation
   "Method.
 
+  [Deprecated]
+
   The lockOrientation() method of the `web.cssdom.Screen` interface
   the screen into a specified orientation. The `ScreenOrientation.lock()`
   should be used instead.
@@ -18,6 +20,8 @@
 
 (defn unlock-orientation
   "Method.
+
+  [Deprecated]
 
   The Screen.unlockOrientation() method removes all the previous
   locks set by the page/app. The `ScreenOrientation.unlock()` method
@@ -77,6 +81,8 @@
 (defn avail-top
   "Property.
 
+  [Non Standard]
+
   Specifies the y-coordinate of the first pixel that is not allocated
   permanent or semipermanent user interface features.
 
@@ -88,6 +94,8 @@
 
 (defn set-avail-top!
   "Property.
+
+  [Non Standard]
 
   Specifies the y-coordinate of the first pixel that is not allocated
   permanent or semipermanent user interface features.
@@ -101,6 +109,8 @@
 (defn avail-left
   "Property.
 
+  [Non Standard]
+
   Returns the first available pixel available from the left side
   the screen.
 
@@ -112,6 +122,8 @@
 
 (defn set-avail-left!
   "Property.
+
+  [Non Standard]
 
   Returns the first available pixel available from the left side
   the screen.
@@ -125,6 +137,8 @@
 (defn avail-height
   "Property.
 
+  [Read Only]
+
   The read-only `web.cssdom.Screen` interface's availHeight property
   the height, in CSS pixels, of the space available for Web content
   the screen. Since `web.cssdom.Screen` is exposed on the `web.Window`
@@ -135,20 +149,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availHeight`"
   [this]
   (-> this (.-availHeight)))
-
-(defn set-avail-height!
-  "Property.
-
-  The read-only `web.cssdom.Screen` interface's availHeight property
-  the height, in CSS pixels, of the space available for Web content
-  the screen. Since `web.cssdom.Screen` is exposed on the `web.Window`
-  `window.screen` property, you access availHeight using window.screen.availHeight.
-
-  `let availHeight = window.screen.availHeight;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/availHeight`"
-  [this val]
-  (aset this "availHeight" val))
 
 (defn avail-width
   "Property.
@@ -177,6 +177,8 @@
 (defn color-depth
   "Property.
 
+  [Read Only]
+
   The Screen.colorDepth read-only property returns the color depth
   the screen. Per the CSSOM, some implementations return 24 for
   reasons. See the browser compatibility section for those that
@@ -187,21 +189,10 @@
   [this]
   (-> this (.-colorDepth)))
 
-(defn set-color-depth!
-  "Property.
-
-  The Screen.colorDepth read-only property returns the color depth
-  the screen. Per the CSSOM, some implementations return 24 for
-  reasons. See the browser compatibility section for those that
-
-  `bitDepth = window.screen.colorDepth;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth`"
-  [this val]
-  (aset this "colorDepth" val))
-
 (defn height
   "Property.
+
+  [Read Only]
 
   The Screen.height read-only property returns the height of the
   in pixels.
@@ -212,20 +203,10 @@
   [this]
   (-> this (.-height)))
 
-(defn set-height!
-  "Property.
-
-  The Screen.height read-only property returns the height of the
-  in pixels.
-
-  `var height = window.screen.height`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Screen/height`"
-  [this val]
-  (aset this "height" val))
-
 (defn left
   "Property.
+
+  [Non Standard]
 
   Returns the distance in pixels from the left side of the main
   to the left side of the current screen.
@@ -239,6 +220,8 @@
 (defn set-left!
   "Property.
 
+  [Non Standard]
+
   Returns the distance in pixels from the left side of the main
   to the left side of the current screen.
 
@@ -250,6 +233,9 @@
 
 (defn orientation
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The orientation read-only property of the `web.cssdom.Screen`
   returns the current orientation of the screen.
@@ -289,6 +275,8 @@
 (defn top
   "Property.
 
+  [Non Standard]
+
   Returns the distance in pixels from the top side of the current
 
   `let top = window.screen.top;`
@@ -299,6 +287,8 @@
 
 (defn set-top!
   "Property.
+
+  [Non Standard]
 
   Returns the distance in pixels from the top side of the current
 
@@ -333,6 +323,9 @@
 (defn moz-enabled
   "Property.
 
+  [Deprecated]
+  [Non Standard]
+
   This Boolean attribute controls the device's screen. Setting
   to false will turn off the screen.
 
@@ -344,6 +337,9 @@
 
 (defn set-moz-enabled!
   "Property.
+
+  [Deprecated]
+  [Non Standard]
 
   This Boolean attribute controls the device's screen. Setting
   to false will turn off the screen.
@@ -357,6 +353,9 @@
 (defn moz-brightness
   "Property.
 
+  [Deprecated]
+  [Non Standard]
+
   Indicates how bright the screen's backlight is, on a scale from
   (very dim) to 1 (full brightness); this value is a double-precision
 
@@ -369,6 +368,9 @@
 (defn set-moz-brightness!
   "Property.
 
+  [Deprecated]
+  [Non Standard]
+
   Indicates how bright the screen's backlight is, on a scale from
   (very dim) to 1 (full brightness); this value is a double-precision
 
@@ -380,6 +382,8 @@
 
 (defn onorientationchange
   "Property.
+
+  [Deprecated]
 
   An event handler for the orientationchange events sent to the
   object. The `ScreenOrientation.onchange` handler should be used
@@ -394,6 +398,8 @@
 
 (defn set-onorientationchange!
   "Property.
+
+  [Deprecated]
 
   An event handler for the orientationchange events sent to the
   object. The `ScreenOrientation.onchange` handler should be used

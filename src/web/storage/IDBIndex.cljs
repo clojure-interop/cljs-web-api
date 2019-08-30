@@ -107,6 +107,9 @@
 (defn is-auto-locale
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The isAutoLocale read-only property of the `web.storage.IDBIndex`
   returns a `js.Boolean` indicating whether the index had a locale
   of auto specified upon its creation (see createIndex()'s optionalParameters.)
@@ -118,22 +121,11 @@
   [this]
   (-> this (.-isAutoLocale)))
 
-(defn set-is-auto-locale!
-  "Property.
-
-  The isAutoLocale read-only property of the `web.storage.IDBIndex`
-  returns a `js.Boolean` indicating whether the index had a locale
-  of auto specified upon its creation (see createIndex()'s optionalParameters.)
-
-  `var myIndex = objectStore.index('index');
-  console.log(myIndex.isAutoLocale);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/isAutoLocale`"
-  [this val]
-  (aset this "isAutoLocale" val))
-
 (defn locale
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The locale read-only property of the `web.storage.IDBIndex` interface
   the locale of the index (for example en-US, or pl) if it had
@@ -147,22 +139,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/locale`"
   [this]
   (-> this (.-locale)))
-
-(defn set-locale!
-  "Property.
-
-  The locale read-only property of the `web.storage.IDBIndex` interface
-  the locale of the index (for example en-US, or pl) if it had
-  locale value specified upon its creation (see createIndex()'s
-  Note that this property always returns the current locale being
-  in this index, in other words, it never returns \\\"auto\\\".
-
-  `var myIndex = objectStore.index('index');
-  console.log(myIndex.locale);`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/locale`"
-  [this val]
-  (aset this "locale" val))
 
 (defn name
   "Property.
@@ -191,6 +167,8 @@
 (defn object-store
   "Property.
 
+  [Read Only]
+
   An `web.idb.IDBObjectStore`.
 
   `var myIDBObjectStore = myIndex.objectStore;`
@@ -199,19 +177,10 @@
   [this]
   (-> this (.-objectStore)))
 
-(defn set-object-store!
-  "Property.
-
-  An `web.idb.IDBObjectStore`.
-
-  `var myIDBObjectStore = myIndex.objectStore;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/objectStore`"
-  [this val]
-  (aset this "objectStore" val))
-
 (defn key-path
   "Property.
+
+  [Read Only]
 
   Any data type that can be used as a key path.
 
@@ -221,19 +190,10 @@
   [this]
   (-> this (.-keyPath)))
 
-(defn set-key-path!
-  "Property.
-
-  Any data type that can be used as a key path.
-
-  `var myKeyPath = myIndex.keyPath;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/keyPath`"
-  [this val]
-  (aset this "keyPath" val))
-
 (defn multi-entry
   "Property.
+
+  [Read Only]
 
   A `js.Boolean`:
 
@@ -243,19 +203,10 @@
   [this]
   (-> this (.-multiEntry)))
 
-(defn set-multi-entry!
-  "Property.
-
-  A `js.Boolean`:
-
-  `var isMultiEntry = myIndex.multiEntry;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/multiEntry`"
-  [this val]
-  (aset this "multiEntry" val))
-
 (defn unique
   "Property.
+
+  [Read Only]
 
   A `js.Boolean`:
 
@@ -264,15 +215,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique`"
   [this]
   (-> this (.-unique)))
-
-(defn set-unique!
-  "Property.
-
-  A `js.Boolean`:
-
-  `var isUnique = IDBIndex.unique;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique`"
-  [this val]
-  (aset this "unique" val))
 

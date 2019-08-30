@@ -228,6 +228,8 @@
 (defn password
   "Property.
 
+  [Read Only]
+
   The HTMLHyperlinkElementUtils.password property is a `web.USVString`
   the password specified before the domain name.
 
@@ -240,6 +242,8 @@
 
 (defn origin
   "Property.
+
+  [Read Only]
 
   The HTMLHyperlinkElementUtils.origin read-only property is a
   containing the Unicode serialization of the origin of the represented
@@ -335,6 +339,8 @@
 (defn referrer-policy
   "Property.
 
+  [Experimental]
+
   The HTMLAnchorElement.referrerPolicy property reflect the HTML
   attribute of the `<a>` element defining which referrer is sent
   fetching the resource.
@@ -348,6 +354,8 @@
 
 (defn set-referrer-policy!
   "Property.
+
+  [Experimental]
 
   The HTMLAnchorElement.referrerPolicy property reflect the HTML
   attribute of the `<a>` element defining which referrer is sent
@@ -393,6 +401,8 @@
 (defn rel-list
   "Property.
 
+  [Read Only]
+
   The HTMLAnchorElement.relList read-only property reflects the
   attribute. It is a live `web.dom.DOMTokenList` containing the
   of link types indicating the relationship between the resource
@@ -403,20 +413,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/relList`"
   [this]
   (-> this (.-relList)))
-
-(defn set-rel-list!
-  "Property.
-
-  The HTMLAnchorElement.relList read-only property reflects the
-  attribute. It is a live `web.dom.DOMTokenList` containing the
-  of link types indicating the relationship between the resource
-  by the `<a>` element and the current document.
-
-  `var relstr = anchorElt.relList;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/relList`"
-  [this val]
-  (aset this "relList" val))
 
 (defn search
   "Property.

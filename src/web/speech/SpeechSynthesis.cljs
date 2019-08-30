@@ -8,6 +8,8 @@
 (defn cancel
   "Method.
 
+  [Experimental]
+
   The cancel() method of the `web.speech.SpeechSynthesis` interface
   all utterances from the utterance queue.
 
@@ -19,6 +21,8 @@
 
 (defn get-voices
   "Method.
+
+  [Experimental]
 
   The getVoices() method of the `web.speech.SpeechSynthesis` interface
   a list of `web.speech.SpeechSynthesisVoice` objects representing
@@ -33,6 +37,8 @@
 (defn pause
   "Method.
 
+  [Experimental]
+
   The pause() method of the `web.speech.SpeechSynthesis` interface
   the SpeechSynthesis object into a paused state.
 
@@ -44,6 +50,8 @@
 
 (defn resume
   "Method.
+
+  [Experimental]
 
   The resume() method of the `web.speech.SpeechSynthesis` interface
   the SpeechSynthesis object into a non-paused state: resumes it
@@ -58,6 +66,8 @@
 (defn speak
   "Method.
 
+  [Experimental]
+
   The speak() method of the `web.speech.SpeechSynthesis` interface
   an `utterance` to the utterance queue; it will be spoken when
   other utterances queued before it have been spoken.
@@ -71,6 +81,9 @@
 (defn paused
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The paused read-only property of the `web.speech.SpeechSynthesis`
   is a `js.Boolean` that returns true if the SpeechSynthesis object
   in a paused state, or false if not.
@@ -81,21 +94,11 @@
   [this]
   (-> this (.-paused)))
 
-(defn set-paused!
-  "Property.
-
-  The paused read-only property of the `web.speech.SpeechSynthesis`
-  is a `js.Boolean` that returns true if the SpeechSynthesis object
-  in a paused state, or false if not.
-
-  `var amIPaused = speechSynthesisInstance.paused;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/paused`"
-  [this val]
-  (aset this "paused" val))
-
 (defn pending
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The pending read-only property of the `web.speech.SpeechSynthesis`
   is a `js.Boolean` that returns true if the utterance queue contains
@@ -107,21 +110,11 @@
   [this]
   (-> this (.-pending)))
 
-(defn set-pending!
-  "Property.
-
-  The pending read-only property of the `web.speech.SpeechSynthesis`
-  is a `js.Boolean` that returns true if the utterance queue contains
-  utterances.
-
-  `var amIPending = speechSynthesisInstance.pending;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/pending`"
-  [this val]
-  (aset this "pending" val))
-
 (defn speaking
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The speaking read-only property of the `web.speech.SpeechSynthesis`
   is a `js.Boolean` that returns true if an utterance is currently
@@ -134,22 +127,10 @@
   [this]
   (-> this (.-speaking)))
 
-(defn set-speaking!
-  "Property.
-
-  The speaking read-only property of the `web.speech.SpeechSynthesis`
-  is a `js.Boolean` that returns true if an utterance is currently
-  the process of being spoken — even if SpeechSynthesis is in a
-  state.
-
-  `var amISpeaking = speechSynthesisInstance.speaking;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speaking`"
-  [this val]
-  (aset this "speaking" val))
-
 (defn onvoiceschanged
   "Property.
+
+  [Experimental]
 
   The onvoiceschanged property of the `web.speech.SpeechSynthesis`
   represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`
@@ -164,6 +145,8 @@
 
 (defn set-onvoiceschanged!
   "Property.
+
+  [Experimental]
 
   The onvoiceschanged property of the `web.speech.SpeechSynthesis`
   represents an event handler that will run when the list of `web.speech.SpeechSynthesisVoice`

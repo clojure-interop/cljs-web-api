@@ -195,6 +195,8 @@
 (defn create-script-processor
   "Method.
 
+  [Deprecated]
+
   A `web.deprecated.ScriptProcessorNode`.
 
   `var scriptProcessor = audioCtx.createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels);`
@@ -251,6 +253,9 @@
 (defn audio-worklet
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The audioWorklet read-only property of the `web.audio.BaseAudioContext`
   returns an instance of `web.audio.AudioWorklet` that can be used
   adding `web.audio.AudioWorkletProcessor`-derived classes which
@@ -262,22 +267,10 @@
   [this]
   (-> this (.-audioWorklet)))
 
-(defn set-audio-worklet!
-  "Property.
-
-  The audioWorklet read-only property of the `web.audio.BaseAudioContext`
-  returns an instance of `web.audio.AudioWorklet` that can be used
-  adding `web.audio.AudioWorkletProcessor`-derived classes which
-  custom audio processing.
-
-  `baseAudioContextInstance.audioWorklet;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/audioWorklet`"
-  [this val]
-  (aset this "audioWorklet" val))
-
 (defn current-time
   "Property.
+
+  [Read Only]
 
   The currentTime read-only property of the `web.audio.BaseAudioContext`
   returns a double representing an ever-increasing hardware timestamp
@@ -290,22 +283,10 @@
   [this]
   (-> this (.-currentTime)))
 
-(defn set-current-time!
-  "Property.
-
-  The currentTime read-only property of the `web.audio.BaseAudioContext`
-  returns a double representing an ever-increasing hardware timestamp
-  seconds that can be used for scheduling audio playback, visualizing
-  etc. It starts at 0.
-
-  `var curTime = baseAudioContext.currentTime;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/currentTime`"
-  [this val]
-  (aset this "currentTime" val))
-
 (defn destination
   "Property.
+
+  [Read Only]
 
   An `web.audio.AudioDestinationNode`.
 
@@ -315,19 +296,10 @@
   [this]
   (-> this (.-destination)))
 
-(defn set-destination!
-  "Property.
-
-  An `web.audio.AudioDestinationNode`.
-
-  `baseAudioContext.destination;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination`"
-  [this val]
-  (aset this "destination" val))
-
 (defn listener
   "Property.
+
+  [Read Only]
 
   An `web.audio.AudioListener` object.
 
@@ -337,19 +309,10 @@
   [this]
   (-> this (.-listener)))
 
-(defn set-listener!
-  "Property.
-
-  An `web.audio.AudioListener` object.
-
-  `baseAudioContext.listener;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/listener`"
-  [this val]
-  (aset this "listener" val))
-
 (defn sample-rate
   "Property.
+
+  [Read Only]
 
   The sampleRate property of the `web.audio.BaseAudioContext` interface
   a floating point number representing the sample rate, in samples
@@ -361,21 +324,10 @@
   [this]
   (-> this (.-sampleRate)))
 
-(defn set-sample-rate!
-  "Property.
-
-  The sampleRate property of the `web.audio.BaseAudioContext` interface
-  a floating point number representing the sample rate, in samples
-  second, used by all nodes in this audio context.
-
-  `baseAudioContext.sampleRate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/sampleRate`"
-  [this val]
-  (aset this "sampleRate" val))
-
 (defn state
   "Property.
+
+  [Read Only]
 
   A `web.dom.DOMString`. Possible values are:
 
@@ -384,17 +336,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state`"
   [this]
   (-> this (.-state)))
-
-(defn set-state!
-  "Property.
-
-  A `web.dom.DOMString`. Possible values are:
-
-  `baseAudioContext.state;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state`"
-  [this val]
-  (aset this "state" val))
 
 (defn onstatechange
   "Property.

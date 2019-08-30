@@ -4,18 +4,10 @@
   sent from the recognition service."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The SpeechRecognition() constructor creates a new `web.speech.SpeechRecognition` object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/SpeechRecognition`"
-  js/SpeechRecognition)
-
 (defn abort
   "Method.
+
+  [Experimental]
 
   The abort() method of the Web Speech API stops the speech recognition
   from listening to incoming audio, and doesn't attempt to return
@@ -30,6 +22,8 @@
 (defn start
   "Method.
 
+  [Experimental]
+
   The start() method of the Web Speech API starts the speech recognition
   listening to incoming audio with intent to recognize grammars
   with the current `web.speech.SpeechRecognition`.
@@ -43,6 +37,8 @@
 (defn stop
   "Method.
 
+  [Experimental]
+
   The stop() method of the Web Speech API stops the speech recognition
   from listening to incoming audio, and attempts to return a `web.speech.SpeechRecognitionResult`
   the audio captured so far.
@@ -55,6 +51,8 @@
 
 (defn grammars
   "Property.
+
+  [Experimental]
 
   The grammars property of the `web.speech.SpeechRecognition` interface
   and sets a collection of `web.speech.SpeechGrammar` objects that
@@ -70,6 +68,8 @@
 (defn set-grammars!
   "Property.
 
+  [Experimental]
+
   The grammars property of the `web.speech.SpeechRecognition` interface
   and sets a collection of `web.speech.SpeechGrammar` objects that
   the grammars that will be understood by the current SpeechRecognition.
@@ -83,6 +83,8 @@
 
 (defn lang
   "Property.
+
+  [Experimental]
 
   The lang property of the `web.speech.SpeechRecognition` interface
   and sets the language of the current SpeechRecognition. If not
@@ -99,6 +101,8 @@
 (defn set-lang!
   "Property.
 
+  [Experimental]
+
   The lang property of the `web.speech.SpeechRecognition` interface
   and sets the language of the current SpeechRecognition. If not
   this defaults to the HTML lang attribute value, or the user agent's
@@ -114,6 +118,8 @@
 (defn continuous
   "Property.
 
+  [Experimental]
+
   The continuous property of the `web.speech.SpeechRecognition`
   controls whether continuous results are returned for each recognition,
   only a single result.
@@ -128,6 +134,8 @@
 (defn set-continuous!
   "Property.
 
+  [Experimental]
+
   The continuous property of the `web.speech.SpeechRecognition`
   controls whether continuous results are returned for each recognition,
   only a single result.
@@ -141,6 +149,8 @@
 
 (defn interim-results
   "Property.
+
+  [Experimental]
 
   The interimResults property of the `web.speech.SpeechRecognition`
   controls whether interim results should be returned (true) or
@@ -157,6 +167,8 @@
 (defn set-interim-results!
   "Property.
 
+  [Experimental]
+
   The interimResults property of the `web.speech.SpeechRecognition`
   controls whether interim results should be returned (true) or
   (false.) Interim results are results that are not yet final (e.g.
@@ -172,6 +184,8 @@
 (defn max-alternatives
   "Property.
 
+  [Experimental]
+
   The maxAlternatives property of the `web.speech.SpeechRecognition`
   sets the maximum number of `web.speech.SpeechRecognitionAlternative`s
   per `web.speech.SpeechRecognitionResult`.
@@ -186,6 +200,8 @@
 (defn set-max-alternatives!
   "Property.
 
+  [Experimental]
+
   The maxAlternatives property of the `web.speech.SpeechRecognition`
   sets the maximum number of `web.speech.SpeechRecognitionAlternative`s
   per `web.speech.SpeechRecognitionResult`.
@@ -199,6 +215,8 @@
 
 (defn service-uri
   "Property.
+
+  [Experimental]
 
   The serviceURI property of the `web.speech.SpeechRecognition`
   specifies the location of the speech recognition service used
@@ -215,6 +233,8 @@
 (defn set-service-uri!
   "Property.
 
+  [Experimental]
+
   The serviceURI property of the `web.speech.SpeechRecognition`
   specifies the location of the speech recognition service used
   the current SpeechRecognition to handle the actual recognition.
@@ -230,6 +250,8 @@
 (defn onaudioend
   "Property.
 
+  [Experimental]
+
   The onaudioend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the user agent
   finished capturing audio (when the audioend event fires.)
@@ -242,6 +264,8 @@
 
 (defn set-onaudioend!
   "Property.
+
+  [Experimental]
 
   The onaudioend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the user agent
@@ -256,6 +280,8 @@
 (defn onaudiostart
   "Property.
 
+  [Experimental]
+
   The onaudiostart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the user agent
   started to capture audio (when the audiostart event fires.)
@@ -268,6 +294,8 @@
 
 (defn set-onaudiostart!
   "Property.
+
+  [Experimental]
 
   The onaudiostart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the user agent
@@ -282,6 +310,8 @@
 (defn onend
   "Property.
 
+  [Experimental]
+
   The onend property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service
   disconnected (when the end event fires.)
@@ -294,6 +324,8 @@
 
 (defn set-onend!
   "Property.
+
+  [Experimental]
 
   The onend property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service
@@ -308,6 +340,8 @@
 (defn onerror
   "Property.
 
+  [Experimental]
+
   The onerror property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when a speech recognition error
   (when the error event fires.)
@@ -321,6 +355,8 @@
 (defn set-onerror!
   "Property.
 
+  [Experimental]
+
   The onerror property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when a speech recognition error
   (when the error event fires.)
@@ -333,6 +369,8 @@
 
 (defn onnomatch
   "Property.
+
+  [Experimental]
 
   The onnomatch property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the speech recognition
@@ -348,6 +386,8 @@
 (defn set-onnomatch!
   "Property.
 
+  [Experimental]
+
   The onnomatch property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when the speech recognition
   returns a final result with no significant recognition (when
@@ -361,6 +401,8 @@
 
 (defn onresult
   "Property.
+
+  [Experimental]
 
   The onresult property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service
@@ -376,6 +418,8 @@
 (defn set-onresult!
   "Property.
 
+  [Experimental]
+
   The onresult property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service
   a result — a word or phrase has been positively recognized and
@@ -390,6 +434,8 @@
 (defn onsoundend
   "Property.
 
+  [Experimental]
+
   The onsoundend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when any sound — recognisable
   or not — has stopped being detected (when the soundend event
@@ -402,6 +448,8 @@
 
 (defn set-onsoundend!
   "Property.
+
+  [Experimental]
 
   The onsoundend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when any sound — recognisable
@@ -416,6 +464,8 @@
 (defn onsoundstart
   "Property.
 
+  [Experimental]
+
   The onsoundstart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when any sound — recognisable
   or not — has been detected (when the soundstart event fires.)
@@ -429,6 +479,8 @@
 (defn set-onsoundstart!
   "Property.
 
+  [Experimental]
+
   The onsoundstart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when any sound — recognisable
   or not — has been detected (when the soundstart event fires.)
@@ -441,6 +493,8 @@
 
 (defn onspeechend
   "Property.
+
+  [Experimental]
 
   The onspeechend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when speech recognised
@@ -456,6 +510,8 @@
 (defn set-onspeechend!
   "Property.
 
+  [Experimental]
+
   The onspeechend property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when speech recognised
   the speech recognition service has stopped being detected (when
@@ -469,6 +525,8 @@
 
 (defn onspeechstart
   "Property.
+
+  [Experimental]
 
   The onspeechstart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when sound recognised
@@ -484,6 +542,8 @@
 (defn set-onspeechstart!
   "Property.
 
+  [Experimental]
+
   The onspeechstart property of the `web.speech.SpeechRecognition`
   represents an event handler that will run when sound recognised
   the speech recognition service as speech has been detected (when
@@ -498,6 +558,8 @@
 (defn onstart
   "Property.
 
+  [Experimental]
+
   The onstart property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service
   begun listening to incoming audio with intent to recognize grammars
@@ -511,6 +573,8 @@
 
 (defn set-onstart!
   "Property.
+
+  [Experimental]
 
   The onstart property of the `web.speech.SpeechRecognition` interface
   an event handler that will run when the speech recognition service

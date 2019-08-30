@@ -7,6 +7,8 @@
 (defn get-cost
   "Method.
 
+  [Experimental]
+
   The getCost() property of the `web.budget.BudgetService` interface
   a `js.Promise` that resolves to a double indicating the worst-case
   operation cost of the provided background operation.
@@ -21,6 +23,8 @@
 (defn get-budget
   "Method.
 
+  [Experimental]
+
   The getBudget() property of the `web.budget.BudgetService` interface
   a `js.Promise` that resolves to an array of BudgetState objects
   the expected state of the budget at times in the future.
@@ -34,6 +38,8 @@
 
 (defn reserve
   "Method.
+
+  [Experimental]
 
   The reserve() property of the `web.budget.BudgetService` interface
   a `js.Promise` that resolves to a boolean indicating whether

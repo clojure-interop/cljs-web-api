@@ -9,6 +9,8 @@
 (defn transfer-from-image-bitmap
   "Method.
 
+  [Experimental]
+
   The ImageBitmapRenderingContext.transferFromImageBitmap() method
   the given `web.canvas.ImageBitmap` in the canvas associated with
   rendering context. The ownership of the ImageBitmap is transferred

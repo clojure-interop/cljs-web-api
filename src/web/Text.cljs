@@ -6,16 +6,10 @@
   and Text nodes that form its children."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The Text() constructor returns a newly created `web.Text` object with the optional `web.dom.DOMString` given in parameter as its textual content.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/Text`"
-  js/Text)
-
 (defn replace-whole-text
   "Method.
+
+  [Obsolute]
 
   The Text.replaceWholeText() method replaces the text of the node
   all of its logically adjacent text nodes with the specified text.
@@ -38,6 +32,9 @@
 (defn is-element-content-whitespace
   "Property.
 
+  [Read Only]
+  [Obsolute]
+
   The Text.isElementContentWhitespace read-only property returns
   `js.Boolean` flag indicating whether or not the text node's content
   solely of whitespace.
@@ -48,21 +45,10 @@
   [this]
   (-> this (.-isElementContentWhitespace)))
 
-(defn set-is-element-content-whitespace!
-  "Property.
-
-  The Text.isElementContentWhitespace read-only property returns
-  `js.Boolean` flag indicating whether or not the text node's content
-  solely of whitespace.
-
-  `b = textnode.isElementContentWhitespace;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/isElementContentWhitespace`"
-  [this val]
-  (aset this "isElementContentWhitespace" val))
-
 (defn whole-text
   "Property.
+
+  [Read Only]
 
   The Text.wholeText read-only property returns the full text of
   `web.Text` nodes logically adjacent to the node.
@@ -73,20 +59,11 @@
   [this]
   (-> this (.-wholeText)))
 
-(defn set-whole-text!
-  "Property.
-
-  The Text.wholeText read-only property returns the full text of
-  `web.Text` nodes logically adjacent to the node.
-
-  `str = textnode.wholeText;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/wholeText`"
-  [this val]
-  (aset this "wholeText" val))
-
 (defn assigned-slot
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The assignedSlot property of the `web.Text` interface returns
   `web.shadow-dom.HTMLSlotElement` object associated with the element.
@@ -96,16 +73,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
   [this]
   (-> this (.-assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot property of the `web.Text` interface returns
-  `web.shadow-dom.HTMLSlotElement` object associated with the element.
-
-  `var htmlSlotElement = text.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
 

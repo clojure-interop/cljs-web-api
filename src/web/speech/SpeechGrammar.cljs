@@ -4,18 +4,10 @@
   to recognize."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The SpeechGrammar constructor of the `web.speech.SpeechGrammar` interface creates a new SpeechGrammar object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammar/SpeechGrammar`"
-  js/SpeechGrammar)
-
 (defn src
   "Property.
+
+  [Experimental]
 
   The src property of the `web.speech.SpeechGrammar` interface
   and returns a string containing the grammar from within in the
@@ -30,6 +22,8 @@
 (defn set-src!
   "Property.
 
+  [Experimental]
+
   The src property of the `web.speech.SpeechGrammar` interface
   and returns a string containing the grammar from within in the
   object.
@@ -43,6 +37,8 @@
 (defn weight
   "Property.
 
+  [Experimental]
+
   The optional weight property of the `web.speech.SpeechGrammar`
   sets and returns the weight of the SpeechGrammar object.
 
@@ -54,6 +50,8 @@
 
 (defn set-weight!
   "Property.
+
+  [Experimental]
 
   The optional weight property of the `web.speech.SpeechGrammar`
   sets and returns the weight of the SpeechGrammar object.

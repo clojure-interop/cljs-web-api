@@ -3,16 +3,10 @@
   change."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The InputEvent() constructor creates a new `web.InputEvent`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/InputEvent`"
-  js/InputEvent)
-
 (defn get-target-ranges
   "Method.
+
+  [Experimental]
 
   The getTargetRanges() property of the `web.InputEvent` interface
   an array of static ranges that will be affected by a change to
@@ -27,6 +21,9 @@
 (defn data
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The data read-only property of the `web.InputEvent` interface
   a `web.dom.DOMString` with the inserted characters. This may
   an empty string if the change doesn't insert text (such as when
@@ -38,22 +35,11 @@
   [this]
   (-> this (.-data)))
 
-(defn set-data!
-  "Property.
-
-  The data read-only property of the `web.InputEvent` interface
-  a `web.dom.DOMString` with the inserted characters. This may
-  an empty string if the change doesn't insert text (such as when
-  characters, for example).
-
-  `var aString = inputEvent.data;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data`"
-  [this val]
-  (aset this "data" val))
-
 (defn data-transfer
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The dataTransfer read-only property of the `web.InputEvent` interface
   a `web.drag.DataTransfer` object containing information about
@@ -65,21 +51,10 @@
   [this]
   (-> this (.-dataTransfer)))
 
-(defn set-data-transfer!
-  "Property.
-
-  The dataTransfer read-only property of the `web.InputEvent` interface
-  a `web.drag.DataTransfer` object containing information about
-  or plaintext data being added to or removed from editible content.
-
-  `var dataTransfer = inputEvent.dataTransfer`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer`"
-  [this val]
-  (aset this "dataTransfer" val))
-
 (defn input-type
   "Property.
+
+  [Read Only]
 
   The inputType read-only property of the `web.InputEvent` interface
   the type of change made to editible content. Possible changes
@@ -91,21 +66,10 @@
   [this]
   (-> this (.-inputType)))
 
-(defn set-input-type!
-  "Property.
-
-  The inputType read-only property of the `web.InputEvent` interface
-  the type of change made to editible content. Possible changes
-  for example inserting, deleting, and formatting text.
-
-  `var aString = inputEvent.inputType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType`"
-  [this val]
-  (aset this "inputType" val))
-
 (defn is-composing
   "Property.
+
+  [Read Only]
 
   The InputEvent.isComposing read-only property returns a `js.Boolean`
   indicating if the event is fired after compositionstart and before

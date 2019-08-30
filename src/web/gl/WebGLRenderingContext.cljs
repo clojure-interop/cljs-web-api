@@ -263,6 +263,8 @@
 (defn commit
   "Method.
 
+  [Experimental]
+
   The WebGLRenderingContext.commit() method pushes frames back
   the original `web.canvas.HTMLCanvasElement`, if the context is
   directly fixed to a specific canvas.
@@ -1490,6 +1492,8 @@
 (defn canvas
   "Property.
 
+  [Read Only]
+
   The WebGLRenderingContext.canvas property is a read-only reference
   the `web.canvas.HTMLCanvasElement` or `web.canvas.OffscreenCanvas`
   that is associated with the context. It might be `js.null` if
@@ -1503,6 +1507,8 @@
 
 (defn drawing-buffer-height
   "Property.
+
+  [Read Only]
 
   The read-only WebGLRenderingContext.drawingBufferHeight property
   the actual height of the current drawing buffer. It should match
@@ -1518,6 +1524,8 @@
 
 (defn drawing-buffer-width
   "Property.
+
+  [Read Only]
 
   The read-only WebGLRenderingContext.drawingBufferWidth property
   the actual width of the current drawing buffer. It should match

@@ -4,24 +4,10 @@
   the current range is collapsed into a single position."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The StaticRange() constructor creates a new `web.StaticRange` object which provides attributes that track the start and end position of a range, and a boolean attribute indicating whether the current range is collapsed into a single position.
-
-  options
-  Options are as follows:
-
-  startContainer:  The start `web.Node` for the range.
-  startOffset: The offset into the start node of the range's start position.
-  endContainer: The end `web.Node` for the range.
-  endOffset: The offset into the start node of the range's start position.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/StaticRange`"
-  js/StaticRange)
-
 (defn to-range
   "Method.
+
+  [Experimental]
 
   The toRange() property of the `web.StaticRange` interface converts
   StaticRange object to a `web.Range` object.
@@ -34,6 +20,8 @@
 
 (defn start-container
   "Property.
+
+  [Experimental]
 
   The startContainer property of the `web.StaticRange` interface
   the start `web.Node` for the range.
@@ -48,6 +36,8 @@
 (defn set-start-container!
   "Property.
 
+  [Experimental]
+
   The startContainer property of the `web.StaticRange` interface
   the start `web.Node` for the range.
 
@@ -60,6 +50,8 @@
 
 (defn start-offset
   "Property.
+
+  [Experimental]
 
   The startOffset property of the `web.StaticRange` interface returns
   offset into the start node of the range's start position.
@@ -74,6 +66,8 @@
 (defn set-start-offset!
   "Property.
 
+  [Experimental]
+
   The startOffset property of the `web.StaticRange` interface returns
   offset into the start node of the range's start position.
 
@@ -86,6 +80,8 @@
 
 (defn end-container
   "Property.
+
+  [Experimental]
 
   The endContainer property of the `web.StaticRange` interface
   the end `web.Node` for the range.
@@ -100,6 +96,8 @@
 (defn set-end-container!
   "Property.
 
+  [Experimental]
+
   The endContainer property of the `web.StaticRange` interface
   the end `web.Node` for the range.
 
@@ -112,6 +110,8 @@
 
 (defn end-offset
   "Property.
+
+  [Experimental]
 
   The endOffset property of the `web.StaticRange` interface returns
   offset into the end node of the range's end position.
@@ -126,6 +126,8 @@
 (defn set-end-offset!
   "Property.
 
+  [Experimental]
+
   The endOffset property of the `web.StaticRange` interface returns
   offset into the end node of the range's end position.
 
@@ -139,6 +141,9 @@
 (defn collapsed
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The collapsed read-only property of the `web.StaticRange` interface
   true if the range's start position and end position are the same.
 
@@ -147,16 +152,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
   [this]
   (-> this (.-collapsed)))
-
-(defn set-collapsed!
-  "Property.
-
-  The collapsed read-only property of the `web.StaticRange` interface
-  true if the range's start position and end position are the same.
-
-  `var boolean = staticRange.collapsed`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StaticRange/collapsed`"
-  [this val]
-  (aset this "collapsed" val))
 

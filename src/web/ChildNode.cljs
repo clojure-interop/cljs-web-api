@@ -18,6 +18,8 @@
 (defn before
   "Method.
 
+  [Experimental]
+
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
   this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
@@ -33,6 +35,8 @@
 (defn after
   "Method.
 
+  [Experimental]
+
   The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
   `web.dom.DOMString` objects are inserted as equivalent `web.Text`
@@ -46,6 +50,8 @@
 
 (defn replace-with
   "Method.
+
+  [Experimental]
 
   The ChildNode.replaceWith() method replaces this ChildNode in
   children list of its parent with a set of `web.Node` or `web.dom.DOMString`

@@ -3,14 +3,6 @@
   contain nodes and parts of text nodes."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The Range() constructor returns a newly created `web.Range` object whose start and end is the global `web.Document` object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/Range`"
-  js/Range)
-
 (defn set-start
   "Method.
 
@@ -234,6 +226,9 @@
 (defn compare-node
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   The Range.compareNode() returns a constant indicating the position
   the `web.Node`.
 
@@ -245,6 +240,8 @@
 
 (defn compare-point
   "Method.
+
+  [Experimental]
 
   The Range.comparePoint() method returns -1, 0, or 1 depending
   whether the referenceNode is before, the same as, or after the
@@ -275,6 +272,8 @@
 (defn get-bounding-client-rect
   "Method.
 
+  [Experimental]
+
   The Range.getBoundingClientRect() method returns a `web.dom.DOMRect`
   that bounds the contents of the range; this is a rectangle enclosing
   union of the bounding rectangles for all the elements in the
@@ -302,6 +301,8 @@
 (defn intersects-node
   "Method.
 
+  [Experimental]
+
   The Range.intersectsNode() method returns a boolean indicating
   the given `web.Node` intersects the `web.Range`.
 
@@ -313,6 +314,8 @@
 
 (defn is-point-in-range
   "Method.
+
+  [Experimental]
 
   The Range.isPointInRange() method returns a boolean indicating
   the given point is in the `web.Range`. It returns true if the
@@ -327,6 +330,8 @@
 (defn collapsed
   "Property.
 
+  [Read Only]
+
   The Range.collapsed read-only property returns a `js.Boolean`
   indicating whether the start and end points of the `web.Range`
   at the same position. It returns true if the start and end boundary
@@ -338,22 +343,10 @@
   [this]
   (-> this (.-collapsed)))
 
-(defn set-collapsed!
-  "Property.
-
-  The Range.collapsed read-only property returns a `js.Boolean`
-  indicating whether the start and end points of the `web.Range`
-  at the same position. It returns true if the start and end boundary
-  of the `web.Range` are the same point in the DOM, false if not.
-
-  `isCollapsed = range.collapsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/collapsed`"
-  [this val]
-  (aset this "collapsed" val))
-
 (defn common-ancestor-container
   "Property.
+
+  [Read Only]
 
   The Range.commonAncestorContainer read-only property returns
   deepest — or furthest down the document tree — `web.Node` that
@@ -367,23 +360,10 @@
   [this]
   (-> this (.-commonAncestorContainer)))
 
-(defn set-common-ancestor-container!
-  "Property.
-
-  The Range.commonAncestorContainer read-only property returns
-  deepest — or furthest down the document tree — `web.Node` that
-  both boundary points of the `web.Range`. This means that if `Range.startContainer`
-  `Range.endContainer` both refer to the same node, this node is
-  common ancestor container.
-
-  `rangeAncestor = range.commonAncestorContainer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/commonAncestorContainer`"
-  [this val]
-  (aset this "commonAncestorContainer" val))
-
 (defn end-container
   "Property.
+
+  [Read Only]
 
   The Range.endContainer read-only property returns the `web.Node`
   which the `web.Range` ends. To change the end position of a node,
@@ -395,21 +375,10 @@
   [this]
   (-> this (.-endContainer)))
 
-(defn set-end-container!
-  "Property.
-
-  The Range.endContainer read-only property returns the `web.Node`
-  which the `web.Range` ends. To change the end position of a node,
-  the `Range.setEnd()` method or a similar one.
-
-  `endRangeNode = range.endContainer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/endContainer`"
-  [this val]
-  (aset this "endContainer" val))
-
 (defn end-offset
   "Property.
+
+  [Read Only]
 
   The Range.endOffset read-only property returns a number representing
   in the `Range.endContainer` the `web.Range` ends.
@@ -420,20 +389,10 @@
   [this]
   (-> this (.-endOffset)))
 
-(defn set-end-offset!
-  "Property.
-
-  The Range.endOffset read-only property returns a number representing
-  in the `Range.endContainer` the `web.Range` ends.
-
-  `endRangeOffset = range.endOffset;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/endOffset`"
-  [this val]
-  (aset this "endOffset" val))
-
 (defn start-container
   "Property.
+
+  [Read Only]
 
   The Range.startContainer read-only property returns the `web.Node`
   which the Range starts. To change the start position of a node,
@@ -445,21 +404,10 @@
   [this]
   (-> this (.-startContainer)))
 
-(defn set-start-container!
-  "Property.
-
-  The Range.startContainer read-only property returns the `web.Node`
-  which the Range starts. To change the start position of a node,
-  one of the `Range.setStart()` methods.
-
-  `startRangeNode = range.startContainer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/startContainer`"
-  [this val]
-  (aset this "startContainer" val))
-
 (defn start-offset
   "Property.
+
+  [Read Only]
 
   The Range.startOffset read-only property returns a number representing
   in the startContainer the Range starts.
@@ -469,16 +417,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/startOffset`"
   [this]
   (-> this (.-startOffset)))
-
-(defn set-start-offset!
-  "Property.
-
-  The Range.startOffset read-only property returns a number representing
-  in the startContainer the Range starts.
-
-  `startRangeOffset = range.startOffset;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Range/startOffset`"
-  [this val]
-  (aset this "startOffset" val))
 

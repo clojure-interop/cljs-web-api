@@ -4,16 +4,11 @@
   be a touchscreen or trackpad."
   (:refer-clojure :exclude [force]))
 
-(def constructor
-  "Constructor.
-
-  The Touch() constructor creates a new `web.other.Touch` object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Touch/Touch`"
-  js/Touch)
-
 (defn identifier
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Touch.identifier returns a value uniquely identifying this
   of contact with the touch surface. This value remains consistent
@@ -93,6 +88,8 @@
 (defn page-x
   "Property.
 
+  [Read Only]
+
   The Touch.pageX read-only property returns the X coordinate of
   touch point relative to the viewport, including any scroll offset.
 
@@ -105,6 +102,8 @@
 (defn page-y
   "Property.
 
+  [Read Only]
+
   The Touch.pageY read-only property returns the Y coordinate of
   touch point relative to the viewport, including any scroll offset.
 
@@ -116,6 +115,8 @@
 
 (defn target
   "Property.
+
+  [Read Only]
 
   Returns the `web.Element` (`web.EventTarget`) on which the touch
   started when it was first placed on the surface, even if the
@@ -133,27 +134,10 @@
   [this]
   (-> this (.-target)))
 
-(defn set-target!
-  "Property.
-
-  Returns the `web.Element` (`web.EventTarget`) on which the touch
-  started when it was first placed on the surface, even if the
-  point has since moved outside the interactive area of that element
-  even been removed from the document. Note that if the target
-  is removed from the document, events will still be targeted at
-  and hence won't necessarily bubble up to the window or document
-  If there is any risk of an element being removed while it is
-  touched, the best practice is to attach the touch listeners directly
-  the target.
-
-  `var el = touchPoint.target;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Touch/target`"
-  [this val]
-  (aset this "target" val))
-
 (defn radius-x
   "Property.
+
+  [Read Only]
 
   Returns the X radius of the ellipse that most closely circumscribes
   area of contact with the touch surface. The value is in CSS pixels
@@ -165,21 +149,10 @@
   [this]
   (-> this (.-radiusX)))
 
-(defn set-radius-x!
-  "Property.
-
-  Returns the X radius of the ellipse that most closely circumscribes
-  area of contact with the touch surface. The value is in CSS pixels
-  the same scale as `Touch.screenX`.
-
-  `var xRadius = touchItem.radiusX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Touch/radiusX`"
-  [this val]
-  (aset this "radiusX" val))
-
 (defn radius-y
   "Property.
+
+  [Read Only]
 
   Returns the Y radius of the ellipse that most closely circumscribes
   area of contact with the touch surface. The value is in CSS pixels
@@ -191,21 +164,10 @@
   [this]
   (-> this (.-radiusY)))
 
-(defn set-radius-y!
-  "Property.
-
-  Returns the Y radius of the ellipse that most closely circumscribes
-  area of contact with the touch surface. The value is in CSS pixels
-  the same scale as `Touch.screenX`.
-
-  `var yRadius = touchItem.radiusY;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Touch/radiusY`"
-  [this val]
-  (aset this "radiusY" val))
-
 (defn rotation-angle
   "Property.
+
+  [Read Only]
 
   Returns the rotation angle, in degrees, of the contact area ellipse
   by `Touch.radiusX` and `Touch.radiusY`. The value may be between
@@ -221,25 +183,11 @@
   [this]
   (-> this (.-rotationAngle)))
 
-(defn set-rotation-angle!
-  "Property.
-
-  Returns the rotation angle, in degrees, of the contact area ellipse
-  by `Touch.radiusX` and `Touch.radiusY`. The value may be between
-  and 90. Together, these three values describe an ellipse that
-  the size and shape of the area of contact between the user and
-  screen. This may be a relatively large ellipse representing the
-  between a fingertip and the screen or a small area representing
-  tip of a stylus, for example.
-
-  `var angle = touchItem.rotationAngle;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Touch/rotationAngle`"
-  [this val]
-  (aset this "rotationAngle" val))
-
 (defn force
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Touch.force read-only property returns the amount of pressure
   user is applying to the touch surface for a `web.other.Touch`

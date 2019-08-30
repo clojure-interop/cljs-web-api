@@ -4,21 +4,6 @@
   which sends events in text/event-stream format."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The EventSource() constructor returns a newly-created `web.other.EventSource`, which represents a remote resource.
-
-  url
-  A `web.USVString` that represents the location of the remote resource serving the events/messages.
-  configuration Optional
-  Provides options to configure the new connection. The possible entries are:
-
-  withCredentials, defaulting to false, indicating if CORS should be set to include credentials.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventSource/EventSource`"
-  js/EventSource)
-
 (defn close
   "Method.
 
@@ -35,6 +20,8 @@
 (defn ready-state
   "Property.
 
+  [Read Only]
+
   The readyState read-only property of the `web.other.EventSource`
   returns a number representing the state of the connection.
 
@@ -44,20 +31,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The readyState read-only property of the `web.other.EventSource`
-  returns a number representing the state of the connection.
-
-  `var myReadyState = eventSource.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventSource/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn url
   "Property.
+
+  [Read Only]
 
   The url read-only property of the `web.other.EventSource` interface
   a `web.dom.DOMString` representing the URL of the source.
@@ -68,20 +45,10 @@
   [this]
   (-> this (.-url)))
 
-(defn set-url!
-  "Property.
-
-  The url read-only property of the `web.other.EventSource` interface
-  a `web.dom.DOMString` representing the URL of the source.
-
-  `var myUrl = eventSource.url;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventSource/url`"
-  [this val]
-  (aset this "url" val))
-
 (defn with-credentials
   "Property.
+
+  [Read Only]
 
   The withCredentials read-only property of the `web.other.EventSource`
   returns a `js.Boolean` indicating whether the EventSource object
@@ -92,19 +59,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventSource/withCredentials`"
   [this]
   (-> this (.-withCredentials)))
-
-(defn set-with-credentials!
-  "Property.
-
-  The withCredentials read-only property of the `web.other.EventSource`
-  returns a `js.Boolean` indicating whether the EventSource object
-  instantiated with CORS credentials set.
-
-  `var myWithCredentials = eventSource.withCredentials;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventSource/withCredentials`"
-  [this val]
-  (aset this "withCredentials" val))
 
 (defn onerror
   "Property.

@@ -8,6 +8,8 @@
 (defn anim-val
   "Property.
 
+  [Read Only]
+
   AnimVal attribute or animVal property contains the same value
   the baseVal property.If the given attribute or property is being
   contains the current animated value of the attribute or property.
@@ -19,21 +21,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/animVal`"
   [this]
   (-> this (.-animVal)))
-
-(defn set-anim-val!
-  "Property.
-
-  AnimVal attribute or animVal property contains the same value
-  the baseVal property.If the given attribute or property is being
-  contains the current animated value of the attribute or property.
-  the given attribute or property is not currently being animated,
-  it contains the same value as baseVal
-
-  `var = object.animVal`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedString/animVal`"
-  [this val]
-  (aset this "animVal" val))
 
 (defn base-val
   "Property.

@@ -16,6 +16,8 @@
 (defn request-device
   "Method.
 
+  [Experimental]
+
   The Bluetooth.requestDevice() method of the `web.bluetooth.Bluetooth`
   returns a `js.Promise` to a `web.bluetooth.BluetoothDevice` object
   the specified options. If there is no chooser UI, this method

@@ -7,6 +7,9 @@
 (defn red-eye-reduction
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The redEyeReduction read-only property of the `web.media.PhotoCapabilities`
   returns a `RedEyeReduction` object indicating the red-eye reduction
   of the source.
@@ -17,21 +20,11 @@
   [this]
   (-> this (.-redEyeReduction)))
 
-(defn set-red-eye-reduction!
-  "Property.
-
-  The redEyeReduction read-only property of the `web.media.PhotoCapabilities`
-  returns a `RedEyeReduction` object indicating the red-eye reduction
-  of the source.
-
-  `var redEyeReduction = photoCapabilities.redEyeReduction`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/redEyeReduction`"
-  [this val]
-  (aset this "redEyeReduction" val))
-
 (defn image-height
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The imageHeight read-only property of the `web.media.PhotoCapabilities`
   returns a `web.media.MediaSettingsRange` object indicating the
@@ -43,21 +36,11 @@
   [this]
   (-> this (.-imageHeight)))
 
-(defn set-image-height!
-  "Property.
-
-  The imageHeight read-only property of the `web.media.PhotoCapabilities`
-  returns a `web.media.MediaSettingsRange` object indicating the
-  height range supported by the user agent.
-
-  `var mediaSettingsRange = photoCapabilities.imageHeight`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/imageHeight`"
-  [this val]
-  (aset this "imageHeight" val))
-
 (defn image-width
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The imageWidth read-only property of the `web.media.PhotoCapabilities`
   returns a `web.media.MediaSettingsRange` object indicating the
@@ -69,21 +52,11 @@
   [this]
   (-> this (.-imageWidth)))
 
-(defn set-image-width!
-  "Property.
-
-  The imageWidth read-only property of the `web.media.PhotoCapabilities`
-  returns a `web.media.MediaSettingsRange` object indicating the
-  width range supported by the user agent.
-
-  `var mediaSettingsRange = photoCapabilities.imageWidth`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/imageWidth`"
-  [this val]
-  (aset this "imageWidth" val))
-
 (defn fill-light-mode
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The fillLightMode read-only property of the `web.media.PhotoCapabilities`
   returns an array of available fill light options. Options may
@@ -94,17 +67,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
   [this]
   (-> this (.-fillLightMode)))
-
-(defn set-fill-light-mode!
-  "Property.
-
-  The fillLightMode read-only property of the `web.media.PhotoCapabilities`
-  returns an array of available fill light options. Options may
-  auto, off, or flash.
-
-  `var lightModes[] = photoCapabilities.fillLightMode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PhotoCapabilities/fillLightMode`"
-  [this val]
-  (aset this "fillLightMode" val))
 

@@ -249,6 +249,8 @@
 (defn onlanguagechange
   "Property.
 
+  [Experimental]
+
   The onlanguagechange property of the `web.dom.WindowEventHandlers`
   is the `EventHandler` for processing languagechange events.
 
@@ -260,6 +262,8 @@
 
 (defn set-onlanguagechange!
   "Property.
+
+  [Experimental]
 
   The onlanguagechange property of the `web.dom.WindowEventHandlers`
   is the `EventHandler` for processing languagechange events.
@@ -273,6 +277,8 @@
 (defn onmessage
   "Property.
 
+  [Experimental]
+
   The onmessage property of the `web.dom.WindowEventHandlers` mixin
   the `EventHandler` called whenever an object receives a message
 
@@ -285,6 +291,8 @@
 
 (defn set-onmessage!
   "Property.
+
+  [Experimental]
 
   The onmessage property of the `web.dom.WindowEventHandlers` mixin
   the `EventHandler` called whenever an object receives a message

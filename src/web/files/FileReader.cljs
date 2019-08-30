@@ -5,16 +5,6 @@
   file or data to read."
   (:refer-clojure :exclude [load]))
 
-(def constructor
-  "Constructor.
-
-  The FileReader() constructor creates a new FileReader.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/FileReader`"
-  js/FileReader)
-
 (defn abort
   "Method.
 
@@ -89,6 +79,8 @@
 (defn error
   "Property.
 
+  [Read Only]
+
   Returns the error that occurred while reading the file.
 
   `var error = instanceOfFileReader.error`
@@ -97,19 +89,10 @@
   [this]
   (-> this (.-error)))
 
-(defn set-error!
-  "Property.
-
-  Returns the error that occurred while reading the file.
-
-  `var error = instanceOfFileReader.error`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/error`"
-  [this val]
-  (aset this "error" val))
-
 (defn ready-state
   "Property.
+
+  [Read Only]
 
   The `web.files.FileReader` readyState property provides the current
   of the reading operation a FileReader is in. A FileReader exists
@@ -119,19 +102,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The `web.files.FileReader` readyState property provides the current
-  of the reading operation a FileReader is in. A FileReader exists
-  one of the following states:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn result
   "Property.
+
+  [Read Only]
 
   The `web.files.FileReader` result property returns the file's
   This property is only valid after the read operation is complete,
@@ -143,20 +117,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result`"
   [this]
   (-> this (.-result)))
-
-(defn set-result!
-  "Property.
-
-  The `web.files.FileReader` result property returns the file's
-  This property is only valid after the read operation is complete,
-  the format of the data depends on which of the methods was used
-  initiate the read operation.
-
-  `var file = instanceOfFileReader.result`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result`"
-  [this val]
-  (aset this "result" val))
 
 (defn onabort
   "Property.
@@ -187,16 +147,12 @@
 (defn onerror
   "Property.
 
-
-
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror`"
   [this]
   (-> this (.-onerror)))
 
 (defn set-onerror!
   "Property.
-
-
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onerror`"
   [this val]

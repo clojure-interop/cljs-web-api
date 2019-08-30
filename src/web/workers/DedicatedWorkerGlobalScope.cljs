@@ -37,6 +37,8 @@
 (defn dump
   "Method.
 
+  [Non Standard]
+
   The dump() method of the `web.workers.WorkerGlobalScope` interface
   you to write a message to stdout — i.e. in your terminal, in
   only. This is the same as Firefox's `window.dump`, but for workers.
@@ -105,6 +107,8 @@
 (defn name
   "Property.
 
+  [Read Only]
+
   The name read-only property of the `web.workers.DedicatedWorkerGlobalScope`
   returns the name that the `web.workers.Worker` was (optionally)
   when it was created. This is the name that the `Worker()` constructor
@@ -116,22 +120,10 @@
   [this]
   (-> this (.-name)))
 
-(defn set-name!
-  "Property.
-
-  The name read-only property of the `web.workers.DedicatedWorkerGlobalScope`
-  returns the name that the `web.workers.Worker` was (optionally)
-  when it was created. This is the name that the `Worker()` constructor
-  pass to get a reference to the `web.workers.DedicatedWorkerGlobalScope`.
-
-  `var nameObj = self.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn self
   "Property.
+
+  [Read Only]
 
   The self read-only property of the `web.workers.WorkerGlobalScope`
   returns a reference to the WorkerGlobalScope itself. Most of
@@ -144,22 +136,11 @@
   [this]
   (-> this (.-self)))
 
-(defn set-self!
-  "Property.
-
-  The self read-only property of the `web.workers.WorkerGlobalScope`
-  returns a reference to the WorkerGlobalScope itself. Most of
-  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
-  or `web.workers.ServiceWorkerGlobalScope`.
-
-  `var selfRef = self;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
-  [this val]
-  (aset this "self" val))
-
 (defn console
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The console read-only property of the `web.workers.WorkerGlobalScope`
   returns a `Console` object providing access to the browser console
@@ -174,6 +155,8 @@
 (defn location
   "Property.
 
+  [Read Only]
+
   The location read-only property of the `web.workers.WorkerGlobalScope`
   returns the `web.workers.WorkerLocation` associated with the
   It is a specific location object, mostly a subset of the `web.dom.Location`
@@ -185,22 +168,10 @@
   [this]
   (-> this (.-location)))
 
-(defn set-location!
-  "Property.
-
-  The location read-only property of the `web.workers.WorkerGlobalScope`
-  returns the `web.workers.WorkerLocation` associated with the
-  It is a specific location object, mostly a subset of the `web.dom.Location`
-  browsing scopes, but adapted to workers.
-
-  `var locationObj = self.location;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/location`"
-  [this val]
-  (aset this "location" val))
-
 (defn navigator
   "Property.
+
+  [Read Only]
 
   The navigator read-only property of the `web.workers.WorkerGlobalScope`
   returns the `web.workers.WorkerNavigator` associated with the
@@ -213,22 +184,10 @@
   [this]
   (-> this (.-navigator)))
 
-(defn set-navigator!
-  "Property.
-
-  The navigator read-only property of the `web.workers.WorkerGlobalScope`
-  returns the `web.workers.WorkerNavigator` associated with the
-  It is a specific navigator object, mostly a subset of the `web.performance.Navigator`
-  browsing scopes, but adapted to workers.
-
-  `var navigatorObj = self.navigator;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/navigator`"
-  [this val]
-  (aset this "navigator" val))
-
 (defn performance
   "Property.
+
+  [Read Only]
 
   The performance read-only property of the `web.workers.WorkerGlobalScope`
   returns a `web.performance.Performance` object to be used on

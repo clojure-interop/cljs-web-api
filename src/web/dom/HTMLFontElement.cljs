@@ -7,6 +7,8 @@
 (defn color
   "Property.
 
+  [Obsolute]
+
   The obsolete HTMLFontElement.color property is a `web.dom.DOMString`
   reflects the color HTML attribute, containing either a named
   or a color specified in the hexadecimal #RRGGBB format.
@@ -20,6 +22,8 @@
 
 (defn set-color!
   "Property.
+
+  [Obsolute]
 
   The obsolete HTMLFontElement.color property is a `web.dom.DOMString`
   reflects the color HTML attribute, containing either a named
@@ -35,6 +39,8 @@
 (defn face
   "Property.
 
+  [Obsolute]
+
   The obsolete HTMLFontElement.face property is a `web.dom.DOMString`
   reflects the face HTML attribute, containing a comma-separated
   of one or more font names.
@@ -48,6 +54,8 @@
 
 (defn set-face!
   "Property.
+
+  [Obsolute]
 
   The obsolete HTMLFontElement.face property is a `web.dom.DOMString`
   reflects the face HTML attribute, containing a comma-separated
@@ -63,6 +71,8 @@
 (defn size
   "Property.
 
+  [Obsolute]
+
   The obsolete HTMLFontElement.size property is a `web.dom.DOMString`
   reflects the size HTML attribute. It contains either an integer
   in the range of 1-7 or a relative value to increase/decrease
@@ -77,6 +87,8 @@
 
 (defn set-size!
   "Property.
+
+  [Obsolute]
 
   The obsolete HTMLFontElement.size property is a `web.dom.DOMString`
   reflects the size HTML attribute. It contains either an integer

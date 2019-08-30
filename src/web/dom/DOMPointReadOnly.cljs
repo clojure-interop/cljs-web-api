@@ -3,27 +3,6 @@
   used by `web.dom.DOMPoint` to define a 2D or 3D point in a coordinate"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DOMPointReadOnly() constructor returns a new `web.dom.DOMPointReadOnly` object representing a point in 2D or 3D space, optionally with perspective, whose values cannot be altered by script code.
-
-  x Optional
-  The value of the horizontal coordinate, x, as a floating point number. The default value is 0.
-  y Optional
-  The value of the vertical coordinate, y, as a floating point number. The default value is 0.
-  z Optional
-  The value of the depth coordinate, z, as a floating point number. The default value is 0.
-  w Optional
-  The value of the perspective, w, as a floating point number. The default is 1.
-
-
-
-  Note: Each of these values is what's called an unrestricted number. In addition to any finite floating-point value, you may use special values such as ±`js.Infinity` and `js.NaN`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly`"
-  js/DOMPointReadOnly)
-
 (defn matrix-transform
   "Method.
 
@@ -59,6 +38,8 @@
 (defn x
   "Property.
 
+  [Read Only]
+
   The DOMPointReadOnly interface's x property holds the horizontal
   x, for a read-only point in space. This property cannot be changed
   JavaScript code in this read-only version of the DOMPoint object.
@@ -72,6 +53,8 @@
 (defn y
   "Property.
 
+  [Read Only]
+
   The DOMPointReadOnly interface's y property holds the vertical
   y, for a read-only point in space.
 
@@ -83,6 +66,8 @@
 
 (defn z
   "Property.
+
+  [Read Only]
 
   The DOMPointReadOnly interface's z property holds the depth coordinate,
   for a read-only point in space.
@@ -96,6 +81,8 @@
 (defn w
   "Property.
 
+  [Read Only]
+
   The DOMPointReadOnly interface's w property holds the point's
   value, w, for a read-only point in space.
 
@@ -104,14 +91,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/w`"
   [this]
   (-> this (.-w)))
-
-(defn dom-point-read-only
-  "Property."
-  [this]
-  (-> this (.-DOMPointReadOnly)))
-
-(defn set-dom-point-read-only!
-  "Property."
-  [this val]
-  (aset this "DOMPointReadOnly" val))
 

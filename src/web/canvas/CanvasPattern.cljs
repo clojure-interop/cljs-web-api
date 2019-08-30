@@ -7,6 +7,8 @@
 (defn set-transform
   "Method.
 
+  [Experimental]
+
   The CanvasPattern.setTransform() method uses an `web.deprecated.SVGMatrix`
   as the pattern's transformation matrix and invokes it on the
 

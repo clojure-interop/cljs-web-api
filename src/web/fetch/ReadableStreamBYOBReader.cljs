@@ -4,19 +4,11 @@
   stream data supplied by the developer (e.g. a custom `ReadableStream.ReadableStream()`"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ReadableStreamBYOBReader() constructor creates and returns a ReadableStreamBYOBReader() object instance.
-
-  stream
-  The `web.files.ReadableStream` to be read.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBReader/ReadableStreamBYOBReader`"
-  js/ReadableStreamBYOBReader)
-
 (defn cancel
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The cancel() method of the `web.fetch.ReadableStreamBYOBReader`
   cancels the stream, signaling a loss of interest in the stream
@@ -32,6 +24,9 @@
 (defn read
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The read() method of the `web.fetch.ReadableStreamBYOBReader`
   returns a promise providing access to the next chunk in the byte
   internal queue.
@@ -44,6 +39,9 @@
 
 (defn release-lock
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The releaseLock() method of the `web.fetch.ReadableStreamBYOBReader`
   releases the reader's lock on the stream. After the lock is released,
@@ -58,6 +56,9 @@
 (defn closed
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The closed getter property of the `web.fetch.ReadableStreamBYOBReader`
   returns a promise that fulfills if the stream becomes closed
   the reader's lock is released, or rejects if the stream errors.
@@ -70,6 +71,9 @@
 
 (defn set-closed!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The closed getter property of the `web.fetch.ReadableStreamBYOBReader`
   returns a promise that fulfills if the stream becomes closed

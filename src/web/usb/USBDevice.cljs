@@ -6,6 +6,8 @@
 (defn claim-interface
   "Method.
 
+  [Experimental]
+
   The claimInterface() method of the `web.usb.USBDevice` interface
   a `promise` that resolves when the requested interface is claimed
   exclusive access.
@@ -18,6 +20,8 @@
 
 (defn clear-halt
   "Method.
+
+  [Experimental]
 
   The clearHalt() method of the `web.usb.USBDevice` interface returns
   `promise` that resolves when a halt condition is cleared. A halt
@@ -34,6 +38,8 @@
 (defn control-transfer-in
   "Method.
 
+  [Experimental]
+
   The controlTransferIn() method of the `web.usb.USBDevice` interface
   a `promise` that resolves with a `USBInTransferResult` when a
   or status operation has been transmitted to the USB device.
@@ -46,6 +52,8 @@
 
 (defn control-transfer-out
   "Method.
+
+  [Experimental]
 
   The controlTransferOut() method of the `web.usb.USBDevice` interface
   a `promise` that resolves with a `USBOutTransferResult` when
@@ -60,6 +68,8 @@
 (defn close
   "Method.
 
+  [Experimental]
+
   The close() method of the `web.usb.USBDevice` interface returns
   `promise` that resolves when all open interfaces are released
   the device session has ended.
@@ -72,6 +82,8 @@
 
 (defn isochronous-transfer-in
   "Method.
+
+  [Experimental]
 
   The isochronousTransferIn() method of the `web.usb.USBDevice`
   returns a `promise` that resolves with a `USBIsochronousInTransferResult`
@@ -86,6 +98,8 @@
 (defn isochronous-transfer-out
   "Method.
 
+  [Experimental]
+
   The isochronousTransferOut() method of the `web.usb.USBDevice`
   returns a `promise` that resolves with a `USBIsochronousOutTransferResult`
   time sensitive information has been transmitted from the USB
@@ -99,6 +113,8 @@
 (defn open
   "Method.
 
+  [Experimental]
+
   The open() method of the `web.usb.USBDevice` interface returns
   `promise` that resolves when a device session has started.
 
@@ -110,6 +126,8 @@
 
 (defn release-interface
   "Method.
+
+  [Experimental]
 
   The releaseInterface() method of the `web.usb.USBDevice` interface
   a `promise` that resolves when a cliamed interface is released
@@ -124,6 +142,8 @@
 (defn reset
   "Method.
 
+  [Experimental]
+
   The reset() method of the `web.usb.USBDevice` interface eturns
   `promise` that resolves when the device is reset and all app
   canceled and their promises rejected.
@@ -136,6 +156,8 @@
 
 (defn select-alternate-interface
   "Method.
+
+  [Experimental]
 
   The selectAlternateInterface() method of the `web.usb.USBDevice`
   returns a `promise` that resolves when the specified alternative
@@ -150,6 +172,8 @@
 (defn select-configuration
   "Method.
 
+  [Experimental]
+
   The selectConfiguration() method of the `web.usb.USBDevice` interface
   a `promise` that resolves when the specified configuration is
 
@@ -161,6 +185,8 @@
 
 (defn transfer-in
   "Method.
+
+  [Experimental]
 
   The transferIn() method of the `web.usb.USBDevice` interface
   a `promise` that resolves with a `USBTransferInResult` when bulk
@@ -175,6 +201,8 @@
 (defn transfer-out
   "Method.
 
+  [Experimental]
+
   The transferOut() method of the `web.usb.USBDevice` interface
   a `promise` that resolves with a `USBTransferOutResult` when
   or interrupt data is transmitted from the USB device.
@@ -188,6 +216,9 @@
 (defn configuration
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The configuration read only property of the `web.usb.USBDevice`
   returns a `USBConfiguration` object for the currently selected
   for a paired USB device.
@@ -198,21 +229,11 @@
   [this]
   (-> this (.-configuration)))
 
-(defn set-configuration!
-  "Property.
-
-  The configuration read only property of the `web.usb.USBDevice`
-  returns a `USBConfiguration` object for the currently selected
-  for a paired USB device.
-
-  `var USBConfiguration = USBDevice.configuration`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configuration`"
-  [this val]
-  (aset this "configuration" val))
-
 (defn configurations
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The configurations read only property of the `web.usb.USBDevice`
   an `array` of device-specific interfaces for controlling a paired
@@ -224,21 +245,11 @@
   [this]
   (-> this (.-configurations)))
 
-(defn set-configurations!
-  "Property.
-
-  The configurations read only property of the `web.usb.USBDevice`
-  an `array` of device-specific interfaces for controlling a paired
-  device.
-
-  `var USBConfiguration[] = USBDevice.configurations`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/configurations`"
-  [this val]
-  (aset this "configurations" val))
-
 (defn device-class
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceClass read only property of the `web.usb.USBDevice`
   one of three properties that identify USB devices for the purpose
@@ -251,22 +262,11 @@
   [this]
   (-> this (.-deviceClass)))
 
-(defn set-device-class!
-  "Property.
-
-  The deviceClass read only property of the `web.usb.USBDevice`
-  one of three properties that identify USB devices for the purpose
-  loading a USB driver that will work with that device. The other
-  properties are USBDevice.deviceSubclass and USBDevice.deviceprotocol.
-
-  `var number = USBDevice.deviceClass`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceClass`"
-  [this val]
-  (aset this "deviceClass" val))
-
 (defn device-protocol
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceProtocol read only property of the `web.usb.USBDevice`
   one of three properties that identify USB devices for the purpose
@@ -279,22 +279,11 @@
   [this]
   (-> this (.-deviceProtocol)))
 
-(defn set-device-protocol!
-  "Property.
-
-  The deviceProtocol read only property of the `web.usb.USBDevice`
-  one of three properties that identify USB devices for the purpose
-  loading a USB driver that will work with that device. The other
-  properties are USBDevice.deviceClass and USBDevice.deviceSubclass.
-
-  `var number = USBDevice.deviceProtocol`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceProtocol`"
-  [this val]
-  (aset this "deviceProtocol" val))
-
 (defn device-subclass
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceSubclass read only property of the `web.usb.USBDevice`
   one of three properties that identify USB devices for the purpose
@@ -307,22 +296,11 @@
   [this]
   (-> this (.-deviceSubclass)))
 
-(defn set-device-subclass!
-  "Property.
-
-  The deviceSubclass read only property of the `web.usb.USBDevice`
-  one of three properties that identify USB devices for the purpose
-  loading a USB driver that will work with that device. The other
-  properties are USBDevice.deviceClass and USBDevice.deviceProtocol.
-
-  `var serialNumber = USBDevice.deviceSubclass`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceSubclass`"
-  [this val]
-  (aset this "deviceSubclass" val))
-
 (defn device-version-major
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceVersionMajor read only property of the `web.usb.USBDevice`
   he major version number of the device in a semantic versioning
@@ -333,20 +311,11 @@
   [this]
   (-> this (.-deviceVersionMajor)))
 
-(defn set-device-version-major!
-  "Property.
-
-  The deviceVersionMajor read only property of the `web.usb.USBDevice`
-  he major version number of the device in a semantic versioning
-
-  `var serialNumber = USBDevice.deviceVersionMajor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMajor`"
-  [this val]
-  (aset this "deviceVersionMajor" val))
-
 (defn device-version-minor
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceVersionMinor read only property of the `web.usb.USBDevice`
   the minor version number of the device in a semantic versioning
@@ -357,20 +326,11 @@
   [this]
   (-> this (.-deviceVersionMinor)))
 
-(defn set-device-version-minor!
-  "Property.
-
-  The deviceVersionMinor read only property of the `web.usb.USBDevice`
-  the minor version number of the device in a semantic versioning
-
-  `var serialNumber = USBDevice.deviceVersionMinor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionMinor`"
-  [this val]
-  (aset this "deviceVersionMinor" val))
-
 (defn device-version-subminor
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The deviceVersionSubminor read only property of the `web.usb.USBDevice`
   the patch version number of the device in a semantic versioning
@@ -381,20 +341,11 @@
   [this]
   (-> this (.-deviceVersionSubminor)))
 
-(defn set-device-version-subminor!
-  "Property.
-
-  The deviceVersionSubminor read only property of the `web.usb.USBDevice`
-  the patch version number of the device in a semantic versioning
-
-  `var serialNumber = USBDevice.deviceVersionSubminor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/deviceVersionSubminor`"
-  [this val]
-  (aset this "deviceVersionSubminor" val))
-
 (defn manufacturer-name
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The manufacturerName read only property of the `web.usb.USBDevice`
   the of the organization that manufactured the USB device.
@@ -405,20 +356,11 @@
   [this]
   (-> this (.-manufacturerName)))
 
-(defn set-manufacturer-name!
-  "Property.
-
-  The manufacturerName read only property of the `web.usb.USBDevice`
-  the of the organization that manufactured the USB device.
-
-  `var serialNumber = USBDevice.manufacturerName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/manufacturerName`"
-  [this val]
-  (aset this "manufacturerName" val))
-
 (defn opened
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The opened read only property of the `web.usb.USBDevice` interface
   whether a session has been started with a paired USB device.
@@ -430,21 +372,11 @@
   [this]
   (-> this (.-opened)))
 
-(defn set-opened!
-  "Property.
-
-  The opened read only property of the `web.usb.USBDevice` interface
-  whether a session has been started with a paired USB device.
-  device must be opened before it can conrolled by a web page.
-
-  `var serialNumber = USBDevice.opened`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/opened`"
-  [this val]
-  (aset this "opened" val))
-
 (defn product-id
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The productID read only property of the `web.usb.USBDevice` interface
   manufacturer-defined code that identifies a USB device.
@@ -455,20 +387,11 @@
   [this]
   (-> this (.-productID)))
 
-(defn set-product-id!
-  "Property.
-
-  The productID read only property of the `web.usb.USBDevice` interface
-  manufacturer-defined code that identifies a USB device.
-
-  `var serialNumber = USBDevice.productID`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productID`"
-  [this val]
-  (aset this "productID" val))
-
 (defn product-name
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The productName read only property of the `web.usb.USBDevice`
   the manufacturer-defined name that identifies a USB device.
@@ -479,20 +402,11 @@
   [this]
   (-> this (.-productName)))
 
-(defn set-product-name!
-  "Property.
-
-  The productName read only property of the `web.usb.USBDevice`
-  the manufacturer-defined name that identifies a USB device.
-
-  `var serialNumber = USBDevice.productName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/productName`"
-  [this val]
-  (aset this "productName" val))
-
 (defn serial-number
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The serialNumber read only property of the `web.usb.USBDevice`
   is the manufacturer-defined serial number for the specific USB
@@ -503,20 +417,11 @@
   [this]
   (-> this (.-serialNumber)))
 
-(defn set-serial-number!
-  "Property.
-
-  The serialNumber read only property of the `web.usb.USBDevice`
-  is the manufacturer-defined serial number for the specific USB
-
-  `var serialNumber = USBDevice.serialNumber`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/serialNumber`"
-  [this val]
-  (aset this "serialNumber" val))
-
 (defn usb-version-major
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The usbVersionMajor read only property of the `web.usb.USBDevice`
   is one of three properties that declare the USB protocol version
@@ -529,22 +434,11 @@
   [this]
   (-> this (.-usbVersionMajor)))
 
-(defn set-usb-version-major!
-  "Property.
-
-  The usbVersionMajor read only property of the `web.usb.USBDevice`
-  is one of three properties that declare the USB protocol version
-  by the device. The other two properties are USBDevice.usbVersionMinor
-  USBDevice.usbVersionSubminor.
-
-  `var serialNumber = USBDevice.usbVersionMajor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMajor`"
-  [this val]
-  (aset this "usbVersionMajor" val))
-
 (defn usb-version-minor
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The usbVersionMinor read only property of the `web.usb.USBDevice`
   is one of three properties that declare the USB protocol version
@@ -557,22 +451,11 @@
   [this]
   (-> this (.-usbVersionMinor)))
 
-(defn set-usb-version-minor!
-  "Property.
-
-  The usbVersionMinor read only property of the `web.usb.USBDevice`
-  is one of three properties that declare the USB protocol version
-  by the device. The other two properties are USBDevice.usbVersionMajor
-  USBDevice.usbVersionSubminor.
-
-  `var serialNumber = USBDevice.usbVersionMinor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionMinor`"
-  [this val]
-  (aset this "usbVersionMinor" val))
-
 (defn usb-version-subminor
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The usbVersionSubminor read only property of the `web.usb.USBDevice`
   is one of three properties that declare the USB protocol version
@@ -585,22 +468,11 @@
   [this]
   (-> this (.-usbVersionSubminor)))
 
-(defn set-usb-version-subminor!
-  "Property.
-
-  The usbVersionSubminor read only property of the `web.usb.USBDevice`
-  is one of three properties that declare the USB protocol version
-  by the device. The other two properties are USBDevice.usbVersionMajor
-  USBDevice.usbVersionMinor.
-
-  `var serialNumber = USBDevice.usbVersionSubminor`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionSubminor`"
-  [this val]
-  (aset this "usbVersionSubminor" val))
-
 (defn vendor-id
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The vendorID read only property of the `web.usb.USBDevice` interface
   the official usg.org-assigned vendor ID.
@@ -610,16 +482,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/vendorID`"
   [this]
   (-> this (.-vendorID)))
-
-(defn set-vendor-id!
-  "Property.
-
-  The vendorID read only property of the `web.usb.USBDevice` interface
-  the official usg.org-assigned vendor ID.
-
-  `var serialNumber = USBDevice.vendorID`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/vendorID`"
-  [this val]
-  (aset this "vendorID" val))
 

@@ -25,6 +25,8 @@
 (def animationcancel
   "Event.
 
+  [Experimental]
+
   The animationcancel event is fired when a CSS Animation unexpectedly
   In other words, any time it stops running without sending an
   event. This might happen when the `animation-name` is changed
@@ -202,24 +204,29 @@
 
   "fullscreenerror")
 
-(def onkeydown
+(def keydown
   "Event.
 
-  keypress"
+  Fired when a key is pressed.
+  Also available via the onkeydown property."
 
-  "onkeydown")
+  "keydown")
 
-(def onkeypress
+(def keypress
   "Event.
 
-  keyup"
+  Fired when a key that produces a character value is pressed down.
+  Also available via the onkeypress property."
 
-  "onkeypress")
+  "keypress")
 
-(def onkeyup
-  "Event."
+(def keyup
+  "Event.
 
-  "onkeyup")
+  Fired when a key is released.
+  Also available via the onkeyup property."
+
+  "keyup")
 
 (def dom-content-loaded
   "Event.
@@ -375,16 +382,12 @@
 (def selectionchange
   "Event.
 
-
-
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectionchange_event`"
 
   "selectionchange")
 
 (def selectstart
   "Event.
-
-
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/selectstart_event`"
 
@@ -431,62 +434,10 @@
 
   "touchstart")
 
-(def ontransitioncancel
-  "Event.
-
-  transitionend"
-
-  "ontransitioncancel")
-
-(def ontransitionend
-  "Event.
-
-  transitionrun"
-
-  "ontransitionend")
-
-(def ontransitionrun
-  "Event.
-
-  transitionstart"
-
-  "ontransitionrun")
-
-(def ontransitionstart
-  "Event."
-
-  "ontransitionstart")
-
-(def keydown
-  "Event.
-
-  The keydown event is fired when a key is pressed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event`"
-
-  "keydown")
-
-(def keypress
-  "Event.
-
-  The keypress event is fired when a key that produces a character
-  is pressed down.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event`"
-
-  "keypress")
-
-(def keyup
-  "Event.
-
-  The keyup event is fired when a key is released.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event`"
-
-  "keyup")
-
 (def transitioncancel
   "Event.
+
+  [Experimental]
 
   The transitioncancel event is fired when a CSS transition is
 
@@ -509,6 +460,8 @@
 (def transitionrun
   "Event.
 
+  [Experimental]
+
   The transitionrun event is fired when a CSS transition is first
   i.e. before any `transition-delay` has begun.
 
@@ -518,6 +471,8 @@
 
 (def transitionstart
   "Event.
+
+  [Experimental]
 
   The transitionstart event is fired when a CSS transition has
   started, i.e., after any `transition-delay` has ended.

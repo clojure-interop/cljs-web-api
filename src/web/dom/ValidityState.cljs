@@ -8,6 +8,8 @@
 (defn bad-input
   "Property.
 
+  [Read Only]
+
   The read-only badInput property of a ValidityState object indicates
   the user has provided input that the browser is unable to convert.
   example, if you have a number input element whose content is
@@ -22,6 +24,8 @@
 (defn too-long
   "Property.
 
+  [Read Only]
+
   The read-only tooLong property of a ValidityState object indicates
   the value of an `<input>`, `<button>`, `<select>`, `<output>`,
   or `<textarea>`, after having been edited by the user, exceeds
@@ -31,33 +35,12 @@
   [this]
   (-> this (.-tooLong)))
 
-(defn set-too-long!
-  "Property.
-
-  The read-only tooLong property of a ValidityState object indicates
-  the value of an `<input>`, `<button>`, `<select>`, `<output>`,
-  or `<textarea>`, after having been edited by the user, exceeds
-  maximum code-unit length established by the element's maxlength
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooLong`"
-  [this val]
-  (aset this "tooLong" val))
-
 (defn too-short
   "Property.
 
-
+  [Read Only]
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooShort`"
   [this]
   (-> this (.-tooShort)))
-
-(defn set-too-short!
-  "Property.
-
-
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ValidityState/tooShort`"
-  [this val]
-  (aset this "tooShort" val))
 

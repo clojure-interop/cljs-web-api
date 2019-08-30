@@ -5,21 +5,10 @@
   expected."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The CSSUnitValue() constructor creates a new `web.css.CSSUnitValue` object which returns a new `web.css.CSSUnitValue` object which represents values that contain a single unit type. For example, \\\"42px\\\" would be represented by a CSSNumericValue.
-
-  value
-  Returns a double indicating the number of units.
-  unit
-  Returns a `web.USVString` indicating the type of unit.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue/CSSUnitValue`"
-  js/CSSUnitValue)
-
 (defn parse
   "Method.
+
+  [Experimental]
 
   The parse() method of the `web.css.CSSStyleValue` interface sets
   specific CSS property to the specified values and returns the
@@ -33,6 +22,8 @@
 
 (defn parse-all
   "Method.
+
+  [Experimental]
 
   The parseAll() method of the `web.css.CSSStyleValue` interface
   all occurences of a specific CSS property to the specified valueand

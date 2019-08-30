@@ -6,6 +6,8 @@
 (defn set-action-handler
   "Method.
 
+  [Experimental]
+
   The setActionHandler() property of the `web.audio.MediaSession`
   sets an event handler for a media session action.
 
@@ -17,6 +19,8 @@
 
 (defn metadata
   "Property.
+
+  [Experimental]
 
   The metadata property of the `web.audio.MediaSession` interface,
   an instance of `web.audio.MediaMetadata` which contains rich
@@ -32,6 +36,8 @@
 (defn set-metadata!
   "Property.
 
+  [Experimental]
+
   The metadata property of the `web.audio.MediaSession` interface,
   an instance of `web.audio.MediaMetadata` which contains rich
   metadata, for display in a platform UI.
@@ -46,6 +52,8 @@
 (defn playback-state
   "Property.
 
+  [Experimental]
+
   The playbackState property of the `web.audio.MediaSession` interface
   whether the current media session is playing.
 
@@ -58,6 +66,8 @@
 
 (defn set-playback-state!
   "Property.
+
+  [Experimental]
 
   The playbackState property of the `web.audio.MediaSession` interface
   whether the current media session is playing.

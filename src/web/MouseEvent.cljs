@@ -4,14 +4,6 @@
   using this interface include click, dblclick, mouseup, mousedown."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The MouseEvent() constructor creates a new `web.MouseEvent`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent`"
-  js/MouseEvent)
-
 (defn get-modifier-state
   "Method.
 
@@ -28,6 +20,8 @@
 (defn init-mouse-event
   "Method.
 
+  [Deprecated]
+
   The MouseEvent.initMouseEvent() method initializes the value
   a mouse event once it's been created (normally using the `Document.createEvent()`
 
@@ -43,6 +37,8 @@
 (defn alt-key
   "Property.
 
+  [Read Only]
+
   The MouseEvent.altKey read-only property is a `js.Boolean` that
   whether the alt key was pressed or not when a given mouse event
 
@@ -54,6 +50,8 @@
 
 (defn button
   "Property.
+
+  [Read Only]
 
   The MouseEvent.button read-only property indicates which button
   pressed on the mouse to trigger the event.
@@ -67,6 +65,8 @@
 (defn buttons
   "Property.
 
+  [Read Only]
+
   The MouseEvent.buttons read-only property indicates which buttons
   pressed on the mouse (or other input device) when a mouse event
   triggered.
@@ -79,6 +79,8 @@
 
 (defn client-x
   "Property.
+
+  [Read Only]
 
   The clientX read-only property of the `web.MouseEvent` interface
   the horizontal coordinate within the application's client area
@@ -94,6 +96,8 @@
 (defn client-y
   "Property.
 
+  [Read Only]
+
   The clientY read-only property of the `web.MouseEvent` interface
   the vertical coordinate within the application's client area
   which the event occurred (as opposed to the coordinate within
@@ -108,6 +112,8 @@
 (defn ctrl-key
   "Property.
 
+  [Read Only]
+
   The MouseEvent.ctrlKey read-only property is a `js.Boolean` that
   whether the ctrl key was pressed or not when a given mouse event
 
@@ -120,6 +126,8 @@
 (defn meta-key
   "Property.
 
+  [Read Only]
+
   The MouseEvent.metaKey read-only property is a `js.Boolean` that
   whether the meta key was pressed or not when a given mouse event
 
@@ -131,6 +139,8 @@
 
 (defn movement-x
   "Property.
+
+  [Read Only]
 
   The movementX read-only property of the `web.MouseEvent` interface
   the difference in the X coordinate of the mouse pointer between
@@ -147,6 +157,8 @@
 (defn movement-y
   "Property.
 
+  [Read Only]
+
   The movementY read-only property of the `web.MouseEvent` interface
   the difference in the Y coordinate of the mouse pointer between
   given event and the previous mousemove event. In other words,
@@ -162,6 +174,9 @@
 (defn offset-x
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The offsetX read-only property of the `web.MouseEvent` interface
   the offset in the X coordinate of the mouse pointer between that
   and the padding edge of the target node.
@@ -174,6 +189,9 @@
 
 (defn offset-y
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The offsetY read-only property of the `web.MouseEvent` interface
   the offset in the Y coordinate of the mouse pointer between that
@@ -188,6 +206,8 @@
 (defn page-x
   "Property.
 
+  [Read Only]
+
   The pageX read-only property of the `web.MouseEvent` interface
   the X (horizontal) coordinate (in pixels) at which the mouse
   clicked, relative to the left edge of the entire document.
@@ -200,6 +220,8 @@
 
 (defn page-y
   "Property.
+
+  [Read Only]
 
   The pageY read-only property of the `web.MouseEvent` interface
   the Y (vertical) coordinate in pixels of the event relative to
@@ -217,6 +239,8 @@
 (defn region
   "Property.
 
+  [Read Only]
+
   The MouseEvent.region read-only property returns the id of the
   hit region affected by the event. If no hit region is affected,
   is returned.
@@ -230,6 +254,8 @@
 (defn related-target
   "Property.
 
+  [Read Only]
+
   The MouseEvent.relatedTarget read-only property is the secondary
   for the mouse event, if there is one. That is:
 
@@ -241,6 +267,8 @@
 
 (defn screen-x
   "Property.
+
+  [Read Only]
 
   The screenX read-only property of the `web.MouseEvent` interface
   the horizontal coordinate (offset) of the mouse pointer in global
@@ -255,6 +283,8 @@
 (defn screen-y
   "Property.
 
+  [Read Only]
+
   The screenY read-only property of the `web.MouseEvent` interface
   the vertical coordinate (offset) of the mouse pointer in global
   coordinates.
@@ -268,6 +298,8 @@
 (defn shift-key
   "Property.
 
+  [Read Only]
+
   The MouseEvent.shiftKey read-only property is a `js.Boolean`
   indicates whether the shift key was pressed or not when a given
   event occurs.
@@ -280,6 +312,9 @@
 
 (defn which
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The MouseEvent.which read-only property indicates which button
   pressed on the mouse to trigger the event. The standard alternatives
@@ -314,6 +349,9 @@
 (defn moz-input-source
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The MouseEvent.mozInputSource read-only property on `web.MouseEvent`
   information indicating the type of device that generated the
   This lets you, for example, determine whether a mouse event was
@@ -330,6 +368,9 @@
 (defn webkit-force
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
   whose value represents the amount of pressure that is being applied
   the touchpad or touchscreen.
@@ -338,19 +379,11 @@
   [this]
   (-> this (.-webkitForce)))
 
-(defn set-webkit-force!
-  "Property.
-
-  MouseEvent.webkitForce is a proprietary, WebKit-specific numeric
-  whose value represents the amount of pressure that is being applied
-  the touchpad or touchscreen.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/webkitForce`"
-  [this val]
-  (aset this "webkitForce" val))
-
 (defn x
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The MouseEvent.x property is an alias for the `MouseEvent.clientX`
 
@@ -358,17 +391,11 @@
   [this]
   (-> this (.-x)))
 
-(defn set-x!
-  "Property.
-
-  The MouseEvent.x property is an alias for the `MouseEvent.clientX`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x`"
-  [this val]
-  (aset this "x" val))
-
 (defn y
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The MouseEvent.y property is an alias for the `MouseEvent.clientY`
 
@@ -376,17 +403,10 @@
   [this]
   (-> this (.-y)))
 
-(defn set-y!
-  "Property.
-
-  The MouseEvent.y property is an alias for the `MouseEvent.clientY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y`"
-  [this val]
-  (aset this "y" val))
-
 (defn webkit-force-at-force-mouse-down
   "Property.
+
+  [Non Standard]
 
   MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN is a proprietary,
   static numeric property whose value is the minimum force necessary
@@ -399,6 +419,8 @@
 (defn set-webkit-force-at-force-mouse-down!
   "Property.
 
+  [Non Standard]
+
   MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN is a proprietary,
   static numeric property whose value is the minimum force necessary
   a force click.
@@ -410,6 +432,8 @@
 (defn webkit-force-at-mouse-down
   "Property.
 
+  [Non Standard]
+
   MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN is a proprietary, WebKit-specific,
   numeric property whose value is the minimum force necessary for
   normal click.
@@ -420,6 +444,8 @@
 
 (defn set-webkit-force-at-mouse-down!
   "Property.
+
+  [Non Standard]
 
   MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN is a proprietary, WebKit-specific,
   numeric property whose value is the minimum force necessary for

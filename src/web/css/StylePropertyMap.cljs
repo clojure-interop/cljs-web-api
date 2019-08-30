@@ -7,6 +7,8 @@
 (defn append
   "Method.
 
+  [Experimental]
+
   The append() method of the `web.css.StylePropertyMap` interface
   a new CSS declaration to the StylePropertyMap with the given
   and value.
@@ -20,6 +22,8 @@
 (defn clear
   "Method.
 
+  [Experimental]
+
   The clear() method of the `web.css.StylePropertyMap` interface
   all declarations in the StylePropertyMap.
 
@@ -32,6 +36,8 @@
 (defn delete
   "Method.
 
+  [Experimental]
+
   The delete() method of the `web.css.StylePropertyMap` interface
   the CSS declaration with the given property.
 
@@ -43,6 +49,8 @@
 
 (defn set
   "Method.
+
+  [Experimental]
 
   The set() method of the `web.css.StylePropertyMap` interface
   the CSS declaration with the given property.

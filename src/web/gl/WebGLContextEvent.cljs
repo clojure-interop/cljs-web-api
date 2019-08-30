@@ -7,6 +7,8 @@
 (defn status-message
   "Property.
 
+  [Read Only]
+
   The read-only WebGLContextEvent.statusMessage property contains
   event status information, or is an empty string if no additional
   is available.

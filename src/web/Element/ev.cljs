@@ -44,6 +44,8 @@
 (def show
   "Event.
 
+  [Deprecated]
+
   The show event is fired when a contextmenu event was fired on/bubbled
   an element that has a `contextmenu`.
 
@@ -254,6 +256,8 @@
 (def dom-activate
   "Event.
 
+  [Deprecated]
+
   The DOMActivate event is fired at an element when it becomes
   such as when it is clicked on using the mouse or a keypress is
   to navigate to it.
@@ -339,6 +343,8 @@
 (def webkitmouseforcechanged
   "Event.
 
+  [Non Standard]
+
   The non-standard webkitmouseforcechanged event is fired by Safari
   time the amount of pressure changes on the trackpad/touchscreen.
 
@@ -348,6 +354,8 @@
 
 (def webkitmouseforcedown
   "Event.
+
+  [Non Standard]
 
   After a `mousedown` event has been fired at the element, if and
   sufficient pressure has been applied to the mouse or trackpad
@@ -361,6 +369,8 @@
 (def webkitmouseforcewillbegin
   "Event.
 
+  [Non Standard]
+
   Safari for macOS fires the non-standard webkitmouseforcewillbegin
   at an `web.Element` before firing the initial mousedown event.
 
@@ -370,6 +380,8 @@
 
 (def webkitmouseforceup
   "Event.
+
+  [Non Standard]
 
   The non-standard webkitmouseforceup event is fired by Safari
   an `web.Element` some time after the webkitmouseforcedown event,
@@ -424,6 +436,8 @@
 (def afterscriptexecute
   "Event.
 
+  [Non Standard]
+
   The afterscriptexecute event is fired after a script has been
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event`"
@@ -432,6 +446,9 @@
 
 (def dom-mouse-scroll
   "Event.
+
+  [Deprecated]
+  [Non Standard]
 
   The DOM DOMMouseScroll event is fired asynchronously when mouse
   or similar device is operated and the accumulated scroll amount
@@ -446,6 +463,8 @@
 (def gesturechange
   "Event.
 
+  [Non Standard]
+
   The gesturechange event is fired when digits move during a touch
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturechange_event`"
@@ -454,6 +473,8 @@
 
 (def gestureend
   "Event.
+
+  [Non Standard]
 
   The gestureend event is fired when there are no longer multiple
   contacting the touch surface, thus ending the gesture.
@@ -464,6 +485,8 @@
 
 (def gesturestart
   "Event.
+
+  [Non Standard]
 
   The gesturestart event is fired when multiple fingers contact
   touch surface, thus starting a new gesture. During the gesture,
@@ -476,6 +499,9 @@
 
 (def mousewheel
   "Event.
+
+  [Deprecated]
+  [Non Standard]
 
   The obsolete and non-standard mousewheel event is fired asynchronously
   an `web.Element` to provide updates while a mouse wheel or similar
@@ -490,6 +516,9 @@
 (def moz-mouse-pixel-scroll
   "Event.
 
+  [Deprecated]
+  [Non Standard]
+
   The Firefox-only, non-standard, and obsolete MozMousePixelScroll
   is fired at an `web.Element` asynchronously when a mouse wheel
   similar device is operated. It's represented by the `web.deprecated.MouseScrollEvent`
@@ -501,6 +530,8 @@
 (def ms-content-zoom
   "Event.
 
+  [Non Standard]
+
   The msContentZoom event fires when a user zooms the element (changes
   scale of the content).
 
@@ -511,6 +542,8 @@
 (def ms-gesture-change
   "Event.
 
+  [Non Standard]
+
   The MSGestureChange event is fired when touch contact positions
   and also while inertia-based movements are being processed.
 
@@ -520,6 +553,8 @@
 
 (def ms-gesture-end
   "Event.
+
+  [Non Standard]
 
   The MSGestureEnd event is fired when all associated touch points
   stopped contacting the touch surface, and any associated inertial
@@ -532,6 +567,8 @@
 (def ms-gesture-hold
   "Event.
 
+  [Non Standard]
+
   The MSGestureHold event is fired when the user contacts the touch
   and remains in the same position for a while.
 
@@ -541,6 +578,8 @@
 
 (def ms-gesture-start
   "Event.
+
+  [Non Standard]
 
   The MSGestureStart event is fired when there's a new point of
   on the touch surface, thus starting a new gesture. When the gesture
@@ -552,6 +591,8 @@
 
 (def ms-gesture-tap
   "Event.
+
+  [Non Standard]
 
   The MSGestureTap event is fired when the user \\\"taps\\\" the pointing
   (e.g., touches the touch surface with their finger, taps the
@@ -565,6 +606,8 @@
 (def ms-inertia-start
   "Event.
 
+  [Non Standard]
+
   The MSInertiaStart event is fired when contact with the touch
   stops when a scroll has enough inertia to continue scrolling.
   event may not be fired if the scroll is sufficiently slow.
@@ -575,6 +618,8 @@
 
 (def ms-manipulation-state-changed
   "Event.
+
+  [Non Standard]
 
   MSManipulationStateChanged fires when the state of an element
   manipulated has changed (ie. whenever you start or finish panning
@@ -587,6 +632,8 @@
 (def overflow
   "Event.
 
+  [Non Standard]
+
   The overflow event is fired when an element has been overflowed
   its content or has been rendered for the first time in this state
   works for elements styled with overflow != visible).
@@ -597,6 +644,8 @@
 
 (def underflow
   "Event.
+
+  [Non Standard]
 
   The non-standard underflow event, which is specific to Firefox,
   fired when an element is no longer overflowed by its content.

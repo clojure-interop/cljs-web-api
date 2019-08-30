@@ -6,6 +6,8 @@
 (defn to-source
   "Method.
 
+  [Non Standard]
+
   The toSource() method returns code that could eval to the same
 
   `e.toSource()`
@@ -29,6 +31,8 @@
 (defn prototype
   "Property.
 
+  [Non Standard]
+
   The InternalError.prototype property represents the prototype
   the `js.InternalError` constructor.
 
@@ -38,6 +42,8 @@
 
 (defn set-prototype!
   "Property.
+
+  [Non Standard]
 
   The InternalError.prototype property represents the prototype
   the `js.InternalError` constructor.
@@ -49,6 +55,8 @@
 (defn column-number
   "Property.
 
+  [Non Standard]
+
   The columnNumber property contains the column number in the line
   the file that raised this error.
 
@@ -58,6 +66,8 @@
 
 (defn set-column-number!
   "Property.
+
+  [Non Standard]
 
   The columnNumber property contains the column number in the line
   the file that raised this error.
@@ -69,6 +79,8 @@
 (defn file-name
   "Property.
 
+  [Non Standard]
+
   The fileName property contains the path to the file that raised
   error.
 
@@ -78,6 +90,8 @@
 
 (defn set-file-name!
   "Property.
+
+  [Non Standard]
 
   The fileName property contains the path to the file that raised
   error.
@@ -89,6 +103,8 @@
 (defn line-number
   "Property.
 
+  [Non Standard]
+
   The lineNumber property contains the line number in the file
   raised this error.
 
@@ -98,6 +114,8 @@
 
 (defn set-line-number!
   "Property.
+
+  [Non Standard]
 
   The lineNumber property contains the line number in the file
   raised this error.
@@ -147,6 +165,8 @@
 (defn stack
   "Property.
 
+  [Non Standard]
+
   The non-standard stack property of `js.Error` objects offer a
   of which functions were called, in what order, from which line
   file, and with what arguments. The stack string proceeds from
@@ -159,6 +179,8 @@
 
 (defn set-stack!
   "Property.
+
+  [Non Standard]
 
   The non-standard stack property of `js.Error` objects offer a
   of which functions were called, in what order, from which line

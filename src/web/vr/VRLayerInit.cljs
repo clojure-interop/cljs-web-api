@@ -7,6 +7,8 @@
 (defn left-bounds
   "Property.
 
+  [Experimental]
+
   The leftBounds property of the `web.vr.VRLayerInit` interface
   defines the left texture bounds of the canvas whose contents
   be presented by the `web.media.VRDisplay`.
@@ -20,6 +22,8 @@
 
 (defn set-left-bounds!
   "Property.
+
+  [Experimental]
 
   The leftBounds property of the `web.vr.VRLayerInit` interface
   defines the left texture bounds of the canvas whose contents
@@ -35,6 +39,8 @@
 (defn right-bounds
   "Property.
 
+  [Experimental]
+
   The rightBounds property of the `web.vr.VRLayerInit` interface
   defines the right texture bounds of the canvas whose contents
   be presented by the `web.media.VRDisplay`.
@@ -48,6 +54,8 @@
 
 (defn set-right-bounds!
   "Property.
+
+  [Experimental]
 
   The rightBounds property of the `web.vr.VRLayerInit` interface
   defines the right texture bounds of the canvas whose contents
@@ -63,6 +71,8 @@
 (defn source
   "Property.
 
+  [Experimental]
+
   The source property of the `web.vr.VRLayerInit` interface (dictionary)
   the canvas whose contents will be presented by the `web.media.VRDisplay`.
 
@@ -75,6 +85,8 @@
 
 (defn set-source!
   "Property.
+
+  [Experimental]
 
   The source property of the `web.vr.VRLayerInit` interface (dictionary)
   the canvas whose contents will be presented by the `web.media.VRDisplay`.

@@ -3,23 +3,6 @@
   the properties and methods used to manipulate image elements."
   (:refer-clojure :exclude [name]))
 
-(def constructor
-  "Constructor.
-
-  The Image() constructor creates a new `web.dom.HTMLImageElement` instance. It is functionally equivalent to `document.createElement('img')`.
-
-  Note: The entire bitmap is loaded regardless of the sizes specified in the constructor. The size specified in the constructor is reflected through the properties `HTMLImageElement.width` and `HTMLImageElement.height` of the resulting instance. The intrinsic width and height of the image in CSS pixels is reflected through the properties `HTMLImageElement.naturalWidth` and `HTMLImageElement.naturalHeight`. If no size is specified in the constructor both pairs of properties have the same values.
-
-
-
-  width
-  The width of the image (i.e., the value for the width attribute).
-  height
-  The height of the image (i.e., the value for the height attribute).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image`"
-  js/Image)
-
 (defn decode
   "Method.
 
@@ -58,18 +41,28 @@
 (defn alt
   "Property.
 
-  A DOMString that reflects the alt HTML attribute, thus indicating
-  alternate fallback content to be displayed if the image has not
-  loaded."
+  The `web.dom.HTMLImageElement` property alt provides fallback
+  text to display when the image specified by the `<img>` element
+  not loaded.
+
+  `htmlImageElement.alt = altText;
+  let altText = htmlImageElement.alt;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt`"
   [this]
   (-> this (.-alt)))
 
 (defn set-alt!
   "Property.
 
-  A DOMString that reflects the alt HTML attribute, thus indicating
-  alternate fallback content to be displayed if the image has not
-  loaded."
+  The `web.dom.HTMLImageElement` property alt provides fallback
+  text to display when the image specified by the `<img>` element
+  not loaded.
+
+  `htmlImageElement.alt = altText;
+  let altText = htmlImageElement.alt;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt`"
   [this val]
   (aset this "alt" val))
 
@@ -92,58 +85,60 @@
 (defn complete
   "Property.
 
-  Returns a Boolean that is true if the browser has finished fetching
-  image, whether successful or not. That means this value is also
-  if the image has no src value indicating an image to load."
+  [Read Only]
+
+  The read-only `web.dom.HTMLImageElement` interface's complete
+  is a Boolean value which indicates whether or not the image has
+  loaded.
+
+  `let doneLoading = htmlImageElement.complete;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete`"
   [this]
   (-> this (.-complete)))
-
-(defn set-complete!
-  "Property.
-
-  Returns a Boolean that is true if the browser has finished fetching
-  image, whether successful or not. That means this value is also
-  if the image has no src value indicating an image to load."
-  [this val]
-  (aset this "complete" val))
 
 (defn cross-origin
   "Property.
 
-  A DOMString specifying the CORS setting for this image element.
-  CORS settings attributes for further details. This may be null
-  CORS is not used."
+  The `web.dom.HTMLImageElement` interface's crossOrigin attribute
+  a string which specifies the Cross-Origin Resource Sharing (CORS)
+  to use when retrieving the image.
+
+  `htmlImageElement.crossOrigin = crossOriginMode;
+  let crossOriginMode = htmlImageElement.crossOrigin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin`"
   [this]
   (-> this (.-crossOrigin)))
 
 (defn set-cross-origin!
   "Property.
 
-  A DOMString specifying the CORS setting for this image element.
-  CORS settings attributes for further details. This may be null
-  CORS is not used."
+  The `web.dom.HTMLImageElement` interface's crossOrigin attribute
+  a string which specifies the Cross-Origin Resource Sharing (CORS)
+  to use when retrieving the image.
+
+  `htmlImageElement.crossOrigin = crossOriginMode;
+  let crossOriginMode = htmlImageElement.crossOrigin;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin`"
   [this val]
   (aset this "crossOrigin" val))
 
 (defn current-src
   "Property.
 
-  Returns a USVString representing the URL from which the currently
-  image was loaded. This may change as the image is adjusted due
-  changing conditions, as directed by any media queries which are
-  place."
+  [Read Only]
+
+  The read-only `web.dom.HTMLImageElement` property currentSrc
+  the URL of the image which is currently presented in the `<img>`
+  it represents.
+
+  `let currentSource = htmlImageElement.currentSrc;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/currentSrc`"
   [this]
   (-> this (.-currentSrc)))
-
-(defn set-current-src!
-  "Property.
-
-  Returns a USVString representing the URL from which the currently
-  image was loaded. This may change as the image is adjusted due
-  changing conditions, as directed by any media queries which are
-  place."
-  [this val]
-  (aset this "currentSrc" val))
 
 (defn decoding
   "Property.
@@ -174,16 +169,32 @@
 (defn height
   "Property.
 
-  An integer value that reflects the height HTML attribute, indicating
-  rendered height of the image in CSS pixels."
+  The height property of the `web.dom.HTMLImageElement` interface
+  the height at which the image is drawn, in CSS pixels if the
+  is being drawn or rendered to any visual medium such as the screen
+  a printer; otherwise, it's the natural, pixel density corrected
+  of the image.
+
+  `htmlImageElement.height = newHeight;
+  let height = htmlImageElement.height;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/height`"
   [this]
   (-> this (.-height)))
 
 (defn set-height!
   "Property.
 
-  An integer value that reflects the height HTML attribute, indicating
-  rendered height of the image in CSS pixels."
+  The height property of the `web.dom.HTMLImageElement` interface
+  the height at which the image is drawn, in CSS pixels if the
+  is being drawn or rendered to any visual medium such as the screen
+  a printer; otherwise, it's the natural, pixel density corrected
+  of the image.
+
+  `htmlImageElement.height = newHeight;
+  let height = htmlImageElement.height;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/height`"
   [this val]
   (aset this "height" val))
 
@@ -470,34 +481,30 @@
 (defn x
   "Property.
 
-  An integer indicating the horizontal offset of the left border
-  of the image's CSS layout box relative to the origin of the <html>
-  containing block."
+  [Read Only]
+
+  The read-only `web.dom.HTMLImageElement` property x indicates
+  x-coordinate of the `<img>` element's left border edge relative
+  the root element's origin.
+
+  `let imageX = htmlImageElement.x;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/x`"
   [this]
   (-> this (.-x)))
-
-(defn set-x!
-  "Property.
-
-  An integer indicating the horizontal offset of the left border
-  of the image's CSS layout box relative to the origin of the <html>
-  containing block."
-  [this val]
-  (aset this "x" val))
 
 (defn y
   "Property.
 
-  The integer vertical offset of the top border edge of the image's
-  layout box relative to the origin of the <html> element's containing"
+  [Read Only]
+
+  The read-only `web.dom.HTMLImageElement` property y indicates
+  y-coordinate of the `<img>` element's top border edge relative
+  the root element's origin.
+
+  `let imageY = htmlImageElement.y;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/y`"
   [this]
   (-> this (.-y)))
-
-(defn set-y!
-  "Property.
-
-  The integer vertical offset of the top border edge of the image's
-  layout box relative to the origin of the <html> element's containing"
-  [this val]
-  (aset this "y" val))
 

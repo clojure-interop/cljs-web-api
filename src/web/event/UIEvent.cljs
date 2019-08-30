@@ -2,16 +2,10 @@
   "The UIEvent interface represents simple user interface events."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The UIEvent() constructor creates a new `web.event.UIEvent`.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/UIEvent`"
-  js/UIEvent)
-
 (defn init-ui-event
   "Method.
+
+  [Deprecated]
 
   The UIEvent.initUIEvent() method initializes a UI event once
   been created.
@@ -24,6 +18,9 @@
 
 (defn cancel-bubble
   "Property.
+
+  [Deprecated]
+  [Non Standard]
 
   The UIEvent.cancelBubble property indicates if event bubbling
   this event has been canceled or not. It is set to false by default,
@@ -41,6 +38,9 @@
 (defn set-cancel-bubble!
   "Property.
 
+  [Deprecated]
+  [Non Standard]
+
   The UIEvent.cancelBubble property indicates if event bubbling
   this event has been canceled or not. It is set to false by default,
   the event to bubble up the DOM, if it is a bubbleable event.
@@ -57,6 +57,8 @@
 (defn detail
   "Property.
 
+  [Read Only]
+
   The UIEvent.detail read-only property, when non-zero, provides
   current (or next, depending on the event) click count.
 
@@ -66,6 +68,9 @@
 
 (defn is-char
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The UIEvent.isChar read-only property returns a `js.Boolean`
   whether the event produced a key character or not.
@@ -78,6 +83,9 @@
 
 (defn layer-x
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The UIEvent.layerX read-only property returns the horizontal
   of the event relative to the current layer.
@@ -94,6 +102,9 @@
 (defn layer-y
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The UIEvent.layerY read-only property returns the vertical coordinate
   the event relative to the current layer.
 
@@ -109,6 +120,9 @@
 (defn page-x
   "Property.
 
+  [Read Only]
+  [Obsolute]
+
   The non-standard, read-only `web.event.UIEvent` property pageX
   the horizontal coordinate of the event relative to the whole
 
@@ -120,6 +134,9 @@
 
 (defn page-y
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The UIEvent.pageY read-only property returns the vertical coordinate
   the event relative to the whole document.
@@ -135,6 +152,9 @@
 (defn source-capabilities
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The UIEvent.sourceCapabilities read-only property returns an
   of the `web.other.InputDeviceCapabilities` interface which provides
   about the physical device responsible for generating a touch
@@ -146,22 +166,10 @@
   [this]
   (-> this (.-sourceCapabilities)))
 
-(defn set-source-capabilities!
-  "Property.
-
-  The UIEvent.sourceCapabilities read-only property returns an
-  of the `web.other.InputDeviceCapabilities` interface which provides
-  about the physical device responsible for generating a touch
-  If no input device was responsible for the event, it returns
-
-  `var iDC = event.sourceCapabilities`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/sourceCapabilities`"
-  [this val]
-  (aset this "sourceCapabilities" val))
-
 (defn view
   "Property.
+
+  [Read Only]
 
   The UIEvent.view read-only property returns the `WindowProxy`
   from which the event was generated. In browsers, this is the

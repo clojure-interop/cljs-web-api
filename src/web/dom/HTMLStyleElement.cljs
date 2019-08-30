@@ -33,6 +33,8 @@
 (defn type
   "Property.
 
+  [Read Only]
+
   The HTMLStyleElement.type read-only property returns the type
   the current style.
 
@@ -77,6 +79,9 @@
 (defn scoped
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The HTMLStyleElement.scoped property is a Boolean value indicating
   the element applies to the whole document (false) or only to
   parent's sub-tree (true).
@@ -90,6 +95,9 @@
 
 (defn set-scoped!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   The HTMLStyleElement.scoped property is a Boolean value indicating
   the element applies to the whole document (false) or only to

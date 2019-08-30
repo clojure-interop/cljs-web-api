@@ -8,6 +8,9 @@
 (defn load
   "Method.
 
+  [Deprecated]
+  [Non Standard]
+
   document.load() is a part of an old version of the W3C DOM Level
   Load & Save module. Can be used with `document.async` to indicate
   the request is synchronous or asynchronous (the default). As
@@ -21,6 +24,9 @@
 (defn async
   "Property.
 
+  [Deprecated]
+  [Non Standard]
+
   document.async can be set to indicate whether a `XMLDocument.load()`
   should be an asynchronous or synchronous request. true is the
   value, indicating that documents should be loaded asynchronously.
@@ -31,6 +37,9 @@
 
 (defn set-async!
   "Property.
+
+  [Deprecated]
+  [Non Standard]
 
   document.async can be set to indicate whether a `XMLDocument.load()`
   should be an asynchronous or synchronous request. true is the

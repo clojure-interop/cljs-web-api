@@ -164,6 +164,8 @@
 (defn form
   "Property.
 
+  [Read Only]
+
   The HTMLSelectElement.form read-only property returns a `web.dom.HTMLFormElement`
   the form that this element is associated with. If the element
   not associated with of a `<form>` element, then it returns null.
@@ -181,6 +183,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLSelectElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<select>` element.
 
@@ -189,18 +193,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLSelectElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<select>` element.
-
-  `var labelElements = select.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels`"
-  [this val]
-  (aset this "labels" val))
 
 (defn length
   "Property.
@@ -250,6 +242,8 @@
 
 (defn options
   "Property.
+
+  [Read Only]
 
   The HTMLSelectElement.options read-only property returns a `web.dom.HTMLOptionsCollection`
   the `<option>` elements contained by the `<select>` element.
@@ -307,6 +301,8 @@
 (defn selected-options
   "Property.
 
+  [Read Only]
+
   The read-only `web.dom.HTMLSelectElement` property selectedOptions
   a list of the `<option>` elements contained within the `<select>`
   that are currently selected. The list of selected options is
@@ -339,6 +335,8 @@
 
 (defn type
   "Property.
+
+  [Read Only]
 
   The HTMLSelectElement.type read-only property returns the form
   type.

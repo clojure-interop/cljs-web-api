@@ -2,27 +2,10 @@
   "This interface inherits properties from its parent, `web.event.Event`:"
   (:refer-clojure :exclude [type]))
 
-(def constructor
-  "Constructor.
-
-  The CustomEvent() constructor creates a new `web.CustomEvent`.
-
-  typeArg
-  A `web.dom.DOMString` representing the name of the event.
-  customEventInit Optional
-  A CustomEventInit dictionary, having the following fields:
-
-  \\\"detail\\\", optional and defaulting to null, of type any, that is an event-dependent value associated with the event.
-
-
-
-  The CustomEventInit dictionary also accepts fields from the `EventInit` dictionary.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent`"
-  js/CustomEvent)
-
 (defn init-custom-event
   "Method.
+
+  [Deprecated]
 
   The CustomEvent.initCustomEvent() method initializes a CustomEvent
   If the event has already been dispatched, this method does nothing.
@@ -35,6 +18,8 @@
 
 (defn create-event
   "Method.
+
+  [Deprecated]
 
   Creates a new event, which must then be initialized by calling
   initEvent() method.
@@ -68,6 +53,8 @@
 
 (defn init-event
   "Method.
+
+  [Deprecated]
 
   The Event.initEvent() method is used to initialize the value
   an `event` created using `Document.createEvent()`.
@@ -149,6 +136,8 @@
 (defn detail
   "Property.
 
+  [Read Only]
+
   The detail readonly property of the `web.CustomEvent` interface
   any data passed when initializing the event.
 
@@ -158,20 +147,10 @@
   [this]
   (-> this (.-detail)))
 
-(defn set-detail!
-  "Property.
-
-  The detail readonly property of the `web.CustomEvent` interface
-  any data passed when initializing the event.
-
-  `let myDetail = customEventInstance.detail;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail`"
-  [this val]
-  (aset this "detail" val))
-
 (defn bubbles
   "Property.
+
+  [Read Only]
 
   The bubbles read-only property of the `web.event.Event` interface
   whether the event bubbles up through the DOM or not.
@@ -217,6 +196,8 @@
 (defn cancelable
   "Property.
 
+  [Read Only]
+
   The cancelable read-only property of the `web.event.Event` interface
   whether the event can be canceled, and therefore prevented as
   the event never happened.
@@ -230,6 +211,8 @@
 (defn composed
   "Property.
 
+  [Read Only]
+
   The read-only composed property of the `web.event.Event` interface
   a `js.Boolean` which indicates whether or not the event will
   across the shadow DOM boundary into the standard DOM.
@@ -242,6 +225,8 @@
 
 (defn current-target
   "Property.
+
+  [Read Only]
 
   The currentTarget read-only property of the `web.event.Event`
   identifies the current target for the event, as the event traverses
@@ -272,6 +257,8 @@
 (defn default-prevented
   "Property.
 
+  [Read Only]
+
   The defaultPrevented read-only property of the `web.event.Event`
   returns a `js.Boolean` indicating whether or not `Event.preventDefault()`
   called on the event.
@@ -285,6 +272,8 @@
 (defn event-phase
   "Property.
 
+  [Read Only]
+
   The eventPhase read-only property of the `web.event.Event` interface
   which phase of the event flow is currently being evaluated.
 
@@ -297,38 +286,26 @@
 (defn explicit-original-target
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The explicit original target of the event. (Mozilla-specific)
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/explicitOriginalTarget`"
   [this]
   (-> this (.-explicitOriginalTarget)))
 
-(defn set-explicit-original-target!
-  "Property.
-
-  The explicit original target of the event. (Mozilla-specific)
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/explicitOriginalTarget`"
-  [this val]
-  (aset this "explicitOriginalTarget" val))
-
 (defn original-target
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The original target of the event before any retargetings. (Mozilla-specific)
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/originalTarget`"
   [this]
   (-> this (.-originalTarget)))
-
-(defn set-original-target!
-  "Property.
-
-  The original target of the event before any retargetings. (Mozilla-specific)
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/originalTarget`"
-  [this val]
-  (aset this "originalTarget" val))
 
 (defn return-value
   "Property.
@@ -383,6 +360,8 @@
 (defn target
   "Property.
 
+  [Read Only]
+
   The target property of the `web.event.Event` interface is a reference
   the object that dispatched the event. It is different from `Event.currentTarget`
   the event handler is called during the bubbling or capturing
@@ -394,22 +373,10 @@
   [this]
   (-> this (.-target)))
 
-(defn set-target!
-  "Property.
-
-  The target property of the `web.event.Event` interface is a reference
-  the object that dispatched the event. It is different from `Event.currentTarget`
-  the event handler is called during the bubbling or capturing
-  of the event.
-
-  `var theTarget = event.target;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/target`"
-  [this val]
-  (aset this "target" val))
-
 (defn time-stamp
   "Property.
+
+  [Read Only]
 
   The timeStamp read-only property of the `web.event.Event` interface
   the time (in milliseconds) at which the event was created.
@@ -420,20 +387,10 @@
   [this]
   (-> this (.-timeStamp)))
 
-(defn set-time-stamp!
-  "Property.
-
-  The timeStamp read-only property of the `web.event.Event` interface
-  the time (in milliseconds) at which the event was created.
-
-  `var time = event.timeStamp;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Event/timeStamp`"
-  [this val]
-  (aset this "timeStamp" val))
-
 (defn type
   "Property.
+
+  [Read Only]
 
   The type read-only property of the `web.event.Event` interface
   a string containing the event's type. It is set when the event
@@ -448,6 +405,8 @@
 
 (defn is-trusted
   "Property.
+
+  [Read Only]
 
   The isTrusted read-only property of the `web.event.Event` interface
   a `js.Boolean` that is true when the event was generated by a

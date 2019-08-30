@@ -30,6 +30,8 @@
 (defn clients
   "Property.
 
+  [Read Only]
+
   The clients read-only property of the `web.workers.ServiceWorkerGlobalScope`
   returns the Clients object associated with the service worker.
 
@@ -39,20 +41,10 @@
   [this]
   (-> this (.-clients)))
 
-(defn set-clients!
-  "Property.
-
-  The clients read-only property of the `web.workers.ServiceWorkerGlobalScope`
-  returns the Clients object associated with the service worker.
-
-  `swClients = self.clients`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/clients`"
-  [this val]
-  (aset this "clients" val))
-
 (defn registration
   "Property.
+
+  [Read Only]
 
   The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
   returns a reference to the `web.workers.ServiceWorkerRegistration`
@@ -64,21 +56,10 @@
   [this]
   (-> this (.-registration)))
 
-(defn set-registration!
-  "Property.
-
-  The registration read-only property of the `web.workers.ServiceWorkerGlobalScope`
-  returns a reference to the `web.workers.ServiceWorkerRegistration`
-  which represents the service worker's registration.
-
-  `serviceWorkerRegistration = self.registration`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration`"
-  [this val]
-  (aset this "registration" val))
-
 (defn caches
   "Property.
+
+  [Read Only]
 
   The `ServiceWorkerGlobalScope.caches` read-only property returns
   `web.service-workers.CacheStorage` object associated with the
@@ -89,19 +70,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches`"
   [this]
   (-> this (.-caches)))
-
-(defn set-caches!
-  "Property.
-
-  The `ServiceWorkerGlobalScope.caches` read-only property returns
-  `web.service-workers.CacheStorage` object associated with the
-  worker.
-
-  `var myCacheStorage = self.caches;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/caches`"
-  [this val]
-  (aset this "caches" val))
 
 (defn onactivate
   "Property.

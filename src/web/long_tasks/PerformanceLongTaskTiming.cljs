@@ -6,6 +6,9 @@
 (defn attribution
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The attribution readonly property of the `web.long-tasks.PerformanceLongTaskTiming`
   returns a sequence of `web.long-tasks.TaskAttributionTiming`
 
@@ -14,16 +17,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/attribution`"
   [this]
   (-> this (.-attribution)))
-
-(defn set-attribution!
-  "Property.
-
-  The attribution readonly property of the `web.long-tasks.PerformanceLongTaskTiming`
-  returns a sequence of `web.long-tasks.TaskAttributionTiming`
-
-  `var taskAttributeTiming = PerformanceLongTaskTiming.attribution;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/attribution`"
-  [this val]
-  (aset this "attribution" val))
 

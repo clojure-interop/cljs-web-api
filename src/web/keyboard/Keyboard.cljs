@@ -7,6 +7,8 @@
 (defn get-layout-map
   "Method.
 
+  [Experimental]
+
   The getLayoutMap() method of the `web.keyboard.Keyboard` interface
   a `js.Promise` that resolves with an instance of `web.keyboard.KeyboardLayoutMap`
   is a map-like object with functions for retrieving the strings
@@ -21,6 +23,8 @@
 (defn lock
   "Method.
 
+  [Experimental]
+
   The lock() method of the `web.keyboard.Keyboard` interface returns
   `js.Promise` after enabling the capture of keypresses for any
   all of the keys on the physical keyboard. This method can only
@@ -34,6 +38,8 @@
 
 (defn unlock
   "Method.
+
+  [Experimental]
 
   The unlock() method of the `web.keyboard.Keyboard` interface
   all keys captured by the `Keyboard.lock()` method and returns

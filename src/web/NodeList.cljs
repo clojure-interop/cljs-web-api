@@ -22,27 +22,6 @@
   [this & args]
   (-> this .-item (.apply this (clj->js args))))
 
-(defn node-list
-  "Method.
-
-  NodeList.entries()"
-  [this & args]
-  (-> this .-nodeList (.apply this (clj->js args))))
-
-(defn iterator
-  "Method.
-
-  NodeList.forEach()"
-  [this & args]
-  (-> this .-iterator (.apply this (clj->js args))))
-
-(defn node-list
-  "Method.
-
-  NodeList.keys()"
-  [this & args]
-  (-> this .-NodeList (.apply this (clj->js args))))
-
 (defn entries
   "Method.
 

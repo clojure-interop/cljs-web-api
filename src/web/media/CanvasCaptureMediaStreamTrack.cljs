@@ -19,6 +19,8 @@
 (defn canvas
   "Property.
 
+  [Read Only]
+
   The `web.media.CanvasCaptureMediaStreamTrack` canvas read-only
   returns the `web.canvas.HTMLCanvasElement` from which frames
   being captured.

@@ -7,6 +7,9 @@
 (defn value
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The CSSUnitValue.value property of the `web.css.CSSUnitValue`
   returns a double indicating the number of units.
 
@@ -19,6 +22,9 @@
 
 (defn set-value!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The CSSUnitValue.value property of the `web.css.CSSUnitValue`
   returns a double indicating the number of units.
@@ -33,6 +39,10 @@
 (defn unit
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The CSSUnitValue.unit read-only property of the `web.css.CSSUnitValue`
   returns a `web.USVString` indicating the type of unit.
 
@@ -41,16 +51,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/unit`"
   [this]
   (-> this (.-unit)))
-
-(defn set-unit!
-  "Property.
-
-  The CSSUnitValue.unit read-only property of the `web.css.CSSUnitValue`
-  returns a `web.USVString` indicating the type of unit.
-
-  `var aString = CSSUnitValue.unit;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/unit`"
-  [this val]
-  (aset this "unit" val))
 

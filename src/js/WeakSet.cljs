@@ -16,6 +16,8 @@
 (defn clear
   "Method.
 
+  [Obsolute]
+
   The clear() method used to remove all elements from a WeakSet
   but is no longer part of ECMAScript and its implementations.
 

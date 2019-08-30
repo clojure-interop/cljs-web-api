@@ -7,6 +7,8 @@
 (defn can-share
   "Method.
 
+  [Experimental]
+
   The canShare() method of the `web.performance.Navigator` interface
   true if a call to Navigator.share() would succeed.
 
@@ -18,6 +20,8 @@
 
 (defn get-vr-displays
   "Method.
+
+  [Experimental]
 
   The getVRDisplays() method of the `web.performance.Navigator`
   returns a promise that resolves to an array of `web.media.VRDisplay`
@@ -34,6 +38,8 @@
 (defn get-user-media
   "Method.
 
+  [Deprecated]
+
   The deprecated Navigator.getUserMedia() method prompts the user
   permission to use up to one video input device (such as a camera
   shared screen) and up to one audio input device (such as a microphone)
@@ -47,6 +53,8 @@
 
 (defn register-content-handler
   "Method.
+
+  [Obsolute]
 
   Allows web sites to register themselves as possible handlers
   content of a particular MIME type.
@@ -105,6 +113,8 @@
 (defn share
   "Method.
 
+  [Experimental]
+
   The Navigator.share() method invokes the native sharing mechanism
   the device as part of the Web Share API. If the Web Share API
   unsupported, then this method will be undefined.
@@ -117,6 +127,8 @@
 
 (defn taint-enabled
   "Method.
+
+  [Deprecated]
 
   The NavigatorID.taintEnabled() method always returns false.
 
@@ -151,6 +163,9 @@
 (defn moz-is-locally-available
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   The Navigator.mozIsLocallyAvailable() method allows add-ons to
   whether or not a given resource is available.
 
@@ -170,6 +185,8 @@
 (defn get-battery
   "Method.
 
+  [Obsolute]
+
   The getBattery() method provides information about the system's
   It returns a battery promise, which is resolved in a `web.device.BatteryManager`
   providing also some new events you can handle to monitor the
@@ -185,6 +202,8 @@
 (defn get-gamepads
   "Method.
 
+  [Experimental]
+
   The Navigator.getGamepads() method returns an array of `web.gamepad.Gamepad`
   one for each gamepad connected to the device.
 
@@ -197,10 +216,12 @@
 (defn ms-launch-uri
   "Method.
 
+  [Non Standard]
+
   The msLaunchUri() method is a Microsoft extension to the `web.performance.Navigator`
-  which is used to start a service or app, such as an email client,
-  handles a given protocol. The Uniform Resource Identifier (URI)
-  the protocol for the default service or app, such as mailto://test@contoso.com.
+  which starts a service or app, such as an email client, that
+  a given protocol. The Uniform Resource Identifier (URI) contains
+  protocol for the default service or app, such as mailto://test@contoso.com.
 
   `navigator.msLaunchUri(uri, successCallback, noHandlerCallback);`
 
@@ -210,6 +231,9 @@
 
 (defn active-vr-displays
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The activeVRDisplays read-only property of the `web.performance.Navigator`
   returns an array containing every `web.media.VRDisplay` object
@@ -221,21 +245,10 @@
   [this]
   (-> this (.-activeVRDisplays)))
 
-(defn set-active-vr-displays!
-  "Property.
-
-  The activeVRDisplays read-only property of the `web.performance.Navigator`
-  returns an array containing every `web.media.VRDisplay` object
-  is currently presenting (`VRDisplay.ispresenting` is true).
-
-  `var myActiveDisplays = navigator.activeVRDisplays;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/activeVRDisplays`"
-  [this val]
-  (aset this "activeVRDisplays" val))
-
 (defn app-code-name
   "Property.
+
+  [Read Only]
 
   The value of the NavigatorID.appCodeName property is always \\\"Mozilla\\\",
   any browser. This property is kept only for compatibility purposes.
@@ -246,20 +259,10 @@
   [this]
   (-> this (.-appCodeName)))
 
-(defn set-app-code-name!
-  "Property.
-
-  The value of the NavigatorID.appCodeName property is always \\\"Mozilla\\\",
-  any browser. This property is kept only for compatibility purposes.
-
-  `codeName = window.navigator.appCodeName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName`"
-  [this val]
-  (aset this "appCodeName" val))
-
 (defn app-name
   "Property.
+
+  [Read Only]
 
   The value of the NavigatorID.appName property is always \\\"Netscape\\\",
   any browser.
@@ -270,20 +273,10 @@
   [this]
   (-> this (.-appName)))
 
-(defn set-app-name!
-  "Property.
-
-  The value of the NavigatorID.appName property is always \\\"Netscape\\\",
-  any browser.
-
-  `appName = window.navigator.appName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName`"
-  [this val]
-  (aset this "appName" val))
-
 (defn app-version
   "Property.
+
+  [Read Only]
 
   Returns either \\\"4.0\\\" or a string representing version information
   the browser.
@@ -294,20 +287,11 @@
   [this]
   (-> this (.-appVersion)))
 
-(defn set-app-version!
-  "Property.
-
-  Returns either \\\"4.0\\\" or a string representing version information
-  the browser.
-
-  `window.navigator.appVersion`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion`"
-  [this val]
-  (aset this "appVersion" val))
-
 (defn battery
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The battery read-only property returns a `web.device.BatteryManager`
   information about the system's battery charge level; provides
@@ -321,23 +305,11 @@
   [this]
   (-> this (.-battery)))
 
-(defn set-battery!
-  "Property.
-
-  The battery read-only property returns a `web.device.BatteryManager`
-  information about the system's battery charge level; provides
-  some new events you can handle to monitor the battery status.
-  implements the Battery Status API; see that documentation for
-  details, a guide to using the API, and sample code.
-
-  `var battery = navigator.battery;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/battery`"
-  [this val]
-  (aset this "battery" val))
-
 (defn connection
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Navigator.connection read-only property returns a `web.other.NetworkInformation`
   containing information about the system's connection, such as
@@ -350,22 +322,10 @@
   [this]
   (-> this (.-connection)))
 
-(defn set-connection!
-  "Property.
-
-  The Navigator.connection read-only property returns a `web.other.NetworkInformation`
-  containing information about the system's connection, such as
-  current bandwidth of the user's device or whether the connection
-  metered.
-
-  `networkInformation = navigator.connection`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection`"
-  [this val]
-  (aset this "connection" val))
-
 (defn cookie-enabled
   "Property.
+
+  [Read Only]
 
   navigator.cookieEnabled returns a Boolean value that indicates
   cookies are enabled or not.
@@ -379,23 +339,10 @@
   [this]
   (-> this (.-cookieEnabled)))
 
-(defn set-cookie-enabled!
-  "Property.
-
-  navigator.cookieEnabled returns a Boolean value that indicates
-  cookies are enabled or not.
-
-  `var cookieEnabled = navigator.cookieEnabled;
-
-
-  \\tcookieEnabled is a Boolean: true or false.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled`"
-  [this val]
-  (aset this "cookieEnabled" val))
-
 (defn geolocation
   "Property.
+
+  [Read Only]
 
   The Navigator.geolocation read-only property returns a `web.geolocation.Geolocation`
   that gives Web content access to the location of the device.
@@ -408,22 +355,10 @@
   [this]
   (-> this (.-geolocation)))
 
-(defn set-geolocation!
-  "Property.
-
-  The Navigator.geolocation read-only property returns a `web.geolocation.Geolocation`
-  that gives Web content access to the location of the device.
-  allows a Web site or app to offer customized results based on
-  user's location.
-
-  `geo = navigator.geolocation`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation`"
-  [this val]
-  (aset this "geolocation" val))
-
 (defn hardware-concurrency
   "Property.
+
+  [Read Only]
 
   The navigator.hardwareConcurrency read-only property returns
   number of logical processors available to run threads on the
@@ -435,21 +370,10 @@
   [this]
   (-> this (.-hardwareConcurrency)))
 
-(defn set-hardware-concurrency!
-  "Property.
-
-  The navigator.hardwareConcurrency read-only property returns
-  number of logical processors available to run threads on the
-  computer.
-
-  `logicalProcessors = window.navigator.hardwareConcurrency`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
-  [this val]
-  (aset this "hardwareConcurrency" val))
-
 (defn java-enabled
   "Property.
+
+  [Read Only]
 
   This method indicates whether the current browser is Java-enabled
   not.
@@ -460,20 +384,11 @@
   [this]
   (-> this (.-javaEnabled)))
 
-(defn set-java-enabled!
-  "Property.
-
-  This method indicates whether the current browser is Java-enabled
-  not.
-
-  `result = window.navigator.javaEnabled()`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/javaEnabled`"
-  [this val]
-  (aset this "javaEnabled" val))
-
 (defn keyboard
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The keyboard read-only property of the `web.performance.Navigator`
   returns a `web.keyboard.Keyboard` object which provides access
@@ -486,22 +401,10 @@
   [this]
   (-> this (.-keyboard)))
 
-(defn set-keyboard!
-  "Property.
-
-  The keyboard read-only property of the `web.performance.Navigator`
-  returns a `web.keyboard.Keyboard` object which provides access
-  functions that retrieve keyboard layout maps and toggle capturing
-  key presses from the physical keyboard.
-
-  `var keyboard = navigator.keyboard`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/keyboard`"
-  [this val]
-  (aset this "keyboard" val))
-
 (defn language
   "Property.
+
+  [Read Only]
 
   The NavigatorLanguage.language read-only property returns a string
   the preferred language of the user, usually the language of the
@@ -515,6 +418,9 @@
 
 (defn languages
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The NavigatorLanguage.languages read-only property returns an
   of `web.dom.DOMString`s representing the user's preferred languages.
@@ -530,6 +436,9 @@
 (defn locks
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The locks read-only property of the `web.performance.Navigator`
   returns a `web.locks.LockManager` object which provides methods
   requesting a new `web.locks.Lock` object and querying for an
@@ -541,22 +450,11 @@
   [this]
   (-> this (.-locks)))
 
-(defn set-locks!
-  "Property.
-
-  The locks read-only property of the `web.performance.Navigator`
-  returns a `web.locks.LockManager` object which provides methods
-  requesting a new `web.locks.Lock` object and querying for an
-  Lock object.
-
-  `var lockManager = Navigator.locks`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/locks`"
-  [this val]
-  (aset this "locks" val))
-
 (defn media-capabilities
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Navigator.mediaCapabilities read-only property returns a
   object that can expose information about the decoding and encoding
@@ -569,22 +467,10 @@
   [this]
   (-> this (.-mediaCapabilities)))
 
-(defn set-media-capabilities!
-  "Property.
-
-  The Navigator.mediaCapabilities read-only property returns a
-  object that can expose information about the decoding and encoding
-  for a given format and output capabilities as defined by the
-  Capabilities API.
-
-  `mediaCapabilitiesObj = globalObj.navigator.mediaCapabilities`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaCapabilities`"
-  [this val]
-  (aset this "mediaCapabilities" val))
-
 (defn max-touch-points
   "Property.
+
+  [Read Only]
 
   The maxTouchPoints read-only property of the `web.performance.Navigator`
   returns the maximum number of simultaneous touch contact points
@@ -596,21 +482,10 @@
   [this]
   (-> this (.-maxTouchPoints)))
 
-(defn set-max-touch-points!
-  "Property.
-
-  The maxTouchPoints read-only property of the `web.performance.Navigator`
-  returns the maximum number of simultaneous touch contact points
-  supported by the current device.
-
-  `touchPoints = navigator.maxTouchPoints;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/maxTouchPoints`"
-  [this val]
-  (aset this "maxTouchPoints" val))
-
 (defn mime-types
   "Property.
+
+  [Read Only]
 
   Returns a `web.other.MimeTypeArray` object, which contains a
   of `web.other.MimeType` objects representing the MIME types recognized
@@ -624,23 +499,10 @@
   [this]
   (-> this (.-mimeTypes)))
 
-(defn set-mime-types!
-  "Property.
-
-  Returns a `web.other.MimeTypeArray` object, which contains a
-  of `web.other.MimeType` objects representing the MIME types recognized
-  the browser.
-
-  `var mimeTypes[] = navigator.mimeTypes;
-
-  mimeTypes is a MimeTypeArray object which has a length property as well as item(index) and namedItem(name) methods.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/mimeTypes`"
-  [this val]
-  (aset this "mimeTypes" val))
-
 (defn on-line
   "Property.
+
+  [Read Only]
 
   Returns the online status of the browser. The property returns
   boolean value, with true meaning online and false meaning offline.
@@ -655,24 +517,11 @@
   [this]
   (-> this (.-onLine)))
 
-(defn set-on-line!
-  "Property.
-
-  Returns the online status of the browser. The property returns
-  boolean value, with true meaning online and false meaning offline.
-  property sends updates whenever the browser's ability to connect
-  the network changes. The update occurs when the user follows
-  or when a script requests a remote page. For example, the property
-  return false when users click links soon after they lose internet
-
-  `online = window.navigator.onLine;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine`"
-  [this val]
-  (aset this "onLine" val))
-
 (defn permissions
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Navigator.permissions read-only property returns a `web.permissions.Permissions`
   that can be used to query and update permission status of APIs
@@ -684,21 +533,10 @@
   [this]
   (-> this (.-permissions)))
 
-(defn set-permissions!
-  "Property.
-
-  The Navigator.permissions read-only property returns a `web.permissions.Permissions`
-  that can be used to query and update permission status of APIs
-  by the Permissions API.
-
-  `permissionsObj = globalObj.navigator.permissions`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/permissions`"
-  [this val]
-  (aset this "permissions" val))
-
 (defn platform
   "Property.
+
+  [Read Only]
 
   Returns a string representing the platform of the browser. The
   allows browsers to always return the empty string, so don't rely
@@ -710,21 +548,10 @@
   [this]
   (-> this (.-platform)))
 
-(defn set-platform!
-  "Property.
-
-  Returns a string representing the platform of the browser. The
-  allows browsers to always return the empty string, so don't rely
-  this property to get a reliable answer.
-
-  `platform = navigator.platform`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform`"
-  [this val]
-  (aset this "platform" val))
-
 (defn plugins
   "Property.
+
+  [Read Only]
 
   Returns a `web.PluginArray` object, listing the `web.Plugin`
   describing the plugins installed in the application.
@@ -739,24 +566,10 @@
   [this]
   (-> this (.-plugins)))
 
-(defn set-plugins!
-  "Property.
-
-  Returns a `web.PluginArray` object, listing the `web.Plugin`
-  describing the plugins installed in the application.
-
-  `var plugins = navigator.plugins;
-
-  plugins is `web.PluginArray` object used to access `web.Plugin` objects either by name or as a list of items.
-
-  The returned value is not a JavaScript array, but has the length property and supports accessing individual items using bracket notation (plugins[2]), as well as via item(index) and namedItem(\\\"name\\\") methods.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/plugins`"
-  [this val]
-  (aset this "plugins" val))
-
 (defn product
   "Property.
+
+  [Read Only]
 
   The value of the NavigatorID.product property is always \\\"Gecko\\\",
   any browser.
@@ -767,20 +580,10 @@
   [this]
   (-> this (.-product)))
 
-(defn set-product!
-  "Property.
-
-  The value of the NavigatorID.product property is always \\\"Gecko\\\",
-  any browser.
-
-  `productName = window.navigator.product`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product`"
-  [this val]
-  (aset this "product" val))
-
 (defn service-worker
   "Property.
+
+  [Read Only]
 
   The Navigator.serviceWorker read-only property returns the `web.workers.ServiceWorkerContainer`
   for the associated document, which provides access to registration,
@@ -792,21 +595,10 @@
   [this]
   (-> this (.-serviceWorker)))
 
-(defn set-service-worker!
-  "Property.
-
-  The Navigator.serviceWorker read-only property returns the `web.workers.ServiceWorkerContainer`
-  for the associated document, which provides access to registration,
-  upgrade, and communication with the `web.workers.ServiceWorker`.
-
-  `var workerContainerInstance = navigator.serviceWorker;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker`"
-  [this val]
-  (aset this "serviceWorker" val))
-
 (defn storage
   "Property.
+
+  [Read Only]
 
   The NavigatorStorage.storage read-only property returns the singleton
   object used to access the overall storage capabilities of the
@@ -818,21 +610,10 @@
   [this]
   (-> this (.-storage)))
 
-(defn set-storage!
-  "Property.
-
-  The NavigatorStorage.storage read-only property returns the singleton
-  object used to access the overall storage capabilities of the
-  for the current site or app.
-
-  `var storageManager = navigator.storage;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorStorage/storage`"
-  [this val]
-  (aset this "storage" val))
-
 (defn user-agent
   "Property.
+
+  [Read Only]
 
   The NavigatorID.userAgent read-only property returns the user
   string for the current browser.
@@ -846,6 +627,9 @@
 (defn webdriver
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The webdriver read-only property of the `navigator` interface
   whether the user agent is controlled by automation.
 
@@ -855,20 +639,11 @@
   [this]
   (-> this (.-webdriver)))
 
-(defn set-webdriver!
-  "Property.
-
-  The webdriver read-only property of the `navigator` interface
-  whether the user agent is controlled by automation.
-
-  `var isAutomated = navigator.webdriver`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver`"
-  [this val]
-  (aset this "webdriver" val))
-
 (defn xr
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The xr read-only property of the `web.performance.Navigator`
   returns a `web.ar.XR` object which works as a gateway to the
@@ -879,19 +654,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/xr`"
   [this]
   (-> this (.-xr)))
-
-(defn set-xr!
-  "Property.
-
-  The xr read-only property of the `web.performance.Navigator`
-  returns a `web.ar.XR` object which works as a gateway to the
-  API.
-
-  `const XR = navigator.xr`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/xr`"
-  [this val]
-  (aset this "xr" val))
 
 (defn build-id
   "Property.
@@ -954,6 +716,9 @@
 (defn device-memory
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The deviceMemory read-only property of the `navigator` interface
   the approximate amount of device memory in gigabytes. This value
   an approximation given by rounding down to the nearest power
@@ -967,24 +732,10 @@
   [this]
   (-> this (.-deviceMemory)))
 
-(defn set-device-memory!
-  "Property.
-
-  The deviceMemory read-only property of the `navigator` interface
-  the approximate amount of device memory in gigabytes. This value
-  an approximation given by rounding down to the nearest power
-  2 and dividing that number by 1024. Also, the lower and upper
-  are used to protect privacy of owners of very low- or high-end
-
-  `const memory = navigator.deviceMemory
-  console.log (\\\"This device has at least \\\"  memory  \\\"GiB of RAM.\\\")`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory`"
-  [this val]
-  (aset this "deviceMemory" val))
-
 (defn do-not-track
   "Property.
+
+  [Experimental]
 
   Returns the user's do-not-track setting. This is \\\"1\\\" if the
   has requested not to be tracked by web sites, content, or advertising.
@@ -1000,6 +751,8 @@
 (defn set-do-not-track!
   "Property.
 
+  [Experimental]
+
   Returns the user's do-not-track setting. This is \\\"1\\\" if the
   has requested not to be tracked by web sites, content, or advertising.
 
@@ -1013,6 +766,8 @@
 
 (defn media-devices
   "Property.
+
+  [Read Only]
 
   The Navigator.mediaDevices read-only property returns a `web.audio.MediaDevices`
   which provides access to connected media input devices like cameras
@@ -1201,6 +956,8 @@
 (defn product-sub
   "Property.
 
+  [Read Only]
+
   The Navigator.productSub read-only property returns the build
   of the current browser.
 
@@ -1264,6 +1021,8 @@
 (defn vendor
   "Property.
 
+  [Read Only]
+
   The value of the `web.performance.Navigator` vendor property
   always either \\\"Google Inc.\\\", \\\"Apple Computer, Inc.\\\", or (in
   the empty string.
@@ -1276,6 +1035,8 @@
 
 (defn vendor-sub
   "Property.
+
+  [Read Only]
 
   The value of the Navigator.vendorSub property is always the empty
   in any browser.
@@ -1302,6 +1063,8 @@
 
 (defn clipboard
   "Property.
+
+  [Read Only]
 
   The Clipboard API adds to the `web.performance.Navigator` interface
   read-only clipboard property, which returns the `web.clipboard.Clipboard`

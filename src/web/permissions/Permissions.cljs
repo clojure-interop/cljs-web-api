@@ -7,6 +7,8 @@
 (defn query
   "Method.
 
+  [Experimental]
+
   The Permissions.query() method of the `web.permissions.Permissions`
   returns the state of a user permission on the global scope.
 
@@ -26,6 +28,8 @@
 
 (defn revoke
   "Method.
+
+  [Experimental]
 
   The Permissions.revoke() method of the `web.permissions.Permissions`
   reverts a currently set permission back to its default state,

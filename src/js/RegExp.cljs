@@ -6,6 +6,8 @@
 (defn compile
   "Method.
 
+  [Deprecated]
+
   The deprecated compile() method is used to (re-)compile a regular
   during execution of a script. It is basically the same as the
   constructor.
@@ -42,6 +44,8 @@
 
 (defn to-source
   "Method.
+
+  [Non Standard]
 
   The toSource() method returns a string representing the source
   of the object.
@@ -124,6 +128,8 @@
 (defn input
   "Property.
 
+  [Non Standard]
+
   The non-standard input property is a static property of regular
   that contains the string against which a regular expression is
   RegExp.$_ is an alias for this property.
@@ -137,6 +143,8 @@
 
 (defn set-input!
   "Property.
+
+  [Non Standard]
 
   The non-standard input property is a static property of regular
   that contains the string against which a regular expression is
@@ -152,6 +160,9 @@
 (defn last-match
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The non-standard lastMatch property is a static and read-only
   of regular expressions that contains the last matched characters.
   is an alias for this property.
@@ -165,6 +176,9 @@
 
 (defn last-paren
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The non-standard lastParen property is a static and read-only
   of regular expressions that contains the last parenthesized substring
@@ -180,6 +194,9 @@
 (defn left-context
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The non-standard leftContext property is a static and read-only
   of regular expressions that contains the substring preceding
   most recent match. RegExp.$` is an alias for this property.
@@ -194,6 +211,9 @@
 (defn dot-all
   "Property.
 
+  [Read Only]
+  [Draft]
+
   The dotAll property indicates whether or not the \\\"s\\\" flag is
   with the regular expression. dotAll is a read-only property of
   individual regular expression instance.
@@ -201,17 +221,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll`"
   [this]
   (-> this (.-dotAll)))
-
-(defn set-dot-all!
-  "Property.
-
-  The dotAll property indicates whether or not the \\\"s\\\" flag is
-  with the regular expression. dotAll is a read-only property of
-  individual regular expression instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll`"
-  [this val]
-  (aset this "dotAll" val))
 
 (defn flags
   "Property.
@@ -236,6 +245,8 @@
 (defn global
   "Property.
 
+  [Read Only]
+
   The global property indicates whether or not the \\\"g\\\" flag is
   with the regular expression. global is a read-only property of
   individual regular expression instance.
@@ -244,19 +255,10 @@
   [this]
   (-> this (.-global)))
 
-(defn set-global!
-  "Property.
-
-  The global property indicates whether or not the \\\"g\\\" flag is
-  with the regular expression. global is a read-only property of
-  individual regular expression instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global`"
-  [this val]
-  (aset this "global" val))
-
 (defn ignore-case
   "Property.
+
+  [Read Only]
 
   The ignoreCase property indicates whether or not the \\\"i\\\" flag
   used with the regular expression. ignoreCase is a read-only property
@@ -266,19 +268,10 @@
   [this]
   (-> this (.-ignoreCase)))
 
-(defn set-ignore-case!
-  "Property.
-
-  The ignoreCase property indicates whether or not the \\\"i\\\" flag
-  used with the regular expression. ignoreCase is a read-only property
-  an individual regular expression instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase`"
-  [this val]
-  (aset this "ignoreCase" val))
-
 (defn multiline
   "Property.
+
+  [Read Only]
 
   The multiline property indicates whether or not the \\\"m\\\" flag
   used with the regular expression. multiline is a read-only property
@@ -287,17 +280,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline`"
   [this]
   (-> this (.-multiline)))
-
-(defn set-multiline!
-  "Property.
-
-  The multiline property indicates whether or not the \\\"m\\\" flag
-  used with the regular expression. multiline is a read-only property
-  an individual regular expression instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline`"
-  [this val]
-  (aset this "multiline" val))
 
 (defn source
   "Property.
@@ -324,6 +306,8 @@
 (defn sticky
   "Property.
 
+  [Read Only]
+
   The sticky property reflects whether or not the search is sticky
   in strings only from the index indicated by the `lastIndex` property
   this regular expression). sticky is a read-only property of an
@@ -333,20 +317,10 @@
   [this]
   (-> this (.-sticky)))
 
-(defn set-sticky!
-  "Property.
-
-  The sticky property reflects whether or not the search is sticky
-  in strings only from the index indicated by the `lastIndex` property
-  this regular expression). sticky is a read-only property of an
-  regular expression object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky`"
-  [this val]
-  (aset this "sticky" val))
-
 (defn unicode
   "Property.
+
+  [Read Only]
 
   The unicode property indicates whether or not the \\\"u\\\" flag
   used with a regular expression. unicode is a read-only property
@@ -356,19 +330,11 @@
   [this]
   (-> this (.-unicode)))
 
-(defn set-unicode!
-  "Property.
-
-  The unicode property indicates whether or not the \\\"u\\\" flag
-  used with a regular expression. unicode is a read-only property
-  an individual regular expression instance.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode`"
-  [this val]
-  (aset this "unicode" val))
-
 (defn right-context
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The non-standard rightContext property is a static and read-only
   of regular expressions that contains the substring following

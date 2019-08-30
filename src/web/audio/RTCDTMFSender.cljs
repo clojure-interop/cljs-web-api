@@ -20,6 +20,8 @@
 (defn tone-buffer
   "Property.
 
+  [Read Only]
+
   The `web.audio.RTCDTMFSender` interface's toneBuffer property
   a string containing a list of the DTMF tones currently queued
   sending to the remote peer over the `web.audio.RTCPeerConnection`.
@@ -31,22 +33,10 @@
   [this]
   (-> this (.-toneBuffer)))
 
-(defn set-tone-buffer!
-  "Property.
-
-  The `web.audio.RTCDTMFSender` interface's toneBuffer property
-  a string containing a list of the DTMF tones currently queued
-  sending to the remote peer over the `web.audio.RTCPeerConnection`.
-  place tones into the buffer, call `insertDTMF()`.
-
-  `var toneBuffer = RTCDTMFSender.toneBuffer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCDTMFSender/toneBuffer`"
-  [this val]
-  (aset this "toneBuffer" val))
-
 (defn ontonechange
   "Property.
+
+  [Draft]
 
   The ontonechange property of the `web.audio.RTCDTMFSender` interface
   used to set the event handler for the tonechange event, which
@@ -62,6 +52,8 @@
 
 (defn set-ontonechange!
   "Property.
+
+  [Draft]
 
   The ontonechange property of the `web.audio.RTCDTMFSender` interface
   used to set the event handler for the tonechange event, which

@@ -34,6 +34,8 @@
 (defn to-source
   "Method.
 
+  [Non Standard]
+
   The toSource() method returns a string representing the source
   of the object.
 
@@ -388,6 +390,8 @@
 (defn description
   "Property.
 
+  [Read Only]
+
   The read-only description property is a string returning the
   description of `js.Symbol` objects.
 
@@ -398,18 +402,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description`"
   [this]
   (-> this (.-description)))
-
-(defn set-description!
-  "Property.
-
-  The read-only description property is a string returning the
-  description of `js.Symbol` objects.
-
-  `Symbol('myDescription').description;
-  Symbol.iterator.description;
-  Symbol.for('foo').description;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description`"
-  [this val]
-  (aset this "description" val))
 

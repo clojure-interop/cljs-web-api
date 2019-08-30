@@ -5,23 +5,6 @@
   specifying a script to be run in the worker thread."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The Worker() constructor creates a `web.workers.Worker` object that executes the script at the specified URL. This script must obey the same-origin policy.
-
-  aURL
-  \\tA `web.USVString` representing the URL of the script the worker will execute. It must obey the same-origin policy.
-  \\toptions Optional
-  \\tAn object containing option properties that can be set when creating the object instance. Available properties are as follows:
-
-  \\t\\ttype: A `web.dom.DOMString` specifying the type of worker to create. The value can be classic or module. If not specified, the default used is classic.
-  \\t\\tcredentials: A `web.dom.DOMString` specifying the type of credentials to use for the worker. The value can be omit, same-origin, or include. If not specified, or if type is classic, the default used is omit (no credentials required).
-  \\t\\tname: A `web.dom.DOMString` specifying an identifying name for the `web.workers.DedicatedWorkerGlobalScope` representing the scope of the worker, which is mainly useful for debugging purposes.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker`"
-  js/Worker)
-
 (defn post-message
   "Method.
 

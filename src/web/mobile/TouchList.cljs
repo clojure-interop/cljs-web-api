@@ -9,6 +9,8 @@
 (defn identified-touch
   "Method.
 
+  [Deprecated]
+
   The identifiedTouch() method returns the first `web.other.Touch`
   in the `web.mobile.TouchList` that matches the specified identifier.
 
@@ -33,6 +35,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The length read-only property indicates the number of items (touch
   in a given `web.mobile.TouchList`.
 
@@ -41,16 +45,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchList/length`"
   [this]
   (-> this (.-length)))
-
-(defn set-length!
-  "Property.
-
-  The length read-only property indicates the number of items (touch
-  in a given `web.mobile.TouchList`.
-
-  `var numTouches = touchList.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TouchList/length`"
-  [this val]
-  (aset this "length" val))
 

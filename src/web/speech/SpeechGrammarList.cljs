@@ -4,18 +4,10 @@
   of words that we want the recognition service to recognize."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The SpeechGrammarList() constructor creates a new SpeechGrammarList object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/SpeechGrammarList`"
-  js/SpeechGrammarList)
-
 (defn item
   "Method.
+
+  [Experimental]
 
   The item getter of the `web.speech.SpeechGrammarList` interface
   a standard getter — it allows individual `web.speech.SpeechGrammar`
@@ -30,6 +22,8 @@
 (defn add-from-uri
   "Method.
 
+  [Experimental]
+
   The addFromURI() method of the `web.speech.SpeechGrammarList`
   takes a grammar present at a specific URI and adds it to the
   as a new `web.speech.SpeechGrammar` object.
@@ -42,6 +36,8 @@
 
 (defn add-from-string
   "Method.
+
+  [Experimental]
 
   The addFromString() method of the `web.speech.SpeechGrammarList`
   takes a grammar present in a specific `web.dom.DOMString` within
@@ -57,6 +53,9 @@
 (defn length
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The length read-only property of the `web.speech.SpeechGrammarList`
   returns the number of `web.speech.SpeechGrammar` objects contained
   the `web.speech.SpeechGrammarList`.
@@ -66,17 +65,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/length`"
   [this]
   (-> this (.-length)))
-
-(defn set-length!
-  "Property.
-
-  The length read-only property of the `web.speech.SpeechGrammarList`
-  returns the number of `web.speech.SpeechGrammar` objects contained
-  the `web.speech.SpeechGrammarList`.
-
-  `var myListLength = speechGrammarListInstance.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechGrammarList/length`"
-  [this val]
-  (aset this "length" val))
 

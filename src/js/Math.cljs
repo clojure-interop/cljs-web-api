@@ -1,7 +1,7 @@
 (ns js.Math
   "Math is a built-in object that has properties and methods for
   constants and functions. Not a function object."
-  (:refer-clojure :exclude [max min]))
+  (:refer-clojure :exclude [imul max min]))
 
 (defn abs
   "Method.

@@ -6,16 +6,10 @@
   free to interpret a drag and drop interaction in an application-specific"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  This constructor is used to create a synthetic `web.drag.DragEvent` object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/DragEvent`"
-  js/DragEvent)
-
 (defn data-transfer
   "Property.
+
+  [Read Only]
 
   The DragEvent.dataTransfer property holds the drag operation's
   (as a `web.drag.DataTransfer` object).
@@ -25,16 +19,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer`"
   [this]
   (-> this (.-dataTransfer)))
-
-(defn set-data-transfer!
-  "Property.
-
-  The DragEvent.dataTransfer property holds the drag operation's
-  (as a `web.drag.DataTransfer` object).
-
-  `var data = dragEvent.dataTransfer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer`"
-  [this val]
-  (aset this "dataTransfer" val))
 

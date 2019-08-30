@@ -6,6 +6,8 @@
 (defn get-distributed-nodes
   "Method.
 
+  [Deprecated]
+
   The HTMLContentElement.getDistributedNodes() method returns a
   `web.NodeList` of the distributed nodes associated with this
   element.
@@ -19,6 +21,8 @@
 (defn select
   "Property.
 
+  [Deprecated]
+
   The HTMLContentElement.select property reflects the select attribute.
   is a `web.dom.DOMString` containing a space-separated list of
   selectors that select the content to insert in place of the <content>
@@ -31,6 +35,8 @@
 
 (defn set-select!
   "Property.
+
+  [Deprecated]
 
   The HTMLContentElement.select property reflects the select attribute.
   is a `web.dom.DOMString` containing a space-separated list of

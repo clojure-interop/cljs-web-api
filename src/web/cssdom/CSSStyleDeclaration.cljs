@@ -68,6 +68,8 @@
 (defn get-property-css-value
   "Method.
 
+  [Obsolute]
+
   The CSSStyleDeclaration.getPropertyCSSValue() method interface
   a `web.css.CSSValue` containing the CSS value for a property.
 
@@ -80,6 +82,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The read-only property returns an integer that represents the
   of style declarations in this CSS declaration block.
 
@@ -89,20 +93,10 @@
   [this]
   (-> this (.-length)))
 
-(defn set-length!
-  "Property.
-
-  The read-only property returns an integer that represents the
-  of style declarations in this CSS declaration block.
-
-  `var num = styles.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/length`"
-  [this val]
-  (aset this "length" val))
-
 (defn parent-rule
   "Property.
+
+  [Read Only]
 
   The CSSStyleDeclaration.parentRule read-only property returns
   `web.cssdom.CSSRule` that is the parent of this style block
@@ -112,16 +106,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/parentRule`"
   [this]
   (-> this (.-parentRule)))
-
-(defn set-parent-rule!
-  "Property.
-
-  The CSSStyleDeclaration.parentRule read-only property returns
-  `web.cssdom.CSSRule` that is the parent of this style block
-
-  `var rule = styles.parentRule;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/parentRule`"
-  [this val]
-  (aset this "parentRule" val))
 

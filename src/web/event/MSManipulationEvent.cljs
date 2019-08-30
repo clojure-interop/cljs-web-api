@@ -6,6 +6,9 @@
 (defn init-ms-manipulation-event
   "Method.
 
+  [Deprecated]
+  [Non Standard]
+
   The initMSManipulationEvent method is used to create a `web.event.MSManipulationEvent`
   can be called from JavaScript.
 

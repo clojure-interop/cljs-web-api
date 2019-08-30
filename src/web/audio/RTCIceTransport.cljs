@@ -74,6 +74,8 @@
 (defn component
   "Property.
 
+  [Read Only]
+
   The read-only `web.audio.RTCIceTransport` property component
   whether the object is serving to transport RTP or RTCP. The value
   one of the strings in `web.rtc.RTCIceComponent`.
@@ -86,6 +88,8 @@
 
 (defn gathering-state
   "Property.
+
+  [Read Only]
 
   The read-only `web.audio.RTCIceTransport` property gatheringState
   a `web.dom.DOMString` from the enumerated type `web.rtc.RTCIceGathererState`
@@ -101,6 +105,8 @@
 (defn role
   "Property.
 
+  [Read Only]
+
   The read-only `web.audio.RTCIceTransport` property role indicates
   ICE role the transport is fulfilling: that of the controlling
   or the agent that is being controlled.
@@ -113,6 +119,8 @@
 
 (defn state
   "Property.
+
+  [Read Only]
 
   The read-only `web.audio.RTCIceTransport` property state returns
   current state of the ICE transport, so you can determine the

@@ -6,6 +6,8 @@
 (defn begin-query
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.beginQuery() method of the WebGL 2
   starts an asynchronous query. The target parameter indicates
   kind of query to begin.
@@ -19,6 +21,8 @@
 (defn begin-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.beginTransformFeedback() method of
   WebGL 2 API starts a transform feedback operation.
 
@@ -30,6 +34,8 @@
 
 (defn bind-buffer-base
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.bindBufferBase() method of the WebGL
   API binds a given `web.gl.WebGLBuffer` to a given binding point
@@ -44,6 +50,8 @@
 (defn bind-buffer-range
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.bindBufferRange() method of the WebGL
   API binds a range of a given `web.gl.WebGLBuffer` to a given
   point (target) at a given index.
@@ -56,6 +64,8 @@
 
 (defn bind-sampler
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.bindSampler() method of the WebGL
   API binds a passed `web.gl.WebGLSampler` object to the texture
@@ -70,6 +80,8 @@
 (defn bind-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.bindTransformFeedback() method of
   WebGL 2 API binds a passed `web.gl.WebGLTransformFeedback` object
   the current GL state.
@@ -83,6 +95,8 @@
 (defn bind-vertex-array
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.bindVertexArray() method of the WebGL
   API binds a passed `web.gl.WebGLVertexArrayObject` object to
   buffer.
@@ -95,6 +109,8 @@
 
 (defn blit-framebuffer
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.blitFramebuffer() method of the WebGL
   API transfers a block of pixels from the read framebuffer to
@@ -111,6 +127,8 @@
 (defn clear-buffer
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.clearBuffer[fiuv]() methods of the
   2 API clear buffers from the currently bound framebuffer.
 
@@ -126,6 +144,8 @@
 (defn client-wait-sync
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.clientWaitSync() method of the WebGL
   API blocks and waits for a `web.gl.WebGLSync` object to become
   or a given timeout to be passed.
@@ -138,6 +158,8 @@
 
 (defn compressed-tex-sub-image3d
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.compressedTexSubImage3D() method of
   WebGL API specifies a three-dimensional sub-rectangle for a texture
@@ -155,6 +177,8 @@
 (defn copy-buffer-sub-data
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.copyBufferSubData() method of the
   2 API copies part of the data of a buffer to another buffer.
 
@@ -166,6 +190,8 @@
 
 (defn copy-tex-sub-image3d
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.copyTexSubImage3D() method of the
   API copies pixels from the current `web.gl.WebGLFramebuffer`
@@ -180,6 +206,8 @@
 (defn create-query
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.createQuery() method of the WebGL
   API creates and initializes `web.gl.WebGLQuery` objects, which
   ways to asynchronously query for information.
@@ -193,6 +221,8 @@
 (defn create-sampler
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.createSampler() method of the WebGL
   API creates and initializes `web.gl.WebGLSampler` objects.
 
@@ -205,6 +235,8 @@
 (defn create-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.createTransformFeedback() method of
   WebGL 2 API creates and initializes `web.gl.WebGLTransformFeedback`
 
@@ -216,6 +248,8 @@
 
 (defn create-vertex-array
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.createVertexArray() method of the
   2 API creates and initializes a `web.gl.WebGLVertexArrayObject`
@@ -231,6 +265,8 @@
 (defn delete-query
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.deleteQuery() method of the WebGL
   API deletes a given `web.gl.WebGLQuery` object.
 
@@ -242,6 +278,8 @@
 
 (defn delete-sampler
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.deleteSampler() method of the WebGL
   API deletes a given `web.gl.WebGLSampler` object.
@@ -255,6 +293,8 @@
 (defn delete-sync
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.deleteSync() method of the WebGL 2
   deletes a given `web.gl.WebGLSync` object.
 
@@ -266,6 +306,8 @@
 
 (defn delete-transform-feedback
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.deleteTransformFeedback() method of
   WebGL 2 API deletes a given `web.gl.WebGLTransformFeedback` object.
@@ -279,6 +321,8 @@
 (defn delete-vertex-array
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.deleteVertexArray() method of the
   2 API deletes a given `web.gl.WebGLVertexArrayObject` object.
 
@@ -290,6 +334,8 @@
 
 (defn draw-arrays-instanced
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.drawArraysInstanced() method of the
   2 API renders primitives from array data like the `gl.drawArrays()`
@@ -303,6 +349,8 @@
 
 (defn draw-buffers
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.drawBuffers() method of the WebGL
   API defines draw buffers to which fragment colors are written
@@ -318,6 +366,8 @@
 (defn draw-elements-instanced
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.drawElementsInstanced() method of
   WebGL 2 API renders primitives from array data like the `gl.drawElements()`
   In addition, it can execute multiple instances of a set of elements.
@@ -331,6 +381,8 @@
 (defn draw-range-elements
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.drawRangeElements() method of the
   API renders primitives from array data in a given range.
 
@@ -342,6 +394,8 @@
 
 (defn end-query
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.endQuery() method of the WebGL 2 API
   the end of a given query target.
@@ -355,6 +409,8 @@
 (defn end-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.endTransformFeedback() method of the
   2 API ends a transform feedback operation.
 
@@ -366,6 +422,8 @@
 
 (defn fence-sync
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.fenceSync() method of the WebGL 2
   creates a new `web.gl.WebGLSync` object and inserts it into the
@@ -380,6 +438,8 @@
 (defn framebuffer-texture-layer
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.framebufferTextureLayer() method of
   WebGL 2 API attaches a single layer of a texture to a framebuffer.
 
@@ -391,6 +451,8 @@
 
 (defn get-active-uniform-block-name
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getActiveUniformBlockName() method
   the WebGL 2 API retrieves the name of the active uniform block
@@ -405,6 +467,8 @@
 (defn get-active-uniform-block-parameter
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getActiveUniformBlockParameter() method
   the WebGL 2 API retrieves information about an active uniform
   within a `web.gl.WebGLProgram`.
@@ -418,6 +482,8 @@
 (defn get-active-uniforms
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getActiveUniforms() method of the
   2 API retrieves information about active uniforms within a `web.gl.WebGLProgram`.
 
@@ -429,6 +495,8 @@
 
 (defn get-buffer-sub-data
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getBufferSubData() method of the WebGL
   API reads data from a buffer binding point and writes them to
@@ -443,6 +511,8 @@
 (defn get-frag-data-location
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getFragDataLocation() method of the
   2 API returns the binding of color numbers to user-defined varying
   variables.
@@ -456,6 +526,8 @@
 (defn get-indexed-parameter
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getIndexedParameter() method of the
   2 API returns indexed information about a given target.
 
@@ -467,6 +539,8 @@
 
 (defn get-internalformat-parameter
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getInternalformatParameter() method
   the WebGL 2 API returns information about implementation-dependent
@@ -481,6 +555,8 @@
 (defn get-query
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getQuery() method of the WebGL 2 API
   the currently active `web.gl.WebGLQuery` for the target, or `js.null`.
 
@@ -492,6 +568,8 @@
 
 (defn get-query-parameter
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getQueryParameter() method of the
   2 API returns parameter information of a `web.gl.WebGLQuery`
@@ -505,6 +583,8 @@
 (defn get-sampler-parameter
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getSamplerParameter() method of the
   2 API returns parameter information of a `web.gl.WebGLSampler`
 
@@ -517,6 +597,8 @@
 (defn get-sync-parameter
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getSyncParameter() method of the WebGL
   API returns parameter information of a `web.gl.WebGLSync` object.
 
@@ -528,6 +610,8 @@
 
 (defn get-transform-feedback-varying
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getTransformFeedbackVarying() method
   the WebGL 2 API returns information about varying variables from
@@ -542,6 +626,8 @@
 (defn get-uniform-block-index
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.getUniformBlockIndex() method of the
   2 API retrieves the index of a uniform block within a `web.gl.WebGLProgram`.
 
@@ -553,6 +639,8 @@
 
 (defn get-uniform-indices
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.getUniformIndices() method of the
   2 API retrieves the indices of a number of uniforms within a
@@ -566,6 +654,8 @@
 (defn invalidate-framebuffer
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.invalidateFramebuffer() method of
   WebGL 2 API invalidates the contents of attachments in a framebuffer.
 
@@ -577,6 +667,8 @@
 
 (defn invalidate-sub-framebuffer
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.invalidateSubFramebuffer() method
   the WebGL 2 API invalidates portions of the contents of attachments
@@ -591,6 +683,8 @@
 (defn is-query
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.isQuery() method of the WebGL 2 API
   true if the passed object is a valid `web.gl.WebGLQuery` object.
 
@@ -602,6 +696,8 @@
 
 (defn is-sampler
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.isSampler() method of the WebGL 2
   returns true if the passed object is a valid `web.gl.WebGLSampler`
@@ -615,6 +711,8 @@
 (defn is-sync
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.isSync() method of the WebGL 2 API
   true if the passed object is a valid `web.gl.WebGLSync` object.
 
@@ -626,6 +724,8 @@
 
 (defn is-transform-feedback
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.isTransformFeedback() method of the
   2 API returns true if the passed object is a valid `web.gl.WebGLTransformFeedback`
@@ -639,6 +739,8 @@
 (defn is-vertex-array
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.isVertexArray() method of the WebGL
   returns true if the passed object is a valid `web.gl.WebGLVertexArrayObject`
 
@@ -651,6 +753,8 @@
 (defn pause-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.pauseTransformFeedback() method of
   WebGL 2 API pauses a transform feedback operation.
 
@@ -662,6 +766,8 @@
 
 (defn read-buffer
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.readBuffer() method of the WebGL 2
   selects a color buffer as the source for pixels for subsequent
@@ -677,6 +783,8 @@
 (defn renderbuffer-storage-multisample
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.renderbufferStorageMultisample() method
   the WebGL 2 API returns creates and initializes a renderbuffer
   data store and allows specifying a number of samples to be used.
@@ -690,6 +798,8 @@
 (defn resume-transform-feedback
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.resumeTransformFeedback() method of
   WebGL 2 API resumes a transform feedback operation.
 
@@ -701,6 +811,8 @@
 
 (defn sampler-parameter
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.samplerParameter[if]() methods of
   WebGL 2 API set `web.gl.WebGLSampler` parameters.
@@ -714,6 +826,8 @@
 
 (defn tex-image3d
   "Method.
+
+  [Experimental]
 
   The WebGLRenderingContext.texImage3D() method of the WebGL API
   a three-dimensional texture image.
@@ -735,6 +849,8 @@
 (defn tex-storage2d
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.texStorage2D() method of the WebGL
   specifies all levels of two-dimensional texture storage.
 
@@ -746,6 +862,8 @@
 
 (defn tex-storage3d
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.texStorage3D() method of the WebGL
   specifies all levels of a three-dimensional texture or two-dimensional
@@ -759,6 +877,8 @@
 
 (defn tex-sub-image3d
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.texSubImage3D() method of the WebGL
   specifies a sub-rectangle of the current texture.
@@ -784,6 +904,8 @@
 (defn transform-feedback-varyings
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.transformFeedbackVaryings() method
   the WebGL 2 API specifies values to record in `web.gl.WebGLTransformFeedback`
 
@@ -795,6 +917,8 @@
 
 (defn uniform
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.uniform[1234][uif][v]() methods of
   WebGL API specify values of uniform variables.
@@ -823,6 +947,8 @@
 (defn uniform-block-binding
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.uniformBlockBinding() method of the
   2 API assigns binding points for active uniform blocks.
 
@@ -834,6 +960,8 @@
 
 (defn uniform-matrix
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.uniformMatrix[234]x[234]fv() methods
   the WebGL 2 API specify matrix values for uniform variables.
@@ -855,6 +983,8 @@
 (defn vertex-attrib-divisor
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.vertexAttribDivisor() method of the
   2 API modifies the rate at which generic vertex attributes advance
   rendering multiple instances of primitives with `gl.drawArraysInstanced()`
@@ -868,6 +998,8 @@
 
 (defn vertex-attrib-i4
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.vertexAttribI4[u]i[v]() methods of
   WebGL 2 API specify integer values for generic vertex attributes.
@@ -885,6 +1017,8 @@
 (defn vertex-attrib-i-pointer
   "Method.
 
+  [Experimental]
+
   The WebGL2RenderingContext.vertexAttribIPointer() method of the
   2 API specifies integer data formats and locations of vertex
   in a vertex attributes array.
@@ -897,6 +1031,8 @@
 
 (defn wait-sync
   "Method.
+
+  [Experimental]
 
   The WebGL2RenderingContext.waitSync() method of the WebGL 2 API
   immediately, but waits on the GL server until the given `web.gl.WebGLSync`

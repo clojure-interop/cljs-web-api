@@ -7,6 +7,8 @@
 (defn supported-networks
   "Property.
 
+  [Experimental]
+
   The supportedNetworks property of the `web.payments.BasicCardRequest`
   contains an array of `web.dom.DOMString`s representing the card
   that the retailer supports (e.g. amex, mastercard).
@@ -19,6 +21,8 @@
 
 (defn set-supported-networks!
   "Property.
+
+  [Experimental]
 
   The supportedNetworks property of the `web.payments.BasicCardRequest`
   contains an array of `web.dom.DOMString`s representing the card
@@ -33,6 +37,8 @@
 (defn supported-types
   "Property.
 
+  [Obsolute]
+
   The obsolete supportedTypes property of the `web.payments.BasicCardRequest`
   can optionally be provided to specify an array of `web.dom.DOMString`s
   the card types that the retailer supports (e.g. credit, debit,
@@ -45,6 +51,8 @@
 
 (defn set-supported-types!
   "Property.
+
+  [Obsolute]
 
   The obsolete supportedTypes property of the `web.payments.BasicCardRequest`
   can optionally be provided to specify an array of `web.dom.DOMString`s

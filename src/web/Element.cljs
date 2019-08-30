@@ -33,6 +33,8 @@
 (defn animate
   "Method.
 
+  [Experimental]
+
   The `web.Element` interface's animate() method is a shortcut
   which creates a new `web.animation.Animation`, applies it to
   element, then plays the animation. It returns the created `web.animation.Animation`
@@ -60,6 +62,10 @@
 (defn create-shadow-root
   "Method.
 
+  [Deprecated]
+  [Non Standard]
+  [Draft]
+
   Use Element.createShadowRoot to create an instance of shadow
   When shadow DOM is created, it is always attached to an existing
   After the shadow DOM is created, the element that it is attached
@@ -73,6 +79,8 @@
 
 (defn computed-style-map
   "Method.
+
+  [Experimental]
 
   The computedStyleMap() method of the `web.Element` interface
   a `web.css.StylePropertyMapReadOnly` interface which provides
@@ -101,6 +109,8 @@
 
 (defn get-animations
   "Method.
+
+  [Experimental]
 
   The getAnimations() method of the `web.Element` interface (specified
   the Animatable mixin) returns an array of all `web.animation.Animation`
@@ -516,6 +526,8 @@
 (defn request-pointer-lock
   "Method.
 
+  [Experimental]
+
   The Element.requestPointerLock() method lets you asynchronously
   for the pointer to be locked on the given element.
 
@@ -642,6 +654,8 @@
 (defn set-capture
   "Method.
 
+  [Non Standard]
+
   Call this method during the handling of a mousedown event to
   all mouse events to this element until the mouse button is released
   `document.releaseCapture()` is called.
@@ -686,6 +700,8 @@
 (defn after
   "Method.
 
+  [Experimental]
+
   The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
   `web.dom.DOMString` objects are inserted as equivalent `web.Text`
@@ -714,6 +730,8 @@
 (defn before
   "Method.
 
+  [Experimental]
+
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
   this ChildNode. `web.dom.DOMString` objects are inserted as equivalent
@@ -728,6 +746,8 @@
 
 (defn ms-zoom-to
   "Method.
+
+  [Non Standard]
 
   The msZoomTo method scrolls and/or zooms an element to its specified
   with animation.
@@ -752,6 +772,8 @@
 (defn replace-with
   "Method.
 
+  [Experimental]
+
   The ChildNode.replaceWith() method replaces this ChildNode in
   children list of its parent with a set of `web.Node` or `web.dom.DOMString`
   `web.dom.DOMString` objects are inserted as equivalent `web.Text`
@@ -765,6 +787,8 @@
 
 (defn scroll-into-view-if-needed
   "Method.
+
+  [Non Standard]
 
   The Element.scrollIntoViewIfNeeded() method scrolls the current
   into the visible area of the browser window if it's not already
@@ -781,6 +805,8 @@
 (defn attributes
   "Property.
 
+  [Read Only]
+
   The Element.attributes property returns a live collection of
   attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
   an Array, so it has no `js.Array` methods and the `web.Attr`
@@ -794,24 +820,10 @@
   [this]
   (-> this (.-attributes)))
 
-(defn set-attributes!
-  "Property.
-
-  The Element.attributes property returns a live collection of
-  attribute nodes registered to the specified node. It is a `web.NamedNodeMap`,
-  an Array, so it has no `js.Array` methods and the `web.Attr`
-  indexes may differ among browsers. To be more specific, attributes
-  a key/value pair of strings that represents any information regarding
-  attribute.
-
-  `var attr = element.attributes;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes`"
-  [this val]
-  (aset this "attributes" val))
-
 (defn class-list
   "Property.
+
+  [Read Only]
 
   The Element.classList is a read-only property that returns a
   `web.dom.DOMTokenList` collection of the class attributes of
@@ -860,6 +872,8 @@
 (defn client-height
   "Property.
 
+  [Read Only]
+
   The Element.clientHeight read-only property is zero for elements
   no CSS or inline layout boxes; otherwise, it's the inner height
   an element in pixels. It includes padding but excludes borders,
@@ -873,24 +887,10 @@
   [this]
   (-> this (.-clientHeight)))
 
-(defn set-client-height!
-  "Property.
-
-  The Element.clientHeight read-only property is zero for elements
-  no CSS or inline layout boxes; otherwise, it's the inner height
-  an element in pixels. It includes padding but excludes borders,
-  and horizontal scrollbars (if present).
-
-  `var intElemClientHeight = element.clientHeight;
-
-  intElemClientHeight is an integer corresponding to the clientHeight of element in pixels. The clientHeight property is read–only.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight`"
-  [this val]
-  (aset this "clientHeight" val))
-
 (defn client-left
   "Property.
+
+  [Read Only]
 
   The width of the left border of an element in pixels. It includes
   width of the vertical scrollbar if the text direction of the
@@ -904,23 +904,10 @@
   [this]
   (-> this (.-clientLeft)))
 
-(defn set-client-left!
-  "Property.
-
-  The width of the left border of an element in pixels. It includes
-  width of the vertical scrollbar if the text direction of the
-  is right–to–left and if there is an overflow causing a left vertical
-  to be rendered. clientLeft does not include the left margin or
-  left padding. clientLeft is read-only.
-
-  `var left = element.clientLeft;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientLeft`"
-  [this val]
-  (aset this "clientLeft" val))
-
 (defn client-top
   "Property.
+
+  [Read Only]
 
   The width of the top border of an element in pixels. It is a
   integer property of element.
@@ -931,20 +918,10 @@
   [this]
   (-> this (.-clientTop)))
 
-(defn set-client-top!
-  "Property.
-
-  The width of the top border of an element in pixels. It is a
-  integer property of element.
-
-  `var top = element.clientTop;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop`"
-  [this val]
-  (aset this "clientTop" val))
-
 (defn client-width
   "Property.
+
+  [Read Only]
 
   The Element.clientWidth property is zero for inline elements
   elements with no CSS; otherwise, it's the inner width of an element
@@ -958,22 +935,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth`"
   [this]
   (-> this (.-clientWidth)))
-
-(defn set-client-width!
-  "Property.
-
-  The Element.clientWidth property is zero for inline elements
-  elements with no CSS; otherwise, it's the inner width of an element
-  pixels. It includes padding but excludes borders, margins, and
-  scrollbars (if present).
-
-  `var intElemClientWidth = element.clientWidth;
-
-  intElemClientWidth is an integer corresponding to the clientWidth of element in pixels. The clientWidth property is read–only.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth`"
-  [this val]
-  (aset this "clientWidth" val))
 
 (defn computed-name
   "Property.
@@ -1068,6 +1029,8 @@
 (defn local-name
   "Property.
 
+  [Read Only]
+
   The Element.localName read-only property returns the local part
   the qualified name of an element.
 
@@ -1077,20 +1040,10 @@
   [this]
   (-> this (.-localName)))
 
-(defn set-local-name!
-  "Property.
-
-  The Element.localName read-only property returns the local part
-  the qualified name of an element.
-
-  `name = element.localName`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/localName`"
-  [this val]
-  (aset this "localName" val))
-
 (defn namespace-uri
   "Property.
+
+  [Read Only]
 
   The Element.namespaceURI read-only property returns the namespace
   of the element, or null if the element is not in a namespace.
@@ -1101,20 +1054,10 @@
   [this]
   (-> this (.-namespaceURI)))
 
-(defn set-namespace-uri!
-  "Property.
-
-  The Element.namespaceURI read-only property returns the namespace
-  of the element, or null if the element is not in a namespace.
-
-  `namespace = element.namespaceURI`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/namespaceURI`"
-  [this val]
-  (aset this "namespaceURI" val))
-
 (defn next-element-sibling
   "Property.
+
+  [Read Only]
 
   The NonDocumentTypeChildNode.nextElementSibling read-only property
   the element immediately following the specified one in its parent's
@@ -1125,19 +1068,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this]
   (-> this (.-nextElementSibling)))
-
-(defn set-next-element-sibling!
-  "Property.
-
-  The NonDocumentTypeChildNode.nextElementSibling read-only property
-  the element immediately following the specified one in its parent's
-  list, or null if the specified element is the last one in the
-
-  `var nextNode = elementNodeReference.nextElementSibling;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
-  [this val]
-  (aset this "nextElementSibling" val))
 
 (defn outer-html
   "Property.
@@ -1174,6 +1104,8 @@
 (defn prefix
   "Property.
 
+  [Read Only]
+
   The Element.prefix read-only property returns the namespace prefix
   the specified element, or null if no prefix is specified.
 
@@ -1183,20 +1115,10 @@
   [this]
   (-> this (.-prefix)))
 
-(defn set-prefix!
-  "Property.
-
-  The Element.prefix read-only property returns the namespace prefix
-  the specified element, or null if no prefix is specified.
-
-  `string = element.prefix`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/prefix`"
-  [this val]
-  (aset this "prefix" val))
-
 (defn previous-element-sibling
   "Property.
+
+  [Read Only]
 
   The NonDocumentTypeChildNode.previousElementSibling read-only
   returns the `web.Element` immediately prior to the specified
@@ -1212,6 +1134,8 @@
 (defn scroll-height
   "Property.
 
+  [Read Only]
+
   The Element.scrollHeight read-only property is a measurement
   the height of an element's content, including content not visible
   the screen due to overflow.
@@ -1223,21 +1147,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight`"
   [this]
   (-> this (.-scrollHeight)))
-
-(defn set-scroll-height!
-  "Property.
-
-  The Element.scrollHeight read-only property is a measurement
-  the height of an element's content, including content not visible
-  the screen due to overflow.
-
-  `var intElemScrollHeight = element.scrollHeight;
-
-  intElemScrollHeight is a variable storing an integer corresponding to the scrollHeight pixel value of the element. The scrollHeight property is read-only.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight`"
-  [this val]
-  (aset this "scrollHeight" val))
 
 (defn scroll-left
   "Property.
@@ -1265,6 +1174,9 @@
 
 (defn scroll-left-max
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The Element.scrollLeftMax read-only property returns a `js.Number`
   the maximum left scroll offset possible for the element.
@@ -1332,6 +1244,9 @@
 (defn scroll-top-max
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The Element.scrollTopMax read-only property returns a `js.Number`
   the maximum top scroll offset possible for the element.
 
@@ -1343,6 +1258,8 @@
 
 (defn scroll-width
   "Property.
+
+  [Read Only]
 
   The Element.scrollWidth read-only property is a measurement of
   width of an element's content, including content not visible
@@ -1356,23 +1273,10 @@
   [this]
   (-> this (.-scrollWidth)))
 
-(defn set-scroll-width!
-  "Property.
-
-  The Element.scrollWidth read-only property is a measurement of
-  width of an element's content, including content not visible
-  the screen due to overflow.
-
-  `var xScrollWidth = element.scrollWidth;
-
-  xScrollWidth is the width of the content of element in pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth`"
-  [this val]
-  (aset this "scrollWidth" val))
-
 (defn shadow-root
   "Property.
+
+  [Read Only]
 
   The Element.shadowRoot read-only property represents the shadow
   hosted by the element.
@@ -1383,20 +1287,12 @@
   [this]
   (-> this (.-shadowRoot)))
 
-(defn set-shadow-root!
-  "Property.
-
-  The Element.shadowRoot read-only property represents the shadow
-  hosted by the element.
-
-  `var shadowroot = element.shadowRoot;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot`"
-  [this val]
-  (aset this "shadowRoot" val))
-
 (defn open-or-closed-shadow-root
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Draft]
 
   The Element.openOrCloseShadowRoot read-only property represents
   shadow root hosted by the element, regardless if its `mode` is
@@ -1407,19 +1303,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
   [this]
   (-> this (.-openOrClosedShadowRoot)))
-
-(defn set-open-or-closed-shadow-root!
-  "Property.
-
-  The Element.openOrCloseShadowRoot read-only property represents
-  shadow root hosted by the element, regardless if its `mode` is
-  or closed.
-
-  `var shadowroot = element.shadowRoot;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot`"
-  [this val]
-  (aset this "openOrClosedShadowRoot" val))
 
 (defn slot
   "Property.
@@ -1450,6 +1333,9 @@
 (defn tab-stop
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The tabStop property of the `web.Element` interface returns a
   indicating if the element can receive input focus via the tab
   If the specified element is a shadow host tab navigation is delegated
@@ -1465,6 +1351,9 @@
 (defn set-tab-stop!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The tabStop property of the `web.Element` interface returns a
   indicating if the element can receive input focus via the tab
   If the specified element is a shadow host tab navigation is delegated
@@ -1479,6 +1368,8 @@
 
 (defn tag-name
   "Property.
+
+  [Read Only]
 
   The tagName read-only property of the `web.Element` interface
   the tag name of the element on which it's called.
@@ -1522,6 +1413,8 @@
 (defn assigned-slot
   "Property.
 
+  [Read Only]
+
   The assignedSlot read-only property of the `web.shadow-dom.Slotable`
   returns an `web.shadow-dom.HTMLSlotElement` representing the
   element the node is inserted in.
@@ -1531,19 +1424,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
   [this]
   (-> this (.-assignedSlot)))
-
-(defn set-assigned-slot!
-  "Property.
-
-  The assignedSlot read-only property of the `web.shadow-dom.Slotable`
-  returns an `web.shadow-dom.HTMLSlotElement` representing the
-  element the node is inserted in.
-
-  `var slotElement = elementInstance.assignedSlot`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Slotable/assignedSlot`"
-  [this val]
-  (aset this "assignedSlot" val))
 
 (defn onfullscreenchange
   "Property.
@@ -1622,6 +1502,8 @@
 (defn child-element-count
   "Property.
 
+  [Read Only]
+
   The ParentNode.childElementCount read-only property returns an
   long representing the number of child elements of the given element.
 
@@ -1637,26 +1519,10 @@
   [this]
   (-> this (.-childElementCount)))
 
-(defn set-child-element-count!
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this val]
-  (aset this "childElementCount" val))
-
 (defn children
   "Property.
+
+  [Read Only]
 
   The `web.ParentNode` property children is a read-only property
   returns a live `web.dom.HTMLCollection` which contains all of
@@ -1668,21 +1534,10 @@
   [this]
   (-> this (.-children)))
 
-(defn set-children!
-  "Property.
-
-  The `web.ParentNode` property children is a read-only property
-  returns a live `web.dom.HTMLCollection` which contains all of
-  child `elements` of the node upon which it was called.
-
-  `var children = node.children;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
-  [this val]
-  (aset this "children" val))
-
 (defn current-style
   "Property.
+
+  [Non Standard]
 
   Element.currentStyle is a proprietary property which is similar
   the standardized `window.getComputedStyle()` method.
@@ -1694,6 +1549,8 @@
 (defn set-current-style!
   "Property.
 
+  [Non Standard]
+
   Element.currentStyle is a proprietary property which is similar
   the standardized `window.getComputedStyle()` method.
 
@@ -1704,6 +1561,8 @@
 (defn first-element-child
   "Property.
 
+  [Read Only]
+
   The ParentNode.firstElementChild read-only property returns the
   first child `web.Element`, or null if there are no child elements.
 
@@ -1713,20 +1572,10 @@
   [this]
   (-> this (.-firstElementChild)))
 
-(defn set-first-element-child!
-  "Property.
-
-  The ParentNode.firstElementChild read-only property returns the
-  first child `web.Element`, or null if there are no child elements.
-
-  `var element = node.firstElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
-  [this val]
-  (aset this "firstElementChild" val))
-
 (defn last-element-child
   "Property.
+
+  [Read Only]
 
   The ParentNode.lastElementChild read-only property returns the
   last child `web.Element` or null if there are no child elements.
@@ -1736,18 +1585,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
   [this]
   (-> this (.-lastElementChild)))
-
-(defn set-last-element-child!
-  "Property.
-
-  The ParentNode.lastElementChild read-only property returns the
-  last child `web.Element` or null if there are no child elements.
-
-  `var element = node.lastElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
-  [this val]
-  (aset this "lastElementChild" val))
 
 (defn name
   "Property.
@@ -1788,6 +1625,8 @@
 (defn runtime-style
   "Property.
 
+  [Non Standard]
+
   Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
   its styles, that have higher precedence and modification.
 
@@ -1797,6 +1636,8 @@
 
 (defn set-runtime-style!
   "Property.
+
+  [Non Standard]
 
   Element.runtimeStyle is a proprietary property similar to `HTMLElement.style`,
   its styles, that have higher precedence and modification.

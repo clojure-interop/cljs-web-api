@@ -264,6 +264,9 @@
 (defn moz-local-transport
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
   mozLocalTransport, has been supplanted by the standard `protocol`
   `relayProtocol` properties.
@@ -280,6 +283,9 @@
 
 (defn set-moz-local-transport!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   The non-standard Mozilla extension to the `web.rtc.RTCIceCandidateStats`
   mozLocalTransport, has been supplanted by the standard `protocol`

@@ -33,13 +33,3 @@
   [this & args]
   (-> this .-getNamespaceURI (.apply this (clj->js args))))
 
-(defn length
-  "Property."
-  [this]
-  (-> this (.-length)))
-
-(defn set-length!
-  "Property."
-  [this val]
-  (aset this "length" val))
-

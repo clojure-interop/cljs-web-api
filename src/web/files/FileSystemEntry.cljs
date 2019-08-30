@@ -11,6 +11,9 @@
 (defn copy-to
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemEntry` interface's method copyTo() copies
   file specified by the entry to a new location on the file system.
 
@@ -22,6 +25,9 @@
 
 (defn get-metadata
   "Method.
+
+  [Non Standard]
+  [Experimental]
 
   The `web.files.FileSystemEntry` interface's method getMetadata()
   a `web.files.Metadata` object with information about the file
@@ -36,6 +42,9 @@
 (defn get-parent
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemEntry` interface's method getParent()
   a `web.files.FileSystemDirectoryEntry`.
 
@@ -47,6 +56,9 @@
 
 (defn move-to
   "Method.
+
+  [Non Standard]
+  [Experimental]
 
   The `web.files.FileSystemEntry` interface's method moveTo() moves
   file specified by the entry to a new location on the file system,
@@ -62,6 +74,9 @@
 (defn remove
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemEntry` interface's method remove() deletes
   file or directory from the file system. Directories must be empty
   they can be removed.
@@ -74,6 +89,9 @@
 
 (defn to-url
   "Method.
+
+  [Non Standard]
+  [Experimental]
 
   The `web.files.FileSystemEntry` interface's method toURL() creates
   returns a string containing a URL which can be used to identify
@@ -89,6 +107,10 @@
 (defn filesystem
   "Property.
 
+  [Read Only]
+  [Non Standard]
+  [Experimental]
+
   The read-only filesystem property of the `web.files.FileSystemEntry`
   contains a `web.files.FileSystem` object that represents the
   system on which the entry resides.
@@ -99,21 +121,12 @@
   [this]
   (-> this (.-filesystem)))
 
-(defn set-filesystem!
-  "Property.
-
-  The read-only filesystem property of the `web.files.FileSystemEntry`
-  contains a `web.files.FileSystem` object that represents the
-  system on which the entry resides.
-
-  `var filesystem = FileSystemEntry.filesystem;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem`"
-  [this val]
-  (aset this "filesystem" val))
-
 (defn full-path
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Experimental]
 
   The read-only fullPath property of the `web.files.FileSystemEntry`
   returns a `web.USVString` specifying the full, absolute path
@@ -125,21 +138,12 @@
   [this]
   (-> this (.-fullPath)))
 
-(defn set-full-path!
-  "Property.
-
-  The read-only fullPath property of the `web.files.FileSystemEntry`
-  returns a `web.USVString` specifying the full, absolute path
-  the file system's root to the file represented by the entry.
-
-  `var fullPath = FileSystemEntry.fullPath;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath`"
-  [this val]
-  (aset this "fullPath" val))
-
 (defn is-directory
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Experimental]
 
   The read-only isDirectory property of the `web.files.FileSystemEntry`
   is true if the entry represents a directory (meaning it's a `web.files.FileSystemDirectoryEntry`)
@@ -151,21 +155,12 @@
   [this]
   (-> this (.-isDirectory)))
 
-(defn set-is-directory!
-  "Property.
-
-  The read-only isDirectory property of the `web.files.FileSystemEntry`
-  is true if the entry represents a directory (meaning it's a `web.files.FileSystemDirectoryEntry`)
-  false if it's not.
-
-  `var isDirectory = FileSystemEntry.isDirectory;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory`"
-  [this val]
-  (aset this "isDirectory" val))
-
 (defn is-file
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Experimental]
 
   The read-only isFile property of the `web.files.FileSystemEntry`
   is true if the entry represents a file (meaning it's a `web.files.FileSystemFileEntry`)
@@ -177,21 +172,12 @@
   [this]
   (-> this (.-isFile)))
 
-(defn set-is-file!
-  "Property.
-
-  The read-only isFile property of the `web.files.FileSystemEntry`
-  is true if the entry represents a file (meaning it's a `web.files.FileSystemFileEntry`)
-  false if it's not.
-
-  `var isFile = FileSystemEntry.isFile;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile`"
-  [this val]
-  (aset this "isFile" val))
-
 (defn name
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Experimental]
 
   The read-only name property of the `web.files.FileSystemEntry`
   returns a `web.USVString` specifying the entry's name; this is
@@ -203,18 +189,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name`"
   [this]
   (-> this (.-name)))
-
-(defn set-name!
-  "Property.
-
-  The read-only name property of the `web.files.FileSystemEntry`
-  returns a `web.USVString` specifying the entry's name; this is
-  entry within its parent directory (the last component of the
-  as indicated by the `fullPath` property).
-
-  `var name = FileSystemEntry.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name`"
-  [this val]
-  (aset this "name" val))
 

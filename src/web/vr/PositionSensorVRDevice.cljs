@@ -8,6 +8,9 @@
 (defn get-state
   "Method.
 
+  [Experimental]
+  [Obsolute]
+
   The getState() method of the `web.vr.PositionSensorVRDevice`
   returns the current state of the position sensor for the current
   (e.g. within the current `window.requestAnimationFrame` callback)
@@ -23,6 +26,9 @@
 (defn get-immediate-state
   "Method.
 
+  [Experimental]
+  [Obsolute]
+
   The getImmediateState() method of the `VRDevice` interface returns
   current instantaneous position sensor state. This is intended
   only be used rarely, for certain special uses, for example sampling
@@ -37,6 +43,9 @@
 
 (defn reset-sensor
   "Method.
+
+  [Experimental]
+  [Obsolute]
 
   The resetSensor() method of the `VRDevice` interface can be used
   reset the sensor if desired, returning the position and orientation

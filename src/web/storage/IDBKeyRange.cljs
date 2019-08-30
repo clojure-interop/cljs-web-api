@@ -69,6 +69,8 @@
 (defn lower
   "Property.
 
+  [Read Only]
+
   The lower bound of the key range (can be any type.)
 
   `var lower = myKeyRange.lower`
@@ -77,19 +79,10 @@
   [this]
   (-> this (.-lower)))
 
-(defn set-lower!
-  "Property.
-
-  The lower bound of the key range (can be any type.)
-
-  `var lower = myKeyRange.lower`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lower`"
-  [this val]
-  (aset this "lower" val))
-
 (defn upper
   "Property.
+
+  [Read Only]
 
   The upper bound of the key range (can be any type.)
 
@@ -99,19 +92,10 @@
   [this]
   (-> this (.-upper)))
 
-(defn set-upper!
-  "Property.
-
-  The upper bound of the key range (can be any type.)
-
-  `var upper = myKeyRange.upper`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upper`"
-  [this val]
-  (aset this "upper" val))
-
 (defn lower-open
   "Property.
+
+  [Read Only]
 
   A `boolean`:
 
@@ -121,19 +105,10 @@
   [this]
   (-> this (.-lowerOpen)))
 
-(defn set-lower-open!
-  "Property.
-
-  A `boolean`:
-
-  `var lowerOpen = myKeyRange.lowerOpen`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen`"
-  [this val]
-  (aset this "lowerOpen" val))
-
 (defn upper-open
   "Property.
+
+  [Read Only]
 
   A `boolean`:
 
@@ -142,15 +117,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperOpen`"
   [this]
   (-> this (.-upperOpen)))
-
-(defn set-upper-open!
-  "Property.
-
-  A `boolean`:
-
-  `var upperOpen = myKeyRange.upperOpen`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperOpen`"
-  [this val]
-  (aset this "upperOpen" val))
 

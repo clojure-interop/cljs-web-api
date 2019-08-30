@@ -3,27 +3,10 @@
   a web page to provide rich media metadata for display in a platform"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The MediaMetadata() constructor creates a new `web.audio.MediaMetadata` object.
-
-  metadata Optional
-
-
-  \\tThe metadata parameters are as follows:
-
-
-  \\t\\ttitle: The title of the media to be played.
-  \\t\\tartist: The name of the artist, group, creator, etc. of the media to be played.
-  \\t\\talbum: The name of the album, or collection, containing the media to be played.
-  \\t\\tartwork: An array of images associated with the playing media.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/MediaMetadata`"
-  js/MediaMetadata)
-
 (defn title
   "Property.
+
+  [Experimental]
 
   The title property of the `MediaMetaData` interface returns or
   the title of the media to be played.
@@ -38,6 +21,8 @@
 (defn set-title!
   "Property.
 
+  [Experimental]
+
   The title property of the `MediaMetaData` interface returns or
   the title of the media to be played.
 
@@ -50,6 +35,8 @@
 
 (defn artist
   "Property.
+
+  [Experimental]
 
   The artist property of the `MediaMetaData` interface returns
   sets the name of the artist, group, creator, etc., of the media
@@ -65,6 +52,8 @@
 (defn set-artist!
   "Property.
 
+  [Experimental]
+
   The artist property of the `MediaMetaData` interface returns
   sets the name of the artist, group, creator, etc., of the media
   be played.
@@ -79,6 +68,8 @@
 (defn album
   "Property.
 
+  [Experimental]
+
   The album property of the `MediaMetaData` interface returns or
   the name of the album or collection containing the media to be
 
@@ -91,6 +82,8 @@
 
 (defn set-album!
   "Property.
+
+  [Experimental]
 
   The album property of the `MediaMetaData` interface returns or
   the name of the album or collection containing the media to be
@@ -105,6 +98,8 @@
 (defn artwork
   "Property.
 
+  [Experimental]
+
   The artwork property of the `MediaMetaData` interface returns
   sets an array of images associated with playing media.
 
@@ -117,6 +112,8 @@
 
 (defn set-artwork!
   "Property.
+
+  [Experimental]
 
   The artwork property of the `MediaMetaData` interface returns
   sets an array of images associated with playing media.
@@ -131,6 +128,8 @@
 (defn media-metadata
   "Property.
 
+  [Experimental]
+
   The MediaMetadata() constructor creates a new `web.audio.MediaMetadata`
 
   `var mediaMetadata = new MediaMetadata([metadata])`
@@ -141,6 +140,8 @@
 
 (defn set-media-metadata!
   "Property.
+
+  [Experimental]
 
   The MediaMetadata() constructor creates a new `web.audio.MediaMetadata`
 

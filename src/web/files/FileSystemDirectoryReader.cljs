@@ -8,6 +8,9 @@
 (defn read-entries
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemDirectoryReader` interface's readEntries()
   retrieves the directory entries within the directory being read
   delivers them in an array to a provided callback function.

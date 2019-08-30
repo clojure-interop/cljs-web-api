@@ -8,6 +8,8 @@
 (defn entry-type
   "Property.
 
+  [Read Only]
+
   The entryType property returns a `web.dom.DOMString` representing
   type of performance metric such as, for example, \\\"mark\\\". This
   is read only.
@@ -18,21 +20,10 @@
   [this]
   (-> this (.-entryType)))
 
-(defn set-entry-type!
-  "Property.
-
-  The entryType property returns a `web.dom.DOMString` representing
-  type of performance metric such as, for example, \\\"mark\\\". This
-  is read only.
-
-  `var type = entry.entryType;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/entryType`"
-  [this val]
-  (aset this "entryType" val))
-
 (defn name
   "Property.
+
+  [Read Only]
 
   The name property of the `web.performance.PerformanceEntry` interface
   a value that further specifies the value returned by the `PerformanceEntry.entryType`
@@ -43,19 +34,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/name`"
   [this]
   (-> this (.-name)))
-
-(defn set-name!
-  "Property.
-
-  The name property of the `web.performance.PerformanceEntry` interface
-  a value that further specifies the value returned by the `PerformanceEntry.entryType`
-  This property is read only.
-
-  `var name = entry.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/name`"
-  [this val]
-  (aset this "name" val))
 
 (defn start-time
   "Property.

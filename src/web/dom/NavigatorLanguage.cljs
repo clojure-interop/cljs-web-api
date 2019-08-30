@@ -6,6 +6,8 @@
 (defn language
   "Property.
 
+  [Read Only]
+
   The NavigatorLanguage.language read-only property returns a string
   the preferred language of the user, usually the language of the
   UI.
@@ -18,6 +20,9 @@
 
 (defn languages
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The NavigatorLanguage.languages read-only property returns an
   of `web.dom.DOMString`s representing the user's preferred languages.

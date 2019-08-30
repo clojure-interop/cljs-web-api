@@ -22,7 +22,7 @@
   The Intl.PluralRules.prototype.select method returns a String
   which plural rule to use for locale-aware formatting.
 
-  `pluralRule.select(number)`
+  `pluralCategory = pluralRule.select(number)`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules/select`"
   [this number]

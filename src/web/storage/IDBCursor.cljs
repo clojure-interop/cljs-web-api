@@ -74,6 +74,8 @@
 (defn source
   "Property.
 
+  [Read Only]
+
   The `web.idb.IDBObjectStore` or `web.storage.IDBIndex` that the
   is iterating over.
 
@@ -83,20 +85,10 @@
   [this]
   (-> this (.-source)))
 
-(defn set-source!
-  "Property.
-
-  The `web.idb.IDBObjectStore` or `web.storage.IDBIndex` that the
-  is iterating over.
-
-  `var source = cursor.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source`"
-  [this val]
-  (aset this "source" val))
-
 (defn direction
   "Property.
+
+  [Read Only]
 
   A string (defined by the IDBCursorDirection enum) indicating
   direction in which the cursor is traversing the data. Possible
@@ -108,21 +100,10 @@
   [this]
   (-> this (.-direction)))
 
-(defn set-direction!
-  "Property.
-
-  A string (defined by the IDBCursorDirection enum) indicating
-  direction in which the cursor is traversing the data. Possible
-  are:
-
-  `var direction = cursor.direction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/direction`"
-  [this val]
-  (aset this "direction" val))
-
 (defn key
   "Property.
+
+  [Read Only]
 
   A value of any type.
 
@@ -132,19 +113,10 @@
   [this]
   (-> this (.-key)))
 
-(defn set-key!
-  "Property.
-
-  A value of any type.
-
-  `var key = cursor.key;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/key`"
-  [this val]
-  (aset this "key" val))
-
 (defn primary-key
   "Property.
+
+  [Read Only]
 
   A value of any data type.
 
@@ -154,19 +126,10 @@
   [this]
   (-> this (.-primaryKey)))
 
-(defn set-primary-key!
-  "Property.
-
-  A value of any data type.
-
-  `var value = cursor.primaryKey;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/primaryKey`"
-  [this val]
-  (aset this "primaryKey" val))
-
 (defn request
   "Property.
+
+  [Read Only]
 
   The request read-only property of the `web.storage.IDBCursor`
   returns the request if the cursor.
@@ -176,16 +139,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request`"
   [this]
   (-> this (.-request)))
-
-(defn set-request!
-  "Property.
-
-  The request read-only property of the `web.storage.IDBCursor`
-  returns the request if the cursor.
-
-  `var request = cursor.request;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request`"
-  [this val]
-  (aset this "request" val))
 

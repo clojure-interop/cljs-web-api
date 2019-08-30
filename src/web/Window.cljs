@@ -18,6 +18,9 @@
 (defn back
   "Method.
 
+  [Deprecated]
+  [Non Standard]
+
   The obsolete and non-standard method back() on the `window` interface
   the window to the previous item in the history. This was a Firefox-specific
   and was removed in Firefox 31.
@@ -54,6 +57,8 @@
 (defn cancel-idle-callback
   "Method.
 
+  [Experimental]
+
   The window.cancelIdleCallback() method cancels a callback previously
   with `window.requestIdleCallback()`.
 
@@ -65,6 +70,9 @@
 
 (defn capture-events
   "Method.
+
+  [Deprecated]
+  [Non Standard]
 
   The Window.captureEvents() method registers the window to capture
   events of the specified type.
@@ -135,6 +143,8 @@
 (defn dump
   "Method.
 
+  [Non Standard]
+
   Window.dump() prints messages to the (native) console.
 
   `window.dump(message);
@@ -154,6 +164,8 @@
 
 (defn find
   "Method.
+
+  [Non Standard]
 
   The Window.find() method finds a string in a window.
 
@@ -193,6 +205,9 @@
 
 (defn forward
   "Method.
+
+  [Deprecated]
+  [Non Standard]
 
   Moves the window one document forward in history. This was a
   method and was removed in Firefox 31.
@@ -248,6 +263,8 @@
 (defn get-default-computed-style
   "Method.
 
+  [Non Standard]
+
   The getDefaultComputedStyle() method gives the default computed
   of all the CSS properties of an element, ignoring author styling.
   is, only user-agent and user styles are taken into account.
@@ -273,6 +290,9 @@
 
 (defn home
   "Method.
+
+  [Non Standard]
+  [Obsolute]
 
   The Window.home() method returns the window to the home page.
 
@@ -354,6 +374,8 @@
 (defn open-dialog
   "Method.
 
+  [Non Standard]
+
   window.openDialog() is an extension to `window.open()`. It behaves
   same, except that it can optionally take one or more parameters
   windowFeatures, and windowFeatures itself is treated a little
@@ -433,6 +455,9 @@
 (defn release-events
   "Method.
 
+  [Deprecated]
+  [Non Standard]
+
   Releases the window from trapping events of a specific type.
 
   `window.releaseEvents(eventType)
@@ -459,6 +484,8 @@
 
 (defn request-idle-callback
   "Method.
+
+  [Experimental]
 
   The window.requestIdleCallback() method queues a function to
   called during a browser's idle periods. This enables developers
@@ -509,6 +536,8 @@
 (defn route-event
   "Method.
 
+  [Obsolute]
+
   The `web.Window` method routeEvent(), which is obsolete and no
   available, used to be called to forward an event to the next
   that has asked to capture events.
@@ -546,6 +575,8 @@
 (defn scroll-by-lines
   "Method.
 
+  [Non Standard]
+
   The Window.scrollByLines() method scrolls the document by the
   number of lines.
 
@@ -557,6 +588,8 @@
 
 (defn scroll-by-pages
   "Method.
+
+  [Non Standard]
 
   The Window.scrollByPages() method scrolls the current document
   the specified number of pages.
@@ -583,6 +616,8 @@
 (defn set-cursor
   "Method.
 
+  [Non Standard]
+
   The Window.setCursor() method sets the cursor for the current
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/setCursor`"
@@ -591,6 +626,8 @@
 
 (defn set-immediate
   "Method.
+
+  [Non Standard]
 
   This method is used to break up long running operations and run
   callback function immediately after the browser has completed
@@ -620,6 +657,8 @@
 (defn size-to-content
   "Method.
 
+  [Non Standard]
+
   The Window.sizeToContent() method sizes the window according
   its content. In order for it to work, the DOM content should
   loaded when this function is called—for example, once the DOMContentLoaded
@@ -645,6 +684,8 @@
 
 (defn update-commands
   "Method.
+
+  [Non Standard]
 
   Updates the state of commands of the current chrome window (UI).
 
@@ -731,8 +772,8 @@
   accepts a variety of different image sources, and returns a `js.Promise`
   resolves to an `web.canvas.ImageBitmap`.
 
-  `createImageBitmap(image[, options]).then(function(response) { ... });
-  createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
+  `const imageBitmapPromise = createImageBitmap(image[, options]);
+  const imageBitmapPromise = createImageBitmap(image, sx, sy, sw, sh[, options]);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
   [this & args]
@@ -800,6 +841,8 @@
 (defn show-modal-dialog
   "Method.
 
+  [Obsolute]
+
   The Window.showModalDialog() creates and displays a modal dialog
   containing a specified HTML document.
 
@@ -860,6 +903,8 @@
 (defn convert-point-from-node-to-page
   "Method.
 
+  [Non Standard]
+
   Given a `web.css.Point` specified in a particular DOM `web.Node`'s
   system, the `web.Window` method convertPointFromNodeToPage()
   a Point which specifies the same position in the page's coordinate
@@ -873,6 +918,8 @@
 
 (defn convert-point-from-page-to-node
   "Method.
+
+  [Non Standard]
 
   Given a `web.css.Point` specified in the page's coordinate system,
   `web.Window` method convertPointFromPageToNode() returns a Point
@@ -900,6 +947,8 @@
 (defn request-file-system
   "Method.
 
+  [Non Standard]
+
   The non-standard `web.Window` method requestFileSystem() method
   a Google Chrome-specific method which lets a web site or app
   access to a sandboxed file system for its own use. The returned
@@ -919,6 +968,8 @@
 (defn closed
   "Property.
 
+  [Read Only]
+
   The Window.closed read-only property indicates whether the referenced
   is closed or not.
 
@@ -928,20 +979,10 @@
   [this]
   (-> this (.-closed)))
 
-(defn set-closed!
-  "Property.
-
-  The Window.closed read-only property indicates whether the referenced
-  is closed or not.
-
-  `isClosed = windowRef.closed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/closed`"
-  [this val]
-  (aset this "closed" val))
-
 (defn console
   "Property.
+
+  [Read Only]
 
   The Window.console property returns a reference to the `Console`
   which provides methods for logging information to the browser's
@@ -957,6 +998,9 @@
 (defn content
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   Returns a Window object for the primary content window. This
   useful in XUL windows that have a <browser> (or tabbrowser or
   with type=\\\"content-primary\\\" attribute on it — the most famous
@@ -968,22 +1012,11 @@
   [this]
   (-> this (.-content)))
 
-(defn set-content!
-  "Property.
-
-  Returns a Window object for the primary content window. This
-  useful in XUL windows that have a <browser> (or tabbrowser or
-  with type=\\\"content-primary\\\" attribute on it — the most famous
-  is Firefox main window, browser.xul. In such cases, content returns
-  reference to the Window object for the document currently displayed
-  the browser. It is a shortcut for browserRef.contentWindow.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/content`"
-  [this val]
-  (aset this "content" val))
-
 (defn controllers
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The controllers property of the `web.Window` interface returns
   XUL controllers of the chrome window.
@@ -997,23 +1030,10 @@
   [this]
   (-> this (.-controllers)))
 
-(defn set-controllers!
-  "Property.
-
-  The controllers property of the `web.Window` interface returns
-  XUL controllers of the chrome window.
-
-  `controllers = window.controllers
-
-
-  controllers is an object of type `XULControllers` (`nsIControllers`).`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/controllers`"
-  [this val]
-  (aset this "controllers" val))
-
 (defn custom-elements
   "Property.
+
+  [Read Only]
 
   The customElements read-only property of the `web.Window` interface
   a reference to the `web.web-components.CustomElementRegistry`
@@ -1026,22 +1046,10 @@
   [this]
   (-> this (.-customElements)))
 
-(defn set-custom-elements!
-  "Property.
-
-  The customElements read-only property of the `web.Window` interface
-  a reference to the `web.web-components.CustomElementRegistry`
-  which can be used to register new custom elements and get information
-  previously registered custom elements.
-
-  `let customElementRegistry = window.customElements;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
-  [this val]
-  (aset this "customElements" val))
-
 (defn crypto
   "Property.
+
+  [Read Only]
 
   The `Window.crypto` property returns the `web.crypto.Crypto`
   associated to the global object. This object allows web pages
@@ -1056,24 +1064,10 @@
   [this]
   (-> this (.-crypto)))
 
-(defn set-crypto!
-  "Property.
-
-  The `Window.crypto` property returns the `web.crypto.Crypto`
-  associated to the global object. This object allows web pages
-  to certain cryptographic related services. Although the `Window.crypto`
-  iteself is read-only, all of its methods (and the methods of
-  child object, `web.crypto.SubtleCrypto`) are not read-only, and
-  vulnerable to attack by polyfill.
-
-  `var cryptoObj = window.crypto || window.msCrypto; // for IE 11`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto`"
-  [this val]
-  (aset this "crypto" val))
-
 (defn default-status
   "Property.
+
+  [Obsolute]
 
   Gets/sets the status bar text for the given window.
 
@@ -1087,6 +1081,8 @@
 (defn set-default-status!
   "Property.
 
+  [Obsolute]
+
   Gets/sets the status bar text for the given window.
 
   `var sMsg = window.defaultStatus;
@@ -1098,6 +1094,8 @@
 
 (defn device-pixel-ratio
   "Property.
+
+  [Read Only]
 
   The `web.Window` property devicePixelRatio returns the ratio
   the resolution in physical pixels to the resolution in CSS pixels
@@ -1112,6 +1110,9 @@
 (defn dialog-arguments
   "Property.
 
+  [Read Only]
+  [Deprecated]
+
   The dialogArguments property returns the parameters that were
   into the `window.showModalDialog()` method.
 
@@ -1121,20 +1122,10 @@
   [this]
   (-> this (.-dialogArguments)))
 
-(defn set-dialog-arguments!
-  "Property.
-
-  The dialogArguments property returns the parameters that were
-  into the `window.showModalDialog()` method.
-
-  `value = window.dialogArguments;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/dialogArguments`"
-  [this val]
-  (aset this "dialogArguments" val))
-
 (defn directories
   "Property.
+
+  [Obsolute]
 
   Returned the window personalbar toolbar object. Use the `window.personalbar`
 
@@ -1145,6 +1136,8 @@
 (defn set-directories!
   "Property.
 
+  [Obsolute]
+
   Returned the window personalbar toolbar object. Use the `window.personalbar`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/directories`"
@@ -1154,6 +1147,8 @@
 (defn document
   "Property.
 
+  [Read Only]
+
   window.document returns a reference to the document contained
   the window.
 
@@ -1162,18 +1157,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/document`"
   [this]
   (-> this (.-document)))
-
-(defn set-document!
-  "Property.
-
-  window.document returns a reference to the document contained
-  the window.
-
-  `doc = window.document`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/document`"
-  [this val]
-  (aset this "document" val))
 
 (defn dom-matrix
   "Property.
@@ -1288,6 +1271,8 @@
 (defn event
   "Property.
 
+  [Read Only]
+
   The read-only `web.Window` property event returns the `web.event.Event`
   is currently being handled by the site's code. Outside the context
   an event handler, the value is always undefined.
@@ -1298,6 +1283,8 @@
 
 (defn frame-element
   "Property.
+
+  [Read Only]
 
   Returns the element (such as `<iframe>` or `<object>`) in which
   window is embedded, or null if the element is either top-level
@@ -1317,29 +1304,10 @@
   [this]
   (-> this (.-frameElement)))
 
-(defn set-frame-element!
-  "Property.
-
-  Returns the element (such as `<iframe>` or `<object>`) in which
-  window is embedded, or null if the element is either top-level
-  is embedded into a document with a different script origin; that
-  in cross-origin situations.
-
-  `frameEl = window.frameElement;
-
-
-  frameEl is the element which the window is embedded into. If the window isn't embedded into another document, or if the document into which it's embedded has a different origin (such as having been located from a different domain), this is null.
-
-
-
-  Despite this property's name, it works for documents embedded within any embedding point, including `<object>`, `<iframe>`, or `<embed>`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frameElement`"
-  [this val]
-  (aset this "frameElement" val))
-
 (defn frames
   "Property.
+
+  [Read Only]
 
   Returns the window itself, which is an array-like object, listing
   direct sub-frames of the current window.
@@ -1355,24 +1323,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frames`"
   [this]
   (-> this (.-frames)))
-
-(defn set-frames!
-  "Property.
-
-  Returns the window itself, which is an array-like object, listing
-  direct sub-frames of the current window.
-
-  `frameList = window.frames;
-
-
-  frameList is a list of frame objects. It is similar to an array in that it has a length property and its items can be accessed using the [i] notation.
-  frameList === window evaluates to true.
-  Each item in the window.frames pseudo-array represents the window object corresponding to the given <frame>'s or <iframe>'s content, not the (i)frame DOM element (i.e., window.frames[0] is the same thing as document.getElementsByTagName(\\\"iframe\\\")[0].contentWindow).
-  For more details about the returned value, refer to this thread on mozilla.dev.platform [dead link].`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/frames`"
-  [this val]
-  (aset this "frames" val))
 
 (defn full-screen
   "Property.
@@ -1425,6 +1375,8 @@
 (defn history
   "Property.
 
+  [Read Only]
+
   The Window.history read-only property returns a reference to
   `web.dom.History` object, which provides an interface for manipulating
   browser session history (pages visited in the tab or frame that
@@ -1436,22 +1388,10 @@
   [this]
   (-> this (.-history)))
 
-(defn set-history!
-  "Property.
-
-  The Window.history read-only property returns a reference to
-  `web.dom.History` object, which provides an interface for manipulating
-  browser session history (pages visited in the tab or frame that
-  current page is loaded in).
-
-  `var historyObj = window.history;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/history`"
-  [this val]
-  (aset this "history" val))
-
 (defn inner-height
   "Property.
+
+  [Read Only]
 
   Height (in pixels) of the browser window viewport including,
   rendered, the horizontal scrollbar.
@@ -1462,20 +1402,10 @@
   [this]
   (-> this (.-innerHeight)))
 
-(defn set-inner-height!
-  "Property.
-
-  Height (in pixels) of the browser window viewport including,
-  rendered, the horizontal scrollbar.
-
-  `var intViewportHeight = window.innerHeight;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight`"
-  [this val]
-  (aset this "innerHeight" val))
-
 (defn inner-width
   "Property.
+
+  [Read Only]
 
   Width (in pixels) of the browser window viewport including, if
   the vertical scrollbar.
@@ -1486,20 +1416,11 @@
   [this]
   (-> this (.-innerWidth)))
 
-(defn set-inner-width!
-  "Property.
-
-  Width (in pixels) of the browser window viewport including, if
-  the vertical scrollbar.
-
-  `var intViewportWidth = window.innerWidth;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth`"
-  [this val]
-  (aset this "innerWidth" val))
-
 (defn is-secure-context
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The window.isSecureContext read-only property indicates whether
   context is capable of using features that require secure contexts.
@@ -1510,20 +1431,10 @@
   [this]
   (-> this (.-isSecureContext)))
 
-(defn set-is-secure-context!
-  "Property.
-
-  The window.isSecureContext read-only property indicates whether
-  context is capable of using features that require secure contexts.
-
-  `var isSecure = window.isSecureContext`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/isSecureContext`"
-  [this val]
-  (aset this "isSecureContext" val))
-
 (defn length
   "Property.
+
+  [Read Only]
 
   Returns the number of frames (either `<frame>` or `<iframe>`
   in the window.
@@ -1537,23 +1448,10 @@
   [this]
   (-> this (.-length)))
 
-(defn set-length!
-  "Property.
-
-  Returns the number of frames (either `<frame>` or `<iframe>`
-  in the window.
-
-  `framesCount = window.length;
-
-
-  framesCount is the number of frames.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/length`"
-  [this val]
-  (aset this "length" val))
-
 (defn location
   "Property.
+
+  [Read Only]
 
   The Window.location read-only property returns a `web.dom.Location`
   with information about the current location of the document.
@@ -1565,21 +1463,10 @@
   [this]
   (-> this (.-location)))
 
-(defn set-location!
-  "Property.
-
-  The Window.location read-only property returns a `web.dom.Location`
-  with information about the current location of the document.
-
-  `var oldLocation = location;
-  location = newLocation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/location`"
-  [this val]
-  (aset this "location" val))
-
 (defn locationbar
   "Property.
+
+  [Read Only]
 
   Returns the locationbar object, whose visibility can be checked.
 
@@ -1589,19 +1476,10 @@
   [this]
   (-> this (.-locationbar)))
 
-(defn set-locationbar!
-  "Property.
-
-  Returns the locationbar object, whose visibility can be checked.
-
-  `objRef = window.locationbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/locationbar`"
-  [this val]
-  (aset this "locationbar" val))
-
 (defn local-storage
   "Property.
+
+  [Read Only]
 
   The read-only localStorage property allows you to access a `web.storage.Storage`
   for the `web.Document`'s origin; the stored data is saved across
@@ -1616,6 +1494,8 @@
 (defn menubar
   "Property.
 
+  [Read Only]
+
   The Window.menubar property returns the menubar object, whose
   can be checked.
 
@@ -1624,18 +1504,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/menubar`"
   [this]
   (-> this (.-menubar)))
-
-(defn set-menubar!
-  "Property.
-
-  The Window.menubar property returns the menubar object, whose
-  can be checked.
-
-  `objRef = window.menubar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/menubar`"
-  [this val]
-  (aset this "menubar" val))
 
 (defn message-manager
   "Property.
@@ -1654,6 +1522,9 @@
 (defn moz-animation-start-time
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   Returns the time, in milliseconds since the epoch, at which animations
   now should be considered to have started. This value should be
   instead of, for example, Date.now(), because this value will
@@ -1664,21 +1535,10 @@
   [this]
   (-> this (.-mozAnimationStartTime)))
 
-(defn set-moz-animation-start-time!
-  "Property.
-
-  Returns the time, in milliseconds since the epoch, at which animations
-  now should be considered to have started. This value should be
-  instead of, for example, Date.now(), because this value will
-  the same for all animations started in this window during this
-  interval, allowing them to remain in sync with one another.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozAnimationStartTime`"
-  [this val]
-  (aset this "mozAnimationStartTime" val))
-
 (defn moz-inner-screen-x
   "Property.
+
+  [Read Only]
 
   Gets the X coordinate of the top-left corner of the window's
   in screen coordinates.
@@ -1689,20 +1549,10 @@
   [this]
   (-> this (.-mozInnerScreenX)))
 
-(defn set-moz-inner-screen-x!
-  "Property.
-
-  Gets the X coordinate of the top-left corner of the window's
-  in screen coordinates.
-
-  `screenX = window.mozInnerScreenX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozInnerScreenX`"
-  [this val]
-  (aset this "mozInnerScreenX" val))
-
 (defn moz-inner-screen-y
   "Property.
+
+  [Read Only]
 
   Gets the Y coordinate of the top-left corner of the window's
   in screen coordinates.
@@ -1713,20 +1563,10 @@
   [this]
   (-> this (.-mozInnerScreenY)))
 
-(defn set-moz-inner-screen-y!
-  "Property.
-
-  Gets the Y coordinate of the top-left corner of the window's
-  in screen coordinates.
-
-  `screenY = window.mozInnerScreenY;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozInnerScreenY`"
-  [this val]
-  (aset this "mozInnerScreenY" val))
-
 (defn moz-paint-count
   "Property.
+
+  [Read Only]
 
   Returns the number of times the current document has been painted
   the screen in this window.
@@ -1740,22 +1580,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozPaintCount`"
   [this]
   (-> this (.-mozPaintCount)))
-
-(defn set-moz-paint-count!
-  "Property.
-
-  Returns the number of times the current document has been painted
-  the screen in this window.
-
-  `var paintCount = window.mozPaintCount;
-
-
-  paintCount stores the window.mozPaintCount property value.
-  The window.mozPaintCount value is a long long, and starts at zero when the document is first created, incrementing by one each time the document is painted.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/mozPaintCount`"
-  [this val]
-  (aset this "mozPaintCount" val))
 
 (defn name
   "Property.
@@ -1783,6 +1607,8 @@
 
 (defn navigator
   "Property.
+
+  [Read Only]
 
   The Window.navigator read-only property returns a reference to
   `web.performance.Navigator` object, which can be queried for
@@ -1821,6 +1647,9 @@
 (defn orientation
   "Property.
 
+  [Read Only]
+  [Deprecated]
+
   Returns the orientation in degrees (in 90-degree increments)
   the viewport relative to the device's natural orientation.
 
@@ -1828,18 +1657,10 @@
   [this]
   (-> this (.-orientation)))
 
-(defn set-orientation!
-  "Property.
-
-  Returns the orientation in degrees (in 90-degree increments)
-  the viewport relative to the device's natural orientation.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation`"
-  [this val]
-  (aset this "orientation" val))
-
 (defn outer-height
   "Property.
+
+  [Read Only]
 
   The Window.outerHeight read-only property returns the height
   pixels of the whole browser window, including any sidebar, window
@@ -1849,19 +1670,10 @@
   [this]
   (-> this (.-outerHeight)))
 
-(defn set-outer-height!
-  "Property.
-
-  The Window.outerHeight read-only property returns the height
-  pixels of the whole browser window, including any sidebar, window
-  and window-resizing borders/handles.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight`"
-  [this val]
-  (aset this "outerHeight" val))
-
 (defn outer-width
   "Property.
+
+  [Read Only]
 
   Window.outerWidth read-only property returns the width of the
   of the browser window. It represents the width of the whole browser
@@ -1871,19 +1683,10 @@
   [this]
   (-> this (.-outerWidth)))
 
-(defn set-outer-width!
-  "Property.
-
-  Window.outerWidth read-only property returns the width of the
-  of the browser window. It represents the width of the whole browser
-  including sidebar (if expanded), window chrome and window resizing
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth`"
-  [this val]
-  (aset this "outerWidth" val))
-
 (defn scroll-x
   "Property.
+
+  [Read Only]
 
   The read-only scrollX property of the `web.Window` interface
   the number of pixels that the document is currently scrolled
@@ -1897,23 +1700,10 @@
   [this]
   (-> this (.-scrollX)))
 
-(defn set-scroll-x!
-  "Property.
-
-  The read-only scrollX property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-  This value is subpixel precise in modern browsers, meaning that
-  isn't necessarily a whole number. You can get the number of pixels
-  document is scrolled vertically from the `scrollY` property.
-
-  `var x = window.scrollX;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX`"
-  [this val]
-  (aset this "scrollX" val))
-
 (defn scroll-y
   "Property.
+
+  [Read Only]
 
   The read-only scrollY property of the `web.Window` interface
   the number of pixels that the document is currently scrolled
@@ -1924,20 +1714,10 @@
   [this]
   (-> this (.-scrollY)))
 
-(defn set-scroll-y!
-  "Property.
-
-  The read-only scrollY property of the `web.Window` interface
-  the number of pixels that the document is currently scrolled
-
-  `var y = window.scrollY`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY`"
-  [this val]
-  (aset this "scrollY" val))
-
 (defn parent
   "Property.
+
+  [Read Only]
 
   The Window.parent property is a reference to the parent of the
   window or subframe.
@@ -1948,20 +1728,10 @@
   [this]
   (-> this (.-parent)))
 
-(defn set-parent!
-  "Property.
-
-  The Window.parent property is a reference to the parent of the
-  window or subframe.
-
-  `var parentWindow = window.parent;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/parent`"
-  [this val]
-  (aset this "parent" val))
-
 (defn performance
   "Property.
+
+  [Read Only]
 
   The `web.Window` interface's performance property returns a `web.performance.Performance`
   which can be used to gather performance information about the
@@ -1975,23 +1745,10 @@
   [this]
   (-> this (.-performance)))
 
-(defn set-performance!
-  "Property.
-
-  The `web.Window` interface's performance property returns a `web.performance.Performance`
-  which can be used to gather performance information about the
-  document. It serves as the point of exposure for the Performance
-  API, the High Resolution Time API, the Navigation Timing API,
-  User Timing API, and the Resource Timing API.
-
-  `performanceData = window.performance;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/performance`"
-  [this val]
-  (aset this "performance" val))
-
 (defn personalbar
   "Property.
+
+  [Read Only]
 
   Returns the personalbar object, whose visibility can be toggled
   the window.
@@ -2002,20 +1759,10 @@
   [this]
   (-> this (.-personalbar)))
 
-(defn set-personalbar!
-  "Property.
-
-  Returns the personalbar object, whose visibility can be toggled
-  the window.
-
-  `objRef =window.personalbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/personalbar`"
-  [this val]
-  (aset this "personalbar" val))
-
 (defn pkcs11
   "Property.
+
+  [Obsolute]
 
   Returns the pkcs11 object, which is used to install drivers and
   software associated with the pkcs11 protocol. If pkcs11 isn't
@@ -2029,6 +1776,8 @@
 
 (defn set-pkcs11!
   "Property.
+
+  [Obsolute]
 
   Returns the pkcs11 object, which is used to install drivers and
   software associated with the pkcs11 protocol. If pkcs11 isn't
@@ -2059,6 +1808,8 @@
 (defn screen
   "Property.
 
+  [Read Only]
+
   The `web.Window` property screen returns a reference to the screen
   associated with the window. The screen object, implementing the
   interface, is a special object for inspecting properties of the
@@ -2070,22 +1821,10 @@
   [this]
   (-> this (.-screen)))
 
-(defn set-screen!
-  "Property.
-
-  The `web.Window` property screen returns a reference to the screen
-  associated with the window. The screen object, implementing the
-  interface, is a special object for inspecting properties of the
-  on which the current window is being rendered.
-
-  `let screenObj = window.screen;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/screen`"
-  [this val]
-  (aset this "screen" val))
-
 (defn screen-x
   "Property.
+
+  [Read Only]
 
   The Window.screenX read-only property returns the horizontal
   in CSS pixels, of the left border of the user's browser viewport
@@ -2100,6 +1839,8 @@
 (defn screen-y
   "Property.
 
+  [Read Only]
+
   The Window.screenY read-only property returns the vertical distance,
   CSS pixels, of the top border of the user's browser viewport
   the top edge of the screen.
@@ -2113,6 +1854,8 @@
 (defn scrollbars
   "Property.
 
+  [Read Only]
+
   The Window.scrollbars property returns the scrollbars object,
   visibility can be checked.
 
@@ -2122,20 +1865,11 @@
   [this]
   (-> this (.-scrollbars)))
 
-(defn set-scrollbars!
-  "Property.
-
-  The Window.scrollbars property returns the scrollbars object,
-  visibility can be checked.
-
-  `objRef = window.scrollbars`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollbars`"
-  [this val]
-  (aset this "scrollbars" val))
-
 (defn scroll-max-x
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The Window.scrollMaxX read-only property returns the maximum
   of pixels that the document can be scrolled horizontally.
@@ -2149,23 +1883,11 @@
   [this]
   (-> this (.-scrollMaxX)))
 
-(defn set-scroll-max-x!
-  "Property.
-
-  The Window.scrollMaxX read-only property returns the maximum
-  of pixels that the document can be scrolled horizontally.
-
-  `xMax = window.scrollMaxX
-
-
-  xMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxX`"
-  [this val]
-  (aset this "scrollMaxX" val))
-
 (defn scroll-max-y
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The Window.scrollMaxY read-only property returns the maximum
   of pixels that the document can be scrolled vertically.
@@ -2179,23 +1901,10 @@
   [this]
   (-> this (.-scrollMaxY)))
 
-(defn set-scroll-max-y!
-  "Property.
-
-  The Window.scrollMaxY read-only property returns the maximum
-  of pixels that the document can be scrolled vertically.
-
-  `yMax = window.scrollMaxY
-
-
-  yMax is the number of pixels.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollMaxY`"
-  [this val]
-  (aset this "scrollMaxY" val))
-
 (defn self
   "Property.
+
+  [Read Only]
 
   The Window.self read-only property returns the window itself,
   a `WindowProxy`. It can be used with dot notation on a window
@@ -2261,6 +1970,9 @@
 (defn sidebar
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   Returns a sidebar object, which contains several methods for
   add-ons with the browser.
 
@@ -2268,18 +1980,11 @@
   [this]
   (-> this (.-sidebar)))
 
-(defn set-sidebar!
-  "Property.
-
-  Returns a sidebar object, which contains several methods for
-  add-ons with the browser.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar`"
-  [this val]
-  (aset this "sidebar" val))
-
 (defn speech-synthesis
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The speechSynthesis read-only property of the Window object returns
   `web.speech.SpeechSynthesis` object, which is the entry point
@@ -2290,19 +1995,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
   [this]
   (-> this (.-speechSynthesis)))
-
-(defn set-speech-synthesis!
-  "Property.
-
-  The speechSynthesis read-only property of the Window object returns
-  `web.speech.SpeechSynthesis` object, which is the entry point
-  using Web Speech API speech synthesis functionality.
-
-  `var synth = window.speechSynthesis;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/speechSynthesis`"
-  [this val]
-  (aset this "speechSynthesis" val))
 
 (defn status
   "Property.
@@ -2335,6 +2027,8 @@
 (defn statusbar
   "Property.
 
+  [Read Only]
+
   The Window.statusbar property returns the statusbar object, whose
   can be toggled in the window.
 
@@ -2344,20 +2038,10 @@
   [this]
   (-> this (.-statusbar)))
 
-(defn set-statusbar!
-  "Property.
-
-  The Window.statusbar property returns the statusbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.statusbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/statusbar`"
-  [this val]
-  (aset this "statusbar" val))
-
 (defn toolbar
   "Property.
+
+  [Read Only]
 
   The Window.toolbar property returns the toolbar object, whose
   can be toggled in the window.
@@ -2368,20 +2052,10 @@
   [this]
   (-> this (.-toolbar)))
 
-(defn set-toolbar!
-  "Property.
-
-  The Window.toolbar property returns the toolbar object, whose
-  can be toggled in the window.
-
-  `objRef = window.toolbar`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/toolbar`"
-  [this val]
-  (aset this "toolbar" val))
-
 (defn top
   "Property.
+
+  [Read Only]
 
   Returns a reference to the topmost window in the window hierarchy.
 
@@ -2391,19 +2065,11 @@
   [this]
   (-> this (.-top)))
 
-(defn set-top!
-  "Property.
-
-  Returns a reference to the topmost window in the window hierarchy.
-
-  `var topWindow = window.top;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/top`"
-  [this val]
-  (aset this "top" val))
-
 (defn visual-viewport
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The visualViewport read-only property of the `web.Window` interface
   a `web.viewport.VisualViewport` object representing the visual
@@ -2415,21 +2081,10 @@
   [this]
   (-> this (.-visualViewport)))
 
-(defn set-visual-viewport!
-  "Property.
-
-  The visualViewport read-only property of the `web.Window` interface
-  a `web.viewport.VisualViewport` object representing the visual
-  for a given window.
-
-  `var visualViewport = Window.visualViewport`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/visualViewport`"
-  [this val]
-  (aset this "visualViewport" val))
-
 (defn window
   "Property.
+
+  [Read Only]
 
   The window property of a `web.Window` object points to the window
   itself.
@@ -2438,18 +2093,11 @@
   [this]
   (-> this (.-window)))
 
-(defn set-window!
-  "Property.
-
-  The window property of a `web.Window` object points to the window
-  itself.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/window`"
-  [this val]
-  (aset this "window" val))
-
 (defn caches
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The caches read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the `web.service-workers.CacheStorage` object associated
@@ -2465,6 +2113,8 @@
 (defn indexed-db
   "Property.
 
+  [Read Only]
+
   The indexedDB read-only property of the `web.WindowOrWorkerGlobalScope`
   provides a mechanism for applications to asynchronously access
   capabilities of indexed databases.
@@ -2478,6 +2128,9 @@
 (defn origin
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The origin read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the origin of the global scope, serialized as a string.
 
@@ -2486,18 +2139,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
   [this]
   (-> this (.-origin)))
-
-(defn set-origin!
-  "Property.
-
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
-
-  `var myOrigin = self.origin; // or just origin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
-  [this val]
-  (aset this "origin" val))
 
 (defn application-cache
   "Property.
@@ -2524,6 +2165,9 @@
 (defn onabort
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
 
@@ -2535,6 +2179,9 @@
 
 (defn set-onabort!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
@@ -2634,6 +2281,8 @@
 (defn onanimationiteration
   "Property.
 
+  [Draft]
+
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
 
@@ -2647,6 +2296,8 @@
 
 (defn set-onanimationiteration!
   "Property.
+
+  [Draft]
 
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
@@ -2692,6 +2343,8 @@
 (defn onauxclick
   "Property.
 
+  [Experimental]
+
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
 
@@ -2703,6 +2356,8 @@
 
 (defn set-onauxclick!
   "Property.
+
+  [Experimental]
 
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
@@ -2974,6 +2629,8 @@
 (defn onclose
   "Property.
 
+  [Experimental]
+
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
 
@@ -2985,6 +2642,8 @@
 
 (defn set-onclose!
   "Property.
+
+  [Experimental]
 
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
@@ -3158,6 +2817,8 @@
 (defn ondeviceorientationabsolute
   "Property.
 
+  [Non Standard]
+
   An event handler for the deviceorientationabsolute event containing
   about an absolute device orientation change.
 
@@ -3170,6 +2831,8 @@
 
 (defn set-ondeviceorientationabsolute!
   "Property.
+
+  [Non Standard]
 
   An event handler for the deviceorientationabsolute event containing
   about an absolute device orientation change.
@@ -3216,6 +2879,9 @@
 (defn ondragdrop
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler for drag and drop events sent to the window.
 
   `window.ondragdrop = funcRef;
@@ -3234,6 +2900,9 @@
 
 (defn set-ondragdrop!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   An event handler for drag and drop events sent to the window.
 
@@ -3362,6 +3031,8 @@
 (defn ongamepadconnected
   "Property.
 
+  [Experimental]
+
   The ongamepadconnected property of the `web.Window` interface
   an event handler that will run when a gamepad is connected (when
   gamepadconnected event fires).
@@ -3374,6 +3045,8 @@
 
 (defn set-ongamepadconnected!
   "Property.
+
+  [Experimental]
 
   The ongamepadconnected property of the `web.Window` interface
   an event handler that will run when a gamepad is connected (when
@@ -3388,6 +3061,8 @@
 (defn ongamepaddisconnected
   "Property.
 
+  [Experimental]
+
   The ongamepaddisconnected property of the `web.Window` interface
   an event handler that will run when a gamepad is disconnected
   the gamepaddisconnected event fires).
@@ -3400,6 +3075,8 @@
 
 (defn set-ongamepaddisconnected!
   "Property.
+
+  [Experimental]
 
   The ongamepaddisconnected property of the `web.Window` interface
   an event handler that will run when a gamepad is disconnected
@@ -3576,6 +3253,8 @@
 (defn onkeypress
   "Property.
 
+  [Deprecated]
+
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
 
@@ -3587,6 +3266,8 @@
 
 (defn set-onkeypress!
   "Property.
+
+  [Deprecated]
 
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
@@ -3624,6 +3305,8 @@
 (defn onlanguagechange
   "Property.
 
+  [Experimental]
+
   The onlanguagechange property of the `web.dom.WindowEventHandlers`
   is the `EventHandler` for processing languagechange events.
 
@@ -3635,6 +3318,8 @@
 
 (defn set-onlanguagechange!
   "Property.
+
+  [Experimental]
 
   The onlanguagechange property of the `web.dom.WindowEventHandlers`
   is the `EventHandler` for processing languagechange events.
@@ -3814,6 +3499,8 @@
 (defn onmessage
   "Property.
 
+  [Experimental]
+
   The onmessage property of the `web.dom.WindowEventHandlers` mixin
   the `EventHandler` called whenever an object receives a message
 
@@ -3826,6 +3513,8 @@
 
 (defn set-onmessage!
   "Property.
+
+  [Experimental]
 
   The onmessage property of the `web.dom.WindowEventHandlers` mixin
   the `EventHandler` called whenever an object receives a message
@@ -4048,6 +3737,9 @@
 (defn onmozbeforepaint
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler for the MozBeforePaint event. This is used in
   with the `window.mozRequestAnimationFrame()` method to perform
   synchronized animations from JavaScript code.
@@ -4059,6 +3751,9 @@
 (defn set-onmozbeforepaint!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler for the MozBeforePaint event. This is used in
   with the `window.mozRequestAnimationFrame()` method to perform
   synchronized animations from JavaScript code.
@@ -4069,6 +3764,8 @@
 
 (defn onpaint
   "Property.
+
+  [Non Standard]
 
   Window.onpaint is an event handler for the paint event on the
 
@@ -4083,6 +3780,8 @@
 
 (defn set-onpaint!
   "Property.
+
+  [Non Standard]
 
   Window.onpaint is an event handler for the paint event on the
 
@@ -4546,6 +4245,8 @@
 (defn onselectionchange
   "Property.
 
+  [Experimental]
+
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
 
@@ -4557,6 +4258,8 @@
 
 (defn set-onselectionchange!
   "Property.
+
+  [Experimental]
 
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
@@ -4570,6 +4273,8 @@
 (defn onselectstart
   "Property.
 
+  [Experimental]
+
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
 
@@ -4581,6 +4286,8 @@
 
 (defn set-onselectstart!
   "Property.
+
+  [Experimental]
 
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
@@ -4642,6 +4349,8 @@
 (defn ontouchcancel
   "Property.
 
+  [Experimental]
+
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
 
@@ -4653,6 +4362,8 @@
 
 (defn set-ontouchcancel!
   "Property.
+
+  [Experimental]
 
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
@@ -4666,6 +4377,8 @@
 (defn ontouchstart
   "Property.
 
+  [Experimental]
+
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.
 
@@ -4677,6 +4390,8 @@
 
 (defn set-ontouchstart!
   "Property.
+
+  [Experimental]
 
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.
@@ -4834,6 +4549,8 @@
 (defn onvrdisplayactivate
   "Property.
 
+  [Experimental]
+
   The onvrdisplayactivate property of the `web.Window` interface
   an event handler that will run when a display is able to be presented
   (when the vrdisplayactivate event fires), for example if an HMD
@@ -4848,6 +4565,8 @@
 (defn set-onvrdisplayactivate!
   "Property.
 
+  [Experimental]
+
   The onvrdisplayactivate property of the `web.Window` interface
   an event handler that will run when a display is able to be presented
   (when the vrdisplayactivate event fires), for example if an HMD
@@ -4861,6 +4580,8 @@
 
 (defn onvrdisplayblur
   "Property.
+
+  [Experimental]
 
   The onvrdisplayblur property of the `web.Window` interface represents
   event handler that will run when presentation to a display has
@@ -4877,6 +4598,8 @@
 (defn set-onvrdisplayblur!
   "Property.
 
+  [Experimental]
+
   The onvrdisplayblur property of the `web.Window` interface represents
   event handler that will run when presentation to a display has
   paused for some reason by the browser, OS, or VR hardware (when
@@ -4892,6 +4615,8 @@
 (defn onvrdisplayconnect
   "Property.
 
+  [Experimental]
+
   The onvrdisplayconnect property of the `web.Window` interface
   an event handler that will run when a compatible VR display has
   connected to the computer (when the vrdisplayconnect event fires).
@@ -4905,6 +4630,8 @@
 (defn set-onvrdisplayconnect!
   "Property.
 
+  [Experimental]
+
   The onvrdisplayconnect property of the `web.Window` interface
   an event handler that will run when a compatible VR display has
   connected to the computer (when the vrdisplayconnect event fires).
@@ -4917,6 +4644,8 @@
 
 (defn onvrdisplaydeactivate
   "Property.
+
+  [Experimental]
 
   The onvrdisplaydeactivate property of the `web.Window` interface
   an event handler that will run when a display can no longer be
@@ -4932,6 +4661,8 @@
 (defn set-onvrdisplaydeactivate!
   "Property.
 
+  [Experimental]
+
   The onvrdisplaydeactivate property of the `web.Window` interface
   an event handler that will run when a display can no longer be
   to (when the vrdisplaydeactivate event fires), for example if
@@ -4946,6 +4677,8 @@
 (defn onvrdisplaydisconnect
   "Property.
 
+  [Experimental]
+
   The onvrdisplaydisconnect event handler property of the `web.Window`
   is called when a compatible VR display has been disconnected
   the computer (when the vrdisplaydisconnect event fires).
@@ -4958,6 +4691,8 @@
 
 (defn set-onvrdisplaydisconnect!
   "Property.
+
+  [Experimental]
 
   The onvrdisplaydisconnect event handler property of the `web.Window`
   is called when a compatible VR display has been disconnected
@@ -4972,6 +4707,8 @@
 (defn onvrdisplayfocus
   "Property.
 
+  [Experimental]
+
   The onvrdisplayfocus property of the `web.Window` interface represents
   event handler that will run when presentation to a display has
   after being blurred (when the vrdisplayfocus event fires).
@@ -4984,6 +4721,8 @@
 
 (defn set-onvrdisplayfocus!
   "Property.
+
+  [Experimental]
 
   The onvrdisplayfocus property of the `web.Window` interface represents
   event handler that will run when presentation to a display has
@@ -4998,6 +4737,8 @@
 (defn onvrdisplaypointerrestricted
   "Property.
 
+  [Experimental]
+
   The onvrdisplaypointerrestricted property of the `web.Window`
   represents an event handler that will run when the VR display's
   input is restricted to consumption via a pointerlocked element.
@@ -5010,6 +4751,8 @@
 
 (defn set-onvrdisplaypointerrestricted!
   "Property.
+
+  [Experimental]
 
   The onvrdisplaypointerrestricted property of the `web.Window`
   represents an event handler that will run when the VR display's
@@ -5024,6 +4767,8 @@
 (defn onvrdisplaypointerunrestricted
   "Property.
 
+  [Experimental]
+
   The onvrdisplaypointerunrestricted property of the `web.Window`
   represents an event handler that will run when the VR display's
   input is no longer restricted to consumption via a pointerlocked
@@ -5036,6 +4781,8 @@
 
 (defn set-onvrdisplaypointerunrestricted!
   "Property.
+
+  [Experimental]
 
   The onvrdisplaypointerunrestricted property of the `web.Window`
   represents an event handler that will run when the VR display's
@@ -5050,6 +4797,8 @@
 (defn onvrdisplaypresentchange
   "Property.
 
+  [Experimental]
+
   The onvrdisplaypresentchange property of the `web.Window` interface
   an event handler that will run when the presenting state of a
   display changes — i.e. goes from presenting to not presenting,
@@ -5063,6 +4812,8 @@
 
 (defn set-onvrdisplaypresentchange!
   "Property.
+
+  [Experimental]
 
   The onvrdisplaypresentchange property of the `web.Window` interface
   an event handler that will run when the presenting state of a
@@ -5102,23 +4853,18 @@
 (defn page-x-offset
   "Property.
 
+  [Read Only]
+
   The read-only `web.Window` property pageXOffset is an alias for
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageXOffset`"
   [this]
   (-> this (.-pageXOffset)))
 
-(defn set-page-x-offset!
-  "Property.
-
-  The read-only `web.Window` property pageXOffset is an alias for
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageXOffset`"
-  [this val]
-  (aset this "pageXOffset" val))
-
 (defn page-y-offset
   "Property.
+
+  [Read Only]
 
   The read-only `web.Window` property pageYOffset is an alias for
   as such, it returns the number of pixels the document is currently
@@ -5132,23 +4878,10 @@
   [this]
   (-> this (.-pageYOffset)))
 
-(defn set-page-y-offset!
-  "Property.
-
-  The read-only `web.Window` property pageYOffset is an alias for
-  as such, it returns the number of pixels the document is currently
-  along the vertical axis (that is, up or down) with a value of
-  indicating that the top edge of the `web.Document` is currently
-  with the top edge of the window's content area.
-
-  `yOffset = window.pageYOffset;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset`"
-  [this val]
-  (aset this "pageYOffset" val))
-
 (defn screen-left
   "Property.
+
+  [Read Only]
 
   The Window.screenLeft read-only property returns the horizontal
   in CSS pixels, from the left border of the user's browser viewport
@@ -5162,6 +4895,8 @@
 
 (defn screen-top
   "Property.
+
+  [Read Only]
 
   The Window.screenTop read-only property returns the vertical
   in CSS pixels, from the top border of the user's browser viewport

@@ -47,6 +47,8 @@
 (defn anchor
   "Method.
 
+  [Deprecated]
+
   The anchor() method creates an `<a>` HTML anchor element that
   used as a hypertext target.
 
@@ -58,6 +60,8 @@
 
 (defn big
   "Method.
+
+  [Deprecated]
 
   The big() method creates a `<big>` HTML element that causes a
   to be displayed in a big font.
@@ -71,6 +75,8 @@
 (defn blink
   "Method.
 
+  [Deprecated]
+
   The blink() method creates a `<blink>` HTML element that causes
   string to blink.
 
@@ -82,6 +88,8 @@
 
 (defn bold
   "Method.
+
+  [Deprecated]
 
   The bold() method creates a `<b>` HTML element that causes a
   to be displayed as bold.
@@ -156,6 +164,8 @@
 (defn fixed
   "Method.
 
+  [Deprecated]
+
   The fixed() method creates a `<tt>` HTML element that causes
   string to be displayed in fixed-pitch font.
 
@@ -168,6 +178,8 @@
 (defn fontcolor
   "Method.
 
+  [Deprecated]
+
   The fontcolor() method creates a `<font>` HTML element that causes
   string to be displayed in the specified font color.
 
@@ -179,6 +191,8 @@
 
 (defn fontsize
   "Method.
+
+  [Deprecated]
 
   The fontsize() method creates a `<font>` HTML element that causes
   string to be displayed in the specified font size.
@@ -218,6 +232,8 @@
 (defn italics
   "Method.
 
+  [Deprecated]
+
   The italics() method creates an `<i>` HTML element that causes
   string to be italic.
 
@@ -242,6 +258,8 @@
 
 (defn link
   "Method.
+
+  [Deprecated]
 
   The link() method creates a string representing the code for
   `<a>` HTML element to be used as a hypertext link to another
@@ -330,6 +348,9 @@
 (defn quote
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   The non-standard quote() method returns a copy of the string,
   various special characters in the string with their escape sequences
   wrapping the result in double-quotes (\\\").
@@ -392,6 +413,8 @@
 (defn small
   "Method.
 
+  [Deprecated]
+
   The small() method creates a `<small>` HTML element that causes
   string to be displayed in a small font.
 
@@ -432,6 +455,8 @@
 (defn strike
   "Method.
 
+  [Deprecated]
+
   The strike() method creates a `<strike>` HTML element that causes
   string to be displayed as struck-out text.
 
@@ -443,6 +468,8 @@
 
 (defn sub
   "Method.
+
+  [Deprecated]
 
   The sub() method creates a `<sub>` HTML element that causes a
   to be displayed as subscript.
@@ -479,6 +506,8 @@
 
 (defn sup
   "Method.
+
+  [Deprecated]
 
   The sup() method creates a `<sup>` HTML element that causes a
   to be displayed as superscript.
@@ -531,6 +560,8 @@
 
 (defn to-source
   "Method.
+
+  [Non Standard]
 
   The toSource() method returns a string representing the source
   of the object.

@@ -252,6 +252,9 @@
 (defn move
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   The move() method used to copy the sequence of array elements
   the array to the position starting at target. However, this non-standard
   has been replaced with the standard `TypedArray.prototype.copyWithin()`

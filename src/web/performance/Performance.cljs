@@ -171,6 +171,8 @@
 (defn navigation
   "Property.
 
+  [Read Only]
+
   The legacy Performance.navigation read-only property returns
   `web.deprecated.PerformanceNavigation` object representing the
   of navigation that occurs in the given browsing context, such
@@ -185,6 +187,9 @@
 (defn timing
   "Property.
 
+  [Read Only]
+  [Deprecated]
+
   The legacy Performance.timing read-only property returns a `web.deprecated.PerformanceTiming`
   containing latency-related performance information.
 
@@ -197,6 +202,8 @@
 (defn memory
   "Property.
 
+  [Read Only]
+
   None.
 
   `timingInfo = performance.memory`
@@ -205,19 +212,11 @@
   [this]
   (-> this (.-memory)))
 
-(defn set-memory!
-  "Property.
-
-  None.
-
-  `timingInfo = performance.memory`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory`"
-  [this val]
-  (aset this "memory" val))
-
 (defn time-origin
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The timeOrigin read-only property of the `web.performance.Performance`
   returns the high resolution timestamp of the start time of the
@@ -228,19 +227,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin`"
   [this]
   (-> this (.-timeOrigin)))
-
-(defn set-time-origin!
-  "Property.
-
-  The timeOrigin read-only property of the `web.performance.Performance`
-  returns the high resolution timestamp of the start time of the
-  measurement.
-
-  `var timeOrigin = performance.timeOrigin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin`"
-  [this val]
-  (aset this "timeOrigin" val))
 
 (defn onresourcetimingbufferfull
   "Property.

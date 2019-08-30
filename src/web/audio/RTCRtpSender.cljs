@@ -60,6 +60,8 @@
 (defn dtmf
   "Property.
 
+  [Read Only]
+
   The read-only dtmf property on the `web.audio.RTCRtpSender` interface
   a `web.audio.RTCDTMFSender` object which can be used to send
   tones over the `web.audio.RTCPeerConnection` . See Using DTMF
@@ -96,6 +98,8 @@
 (defn track
   "Property.
 
+  [Read Only]
+
   The track read-only property of the `web.audio.RTCRtpSender`
   returns the `web.audio.MediaStreamTrack` which is being handled
   the RTCRtpSender. If track is null, the RTCRtpSender doesn't
@@ -106,20 +110,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track`"
   [this]
   (-> this (.-track)))
-
-(defn set-track!
-  "Property.
-
-  The track read-only property of the `web.audio.RTCRtpSender`
-  returns the `web.audio.MediaStreamTrack` which is being handled
-  the RTCRtpSender. If track is null, the RTCRtpSender doesn't
-  anything.
-
-  `var mediaStreamTrack = RTCRtpSender.track`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpSender/track`"
-  [this val]
-  (aset this "track" val))
 
 (defn transport
   "Property.

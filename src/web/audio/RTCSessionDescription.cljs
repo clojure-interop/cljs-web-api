@@ -5,16 +5,11 @@
   process it describes and of the SDP descriptor of the session."
   (:refer-clojure :exclude [type]))
 
-(def constructor
-  "Constructor.
-
-  The RTCSessionDescription() constructor creates a new `web.audio.RTCSessionDescription` with its properties initialized as described in the specified object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/RTCSessionDescription`"
-  js/RTCSessionDescription)
-
 (defn rtc-session-description
   "Method.
+
+  [Deprecated]
+  [Experimental]
 
   The RTCSessionDescription() constructor creates a new `web.audio.RTCSessionDescription`
   its properties initialized as described in the specified object.
@@ -27,6 +22,8 @@
 
 (defn to-json
   "Method.
+
+  [Experimental]
 
   The RTCSessionDescription.toJSON() method generates a JSON description
   the object. Both properties, `type` and `sdp`, are contained
@@ -47,6 +44,9 @@
 (defn type
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The property RTCSessionDescription.type is a read-only value
   type RTCSdpType which describes the description's type.
 
@@ -57,21 +57,11 @@
   [this]
   (-> this (.-type)))
 
-(defn set-type!
-  "Property.
-
-  The property RTCSessionDescription.type is a read-only value
-  type RTCSdpType which describes the description's type.
-
-  `var value = sessionDescription.type;
-  sessionDescription.type = value;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/type`"
-  [this val]
-  (aset this "type" val))
-
 (defn sdp
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The property RTCSessionDescription.sdp is a read-only `web.dom.DOMString`
   the SDP which describes the session.
@@ -82,17 +72,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/sdp`"
   [this]
   (-> this (.-sdp)))
-
-(defn set-sdp!
-  "Property.
-
-  The property RTCSessionDescription.sdp is a read-only `web.dom.DOMString`
-  the SDP which describes the session.
-
-  `var value = sessionDescription.sdp;
-  sessionDescription.sdp = value;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCSessionDescription/sdp`"
-  [this val]
-  (aset this "sdp" val))
 

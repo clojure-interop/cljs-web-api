@@ -8,6 +8,8 @@
 (defn get-characteristic
   "Method.
 
+  [Experimental]
+
   The BluetoothGATTService.getCharacteristic() method returns a
   to an instance of `BluetoothGATTCharacteristic` for a given universally
   identifier (UUID).
@@ -20,6 +22,8 @@
 
 (defn get-characteristics
   "Method.
+
+  [Experimental]
 
   The BluetoothGATTService.getCharacteristics() method returns
   `js.Promise` to a list of `BluetoothGATTCharacteristic` instances
@@ -34,6 +38,8 @@
 (defn get-included-service
   "Method.
 
+  [Experimental]
+
   The BluetoothGATTService.getIncludedService() method returns
   `js.Promise` to an instance of `BluetoothGATTService` for a given
   unique identifier (UUID).
@@ -46,6 +52,8 @@
 
 (defn get-included-services
   "Method.
+
+  [Experimental]
 
   The BluetoothGATTService.getIncludedServices() method returns
   `js.Promise` to an `js.Array` of `BluetoothGATTService` instances
@@ -60,6 +68,9 @@
 (defn device
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The BluetoothGATTService.device read-only property returns information
   a Bluetooth device through an instance of `web.bluetooth.BluetoothDevice`.
 
@@ -69,20 +80,11 @@
   [this]
   (-> this (.-device)))
 
-(defn set-device!
-  "Property.
-
-  The BluetoothGATTService.device read-only property returns information
-  a Bluetooth device through an instance of `web.bluetooth.BluetoothDevice`.
-
-  `var bluetoothDeviceInstance = BluetoothGATTService.device`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/device`"
-  [this val]
-  (aset this "device" val))
-
 (defn is-primary
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothGATTService.isPrimary read-only property returns
   `js.Boolean` that indicates whether this is a primary service.
@@ -94,21 +96,11 @@
   [this]
   (-> this (.-isPrimary)))
 
-(defn set-is-primary!
-  "Property.
-
-  The BluetoothGATTService.isPrimary read-only property returns
-  `js.Boolean` that indicates whether this is a primary service.
-  it is not a primary service, it is a secondary service.
-
-  `var isPrimary = BluetoothGATTService.isPrimary`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/isPrimary`"
-  [this val]
-  (aset this "isPrimary" val))
-
 (defn uuid
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothGATTService.uuid read-only property returns a `web.dom.DOMString`
   the UUID of this service.
@@ -118,16 +110,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid`"
   [this]
   (-> this (.-uuid)))
-
-(defn set-uuid!
-  "Property.
-
-  The BluetoothGATTService.uuid read-only property returns a `web.dom.DOMString`
-  the UUID of this service.
-
-  `var uuid = BluetoothGATTService.uuid`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid`"
-  [this val]
-  (aset this "uuid" val))
 

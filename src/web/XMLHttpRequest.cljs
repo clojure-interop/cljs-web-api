@@ -5,16 +5,6 @@
   the user is doing."
   (:refer-clojure :exclude [load]))
 
-(def constructor
-  "Constructor.
-
-  The XMLHttpRequest() constructor creates a new `web.XMLHttpRequest`.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest`"
-  js/XMLHttpRequest)
-
 (defn abort
   "Method.
 
@@ -69,6 +59,8 @@
 (defn override-mime-type
   "Method.
 
+  [Draft]
+
   The `web.XMLHttpRequest` method overrideMimeType() specifies
   MIME type other than the one provided by the server to be used
   when interpreting the data being transferred in a request.
@@ -114,6 +106,8 @@
 
 (defn open-request
   "Method.
+
+  [Non Standard]
 
   This Mozilla-specific method is available only from within privileged
   and is only called from a C++ context in order to initialize
@@ -169,6 +163,8 @@
 (defn ready-state
   "Property.
 
+  [Read Only]
+
   The XMLHttpRequest.readyState property returns the state an XMLHttpRequest
   is in. An XHR client exists in one of the following states:
 
@@ -176,18 +172,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The XMLHttpRequest.readyState property returns the state an XMLHttpRequest
-  is in. An XHR client exists in one of the following states:
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn response
   "Property.
+
+  [Read Only]
 
   The `web.XMLHttpRequest` response property returns the response's
   content as an `js.ArrayBuffer`, `web.files.Blob`, `web.Document`,
@@ -202,6 +190,9 @@
 
 (defn response-text
   "Property.
+
+  [Read Only]
+  [Draft]
 
   The read-only `web.XMLHttpRequest` property responseText returns
   text received from a server following a request being sent.
@@ -243,6 +234,8 @@
 (defn response-url
   "Property.
 
+  [Read Only]
+
   The read-only XMLHttpRequest.responseURL property returns the
   URL of the response or the empty string if the URL is null. If
   URL is returned, any URL fragment present in the URL will be
@@ -255,6 +248,8 @@
 
 (defn response-xml
   "Property.
+
+  [Read Only]
 
   The XMLHttpRequest.responseXML read-only property returns a `web.Document`
   the HTML or XML retrieved by the request; or null if the request
@@ -270,6 +265,8 @@
 (defn status
   "Property.
 
+  [Read Only]
+
   The read-only XMLHttpRequest.status property returns the numerical
   status code of the XMLHttpRequest's response.
 
@@ -277,18 +274,10 @@
   [this]
   (-> this (.-status)))
 
-(defn set-status!
-  "Property.
-
-  The read-only XMLHttpRequest.status property returns the numerical
-  status code of the XMLHttpRequest's response.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status`"
-  [this val]
-  (aset this "status" val))
-
 (defn status-text
   "Property.
+
+  [Read Only]
 
   The read-only XMLHttpRequest.statusText property returns a DOMString
   the response's status message as returned by the HTTP server.
@@ -346,6 +335,8 @@
 (defn upload
   "Property.
 
+  [Read Only]
+
   The `web.XMLHttpRequest` upload property returns an `XMLHttpRequestUpload`
   that can be observed to monitor an upload's progress.
 
@@ -382,6 +373,9 @@
 (defn channel
   "Property.
 
+  [Read Only]
+  [Draft]
+
   XMLHttpRequest.channel is an nsIChannel that used by the object
   performing the request. This is null if the channel hasn't been
   yet. In the case of a multi-part request, this is the initial
@@ -392,21 +386,11 @@
   [this]
   (-> this (.-channel)))
 
-(defn set-channel!
-  "Property.
-
-  XMLHttpRequest.channel is an nsIChannel that used by the object
-  performing the request. This is null if the channel hasn't been
-  yet. In the case of a multi-part request, this is the initial
-  not the different parts in the multi-part request. Requires elevated
-  to access.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/channel`"
-  [this val]
-  (aset this "channel" val))
-
 (defn moz-anon
   "Property.
+
+  [Read Only]
+  [Draft]
 
   XMLHttpRequest.mozAnon is a boolean. If true, the request will
   sent without cookies or authentication headers.
@@ -415,18 +399,11 @@
   [this]
   (-> this (.-mozAnon)))
 
-(defn set-moz-anon!
-  "Property.
-
-  XMLHttpRequest.mozAnon is a boolean. If true, the request will
-  sent without cookies or authentication headers.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/mozAnon`"
-  [this val]
-  (aset this "mozAnon" val))
-
 (defn moz-system
   "Property.
+
+  [Read Only]
+  [Draft]
 
   mozSystem is a boolean. If true, the same origin policy is not
   on the request.
@@ -435,18 +412,10 @@
   [this]
   (-> this (.-mozSystem)))
 
-(defn set-moz-system!
-  "Property.
-
-  mozSystem is a boolean. If true, the same origin policy is not
-  on the request.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/mozSystem`"
-  [this val]
-  (aset this "mozSystem" val))
-
 (defn moz-background-request
   "Property.
+
+  [Draft]
 
   XMLHttpRequest.mozBackgroundRequest is a Boolean, indicating
   the object represents a background service request.
@@ -458,6 +427,8 @@
 (defn set-moz-background-request!
   "Property.
 
+  [Draft]
+
   XMLHttpRequest.mozBackgroundRequest is a Boolean, indicating
   the object represents a background service request.
 
@@ -468,6 +439,9 @@
 (defn moz-response-array-buffer
   "Property.
 
+  [Read Only]
+  [Draft]
+
   Is an ArrayBuffer response to the request, written as a JavaScript
   array.
 
@@ -475,18 +449,10 @@
   [this]
   (-> this (.-mozResponseArrayBuffer)))
 
-(defn set-moz-response-array-buffer!
-  "Property.
-
-  Is an ArrayBuffer response to the request, written as a JavaScript
-  array.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/mozResponseArrayBuffer`"
-  [this val]
-  (aset this "mozResponseArrayBuffer" val))
-
 (defn multipart
   "Property.
+
+  [Non Standard]
 
   This boolean indicates if the response is expected to be a stream
   possibly multiple XML documents.
@@ -497,6 +463,8 @@
 
 (defn set-multipart!
   "Property.
+
+  [Non Standard]
 
   This boolean indicates if the response is expected to be a stream
   possibly multiple XML documents.

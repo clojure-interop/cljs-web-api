@@ -9,6 +9,9 @@
 (defn open
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   Opens an `web.ie.XDomainRequest` which is configured to use a
   method (GET/POST) and URL.
 
@@ -20,6 +23,9 @@
 
 (defn send
   "Method.
+
+  [Non Standard]
+  [Obsolute]
 
   Sends an `web.ie.XDomainRequest` which has previously been opened
   `XDomainRequest.open()`.
@@ -33,6 +39,9 @@
 (defn abort
   "Method.
 
+  [Non Standard]
+  [Obsolute]
+
   Aborts an `web.ie.XDomainRequest`.
 
   `xdr.abort();`
@@ -43,6 +52,9 @@
 
 (defn timeout
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   Gets or sets the amount of time in milliseconds until an `web.ie.XDomainRequest`
   out.
@@ -58,6 +70,9 @@
 (defn set-timeout!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   Gets or sets the amount of time in milliseconds until an `web.ie.XDomainRequest`
   out.
 
@@ -72,6 +87,9 @@
 (defn response-text
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   Returns the response body of an `web.ie.XDomainRequest` as a
 
   `var response = xdr.responseText;
@@ -84,6 +102,9 @@
 
 (defn set-response-text!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   Returns the response body of an `web.ie.XDomainRequest` as a
 
@@ -98,6 +119,9 @@
 (defn onerror
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler which is called when an `web.ie.XDomainRequest`
   an error.
 
@@ -110,6 +134,9 @@
 (defn set-onerror!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler which is called when an `web.ie.XDomainRequest`
   an error.
 
@@ -121,6 +148,9 @@
 
 (defn onload
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   An event handler for when an `web.ie.XDomainRequest` has finished
   the response from the server. You can find the entire server
@@ -135,6 +165,9 @@
 (defn set-onload!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler for when an `web.ie.XDomainRequest` has finished
   the response from the server. You can find the entire server
   in the `XDomainRequest.responseText` property.
@@ -147,6 +180,9 @@
 
 (defn onprogress
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   This method is called periodically as an event handler for progress
   on `web.ie.XDomainRequest`s, so that code can monitor progress
@@ -161,6 +197,9 @@
 (defn set-onprogress!
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   This method is called periodically as an event handler for progress
   on `web.ie.XDomainRequest`s, so that code can monitor progress
   loading content.
@@ -174,6 +213,9 @@
 (defn ontimeout
   "Property.
 
+  [Non Standard]
+  [Obsolute]
+
   An event handler which is called when a pending `web.ie.XDomainRequest`
   out.
 
@@ -185,6 +227,9 @@
 
 (defn set-ontimeout!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   An event handler which is called when a pending `web.ie.XDomainRequest`
   out.

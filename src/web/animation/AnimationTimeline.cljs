@@ -9,6 +9,9 @@
 (defn current-time
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The currentTime read-only property of the Web Animations API's
   interface returns the timeline's current time in milliseconds,
   null if the timeline is inactive.

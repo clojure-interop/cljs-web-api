@@ -197,6 +197,8 @@
 (defn index-names
   "Property.
 
+  [Read Only]
+
   A `web.dom.DOMStringList`.
 
   `var myindexNames = objectStore.indexNames;`
@@ -205,19 +207,10 @@
   [this]
   (-> this (.-indexNames)))
 
-(defn set-index-names!
-  "Property.
-
-  A `web.dom.DOMStringList`.
-
-  `var myindexNames = objectStore.indexNames;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/indexNames`"
-  [this val]
-  (aset this "indexNames" val))
-
 (defn key-path
   "Property.
+
+  [Read Only]
 
   If this property is null, the application must provide a key
   each modification operation.
@@ -227,18 +220,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath`"
   [this]
   (-> this (.-keyPath)))
-
-(defn set-key-path!
-  "Property.
-
-  If this property is null, the application must provide a key
-  each modification operation.
-
-  `var mykeyPath = objectStore.keyPath;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath`"
-  [this val]
-  (aset this "keyPath" val))
 
 (defn name
   "Property.
@@ -267,6 +248,8 @@
 (defn transaction
   "Property.
 
+  [Read Only]
+
   An `web.storage.IDBTransaction` object.
 
   `var myTransaction = objectStore.transaction;`
@@ -275,19 +258,10 @@
   [this]
   (-> this (.-transaction)))
 
-(defn set-transaction!
-  "Property.
-
-  An `web.storage.IDBTransaction` object.
-
-  `var myTransaction = objectStore.transaction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/transaction`"
-  [this val]
-  (aset this "transaction" val))
-
 (defn auto-increment
   "Property.
+
+  [Read Only]
 
   A `js.Boolean`:
 
@@ -296,15 +270,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
   [this]
   (-> this (.-autoIncrement)))
-
-(defn set-auto-increment!
-  "Property.
-
-  A `js.Boolean`:
-
-  `var myAutoIncrement = objectStore.autoIncrement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/autoIncrement`"
-  [this val]
-  (aset this "autoIncrement" val))
 

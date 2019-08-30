@@ -7,6 +7,9 @@
 (defn get-eye-parameters
   "Method.
 
+  [Experimental]
+  [Obsolute]
+
   The getEyeParameters() method of the `web.vr.HMDVRDevice` interface
   current parameters for the eye specified as its argument (\\\"left\\\"
   \\\"right\\\") — stored in a `web.vr.VREyeParameters` object.
@@ -19,6 +22,9 @@
 
 (defn set-field-of-view
   "Method.
+
+  [Experimental]
+  [Obsolute]
 
   The setFieldOfView() method of the `web.vr.HMDVRDevice` interface
   be used to set the field of view for one eye, or both eyes simultaneously.

@@ -8,6 +8,8 @@
 (defn set-nfc-focus
   "Method.
 
+  [Non Standard]
+
   The setNfcFocus() method of the `web.dom.HTMLIFrameElement` interface
   whether an `<iframe>` can receive an NFC event.
 
@@ -70,6 +72,8 @@
 (defn allow-payment-request
   "Property.
 
+  [Experimental]
+
   The allowPaymentRequest property of the `web.dom.HTMLIFrameElement`
   returns a `js.Boolean` indicating whether the Payment Request
   may be invoked on a cross-origin iframe.
@@ -82,6 +86,8 @@
 
 (defn set-allow-payment-request!
   "Property.
+
+  [Experimental]
 
   The allowPaymentRequest property of the `web.dom.HTMLIFrameElement`
   returns a `js.Boolean` indicating whether the Payment Request
@@ -96,6 +102,8 @@
 (defn content-document
   "Property.
 
+  [Read Only]
+
   If the iframe and the iframe's parent document are Same Origin,
   a Document (that is, the active document in the inline frame's
   browsing context), else returns null.
@@ -104,19 +112,10 @@
   [this]
   (-> this (.-contentDocument)))
 
-(defn set-content-document!
-  "Property.
-
-  If the iframe and the iframe's parent document are Same Origin,
-  a Document (that is, the active document in the inline frame's
-  browsing context), else returns null.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument`"
-  [this val]
-  (aset this "contentDocument" val))
-
 (defn content-window
   "Property.
+
+  [Read Only]
 
   The contentWindow property returns the Window object of an <iframe>
   You can use this Window object to access the iframe's document
@@ -129,6 +128,8 @@
 
 (defn csp
   "Property.
+
+  [Experimental]
 
   The csp property of the `web.dom.HTMLIFrameElement` interface
   the Content Security Policy that an embedded document must agree
@@ -143,6 +144,8 @@
 
 (defn set-csp!
   "Property.
+
+  [Experimental]
 
   The csp property of the `web.dom.HTMLIFrameElement` interface
   the Content Security Policy that an embedded document must agree
@@ -248,6 +251,9 @@
 (defn feature-policy
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The featurePolicy read-only property of the `web.dom.HTMLIFrameElement`
   returns the `web.other.FeaturePolicy` interface which provides
   simple API for introspecting the feature policies applied to
@@ -258,20 +264,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/featurePolicy`"
   [this]
   (-> this (.-featurePolicy)))
-
-(defn set-feature-policy!
-  "Property.
-
-  The featurePolicy read-only property of the `web.dom.HTMLIFrameElement`
-  returns the `web.other.FeaturePolicy` interface which provides
-  simple API for introspecting the feature policies applied to
-  specific frame.
-
-  `var policy = HTMLIFrameElement.featurePolicy`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/featurePolicy`"
-  [this val]
-  (aset this "featurePolicy" val))
 
 (defn referrer-policy
   "Property.

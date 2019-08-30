@@ -66,8 +66,8 @@
   accepts a variety of different image sources, and returns a `js.Promise`
   resolves to an `web.canvas.ImageBitmap`.
 
-  `createImageBitmap(image[, options]).then(function(response) { ... });
-  createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
+  `const imageBitmapPromise = createImageBitmap(image[, options]);
+  const imageBitmapPromise = createImageBitmap(image, sx, sy, sw, sh[, options]);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
   [this & args]
@@ -130,6 +130,9 @@
 (defn caches
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The caches read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the `web.service-workers.CacheStorage` object associated
   the current context. This object enables functionality such as
@@ -144,6 +147,8 @@
 (defn indexed-db
   "Property.
 
+  [Read Only]
+
   The indexedDB read-only property of the `web.WindowOrWorkerGlobalScope`
   provides a mechanism for applications to asynchronously access
   capabilities of indexed databases.
@@ -157,6 +162,9 @@
 (defn is-secure-context
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The isSecureContext read-only property of the `web.WindowOrWorkerGlobalScope`
   returns a boolean indicating whether the current context is secure
   or not (false).
@@ -167,21 +175,11 @@
   [this]
   (-> this (.-isSecureContext)))
 
-(defn set-is-secure-context!
-  "Property.
-
-  The isSecureContext read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns a boolean indicating whether the current context is secure
-  or not (false).
-
-  `var isItSecure = self.isSecureContext; // or just isSecureContext`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext`"
-  [this val]
-  (aset this "isSecureContext" val))
-
 (defn origin
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The origin read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the origin of the global scope, serialized as a string.
@@ -191,16 +189,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
   [this]
   (-> this (.-origin)))
-
-(defn set-origin!
-  "Property.
-
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
-
-  `var myOrigin = self.origin; // or just origin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
-  [this val]
-  (aset this "origin" val))
 

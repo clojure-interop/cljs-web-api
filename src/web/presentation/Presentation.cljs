@@ -28,6 +28,8 @@
 (defn receiver
   "Property.
 
+  [Read Only]
+
   The read-only `web.presentation.Presentation` attribute receiver,
   is only available in browser contexts which are receiving a presentation,
   the `web.presentation.PresentationReceiver` object which can

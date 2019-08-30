@@ -4,7 +4,6 @@
             [web.files.BlobBuilder]
             [web.files.DirectoryEntrySync]
             [web.files.File]
-            [web.files.FileEntrySync]
             [web.files.FileList]
             [web.files.FileReader]
             [web.files.FileReader.ev]

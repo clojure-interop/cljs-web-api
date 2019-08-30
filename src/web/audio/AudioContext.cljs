@@ -3,21 +3,6 @@
   from audio modules linked together, each represented by an `web.audio.AudioNode`."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The AudioContext() constructor creates a new `web.audio.AudioContext` object which represents an audio-processing graph, built from audio modules linked together, each represented by an `web.audio.AudioNode`.
-
-  options Optional
-  An object based on the `web.audio.AudioContextOptions` dictionary that contains zero or more optional properties to configure the new context. Available properties are as follows:
-  `latencyHint` Optional
-  The type of playback that the context will be used for, as a value from the `web.audio.AudioContextLatencyCategory` enum or a double-precision floating-point value indicating the preferred maximum latency of the context in seconds. The user agent may or may not choose to meet this request; check the value of `AudioContext.baseLatency` to determine the true latency after creating the context.
-  `sampleRate` Optional
-  The `sampleRate` to be used by the AudioContext, specified in samples per second. The value may be any value supported by `web.audio.AudioBuffer`. If not specified, the preferred sample rate for the context's output device is used by default.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/AudioContext`"
-  js/AudioContext)
-
 (defn close
   "Method.
 
@@ -77,6 +62,8 @@
 (defn create-media-stream-track-source
   "Method.
 
+  [Draft]
+
   A `web.media.MediaStreamTrackAudioSourceNode` object which acts
   a source for audio data found in the specified audio track.
 
@@ -89,6 +76,8 @@
 
 (defn get-output-timestamp
   "Method.
+
+  [Experimental]
 
   The getOutputTimestamp() property of the `web.audio.AudioContext`
   returns a new AudioTimestamp object containing two correlated
@@ -132,6 +121,8 @@
 (defn create-java-script-node
   "Method.
 
+  [Obsolute]
+
   The following script illustrates the use of createJavaScriptNode():
 
   `var jsNode = audioCtx.createJavaScriptNode(bufferSize, numInputChannels, numOutputChannels);`
@@ -143,6 +134,8 @@
 (defn create-wave-table
   "Method.
 
+  [Obsolute]
+
   The `web.audio.AudioContext` method createWaveTable() is now
   you should instead use the method `createPeriodicWave()`.
 
@@ -152,6 +145,9 @@
 
 (defn base-latency
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The baseLatency read-only property of the `web.audio.AudioContext`
   returns a double that represents the number of seconds of processing
@@ -164,22 +160,11 @@
   [this]
   (-> this (.-baseLatency)))
 
-(defn set-base-latency!
-  "Property.
-
-  The baseLatency read-only property of the `web.audio.AudioContext`
-  returns a double that represents the number of seconds of processing
-  incurred by the AudioContext passing the audio from the `web.audio.AudioDestinationNode`
-  the audio subsystem.
-
-  `var baseLatency = audioCtx.baseLatency;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency`"
-  [this val]
-  (aset this "baseLatency" val))
-
 (defn output-latency
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The outputLatency read-only property of the `web.audio.AudioContext`
   provides an estimation of the output latency of the current audio
@@ -189,16 +174,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency`"
   [this]
   (-> this (.-outputLatency)))
-
-(defn set-output-latency!
-  "Property.
-
-  The outputLatency read-only property of the `web.audio.AudioContext`
-  provides an estimation of the output latency of the current audio
-
-  `var latency = audioCtx.outputLatency;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency`"
-  [this val]
-  (aset this "outputLatency" val))
 

@@ -8,6 +8,8 @@
 (defn create
   "Method.
 
+  [Experimental]
+
   The create() method of the `web.credential.CredentialsContainer`
   returns a `js.Promise` that resolves with a new `web.credential.Credential`
   based on the provided options, or null if no Credential object
@@ -21,6 +23,8 @@
 
 (defn get
   "Method.
+
+  [Experimental]
 
   The get() method of the `web.credential.CredentialsContainer`
   returns a `js.Promise` to a single `web.credential.Credential`
@@ -36,6 +40,8 @@
 (defn prevent-silent-access
   "Method.
 
+  [Experimental]
+
   The preventSilentAccess() method of the `web.credential.CredentialsContainer`
   sets a flag that specifies whether automatic log in is allowed
   future visits to the current origin, then returns an empty Promise.
@@ -48,6 +54,8 @@
 
 (defn store
   "Method.
+
+  [Experimental]
 
   The store() method of the `web.credential.CredentialsContainer`
   a set of credentials for the user inside a `web.credential.Credential`

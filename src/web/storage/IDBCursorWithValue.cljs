@@ -8,6 +8,8 @@
 (defn value
   "Property.
 
+  [Read Only]
+
   The value of the current cursor.
 
   `var value = myIDBCursorWithValue.value;`
@@ -15,15 +17,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursorWithValue/value`"
   [this]
   (-> this (.-value)))
-
-(defn set-value!
-  "Property.
-
-  The value of the current cursor.
-
-  `var value = myIDBCursorWithValue.value;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBCursorWithValue/value`"
-  [this val]
-  (aset this "value" val))
 

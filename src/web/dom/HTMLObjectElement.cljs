@@ -133,6 +133,8 @@
 (defn content-document
   "Property.
 
+  [Read Only]
+
   The contentDocument read-only property of the `web.dom.HTMLObjectElement`
   Returns a `web.Document` representing the active document of
   object element's nested browsing context, if any; otherwise null.
@@ -143,21 +145,10 @@
   [this]
   (-> this (.-contentDocument)))
 
-(defn set-content-document!
-  "Property.
-
-  The contentDocument read-only property of the `web.dom.HTMLObjectElement`
-  Returns a `web.Document` representing the active document of
-  object element's nested browsing context, if any; otherwise null.
-
-  `var document = HTMLObjectElement.contentDocument;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument`"
-  [this val]
-  (aset this "contentDocument" val))
-
 (defn content-window
   "Property.
+
+  [Read Only]
 
   The contentWindow read-only property of the `web.dom.HTMLObjectElement`
   returns a `WindowProxy` representing the window proxy of the
@@ -168,19 +159,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow`"
   [this]
   (-> this (.-contentWindow)))
-
-(defn set-content-window!
-  "Property.
-
-  The contentWindow read-only property of the `web.dom.HTMLObjectElement`
-  returns a `WindowProxy` representing the window proxy of the
-  element's nested browsing context, if any; otherwise null.
-
-  `var WindowProxy = HTMLObjectElement.contentWindow;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentWindow`"
-  [this val]
-  (aset this "contentWindow" val))
 
 (defn data
   "Property.
@@ -229,6 +207,8 @@
 (defn form
   "Property.
 
+  [Read Only]
+
   The form read-only property of the `web.dom.HTMLObjectElement`
   Retuns a `web.dom.HTMLFormElement` representing the object element's
   owner, or null if there isn't one.
@@ -238,19 +218,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form`"
   [this]
   (-> this (.-form)))
-
-(defn set-form!
-  "Property.
-
-  The form read-only property of the `web.dom.HTMLObjectElement`
-  Retuns a `web.dom.HTMLFormElement` representing the object element's
-  owner, or null if there isn't one.
-
-  `var HTMLFormElement = HTMLObjectElement.form;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form`"
-  [this val]
-  (aset this "form" val))
 
 (defn height
   "Property.
@@ -445,6 +412,8 @@
 (defn validation-message
   "Property.
 
+  [Read Only]
+
   The validationMessage read-only property of the `web.dom.HTMLObjectElement`
   returns a `web.dom.DOMString` representing a localized message
   describes the validation constraints that the control does not
@@ -457,22 +426,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage`"
   [this]
   (-> this (.-validationMessage)))
-
-(defn set-validation-message!
-  "Property.
-
-  The validationMessage read-only property of the `web.dom.HTMLObjectElement`
-  returns a `web.dom.DOMString` representing a localized message
-  describes the validation constraints that the control does not
-  (if any). This is the empty string if the control is not a candidate
-  constraint validation (willValidate is false), or it satisfies
-  constraints.
-
-  `var String = HTMLObjectElement.validationMessage;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage`"
-  [this val]
-  (aset this "validationMessage" val))
 
 (defn validity
   "Property.
@@ -537,6 +490,8 @@
 (defn will-validate
   "Property.
 
+  [Read Only]
+
   The willValidate read-only property of the `web.dom.HTMLObjectElement`
   returns a `js.Boolean` that indicates whether the element is
   candidate for constraint validation. Always false for HTMLObjectElement
@@ -546,17 +501,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/willValidate`"
   [this]
   (-> this (.-willValidate)))
-
-(defn set-will-validate!
-  "Property.
-
-  The willValidate read-only property of the `web.dom.HTMLObjectElement`
-  returns a `js.Boolean` that indicates whether the element is
-  candidate for constraint validation. Always false for HTMLObjectElement
-
-  `var Boolean = HTMLObjectElement.willValidate;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/willValidate`"
-  [this val]
-  (aset this "willValidate" val))
 

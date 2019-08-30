@@ -6,30 +6,6 @@
   visualizations."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The AnalyserNode constructor of the Web Audio API creates a new `web.audio.AnalyserNode` object instance.
-
-  Inherits parameters from the `web.audio.AudioNodeOptions` dictionary.
-
-
-  \\tcontext
-  \\tA reference to an `web.audio.AudioContext` or `web.audio.OfflineAudioContext`.
-  \\toptions Optional
-
-
-  \\t\\tfftSize: The desired initial size of the FFT for frequency-domain analysis.
-  \\t\\tThe default is 2048.
-  \\t\\tmaxDecibels: The desired initial maximum power in dB for FFT analysis.
-  \\t\\tThe default is -30.
-  \\t\\tminDecibels: The desired initial minimum power in dB for FFT analysis.
-  \\t\\tThe default is -100.
-  \\t\\tsmoothingTimeConstant: The desired initial smoothing constant for the FFT analysis. The default is 0.8.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/AnalyserNode`"
-  js/AnalyserNode)
-
 (defn get-float-frequency-data
   "Method.
 
@@ -129,6 +105,8 @@
 (defn frequency-bin-count
   "Property.
 
+  [Read Only]
+
   The frequencyBinCount read-only property of the `web.audio.AnalyserNode`
   is an unsigned integer half that of the `AnalyserNode.fftSize`.
   generally equates to the number of data values you will have
@@ -139,20 +117,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/frequencyBinCount`"
   [this]
   (-> this (.-frequencyBinCount)))
-
-(defn set-frequency-bin-count!
-  "Property.
-
-  The frequencyBinCount read-only property of the `web.audio.AnalyserNode`
-  is an unsigned integer half that of the `AnalyserNode.fftSize`.
-  generally equates to the number of data values you will have
-  play with for the visualization.
-
-  `var arrayLength = analyserNode.frequencyBinCount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/frequencyBinCount`"
-  [this val]
-  (aset this "frequencyBinCount" val))
 
 (defn min-decibels
   "Property.

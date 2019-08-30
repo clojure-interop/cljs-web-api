@@ -7,6 +7,8 @@
 (defn add-range
   "Method.
 
+  [Experimental]
+
   The Selection.addRange() method adds a `web.Range` to a `web.other.Selection`.
 
   `selection.addRange(range);`
@@ -17,6 +19,8 @@
 
 (defn collapse
   "Method.
+
+  [Experimental]
 
   The Selection.collapse() method collapses the current selection
   a single point. The document is not modified. If the content
@@ -31,6 +35,8 @@
 (defn collapse-to-end
   "Method.
 
+  [Experimental]
+
   The Selection.collapseToEnd() method collapses the selection
   the end of the last range in the selection. If the content of
   selection is focused and editable, the caret will blink there.
@@ -43,6 +49,8 @@
 
 (defn collapse-to-start
   "Method.
+
+  [Experimental]
 
   The Selection.collapseToStart() method collapses the selection
   the start of the first range in the selection. If the content
@@ -57,6 +65,8 @@
 (defn contains-node
   "Method.
 
+  [Experimental]
+
   The Selection.containsNode() method indicates whether a specfied
   is part of the selection.
 
@@ -68,6 +78,8 @@
 
 (defn delete-from-document
   "Method.
+
+  [Experimental]
 
   The deleteFromDocument() method of the `web.other.Selection`
   deletes the selected text from the document's DOM.
@@ -89,6 +101,8 @@
 (defn extend
   "Method.
 
+  [Experimental]
+
   The Selection.extend() method moves the focus of the selection
   a specified point. The anchor of the selection does not move.
   selection will be from the anchor to the new focus, regardless
@@ -103,6 +117,8 @@
 (defn get-range-at
   "Method.
 
+  [Experimental]
+
   The Selection.getRangeAt() method returns a range object representing
   of the ranges currently selected.
 
@@ -114,6 +130,8 @@
 
 (defn modify
   "Method.
+
+  [Non Standard]
 
   The Selection.modify() method applies a change to the current
   or cursor position, using simple textual commands.
@@ -127,6 +145,8 @@
 (defn remove-range
   "Method.
 
+  [Experimental]
+
   The Selection.removeRange() method removes a range from a selection.
 
   `sel.removeRange(range)`
@@ -137,6 +157,8 @@
 
 (defn remove-all-ranges
   "Method.
+
+  [Experimental]
 
   The Selection.removeAllRanges() method removes all ranges from
   selection, leaving the `anchorNode` and `focusNode` properties
@@ -151,6 +173,8 @@
 (defn select-all-children
   "Method.
 
+  [Experimental]
+
   The Selection.selectAllChildren() method adds all the children
   the specified node to the selection. Previous selection is lost.
 
@@ -162,6 +186,8 @@
 
 (defn set-base-and-extent
   "Method.
+
+  [Experimental]
 
   The setBaseAndExtent() method of the `web.other.Selection` interface
   the selection to be a range including all or parts of two specified
@@ -184,6 +210,8 @@
 (defn to-string
   "Method.
 
+  [Experimental]
+
   The Selection.toString() method returns a string currently being
   by the selection object, i.e. the currently selected text.
 
@@ -195,6 +223,9 @@
 
 (defn anchor-node
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Selection.anchorNode read-only property returns the `web.Node`
   which the selection begins.
@@ -208,6 +239,9 @@
 (defn anchor-offset
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The Selection.anchorOffset read-only property returns the number
   characters that the selection's anchor is offset within the `Selection.anchorNode`.
 
@@ -219,6 +253,9 @@
 
 (defn focus-node
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Selection.focusNode read-only property returns the `web.Node`
   which the selection ends.
@@ -232,6 +269,9 @@
 (defn focus-offset
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The Selection.focusOffset read-only property returns the number
   characters that the selection's focus is offset within the `Selection.focusNode`.
 
@@ -243,6 +283,9 @@
 
 (defn is-collapsed
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The Selection.isCollapsed read-only property returns a `js.Boolean`
   indicates whether or not there is currently any text selected.
@@ -258,6 +301,9 @@
 (defn range-count
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The Selection.rangeCount read-only property returns the number
   ranges in the selection.
 
@@ -270,6 +316,9 @@
 (defn type
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The type read-only property of the `web.other.Selection` interface
   a `web.dom.DOMString` describing the type of the current selection.
 
@@ -278,16 +327,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Selection/type`"
   [this]
   (-> this (.-type)))
-
-(defn set-type!
-  "Property.
-
-  The type read-only property of the `web.other.Selection` interface
-  a `web.dom.DOMString` describing the type of the current selection.
-
-  `value = sel.type`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Selection/type`"
-  [this val]
-  (aset this "type" val))
 

@@ -3,19 +3,10 @@
   creates an object to represent CSS keywords and other identifiers."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The CSSKeywordValue constructor creates a new `web.css.CSSKeywordValue` object which represents CSS keywords and other identifiers.
-
-  value
-  Sets or returns the value of the new CSSKeywordValue.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSSKeywordValue/CSSKeywordValue`"
-  js/CSSKeywordValue)
-
 (defn value
   "Property.
+
+  [Experimental]
 
   The value property of the `web.css.CSSKeywordValue` interface
   or sets the value of the CSSKeywordValue.
@@ -29,6 +20,8 @@
 
 (defn set-value!
   "Property.
+
+  [Experimental]
 
   The value property of the `web.css.CSSKeywordValue` interface
   or sets the value of the CSSKeywordValue.

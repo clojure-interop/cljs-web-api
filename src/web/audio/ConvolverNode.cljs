@@ -5,25 +5,6 @@
   input and one output."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ConvolverNode() constructor of the Web Audio API creates a new `web.audio.ConvolverNode` object instance.
-
-  Inherits parameters from the `web.audio.AudioNodeOptions` dictionary.
-
-
-  context
-  A reference to an `web.audio.AudioContext`.
-  options Optional
-  Options are as follows:
-
-  audioBuffer: A mono, stereo, or 4-channel `web.audio.AudioBuffer` containing the (possibly multichannel) impulse response used by the ConvolverNode to create the reverb effect.
-  disableNormalization: A `js.Boolean` controlling whether the impulse response from the buffer will be scaled by an equal-power normalization, or not. The default is 'false'.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/ConvolverNode`"
-  js/ConvolverNode)
-
 (defn buffer
   "Property.
 

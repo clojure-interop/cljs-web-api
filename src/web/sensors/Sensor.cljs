@@ -31,6 +31,8 @@
 (defn activated
   "Property.
 
+  [Read Only]
+
   The activated read-only property of the `web.sensors.Sensor`
   returns a `js.Boolean` indicating whether the sensor is active.
 
@@ -42,22 +44,10 @@
   [this]
   (-> this (.-activated)))
 
-(defn set-activated!
-  "Property.
-
-  The activated read-only property of the `web.sensors.Sensor`
-  returns a `js.Boolean` indicating whether the sensor is active.
-
-  `var boolean = sensorInstance.activated
-
-  Because `web.sensors.Sensor` is a base class, activated may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/activated`"
-  [this val]
-  (aset this "activated" val))
-
 (defn has-reading
   "Property.
+
+  [Read Only]
 
   The hasReading read-only property of the `web.sensors.Sensor`
   returns a `js.Boolean` indicating whether the sensor has a reading.
@@ -70,22 +60,10 @@
   [this]
   (-> this (.-hasReading)))
 
-(defn set-has-reading!
-  "Property.
-
-  The hasReading read-only property of the `web.sensors.Sensor`
-  returns a `js.Boolean` indicating whether the sensor has a reading.
-
-  `var boolean = sensorInstance.hasReading
-
-  Because `web.sensors.Sensor` is a base class, hasReading may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/hasReading`"
-  [this val]
-  (aset this "hasReading" val))
-
 (defn timestamp
   "Property.
+
+  [Read Only]
 
   The timestamp read-only property of the `web.sensors.Sensor`
   returns the time stamp of the latest sensor reading.
@@ -97,20 +75,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
   [this]
   (-> this (.-timestamp)))
-
-(defn set-timestamp!
-  "Property.
-
-  The timestamp read-only property of the `web.sensors.Sensor`
-  returns the time stamp of the latest sensor reading.
-
-  `var timestamp = sensorInstance.timestamp
-
-  Because `web.sensors.Sensor` is a base class, timestamp may only be read from one of its derived classes.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Sensor/timestamp`"
-  [this val]
-  (aset this "timestamp" val))
 
 (defn onerror
   "Property.

@@ -9,6 +9,8 @@
 (defn get-eye-parameters
   "Method.
 
+  [Experimental]
+
   The getEyeParameters() method of the `web.media.VRDisplay` interface
   the `web.vr.VREyeParameters` object containing the eye parameters
   the specified eye.
@@ -21,6 +23,8 @@
 
 (defn get-frame-data
   "Method.
+
+  [Experimental]
 
   The getFrameData() method of the `web.media.VRDisplay` interface
   a `web.vr.VRFrameData` object and populates it with the information
@@ -35,6 +39,8 @@
 (defn get-layers
   "Method.
 
+  [Experimental]
+
   The getLayers() method of the `web.media.VRDisplay` interface
   the layers currently being presented by the VRDisplay.
 
@@ -46,6 +52,8 @@
 
 (defn reset-pose
   "Method.
+
+  [Deprecated]
 
   The resetPose() method of the `web.media.VRDisplay` interface
   the pose for the VRDisplay, treating its current `VRPose.position`
@@ -60,6 +68,8 @@
 (defn cancel-animation-frame
   "Method.
 
+  [Experimental]
+
   The cancelAnimationFrame() method of the `web.media.VRDisplay`
   is a special implementation of `Window.cancelAnimationFrame`
   unregisters callbacks registered with `VRDisplay.requestAnimationFrame()`.
@@ -72,6 +82,8 @@
 
 (defn request-animation-frame
   "Method.
+
+  [Experimental]
 
   The requestAnimationFrame() method of the `web.media.VRDisplay`
   is a special implementation of `Window.requestAnimationFrame`
@@ -87,6 +99,8 @@
 (defn request-present
   "Method.
 
+  [Experimental]
+
   The requestPresent() method of the `web.media.VRDisplay` interface
   the VRDisplay presenting a scene.
 
@@ -100,6 +114,8 @@
 
 (defn exit-present
   "Method.
+
+  [Experimental]
 
   The exitPresent() method of the `web.media.VRDisplay` interface
   the VRDisplay presenting a scene.
@@ -115,6 +131,8 @@
 (defn submit-frame
   "Method.
 
+  [Experimental]
+
   The submitFrame() method of the `web.media.VRDisplay` interface
   the current state of the `web.vr.VRLayerInit` currently being
   and displays it on the VRDisplay.
@@ -127,6 +145,8 @@
 
 (defn get-pose
   "Method.
+
+  [Deprecated]
 
   The getPose() method of the `web.media.VRDisplay` interface returns
   `web.vr.VRPose` object defining the future predicted pose of
@@ -141,6 +161,9 @@
 (defn get-immediate-pose
   "Method.
 
+  [Experimental]
+  [Obsolute]
+
   The getImmediatePose() method of the `web.media.VRDisplay` interface
   a `web.vr.VRPose` object defining the current pose of the VRDisplay,
   no prediction applied.
@@ -153,6 +176,9 @@
 
 (defn hardware-unit-id
   "Method.
+
+  [Experimental]
+  [Obsolute]
 
   The hardwareUnitId read-only property of the `VRDevice` interface
   the distinct hardware ID for the overall hardware unit that this
@@ -168,6 +194,9 @@
 (defn capabilities
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The capabilities read-only property of the `web.media.VRDisplay`
   returns a `web.vr.VRDisplayCapabilities` object that indicates
   various capabilities of the VRDisplay.
@@ -178,21 +207,10 @@
   [this]
   (-> this (.-capabilities)))
 
-(defn set-capabilities!
-  "Property.
-
-  The capabilities read-only property of the `web.media.VRDisplay`
-  returns a `web.vr.VRDisplayCapabilities` object that indicates
-  various capabilities of the VRDisplay.
-
-  `var myCapabilities = vrDisplayInstance.capabilities;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/capabilities`"
-  [this val]
-  (aset this "capabilities" val))
-
 (defn depth-far
   "Property.
+
+  [Experimental]
 
   The depthFar property of the `web.media.VRDisplay` interface
   and sets the z-depth defining the far plane of the eye view frustum,
@@ -209,6 +227,8 @@
 (defn set-depth-far!
   "Property.
 
+  [Experimental]
+
   The depthFar property of the `web.media.VRDisplay` interface
   and sets the z-depth defining the far plane of the eye view frustum,
   the furthest viewable boundary of the scene.
@@ -223,6 +243,8 @@
 
 (defn depth-near
   "Property.
+
+  [Experimental]
 
   The depthNear property of the `web.media.VRDisplay` interface
   and sets the z-depth defining the near plane of the eye view
@@ -239,6 +261,8 @@
 (defn set-depth-near!
   "Property.
 
+  [Experimental]
+
   The depthNear property of the `web.media.VRDisplay` interface
   and sets the z-depth defining the near plane of the eye view
   i.e. the nearest viewable boundary of the scene.
@@ -254,6 +278,9 @@
 (defn display-id
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The displayId read-only property of the `web.media.VRDisplay`
   returns an identifier for this particular VRDisplay, which is
   used as an association point in the Gamepad API (see `Gamepad.displayId`).
@@ -264,21 +291,11 @@
   [this]
   (-> this (.-displayId)))
 
-(defn set-display-id!
-  "Property.
-
-  The displayId read-only property of the `web.media.VRDisplay`
-  returns an identifier for this particular VRDisplay, which is
-  used as an association point in the Gamepad API (see `Gamepad.displayId`).
-
-  `var myDisplayID = vrDisplayInstance.displayId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/displayId`"
-  [this val]
-  (aset this "displayId" val))
-
 (defn display-name
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The displayName read-only property of the `web.media.VRDisplay`
   returns a human-readable name to identify the VRDisplay.
@@ -289,20 +306,11 @@
   [this]
   (-> this (.-displayName)))
 
-(defn set-display-name!
-  "Property.
-
-  The displayName read-only property of the `web.media.VRDisplay`
-  returns a human-readable name to identify the VRDisplay.
-
-  `var myDisplayName = vrDisplayInstance.displayName;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/displayName`"
-  [this val]
-  (aset this "displayName" val))
-
 (defn is-connected
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The isConnected read-only property of the `web.media.VRDisplay`
   returns a `js.Boolean` indicating whether the VRDisplay is connected
@@ -314,21 +322,11 @@
   [this]
   (-> this (.-isConnected)))
 
-(defn set-is-connected!
-  "Property.
-
-  The isConnected read-only property of the `web.media.VRDisplay`
-  returns a `js.Boolean` indicating whether the VRDisplay is connected
-  the computer.
-
-  `var isItConnected = vrDisplayInstance.isConnected;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/isConnected`"
-  [this val]
-  (aset this "isConnected" val))
-
 (defn is-presenting
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The isPresenting read-only property of the `web.media.VRDisplay`
   returns a `js.Boolean` indicating whether the VRDisplay is currently
@@ -340,21 +338,11 @@
   [this]
   (-> this (.-isPresenting)))
 
-(defn set-is-presenting!
-  "Property.
-
-  The isPresenting read-only property of the `web.media.VRDisplay`
-  returns a `js.Boolean` indicating whether the VRDisplay is currently
-  content presented through it.
-
-  `var isItPresenting = vrDisplayInstance.isPresenting;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/isPresenting`"
-  [this val]
-  (aset this "isPresenting" val))
-
 (defn stage-parameters
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The stageParameters read-only property of the `web.media.VRDisplay`
   returns a `web.vr.VRStageParameters` object containing room-scale
@@ -365,17 +353,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/stageParameters`"
   [this]
   (-> this (.-stageParameters)))
-
-(defn set-stage-parameters!
-  "Property.
-
-  The stageParameters read-only property of the `web.media.VRDisplay`
-  returns a `web.vr.VRStageParameters` object containing room-scale
-  if the VRDisplay is capable of supporting room-scale experiences.
-
-  `var myStageParameters = vrDisplayInstance.stageParameters;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/VRDisplay/stageParameters`"
-  [this val]
-  (aset this "stageParameters" val))
 

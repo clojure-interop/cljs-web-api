@@ -70,6 +70,8 @@
 (defn supports
   "Method.
 
+  [Experimental]
+
   The supports() method of the `web.dom.DOMTokenList` interface
   true if a given token is in the associated attribute's supported
   This method is intended to support feature detection.
@@ -162,6 +164,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The length read-only property of the `web.dom.DOMTokenList` interface
   an integer representing the number of objects stored in the object.
 
@@ -170,16 +174,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length`"
   [this]
   (-> this (.-length)))
-
-(defn set-length!
-  "Property.
-
-  The length read-only property of the `web.dom.DOMTokenList` interface
-  an integer representing the number of objects stored in the object.
-
-  `tokenList.length;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length`"
-  [this val]
-  (aset this "length" val))
 

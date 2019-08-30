@@ -93,10 +93,9 @@
 
   An array of RTCIceServer objects, each describing one server
   may be used by the ICE agent; these are typically STUN and/or
-  servers. If this isn't specified, the ICE agent may choose to
-  its own ICE servers; otherwise, the connection attempt will be
-  with no STUN or TURN server available, which limits the connection
-  local peers."
+  servers. If this isn't specified, the connection attempt will
+  made with no STUN or TURN server available, which limits the
+  to local peers."
   [this]
   (-> this (.-iceServers)))
 
@@ -105,10 +104,9 @@
 
   An array of RTCIceServer objects, each describing one server
   may be used by the ICE agent; these are typically STUN and/or
-  servers. If this isn't specified, the ICE agent may choose to
-  its own ICE servers; otherwise, the connection attempt will be
-  with no STUN or TURN server available, which limits the connection
-  local peers."
+  servers. If this isn't specified, the connection attempt will
+  made with no STUN or TURN server available, which limits the
+  to local peers."
   [this val]
   (aset this "iceServers" val))
 

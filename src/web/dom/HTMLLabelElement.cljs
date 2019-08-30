@@ -7,6 +7,8 @@
 (defn control
   "Property.
 
+  [Read Only]
+
   The read-only HTMLLabelElement.control property returns a reference
   the control (in the form of an object of type `web.dom.HTMLElement`
   one of its derivatives) with which the `<label>` element is associated,
@@ -20,6 +22,8 @@
 
 (defn form
   "Property.
+
+  [Read Only]
 
   The read-only HTMLLabelElement.form property returns an `web.dom.HTMLFormElement`
   which represents the form of which the label's associated control

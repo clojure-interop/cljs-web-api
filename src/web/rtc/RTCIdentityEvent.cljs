@@ -7,6 +7,9 @@
 (defn assertion
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCIdentityEvent.assertion returns the
   containing a blob being the coded assertion associated with the
 

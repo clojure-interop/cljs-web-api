@@ -8,6 +8,8 @@
 (defn entries
   "Method.
 
+  [Experimental]
+
   The StylePropertyMapReadOnly.entries() method returns an array
   a given object's own enumerable property [key, value] pairs,
   the same order as that provided by a `for...in` loop (the difference
@@ -23,6 +25,8 @@
 (defn for-each
   "Method.
 
+  [Experimental]
+
   The StylePropertyMapReadOnly.forEach() method executes a provided
   once for each element of `web.css.StylePropertyMapReadOnly`.
 
@@ -37,6 +41,8 @@
 (defn get
   "Method.
 
+  [Experimental]
+
   The get() method of the `web.css.StylePropertyMapReadOnly` interface
   a `web.css.CSSStyleValue` object for the first value of the specified
 
@@ -48,6 +54,8 @@
 
 (defn get-all
   "Method.
+
+  [Experimental]
 
   The getAll() method of the `web.css.StylePropertyMapReadOnly`
   returns an array of `web.css.CSSStyleValue` objects containing
@@ -62,6 +70,8 @@
 (defn has
   "Method.
 
+  [Experimental]
+
   The has() method of the `web.css.StylePropertyMapReadOnly` interface
   whether the specified property is in the StylePropertyMapReadOnly
 
@@ -73,6 +83,8 @@
 
 (defn keys
   "Method.
+
+  [Experimental]
 
   The StylePropertyMapReadOnly.keys() method returns a new Array
   containing the keys for each item in StylePropertyMapReadOnly
@@ -86,6 +98,8 @@
 (defn values
   "Method.
 
+  [Experimental]
+
   The StylePropertyMapReadOnly.values() method returns a new Array
   containing the values for each index in the StylePropertyMapReadOnly
 
@@ -98,6 +112,9 @@
 (defn size
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The size read-only property of the `web.css.StylePropertyMapReadOnly`
   returns an unsinged long integer containing the size of the StylePropertyMapReadOnly
 
@@ -106,16 +123,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size`"
   [this]
   (-> this (.-size)))
-
-(defn set-size!
-  "Property.
-
-  The size read-only property of the `web.css.StylePropertyMapReadOnly`
-  returns an unsinged long integer containing the size of the StylePropertyMapReadOnly
-
-  `var size = StylePropertyMapReadOnly.size`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StylePropertyMapReadOnly/size`"
-  [this val]
-  (aset this "size" val))
 

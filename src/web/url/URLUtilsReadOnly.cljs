@@ -7,6 +7,8 @@
 (defn to-string
   "Method.
 
+  [Experimental]
+
   The URLUtilsReadOnly.toString() stringifier method returns a
   containing the whole URL. It is a synonym for `URLUtilsReadOnly.href`.
 
@@ -18,6 +20,9 @@
 
 (defn href
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The URLUtilsReadOnly.href read-only property returns a `web.dom.DOMString`
   the whole URL.
@@ -31,6 +36,9 @@
 (defn protocol
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The URLUtilsReadOnly.protocol read-only property returns a `web.dom.DOMString`
   the protocol scheme of the URL, including the final ':'.
 
@@ -42,6 +50,9 @@
 
 (defn host
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The URLUtilsReadOnly.host read-only property returns a `web.dom.DOMString`
   the host, that is the hostname, a ':', and the port of the URL.
@@ -55,6 +66,9 @@
 (defn hostname
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The URLUtilsReadOnly.hostname read-only property returns a `web.dom.DOMString`
   the domain of the URL.
 
@@ -66,6 +80,9 @@
 
 (defn origin
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The URLUtilsReadOnly.origin read-only property is a `web.dom.DOMString`
   the Unicode serialization of the origin of the represented URL,
@@ -83,6 +100,9 @@
 (defn port
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The URLUtilsReadOnly.port read-only property returns a `web.dom.DOMString`
   the port number of the URL.
 
@@ -94,6 +114,9 @@
 
 (defn pathname
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The URLUtilsReadOnly.pathname read-only property returns a `web.dom.DOMString`
   an initial '/' followed by the path of the URL.
@@ -107,6 +130,9 @@
 (defn search
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The URLUtilsReadOnly.search read-only property returns a `web.dom.DOMString`
   a '?' followed by the parameters of the URL.
 
@@ -118,6 +144,9 @@
 
 (defn hash
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The URLUtilsReadOnly.hash read-only property returns a `web.dom.DOMString`
   a '#' followed by the fragment identifier of the URL. The hash

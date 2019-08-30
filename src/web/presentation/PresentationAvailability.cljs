@@ -10,6 +10,8 @@
 (defn value
   "Property.
 
+  [Read Only]
+
   The value attribute MUST return the last value from which it
   set. The value is updated by the monitor the list of available
   displays algorithm.
@@ -17,17 +19,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value`"
   [this]
   (-> this (.-value)))
-
-(defn set-value!
-  "Property.
-
-  The value attribute MUST return the last value from which it
-  set. The value is updated by the monitor the list of available
-  displays algorithm.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value`"
-  [this val]
-  (aset this "value" val))
 
 (defn onchange
   "Property.

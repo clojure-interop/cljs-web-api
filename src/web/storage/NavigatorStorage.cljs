@@ -8,6 +8,8 @@
 (defn storage
   "Property.
 
+  [Read Only]
+
   The NavigatorStorage.storage read-only property returns the singleton
   object used to access the overall storage capabilities of the
   for the current site or app.
@@ -17,17 +19,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorStorage/storage`"
   [this]
   (-> this (.-storage)))
-
-(defn set-storage!
-  "Property.
-
-  The NavigatorStorage.storage read-only property returns the singleton
-  object used to access the overall storage capabilities of the
-  for the current site or app.
-
-  `var storageManager = navigator.storage;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorStorage/storage`"
-  [this val]
-  (aset this "storage" val))
 

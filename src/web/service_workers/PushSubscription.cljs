@@ -6,6 +6,8 @@
 (defn get-key
   "Method.
 
+  [Experimental]
+
   The getKey() method of the `web.service-workers.PushSubscription`
   returns an `js.ArrayBuffer` representing a client public key,
   can then be sent to a server and used in encrypting push message
@@ -18,6 +20,8 @@
 
 (defn to-json
   "Method.
+
+  [Experimental]
 
   The toJSON() method of the `web.service-workers.PushSubscription`
   is a standard serializer: it returns a JSON representation of
@@ -32,6 +36,8 @@
 (defn unsubscribe
   "Method.
 
+  [Experimental]
+
   The unsubscribe() method of the `web.service-workers.PushSubscription`
   returns a `js.Promise` that resolves to a `js.Boolean` when the
   subscription is successfully unsubscribed.
@@ -45,6 +51,9 @@
 (defn endpoint
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The endpoint read-only property of the `web.service-workers.PushSubscription`
   returns a `web.USVString` containing the endpoint associated
   the push subscription.
@@ -55,21 +64,11 @@
   [this]
   (-> this (.-endpoint)))
 
-(defn set-endpoint!
-  "Property.
-
-  The endpoint read-only property of the `web.service-workers.PushSubscription`
-  returns a `web.USVString` containing the endpoint associated
-  the push subscription.
-
-  `var myEnd = pushSubscription.endpoint;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/endpoint`"
-  [this val]
-  (aset this "endpoint" val))
-
 (defn expiration-time
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The expirationTime read-only property of the `web.service-workers.PushSubscription`
   returns a `web.dom.DOMHighResTimeStamp` of the subscription expiration
@@ -81,21 +80,11 @@
   [this]
   (-> this (.-expirationTime)))
 
-(defn set-expiration-time!
-  "Property.
-
-  The expirationTime read-only property of the `web.service-workers.PushSubscription`
-  returns a `web.dom.DOMHighResTimeStamp` of the subscription expiration
-  associated with the push subscription, if there is one, or null
-
-  `var expirationTime = pushSubscription.expirationTime`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/expirationTime`"
-  [this val]
-  (aset this "expirationTime" val))
-
 (defn options
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The options read-only property of the `web.service-workers.PushSubscription`
   is an object containing containing the options used to create
@@ -107,21 +96,11 @@
   [this]
   (-> this (.-options)))
 
-(defn set-options!
-  "Property.
-
-  The options read-only property of the `web.service-workers.PushSubscription`
-  is an object containing containing the options used to create
-  subscription.
-
-  `var options = PushSubscription.options`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/options`"
-  [this val]
-  (aset this "options" val))
-
 (defn subscription-id
   "Property.
+
+  [Read Only]
+  [Deprecated]
 
   The endpoint read-only property of the `web.service-workers.PushSubscription`
   returns a `web.dom.DOMString` containing the subscription ID
@@ -132,17 +111,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
   [this]
   (-> this (.-subscriptionId)))
-
-(defn set-subscription-id!
-  "Property.
-
-  The endpoint read-only property of the `web.service-workers.PushSubscription`
-  returns a `web.dom.DOMString` containing the subscription ID
-  with the push subscription.
-
-  `var subId = pushSubscription.subscriptionId;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/subscriptionId`"
-  [this val]
-  (aset this "subscriptionId" val))
 

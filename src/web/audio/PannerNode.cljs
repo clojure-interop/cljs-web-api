@@ -4,37 +4,6 @@
   can't have panning effects without at least two audio channels!"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The PannerNode() constructor of the Web Audio API creates a new `web.audio.PannerNode` object instance.
-
-  Inherits parameters from the `web.audio.AudioNodeOptions` dictionary.
-
-
-  \\tcontext
-  \\tA `web.audio.BaseAudioContext` representing the audio context you want the node to be associated with.
-  \\toptions Optional
-  \\tA PannerOptions dictionary object defining the properties you want the PannerNode to have (It also inherits the options defined in the AudioNodeOptions dictionary.):
-
-  \\t\\tpanningModel: The `PannerNode.panningModel` you want the `web.audio.PannerNode` to have (the default is equalpower.)
-  \\t\\tdistanceModel: The `PannerNode.distanceModel` you want the `web.audio.PannerNode` to have (the default is inverse.)
-  \\t\\tpositionX: The `PannerNode.positionX` you want the `web.audio.PannerNode` to have (the default is 0.)
-  \\t\\tpositionY: The `PannerNode.positionY` you want the `web.audio.PannerNode` to have (the default is 0.)
-  \\t\\tpositionZ: The `PannerNode.positionZ` you want the `web.audio.PannerNode` to have (the default is 0.)
-  \\t\\torientationX: The `PannerNode.orientationX` you want the `web.audio.PannerNode` to have (the default is 1.)
-  \\t\\torientationY: The `PannerNode.orientationY` you want the `web.audio.PannerNode` to have (the default is 0.)
-  \\t\\torientationZ: The `PannerNode.orientationZ` you want the `web.audio.PannerNode` to have (the default is 0.)
-  \\t\\trefDistance: The `PannerNode.refDistance` you want the `web.audio.PannerNode` to have. The default is 1, and negative values are not allowed.
-  \\t\\tmaxDistance: The `PannerNode.maxDistance` you want the `web.audio.PannerNode` to have. The default is 10000, and non-positive values are not allowed.
-  \\t\\trollOffFactor: The `PannerNode.rollOffFactor` you want the `web.audio.PannerNode` to have. The default is 1, and negative values are not allowed.
-  \\t\\tconeInnerAngle: The `PannerNode.coneInnerAngle` you want the `web.audio.PannerNode` to have (the default is 360.)
-  \\t\\tconeOuterAngle: The `PannerNode.coneOuterAngle` you want the `web.audio.PannerNode` to have (the default is 360.)
-  \\t\\tconeOuterGain: The `PannerNode.coneOuterGain` you want the `web.audio.PannerNode` to have. The default is 0, and its value can be in the range 0–1.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/PannerNode`"
-  js/PannerNode)
-
 (defn set-position
   "Method.
 
@@ -63,6 +32,8 @@
 
 (defn set-velocity
   "Method.
+
+  [Obsolute]
 
   The setVelocity() method of the `web.audio.PannerNode` Interface
   the velocity vector of the audio source — how fast it is moving

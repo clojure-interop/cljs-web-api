@@ -22,6 +22,15 @@
   [this & args]
   (-> this .-reportValidity (.apply this (clj->js args))))
 
+(defn set-custom-validity
+  "Method.
+
+  Sets a custom validity message for the element. If this message
+  not the empty string, then the element is suffering from a custom
+  error, and does not validate."
+  [this & args]
+  (-> this .-setCustomValidity (.apply this (clj->js args))))
+
 (defn default-value
   "Property.
 
@@ -75,6 +84,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLOutputElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<output>` element.
 
@@ -83,18 +94,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLOutputElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<output>` element.
-
-  `var labelElements = output.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/labels`"
-  [this val]
-  (aset this "labels" val))
 
 (defn name
   "Property.

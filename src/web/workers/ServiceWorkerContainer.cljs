@@ -66,6 +66,8 @@
 (defn controller
   "Property.
 
+  [Read Only]
+
   The controller read-only property of the `web.workers.ServiceWorkerContainer`
   returns a `web.workers.ServiceWorker` object if its state is
   (the same object returned by `ServiceWorkerRegistration.active`).
@@ -78,23 +80,10 @@
   [this]
   (-> this (.-controller)))
 
-(defn set-controller!
-  "Property.
-
-  The controller read-only property of the `web.workers.ServiceWorkerContainer`
-  returns a `web.workers.ServiceWorker` object if its state is
-  (the same object returned by `ServiceWorkerRegistration.active`).
-  property returns null if the request is a force refresh (Shift
-  or if there is no active worker.
-
-  `var myController = navigator.serviceWorker.controller;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/controller`"
-  [this val]
-  (aset this "controller" val))
-
 (defn ready
   "Property.
+
+  [Read Only]
 
   The ready read-only property of the `web.workers.ServiceWorkerContainer`
   provides a way of delaying code execution until a service worker
@@ -109,24 +98,10 @@
   [this]
   (-> this (.-ready)))
 
-(defn set-ready!
-  "Property.
-
-  The ready read-only property of the `web.workers.ServiceWorkerContainer`
-  provides a way of delaying code execution until a service worker
-  active. It returns a `js.Promise` that will never reject, and
-  waits indefinitely until the `web.workers.ServiceWorkerRegistration`
-  with the current page has an `active` worker. Once that condition
-  met, it resolves with the `web.workers.ServiceWorkerRegistration`.
-
-  `navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) { ... });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready`"
-  [this val]
-  (aset this "ready" val))
-
 (defn oncontrollerchange
   "Property.
+
+  [Experimental]
 
   The oncontrollerchange property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever a controllerchange event occurs
@@ -142,6 +117,8 @@
 (defn set-oncontrollerchange!
   "Property.
 
+  [Experimental]
+
   The oncontrollerchange property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever a controllerchange event occurs
   when the document's associated `web.workers.ServiceWorkerRegistration`
@@ -156,6 +133,8 @@
 (defn onerror
   "Property.
 
+  [Experimental]
+
   The onerror property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever an error event occurs in the
   service workers.
@@ -168,6 +147,8 @@
 
 (defn set-onerror!
   "Property.
+
+  [Experimental]
 
   The onerror property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever an error event occurs in the
@@ -182,6 +163,8 @@
 (defn onmessage
   "Property.
 
+  [Experimental]
+
   The onmessage property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever a message event occurs — when
   messages are received to the `web.workers.ServiceWorkerContainer`
@@ -195,6 +178,8 @@
 
 (defn set-onmessage!
   "Property.
+
+  [Experimental]
 
   The onmessage property of the `web.workers.ServiceWorkerContainer`
   is an event handler fired whenever a message event occurs — when

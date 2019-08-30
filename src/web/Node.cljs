@@ -256,6 +256,8 @@
 (defn get-user-data
   "Method.
 
+  [Obsolute]
+
   The Node.getUserData() method returns any user `web.dom.DOMUserData`
   previously on the given node by `Node.setUserData()`.
 
@@ -276,6 +278,8 @@
 (defn is-supported
   "Method.
 
+  [Obsolute]
+
   The Node.isSupported()returns a `js.Boolean` flag containing
   result of a test whether the DOM implementation implements a
   feature and this feature is supported by the specific node.
@@ -288,6 +292,8 @@
 
 (defn set-user-data
   "Method.
+
+  [Obsolute]
 
   The Node.setUserData() method allows a user to attach (or remove)
   to an element, without needing to modify the DOM. Note that such
@@ -305,6 +311,8 @@
 (defn base-uri
   "Property.
 
+  [Read Only]
+
   The baseURI read-only property returns the absolute base URL
   a `web.Node`.
 
@@ -316,6 +324,9 @@
 
 (defn base-uri-object
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The Node.baseURIObject property returns the nsIURI representing
   node's (typically a document or an element) base URL. It's similar
@@ -330,6 +341,8 @@
 (defn child-nodes
   "Property.
 
+  [Read Only]
+
   The Node.childNodes read-only property returns a live `web.NodeList`
   child `nodes` of the given element where the first child node
   assigned index 0.
@@ -340,21 +353,10 @@
   [this]
   (-> this (.-childNodes)))
 
-(defn set-child-nodes!
-  "Property.
-
-  The Node.childNodes read-only property returns a live `web.NodeList`
-  child `nodes` of the given element where the first child node
-  assigned index 0.
-
-  `var nodeList = elementNodeReference.childNodes;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes`"
-  [this val]
-  (aset this "childNodes" val))
-
 (defn first-child
   "Property.
+
+  [Read Only]
 
   The Node.firstChild read-only property returns the node's first
   in the tree, or null if the node has no children.
@@ -365,20 +367,10 @@
   [this]
   (-> this (.-firstChild)))
 
-(defn set-first-child!
-  "Property.
-
-  The Node.firstChild read-only property returns the node's first
-  in the tree, or null if the node has no children.
-
-  `var childNode = node.firstChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild`"
-  [this val]
-  (aset this "firstChild" val))
-
 (defn is-connected
   "Property.
+
+  [Read Only]
 
   The isConnected read-only property of the `web.Node` interface
   a boolean indicating whether the node is connected (directly
@@ -392,23 +384,10 @@
   [this]
   (-> this (.-isConnected)))
 
-(defn set-is-connected!
-  "Property.
-
-  The isConnected read-only property of the `web.Node` interface
-  a boolean indicating whether the node is connected (directly
-  indirectly) to the context object, for example the `web.Document`
-  in the case of the normal DOM, or the `web.shadow-dom.ShadowRoot`
-  the case of a shadow DOM.
-
-  `var isItConnected = nodeObjectInstance.isConnected`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected`"
-  [this val]
-  (aset this "isConnected" val))
-
 (defn last-child
   "Property.
+
+  [Read Only]
 
   The Node.lastChild read-only property returns the last child
   the node. If its parent is an element, then the child is generally
@@ -421,22 +400,10 @@
   [this]
   (-> this (.-lastChild)))
 
-(defn set-last-child!
-  "Property.
-
-  The Node.lastChild read-only property returns the last child
-  the node. If its parent is an element, then the child is generally
-  element node, a text node, or a comment node. It returns null
-  there are no child elements.
-
-  `var childNode = node.lastChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild`"
-  [this val]
-  (aset this "lastChild" val))
-
 (defn next-sibling
   "Property.
+
+  [Read Only]
 
   The Node.nextSibling read-only property returns the node immediately
   the specified one in their parent's `childNodes`, or returns
@@ -448,21 +415,10 @@
   [this]
   (-> this (.-nextSibling)))
 
-(defn set-next-sibling!
-  "Property.
-
-  The Node.nextSibling read-only property returns the node immediately
-  the specified one in their parent's `childNodes`, or returns
-  if the specified node is the last child in the parent element.
-
-  `nextNode = node.nextSibling`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling`"
-  [this val]
-  (aset this "nextSibling" val))
-
 (defn node-name
   "Property.
+
+  [Read Only]
 
   The nodeName read-only property returns the name of the current
   as a string.
@@ -476,6 +432,8 @@
 (defn node-type
   "Property.
 
+  [Read Only]
+
   The read-only Node.nodeType property is an integer that identifies
   the node is. It distinguishes different kind of nodes from each
   such as `elements`, `text` and `comments`.
@@ -487,21 +445,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType`"
   [this]
   (-> this (.-nodeType)))
-
-(defn set-node-type!
-  "Property.
-
-  The read-only Node.nodeType property is an integer that identifies
-  the node is. It distinguishes different kind of nodes from each
-  such as `elements`, `text` and `comments`.
-
-  `var type = node.nodeType;
-
-  Returns an integer which specifies the type of the node. Possible values are listed in Node type constants.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType`"
-  [this val]
-  (aset this "nodeType" val))
 
 (defn node-value
   "Property.
@@ -532,6 +475,8 @@
 (defn owner-document
   "Property.
 
+  [Read Only]
+
   The ownerDocument read-only property of the `web.Node` interface
   the top-level document object of the node.
 
@@ -541,20 +486,10 @@
   [this]
   (-> this (.-ownerDocument)))
 
-(defn set-owner-document!
-  "Property.
-
-  The ownerDocument read-only property of the `web.Node` interface
-  the top-level document object of the node.
-
-  `var document = element.ownerDocument;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/ownerDocument`"
-  [this val]
-  (aset this "ownerDocument" val))
-
 (defn parent-node
   "Property.
+
+  [Read Only]
 
   The Node.parentNode read-only property returns the parent of
   specified node in the DOM tree.
@@ -567,22 +502,10 @@
   [this]
   (-> this (.-parentNode)))
 
-(defn set-parent-node!
-  "Property.
-
-  The Node.parentNode read-only property returns the parent of
-  specified node in the DOM tree.
-
-  `parentNode = node.parentNode
-
-  parentNode is the parent of the current node. The parent of an element is an Element node, a Document node, or a DocumentFragment node.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode`"
-  [this val]
-  (aset this "parentNode" val))
-
 (defn parent-element
   "Property.
+
+  [Read Only]
 
   The Node.parentElement read-only property returns the DOM node's
   `web.Element`, or null if the node either has no parent, or its
@@ -596,23 +519,10 @@
   [this]
   (-> this (.-parentElement)))
 
-(defn set-parent-element!
-  "Property.
-
-  The Node.parentElement read-only property returns the DOM node's
-  `web.Element`, or null if the node either has no parent, or its
-  isn't a DOM `web.Element`.
-
-  `parentElement = node.parentElement
-
-  parentElement is the parent element of the current node. This is always a DOM `web.Element` object, or null.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement`"
-  [this val]
-  (aset this "parentElement" val))
-
 (defn previous-sibling
   "Property.
+
+  [Read Only]
 
   The Node.previousSibling read-only property returns the node
   preceding the specified one in its parent's `childNodes` list,
@@ -623,19 +533,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling`"
   [this]
   (-> this (.-previousSibling)))
-
-(defn set-previous-sibling!
-  "Property.
-
-  The Node.previousSibling read-only property returns the node
-  preceding the specified one in its parent's `childNodes` list,
-  null if the specified node is the first in that list.
-
-  `previousNode = node.previousSibling;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling`"
-  [this val]
-  (aset this "previousSibling" val))
 
 (defn text-content
   "Property.
@@ -666,6 +563,9 @@
 (defn local-name
   "Property.
 
+  [Read Only]
+  [Obsolute]
+
   The Node.localName read-only property returns the local part
   the qualified name of this node.
 
@@ -678,23 +578,11 @@
   [this]
   (-> this (.-localName)))
 
-(defn set-local-name!
-  "Property.
-
-  The Node.localName read-only property returns the local part
-  the qualified name of this node.
-
-  `name = element.localName
-
-
-  name is the local name as a string (see Notes below for details)`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/localName`"
-  [this val]
-  (aset this "localName" val))
-
 (defn namespace-uri
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The Node.namespaceURI read-only property returns the namespace
   of the node, or null if the node is not in a namespace. When
@@ -706,21 +594,12 @@
   [this]
   (-> this (.-namespaceURI)))
 
-(defn set-namespace-uri!
-  "Property.
-
-  The Node.namespaceURI read-only property returns the namespace
-  of the node, or null if the node is not in a namespace. When
-  node is a document, it returns the XML namespace for the current
-
-  `namespace = node.namespaceURI`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI`"
-  [this val]
-  (aset this "namespaceURI" val))
-
 (defn node-principal
   "Property.
+
+  [Read Only]
+  [Non Standard]
+  [Obsolute]
 
   The Node.nodePrincipal read-only property returns the nsIPrincipal
   representing current security context of the node.
@@ -731,20 +610,11 @@
   [this]
   (-> this (.-nodePrincipal)))
 
-(defn set-node-principal!
-  "Property.
-
-  The Node.nodePrincipal read-only property returns the nsIPrincipal
-  representing current security context of the node.
-
-  `principalObj = Node.nodePrincipal`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal`"
-  [this val]
-  (aset this "nodePrincipal" val))
-
 (defn prefix
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The Node.prefix read-only property returns the namespace prefix
   the specified node, or null if no prefix is specified.
@@ -755,20 +625,11 @@
   [this]
   (-> this (.-prefix)))
 
-(defn set-prefix!
-  "Property.
-
-  The Node.prefix read-only property returns the namespace prefix
-  the specified node, or null if no prefix is specified.
-
-  `string = node.prefix`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix`"
-  [this val]
-  (aset this "prefix" val))
-
 (defn root-node
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The Node.rootNode read-only property returns a `web.Node` object
   the topmost node in the tree, or the current node if it's the
@@ -780,20 +641,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/rootNode`"
   [this]
   (-> this (.-rootNode)))
-
-(defn set-root-node!
-  "Property.
-
-  The Node.rootNode read-only property returns a `web.Node` object
-  the topmost node in the tree, or the current node if it's the
-  node in the tree. This is found by walking backward along `Node.parentNode`
-  the top is reached.
-
-  `rootNode = node.rootNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/rootNode`"
-  [this val]
-  (aset this "rootNode" val))
 
 (defn outer-text
   "Property.

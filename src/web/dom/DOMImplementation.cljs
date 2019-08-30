@@ -45,6 +45,8 @@
 (defn has-feature
   "Method.
 
+  [Deprecated]
+
   The DOMImplementation.hasFeature() method returns a `js.Boolean`
   indicating if a given feature is supported. It is deprecated
   modern browsers return true in all cases.

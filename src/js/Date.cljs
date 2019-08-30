@@ -283,6 +283,8 @@
 (defn get-year
   "Method.
 
+  [Deprecated]
+
   The getYear() method returns the year in the specified date according
   local time. Because getYear() does not return full years (\\\"year
   problem\\\"), it is no longer used and has been replaced by the
@@ -480,6 +482,8 @@
 (defn set-year
   "Method.
 
+  [Deprecated]
+
   The setYear() method sets the year for a specified date according
   local time. Because setYear() does not set full years (\\\"year
   problem\\\"), it is no longer used and has been replaced by the
@@ -505,6 +509,8 @@
 
 (defn to-gmt-string
   "Method.
+
+  [Deprecated]
 
   The toGMTString() method converts a date to a string, using Internet
   Mean Time (GMT) conventions. The exact format of the value returned
@@ -562,6 +568,8 @@
 (defn to-locale-format
   "Method.
 
+  [Non Standard]
+
   The non-standard toLocaleFormat() method converts a date to a
   using the specified formatting. `Intl.DateTimeFormat` is an alternative
   format dates in a standards-compliant way. See also the newer
@@ -608,6 +616,8 @@
 
 (defn to-source
   "Method.
+
+  [Non Standard]
 
   The toSource() method returns a string representing the source
   of the object.

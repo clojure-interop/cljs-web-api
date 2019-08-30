@@ -5,17 +5,6 @@
   connection once it's no longer needed."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The RTCPeerConnection() constructor returns a newly-created `web.audio.RTCPeerConnection`, which represents a connection between the local device and a remote peer.
-
-  configuration Optional
-  An RTCConfiguration dictionary providing options to configure the new connection.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection`"
-  js/RTCPeerConnection)
-
 (defn add-ice-candidate
   "Method.
 
@@ -34,6 +23,8 @@
 
 (defn add-stream
   "Method.
+
+  [Deprecated]
 
   The obsolete `web.audio.RTCPeerConnection` method addStream()
   a `web.streams.MediaStream` as a local source of audio or video.
@@ -60,6 +51,8 @@
 
 (defn close
   "Method.
+
+  [Experimental]
 
   The RTCPeerConnection.close() method closes the current peer
 
@@ -141,6 +134,8 @@
 (defn get-configuration
   "Method.
 
+  [Experimental]
+
   The RTCPeerConnection.getConfiguration() method returns an `web.rtc.RTCConfiguration`
   which indicates the current configuration of the `web.audio.RTCPeerConnection`
   which the method is called.
@@ -153,6 +148,8 @@
 
 (defn get-identity-assertion
   "Method.
+
+  [Experimental]
 
   The RTCPeerConnection.getIdentityAssertion() method initiates
   gathering of an identity assertion. This has an effect only if
@@ -172,6 +169,9 @@
 (defn get-local-streams
   "Method.
 
+  [Deprecated]
+  [Experimental]
+
   The RTCPeerConnection.getLocalStreams() method returns an array
   MediaStream associated with the local end of the connection.
   array may be empty.
@@ -187,6 +187,8 @@
 (defn get-receivers
   "Method.
 
+  [Experimental]
+
   The RTCPeerConnection.getReceivers() method returns an array
   `web.rtc.RTCRtpReceiver` objects, each of which represents one
   receiver. Each RTP receiver manages the reception and decoding
@@ -200,6 +202,9 @@
 
 (defn get-remote-streams
   "Method.
+
+  [Deprecated]
+  [Experimental]
 
   The RTCPeerConnection.getRemoteStreams() method returns an array
   MediaStream associated with the remote end of the connection.
@@ -242,6 +247,9 @@
 (defn get-stream-by-id
   "Method.
 
+  [Experimental]
+  [Obsolute]
+
   The RTCPeerConnection.getStreamById() method returns the MediaStream
   the given id that is associated with local or remote end of the
   If no stream matches, it returns null.
@@ -267,6 +275,9 @@
 
 (defn remove-stream
   "Method.
+
+  [Deprecated]
+  [Experimental]
 
   The RTCPeerConnection.removeStream() method removes a `web.streams.MediaStream`
   a local source of audio or video. If the negotiation already
@@ -310,6 +321,8 @@
 (defn set-configuration
   "Method.
 
+  [Experimental]
+
   The RTCPeerConnection.setConfiguration() method sets the current
   of the `web.audio.RTCPeerConnection` based on the values included
   the specified `web.rtc.RTCConfiguration` object. This lets you
@@ -324,6 +337,8 @@
 
 (defn set-identity-provider
   "Method.
+
+  [Experimental]
 
   The RTCPeerConnection.setIdentityProvider() method sets the Identity
   (IdP) to the triplet given in parameter: its name, the protocol
@@ -340,6 +355,8 @@
 
 (defn set-local-description
   "Method.
+
+  [Experimental]
 
   The RTCPeerConnection.setLocalDescription() method changes the
   description associated with the connection. This description
@@ -371,6 +388,8 @@
 (defn can-trickle-ice-candidates
   "Property.
 
+  [Read Only]
+
   The read-only `web.audio.RTCPeerConnection` property canTrickleIceCandidates
   a `js.Boolean` which indicates whether or not the remote peer
   accept trickled ICE candidates.
@@ -381,21 +400,10 @@
   [this]
   (-> this (.-canTrickleIceCandidates)))
 
-(defn set-can-trickle-ice-candidates!
-  "Property.
-
-  The read-only `web.audio.RTCPeerConnection` property canTrickleIceCandidates
-  a `js.Boolean` which indicates whether or not the remote peer
-  accept trickled ICE candidates.
-
-  `var canTrickle = RTCPeerConnection.canTrickleIceCandidates;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/canTrickleIceCandidates`"
-  [this val]
-  (aset this "canTrickleIceCandidates" val))
-
 (defn connection-state
   "Property.
+
+  [Read Only]
 
   The read-only connectionState property of the `web.audio.RTCPeerConnection`
   indicates the current state of the peer connection by returning
@@ -407,21 +415,10 @@
   [this]
   (-> this (.-connectionState)))
 
-(defn set-connection-state!
-  "Property.
-
-  The read-only connectionState property of the `web.audio.RTCPeerConnection`
-  indicates the current state of the peer connection by returning
-  of the string values specified by the enum RTCPeerConnectionState.
-
-  `var connectionState = RTCPeerConnection.connectionState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/connectionState`"
-  [this val]
-  (aset this "connectionState" val))
-
 (defn current-local-description
   "Property.
+
+  [Read Only]
 
   The read-only property RTCPeerConnection.currentLocalDescription
   an `web.audio.RTCSessionDescription` object describing the local
@@ -440,6 +437,8 @@
 (defn current-remote-description
   "Property.
 
+  [Read Only]
+
   The read-only property RTCPeerConnection.currentRemoteDescription
   an `web.audio.RTCSessionDescription` object describing the remote
   of the connection as it was most recently successfully negotiated
@@ -457,6 +456,9 @@
 (defn default-ice-servers
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCPeerConnection.defaultIceServers returns
   array of objects based on the `web.rtc.RTCIceServer` dictionary,
   indicates what, if any, ICE servers the browser will use by default
@@ -470,24 +472,11 @@
   [this]
   (-> this (.-defaultIceServers)))
 
-(defn set-default-ice-servers!
-  "Property.
-
-  The read-only property RTCPeerConnection.defaultIceServers returns
-  array of objects based on the `web.rtc.RTCIceServer` dictionary,
-  indicates what, if any, ICE servers the browser will use by default
-  none are provided to the `web.audio.RTCPeerConnection` in its
-  However, browsers are not required to provide any default ICE
-  at all.
-
-  `var defaultIceServers = RTCPeerConnection.defaultIceServers;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/defaultIceServers`"
-  [this val]
-  (aset this "defaultIceServers" val))
-
 (defn ice-connection-state
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only property RTCPeerConnection.iceConnectionState returns
   enum of type RTCIceConnectionState which state of the ICE agent
@@ -502,6 +491,9 @@
 (defn ice-gathering-state
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCPeerConnection.iceGatheringState returns
   enum of type RTCIceGatheringState that describes connection's
   gathering state. This lets you detect, for example, when collection
@@ -515,6 +507,9 @@
 
 (defn local-description
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only property RTCPeerConnection.localDescription returns
   `web.audio.RTCSessionDescription` describing the session for
@@ -532,6 +527,8 @@
 (defn onaddstream
   "Property.
 
+  [Deprecated]
+
   The RTCPeerConnection.onaddstream event handler is a property
   the code to execute when the addstream event, of type `web.rtc.MediaStreamEvent`,
   received by this `web.audio.RTCPeerConnection`. Such an event
@@ -547,6 +544,8 @@
 
 (defn set-onaddstream!
   "Property.
+
+  [Deprecated]
 
   The RTCPeerConnection.onaddstream event handler is a property
   the code to execute when the addstream event, of type `web.rtc.MediaStreamEvent`,
@@ -592,6 +591,8 @@
 (defn ondatachannel
   "Property.
 
+  [Experimental]
+
   The RTCPeerConnection.ondatachannel property is an `EventHandler`
   specifies a function which is called when the datachannel event
   on an `web.audio.RTCPeerConnection`. This event, of type `web.rtc.RTCDataChannelEvent`,
@@ -606,6 +607,8 @@
 
 (defn set-ondatachannel!
   "Property.
+
+  [Experimental]
 
   The RTCPeerConnection.ondatachannel property is an `EventHandler`
   specifies a function which is called when the datachannel event
@@ -652,6 +655,8 @@
 (defn oniceconnectionstatechange
   "Property.
 
+  [Experimental]
+
   The RTCPeerConnection.oniceconnectionstatechange property is
   event handler which specifies a function to be called when the
   event is fired on an `web.audio.RTCPeerConnection` instance.
@@ -666,6 +671,8 @@
 
 (defn set-oniceconnectionstatechange!
   "Property.
+
+  [Experimental]
 
   The RTCPeerConnection.oniceconnectionstatechange property is
   event handler which specifies a function to be called when the
@@ -682,6 +689,8 @@
 (defn onicegatheringstatechange
   "Property.
 
+  [Experimental]
+
   The RTCPeerConnection.onicegatheringstatechange property is an
   which specifies a function to be called when the icegatheringstatechange
   is sent to an `web.audio.RTCPeerConnection` instance. This happens
@@ -696,6 +705,8 @@
 
 (defn set-onicegatheringstatechange!
   "Property.
+
+  [Experimental]
 
   The RTCPeerConnection.onicegatheringstatechange property is an
   which specifies a function to be called when the icegatheringstatechange
@@ -712,6 +723,8 @@
 (defn onidentityresult
   "Property.
 
+  [Experimental]
+
   The RTCPeerConnection.onidentityresult event handler is a property
   the code to execute when the identityresult event, of type `web.rtc.RTCIdentityEvent`,
   received by this `web.audio.RTCPeerConnection`. Such an event
@@ -726,6 +739,8 @@
 
 (defn set-onidentityresult!
   "Property.
+
+  [Experimental]
 
   The RTCPeerConnection.onidentityresult event handler is a property
   the code to execute when the identityresult event, of type `web.rtc.RTCIdentityEvent`,
@@ -742,6 +757,8 @@
 (defn onidpassertionerror
   "Property.
 
+  [Obsolute]
+
   The RTCPeerConnection.onidpassertionerror event handler is a
   containing the code to execute whent the idpassertionerror event,
   type `web.rtc.RTCIdentityErrorEvent`, is received by this `web.audio.RTCPeerConnection`.
@@ -756,6 +773,8 @@
 
 (defn set-onidpassertionerror!
   "Property.
+
+  [Obsolute]
 
   The RTCPeerConnection.onidpassertionerror event handler is a
   containing the code to execute whent the idpassertionerror event,
@@ -772,6 +791,8 @@
 (defn onidpvalidationerror
   "Property.
 
+  [Obsolute]
+
   The RTCPeerConnection.onidpvalidationerror event handler is a
   containing the code to execute whent the idpvalidationerror event,
   type `web.rtc.RTCIdentityErrorEvent`, is received by this `web.audio.RTCPeerConnection`.
@@ -786,6 +807,8 @@
 
 (defn set-onidpvalidationerror!
   "Property.
+
+  [Obsolute]
 
   The RTCPeerConnection.onidpvalidationerror event handler is a
   containing the code to execute whent the idpvalidationerror event,
@@ -834,6 +857,8 @@
 (defn onpeeridentity
   "Property.
 
+  [Obsolute]
+
   The RTCPeerConnection.onpeeridentity event handler is a property
   the code to execute whent the peeridentity event, of type `web.event.Event`,
   received by this `web.audio.RTCPeerConnection`. Such an event
@@ -848,6 +873,8 @@
 
 (defn set-onpeeridentity!
   "Property.
+
+  [Obsolute]
 
   The RTCPeerConnection.onpeeridentity event handler is a property
   the code to execute whent the peeridentity event, of type `web.event.Event`,
@@ -864,6 +891,9 @@
 (defn onremovestream
   "Property.
 
+  [Deprecated]
+  [Experimental]
+
   The RTCPeerConnection.onremovestream event handler is a property
   the code to execute when the removestream event, of type `web.rtc.MediaStreamEvent`,
   received by this `web.audio.RTCPeerConnection`. Such an event
@@ -877,6 +907,9 @@
 
 (defn set-onremovestream!
   "Property.
+
+  [Deprecated]
+  [Experimental]
 
   The RTCPeerConnection.onremovestream event handler is a property
   the code to execute when the removestream event, of type `web.rtc.MediaStreamEvent`,
@@ -944,6 +977,8 @@
 (defn peer-identity
   "Property.
 
+  [Read Only]
+
   The read-only `web.audio.RTCPeerConnection` property peerIdentity
   a JavaScript `js.Promise` that resolves to an `web.rtc.RTCIdentityAssertion`
   contains a `web.dom.DOMString` identifying the remote peer.
@@ -956,6 +991,8 @@
 
 (defn pending-local-description
   "Property.
+
+  [Read Only]
 
   The read-only property RTCPeerConnection.pendingLocalDescription
   an `web.audio.RTCSessionDescription` object describing a pending
@@ -973,6 +1010,8 @@
 
 (defn pending-remote-description
   "Property.
+
+  [Read Only]
 
   The read-only property RTCPeerConnection.pendingRemoteDescription
   an `web.audio.RTCSessionDescription` object describing a pending
@@ -992,6 +1031,9 @@
 (defn remote-description
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCPeerConnection.remoteDescription returns
   `web.audio.RTCSessionDescription` describing the session (which
   configuration and media information) for the remote end of the
@@ -1008,6 +1050,9 @@
 (defn sctp
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only sctp property on the `web.audio.RTCPeerConnection`
   returns an `web.rtc.RTCSctpTransport` describing the SCTP transport
   which SCTP data is being sent and received. If SCTP hasn't been
@@ -1019,22 +1064,10 @@
   [this]
   (-> this (.-sctp)))
 
-(defn set-sctp!
-  "Property.
-
-  The read-only sctp property on the `web.audio.RTCPeerConnection`
-  returns an `web.rtc.RTCSctpTransport` describing the SCTP transport
-  which SCTP data is being sent and received. If SCTP hasn't been
-  this value is null.
-
-  `var sctp = RTCPeerConnection.sctp;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/sctp`"
-  [this val]
-  (aset this "sctp" val))
-
 (defn signaling-state
   "Property.
+
+  [Read Only]
 
   The read-only signalingState property on the `web.audio.RTCPeerConnection`
   returns one of the string values specified by the RTCSignalingState

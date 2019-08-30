@@ -195,6 +195,8 @@
 (defn rows
   "Property.
 
+  [Read Only]
+
   The read-only `web.dom.HTMLTableElement` property rows returns
   live `web.dom.HTMLCollection` of all the rows in the table, including
   rows contained within any `<thead>`, `<tfoot>`, and `<tbody>`
@@ -207,6 +209,8 @@
 
 (defn t-bodies
   "Property.
+
+  [Read Only]
 
   The HTMLTableElement.tBodies read-only property returns a live
   of the bodies in a `<table>`.
@@ -238,6 +242,8 @@
 (defn align
   "Property.
 
+  [Deprecated]
+
   The HTMLTableElement.align property represents the alignment
   the table.
 
@@ -250,6 +256,8 @@
 
 (defn set-align!
   "Property.
+
+  [Deprecated]
 
   The HTMLTableElement.align property represents the alignment
   the table.
@@ -264,6 +272,8 @@
 (defn bg-color
   "Property.
 
+  [Deprecated]
+
   The HTMLTableElement.bgcolor property represents the background
   of the table.
 
@@ -277,6 +287,8 @@
 (defn set-bg-color!
   "Property.
 
+  [Deprecated]
+
   The HTMLTableElement.bgcolor property represents the background
   of the table.
 
@@ -289,6 +301,8 @@
 
 (defn border
   "Property.
+
+  [Deprecated]
 
   The HTMLTableElement.border property represents the border width
   the `<table>` element.
@@ -305,6 +319,8 @@
 
 (defn set-border!
   "Property.
+
+  [Deprecated]
 
   The HTMLTableElement.border property represents the border width
   the `<table>` element.
@@ -354,6 +370,8 @@
 (defn cell-spacing
   "Property.
 
+  [Obsolute]
+
   While you should instead use the CSS `border-spacing` property,
   obsolete `web.dom.HTMLTableElement` interface's cellSpacing property
   the spacing around the individual `<th>` and `<td>` elements
@@ -368,6 +386,8 @@
 
 (defn set-cell-spacing!
   "Property.
+
+  [Obsolute]
 
   While you should instead use the CSS `border-spacing` property,
   obsolete `web.dom.HTMLTableElement` interface's cellSpacing property

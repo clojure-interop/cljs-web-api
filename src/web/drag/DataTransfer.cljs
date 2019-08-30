@@ -5,16 +5,6 @@
   drop, see HTML Drag and Drop API."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DataTransfer constructor creates a new `web.drag.DataTransfer` object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/DataTransfer`"
-  js/DataTransfer)
-
 (defn clear-data
   "Method.
 
@@ -78,6 +68,8 @@
 (defn add-element
   "Method.
 
+  [Non Standard]
+
   The DataTransfer.addElement() method sets the drag source to
   given element. This element will be the element to which drag
   dragend events are fired, and not the defaut target (the node
@@ -92,6 +84,8 @@
 (defn moz-clear-data-at
   "Method.
 
+  [Non Standard]
+
   The DataTransfer.mozClearDataAt() method removes the data associated
   the given format for an item at the specified index. The index
   be in the range from zero to the number of items minus one.
@@ -104,6 +98,8 @@
 
 (defn moz-get-data-at
   "Method.
+
+  [Non Standard]
 
   The DataTransfer.mozGetDataAt() method is used to retrieve an
   in the drag event's `data transfer` object, based on a given
@@ -120,6 +116,8 @@
 (defn moz-set-data-at
   "Method.
 
+  [Non Standard]
+
   The DataTransfer.mozSetDataAt() method is used to add data to
   specific index in the drag event's `data transfer` object.
 
@@ -131,6 +129,8 @@
 
 (defn moz-types-at
   "Method.
+
+  [Non Standard]
 
   The DataTransfer.mozTypesAt() method returns a list of the format
   that are stored for an item at the specified index. If the index
@@ -234,6 +234,8 @@
 (defn items
   "Property.
 
+  [Read Only]
+
   The read-only `web.drag.DataTransfer` property items property
   a `list` of the `data transfer items` in a drag operation. The
   includes one item for each item in the operation and if the operation
@@ -245,22 +247,10 @@
   [this]
   (-> this (.-items)))
 
-(defn set-items!
-  "Property.
-
-  The read-only `web.drag.DataTransfer` property items property
-  a `list` of the `data transfer items` in a drag operation. The
-  includes one item for each item in the operation and if the operation
-  no items, the list is empty.
-
-  `itemList = dataTransfer.items;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items`"
-  [this val]
-  (aset this "items" val))
-
 (defn types
   "Property.
+
+  [Read Only]
 
   The DataTransfer.types read-only property returns an array of
   drag data formats (as `strings`) that were set in the dragstart
@@ -273,22 +263,10 @@
   [this]
   (-> this (.-types)))
 
-(defn set-types!
-  "Property.
-
-  The DataTransfer.types read-only property returns an array of
-  drag data formats (as `strings`) that were set in the dragstart
-  The order of the formats is the same order as the data included
-  the drag operation.
-
-  `dataTransfer.types;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types`"
-  [this val]
-  (aset this "types" val))
-
 (defn moz-cursor
   "Property.
+
+  [Non Standard]
 
   The DataTransfer.mozCursor property returns or sets the drag
   state. This is primarily used to control the cursor during tab
@@ -302,6 +280,8 @@
 (defn set-moz-cursor!
   "Property.
 
+  [Non Standard]
+
   The DataTransfer.mozCursor property returns or sets the drag
   state. This is primarily used to control the cursor during tab
 
@@ -314,6 +294,9 @@
 (defn moz-item-count
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The DataTransfer.mozItemCount property returns the number of
   being dragged. This can be used, for example, to get the number
   files being dragged.
@@ -324,21 +307,11 @@
   [this]
   (-> this (.-mozItemCount)))
 
-(defn set-moz-item-count!
-  "Property.
-
-  The DataTransfer.mozItemCount property returns the number of
-  being dragged. This can be used, for example, to get the number
-  files being dragged.
-
-  `dataTransfer.mozItemCount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozItemCount`"
-  [this val]
-  (aset this "mozItemCount" val))
-
 (defn moz-source-node
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The DataTransfer.mozSourceNode property is used to determine
   `web.Node` over which the mouse cursor was located when the the
@@ -352,23 +325,11 @@
   [this]
   (-> this (.-mozSourceNode)))
 
-(defn set-moz-source-node!
-  "Property.
-
-  The DataTransfer.mozSourceNode property is used to determine
-  `web.Node` over which the mouse cursor was located when the the
-  operation was initiated (for example, when a `<button>` was clicked).
-  external drags or if the calling function cannot reach the node,
-  is returned.
-
-  `dataTransfer.mozSourceNode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozSourceNode`"
-  [this val]
-  (aset this "mozSourceNode" val))
-
 (defn moz-user-cancelled
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   The DataTransfer.mozUserCancelled property is used in the dragend
   handler to determine if the user canceled the drag or not. If
@@ -380,18 +341,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozUserCancelled`"
   [this]
   (-> this (.-mozUserCancelled)))
-
-(defn set-moz-user-cancelled!
-  "Property.
-
-  The DataTransfer.mozUserCancelled property is used in the dragend
-  handler to determine if the user canceled the drag or not. If
-  user canceled the event, the property returns true and returns
-  otherwise. This property only applies to the dragend event.
-
-  `dataTransfer.mozUserCancelled;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/mozUserCancelled`"
-  [this val]
-  (aset this "mozUserCancelled" val))
 

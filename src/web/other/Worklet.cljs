@@ -6,6 +6,8 @@
 (defn add-module
   "Method.
 
+  [Experimental]
+
   The addModule() method of the `web.other.Worklet` interface loads
   module in the given JavaScript file and adds it to the current
 

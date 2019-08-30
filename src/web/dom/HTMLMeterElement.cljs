@@ -96,6 +96,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLMeterElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<meter>` element.
 
@@ -104,16 +106,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLMeterElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<meter>` element.
-
-  `var labelElements = meter.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/labels`"
-  [this val]
-  (aset this "labels" val))
 

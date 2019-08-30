@@ -8,6 +8,8 @@
 (defn get-computed-timing
   "Method.
 
+  [Experimental]
+
   The getComputedTiming() method of the `web.animation.AnimationEffect`
   returns the calculated timing properties for this animation effect.
 
@@ -19,6 +21,8 @@
 
 (defn get-timing
   "Method.
+
+  [Experimental]
 
   The AnimationEffect.getTiming() method of the `web.animation.AnimationEffect`
   returns an `web.animation.EffectTiming` object containing the
@@ -32,6 +36,8 @@
 
 (defn update-timing
   "Method.
+
+  [Experimental]
 
   The updateTiming() method of the `web.animation.AnimationEffect`
   updates the specified timing properties for an animation effect.

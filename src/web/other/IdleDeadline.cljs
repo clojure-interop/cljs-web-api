@@ -6,6 +6,8 @@
 (defn time-remaining
   "Method.
 
+  [Experimental]
+
   The timeRemaining() method on the `web.other.IdleDeadline` interface
   the estimated number of milliseconds remaining in the current
   period. The callback can call this method at any time to determine
@@ -24,6 +26,8 @@
 (defn did-timeout
   "Property.
 
+  [Read Only]
+
   The read-only didTimeout property on the `web.other.IdleDeadline`
   is a Boolean value which indicates whether or not the idle callback
   being invoked because the timeout interval specified when `Window.requestIdleCallback()`
@@ -34,18 +38,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/didTimeout`"
   [this]
   (-> this (.-didTimeout)))
-
-(defn set-did-timeout!
-  "Property.
-
-  The read-only didTimeout property on the `web.other.IdleDeadline`
-  is a Boolean value which indicates whether or not the idle callback
-  being invoked because the timeout interval specified when `Window.requestIdleCallback()`
-  called has expired.
-
-  `var timedOut = IdleDeadline.didTimeout;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/didTimeout`"
-  [this val]
-  (aset this "didTimeout" val))
 

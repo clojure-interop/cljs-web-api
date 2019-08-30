@@ -94,6 +94,8 @@
 (defn shadow-root
   "Property.
 
+  [Read Only]
+
   The Element.shadowRoot read-only property represents the shadow
   hosted by the element.
 
@@ -102,18 +104,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot`"
   [this]
   (-> this (.-shadowRoot)))
-
-(defn set-shadow-root!
-  "Property.
-
-  The Element.shadowRoot read-only property represents the shadow
-  hosted by the element.
-
-  `var shadowroot = element.shadowRoot;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot`"
-  [this val]
-  (aset this "shadowRoot" val))
 
 (defn slot
   "Property.
@@ -143,6 +133,8 @@
 
 (defn composed
   "Property.
+
+  [Read Only]
 
   The read-only composed property of the `web.event.Event` interface
   a `js.Boolean` which indicates whether or not the event will
@@ -185,6 +177,8 @@
 (defn is-connected
   "Property.
 
+  [Read Only]
+
   The isConnected read-only property of the `web.Node` interface
   a boolean indicating whether the node is connected (directly
   indirectly) to the context object, for example the `web.Document`
@@ -197,23 +191,10 @@
   [this]
   (-> this (.-isConnected)))
 
-(defn set-is-connected!
-  "Property.
-
-  The isConnected read-only property of the `web.Node` interface
-  a boolean indicating whether the node is connected (directly
-  indirectly) to the context object, for example the `web.Document`
-  in the case of the normal DOM, or the `web.shadow-dom.ShadowRoot`
-  the case of a shadow DOM.
-
-  `var isItConnected = nodeObjectInstance.isConnected`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected`"
-  [this val]
-  (aset this "isConnected" val))
-
 (defn custom-elements
   "Property.
+
+  [Read Only]
 
   The customElements read-only property of the `web.Window` interface
   a reference to the `web.web-components.CustomElementRegistry`
@@ -225,18 +206,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
   [this]
   (-> this (.-customElements)))
-
-(defn set-custom-elements!
-  "Property.
-
-  The customElements read-only property of the `web.Window` interface
-  a reference to the `web.web-components.CustomElementRegistry`
-  which can be used to register new custom elements and get information
-  previously registered custom elements.
-
-  `let customElementRegistry = window.customElements;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements`"
-  [this val]
-  (aset this "customElements" val))
 

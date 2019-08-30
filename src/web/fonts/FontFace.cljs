@@ -5,36 +5,11 @@
   font face is loaded and its current status."
   (:refer-clojure :exclude [load]))
 
-(def constructor
-  "Constructor.
-
-  The FontFace() constructor creates a new `web.fonts.FontFace` object.
-
-  family
-  Specifies a name that will be used as the font face value for font properties. Takes the same type of values as the `font-family` descriptor of `@font-face` .
-  source
-  The font source. This can be either:
-
-  A URL
-  Binary font data
-
-
-  descriptors Optional
-  A set of optional descriptors passed as an object. It can have the following keys:
-
-  family: Family
-  style: Style
-  weight: Weight
-  stretch: Stretch
-  unicodeRange: Unicode range
-  variant: variant
-  featureSettings: Feature settings
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/FontFace`"
-  js/FontFace)
-
 (defn load
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The load() method of the `web.fonts.FontFace` interface loads
   font based on current object's constructor-passed requirements,
@@ -50,6 +25,8 @@
 (defn display
   "Property.
 
+  [Experimental]
+
   The display property of the `web.fonts.FontFace` interface determines
   a font face is displayed based on whether and when it is downloaded
   ready to use. This property is equivalent to the CSS font-display
@@ -63,6 +40,8 @@
 
 (defn set-display!
   "Property.
+
+  [Experimental]
 
   The display property of the `web.fonts.FontFace` interface determines
   a font face is displayed based on whether and when it is downloaded
@@ -78,6 +57,9 @@
 (defn family
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The FontFace.family property allows the author to get or set
   font family of a `web.fonts.FontFace` object. This is equivalent
   the `font-family` descriptor of `@font-face`.
@@ -91,6 +73,9 @@
 
 (defn set-family!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The FontFace.family property allows the author to get or set
   font family of a `web.fonts.FontFace` object. This is equivalent
@@ -106,6 +91,9 @@
 (defn feature-settings
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The featureSettings property of the `web.fonts.FontFace` interface
   or sets infrequently used font features that are not available
   a font's variant properties. It is equivalent to the `font-feature-settings`
@@ -119,6 +107,9 @@
 
 (defn set-feature-settings!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The featureSettings property of the `web.fonts.FontFace` interface
   or sets infrequently used font features that are not available
@@ -134,6 +125,10 @@
 (defn loaded
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The loaded read-only property of the `web.fonts.FontFace` interface
   a `js.Promise` that resolves with the current FontFace object
   the font specified in the object's constructor is done loading
@@ -145,22 +140,12 @@
   [this]
   (-> this (.-loaded)))
 
-(defn set-loaded!
-  "Property.
-
-  The loaded read-only property of the `web.fonts.FontFace` interface
-  a `js.Promise` that resolves with the current FontFace object
-  the font specified in the object's constructor is done loading
-  rejects with a SyntaxError.
-
-  `var aPromise = FontFace.loaded;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/loaded`"
-  [this val]
-  (aset this "loaded" val))
-
 (defn status
   "Property.
+
+  [Read Only]
+  [Draft]
+  [Experimental]
 
   The status read-only property of the `web.fonts.FontFace` interface
   an enumerated value indicating the status of the font, one of
@@ -172,21 +157,11 @@
   [this]
   (-> this (.-status)))
 
-(defn set-status!
-  "Property.
-
-  The status read-only property of the `web.fonts.FontFace` interface
-  an enumerated value indicating the status of the font, one of
-  \\\"loading\\\", \\\"loaded\\\", or \\\"error\\\".
-
-  `var status = FontFace.status;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFace/status`"
-  [this val]
-  (aset this "status" val))
-
 (defn stretch
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The stretch property of the `web.fonts.FontFace` interface retrieves
   sets how the font stretches. It is equivalent to the `font-stretch`
@@ -201,6 +176,9 @@
 (defn set-stretch!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The stretch property of the `web.fonts.FontFace` interface retrieves
   sets how the font stretches. It is equivalent to the `font-stretch`
 
@@ -213,6 +191,9 @@
 
 (defn style
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The style property of the `web.fonts.FontFace` interface retrieves
   sets the font's style. It is equivalent to the `font-style` descriptor.
@@ -227,6 +208,9 @@
 (defn set-style!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The style property of the `web.fonts.FontFace` interface retrieves
   sets the font's style. It is equivalent to the `font-style` descriptor.
 
@@ -239,6 +223,9 @@
 
 (defn unicode-range
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The unicodeRange property of the `web.fonts.FontFace` interface
   or sets the range of unicode codepoints encompassing the font.
@@ -254,6 +241,9 @@
 (defn set-unicode-range!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The unicodeRange property of the `web.fonts.FontFace` interface
   or sets the range of unicode codepoints encompassing the font.
   is equivalent to the `unicode-range` descriptor.
@@ -268,6 +258,9 @@
 (defn variant
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The variant property of the `web.fonts.FontFace` interface programatically
   or sets font variant values. It is equivalent to the `font-variant`
 
@@ -280,6 +273,9 @@
 
 (defn set-variant!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The variant property of the `web.fonts.FontFace` interface programatically
   or sets font variant values. It is equivalent to the `font-variant`
@@ -294,6 +290,9 @@
 (defn weight
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The weight property of the `web.fonts.FontFace` interface retrieves
   sets the weight of the font. It is equivalent to the `font-weight`
 
@@ -306,6 +305,9 @@
 
 (defn set-weight!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The weight property of the `web.fonts.FontFace` interface retrieves
   sets the weight of the font. It is equivalent to the `font-weight`

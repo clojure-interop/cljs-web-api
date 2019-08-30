@@ -63,6 +63,8 @@
 (defn name
   "Property.
 
+  [Read Only]
+
   A `web.dom.DOMString` containing the name of the connected database.
 
   `var dbName = IDBDatabase.name;`
@@ -71,19 +73,10 @@
   [this]
   (-> this (.-name)))
 
-(defn set-name!
-  "Property.
-
-  A `web.dom.DOMString` containing the name of the connected database.
-
-  `var dbName = IDBDatabase.name;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/name`"
-  [this val]
-  (aset this "name" val))
-
 (defn version
   "Property.
+
+  [Read Only]
 
   An integer containing the version of the connected database.
 
@@ -93,19 +86,10 @@
   [this]
   (-> this (.-version)))
 
-(defn set-version!
-  "Property.
-
-  An integer containing the version of the connected database.
-
-  `var myInteger = IDBDatabase.version;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version`"
-  [this val]
-  (aset this "version" val))
-
 (defn object-store-names
   "Property.
+
+  [Read Only]
 
   A `web.dom.DOMStringList` containing a list of the names of the
   stores currently in the connected database.
@@ -115,18 +99,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/objectStoreNames`"
   [this]
   (-> this (.-objectStoreNames)))
-
-(defn set-object-store-names!
-  "Property.
-
-  A `web.dom.DOMStringList` containing a list of the names of the
-  stores currently in the connected database.
-
-  `var list[] = IDBDatabase.objectStoreNames;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/objectStoreNames`"
-  [this val]
-  (aset this "objectStoreNames" val))
 
 (defn onabort
   "Property.

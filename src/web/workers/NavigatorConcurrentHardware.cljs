@@ -8,6 +8,8 @@
 (defn hardware-concurrency
   "Property.
 
+  [Read Only]
+
   The navigator.hardwareConcurrency read-only property returns
   number of logical processors available to run threads on the
   computer.
@@ -17,17 +19,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
   [this]
   (-> this (.-hardwareConcurrency)))
-
-(defn set-hardware-concurrency!
-  "Property.
-
-  The navigator.hardwareConcurrency read-only property returns
-  number of logical processors available to run threads on the
-  computer.
-
-  `logicalProcessors = window.navigator.hardwareConcurrency`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency`"
-  [this val]
-  (aset this "hardwareConcurrency" val))
 

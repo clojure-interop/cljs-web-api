@@ -8,6 +8,8 @@
 (defn error
   "Property.
 
+  [Read Only]
+
   A `web.deprecated.DOMError` containing the relevant error. In
   48+/Firefox 58+ this property returns a `web.dom.DOMException`
   DOMError has been removed from the DOM standard. The following
@@ -19,22 +21,10 @@
   [this]
   (-> this (.-error)))
 
-(defn set-error!
-  "Property.
-
-  A `web.deprecated.DOMError` containing the relevant error. In
-  48+/Firefox 58+ this property returns a `web.dom.DOMException`
-  DOMError has been removed from the DOM standard. The following
-  codes are returned under certain conditions:
-
-  `var myError = request.error;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error`"
-  [this val]
-  (aset this "error" val))
-
 (defn result
   "Property.
+
+  [Read Only]
 
   any
 
@@ -44,19 +34,10 @@
   [this]
   (-> this (.-result)))
 
-(defn set-result!
-  "Property.
-
-  any
-
-  `var myResult = request.result;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result`"
-  [this val]
-  (aset this "result" val))
-
 (defn source
   "Property.
+
+  [Read Only]
 
   An object representing the source of the request, such as an
   `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
@@ -69,22 +50,10 @@
   [this]
   (-> this (.-source)))
 
-(defn set-source!
-  "Property.
-
-  An object representing the source of the request, such as an
-  `web.idb.IDBObjectStore` or `web.storage.IDBCursor`.
-
-  `var IDBIndex = request.source;
-  var IDBCursor = request.source;
-  var IDBObjectStore = request.source;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source`"
-  [this val]
-  (aset this "source" val))
-
 (defn ready-state
   "Property.
+
+  [Read Only]
 
   The `IDBRequestReadyState` of the request, which takes one of
   following two values:
@@ -95,20 +64,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The `IDBRequestReadyState` of the request, which takes one of
-  following two values:
-
-  `var currentReadyState = request.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn transaction
   "Property.
+
+  [Read Only]
 
   An `web.storage.IDBTransaction`.
 
@@ -117,17 +76,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
   [this]
   (-> this (.-transaction)))
-
-(defn set-transaction!
-  "Property.
-
-  An `web.storage.IDBTransaction`.
-
-  `var myTransaction = request.transaction;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction`"
-  [this val]
-  (aset this "transaction" val))
 
 (defn onerror
   "Property.

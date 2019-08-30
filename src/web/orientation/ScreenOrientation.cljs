@@ -6,6 +6,8 @@
 (defn lock
   "Method.
 
+  [Experimental]
+
   The lock() property of the `web.orientation.ScreenOrientation`
   locks the orientation of the containing document to its default
 
@@ -17,6 +19,8 @@
 
 (defn unlock
   "Method.
+
+  [Experimental]
 
   The unlock() property of the `web.orientation.ScreenOrientation`
   unlocks the orientation of the containing document from its default
@@ -30,6 +34,9 @@
 (defn type
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The type read-only property of the `web.orientation.ScreenOrientation`
   returns the document's current orientation type, one of \\\"portrait-primary\\\",
   \\\"landscape-primary\\\", or \\\"landscape-secondary\\\".
@@ -40,21 +47,11 @@
   [this]
   (-> this (.-type)))
 
-(defn set-type!
-  "Property.
-
-  The type read-only property of the `web.orientation.ScreenOrientation`
-  returns the document's current orientation type, one of \\\"portrait-primary\\\",
-  \\\"landscape-primary\\\", or \\\"landscape-secondary\\\".
-
-  `type = ScreenOrientation.type`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/type`"
-  [this val]
-  (aset this "type" val))
-
 (defn angle
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The angle read-only property of the `web.orientation.ScreenOrientation`
   returns the document's current orientation angle.
@@ -65,20 +62,10 @@
   [this]
   (-> this (.-angle)))
 
-(defn set-angle!
-  "Property.
-
-  The angle read-only property of the `web.orientation.ScreenOrientation`
-  returns the document's current orientation angle.
-
-  `angle = ScreenOrientation.angle`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/angle`"
-  [this val]
-  (aset this "angle" val))
-
 (defn onchange
   "Property.
+
+  [Experimental]
 
   The onchange property of the `web.orientation.ScreenOrientation`
   an event handler fired whenever is the `EventHandler` called
@@ -93,6 +80,8 @@
 
 (defn set-onchange!
   "Property.
+
+  [Experimental]
 
   The onchange property of the `web.orientation.ScreenOrientation`
   an event handler fired whenever is the `EventHandler` called

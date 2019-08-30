@@ -62,6 +62,8 @@
 (defn transfer-control-to-offscreen
   "Method.
 
+  [Experimental]
+
   The HTMLCanvasElement.transferControlToOffscreen() method transfers
   to an `web.canvas.OffscreenCanvas` object, either on the main
   or on a worker.
@@ -74,6 +76,8 @@
 
 (defn moz-get-as-file
   "Method.
+
+  [Non Standard]
 
   The HTMLCanvasElement.mozGetAsFile() method returns a `web.files.File`
   representing the image contained in the canvas; this file is
@@ -88,6 +92,8 @@
 
 (defn moz-fetch-as-stream
   "Method.
+
+  [Obsolute]
 
   The HTMLCanvasElement.mozFetchAsStream() internal method used
   create a new input stream that, when ready, would provide the
@@ -163,6 +169,8 @@
 (defn moz-opaque
   "Property.
 
+  [Non Standard]
+
   The non-standard HTMLCanvasElement.mozOpaque property is a `js.Boolean`
   the moz-opaque HTML attribute of the `<canvas>` element. It lets
   canvas know whether or not translucency will be a factor. If
@@ -178,6 +186,8 @@
 
 (defn set-moz-opaque!
   "Property.
+
+  [Non Standard]
 
   The non-standard HTMLCanvasElement.mozOpaque property is a `js.Boolean`
   the moz-opaque HTML attribute of the `<canvas>` element. It lets

@@ -235,6 +235,8 @@
 (defn password
   "Property.
 
+  [Read Only]
+
   The HTMLHyperlinkElementUtils.password property is a `web.USVString`
   the password specified before the domain name.
 
@@ -247,6 +249,8 @@
 
 (defn origin
   "Property.
+
+  [Read Only]
 
   The HTMLHyperlinkElementUtils.origin read-only property is a
   containing the Unicode serialization of the origin of the represented
@@ -342,6 +346,8 @@
 (defn referrer-policy
   "Property.
 
+  [Experimental]
+
   The HTMLAreaElement.referrerPolicy property reflect the HTML
   attribute of the `<area>` element defining which referrer is
   when fetching the resource.
@@ -355,6 +361,8 @@
 
 (defn set-referrer-policy!
   "Property.
+
+  [Experimental]
 
   The HTMLAreaElement.referrerPolicy property reflect the HTML
   attribute of the `<area>` element defining which referrer is
@@ -400,6 +408,8 @@
 (defn rel-list
   "Property.
 
+  [Read Only]
+
   The HTMLAreaElement.relList read-only property reflects the rel
   It is a live `web.dom.DOMTokenList` containing the set of link
   indicating the relationship between the resource represented
@@ -410,20 +420,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/relList`"
   [this]
   (-> this (.-relList)))
-
-(defn set-rel-list!
-  "Property.
-
-  The HTMLAreaElement.relList read-only property reflects the rel
-  It is a live `web.dom.DOMTokenList` containing the set of link
-  indicating the relationship between the resource represented
-  the `<area>` element and the current document.
-
-  `var relstr = areaElt.relList;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/relList`"
-  [this val]
-  (aset this "relList" val))
 
 (defn search
   "Property.

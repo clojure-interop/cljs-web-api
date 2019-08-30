@@ -95,6 +95,8 @@
 (defn default-value
   "Property.
 
+  [Read Only]
+
   The defaultValue read-only property of the `web.audio.AudioParam`
   represents the initial value of the attributes as defined by
   specific `web.audio.AudioNode` creating the AudioParam.
@@ -105,21 +107,10 @@
   [this]
   (-> this (.-defaultValue)))
 
-(defn set-default-value!
-  "Property.
-
-  The defaultValue read-only property of the `web.audio.AudioParam`
-  represents the initial value of the attributes as defined by
-  specific `web.audio.AudioNode` creating the AudioParam.
-
-  `var defaultVal = audioParam.defaultValue;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/defaultValue`"
-  [this val]
-  (aset this "defaultValue" val))
-
 (defn max-value
   "Property.
+
+  [Read Only]
 
   The maxValue read-only property of the `web.audio.AudioParam`
   represents the maximum possible value for the parameter's nominal
@@ -131,21 +122,10 @@
   [this]
   (-> this (.-maxValue)))
 
-(defn set-max-value!
-  "Property.
-
-  The maxValue read-only property of the `web.audio.AudioParam`
-  represents the maximum possible value for the parameter's nominal
-  range.
-
-  `var maxVal = audioParam.maxValue;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/maxValue`"
-  [this val]
-  (aset this "maxValue" val))
-
 (defn min-value
   "Property.
+
+  [Read Only]
 
   The minValue read-only property of the `web.audio.AudioParam`
   represents the minimum possible value for the parameter's nominal
@@ -156,19 +136,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue`"
   [this]
   (-> this (.-minValue)))
-
-(defn set-min-value!
-  "Property.
-
-  The minValue read-only property of the `web.audio.AudioParam`
-  represents the minimum possible value for the parameter's nominal
-  range.
-
-  `var minVal = audioParam.minValue;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue`"
-  [this val]
-  (aset this "minValue" val))
 
 (defn value
   "Property.

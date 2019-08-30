@@ -20,6 +20,8 @@
 (defn ms-frame-step
   "Method.
 
+  [Non Standard]
+
   The HTMLVideoElement.msFrameStep() method steps the video by
   frame forward or one frame backward.
 
@@ -31,6 +33,8 @@
 
 (defn ms-insert-video-effect
   "Method.
+
+  [Non Standard]
 
   The HTMLMediaElement.msInsertVideoEffect() method inserts the
   video effect into the media pipeline.
@@ -76,6 +80,8 @@
 (defn video-height
   "Property.
 
+  [Read Only]
+
   The `web.video.HTMLVideoElement` interface's read-only videoHeight
   indicates the intrinsic height of the video, expressed in CSS
   In simple terms, this is the height of the media in its natural
@@ -88,6 +94,8 @@
 
 (defn video-width
   "Property.
+
+  [Read Only]
 
   The `web.video.HTMLVideoElement` interface's read-only videoWidth
   indicates the intrinsic width of the video, expressed in CSS
@@ -214,6 +222,8 @@
 (defn ms-horizontal-mirror
   "Property.
 
+  [Non Standard]
+
   msHorizontalMirror is a read/write property which gets or sets
   a video element is flipped horizontally in the display.
 
@@ -225,6 +235,8 @@
 
 (defn set-ms-horizontal-mirror!
   "Property.
+
+  [Non Standard]
 
   msHorizontalMirror is a read/write property which gets or sets
   a video element is flipped horizontally in the display.
@@ -238,6 +250,9 @@
 (defn ms-is-layout-optimal-for-playback
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   msIsLayoutOptimalForPlayback is a read-only property which indicates
   the video can be rendered more efficiently.
 
@@ -247,20 +262,11 @@
   [this]
   (-> this (.-msIsLayoutOptimalForPlayback)))
 
-(defn set-ms-is-layout-optimal-for-playback!
-  "Property.
-
-  msIsLayoutOptimalForPlayback is a read-only property which indicates
-  the video can be rendered more efficiently.
-
-  `HTMLVideoElement.msIsLayoutOptimalForPlayback: DOMString;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/msIsLayoutOptimalForPlayback`"
-  [this val]
-  (aset this "msIsLayoutOptimalForPlayback" val))
-
 (defn ms-is-stereo3d
   "Property.
+
+  [Read Only]
+  [Non Standard]
 
   msIsStereo3D is a read-only property which determines whether
   system considers the loaded video source to be stereo 3-D or
@@ -271,20 +277,10 @@
   [this]
   (-> this (.-msIsStereo3D)))
 
-(defn set-ms-is-stereo3d!
-  "Property.
-
-  msIsStereo3D is a read-only property which determines whether
-  system considers the loaded video source to be stereo 3-D or
-
-  `HTMLVideoElement.msIsStereo3D: boolean;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/msIsStereo3D`"
-  [this val]
-  (aset this "msIsStereo3D" val))
-
 (defn ms-zoom
   "Property.
+
+  [Non Standard]
 
   msZoom is a read/write property which gets or sets whether the
   frame is trimmed, on the top and bottom or left and right, to
@@ -298,6 +294,8 @@
 
 (defn set-ms-zoom!
   "Property.
+
+  [Non Standard]
 
   msZoom is a read/write property which gets or sets whether the
   frame is trimmed, on the top and bottom or left and right, to

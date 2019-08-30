@@ -6,6 +6,8 @@
 (defn get-distributed-nodes
   "Method.
 
+  [Deprecated]
+
   The HTMLShadowElement.getDistributedNodes() method returns a
   `web.NodeList` of the distributed nodes associated with this
   element.

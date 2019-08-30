@@ -7,6 +7,8 @@
 (defn get-descriptor
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTCharacteristic.getDescriptor() method
   a `js.Promise` that resolves to the first `BluetoothGATTDescriptor`
   a given descriptor UUID.
@@ -20,6 +22,8 @@
 (defn get-descriptors
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTCharacteristic.getDescriptors() method
   a `js.Promise` that resolves to an `js.Array` of all `BluetoothGATTDescriptor`
   for a given descriptor UUID.
@@ -32,6 +36,8 @@
 
 (defn read-value
   "Method.
+
+  [Experimental]
 
   The BluetoothRemoteGATTCharacteristic.readValue() method returns
   `js.Promise` that resolves to a `js.DataView` holding a duplicate
@@ -47,6 +53,8 @@
 (defn write-value
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTCharacteristic.writeValue() method sets
   value property to the bytes contained in an `js.ArrayBuffer`
   returns a `js.Promise`.
@@ -59,6 +67,8 @@
 
 (defn start-notifications
   "Method.
+
+  [Experimental]
 
   The BluetoothRemoteGATTCharacteristic.startNotifications() method
   a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
@@ -73,6 +83,8 @@
 (defn stop-notifications
   "Method.
 
+  [Experimental]
+
   The BluetoothRemoteGATTCharacteristic.stopNotifications() method
   a `js.Promise` to the BluetoothRemoteGATTCharacteristic instance
   there is no longer an active notification on it.
@@ -86,6 +98,9 @@
 (defn service
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The BluetoothRemoteGATTCharacteristic.service read-only property
   the `BluetoothGATTService` this characteristic belongs to.
 
@@ -95,20 +110,11 @@
   [this]
   (-> this (.-service)))
 
-(defn set-service!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.service read-only property
-  the `BluetoothGATTService` this characteristic belongs to.
-
-  `var bluetoothRemoteGATTServiceInstance = BluetoothRemoteGATTCharacteristic.service`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service`"
-  [this val]
-  (aset this "service" val))
-
 (defn uuid
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothRemoteGATTCharacteristic.uuid read-only property
   `web.dom.DOMString` containing the UUID of the characteristic,
@@ -121,22 +127,11 @@
   [this]
   (-> this (.-uuid)))
 
-(defn set-uuid!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.uuid read-only property
-  `web.dom.DOMString` containing the UUID of the characteristic,
-  example '00002a37-0000-1000-8000-00805f9b34fb' for the Heart
-  Measurement characteristic.
-
-  `var uuid = BluetoothRemoteGATTCharacteristic.uuid`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid`"
-  [this val]
-  (aset this "uuid" val))
-
 (defn properties
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothRemoteGATTCharacteristic.properties read-only property
   a `web.bluetooth.BluetoothCharacteristicProperties` instance
@@ -148,21 +143,11 @@
   [this]
   (-> this (.-properties)))
 
-(defn set-properties!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.properties read-only property
-  a `web.bluetooth.BluetoothCharacteristicProperties` instance
-  the properties of this characteristic.
-
-  `var properties = BluetoothRemoteGATTCharacteristic.properties`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties`"
-  [this val]
-  (aset this "properties" val))
-
 (defn value
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The BluetoothRemoteGATTCharacteristic.value read-only property
   currently cached characteristic value. This value gets updated
@@ -174,18 +159,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value`"
   [this]
   (-> this (.-value)))
-
-(defn set-value!
-  "Property.
-
-  The BluetoothRemoteGATTCharacteristic.value read-only property
-  currently cached characteristic value. This value gets updated
-  the value of the characteristic is read or updated via a notification
-  indication.
-
-  `var value = BluetoothRemoteGATTCharacteristic.value`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value`"
-  [this val]
-  (aset this "value" val))
 

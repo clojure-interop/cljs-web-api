@@ -7,6 +7,8 @@
 (defn request
   "Method.
 
+  [Experimental]
+
   The request() method of the `web.locks.LockManager` interface
   a `web.locks.Lock` object with parameters specifying its name
   characteristics. The requested Lock is passed to a callback,
@@ -20,6 +22,8 @@
 
 (defn query
   "Method.
+
+  [Experimental]
 
   The query() method of the `web.locks.LockManager` interface returns
   `js.Promise` which resolves with an object containing information

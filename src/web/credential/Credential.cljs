@@ -6,6 +6,9 @@
 (defn id
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The id property of the `web.credential.Credential` interface
   a `web.dom.DOMString` containing the credential's identifier.
   might be any one of a GUID, username, or email address.
@@ -16,21 +19,11 @@
   [this]
   (-> this (.-id)))
 
-(defn set-id!
-  "Property.
-
-  The id property of the `web.credential.Credential` interface
-  a `web.dom.DOMString` containing the credential's identifier.
-  might be any one of a GUID, username, or email address.
-
-  `var id = Credential.id;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/id`"
-  [this val]
-  (aset this "id" val))
-
 (defn type
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The type property of the `web.credential.Credential` interface
   a `web.dom.DOMString` containing the credential's type. Valid
@@ -42,21 +35,10 @@
   [this]
   (-> this (.-type)))
 
-(defn set-type!
-  "Property.
-
-  The type property of the `web.credential.Credential` interface
-  a `web.dom.DOMString` containing the credential's type. Valid
-  are password, federated and public-key.
-
-  `var credType = Credential.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Credential/type`"
-  [this val]
-  (aset this "type" val))
-
 (defn name
   "Property.
+
+  [Experimental]
 
   The name property of the `web.credential.Credential` interface
   a `web.dom.DOMString`, containing the name associated with a
@@ -69,6 +51,8 @@
 
 (defn set-name!
   "Property.
+
+  [Experimental]
 
   The name property of the `web.credential.Credential` interface
   a `web.dom.DOMString`, containing the name associated with a

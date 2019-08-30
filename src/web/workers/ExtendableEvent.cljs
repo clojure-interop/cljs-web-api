@@ -6,19 +6,6 @@
   outdated cache entries."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ExtendableEvent() constructor creates a new `web.workers.ExtendableEvent` object.
-
-  type
-  The type of the ExtendableEvent, for example install, activate.
-  init Optional
-  An options object containing any custom settings that you want to apply to the event object. Currently no possible options exist inside the spec, but this has been defined for forward compatibility across the different derived events.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/ExtendableEvent`"
-  js/ExtendableEvent)
-
 (defn wait-until
   "Method.
 

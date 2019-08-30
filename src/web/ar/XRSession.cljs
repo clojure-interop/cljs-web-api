@@ -8,13 +8,13 @@
 (defn update-render-state
   "Method.
 
-  The updateRenderState method of `web.ar.XRSession` interface
-  WebXR API submits a new `web.other.XRRenderState`.
+  [Draft]
 
-  `XRSession.updateRenderState(...)
+  The updateRenderState() method of the `web.ar.XRSession` interface
+  WebXR API queues an update to the active render state which will
+  applied on the next frame.
 
-
-  Note: Set `inlineVerticalFieldOfView` if and only if the `web.ar.XRSession` is \\\"inline\\\".`
+  `XRSession.updateRenderState([xrRenderStateInit])`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRSession/updateRenderState`"
   [this & args]
@@ -22,6 +22,8 @@
 
 (defn request-reference-space
   "Method.
+
+  [Draft]
 
   The requestReferenceSpace() method of the `web.ar.XRSession`
   returns a `js.Promise` that resolves with either an instance
@@ -37,6 +39,8 @@
 (defn request-animation-frame
   "Method.
 
+  [Draft]
+
   The requestAnimationFrame() method of the `web.ar.XRSession`
   Tells the browser to paint one frame of an animation at which
   the browser will call the supplied callback function. The callback
@@ -51,6 +55,8 @@
 (defn cancel-animation-frame
   "Method.
 
+  [Draft]
+
   The cancelAnimationFrame() method of the `web.ar.XRSession` interface
   an animation frame previously requested via a call to `XRSession.requestAnimationFrame`.
 
@@ -62,6 +68,8 @@
 
 (defn end
   "Method.
+
+  [Draft]
 
   The end() method of the `web.ar.XRSession` interface requests
   the current XR session and returns a promise that resolves when

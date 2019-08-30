@@ -4,6 +4,13 @@
   inherits it."
   (:refer-clojure :exclude []))
 
+(defn attach-internals
+  "Method.
+
+  Attaches an ElementInternals instance to the custom element."
+  [this & args]
+  (-> this .-attachInternals (.apply this (clj->js args))))
+
 (defn blur
   "Method.
 
@@ -43,6 +50,8 @@
 (defn force-spell-check
   "Method.
 
+  [Experimental]
+
   The forceSpellCheck() method of the `web.dom.HTMLElement` interface
   a spelling and grammar check on HTML elements, even if the user
   not focused on the elements. This method overrides user agent
@@ -72,6 +81,8 @@
 (defn access-key-label
   "Property.
 
+  [Read Only]
+
   The HTMLElement.accessKeyLabel read-only property returns a `js.String`
   represents the element's assigned access key (if any); otherwise
   returns an empty string.
@@ -81,19 +92,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKeyLabel`"
   [this]
   (-> this (.-accessKeyLabel)))
-
-(defn set-access-key-label!
-  "Property.
-
-  The HTMLElement.accessKeyLabel read-only property returns a `js.String`
-  represents the element's assigned access key (if any); otherwise
-  returns an empty string.
-
-  `label = element.accessKeyLabel`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKeyLabel`"
-  [this val]
-  (aset this "accessKeyLabel" val))
 
 (defn content-editable
   "Property.
@@ -124,6 +122,8 @@
 (defn is-content-editable
   "Property.
 
+  [Read Only]
+
   The HTMLElement.isContentEditable read-only property returns
   `js.Boolean` that is true if the contents of the element are
   otherwise it returns false.
@@ -137,7 +137,7 @@
 (defn context-menu
   "Property.
 
-
+  [Deprecated]
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contextMenu`"
   [this]
@@ -146,7 +146,7 @@
 (defn set-context-menu!
   "Property.
 
-
+  [Deprecated]
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contextMenu`"
   [this val]
@@ -154,6 +154,8 @@
 
 (defn dataset
   "Property.
+
+  [Read Only]
 
   The dataset property on the `web.dom.HTMLElement` interface provides
   access to all the custom data attributes (data-*) set on the
@@ -169,24 +171,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset`"
   [this]
   (-> this (.-dataset)))
-
-(defn set-dataset!
-  "Property.
-
-  The dataset property on the `web.dom.HTMLElement` interface provides
-  access to all the custom data attributes (data-*) set on the
-
-  `string = element.dataset.camelCasedName;
-  element.dataset.camelCasedName = string;
-
-  string = element.dataset[camelCasedName];
-  element.dataset[camelCasedName] = string;
-
-  Custom data attributes can also be set directly on HTML elements, but attribute names must use the data- syntax above.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset`"
-  [this val]
-  (aset this "dataset" val))
 
 (defn dir
   "Property.
@@ -469,6 +453,8 @@
 (defn nonce
   "Property.
 
+  [Experimental]
+
   The nonce property of the `web.dom.HTMLElement` interface returns
   cryptographic number used once that is used by Content Security
   to determine whether a given fetch will be allowed to proceed.
@@ -482,6 +468,8 @@
 
 (defn set-nonce!
   "Property.
+
+  [Experimental]
 
   The nonce property of the `web.dom.HTMLElement` interface returns
   cryptographic number used once that is used by Content Security
@@ -497,6 +485,8 @@
 (defn offset-height
   "Property.
 
+  [Read Only]
+
   The HTMLElement.offsetHeight read-only property returns the height
   an element, including vertical padding and borders, as an integer.
 
@@ -508,22 +498,10 @@
   [this]
   (-> this (.-offsetHeight)))
 
-(defn set-offset-height!
-  "Property.
-
-  The HTMLElement.offsetHeight read-only property returns the height
-  an element, including vertical padding and borders, as an integer.
-
-  `var intElemOffsetHeight = element.offsetHeight;
-
-  intElemOffsetHeight is a variable storing an integer corresponding to the offsetHeight pixel value of the element. The offsetHeight property is read-only.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight`"
-  [this val]
-  (aset this "offsetHeight" val))
-
 (defn offset-left
   "Property.
+
+  [Read Only]
 
   The HTMLElement.offsetLeft read-only property returns the number
   pixels that the upper left corner of the current element is offset
@@ -540,6 +518,8 @@
 (defn offset-parent
   "Property.
 
+  [Read Only]
+
   The HTMLElement.offsetParent read-only property returns a reference
   the object which is the closest (nearest in the containment hierarchy)
   containing element. If the element is non-positioned, the nearest
@@ -554,25 +534,10 @@
   [this]
   (-> this (.-offsetParent)))
 
-(defn set-offset-parent!
-  "Property.
-
-  The HTMLElement.offsetParent read-only property returns a reference
-  the object which is the closest (nearest in the containment hierarchy)
-  containing element. If the element is non-positioned, the nearest
-  th, table or the body is returned.
-
-  `parentObj = element.offsetParent;
-
-
-  parentObj is an object reference to the element in which the current element is offset.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent`"
-  [this val]
-  (aset this "offsetParent" val))
-
 (defn offset-top
   "Property.
+
+  [Read Only]
 
   The HTMLElement.offsetTop read-only property returns the distance
   the current element relative to the top of the `offsetParent`
@@ -585,6 +550,8 @@
 
 (defn offset-width
   "Property.
+
+  [Read Only]
 
   The HTMLElement.offsetWidth read-only property returns the layout
   of an element as an integer.
@@ -727,6 +694,8 @@
 (defn oncopy
   "Property.
 
+  [Experimental]
+
   The oncopy property of the `web.dom.HTMLElement` interface is
   `EventHandler` that processes copy events.
 
@@ -738,6 +707,8 @@
 
 (defn set-oncopy!
   "Property.
+
+  [Experimental]
 
   The oncopy property of the `web.dom.HTMLElement` interface is
   `EventHandler` that processes copy events.
@@ -751,6 +722,8 @@
 (defn oncut
   "Property.
 
+  [Experimental]
+
   The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
   an `EventHandler` that processes cut events.
 
@@ -762,6 +735,8 @@
 
 (defn set-oncut!
   "Property.
+
+  [Experimental]
 
   The HTMLElement.oncut property of the `web.dom.HTMLElement` interface
   an `EventHandler` that processes cut events.
@@ -775,6 +750,8 @@
 (defn onpaste
   "Property.
 
+  [Experimental]
+
   The HTMLElement.onpaste property of the `web.dom.HTMLElement`
   is an `EventHandler` that processes paste events.
 
@@ -786,6 +763,8 @@
 
 (defn set-onpaste!
   "Property.
+
+  [Experimental]
 
   The HTMLElement.onpaste property of the `web.dom.HTMLElement`
   is an `EventHandler` that processes paste events.
@@ -883,6 +862,9 @@
 (defn onabort
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
 
@@ -894,6 +876,9 @@
 
 (defn set-onabort!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
@@ -963,6 +948,8 @@
 (defn onanimationiteration
   "Property.
 
+  [Draft]
+
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
 
@@ -976,6 +963,8 @@
 
 (defn set-onanimationiteration!
   "Property.
+
+  [Draft]
 
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
@@ -991,6 +980,8 @@
 (defn onauxclick
   "Property.
 
+  [Experimental]
+
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
 
@@ -1002,6 +993,8 @@
 
 (defn set-onauxclick!
   "Property.
+
+  [Experimental]
 
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
@@ -1177,6 +1170,8 @@
 (defn onclose
   "Property.
 
+  [Experimental]
+
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
 
@@ -1188,6 +1183,8 @@
 
 (defn set-onclose!
   "Property.
+
+  [Experimental]
 
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
@@ -1489,6 +1486,8 @@
 (defn onkeypress
   "Property.
 
+  [Deprecated]
+
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
 
@@ -1500,6 +1499,8 @@
 
 (defn set-onkeypress!
   "Property.
+
+  [Deprecated]
 
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
@@ -2273,6 +2274,8 @@
 (defn onselectionchange
   "Property.
 
+  [Experimental]
+
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
 
@@ -2284,6 +2287,8 @@
 
 (defn set-onselectionchange!
   "Property.
+
+  [Experimental]
 
   The onselectionchange property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectionchange events.
@@ -2297,6 +2302,8 @@
 (defn onselectstart
   "Property.
 
+  [Experimental]
+
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
 
@@ -2308,6 +2315,8 @@
 
 (defn set-onselectstart!
   "Property.
+
+  [Experimental]
 
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
@@ -2425,6 +2434,8 @@
 (defn outer-text
   "Property.
 
+  [Non Standard]
+
   HTMLElement.outerText is a non-standard property. As a getter,
   returns the same value as `Node.innerText`. As a setter, it removes
   current node and replaces it with the given text.
@@ -2435,6 +2446,8 @@
 
 (defn set-outer-text!
   "Property.
+
+  [Non Standard]
 
   HTMLElement.outerText is a non-standard property. As a getter,
   returns the same value as `Node.innerText`. As a setter, it removes

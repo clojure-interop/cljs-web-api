@@ -4,17 +4,6 @@
   a network (e.g. a fetch request)."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ReadableStreamDefaultReader() constructor creates and returns a ReadableStreamDefaultReader() object instance.
-
-  stream
-  The `web.files.ReadableStream` to be read.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/ReadableStreamDefaultReader`"
-  js/ReadableStreamDefaultReader)
-
 (defn cancel
   "Method.
 

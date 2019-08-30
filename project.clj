@@ -1,4 +1,4 @@
-(defproject clojure-interop/cljs-web-api "1.0.7"
+(defproject clojure-interop/cljs-web-api "1.0.9"
   :description "All Browser Classes (MDN) ClojureScript Bingings with Docs"
   :url ""
   :license {:name "Eclipse Public License"

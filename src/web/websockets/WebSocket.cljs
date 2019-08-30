@@ -4,19 +4,6 @@
   data on the connection."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The WebSocket() constructor returns a new `web.websockets.WebSocket` object.
-
-  url
-  The URL to which to connect; this should be the URL to which the WebSocket server will respond.
-  protocols Optional
-  Either a single protocol string or an array of protocol strings. These strings are used to indicate sub-protocols, so that a single server can implement multiple WebSocket sub-protocols (for example, you might want one server to be able to handle different types of interactions depending on the specified protocol). If you don't specify a protocol string, an empty string is assumed.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket`"
-  js/WebSocket)
-
 (defn close
   "Method.
 
@@ -72,6 +59,8 @@
 (defn buffered-amount
   "Property.
 
+  [Read Only]
+
   The WebSocket.bufferedAmount read-only property returns the number
   bytes of data that have been queued using calls to send() but
   yet transmitted to the network. This value resets to zero once
@@ -85,24 +74,10 @@
   [this]
   (-> this (.-bufferedAmount)))
 
-(defn set-buffered-amount!
-  "Property.
-
-  The WebSocket.bufferedAmount read-only property returns the number
-  bytes of data that have been queued using calls to send() but
-  yet transmitted to the network. This value resets to zero once
-  queued data has been sent. This value does not reset to zero
-  the connection is closed; if you keep calling send(), this will
-  to climb.
-
-  `var bufferedAmount = aWebSocket.bufferedAmount;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/bufferedAmount`"
-  [this val]
-  (aset this "bufferedAmount" val))
-
 (defn extensions
   "Property.
+
+  [Read Only]
 
   The WebSocket.extensions read-only property returns the extensions
   by the server. This is currently only the empty string or a list
@@ -113,19 +88,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/extensions`"
   [this]
   (-> this (.-extensions)))
-
-(defn set-extensions!
-  "Property.
-
-  The WebSocket.extensions read-only property returns the extensions
-  by the server. This is currently only the empty string or a list
-  extensions as negotiated by the connection.
-
-  `var extensions = aWebSocket.extensions;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/extensions`"
-  [this val]
-  (aset this "extensions" val))
 
 (defn onclose
   "Property.
@@ -246,6 +208,8 @@
 (defn protocol
   "Property.
 
+  [Read Only]
+
   The WebSocket.protocol read-only property returns the name of
   sub-protocol the server selected; this will be one of the strings
   in the protocols parameter when creating the `web.websockets.WebSocket`
@@ -257,22 +221,10 @@
   [this]
   (-> this (.-protocol)))
 
-(defn set-protocol!
-  "Property.
-
-  The WebSocket.protocol read-only property returns the name of
-  sub-protocol the server selected; this will be one of the strings
-  in the protocols parameter when creating the `web.websockets.WebSocket`
-  or the empty string if no connection is established.
-
-  `var protocol = aWebSocket.protocol;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/protocol`"
-  [this val]
-  (aset this "protocol" val))
-
 (defn ready-state
   "Property.
+
+  [Read Only]
 
   The WebSocket.readyState read-only property returns the current
   of the `web.websockets.WebSocket` connection.
@@ -283,20 +235,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The WebSocket.readyState read-only property returns the current
-  of the `web.websockets.WebSocket` connection.
-
-  `var readyState = aWebSocket.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn url
   "Property.
+
+  [Read Only]
 
   The WebSocket.url read-only property returns the absolute URL
   the `web.websockets.WebSocket` as resolved by the constructor.
@@ -306,16 +248,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/url`"
   [this]
   (-> this (.-url)))
-
-(defn set-url!
-  "Property.
-
-  The WebSocket.url read-only property returns the absolute URL
-  the `web.websockets.WebSocket` as resolved by the constructor.
-
-  `var url = aWebSocket.url;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/url`"
-  [this val]
-  (aset this "url" val))
 

@@ -57,6 +57,8 @@
 (defn track
   "Property.
 
+  [Read Only]
+
   The track read-only property of the `web.rtc.RTCRtpReceiver`
   returns the `web.audio.MediaStreamTrack` associated with the
   `web.rtc.RTCRtpReceiver` instance.
@@ -66,19 +68,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track`"
   [this]
   (-> this (.-track)))
-
-(defn set-track!
-  "Property.
-
-  The track read-only property of the `web.rtc.RTCRtpReceiver`
-  returns the `web.audio.MediaStreamTrack` associated with the
-  `web.rtc.RTCRtpReceiver` instance.
-
-  `var mediaStreamTrack = rtcRtpReceiver.track`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpReceiver/track`"
-  [this val]
-  (aset this "track" val))
 
 (defn rtcp-transport
   "Property.

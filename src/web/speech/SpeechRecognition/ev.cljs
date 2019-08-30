@@ -5,6 +5,8 @@
 (def audiostart
   "Event.
 
+  [Experimental]
+
   You can use the audiostart event in an `onaudiostart` method:
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/audiostart_event`"
@@ -13,6 +15,8 @@
 
 (def audioend
   "Event.
+
+  [Experimental]
 
   You can use the audioend event in an addEventListener method:
 

@@ -5,16 +5,6 @@
   be played in the user agent."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The MediaSource() constructor of the `web.audio.MediaSource` interface constructs and returns a new MediaSource object with no associated source buffers.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/MediaSource`"
-  js/MediaSource)
-
 (defn add-source-buffer
   "Method.
 
@@ -32,6 +22,8 @@
 (defn clear-live-seekable-range
   "Method.
 
+  [Experimental]
+
   The clearLiveSeekableRange() method of the `web.audio.MediaSource`
   clears a seekable range privious set with a call to `setLiveSeekableRange()`.
 
@@ -43,6 +35,8 @@
 
 (defn end-of-stream
   "Method.
+
+  [Experimental]
 
   The endOfStream() method of the `web.audio.MediaSource` interface
   the end of the stream.
@@ -56,6 +50,8 @@
 (defn remove-source-buffer
   "Method.
 
+  [Experimental]
+
   The removeSourceBuffer() method of the `web.audio.MediaSource`
   removes the given `web.audio.SourceBuffer` from the `SourceBuffers`
   associated with this MediaSource object.
@@ -68,6 +64,8 @@
 
 (defn set-live-seekable-range
   "Method.
+
+  [Experimental]
 
   The setLiveSeekableRange() method of the `web.audio.MediaSource`
   sets the range that the user can seek to in the media element.
@@ -94,6 +92,9 @@
 (defn source-buffers
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The sourceBuffers read-only property of the `web.audio.MediaSource`
   returns a `web.audio.SourceBufferList` object containing the
   of `web.audio.SourceBuffer` objects associated with this MediaSource.
@@ -104,21 +105,10 @@
   [this]
   (-> this (.-sourceBuffers)))
 
-(defn set-source-buffers!
-  "Property.
-
-  The sourceBuffers read-only property of the `web.audio.MediaSource`
-  returns a `web.audio.SourceBufferList` object containing the
-  of `web.audio.SourceBuffer` objects associated with this MediaSource.
-
-  `var mySourceBuffers = mediaSource.sourceBuffers;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceBuffers`"
-  [this val]
-  (aset this "sourceBuffers" val))
-
 (defn active-source-buffers
   "Property.
+
+  [Read Only]
 
   The activeSourceBuffers read-only property of the `web.audio.MediaSource`
   returns a `web.audio.SourceBufferList` object containing a subset
@@ -132,23 +122,11 @@
   [this]
   (-> this (.-activeSourceBuffers)))
 
-(defn set-active-source-buffers!
-  "Property.
-
-  The activeSourceBuffers read-only property of the `web.audio.MediaSource`
-  returns a `web.audio.SourceBufferList` object containing a subset
-  the `web.audio.SourceBuffer` objects contained within `sourceBuffers`
-  the list of objects providing the selected video track, enabled
-  tracks, and shown/hidden text tracks.
-
-  `var myActiveSourceBuffers = mediaSource.activeSourceBuffers;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/activeSourceBuffers`"
-  [this val]
-  (aset this "activeSourceBuffers" val))
-
 (defn ready-state
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The readyState read-only property of the `web.audio.MediaSource`
   returns an enum representing the state of the current MediaSource.
@@ -160,21 +138,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The readyState read-only property of the `web.audio.MediaSource`
-  returns an enum representing the state of the current MediaSource.
-  three possible values are:
-
-  `var myReadyState = mediaSource.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn duration
   "Property.
+
+  [Experimental]
 
   The duration property of the `web.audio.MediaSource` interface
   and sets the duration of the current media being presented.
@@ -189,6 +156,8 @@
 
 (defn set-duration!
   "Property.
+
+  [Experimental]
 
   The duration property of the `web.audio.MediaSource` interface
   and sets the duration of the current media being presented.

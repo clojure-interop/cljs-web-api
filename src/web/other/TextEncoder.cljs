@@ -4,20 +4,6 @@
   – a C-like representation of strings based on typed arrays."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The TextEncoder() constructor returns a newly created utf-8 `web.other.TextEncoder` object.
-
-  TextEncoder() takes no parameters since Firefox 48 and Chrome 53
-
-
-
-  Note: Prior to Firefox 48 and Chrome 53, an encoding type label was accepted as a paramer to the TextEncoder object, since then both browers have removed support for any encoder type other than utf-8, to match the spec. Any type label passed into the TextEncoder constructor will now be ignored and a utf-8 TextEncoder will be created.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/TextEncoder`"
-  js/TextEncoder)
-
 (defn encode
   "Method.
 
@@ -34,6 +20,8 @@
 (defn encode-into
   "Method.
 
+  [Experimental]
+
   The TextEncoder.prototype.encodeInto() method takes a `web.USVString`
   encode and a destination `js.Uint8Array` to put resulting UTF-8
   text into, and returns a dictionary object indicating the progress
@@ -48,6 +36,8 @@
 
 (defn encoding
   "Property.
+
+  [Read Only]
 
   The TextEncoder.encoding read-only property returns a `web.dom.DOMString`
   the name of the encoding algorithm used by the specific encoder.

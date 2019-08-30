@@ -3,32 +3,6 @@
   a request."
   (:refer-clojure :exclude [type clone]))
 
-(def constructor
-  "Constructor.
-
-  The Response() constructor creates a new `web.fetch.Response` object.
-
-  body Optional
-  An object defining a body for the response. This can be null, or one of:
-
-  `web.files.Blob`
-  `web.typed.BufferSource`
-  `web.FormData`
-  `web.files.ReadableStream`
-  `web.url.URLSearchParams`
-  `web.USVString`
-
-
-  init Optional
-  An options object containing any custom settings that you want to apply to the response. The possible options are:
-
-  status: The status code for the reponse, e.g., 200.
-  statusText: The status message associated with the status code, e.g., OK.
-  headers: Any headers you want to add to your response, contained within a `web.fetch.Headers` object or object literal of `web.ByteString` key/value pairs (see HTTP headers for a reference).
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/Response`"
-  js/Response)
-
 (defn clone
   "Method.
 
@@ -146,6 +120,8 @@
 (defn headers
   "Property.
 
+  [Read Only]
+
   The headers read-only property of the `web.fetch.Response` interface
   the `web.fetch.Headers` object associated with the response.
 
@@ -155,20 +131,10 @@
   [this]
   (-> this (.-headers)))
 
-(defn set-headers!
-  "Property.
-
-  The headers read-only property of the `web.fetch.Response` interface
-  the `web.fetch.Headers` object associated with the response.
-
-  `var myHeaders = response.headers;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/headers`"
-  [this val]
-  (aset this "headers" val))
-
 (defn ok
   "Property.
+
+  [Read Only]
 
   The ok read-only property of the `web.fetch.Response` interface
   a Boolean stating whether the response was successful (status
@@ -180,21 +146,10 @@
   [this]
   (-> this (.-ok)))
 
-(defn set-ok!
-  "Property.
-
-  The ok read-only property of the `web.fetch.Response` interface
-  a Boolean stating whether the response was successful (status
-  the range 200-299) or not.
-
-  `var myOK = response.ok;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/ok`"
-  [this val]
-  (aset this "ok" val))
-
 (defn redirected
   "Property.
+
+  [Read Only]
 
   The read-only redirected property of the `web.fetch.Response`
   indicates whether or not the response is the result of a request
@@ -209,6 +164,8 @@
 (defn status
   "Property.
 
+  [Read Only]
+
   The status read-only property of the `web.fetch.Response` interface
   the status code of the response (e.g., 200 for a success).
 
@@ -218,20 +175,10 @@
   [this]
   (-> this (.-status)))
 
-(defn set-status!
-  "Property.
-
-  The status read-only property of the `web.fetch.Response` interface
-  the status code of the response (e.g., 200 for a success).
-
-  `var myStatus = response.status;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/status`"
-  [this val]
-  (aset this "status" val))
-
 (defn status-text
   "Property.
+
+  [Read Only]
 
   The statusText read-only property of the `web.fetch.Response`
   contains the status message corresponding to the status code
@@ -243,21 +190,10 @@
   [this]
   (-> this (.-statusText)))
 
-(defn set-status-text!
-  "Property.
-
-  The statusText read-only property of the `web.fetch.Response`
-  contains the status message corresponding to the status code
-  OK for 200).
-
-  `var myStatusText = response.statusText;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText`"
-  [this val]
-  (aset this "statusText" val))
-
 (defn type
   "Property.
+
+  [Read Only]
 
   The type read-only property of the `web.fetch.Response` interface
   the type of the response. It can be one of the following:
@@ -268,20 +204,10 @@
   [this]
   (-> this (.-type)))
 
-(defn set-type!
-  "Property.
-
-  The type read-only property of the `web.fetch.Response` interface
-  the type of the response. It can be one of the following:
-
-  `var myType = response.type;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/type`"
-  [this val]
-  (aset this "type" val))
-
 (defn url
   "Property.
+
+  [Read Only]
 
   The url read-only property of the `web.fetch.Response` interface
   the URL of the response. The value of the url property will be
@@ -293,21 +219,10 @@
   [this]
   (-> this (.-url)))
 
-(defn set-url!
-  "Property.
-
-  The url read-only property of the `web.fetch.Response` interface
-  the URL of the response. The value of the url property will be
-  final URL obtained after any redirects.
-
-  `var myURL = response.url;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Response/url`"
-  [this val]
-  (aset this "url" val))
-
 (defn use-final-url
   "Property.
+
+  [Obsolute]
 
   The useFinalURL property of the `web.fetch.Response` interface
   a boolean stating whether this is the final URL of the response.
@@ -321,6 +236,8 @@
 (defn set-use-final-url!
   "Property.
 
+  [Obsolute]
+
   The useFinalURL property of the `web.fetch.Response` interface
   a boolean stating whether this is the final URL of the response.
 
@@ -333,6 +250,9 @@
 (defn body
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The body read-only property of the `web.fetch.Body` mixin is
   simple getter used to expose a `web.files.ReadableStream` of
   body contents.
@@ -343,21 +263,10 @@
   [this]
   (-> this (.-body)))
 
-(defn set-body!
-  "Property.
-
-  The body read-only property of the `web.fetch.Body` mixin is
-  simple getter used to expose a `web.files.ReadableStream` of
-  body contents.
-
-  `var stream = responseInstance.body;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/body`"
-  [this val]
-  (aset this "body" val))
-
 (defn body-used
   "Property.
+
+  [Read Only]
 
   The bodyUsed read-only property of the `web.fetch.Body` mixin
   a `js.Boolean` that indicates whether the body has been read
@@ -367,16 +276,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
   [this]
   (-> this (.-bodyUsed)))
-
-(defn set-body-used!
-  "Property.
-
-  The bodyUsed read-only property of the `web.fetch.Body` mixin
-  a `js.Boolean` that indicates whether the body has been read
-
-  `var myBodyUsed = response.bodyUsed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed`"
-  [this val]
-  (aset this "bodyUsed" val))
 

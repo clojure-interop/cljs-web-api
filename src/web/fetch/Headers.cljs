@@ -8,17 +8,6 @@
   by case-insensitive byte sequence."
   (:refer-clojure :exclude [get keys set]))
 
-(def constructor
-  "Constructor.
-
-  The Headers() constructor creates a new `web.fetch.Headers` object.
-
-  init Optional
-  An object containing any HTTP headers that you want to pre-populate your Headers object with. This can be a simple object literal with `web.ByteString` values; or an existing Headers object. In the last case, the new Headers object inherits its data from the existing Headers object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers`"
-  js/Headers)
-
 (defn append
   "Method.
 
@@ -129,6 +118,9 @@
 
 (defn get-all
   "Method.
+
+  [Experimental]
+  [Obsolute]
 
   The getAll() method of the `web.fetch.Headers` interface used
   return an array of all the values of a header within a Headers

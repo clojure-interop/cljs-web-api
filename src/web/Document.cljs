@@ -4,14 +4,6 @@
   the DOM tree."
   (:refer-clojure :exclude [drop]))
 
-(def constructor
-  "Constructor.
-
-  The Document constructor creates a new `web.Document` object that is a web page loaded in the browser and serving as an entry point into the page's content.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/Document`"
-  js/Document)
-
 (defn adopt-node
   "Method.
 
@@ -36,6 +28,8 @@
 
 (defn caret-range-from-point
   "Method.
+
+  [Non Standard]
 
   The caretRangeFromPoint() method of the `web.Document` interface
   a `web.Range` object for the document fragment under the specified
@@ -133,6 +127,8 @@
 (defn create-entity-reference
   "Method.
 
+  [Obsolute]
+
   Prior to Gecko 7.0 this method showed up as present, due to bug
   9850, it always only returned null. The only workaround is to
   a text node, CDATA section, attribute node value, etc. which
@@ -214,6 +210,8 @@
 (defn create-touch
   "Method.
 
+  [Deprecated]
+
   The Document.createTouch() method creates and returns a new `web.other.Touch`
 
   `var touch = DocumentTouch.createTouch(view, target, identifier, pageX, pageY,
@@ -225,6 +223,8 @@
 
 (defn create-touch-list
   "Method.
+
+  [Deprecated]
 
   The Document.createTouchList() method creates and returns a new
   object.
@@ -263,6 +263,8 @@
 (defn exit-pointer-lock
   "Method.
 
+  [Experimental]
+
   The exitPointerLock() method asynchronously releases a pointer
   previously requested through `Element.requestPointerLock`.
 
@@ -274,6 +276,8 @@
 
 (defn get-animations
   "Method.
+
+  [Experimental]
 
   The getAnimations() method of the `web.Document` interface returns
   array of all `web.animation.Animation` objects currently in effect
@@ -443,6 +447,8 @@
 (defn moz-set-image-element
   "Method.
 
+  [Non Standard]
+
   The Document.mozSetImageElement() method changes the element
   used as the CSS background for a background with a given background
   ID.
@@ -544,6 +550,8 @@
 
 (defn clear
   "Method.
+
+  [Deprecated]
 
   The Document.clear() method clears the whole specified document
   early (pre-1.0) versions of Mozilla.
@@ -714,6 +722,8 @@
 (defn get-selection
   "Method.
 
+  [Experimental]
+
   The getSelection() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.other.Selection` object representing the range
   text selected by the user, or the current position of the caret.
@@ -740,6 +750,8 @@
 (defn elements-from-point
   "Method.
 
+  [Experimental]
+
   The elementsFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns an array of all elements at the specified coordinates
   to the viewport).
@@ -752,6 +764,8 @@
 
 (defn caret-position-from-point
   "Method.
+
+  [Experimental]
 
   The caretPositionFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.CaretPosition` object, containing the DOM
@@ -794,6 +808,8 @@
 (defn get-box-object-for
   "Method.
 
+  [Obsolute]
+
   Returns a boxObject (x, y, width, height) for a specified element.
 
   `boxObject = document.getBoxObjectFor(element);
@@ -822,6 +838,9 @@
 (defn register-element
   "Method.
 
+  [Deprecated]
+  [Draft]
+
   The document.registerElement() method registers a new custom
   in the browser and returns a constructor for the new element.
 
@@ -834,6 +853,10 @@
 (defn all
   "Property.
 
+  [Read Only]
+  [Deprecated]
+  [Draft]
+
   The `web.Document` interface's read-only all property returns
   `HTMLAllCollection` rooted at the document node. In other words,
   returns the entire contents of the page.
@@ -844,21 +867,11 @@
   [this]
   (-> this (.-all)))
 
-(defn set-all!
-  "Property.
-
-  The `web.Document` interface's read-only all property returns
-  `HTMLAllCollection` rooted at the document node. In other words,
-  returns the entire contents of the page.
-
-  `var htmlAllCollection = document.all;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/all`"
-  [this val]
-  (aset this "all" val))
-
 (defn anchors
   "Property.
+
+  [Read Only]
+  [Deprecated]
 
   The anchors read-only property of the `web.Document` interface
   a list of all of the anchors in the document.
@@ -868,18 +881,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/anchors`"
   [this]
   (-> this (.-anchors)))
-
-(defn set-anchors!
-  "Property.
-
-  The anchors read-only property of the `web.Document` interface
-  a list of all of the anchors in the document.
-
-  `nodeList = document.anchors;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/anchors`"
-  [this val]
-  (aset this "anchors" val))
 
 (defn body
   "Property.
@@ -910,6 +911,8 @@
 (defn character-set
   "Property.
 
+  [Read Only]
+
   The Document.characterSet read-only property returns the character
   of the document that it's currently rendered with.
 
@@ -922,6 +925,8 @@
 (defn compat-mode
   "Property.
 
+  [Read Only]
+
   The Document.compatMode property indicates whether the document
   rendered in Quirks mode or Standards mode.
 
@@ -931,20 +936,10 @@
   [this]
   (-> this (.-compatMode)))
 
-(defn set-compat-mode!
-  "Property.
-
-  The Document.compatMode property indicates whether the document
-  rendered in Quirks mode or Standards mode.
-
-  `mode = document.compatMode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/compatMode`"
-  [this val]
-  (aset this "compatMode" val))
-
 (defn content-type
   "Property.
+
+  [Read Only]
 
   The Document.contentType read-only property returns the MIME
   that the document is being rendered as. This may come from HTTP
@@ -960,6 +955,8 @@
 (defn doctype
   "Property.
 
+  [Read Only]
+
   Returns the Document Type Declaration (DTD) associated with current
   The returned object implements the `web.DocumentType` interface.
   `DOMImplementation.createDocumentType()` to create a DocumentType.
@@ -973,24 +970,10 @@
   [this]
   (-> this (.-doctype)))
 
-(defn set-doctype!
-  "Property.
-
-  Returns the Document Type Declaration (DTD) associated with current
-  The returned object implements the `web.DocumentType` interface.
-  `DOMImplementation.createDocumentType()` to create a DocumentType.
-
-  `doctype = document.doctype;
-
-
-  doctype is a read-only property.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/doctype`"
-  [this val]
-  (aset this "doctype" val))
-
 (defn document-element
   "Property.
+
+  [Read Only]
 
   Document.documentElement returns the `web.Element` that is the
   element of the `document` (for example, the `<html>` element
@@ -1002,21 +985,10 @@
   [this]
   (-> this (.-documentElement)))
 
-(defn set-document-element!
-  "Property.
-
-  Document.documentElement returns the `web.Element` that is the
-  element of the `document` (for example, the `<html>` element
-  HTML documents).
-
-  `var element = document.documentElement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement`"
-  [this val]
-  (aset this "documentElement" val))
-
 (defn document-uri
   "Property.
+
+  [Read Only]
 
   The documentURI property of the `web.Document` interface returns
   document location as a string.
@@ -1027,20 +999,10 @@
   [this]
   (-> this (.-documentURI)))
 
-(defn set-document-uri!
-  "Property.
-
-  The documentURI property of the `web.Document` interface returns
-  document location as a string.
-
-  `var string = document.documentURI;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/documentURI`"
-  [this val]
-  (aset this "documentURI" val))
-
 (defn embeds
   "Property.
+
+  [Read Only]
 
   The embeds read-only property of the `web.Document` interface
   a list of the embedded `<object>` elements within the current
@@ -1050,18 +1012,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/embeds`"
   [this]
   (-> this (.-embeds)))
-
-(defn set-embeds!
-  "Property.
-
-  The embeds read-only property of the `web.Document` interface
-  a list of the embedded `<object>` elements within the current
-
-  `nodeList = document.embeds`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/embeds`"
-  [this val]
-  (aset this "embeds" val))
 
 (defn fonts
   "Property.
@@ -1090,6 +1040,8 @@
 (defn forms
   "Property.
 
+  [Read Only]
+
   The forms read-only property of the `web.Document` interface
   an `web.dom.HTMLCollection` listing all the `<form>` elements
   in the document.
@@ -1100,21 +1052,10 @@
   [this]
   (-> this (.-forms)))
 
-(defn set-forms!
-  "Property.
-
-  The forms read-only property of the `web.Document` interface
-  an `web.dom.HTMLCollection` listing all the `<form>` elements
-  in the document.
-
-  `collection = document.forms;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/forms`"
-  [this val]
-  (aset this "forms" val))
-
 (defn head
   "Property.
+
+  [Read Only]
 
   The head read-only property of the `web.Document` interface returns
   `<head>` element of the current document.
@@ -1125,20 +1066,10 @@
   [this]
   (-> this (.-head)))
 
-(defn set-head!
-  "Property.
-
-  The head read-only property of the `web.Document` interface returns
-  `<head>` element of the current document.
-
-  `var objRef = document.head;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/head`"
-  [this val]
-  (aset this "head" val))
-
 (defn hidden
   "Property.
+
+  [Read Only]
 
   The Document.hidden read-only property returns a Boolean value
   if the page is considered hidden or not.
@@ -1152,6 +1083,8 @@
 (defn images
   "Property.
 
+  [Read Only]
+
   The images read-only property of the `web.Document` interface
   a collection of the images in the current HTML document.
 
@@ -1161,20 +1094,10 @@
   [this]
   (-> this (.-images)))
 
-(defn set-images!
-  "Property.
-
-  The images read-only property of the `web.Document` interface
-  a collection of the images in the current HTML document.
-
-  `var imageCollection = document.images;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/images`"
-  [this val]
-  (aset this "images" val))
-
 (defn implementation
   "Property.
+
+  [Read Only]
 
   The Document.implementation property returns a `web.dom.DOMImplementation`
   associated with the current document.
@@ -1185,20 +1108,10 @@
   [this]
   (-> this (.-implementation)))
 
-(defn set-implementation!
-  "Property.
-
-  The Document.implementation property returns a `web.dom.DOMImplementation`
-  associated with the current document.
-
-  `DOMImpObj = document.implementation;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/implementation`"
-  [this val]
-  (aset this "implementation" val))
-
 (defn last-style-sheet-set
   "Property.
+
+  [Read Only]
 
   The Document.lastStyleSheetSet property returns the last enabled
   sheet set. This property's value changes whenever the `document.selectedStyleSheetSet`
@@ -1214,25 +1127,10 @@
   [this]
   (-> this (.-lastStyleSheetSet)))
 
-(defn set-last-style-sheet-set!
-  "Property.
-
-  The Document.lastStyleSheetSet property returns the last enabled
-  sheet set. This property's value changes whenever the `document.selectedStyleSheetSet`
-  is changed.
-
-  `var lastStyleSheetSet = document.lastStyleSheetSet
-
-  On return, lastStyleSheetSet indicates the style sheet set that was most recently set. If the current style sheet set has not been changed by setting `document.selectedStyleSheetSet`, the returned value is null.
-
-  Note: This value doesn't change when `document.enableStyleSheetsForSet()` is called.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/lastStyleSheetSet`"
-  [this val]
-  (aset this "lastStyleSheetSet" val))
-
 (defn links
   "Property.
+
+  [Read Only]
 
   The links read-only property of the `web.Document` interface
   a collection of all `<area>` elements and `<a>` elements in a
@@ -1244,21 +1142,10 @@
   [this]
   (-> this (.-links)))
 
-(defn set-links!
-  "Property.
-
-  The links read-only property of the `web.Document` interface
-  a collection of all `<area>` elements and `<a>` elements in a
-  with a value for the href attribute.
-
-  `nodeList = document.links`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/links`"
-  [this val]
-  (aset this "links" val))
-
 (defn moz-synthetic-document
   "Property.
+
+  [Non Standard]
 
   The Document.mozSyntheticDocument property indicates whether
   not the document is a synthetic one; that is, a document representing
@@ -1275,6 +1162,8 @@
 (defn set-moz-synthetic-document!
   "Property.
 
+  [Non Standard]
+
   The Document.mozSyntheticDocument property indicates whether
   not the document is a synthetic one; that is, a document representing
   standalone image, video, audio, or the like.
@@ -1290,6 +1179,8 @@
 (defn plugins
   "Property.
 
+  [Read Only]
+
   The plugins read-only property of the `web.Document` interface
   an `web.dom.HTMLCollection` object containing one or more `web.dom.HTMLEmbedElement`s
   the `<embed>` elements in the current document.
@@ -1300,21 +1191,10 @@
   [this]
   (-> this (.-plugins)))
 
-(defn set-plugins!
-  "Property.
-
-  The plugins read-only property of the `web.Document` interface
-  an `web.dom.HTMLCollection` object containing one or more `web.dom.HTMLEmbedElement`s
-  the `<embed>` elements in the current document.
-
-  `embedArrayObj = document.plugins`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/plugins`"
-  [this val]
-  (aset this "plugins" val))
-
 (defn feature-policy
   "Property.
+
+  [Read Only]
 
   The featurePolicy read-only property of the `web.Document` interface
   the `web.other.FeaturePolicy` interface which provides a simple
@@ -1326,21 +1206,10 @@
   [this]
   (-> this (.-featurePolicy)))
 
-(defn set-feature-policy!
-  "Property.
-
-  The featurePolicy read-only property of the `web.Document` interface
-  the `web.other.FeaturePolicy` interface which provides a simple
-  for inspecting the feature policies applied to a specific document.
-
-  `var policy = iframeElement.featurePolicy`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/featurePolicy`"
-  [this val]
-  (aset this "featurePolicy" val))
-
 (defn preferred-style-sheet-set
   "Property.
+
+  [Read Only]
 
   The preferredStyleSheetSet property returns the preferred style
   set as set by the page author.
@@ -1355,24 +1224,10 @@
   [this]
   (-> this (.-preferredStyleSheetSet)))
 
-(defn set-preferred-style-sheet-set!
-  "Property.
-
-  The preferredStyleSheetSet property returns the preferred style
-  set as set by the page author.
-
-  `preferredStyleSheetSet = document.preferredStyleSheetSet
-
-  On return, preferredStyleSheetSet indicates the author's preferred style sheet set. This is determined from the order of style sheet declarations and the Default-Style HTTP header.
-
-  If there isn't a preferred style sheet set defined by the author, the empty string (\\\"\\\") is returned.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/preferredStyleSheetSet`"
-  [this val]
-  (aset this "preferredStyleSheetSet" val))
-
 (defn scripts
   "Property.
+
+  [Read Only]
 
   The scripts property of the `web.Document` interface returns
   list of the `<script>` elements in the document. The returned
@@ -1384,21 +1239,10 @@
   [this]
   (-> this (.-scripts)))
 
-(defn set-scripts!
-  "Property.
-
-  The scripts property of the `web.Document` interface returns
-  list of the `<script>` elements in the document. The returned
-  is an `web.dom.HTMLCollection`.
-
-  `var scriptList = document.scripts;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/scripts`"
-  [this val]
-  (aset this "scripts" val))
-
 (defn scrolling-element
   "Property.
+
+  [Read Only]
 
   The scrollingElement read-only property of the `web.Document`
   returns a reference to the `web.Element` that scrolls the document.
@@ -1409,19 +1253,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement`"
   [this]
   (-> this (.-scrollingElement)))
-
-(defn set-scrolling-element!
-  "Property.
-
-  The scrollingElement read-only property of the `web.Document`
-  returns a reference to the `web.Element` that scrolls the document.
-  standards mode, this is the root element of the document, `document.documentElement`.
-
-  `var element = document.scrollingElement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement`"
-  [this val]
-  (aset this "scrollingElement" val))
 
 (defn selected-style-sheet-set
   "Property.
@@ -1466,6 +1297,8 @@
 (defn style-sheet-sets
   "Property.
 
+  [Read Only]
+
   The styleSheetSets read-only property returns a live list of
   of the currently-available style sheet sets.
 
@@ -1477,22 +1310,11 @@
   [this]
   (-> this (.-styleSheetSets)))
 
-(defn set-style-sheet-sets!
-  "Property.
-
-  The styleSheetSets read-only property returns a live list of
-  of the currently-available style sheet sets.
-
-  `var sets = document.styleSheetSets;
-
-  On return, sets is a list of style sheet sets that are available.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheetSets`"
-  [this val]
-  (aset this "styleSheetSets" val))
-
 (defn timeline
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The timeline readonly property of the `web.Document` interface
   the default timeline of the current document. This timeline is
@@ -1505,21 +1327,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/timeline`"
   [this]
   (-> this (.-timeline)))
-
-(defn set-timeline!
-  "Property.
-
-  The timeline readonly property of the `web.Document` interface
-  the default timeline of the current document. This timeline is
-  special instance of `web.animation.DocumentTimeline` that is
-  created on page load.
-
-  `var pageTimeline = document.timeline;
-  var thisMoment = pageTimeline.currentTime;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/timeline`"
-  [this val]
-  (aset this "timeline" val))
 
 (defn undo-manager
   "Property.
@@ -1538,6 +1345,8 @@
 (defn visibility-state
   "Property.
 
+  [Read Only]
+
   The Document.visibilityState read-only property returns the visibility
   the `document`, that is in which context this element is now
   It is useful to know if the document is in the background or
@@ -1551,6 +1360,8 @@
 
 (defn child-element-count
   "Property.
+
+  [Read Only]
 
   The ParentNode.childElementCount read-only property returns an
   long representing the number of child elements of the given element.
@@ -1567,26 +1378,10 @@
   [this]
   (-> this (.-childElementCount)))
 
-(defn set-child-element-count!
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this val]
-  (aset this "childElementCount" val))
-
 (defn children
   "Property.
+
+  [Read Only]
 
   The `web.ParentNode` property children is a read-only property
   returns a live `web.dom.HTMLCollection` which contains all of
@@ -1598,21 +1393,10 @@
   [this]
   (-> this (.-children)))
 
-(defn set-children!
-  "Property.
-
-  The `web.ParentNode` property children is a read-only property
-  returns a live `web.dom.HTMLCollection` which contains all of
-  child `elements` of the node upon which it was called.
-
-  `var children = node.children;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
-  [this val]
-  (aset this "children" val))
-
 (defn first-element-child
   "Property.
+
+  [Read Only]
 
   The ParentNode.firstElementChild read-only property returns the
   first child `web.Element`, or null if there are no child elements.
@@ -1623,20 +1407,10 @@
   [this]
   (-> this (.-firstElementChild)))
 
-(defn set-first-element-child!
-  "Property.
-
-  The ParentNode.firstElementChild read-only property returns the
-  first child `web.Element`, or null if there are no child elements.
-
-  `var element = node.firstElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
-  [this val]
-  (aset this "firstElementChild" val))
-
 (defn last-element-child
   "Property.
+
+  [Read Only]
 
   The ParentNode.lastElementChild read-only property returns the
   last child `web.Element` or null if there are no child elements.
@@ -1646,18 +1420,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
   [this]
   (-> this (.-lastElementChild)))
-
-(defn set-last-element-child!
-  "Property.
-
-  The ParentNode.lastElementChild read-only property returns the
-  last child `web.Element` or null if there are no child elements.
-
-  `var element = node.lastElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
-  [this val]
-  (aset this "lastElementChild" val))
 
 (defn cookie
   "Property.
@@ -1688,6 +1450,8 @@
 (defn default-view
   "Property.
 
+  [Read Only]
+
   In browsers, document.defaultView returns the `window` object
   with a document, or null if none is available.
 
@@ -1698,20 +1462,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView`"
   [this]
   (-> this (.-defaultView)))
-
-(defn set-default-view!
-  "Property.
-
-  In browsers, document.defaultView returns the `window` object
-  with a document, or null if none is available.
-
-  `var win = document.defaultView;
-
-  This property is read-only.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView`"
-  [this val]
-  (aset this "defaultView" val))
 
 (defn design-mode
   "Property.
@@ -1750,6 +1500,8 @@
 (defn dir
   "Property.
 
+  [Read Only]
+
   The Document.dir property is a `web.dom.DOMString` representing
   directionality of the text of the document, whether left to right
   or right to left. Possible values are 'rtl', right to left, and
@@ -1761,21 +1513,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/dir`"
   [this]
   (-> this (.-dir)))
-
-(defn set-dir!
-  "Property.
-
-  The Document.dir property is a `web.dom.DOMString` representing
-  directionality of the text of the document, whether left to right
-  or right to left. Possible values are 'rtl', right to left, and
-  left to right.
-
-  `dirStr = document.dir;
-  document.dir = dirStr;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/dir`"
-  [this val]
-  (aset this "dir" val))
 
 (defn domain
   "Property.
@@ -1808,6 +1545,8 @@
 (defn last-modified
   "Property.
 
+  [Read Only]
+
   The lastModified property of the `web.Document` interface returns
   string containing the date and time on which the current document
   last modified.
@@ -1818,21 +1557,10 @@
   [this]
   (-> this (.-lastModified)))
 
-(defn set-last-modified!
-  "Property.
-
-  The lastModified property of the `web.Document` interface returns
-  string containing the date and time on which the current document
-  last modified.
-
-  `var string = document.lastModified;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/lastModified`"
-  [this val]
-  (aset this "lastModified" val))
-
 (defn location
   "Property.
+
+  [Read Only]
 
   The Document.location read-only property returns a `web.dom.Location`
   which contains information about the URL of the document and
@@ -1848,6 +1576,8 @@
 (defn ready-state
   "Property.
 
+  [Read Only]
+
   The Document.readyState property describes the loading state
   the `document`.
 
@@ -1857,20 +1587,10 @@
   [this]
   (-> this (.-readyState)))
 
-(defn set-ready-state!
-  "Property.
-
-  The Document.readyState property describes the loading state
-  the `document`.
-
-  `var string = document.readyState;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState`"
-  [this val]
-  (aset this "readyState" val))
-
 (defn referrer
   "Property.
+
+  [Read Only]
 
   The Document.referrer property returns the URI of the page that
   to this page.
@@ -1880,18 +1600,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer`"
   [this]
   (-> this (.-referrer)))
-
-(defn set-referrer!
-  "Property.
-
-  The Document.referrer property returns the URI of the page that
-  to this page.
-
-  `var referrer = document.referrer;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer`"
-  [this val]
-  (aset this "referrer" val))
 
 (defn title
   "Property.
@@ -1936,6 +1644,8 @@
 (defn url
   "Property.
 
+  [Read Only]
+
   The URL read-only property of the `web.Document` interface returns
   document location as a string.
 
@@ -1945,20 +1655,10 @@
   [this]
   (-> this (.-URL)))
 
-(defn set-url!
-  "Property.
-
-  The URL read-only property of the `web.Document` interface returns
-  document location as a string.
-
-  `var string = document.URL`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/URL`"
-  [this val]
-  (aset this "URL" val))
-
 (defn active-element
   "Property.
+
+  [Read Only]
 
   The activeElement read-only property of the `web.Document` and
   interfaces returns the `web.Element` within the DOM or shadow
@@ -1969,19 +1669,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
   [this]
   (-> this (.-activeElement)))
-
-(defn set-active-element!
-  "Property.
-
-  The activeElement read-only property of the `web.Document` and
-  interfaces returns the `web.Element` within the DOM or shadow
-  tree that currently has focus.
-
-  `var element = DocumentOrShadowRoot.activeElement`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
-  [this val]
-  (aset this "activeElement" val))
 
 (defn fullscreen-element
   "Property.
@@ -2000,6 +1687,8 @@
 (defn pointer-lock-element
   "Property.
 
+  [Read Only]
+
   The pointerLockElement property of the `web.Document` and `web.shadow-dom.ShadowRoot`
   provides the element set as the target for mouse events while
   pointer is locked. It is null if lock is pending, pointer is
@@ -2011,22 +1700,11 @@
   [this]
   (-> this (.-pointerLockElement)))
 
-(defn set-pointer-lock-element!
-  "Property.
-
-  The pointerLockElement property of the `web.Document` and `web.shadow-dom.ShadowRoot`
-  provides the element set as the target for mouse events while
-  pointer is locked. It is null if lock is pending, pointer is
-  or the target is in another document.
-
-  `var element = document.pointerLockElement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/pointerLockElement`"
-  [this val]
-  (aset this "pointerLockElement" val))
-
 (defn style-sheets
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
@@ -2036,19 +1714,10 @@
   [this]
   (-> this (.-styleSheets)))
 
-(defn set-style-sheets!
-  "Property.
-
-  The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
-  returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
-  for stylesheets explicitly linked into or embedded in a document.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
-  [this val]
-  (aset this "styleSheets" val))
-
 (defn onafterscriptexecute
   "Property.
+
+  [Non Standard]
 
   The Document.onafterscriptexecute property references a function
   fires when a static `<script>` element finishes executing its
@@ -2066,6 +1735,8 @@
 (defn set-onafterscriptexecute!
   "Property.
 
+  [Non Standard]
+
   The Document.onafterscriptexecute property references a function
   fires when a static `<script>` element finishes executing its
   It does not fire if the element is added dynamically, such as
@@ -2082,6 +1753,8 @@
 (defn onbeforescriptexecute
   "Property.
 
+  [Non Standard]
+
   Fired when the code in a `<script>` element declared in an HTML
   is about to start executing. Does not fire if the element is
   dynamically, eg with appendChild().
@@ -2096,6 +1769,8 @@
 
 (defn set-onbeforescriptexecute!
   "Property.
+
+  [Non Standard]
 
   Fired when the code in a `<script>` element declared in an HTML
   is about to start executing. Does not fire if the element is
@@ -2266,6 +1941,8 @@
 (defn alink-color
   "Property.
 
+  [Deprecated]
+
   Returns or sets the color of an active link in the document body.
   link is active during the time between mousedown and mouseup
 
@@ -2280,6 +1957,8 @@
 
 (defn set-alink-color!
   "Property.
+
+  [Deprecated]
 
   Returns or sets the color of an active link in the document body.
   link is active during the time between mousedown and mouseup
@@ -2296,6 +1975,9 @@
 (defn applets
   "Property.
 
+  [Read Only]
+  [Deprecated]
+
   The applets property of the `web.Document` interface returns
   list of the applets within a document.
 
@@ -2305,20 +1987,10 @@
   [this]
   (-> this (.-applets)))
 
-(defn set-applets!
-  "Property.
-
-  The applets property of the `web.Document` interface returns
-  list of the applets within a document.
-
-  `var nodeList = document.applets;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/applets`"
-  [this val]
-  (aset this "applets" val))
-
 (defn bg-color
   "Property.
+
+  [Deprecated]
 
   The deprecated bgColor property gets or sets the background color
   the current document.
@@ -2332,6 +2004,8 @@
 
 (defn set-bg-color!
   "Property.
+
+  [Deprecated]
 
   The deprecated bgColor property gets or sets the background color
   the current document.
@@ -2360,6 +2034,8 @@
 (defn dom-config
   "Property.
 
+  [Deprecated]
+
   This should return the DOMConfiguration for the document.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/domConfig`"
@@ -2369,6 +2045,8 @@
 (defn set-dom-config!
   "Property.
 
+  [Deprecated]
+
   This should return the DOMConfiguration for the document.
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/domConfig`"
@@ -2377,6 +2055,8 @@
 
 (defn fg-color
   "Property.
+
+  [Deprecated]
 
   fgColor gets/sets the foreground color, or text color, of the
   document.
@@ -2391,6 +2071,8 @@
 (defn set-fg-color!
   "Property.
 
+  [Deprecated]
+
   fgColor gets/sets the foreground color, or text color, of the
   document.
 
@@ -2403,6 +2085,9 @@
 
 (defn fullscreen
   "Property.
+
+  [Read Only]
+  [Deprecated]
 
   The obsolete `web.Document` interface's fullscreen read-only
   reports whether or not the document is currently displaying content
@@ -2417,6 +2102,8 @@
 (defn height
   "Property.
 
+  [Obsolute]
+
   Returns the height of the `document` object. In most cases, this
   equal to the `<body>` element of the current document.
 
@@ -2428,6 +2115,8 @@
 
 (defn set-height!
   "Property.
+
+  [Obsolute]
 
   Returns the height of the `document` object. In most cases, this
   equal to the `<body>` element of the current document.
@@ -2455,6 +2144,8 @@
 (defn link-color
   "Property.
 
+  [Deprecated]
+
   The Document.linkColor property gets/sets the color of links
   the document.
 
@@ -2467,6 +2158,8 @@
 
 (defn set-link-color!
   "Property.
+
+  [Deprecated]
 
   The Document.linkColor property gets/sets the color of links
   the document.
@@ -2481,6 +2174,8 @@
 (defn vlink-color
   "Property.
 
+  [Deprecated]
+
   The Document.vlinkColor property gets/sets the color of links
   the user has visited in the document.
 
@@ -2493,6 +2188,8 @@
 
 (defn set-vlink-color!
   "Property.
+
+  [Deprecated]
 
   The Document.vlinkColor property gets/sets the color of links
   the user has visited in the document.
@@ -2507,6 +2204,8 @@
 (defn width
   "Property.
 
+  [Obsolute]
+
   Returns the width of the `<body>` element of the current document
   pixels.
 
@@ -2518,6 +2217,8 @@
 
 (defn set-width!
   "Property.
+
+  [Obsolute]
 
   Returns the width of the `<body>` element of the current document
   pixels.
@@ -2531,6 +2232,8 @@
 (defn xml-encoding
   "Property.
 
+  [Obsolute]
+
   Returns the encoding as determined by the XML declaration. Should
   null if unspecified or unknown.
 
@@ -2540,6 +2243,8 @@
 
 (defn set-xml-encoding!
   "Property.
+
+  [Obsolute]
 
   Returns the encoding as determined by the XML declaration. Should
   null if unspecified or unknown.
@@ -2569,6 +2274,8 @@
 (defn xml-version
   "Property.
 
+  [Obsolute]
+
   Returns the version number as specified in the XML declaration
   <?xml version=\\\"1.0\\\"?>) or \\\"1.0\\\" if the declaration is absent.
 
@@ -2578,6 +2285,8 @@
 
 (defn set-xml-version!
   "Property.
+
+  [Obsolute]
 
   Returns the version number as specified in the XML declaration
   <?xml version=\\\"1.0\\\"?>) or \\\"1.0\\\" if the declaration is absent.
@@ -2590,8 +2299,8 @@
   "Property.
 
   The Document.currentScript property returns the `<script>` element
-  script is currently being processed and isn't a JavaScript module,
-  modules use instead import.meta.
+  script is currently being processed and isn't a JavaScript module.
+  modules use import.meta instead.)
 
   `var curScriptElement = document.currentScript;`
 
@@ -2603,8 +2312,8 @@
   "Property.
 
   The Document.currentScript property returns the `<script>` element
-  script is currently being processed and isn't a JavaScript module,
-  modules use instead import.meta.
+  script is currently being processed and isn't a JavaScript module.
+  modules use import.meta instead.)
 
   `var curScriptElement = document.currentScript;`
 
@@ -2615,6 +2324,9 @@
 (defn document-uri-object
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The Document.documentURIObject read-only property returns an
   object representing the URI of the document.
 
@@ -2624,20 +2336,10 @@
   [this]
   (-> this (.-documentURIObject)))
 
-(defn set-document-uri-object!
-  "Property.
-
-  The Document.documentURIObject read-only property returns an
-  object representing the URI of the document.
-
-  `var uri = document.documentURIObject;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/Document/documentURIObject`"
-  [this val]
-  (aset this "documentURIObject" val))
-
 (defn fullscreen-enabled
   "Property.
+
+  [Read Only]
 
   The read-only fullscreenEnabled property on the `web.Document`
   indicates whether or not full-screen mode is available.
@@ -2651,6 +2353,9 @@
 (defn onabort
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
 
@@ -2662,6 +2367,9 @@
 
 (defn set-onabort!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The onabort property of the `web.dom.GlobalEventHandlers` mixin
   the `EventHandler` for processing abort events sent to the window.
@@ -2731,6 +2439,8 @@
 (defn onanimationiteration
   "Property.
 
+  [Draft]
+
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
 
@@ -2744,6 +2454,8 @@
 
 (defn set-onanimationiteration!
   "Property.
+
+  [Draft]
 
   The onanimationiteration property of the `web.dom.GlobalEventHandlers`
   is the `EventHandler` for processing animationiteration events.
@@ -2759,6 +2471,8 @@
 (defn onauxclick
   "Property.
 
+  [Experimental]
+
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
 
@@ -2770,6 +2484,8 @@
 
 (defn set-onauxclick!
   "Property.
+
+  [Experimental]
 
   The onauxclick property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` for processing auxclick events.
@@ -2945,6 +2661,8 @@
 (defn onclose
   "Property.
 
+  [Experimental]
+
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
 
@@ -2956,6 +2674,8 @@
 
 (defn set-onclose!
   "Property.
+
+  [Experimental]
 
   The onclose property of the `web.dom.GlobalEventHandlers` mixin
   an `EventHandler` for processing close events sent to a `<dialog>`
@@ -3257,6 +2977,8 @@
 (defn onkeypress
   "Property.
 
+  [Deprecated]
+
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
 
@@ -3268,6 +2990,8 @@
 
 (defn set-onkeypress!
   "Property.
+
+  [Deprecated]
 
   The onkeypress property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes keypress events.
@@ -4089,6 +3813,8 @@
 (defn onselectstart
   "Property.
 
+  [Experimental]
+
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
 
@@ -4100,6 +3826,8 @@
 
 (defn set-onselectstart!
   "Property.
+
+  [Experimental]
 
   The onselectstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes selectstart events.
@@ -4137,6 +3865,8 @@
 (defn ontouchcancel
   "Property.
 
+  [Experimental]
+
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
 
@@ -4148,6 +3878,8 @@
 
 (defn set-ontouchcancel!
   "Property.
+
+  [Experimental]
 
   The ontouchcancel property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchcancel events.
@@ -4161,6 +3893,8 @@
 (defn ontouchstart
   "Property.
 
+  [Experimental]
+
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.
 
@@ -4172,6 +3906,8 @@
 
 (defn set-ontouchstart!
   "Property.
+
+  [Experimental]
 
   The ontouchstart property of the `web.dom.GlobalEventHandlers`
   is an `EventHandler` that processes touchstart events.
@@ -4265,6 +4001,9 @@
 (defn origin
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The Document.origin read-only property returns the document's
   In most cases, this property is equivalent to document.defaultView.location.origin.
 
@@ -4276,6 +4015,8 @@
 
 (defn popup-node
   "Property.
+
+  [Deprecated]
 
   When a popup attached via the popup or context attributes is
   the XUL document's popupNode property is set to the node that
@@ -4294,6 +4035,8 @@
 (defn set-popup-node!
   "Property.
 
+  [Deprecated]
+
   When a popup attached via the popup or context attributes is
   the XUL document's popupNode property is set to the node that
   clicked on. This will be the target of the mouse event that activated
@@ -4311,6 +4054,9 @@
 (defn tooltip-node
   "Property.
 
+  [Non Standard]
+  [Draft]
+
   The Document.tooltipNode property returns the node which is the
   of the current <xul:tooltip>.
 
@@ -4322,6 +4068,9 @@
 
 (defn set-tooltip-node!
   "Property.
+
+  [Non Standard]
+  [Draft]
 
   The Document.tooltipNode property returns the node which is the
   of the current <xul:tooltip>.

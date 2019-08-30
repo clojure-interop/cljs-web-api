@@ -4,60 +4,10 @@
   then be played using the `Animation()` constructor."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The KeyframeEffect() constructor of the Web Animations API returns a new `web.animation.KeyframeEffect` object instance, and also allows you to clone an existing keyframe effect object instance.
-
-  The first type of constructor (see above) creates a completely new `web.animation.KeyframeEffect` object instance. Its parameters are:
-
-
-  element
-  The DOM element to be animated, or null.
-  keyframeSet
-  An keyframe object or null.
-  keyframeOptions Optional
-
-  Either an integer representing the animation's duration (in milliseconds), or an `js.Object` containing one or more of the following:
-
-  `delay` Optional
-  The number of milliseconds to delay the start of the animation. Defaults to 0.
-  `direction` Optional
-  Whether the animation runs forwards (normal), backwards (reverse), switches direction after each iteration (alternate), or runs backwards and switches direction after each iteration (alternate-reverse). Defaults to \\\"normal\\\".
-  `duration` Optional
-  The number of milliseconds each iteration of the animation takes to complete. Defaults to 0. Although this is technically optional, keep in mind that your animation will not run if this value is 0.
-  `easing` Optional
-  The rate of the animation's change over time. Accepts the pre-defined values \\\"linear\\\", \\\"ease\\\", \\\"ease-in\\\", \\\"ease-out\\\", and \\\"ease-in-out\\\", or a custom \\\"cubic-bezier\\\" value like \\\"cubic-bezier(0.42, 0, 0.58, 1)\\\". Defaults to \\\"linear\\\".
-  `endDelay` Optional
-  The number of milliseconds to delay after the end of an animation. This is primarily of use when sequencing animations based on the end time of another animation. Defaults to 0.
-  `fill` Optional
-  Dictates whether the animation's effects should be reflected by the element(s) prior to playing (\\\"backwards\\\"), retained after the animation has completed playing (\\\"forwards\\\"), or both. Defaults to \\\"none\\\".
-  `iterationStart` Optional
-  Describes at what point in the iteration the animation should start. 0.5 would indicate starting halfway through the first iteration for example, and with this value set, an animation with 2 iterations would end halfway through a third iteration. Defaults to 0.0.
-  `iterations` Optional
-  The number of times the animation should repeat. Defaults to 1, and can also take a value of `js.Infinity` to make it repeat for as long as the element exists.
-
-
-
-  `composite`
-  Determines how values are combined between this animation and the element's underlying values.
-  `iterationComposite`
-  Determines how values build from iteration to iteration in the current animation.
-
-
-
-
-  The second type of constructor (see above) creates a clone of an existing  `web.animation.KeyframeEffect` object instance. Its parameter is as follows:
-
-
-  sourceKeyFrames
-  A `web.animation.KeyframeEffect` object that you want to clone.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/KeyframeEffect`"
-  js/KeyframeEffect)
-
 (defn get-computed-timing
   "Method.
+
+  [Experimental]
 
   The getComputedTiming() method of the `web.animation.AnimationEffect`
   returns the calculated timing properties for this animation effect.
@@ -70,6 +20,8 @@
 
 (defn get-keyframes
   "Method.
+
+  [Experimental]
 
   The getKeyframes() method of a `web.animation.KeyframeEffect`
   an Array of the computed keyframes that make up this animation
@@ -84,6 +36,8 @@
 (defn get-timing
   "Method.
 
+  [Experimental]
+
   The AnimationEffect.getTiming() method of the `web.animation.AnimationEffect`
   returns an `web.animation.EffectTiming` object containing the
   properties for the Animation Effect.
@@ -96,6 +50,8 @@
 
 (defn set-keyframes
   "Method.
+
+  [Experimental]
 
   The setKeyframes() method of the `web.animation.KeyframeEffect`
   replaces the keyframes that make up the affected KeyframeEffect
@@ -110,6 +66,8 @@
 (defn update-timing
   "Method.
 
+  [Experimental]
+
   The updateTiming() method of the `web.animation.AnimationEffect`
   updates the specified timing properties for an animation effect.
 
@@ -121,6 +79,8 @@
 
 (defn target
   "Property.
+
+  [Experimental]
 
   The target property of a `web.animation.KeyframeEffect` interface
   the element or pseudo-element being animated. It may be null
@@ -145,6 +105,8 @@
 (defn set-target!
   "Property.
 
+  [Experimental]
+
   The target property of a `web.animation.KeyframeEffect` interface
   the element or pseudo-element being animated. It may be null
   animations that do not target a specific element. It performs
@@ -168,6 +130,8 @@
 (defn iteration-composite
   "Property.
 
+  [Experimental]
+
   The iterationComposite property of a `web.animation.KeyframeEffect`
   how the the animation's property value changes accumulate or
   each other upon each of the animation's iterations.
@@ -184,6 +148,8 @@
 
 (defn set-iteration-composite!
   "Property.
+
+  [Experimental]
 
   The iterationComposite property of a `web.animation.KeyframeEffect`
   how the the animation's property value changes accumulate or
@@ -202,6 +168,8 @@
 (defn composite
   "Property.
 
+  [Experimental]
+
   The composite property of a `web.animation.KeyframeEffect` resolves
   an element's animation impacts its underlying property values.
 
@@ -217,6 +185,8 @@
 
 (defn set-composite!
   "Property.
+
+  [Experimental]
 
   The composite property of a `web.animation.KeyframeEffect` resolves
   an element's animation impacts its underlying property values.

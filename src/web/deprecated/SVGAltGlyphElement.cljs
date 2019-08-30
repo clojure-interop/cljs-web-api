@@ -10,6 +10,8 @@
 (defn glyph-ref
   "Property.
 
+  [Deprecated]
+
   The SVGAltGlyphElement.glyphRef property is a `web.dom.DOMString`
   a glyph identifier. It has the same meaning as the ‘glyphRef’
   on the `web.deprecated.SVGGlyphRefElement` interface of the `<glyphRef>`
@@ -24,6 +26,8 @@
 (defn set-glyph-ref!
   "Property.
 
+  [Deprecated]
+
   The SVGAltGlyphElement.glyphRef property is a `web.dom.DOMString`
   a glyph identifier. It has the same meaning as the ‘glyphRef’
   on the `web.deprecated.SVGGlyphRefElement` interface of the `<glyphRef>`
@@ -37,6 +41,8 @@
 
 (defn format
   "Property.
+
+  [Deprecated]
 
   The SVGAltGlyphElement.format property is a `web.dom.DOMString`
   defines the format of the given font. It has the same meaning
@@ -53,6 +59,8 @@
 
 (defn set-format!
   "Property.
+
+  [Deprecated]
 
   The SVGAltGlyphElement.format property is a `web.dom.DOMString`
   defines the format of the given font. It has the same meaning

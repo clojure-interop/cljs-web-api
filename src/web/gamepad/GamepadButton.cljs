@@ -7,6 +7,8 @@
 (defn value
   "Property.
 
+  [Read Only]
+
   The GamepadButton.value property of the `web.gamepad.GamepadButton`
   returns a double value used to represent the current state of
   buttons on many modern gamepads, such as the triggers.
@@ -17,21 +19,10 @@
   [this]
   (-> this (.-value)))
 
-(defn set-value!
-  "Property.
-
-  The GamepadButton.value property of the `web.gamepad.GamepadButton`
-  returns a double value used to represent the current state of
-  buttons on many modern gamepads, such as the triggers.
-
-  `readonly    attribute double  value;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/value`"
-  [this val]
-  (aset this "value" val))
-
 (defn pressed
   "Property.
+
+  [Read Only]
 
   The GamepadButton.pressed property of the `web.gamepad.GamepadButton`
   returns a boolean indicating whether the button is currently
@@ -42,17 +33,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed`"
   [this]
   (-> this (.-pressed)))
-
-(defn set-pressed!
-  "Property.
-
-  The GamepadButton.pressed property of the `web.gamepad.GamepadButton`
-  returns a boolean indicating whether the button is currently
-  (true) or unpressed (false).
-
-  `var isPressed = navigator.getGamepads()[0].pressed;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/pressed`"
-  [this val]
-  (aset this "pressed" val))
 

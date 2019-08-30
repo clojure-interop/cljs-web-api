@@ -9,6 +9,8 @@
 (defn delay
   "Property.
 
+  [Experimental]
+
   The `web.animation.EffectTiming` dictionary's delay property
   the Web Animations API represents the number of milliseconds
   delay the start of the animation.
@@ -25,6 +27,8 @@
 
 (defn set-delay!
   "Property.
+
+  [Experimental]
 
   The `web.animation.EffectTiming` dictionary's delay property
   the Web Animations API represents the number of milliseconds
@@ -43,6 +47,8 @@
 (defn direction
   "Property.
 
+  [Experimental]
+
   The direction property of the Web Animations API dictionary `web.animation.EffectTiming`
   an animation's playback direction along its timeline, as well
   its behavior when it reaches the end of an interation
@@ -60,6 +66,8 @@
 (defn set-direction!
   "Property.
 
+  [Experimental]
+
   The direction property of the Web Animations API dictionary `web.animation.EffectTiming`
   an animation's playback direction along its timeline, as well
   its behavior when it reaches the end of an interation
@@ -76,6 +84,8 @@
 
 (defn duration
   "Property.
+
+  [Experimental]
 
   The duration property of the dictionary `web.animation.EffectTiming`
   the Web Animations API specifies the duration in milliseconds
@@ -95,6 +105,8 @@
 (defn set-duration!
   "Property.
 
+  [Experimental]
+
   The duration property of the dictionary `web.animation.EffectTiming`
   the Web Animations API specifies the duration in milliseconds
   a single iteration (from beginning to end) the animation should
@@ -112,6 +124,8 @@
 
 (defn easing
   "Property.
+
+  [Experimental]
 
   The `web.animation.EffectTiming` dictionary's easing property
   the Web Animations API specifies the timing function used to
@@ -131,6 +145,8 @@
 (defn set-easing!
   "Property.
 
+  [Experimental]
+
   The `web.animation.EffectTiming` dictionary's easing property
   the Web Animations API specifies the timing function used to
   the time to produce easing effects, where easing is the rate
@@ -148,6 +164,8 @@
 
 (defn end-delay
   "Property.
+
+  [Experimental]
 
   The endDelay property of the `web.animation.EffectTiming` dictionary
   of the Web Animations API) indicates the number of milliseconds
@@ -170,6 +188,8 @@
 (defn set-end-delay!
   "Property.
 
+  [Experimental]
+
   The endDelay property of the `web.animation.EffectTiming` dictionary
   of the Web Animations API) indicates the number of milliseconds
   delay after the active period of an animation sequence. The animation's
@@ -191,6 +211,8 @@
 (defn fill
   "Property.
 
+  [Experimental]
+
   The Web Animations API's `web.animation.EffectTiming` dictionary's
   property specifies a fill mode, which defines how the element
   which the animation is applied should look when the animation
@@ -207,6 +229,8 @@
 
 (defn set-fill!
   "Property.
+
+  [Experimental]
 
   The Web Animations API's `web.animation.EffectTiming` dictionary's
   property specifies a fill mode, which defines how the element
@@ -225,6 +249,8 @@
 (defn iteration-start
   "Property.
 
+  [Experimental]
+
   Web Animations API's `web.animation.EffectTiming` dictionary's
   property specifies the repetition number which repetition the
   begins at and its progress through it.
@@ -242,6 +268,8 @@
 (defn set-iteration-start!
   "Property.
 
+  [Experimental]
+
   Web Animations API's `web.animation.EffectTiming` dictionary's
   property specifies the repetition number which repetition the
   begins at and its progress through it.
@@ -258,6 +286,8 @@
 
 (defn iterations
   "Property.
+
+  [Experimental]
 
   The Web Animations API dictionary `web.animation.EffectTiming`'s
   property specifies the number of times the animation should repeat.
@@ -278,6 +308,8 @@
 
 (defn set-iterations!
   "Property.
+
+  [Experimental]
 
   The Web Animations API dictionary `web.animation.EffectTiming`'s
   property specifies the number of times the animation should repeat.

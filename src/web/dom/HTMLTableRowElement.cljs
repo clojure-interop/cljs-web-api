@@ -128,6 +128,8 @@
 (defn row-index
   "Property.
 
+  [Read Only]
+
   The HTMLTableRowElement.rowIndex read-only property represents
   position of a row in relation to the whole `<table>`.
 
@@ -136,18 +138,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex`"
   [this]
   (-> this (.-rowIndex)))
-
-(defn set-row-index!
-  "Property.
-
-  The HTMLTableRowElement.rowIndex read-only property represents
-  position of a row in relation to the whole `<table>`.
-
-  `var index = HTMLTableRowElement.rowIndex`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex`"
-  [this val]
-  (aset this "rowIndex" val))
 
 (defn section-row-index
   "Property.

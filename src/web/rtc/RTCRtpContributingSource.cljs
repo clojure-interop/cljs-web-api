@@ -8,6 +8,8 @@
 (defn audio-level
   "Property.
 
+  [Read Only]
+
   The read-only audioLevel property of the `web.rtc.RTCRtpContributingSource`
   indicates the audio level contained in the last RTP packet played
   the described source.
@@ -18,21 +20,10 @@
   [this]
   (-> this (.-audioLevel)))
 
-(defn set-audio-level!
-  "Property.
-
-  The read-only audioLevel property of the `web.rtc.RTCRtpContributingSource`
-  indicates the audio level contained in the last RTP packet played
-  the described source.
-
-  `var audioLevel = RTCRtpContributingSource.audioLevel`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/audioLevel`"
-  [this val]
-  (aset this "audioLevel" val))
-
 (defn source
   "Property.
+
+  [Read Only]
 
   The read-only source property of the `web.rtc.RTCRtpContributingSource`
   returns the source identifier of a particular stream of RTP packets.
@@ -43,20 +34,10 @@
   [this]
   (-> this (.-source)))
 
-(defn set-source!
-  "Property.
-
-  The read-only source property of the `web.rtc.RTCRtpContributingSource`
-  returns the source identifier of a particular stream of RTP packets.
-
-  `var sourceID = RTCRtpContributingSource.source`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/source`"
-  [this val]
-  (aset this "source" val))
-
 (defn timestamp
   "Property.
+
+  [Read Only]
 
   The read-only timestamp property of the `web.rtc.RTCRtpContributingSource`
   returns a `web.dom.DOMHighResTimeStamp` indicating the most recent
@@ -67,17 +48,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/timestamp`"
   [this]
   (-> this (.-timestamp)))
-
-(defn set-timestamp!
-  "Property.
-
-  The read-only timestamp property of the `web.rtc.RTCRtpContributingSource`
-  returns a `web.dom.DOMHighResTimeStamp` indicating the most recent
-  of playout of an RTP packet from the source.
-
-  `var domHighResTimeStamp = RTCRtpContributingSource.timestamp`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/RTCRtpContributingSource/timestamp`"
-  [this val]
-  (aset this "timestamp" val))
 

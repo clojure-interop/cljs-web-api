@@ -6,6 +6,9 @@
 (defn add
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The add() method of the `web.css.CSSNumericValue` interface adds
   supplied number to the CSSNumericValue.
 
@@ -17,6 +20,9 @@
 
 (defn sub
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The sub() method of the `web.css.CSSNumericValue` interface subtracts
   supplied number from the CSSNumericValue.
@@ -30,6 +36,9 @@
 (defn mul
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The mul() method of the `web.css.CSSNumericValue` interface multiplies
   CSSNumericValue by the supplied value.
 
@@ -42,6 +51,9 @@
 (defn div
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The div() method of the `web.css.CSSNumericValue` interface divides
   CSSNumericValue by the supplied value.
 
@@ -53,6 +65,9 @@
 
 (defn min
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The min() method of the `web.css.CSSNumericValue` interface returns
   lowest value from among those values passed. The passed values
@@ -67,6 +82,9 @@
 (defn max
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The max() method of the `web.css.CSSNumericValue` interface returns
   highest value from among the values passed. The passed values
   be of the same type.
@@ -79,6 +97,9 @@
 
 (defn equals
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The equals() method of the `web.css.CSSNumericValue` interface
   a boolean indicating whether the passed value are strictly equal.
@@ -95,6 +116,9 @@
 (defn to
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The to() method of the `web.css.CSSNumericValue` interface converts
   numberic value from one unit to another.
 
@@ -106,6 +130,9 @@
 
 (defn to-sum
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The toSum() method of the `web.css.CSSNumericValue` interface
   the object's value to a `web.css.CSSMathSum` object to values
@@ -120,6 +147,9 @@
 (defn type
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The type() method of the `web.css.CSSNumericValue` interface
   the type of CSSNumericValue, one of angle, flex, frequency, length,
   percent, percentHint, or time.
@@ -133,6 +163,9 @@
 (defn parse
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The parse() method of the `web.css.CSSNumericValue` interface
   a value string into an object whose members are value and the
 
@@ -144,6 +177,9 @@
 
 (defn sum
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The sub() method of the `web.css.CSSNumericValue` interface subtracts
   supplied number from the CSSNumericValue.

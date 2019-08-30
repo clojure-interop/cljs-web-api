@@ -35,6 +35,8 @@
 (defn city
   "Property.
 
+  [Read Only]
+
   An object based on `web.payments.AddressErrors` includes a city
   when validation of the address fails for the value given for
   address's `city` property. The returned string explains the error
@@ -77,6 +79,8 @@
 (defn dependent-locality
   "Property.
 
+  [Read Only]
+
   An object based on `web.payments.AddressErrors` includes a dependentLocality
   when the address's `dependentLocality` property couldn't be validated.
   returned string explains the error and should offer suggestions
@@ -90,6 +94,8 @@
 
 (defn organization
   "Property.
+
+  [Read Only]
 
   An object based on `web.payments.AddressErrors` includes an organization
   when the address's `organization` property couldn't be validated.
@@ -105,6 +111,8 @@
 (defn phone
   "Property.
 
+  [Read Only]
+
   An object based on `web.payments.AddressErrors` includes a phone
   when the address's `phone` property couldn't be validated. The
   string explains the error and should offer suggestions for how
@@ -118,6 +126,8 @@
 
 (defn postal-code
   "Property.
+
+  [Read Only]
 
   An object based on `web.payments.AddressErrors` includes a postalCode
   when the address's `postalCode` property couldn't be validated.
@@ -133,6 +143,8 @@
 (defn recipient
   "Property.
 
+  [Read Only]
+
   An object based on `web.payments.AddressErrors` includes a recipient
   when the address's `recipient` property couldn't be validated.
   returned string explains the error and should offer suggestions
@@ -146,6 +158,8 @@
 
 (defn region
   "Property.
+
+  [Read Only]
 
   An object based on `web.payments.AddressErrors` includes a region
   when the address's `region` property couldn't be validated. The
@@ -161,6 +175,8 @@
 (defn region-code
   "Property.
 
+  [Read Only]
+
   An object based on `web.payments.AddressErrors` includes a regionCode
   when the address's `regionCode` property couldn't be validated.
   returned string explains the error and should offer suggestions
@@ -174,6 +190,8 @@
 
 (defn sorting-code
   "Property.
+
+  [Read Only]
 
   An object based on `web.payments.AddressErrors` includes a sortingCode
   when the address's `sortingCode` property couldn't be validated.
@@ -189,6 +207,8 @@
 (defn language-code
   "Property.
 
+  [Deprecated]
+
   An object based on `web.payments.AddressErrors` includes a languageCode
   when the address's `languageCode` property couldn't be validated.
   returned string explains the error and should offer suggestions
@@ -202,6 +222,8 @@
 
 (defn set-language-code!
   "Property.
+
+  [Deprecated]
 
   An object based on `web.payments.AddressErrors` includes a languageCode
   when the address's `languageCode` property couldn't be validated.

@@ -7,6 +7,8 @@
 (defn get-selection
   "Method.
 
+  [Experimental]
+
   The getSelection() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.other.Selection` object representing the range
   text selected by the user, or the current position of the caret.
@@ -33,6 +35,8 @@
 (defn elements-from-point
   "Method.
 
+  [Experimental]
+
   The elementsFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns an array of all elements at the specified coordinates
   to the viewport).
@@ -45,6 +49,8 @@
 
 (defn caret-position-from-point
   "Method.
+
+  [Experimental]
 
   The caretPositionFromPoint() property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.CaretPosition` object, containing the DOM
@@ -59,6 +65,8 @@
 (defn delegates-focus
   "Property.
 
+  [Read Only]
+
   The delegatesFocus read-only property of the `web.shadow-dom.ShadowRoot`
   returns a boolean that indicates whether delegatesFocus was set
   the shadow was attached (see `Element.attachShadow()`).
@@ -69,21 +77,10 @@
   [this]
   (-> this (.-delegatesFocus)))
 
-(defn set-delegates-focus!
-  "Property.
-
-  The delegatesFocus read-only property of the `web.shadow-dom.ShadowRoot`
-  returns a boolean that indicates whether delegatesFocus was set
-  the shadow was attached (see `Element.attachShadow()`).
-
-  `var df = shadowRoot.delegatesFocus`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus`"
-  [this val]
-  (aset this "delegatesFocus" val))
-
 (defn host
   "Property.
+
+  [Read Only]
 
   The host read-only property of the `web.shadow-dom.ShadowRoot`
   a reference to the DOM element the ShadowRoot is attached to.
@@ -93,18 +90,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/host`"
   [this]
   (-> this (.-host)))
-
-(defn set-host!
-  "Property.
-
-  The host read-only property of the `web.shadow-dom.ShadowRoot`
-  a reference to the DOM element the ShadowRoot is attached to.
-
-  `var element = shadowRoot.host`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/host`"
-  [this val]
-  (aset this "host" val))
 
 (defn inner-html
   "Property.
@@ -135,6 +120,8 @@
 (defn mode
   "Property.
 
+  [Read Only]
+
   The mode property of the `web.shadow-dom.ShadowRoot` specifies
   mode — either open or closed. This defines whether or not the
   root's internal features are accessible from JavaScript.
@@ -145,21 +132,10 @@
   [this]
   (-> this (.-mode)))
 
-(defn set-mode!
-  "Property.
-
-  The mode property of the `web.shadow-dom.ShadowRoot` specifies
-  mode — either open or closed. This defines whether or not the
-  root's internal features are accessible from JavaScript.
-
-  `var mode = shadowRoot.mode`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode`"
-  [this val]
-  (aset this "mode" val))
-
 (defn active-element
   "Property.
+
+  [Read Only]
 
   The activeElement read-only property of the `web.Document` and
   interfaces returns the `web.Element` within the DOM or shadow
@@ -171,21 +147,11 @@
   [this]
   (-> this (.-activeElement)))
 
-(defn set-active-element!
-  "Property.
-
-  The activeElement read-only property of the `web.Document` and
-  interfaces returns the `web.Element` within the DOM or shadow
-  tree that currently has focus.
-
-  `var element = DocumentOrShadowRoot.activeElement`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement`"
-  [this val]
-  (aset this "activeElement" val))
-
 (defn style-sheets
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
   returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
@@ -194,15 +160,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
   [this]
   (-> this (.-styleSheets)))
-
-(defn set-style-sheets!
-  "Property.
-
-  The styleSheets read-only property of the `web.shadow-dom.DocumentOrShadowRoot`
-  returns a `web.cssdom.StyleSheetList` of `web.cssdom.CSSStyleSheet`
-  for stylesheets explicitly linked into or embedded in a document.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/styleSheets`"
-  [this val]
-  (aset this "styleSheets" val))
 

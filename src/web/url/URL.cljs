@@ -4,23 +4,6 @@
   and modify the components of a URL."
   (:refer-clojure :exclude [hash]))
 
-(def constructor
-  "Constructor.
-
-  The URL() constructor returns a newly created `web.url.URL` object representing the URL defined by the parameters.
-
-  url
-  \\tA `web.USVString` representing an absolute or relative URL. If url is a relative URL, base is required, and will be used as the base URL. If url is an absolute URL, a given base will be ignored.
-  \\tbase Optional
-  \\tA `web.USVString` representing the base URL to use in case url is a relative URL. If not specified, it defaults to ''.
-
-
-
-  Note: You can still use an existing `web.url.URL` object for the base, which stringifies itself to the object's `href` attribute.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URL/URL`"
-  js/URL)
-
 (defn to-string
   "Method.
 
@@ -182,6 +165,8 @@
 (defn origin
   "Property.
 
+  [Read Only]
+
   The origin read-only property of the `web.url.URL` interface
   a `web.USVString` containing the Unicode serialization of the
   of the represented URL. The exact structure varies depending
@@ -331,6 +316,8 @@
 
 (defn search-params
   "Property.
+
+  [Read Only]
 
   The searchParams readonly property of the `web.url.URL` interface
   a `web.url.URLSearchParams` object allowing access to the GET

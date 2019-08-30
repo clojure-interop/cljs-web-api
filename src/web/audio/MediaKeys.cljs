@@ -7,6 +7,8 @@
 (defn create-session
   "Method.
 
+  [Experimental]
+
   The MediaKeys.createSession() method returns a new `web.audio.MediaKeySession`
   which represents a context for message exchange with a content
   module (CDM).
@@ -19,6 +21,8 @@
 
 (defn set-server-certificate
   "Method.
+
+  [Experimental]
 
   The MediaKeys.setServerCertificate() method a `js.Promise` to
   server certificate to be used to encrypt messages to the license

@@ -7,6 +7,8 @@
 (defn email
   "Property.
 
+  [Draft]
+
   The email property is included in a `web.payments.PayerErrors`
   if the `PaymentResponse.payerEmail` property failed validation;
   this case, the property should contain a string describing how
@@ -21,6 +23,8 @@
 
 (defn set-email!
   "Property.
+
+  [Draft]
 
   The email property is included in a `web.payments.PayerErrors`
   if the `PaymentResponse.payerEmail` property failed validation;
@@ -37,6 +41,8 @@
 (defn name
   "Property.
 
+  [Draft]
+
   The name property is included in a `web.payments.PayerErrors`
   if the `payerName` returned in the response couldn't be validated.
   value is a string explaining the problem. If the payer's name
@@ -50,6 +56,8 @@
 
 (defn set-name!
   "Property.
+
+  [Draft]
 
   The name property is included in a `web.payments.PayerErrors`
   if the `payerName` returned in the response couldn't be validated.
@@ -65,6 +73,8 @@
 (defn phone
   "Property.
 
+  [Draft]
+
   The phone property is found in a `web.payments.PayerErrors` object
   the `payerName` returned in the response couldn't be validated
   a valid phone number. The value of this property is a string
@@ -79,6 +89,8 @@
 
 (defn set-phone!
   "Property.
+
+  [Draft]
 
   The phone property is found in a `web.payments.PayerErrors` object
   the `payerName` returned in the response couldn't be validated

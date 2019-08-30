@@ -32,6 +32,8 @@
 (defn matches
   "Property.
 
+  [Read Only]
+
   The matches read-only property of the `web.cssdom.MediaQueryList`
   is a `js.Boolean` that returns true if the `document` currently
   the media query list, or false if not.
@@ -42,21 +44,10 @@
   [this]
   (-> this (.-matches)))
 
-(defn set-matches!
-  "Property.
-
-  The matches read-only property of the `web.cssdom.MediaQueryList`
-  is a `js.Boolean` that returns true if the `document` currently
-  the media query list, or false if not.
-
-  `var matches = MediaQueryList.matches;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches`"
-  [this val]
-  (aset this "matches" val))
-
 (defn media
   "Property.
+
+  [Read Only]
 
   The media read-only property of the `web.cssdom.MediaQueryList`
   is a `web.dom.DOMString` representing a serialized media query.
@@ -66,18 +57,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media`"
   [this]
   (-> this (.-media)))
-
-(defn set-media!
-  "Property.
-
-  The media read-only property of the `web.cssdom.MediaQueryList`
-  is a `web.dom.DOMString` representing a serialized media query.
-
-  `var media = MediaQueryList.media;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media`"
-  [this val]
-  (aset this "media" val))
 
 (defn onchange
   "Property.

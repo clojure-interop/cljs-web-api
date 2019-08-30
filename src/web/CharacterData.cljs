@@ -64,6 +64,8 @@
 (defn after
   "Method.
 
+  [Experimental]
+
   The ChildNode.after() method inserts a set of `web.Node` or `web.dom.DOMString`
   in the children list of this ChildNode's parent, just after this
   `web.dom.DOMString` objects are inserted as equivalent `web.Text`
@@ -77,6 +79,8 @@
 
 (defn before
   "Method.
+
+  [Experimental]
 
   The ChildNode.before() method inserts a set of `web.Node` or
   objects in the children list of this ChildNode's parent, just
@@ -92,6 +96,8 @@
 
 (defn replace-with
   "Method.
+
+  [Experimental]
 
   The ChildNode.replaceWith() method replaces this ChildNode in
   children list of its parent with a set of `web.Node` or `web.dom.DOMString`
@@ -137,6 +143,8 @@
 (defn next-element-sibling
   "Property.
 
+  [Read Only]
+
   The NonDocumentTypeChildNode.nextElementSibling read-only property
   the element immediately following the specified one in its parent's
   list, or null if the specified element is the last one in the
@@ -147,21 +155,10 @@
   [this]
   (-> this (.-nextElementSibling)))
 
-(defn set-next-element-sibling!
-  "Property.
-
-  The NonDocumentTypeChildNode.nextElementSibling read-only property
-  the element immediately following the specified one in its parent's
-  list, or null if the specified element is the last one in the
-
-  `var nextNode = elementNodeReference.nextElementSibling;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
-  [this val]
-  (aset this "nextElementSibling" val))
-
 (defn previous-element-sibling
   "Property.
+
+  [Read Only]
 
   The NonDocumentTypeChildNode.previousElementSibling read-only
   returns the `web.Element` immediately prior to the specified

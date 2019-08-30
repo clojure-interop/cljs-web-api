@@ -8,6 +8,9 @@
 (defn file
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.files.FileSystemFileEntry` interface's method file()
   a `web.files.File` object which can be used to read data from
   file represented by the directory entry.
@@ -20,6 +23,10 @@
 
 (defn create-writer
   "Method.
+
+  [Non Standard]
+  [Experimental]
+  [Obsolute]
 
   The `web.files.FileSystemFileEntry` interface's method createWriter()
   a `FileWriter` object which can be used to write data into the

@@ -3,16 +3,10 @@
   user moving a mouse wheel or similar input device."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The WheelEvent() constructor returns a newly created `web.WheelEvent` object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/WheelEvent`"
-  js/WheelEvent)
-
 (defn delta-x
   "Property.
+
+  [Read Only]
 
   The WheelEvent.deltaX read-only property is a double representing
   horizontal scroll amount in the `WheelEvent.deltaMode` unit.
@@ -26,6 +20,8 @@
 (defn delta-y
   "Property.
 
+  [Read Only]
+
   The WheelEvent.deltaY read-only property is a double representing
   vertical scroll amount in the `WheelEvent.deltaMode` unit.
 
@@ -38,6 +34,8 @@
 (defn delta-z
   "Property.
 
+  [Read Only]
+
   The WheelEvent.deltaZ read-only property is a double representing
   scroll amount along the z-axis, in the `WheelEvent.deltaMode`
 
@@ -49,6 +47,8 @@
 
 (defn delta-mode
   "Property.
+
+  [Read Only]
 
   The WheelEvent.deltaMode read-only property returns an unsigned
   representing the unit of the delta values scroll amount. Permitted

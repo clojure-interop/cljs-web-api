@@ -20,6 +20,8 @@
 (defn escape
   "Method.
 
+  [Experimental]
+
   The CSS.escape() static method returns a `web.cssdom.CSSOMString`
   the escaped string passed as parameter, mostly for use as part
   a CSS selector.
@@ -33,6 +35,10 @@
 (defn paint-worklet
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   paintWorklet is a static, read-only property of the `web.cssdom.CSS`
   that provides access to the `web.css.PaintWorklet`, which programmatically
   an image where a CSS property expects a file.
@@ -42,17 +48,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSS/paintWorklet`"
   [this]
   (-> this (.-paintWorklet)))
-
-(defn set-paint-worklet!
-  "Property.
-
-  paintWorklet is a static, read-only property of the `web.cssdom.CSS`
-  that provides access to the `web.css.PaintWorklet`, which programmatically
-  an image where a CSS property expects a file.
-
-  `var worklet = CSS.paintWorklet;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/CSS/paintWorklet`"
-  [this val]
-  (aset this "paintWorklet" val))
 

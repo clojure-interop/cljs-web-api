@@ -73,6 +73,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The length read-only property of the `web.storage.Storage` interface
   the number of data items stored in a given Storage object.
 

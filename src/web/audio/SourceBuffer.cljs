@@ -7,6 +7,9 @@
 (defn abort
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The abort() method of the `web.audio.SourceBuffer` interface
   the current segment and resets the segment parser.
 
@@ -18,6 +21,9 @@
 
 (defn append-buffer
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The appendBuffer() method of the `web.audio.SourceBuffer` interface
   media segment data from an `js.ArrayBuffer` or ArrayBufferView
@@ -32,6 +38,9 @@
 (defn append-buffer-async
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The `web.audio.SourceBuffer` method appendBufferAsync() begins
   process of asynchronously appending media segment data from an
   or `web.typed.ArrayBufferView` object to the SourceBuffer.
@@ -44,6 +53,9 @@
 
 (defn append-stream
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The appendStream() method of the `web.audio.SourceBuffer` interface
   media segment data from a ReadableStream object to the SourceBuffer.
@@ -70,6 +82,9 @@
 (defn remove
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The remove() method of the `web.audio.SourceBuffer` interface
   media segments within a specific time range from the SourceBuffer.
   method can only be called when `SourceBuffer.updating` equals
@@ -84,6 +99,9 @@
 (defn remove-async
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The removeAsync() method of the `web.audio.SourceBuffer` interface
   the process of asynchronously removing from the SourceBuffer
   segments found within a specific time range.
@@ -96,6 +114,9 @@
 
 (defn append-window-end
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The appendWindowEnd property of the `web.audio.SourceBuffer`
   controls the timestamp for the end of the append window, a timestamp
@@ -114,6 +135,9 @@
 (defn set-append-window-end!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The appendWindowEnd property of the `web.audio.SourceBuffer`
   controls the timestamp for the end of the append window, a timestamp
   that can be used to filter what media data is appended to the
@@ -130,6 +154,9 @@
 
 (defn append-window-start
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The appendWindowStart property of the `web.audio.SourceBuffer`
   controls the timestamp for the start of the append window, a
@@ -148,6 +175,9 @@
 (defn set-append-window-start!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The appendWindowStart property of the `web.audio.SourceBuffer`
   controls the timestamp for the start of the append window, a
   range that can be used to filter what media data is appended
@@ -165,6 +195,10 @@
 (defn audio-tracks
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The audioTracks read-only property of the `web.audio.SourceBuffer`
   returns a list of the audio tracks currently contained inside
   SourceBuffer.
@@ -175,21 +209,12 @@
   [this]
   (-> this (.-audioTracks)))
 
-(defn set-audio-tracks!
-  "Property.
-
-  The audioTracks read-only property of the `web.audio.SourceBuffer`
-  returns a list of the audio tracks currently contained inside
-  SourceBuffer.
-
-  `var myAudioTracks = sourceBuffer.audioTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/audioTracks`"
-  [this val]
-  (aset this "audioTracks" val))
-
 (defn buffered
   "Property.
+
+  [Read Only]
+  [Draft]
+  [Experimental]
 
   The buffered read-only property of the `web.audio.SourceBuffer`
   returns the time ranges that are currently buffered in the SourceBuffer
@@ -201,21 +226,10 @@
   [this]
   (-> this (.-buffered)))
 
-(defn set-buffered!
-  "Property.
-
-  The buffered read-only property of the `web.audio.SourceBuffer`
-  returns the time ranges that are currently buffered in the SourceBuffer
-  a normalized `web.media.TimeRanges` object.
-
-  `var myBufferedRange = sourceBuffer.buffered;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/buffered`"
-  [this val]
-  (aset this "buffered" val))
-
 (defn mode
   "Property.
+
+  [Experimental]
 
   The mode property of the `web.audio.SourceBuffer` interface controls
   media segments can be appended to the SourceBuffer in any order,
@@ -232,6 +246,8 @@
 (defn set-mode!
   "Property.
 
+  [Experimental]
+
   The mode property of the `web.audio.SourceBuffer` interface controls
   media segments can be appended to the SourceBuffer in any order,
   in a strict sequence.
@@ -247,6 +263,10 @@
 (defn text-tracks
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The textTracks read-only property of the `web.audio.SourceBuffer`
   returns a list of the text tracks currently contained inside
   SourceBuffer.
@@ -257,21 +277,11 @@
   [this]
   (-> this (.-textTracks)))
 
-(defn set-text-tracks!
-  "Property.
-
-  The textTracks read-only property of the `web.audio.SourceBuffer`
-  returns a list of the text tracks currently contained inside
-  SourceBuffer.
-
-  `var myTextTracks = sourceBuffer.textTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/textTracks`"
-  [this val]
-  (aset this "textTracks" val))
-
 (defn timestamp-offset
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The timestampOffset property of the `web.audio.SourceBuffer`
   controls the offset applied to timestamps inside media segments
@@ -288,6 +298,9 @@
 (defn set-timestamp-offset!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The timestampOffset property of the `web.audio.SourceBuffer`
   controls the offset applied to timestamps inside media segments
   are appended to the SourceBuffer.
@@ -302,6 +315,9 @@
 
 (defn track-defaults
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The trackDefaults property of the `web.audio.SourceBuffer` interface
   the default values to use if kind, label, and/or language information
@@ -319,6 +335,9 @@
 (defn set-track-defaults!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The trackDefaults property of the `web.audio.SourceBuffer` interface
   the default values to use if kind, label, and/or language information
   not available in the initialization segment of the media to be
@@ -335,6 +354,10 @@
 (defn updating
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The updating read-only property of the `web.audio.SourceBuffer`
   indicates whether the SourceBuffer is currently being updated
   i.e. whether an `SourceBuffer.appendBuffer()`, `SourceBuffer.appendStream()`,
@@ -346,22 +369,12 @@
   [this]
   (-> this (.-updating)))
 
-(defn set-updating!
-  "Property.
-
-  The updating read-only property of the `web.audio.SourceBuffer`
-  indicates whether the SourceBuffer is currently being updated
-  i.e. whether an `SourceBuffer.appendBuffer()`, `SourceBuffer.appendStream()`,
-  `SourceBuffer.remove()` operation is currently in progress.
-
-  `var isUpdating = sourceBuffer.updating;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/updating`"
-  [this val]
-  (aset this "updating" val))
-
 (defn video-tracks
   "Property.
+
+  [Read Only]
+  [Draft]
+  [Experimental]
 
   The videoTracks read-only property of the `web.audio.SourceBuffer`
   returns a list of the video tracks currently contained inside
@@ -372,19 +385,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/videoTracks`"
   [this]
   (-> this (.-videoTracks)))
-
-(defn set-video-tracks!
-  "Property.
-
-  The videoTracks read-only property of the `web.audio.SourceBuffer`
-  returns a list of the video tracks currently contained inside
-  SourceBuffer.
-
-  `var myVideoTracks = sourceBuffer.videoTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/videoTracks`"
-  [this val]
-  (aset this "videoTracks" val))
 
 (defn onabort
   "Property.

@@ -8,14 +8,6 @@
   performance impact that can occur when changes are made."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The DocumentFragment() constructor returns a new, empty `web.web-components.DocumentFragment` object .
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/DocumentFragment`"
-  js/DocumentFragment)
-
 (defn query-selector
   "Method.
 
@@ -82,6 +74,8 @@
 (defn children
   "Property.
 
+  [Read Only]
+
   The `web.ParentNode` property children is a read-only property
   returns a live `web.dom.HTMLCollection` which contains all of
   child `elements` of the node upon which it was called.
@@ -92,21 +86,10 @@
   [this]
   (-> this (.-children)))
 
-(defn set-children!
-  "Property.
-
-  The `web.ParentNode` property children is a read-only property
-  returns a live `web.dom.HTMLCollection` which contains all of
-  child `elements` of the node upon which it was called.
-
-  `var children = node.children;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children`"
-  [this val]
-  (aset this "children" val))
-
 (defn first-element-child
   "Property.
+
+  [Read Only]
 
   The ParentNode.firstElementChild read-only property returns the
   first child `web.Element`, or null if there are no child elements.
@@ -117,20 +100,10 @@
   [this]
   (-> this (.-firstElementChild)))
 
-(defn set-first-element-child!
-  "Property.
-
-  The ParentNode.firstElementChild read-only property returns the
-  first child `web.Element`, or null if there are no child elements.
-
-  `var element = node.firstElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild`"
-  [this val]
-  (aset this "firstElementChild" val))
-
 (defn last-element-child
   "Property.
+
+  [Read Only]
 
   The ParentNode.lastElementChild read-only property returns the
   last child `web.Element` or null if there are no child elements.
@@ -141,20 +114,10 @@
   [this]
   (-> this (.-lastElementChild)))
 
-(defn set-last-element-child!
-  "Property.
-
-  The ParentNode.lastElementChild read-only property returns the
-  last child `web.Element` or null if there are no child elements.
-
-  `var element = node.lastElementChild;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild`"
-  [this val]
-  (aset this "lastElementChild" val))
-
 (defn child-element-count
   "Property.
+
+  [Read Only]
 
   The ParentNode.childElementCount read-only property returns an
   long representing the number of child elements of the given element.
@@ -170,22 +133,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
   [this]
   (-> this (.-childElementCount)))
-
-(defn set-child-element-count!
-  "Property.
-
-  The ParentNode.childElementCount read-only property returns an
-  long representing the number of child elements of the given element.
-
-  `var count = node.childElementCount;
-
-
-  count
-  The return value, which is an unsigned long (simply an integer) type.
-  node
-  An object representing a `web.Document`, `web.web-components.DocumentFragment`, or `web.Element`.`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount`"
-  [this val]
-  (aset this "childElementCount" val))
 

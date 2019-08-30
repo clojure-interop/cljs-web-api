@@ -7,6 +7,8 @@
 (defn previous-element-sibling
   "Property.
 
+  [Read Only]
+
   The NonDocumentTypeChildNode.previousElementSibling read-only
   returns the `web.Element` immediately prior to the specified
   in its parent's children list, or null if the specified element
@@ -21,6 +23,8 @@
 (defn next-element-sibling
   "Property.
 
+  [Read Only]
+
   The NonDocumentTypeChildNode.nextElementSibling read-only property
   the element immediately following the specified one in its parent's
   list, or null if the specified element is the last one in the
@@ -30,17 +34,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
   [this]
   (-> this (.-nextElementSibling)))
-
-(defn set-next-element-sibling!
-  "Property.
-
-  The NonDocumentTypeChildNode.nextElementSibling read-only property
-  the element immediately following the specified one in its parent's
-  list, or null if the specified element is the last one in the
-
-  `var nextNode = elementNodeReference.nextElementSibling;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling`"
-  [this val]
-  (aset this "nextElementSibling" val))
 

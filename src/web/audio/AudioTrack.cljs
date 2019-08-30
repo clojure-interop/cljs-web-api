@@ -38,6 +38,8 @@
 (defn id
   "Property.
 
+  [Read Only]
+
   The id property contains a string which uniquely identifies the
   represented by the `web.audio.AudioTrack`.
 
@@ -50,6 +52,8 @@
 (defn kind
   "Property.
 
+  [Read Only]
+
   The kind property contains a string indicating the category of
   contained in the `web.audio.AudioTrack`.
 
@@ -61,6 +65,8 @@
 
 (defn label
   "Property.
+
+  [Read Only]
 
   The read-only `web.audio.AudioTrack` property label returns a
   specifying the audio track's human-readable label, if one is
@@ -75,6 +81,8 @@
 (defn language
   "Property.
 
+  [Read Only]
+
   The read-only `web.audio.AudioTrack` property language returns
   string identifying the language used in the audio track.
 
@@ -86,6 +94,8 @@
 
 (defn source-buffer
   "Property.
+
+  [Read Only]
 
   The read-only `web.audio.AudioTrack` property sourceBuffer returns
   `web.audio.SourceBuffer` that created the track, or null if the

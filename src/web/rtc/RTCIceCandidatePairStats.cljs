@@ -716,6 +716,8 @@
 (defn priority
   "Property.
 
+  [Obsolute]
+
   The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
   the priority of the candidate pair as an integer value.
 
@@ -728,6 +730,8 @@
 (defn set-priority!
   "Property.
 
+  [Obsolute]
+
   The obsolete `web.rtc.RTCIceCandidatePairStats` property priority
   the priority of the candidate pair as an integer value.
 
@@ -739,6 +743,8 @@
 
 (defn readable
   "Property.
+
+  [Obsolute]
 
   The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
   whether or not the connection described by the candidate pair
@@ -753,6 +759,8 @@
 (defn set-readable!
   "Property.
 
+  [Obsolute]
+
   The obsolete `web.rtc.RTCIceCandidatePairStats` property readable
   whether or not the connection described by the candidate pair
   received at least one valid incoming ICE request.
@@ -765,6 +773,8 @@
 
 (defn writable
   "Property.
+
+  [Obsolute]
 
   The obsolete `web.rtc.RTCIceCandidatePairStats` property writable
   whether or not the connection described by the candidate pair
@@ -779,6 +789,8 @@
 (defn set-writable!
   "Property.
 
+  [Obsolute]
+
   The obsolete `web.rtc.RTCIceCandidatePairStats` property writable
   whether or not the connection described by the candidate pair
   writable.
@@ -791,6 +803,8 @@
 
 (defn selected
   "Property.
+
+  [Non Standard]
 
   The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
   selected indicates whether or not the candidate pair described
@@ -805,6 +819,8 @@
 
 (defn set-selected!
   "Property.
+
+  [Non Standard]
 
   The non-standard, Firefox-specific `web.rtc.RTCIceCandidatePairStats`
   selected indicates whether or not the candidate pair described

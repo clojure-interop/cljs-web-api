@@ -103,6 +103,8 @@
 (defn root
   "Property.
 
+  [Read Only]
+
   The TreeWalker.root read-only property returns the node that
   the root of what the TreeWalker traverses.
 
@@ -112,20 +114,10 @@
   [this]
   (-> this (.-root)))
 
-(defn set-root!
-  "Property.
-
-  The TreeWalker.root read-only property returns the node that
-  the root of what the TreeWalker traverses.
-
-  `root = TreeWalker.root;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/root`"
-  [this val]
-  (aset this "root" val))
-
 (defn what-to-show
   "Property.
+
+  [Read Only]
 
   The TreeWalker.whatToShow read-only property returns an unsigned
   being a bitmask made of constants describing the types of `web.Node`
@@ -138,22 +130,10 @@
   [this]
   (-> this (.-whatToShow)))
 
-(defn set-what-to-show!
-  "Property.
-
-  The TreeWalker.whatToShow read-only property returns an unsigned
-  being a bitmask made of constants describing the types of `web.Node`
-  must to be presented. Non-matching nodes are skipped, but their
-  may be included, if relevant. The possible values are:
-
-  `nodeTypes = treeWalker.whatToShow;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/whatToShow`"
-  [this val]
-  (aset this "whatToShow" val))
-
 (defn filter
   "Property.
+
+  [Read Only]
 
   The TreeWalker.filter read-only property returns a `web.NodeFilter`
   is the filtering object associated with the `web.TreeWalker`.
@@ -164,20 +144,11 @@
   [this]
   (-> this (.-filter)))
 
-(defn set-filter!
-  "Property.
-
-  The TreeWalker.filter read-only property returns a `web.NodeFilter`
-  is the filtering object associated with the `web.TreeWalker`.
-
-  `nodeFilter = treeWalker.filter;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/filter`"
-  [this val]
-  (aset this "filter" val))
-
 (defn expand-entity-references
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The TreeWalker.expandEntityReferences read-only property returns
   `js.Boolean` flag indicating whether or not the children of entity
@@ -188,19 +159,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
   [this]
   (-> this (.-expandEntityReferences)))
-
-(defn set-expand-entity-references!
-  "Property.
-
-  The TreeWalker.expandEntityReferences read-only property returns
-  `js.Boolean` flag indicating whether or not the children of entity
-  nodes are visible to the `web.TreeWalker`.
-
-  `expand = treeWalker.expandEntityReferences;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker/expandEntityReferences`"
-  [this val]
-  (aset this "expandEntityReferences" val))
 
 (defn current-node
   "Property.

@@ -6,6 +6,8 @@
 (defn register
   "Method.
 
+  [Non Standard]
+
   The SyncManager.register method of the `web.service-workers.SyncManager`
   returns a `js.Promise` that resolves to a `SyncRegistration`
 
@@ -17,6 +19,8 @@
 
 (defn get-tags
   "Method.
+
+  [Non Standard]
 
   The SyncManager.getTags method of the `web.service-workers.SyncManager`
   returns a list of developer-defined identifiers for SyncManager

@@ -6,6 +6,8 @@
 (defn get-subscription
   "Method.
 
+  [Experimental]
+
   The PushManager.getSubscription() method of the `web.service-workers.PushManager`
   retrieves an existing push subscription.
 
@@ -17,6 +19,8 @@
 
 (defn permission-state
   "Method.
+
+  [Experimental]
 
   The permissionState() method of the `web.service-workers.PushManager`
   returns a `js.Promise` that resolves to a `web.dom.DOMString`
@@ -32,6 +36,8 @@
 (defn subscribe
   "Method.
 
+  [Experimental]
+
   The subscribe() method of the `web.service-workers.PushManager`
   subscribes to a push service.
 
@@ -43,6 +49,8 @@
 
 (defn has-permission
   "Method.
+
+  [Deprecated]
 
   The PushManager.hasPermission() method of the `web.service-workers.PushManager`
   returns a `js.Promise` that resolves to the PushPermissionStatus
@@ -58,6 +66,8 @@
 (defn register
   "Method.
 
+  [Deprecated]
+
   The register method is used to ask the system to request a new
   for notifications. This method has been superceded by `PushManager.subscribe()`.
 
@@ -70,6 +80,8 @@
 (defn registrations
   "Method.
 
+  [Deprecated]
+
   The registrations method is used to ask the system about existing
   endpoint registrations.
 
@@ -81,6 +93,8 @@
 
 (defn unregister
   "Method.
+
+  [Deprecated]
 
   The unregister() method was used to ask the system to unregister
   delete the specified endpoint. In the updated API, a subscription
@@ -95,6 +109,9 @@
 (defn supported-content-encodings
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The supportedContentEncodings read-only property of the `web.service-workers.PushManager`
   returns an array of supported content codings that can be used
   encrypt the payload of a push message.
@@ -104,17 +121,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings`"
   [this]
   (-> this (.-supportedContentEncodings)))
-
-(defn set-supported-content-encodings!
-  "Property.
-
-  The supportedContentEncodings read-only property of the `web.service-workers.PushManager`
-  returns an array of supported content codings that can be used
-  encrypt the payload of a push message.
-
-  `var encodings[] = PushManager.supportedContentEncodings`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/PushManager/supportedContentEncodings`"
-  [this val]
-  (aset this "supportedContentEncodings" val))
 

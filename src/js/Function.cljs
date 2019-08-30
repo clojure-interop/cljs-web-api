@@ -46,6 +46,8 @@
 (defn is-generator
   "Method.
 
+  [Non Standard]
+
   The non-standard isGenerator() method used to determine whether
   not a function is a generator. It has been removed from Firefox
   with version 58.
@@ -58,6 +60,8 @@
 
 (defn to-source
   "Method.
+
+  [Non Standard]
 
   The toSource() method returns a string representing the source
   of the object.
@@ -83,6 +87,8 @@
 (defn arguments
   "Property.
 
+  [Deprecated]
+
   The function.arguments property refers to an an array-like object
   to the arguments passed to a function. Use the simple variable
   instead. This property is forbidden in strict model.
@@ -93,6 +99,8 @@
 
 (defn set-arguments!
   "Property.
+
+  [Deprecated]
 
   The function.arguments property refers to an an array-like object
   to the arguments passed to a function. Use the simple variable
@@ -105,6 +113,8 @@
 (defn arity
   "Property.
 
+  [Obsolute]
+
   The arity property used to return the number of arguments expected
   the function, however, it no longer exists and has been replaced
   the `Function.prototype.length` property.
@@ -115,6 +125,8 @@
 
 (defn set-arity!
   "Property.
+
+  [Obsolute]
 
   The arity property used to return the number of arguments expected
   the function, however, it no longer exists and has been replaced
@@ -127,6 +139,8 @@
 (defn caller
   "Property.
 
+  [Non Standard]
+
   The function.caller property returns the function that invoked
   specified function. This property is forbidden in strict mode.
 
@@ -136,6 +150,8 @@
 
 (defn set-caller!
   "Property.
+
+  [Non Standard]
 
   The function.caller property returns the function that invoked
   specified function. This property is forbidden in strict mode.
@@ -147,6 +163,8 @@
 (defn display-name
   "Property.
 
+  [Non Standard]
+
   The function.displayName property returns the display name of
   function.
 
@@ -156,6 +174,8 @@
 
 (defn set-display-name!
   "Property.
+
+  [Non Standard]
 
   The function.displayName property returns the display name of
   function.
@@ -207,6 +227,8 @@
 (defn name
   "Property.
 
+  [Read Only]
+
   A `js.Function` object's read-only name property indicates the
   name as specified when it was created, or \\\"anonymous\\\" for functions
   anonymously.
@@ -214,15 +236,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name`"
   [this]
   (-> this (.-name)))
-
-(defn set-name!
-  "Property.
-
-  A `js.Function` object's read-only name property indicates the
-  name as specified when it was created, or \\\"anonymous\\\" for functions
-  anonymously.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name`"
-  [this val]
-  (aset this "name" val))
 

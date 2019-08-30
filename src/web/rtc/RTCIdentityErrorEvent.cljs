@@ -7,6 +7,9 @@
 (defn idp
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCIdentityErrorEvent.idp returns the
   describing the domain name of the identity provider (idp) generating
   error response event.
@@ -21,6 +24,9 @@
 (defn login-url
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The read-only property RTCIdentityErrorEvent.loginUrl is a `web.dom.DOMString`
   the URL where the user can complete the authentication. It can
   null and is provided by the identity provider (idp).
@@ -34,6 +40,9 @@
 
 (defn protocol
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The read-only property RTCIdentityErrorEvent.protocol is a `web.dom.DOMString`
   the Idp protocol in use.

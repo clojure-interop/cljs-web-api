@@ -40,6 +40,8 @@
 (defn fast-seek
   "Method.
 
+  [Experimental]
+
   The HTMLMediaElement.fastSeek() method quickly seeks the media
   the new time with precision tradeoff.
 
@@ -116,6 +118,9 @@
 (defn seek-to-next-frame
   "Method.
 
+  [Non Standard]
+  [Experimental]
+
   The HTMLMediaElement.seekToNextFrame() method asynchronously
   the the current play position to the next frame in the media.
 
@@ -130,6 +135,8 @@
 (defn set-media-keys
   "Method.
 
+  [Experimental]
+
   The setMediaKeys() property of the `web.media.HTMLMediaElement`
   returns a `js.Promise` that resolves to the passed `web.audio.MediaKeys`,
   are those used to decrypt media during playback.
@@ -142,6 +149,8 @@
 
 (defn set-sink-id
   "Method.
+
+  [Experimental]
 
   The HTMLMediaElement.setSinkId() method sets the ID of the audio
   to use for output and returns a Promise. This only works when
@@ -156,6 +165,8 @@
 (defn ms-insert-audio-effect
   "Method.
 
+  [Non Standard]
+
   The HTMLMediaElement.msInsertAudioEffect() method inserts the
   audio effect into the media pipeline.
 
@@ -168,6 +179,9 @@
 (defn audio-tracks
   "Property.
 
+  [Read Only]
+  [Draft]
+
   The read-only audioTracks property on `web.media.HTMLMediaElement`
   returns an `web.audio.AudioTrackList` object listing all of the
   objects representing the media element's audio tracks.
@@ -177,19 +191,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks`"
   [this]
   (-> this (.-audioTracks)))
-
-(defn set-audio-tracks!
-  "Property.
-
-  The read-only audioTracks property on `web.media.HTMLMediaElement`
-  returns an `web.audio.AudioTrackList` object listing all of the
-  objects representing the media element's audio tracks.
-
-  `var audioTracks = mediaElement.audioTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks`"
-  [this val]
-  (aset this "audioTracks" val))
 
 (defn autoplay
   "Property.
@@ -223,6 +224,8 @@
 
 (defn buffered
   "Property.
+
+  [Read Only]
 
   The HTMLMediaElement.buffered read-only property returns a new
   object that indicates the ranges of the media source that the
@@ -289,6 +292,9 @@
 (defn controls-list
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The controlsList property of the `web.media.HTMLMediaElement`
   returns a DOMTokenList that helps the user agent select what
   to show on the media element whenever the user agent shows its
@@ -300,21 +306,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList`"
   [this]
   (-> this (.-controlsList)))
-
-(defn set-controls-list!
-  "Property.
-
-  The controlsList property of the `web.media.HTMLMediaElement`
-  returns a DOMTokenList that helps the user agent select what
-  to show on the media element whenever the user agent shows its
-  set of controls. The DOMTokenList takes one or more of three
-  values: nodownload, nofullscreen, and noremoteplayback.
-
-  `var domTokenList = HTMLMediaElement.controlsList;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList`"
-  [this val]
-  (aset this "controlsList" val))
 
 (defn cross-origin
   "Property.
@@ -338,6 +329,8 @@
 
 (defn current-src
   "Property.
+
+  [Read Only]
 
   The HTMLMediaElement.currentSrc property contains the absolute
   of the chosen media resource. This could happen, for example,
@@ -460,6 +453,8 @@
 (defn duration
   "Property.
 
+  [Read Only]
+
   The read-only `web.media.HTMLMediaElement` property duration
   the length of the element's media in seconds.
 
@@ -472,6 +467,8 @@
 (defn ended
   "Property.
 
+  [Read Only]
+
   The HTMLMediaElement.ended indicates whether the media element
   ended playback.
 
@@ -483,6 +480,8 @@
 
 (defn error
   "Property.
+
+  [Read Only]
 
   The HTMLMediaElement.error is the `web.audio.MediaError` object
   the most recent error, or null if there has not been an error.
@@ -680,6 +679,8 @@
 (defn network-state
   "Property.
 
+  [Read Only]
+
   The HTMLMediaElement.networkState property indicates the current
   of the fetching of media over the network.
 
@@ -691,6 +692,8 @@
 
 (defn paused
   "Property.
+
+  [Read Only]
 
   The read-only HTMLMediaElement.paused property tells whether
   media element is paused.
@@ -794,6 +797,8 @@
 (defn ready-state
   "Property.
 
+  [Read Only]
+
   The HTMLMediaElement.readyState property indicates the readiness
   of the media.
 
@@ -806,6 +811,8 @@
 (defn seekable
   "Property.
 
+  [Read Only]
+
   The seekable read-only property of the `web.media.HTMLMediaElement`
   a `web.media.TimeRanges` object that contains the time ranges
   the user is able to seek to, if any.
@@ -815,19 +822,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seekable`"
   [this]
   (-> this (.-seekable)))
-
-(defn set-seekable!
-  "Property.
-
-  The seekable read-only property of the `web.media.HTMLMediaElement`
-  a `web.media.TimeRanges` object that contains the time ranges
-  the user is able to seek to, if any.
-
-  `var seekable = audioOrVideo.seekable;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seekable`"
-  [this val]
-  (aset this "seekable" val))
 
 (defn seeking
   "Property.
@@ -848,6 +842,9 @@
 (defn sink-id
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The HTMLMediaElement.sinkId read-only property returns a `web.dom.DOMString`
   is the unique ID of the audio device delivering output. If it
   using the user agent default, it returns an empty string. This
@@ -859,21 +856,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/sinkId`"
   [this]
   (-> this (.-sinkId)))
-
-(defn set-sink-id!
-  "Property.
-
-  The HTMLMediaElement.sinkId read-only property returns a `web.dom.DOMString`
-  is the unique ID of the audio device delivering output. If it
-  using the user agent default, it returns an empty string. This
-  should be one of the `MediaDeviceInfo.deviceId` values returned
-  `MediaDevices.enumerateDevices()`, id-multimedia, or id-communications.
-
-  `var sinkId = HTMLMediaElement.sinkId`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/sinkId`"
-  [this val]
-  (aset this "sinkId" val))
 
 (defn src
   "Property.
@@ -934,6 +916,9 @@
 (defn html-media
   "Property.
 
+  [Read Only]
+  [Draft]
+
   The read-only textTracks property on `web.media.HTMLMediaElement`
   returns a `web.media.TextTrackList` object listing all of the
   objects representing the media element's text tracks
@@ -944,21 +929,11 @@
   [this]
   (-> this (.-HTMLMedia)))
 
-(defn set-html-media!
-  "Property.
-
-  The read-only textTracks property on `web.media.HTMLMediaElement`
-  returns a `web.media.TextTrackList` object listing all of the
-  objects representing the media element's text tracks
-
-  `var textTracks = mediaElement.textTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/textTracks`"
-  [this val]
-  (aset this "HTMLMedia" val))
-
 (defn video-tracks
   "Property.
+
+  [Read Only]
+  [Draft]
 
   The read-only videoTracks property on `web.media.HTMLMediaElement`
   returns a `web.video.VideoTrackList` object listing all of the
@@ -969,19 +944,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/videoTracks`"
   [this]
   (-> this (.-videoTracks)))
-
-(defn set-video-tracks!
-  "Property.
-
-  The read-only videoTracks property on `web.media.HTMLMediaElement`
-  returns a `web.video.VideoTrackList` object listing all of the
-  objects representing the media element's video tracks.
-
-  `var videoTracks = mediaElement.videoTracks;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/videoTracks`"
-  [this val]
-  (aset this "videoTracks" val))
 
 (defn volume
   "Property.
@@ -1010,6 +972,8 @@
 (defn onencrypted
   "Property.
 
+  [Experimental]
+
   The onencrypted property of the `web.media.HTMLMediaElement`
   an event handler, fired whenever an encrypted event occurs, denoting
   media is encrypted.
@@ -1022,6 +986,8 @@
 
 (defn set-onencrypted!
   "Property.
+
+  [Experimental]
 
   The onencrypted property of the `web.media.HTMLMediaElement`
   an event handler, fired whenever an encrypted event occurs, denoting
@@ -1036,6 +1002,8 @@
 (defn onwaitingforkey
   "Property.
 
+  [Experimental]
+
   The onwaitingforkey property of the `web.media.HTMLMediaElement`
   an event handler, fired when a waitingforkey event occurs, when
   is blocked while waiting for an encryption key.
@@ -1049,6 +1017,8 @@
 (defn set-onwaitingforkey!
   "Property.
 
+  [Experimental]
+
   The onwaitingforkey property of the `web.media.HTMLMediaElement`
   an event handler, fired when a waitingforkey event occurs, when
   is blocked while waiting for an encryption key.
@@ -1061,6 +1031,9 @@
 
 (defn initial-time
   "Property.
+
+  [Read Only]
+  [Obsolute]
 
   The HTMLMediaElement.initialTime is the initial playback position
   seconds. This property is obsolete, you can use a Media Fragments

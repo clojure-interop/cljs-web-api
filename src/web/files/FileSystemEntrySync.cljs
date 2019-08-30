@@ -4,22 +4,12 @@
   `DirectoryEntry`."
   (:refer-clojure :exclude []))
 
-(defn metadata
-  "Method."
-  [this & args]
-  (-> this .-Metadata (.apply this (clj->js args))))
-
 (defn file-system-entry-sync
   "Method.
 
   An object that represents an entry in the file system."
   [this & args]
   (-> this .-FileSystemEntrySync (.apply this (clj->js args))))
-
-(defn dom-string
-  "Method."
-  [this & args]
-  (-> this .-DOMString (.apply this (clj->js args))))
 
 (defn directory-entry-sync
   "Method.

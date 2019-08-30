@@ -175,6 +175,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLButtonElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<button>` element.
 
@@ -183,18 +185,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLButtonElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<button>` element.
-
-  `var labelElements = button.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/labels`"
-  [this val]
-  (aset this "labels" val))
 
 (defn menu
   "Property.

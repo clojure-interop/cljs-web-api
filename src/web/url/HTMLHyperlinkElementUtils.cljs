@@ -254,6 +254,8 @@
 (defn password
   "Property.
 
+  [Read Only]
+
   The HTMLHyperlinkElementUtils.password property is a `web.USVString`
   the password specified before the domain name.
 
@@ -266,6 +268,8 @@
 
 (defn origin
   "Property.
+
+  [Read Only]
 
   The HTMLHyperlinkElementUtils.origin read-only property is a
   containing the Unicode serialization of the origin of the represented

@@ -40,6 +40,8 @@
 (defn moz-get-file-name-array
   "Method.
 
+  [Non Standard]
+
   The HTMLInputElement.mozGetFileNameArray() method returns an
   of the names of the files that were selected by the user on an
   input element.
@@ -52,6 +54,8 @@
 
 (defn moz-set-file-name-array
   "Method.
+
+  [Non Standard]
 
   The HTMLInputElement.mozSetFileNameArray() method sets the names
   the files that selected on an HTML input element.
@@ -132,6 +136,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLInputElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<input>` element.
 
@@ -140,18 +146,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLInputElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<input>` element.
-
-  `var labelElements = input.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/labels`"
-  [this val]
-  (aset this "labels" val))
 
 (defn multiple
   "Property.
@@ -178,6 +172,8 @@
 (defn webkitdirectory
   "Property.
 
+  [Non Standard]
+
   The HTMLInputElement.webkitdirectory is a property that reflects
   webkitdirectory HTML attribute and indicates that the `<input>`
   should let the user select directories instead of files. When
@@ -193,6 +189,8 @@
 
 (defn set-webkitdirectory!
   "Property.
+
+  [Non Standard]
 
   The HTMLInputElement.webkitdirectory is a property that reflects
   webkitdirectory HTML attribute and indicates that the `<input>`
@@ -210,6 +208,10 @@
 (defn webkit-entries
   "Property.
 
+  [Read Only]
+  [Non Standard]
+  [Experimental]
+
   The read-only webkitEntries property of the `web.dom.HTMLInputElement`
   contains an array of file system entries (as objects based on
   representing files and/or directories selected by the user using
@@ -222,20 +224,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitEntries`"
   [this]
   (-> this (.-webkitEntries)))
-
-(defn set-webkit-entries!
-  "Property.
-
-  The read-only webkitEntries property of the `web.dom.HTMLInputElement`
-  contains an array of file system entries (as objects based on
-  representing files and/or directories selected by the user using
-  `<input>` element of type file, but only if that selection was
-  using drag-and-drop: selecting a file in the dialog will leave
-  property empty (bug
-
-  `var entries = HTMLInputElement.webkitEntries;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitEntries`"
-  [this val]
-  (aset this "webkitEntries" val))
 

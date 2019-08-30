@@ -13,6 +13,8 @@
 (defn check
   "Method.
 
+  [Experimental]
+
   A `js.Boolean` that is true if the font list is available
 
   `bool = aFontFaceSet.check(font);
@@ -38,6 +40,8 @@
 
 (defn load
   "Method.
+
+  [Experimental]
 
   A `js.Promise` of an `js.Array` of `web.fonts.FontFace` loaded.
   promise is fulfilled when all the fonts are loaded; it is rejected
@@ -70,6 +74,10 @@
 (defn ready
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The ready readonly property of the `web.fonts.FontFaceSet` interface
   a `js.Promise` that resolves to the given `web.fonts.FontFaceSet`.
 
@@ -80,20 +88,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready`"
   [this]
   (-> this (.-ready)))
-
-(defn set-ready!
-  "Property.
-
-  The ready readonly property of the `web.fonts.FontFaceSet` interface
-  a `js.Promise` that resolves to the given `web.fonts.FontFaceSet`.
-
-  `fontFaceSet.ready.then(function(fontFaceSet) {
-  // ...
-  });`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready`"
-  [this val]
-  (aset this "ready" val))
 
 (defn onloading
   "Property.

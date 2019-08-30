@@ -6,6 +6,10 @@
 (defn ice-transport
   "Property.
 
+  [Read Only]
+  [Draft]
+  [Experimental]
+
   The read-only `web.rtc.RTCDtlsTransport` property iceTransport
   a reference to the underlying `web.audio.RTCIceTransport`.
 
@@ -17,6 +21,10 @@
 
 (defn state
   "Property.
+
+  [Read Only]
+  [Draft]
+  [Experimental]
 
   The state read-only property of the `web.rtc.RTCDtlsTransport`
   provides information which describes a Datagram Transport Layer

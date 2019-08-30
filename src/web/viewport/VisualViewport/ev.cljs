@@ -21,6 +21,8 @@
 (def onresize
   "Event.
 
+  [Experimental]
+
   The onresize event handler of the `web.viewport.VisualViewport`
   is called when a viewport is resized, i.e. when the resize event
   fired.
@@ -31,6 +33,8 @@
 
 (def onscroll
   "Event.
+
+  [Experimental]
 
   The onscroll event handler of the `web.viewport.VisualViewport`
   is called when a viewport is scrolled, i.e. when the scroll event

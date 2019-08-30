@@ -58,6 +58,8 @@
 (defn labels
   "Property.
 
+  [Read Only]
+
   The HTMLProgressElement.labels read-only property returns a `web.NodeList`
   the `<label>` elements associated with the `<progress>` element.
 
@@ -66,16 +68,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/labels`"
   [this]
   (-> this (.-labels)))
-
-(defn set-labels!
-  "Property.
-
-  The HTMLProgressElement.labels read-only property returns a `web.NodeList`
-  the `<label>` elements associated with the `<progress>` element.
-
-  `var labelElements = progress.labels;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/labels`"
-  [this val]
-  (aset this "labels" val))
 

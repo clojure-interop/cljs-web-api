@@ -22,6 +22,8 @@
 (defn dump
   "Method.
 
+  [Non Standard]
+
   The dump() method of the `web.workers.WorkerGlobalScope` interface
   you to write a message to stdout — i.e. in your terminal, in
   only. This is the same as Firefox's `window.dump`, but for workers.
@@ -95,8 +97,8 @@
   accepts a variety of different image sources, and returns a `js.Promise`
   resolves to an `web.canvas.ImageBitmap`.
 
-  `createImageBitmap(image[, options]).then(function(response) { ... });
-  createImageBitmap(image, sx, sy, sw, sh[, options]).then(function(response) { ... });`
+  `const imageBitmapPromise = createImageBitmap(image[, options]);
+  const imageBitmapPromise = createImageBitmap(image, sx, sy, sw, sh[, options]);`
 
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap`"
   [this & args]
@@ -147,6 +149,8 @@
 (defn close
   "Method.
 
+  [Deprecated]
+
   The close() method of the `web.workers.WorkerGlobalScope` interface
   any tasks queued in the WorkerGlobalScope's event loop, effectively
   this particular scope.
@@ -169,46 +173,42 @@
   [this function]
   (-> this (.queueMicrotask function)))
 
-(defn worker-navigator
+(defn self
   "Property.
 
-  WorkerGlobalScope.self Read only"
+  [Read Only]
+
+  The self read-only property of the `web.workers.WorkerGlobalScope`
+  returns a reference to the WorkerGlobalScope itself. Most of
+  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
+  or `web.workers.ServiceWorkerGlobalScope`.
+
+  `var selfRef = self;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
   [this]
-  (-> this (.-WorkerNavigator)))
+  (-> this (.-self)))
 
-(defn set-worker-navigator!
+(defn location
   "Property.
 
-  WorkerGlobalScope.self Read only"
-  [this val]
-  (aset this "WorkerNavigator" val))
+  [Read Only]
 
-(defn worker-global-scope
-  "Property.
+  The location read-only property of the `web.workers.WorkerGlobalScope`
+  returns the `web.workers.WorkerLocation` associated with the
+  It is a specific location object, mostly a subset of the `web.dom.Location`
+  browsing scopes, but adapted to workers.
 
-  WorkerGlobalScope.location Read only"
+  `var locationObj = self.location;`
+
+  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/location`"
   [this]
-  (-> this (.-WorkerGlobalScope)))
-
-(defn set-worker-global-scope!
-  "Property.
-
-  WorkerGlobalScope.location Read only"
-  [this val]
-  (aset this "WorkerGlobalScope" val))
-
-(defn worker-location
-  "Property."
-  [this]
-  (-> this (.-WorkerLocation)))
-
-(defn set-worker-location!
-  "Property."
-  [this val]
-  (aset this "WorkerLocation" val))
+  (-> this (.-location)))
 
 (defn performance
   "Property.
+
+  [Read Only]
 
   The performance read-only property of the `web.workers.WorkerGlobalScope`
   returns a `web.performance.Performance` object to be used on
@@ -223,6 +223,9 @@
 (defn console
   "Property.
 
+  [Read Only]
+  [Non Standard]
+
   The console read-only property of the `web.workers.WorkerGlobalScope`
   returns a `Console` object providing access to the browser console
   the worker.
@@ -235,6 +238,9 @@
 
 (defn caches
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The caches read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the `web.service-workers.CacheStorage` object associated
@@ -250,6 +256,8 @@
 (defn indexed-db
   "Property.
 
+  [Read Only]
+
   The indexedDB read-only property of the `web.WindowOrWorkerGlobalScope`
   provides a mechanism for applications to asynchronously access
   capabilities of indexed databases.
@@ -263,6 +271,9 @@
 (defn is-secure-context
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The isSecureContext read-only property of the `web.WindowOrWorkerGlobalScope`
   returns a boolean indicating whether the current context is secure
   or not (false).
@@ -273,21 +284,11 @@
   [this]
   (-> this (.-isSecureContext)))
 
-(defn set-is-secure-context!
-  "Property.
-
-  The isSecureContext read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns a boolean indicating whether the current context is secure
-  or not (false).
-
-  `var isItSecure = self.isSecureContext; // or just isSecureContext`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/isSecureContext`"
-  [this val]
-  (aset this "isSecureContext" val))
-
 (defn origin
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The origin read-only property of the `web.WindowOrWorkerGlobalScope`
   returns the origin of the global scope, serialized as a string.
@@ -298,48 +299,10 @@
   [this]
   (-> this (.-origin)))
 
-(defn set-origin!
-  "Property.
-
-  The origin read-only property of the `web.WindowOrWorkerGlobalScope`
-  returns the origin of the global scope, serialized as a string.
-
-  `var myOrigin = self.origin; // or just origin`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/origin`"
-  [this val]
-  (aset this "origin" val))
-
-(defn location
-  "Property.
-
-  The location read-only property of the `web.workers.WorkerGlobalScope`
-  returns the `web.workers.WorkerLocation` associated with the
-  It is a specific location object, mostly a subset of the `web.dom.Location`
-  browsing scopes, but adapted to workers.
-
-  `var locationObj = self.location;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/location`"
-  [this]
-  (-> this (.-location)))
-
-(defn set-location!
-  "Property.
-
-  The location read-only property of the `web.workers.WorkerGlobalScope`
-  returns the `web.workers.WorkerLocation` associated with the
-  It is a specific location object, mostly a subset of the `web.dom.Location`
-  browsing scopes, but adapted to workers.
-
-  `var locationObj = self.location;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/location`"
-  [this val]
-  (aset this "location" val))
-
 (defn navigator
   "Property.
+
+  [Read Only]
 
   The navigator read-only property of the `web.workers.WorkerGlobalScope`
   returns the `web.workers.WorkerNavigator` associated with the
@@ -352,22 +315,11 @@
   [this]
   (-> this (.-navigator)))
 
-(defn set-navigator!
-  "Property.
-
-  The navigator read-only property of the `web.workers.WorkerGlobalScope`
-  returns the `web.workers.WorkerNavigator` associated with the
-  It is a specific navigator object, mostly a subset of the `web.performance.Navigator`
-  browsing scopes, but adapted to workers.
-
-  `var navigatorObj = self.navigator;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/navigator`"
-  [this val]
-  (aset this "navigator" val))
-
 (defn onclose
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   The onclose property of the `web.workers.WorkerGlobalScope` interface
   an `EventHandler` to be called when the close event occurs and
@@ -381,6 +333,9 @@
 
 (defn set-onclose!
   "Property.
+
+  [Non Standard]
+  [Obsolute]
 
   The onclose property of the `web.workers.WorkerGlobalScope` interface
   an `EventHandler` to be called when the close event occurs and
@@ -495,32 +450,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/ononline`"
   [this val]
   (aset this "ononline" val))
-
-(defn self
-  "Property.
-
-  The self read-only property of the `web.workers.WorkerGlobalScope`
-  returns a reference to the WorkerGlobalScope itself. Most of
-  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
-  or `web.workers.ServiceWorkerGlobalScope`.
-
-  `var selfRef = self;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
-  [this]
-  (-> this (.-self)))
-
-(defn set-self!
-  "Property.
-
-  The self read-only property of the `web.workers.WorkerGlobalScope`
-  returns a reference to the WorkerGlobalScope itself. Most of
-  time it is a specific scope like `web.workers.DedicatedWorkerGlobalScope`,
-  or `web.workers.ServiceWorkerGlobalScope`.
-
-  `var selfRef = self;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self`"
-  [this val]
-  (aset this "self" val))
 

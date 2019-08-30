@@ -7,6 +7,9 @@
 (defn credential
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The `web.rtc.RTCIceServer` dictionary's credential property is
   string providing the credential to use when connecting to the
   server. This is typically a password, key, or other secret.
@@ -27,6 +30,9 @@
 
 (defn set-credential!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The `web.rtc.RTCIceServer` dictionary's credential property is
   string providing the credential to use when connecting to the
@@ -93,6 +99,9 @@
 (defn urls
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The `web.rtc.RTCIceServer` dictionary's urls property specifies
   URL or URLs of the servers to be used for ICE negotiations. These
   typically STUN and/or TURN servers.
@@ -113,6 +122,9 @@
 
 (defn set-urls!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The `web.rtc.RTCIceServer` dictionary's urls property specifies
   URL or URLs of the servers to be used for ICE negotiations. These
@@ -135,6 +147,9 @@
 (defn username
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The `web.rtc.RTCIceServer` dictionary's username property is
   string which specifies the username to use when authenticating
   the ICE server being described.
@@ -156,6 +171,9 @@
 (defn set-username!
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The `web.rtc.RTCIceServer` dictionary's username property is
   string which specifies the username to use when authenticating
   the ICE server being described.
@@ -176,6 +194,10 @@
 
 (defn url
   "Property.
+
+  [Draft]
+  [Experimental]
+  [Obsolute]
 
   The obsolete `web.rtc.RTCIceServer` dictionary's url property
   the URL of a single ICE server to be used while negotiating connections.
@@ -201,6 +223,10 @@
 
 (defn set-url!
   "Property.
+
+  [Draft]
+  [Experimental]
+  [Obsolute]
 
   The obsolete `web.rtc.RTCIceServer` dictionary's url property
   the URL of a single ICE server to be used while negotiating connections.

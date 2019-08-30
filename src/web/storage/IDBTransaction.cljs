@@ -54,6 +54,8 @@
 (defn db
   "Property.
 
+  [Read Only]
+
   An `web.storage.IDBDatabase` object.
 
   `var myDatabase = transaction.db;`
@@ -62,19 +64,10 @@
   [this]
   (-> this (.-db)))
 
-(defn set-db!
-  "Property.
-
-  An `web.storage.IDBDatabase` object.
-
-  `var myDatabase = transaction.db;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/db`"
-  [this val]
-  (aset this "db" val))
-
 (defn error
   "Property.
+
+  [Read Only]
 
   A `web.deprecated.DOMError` containing the relevant error. In
   48+/Firefox 58+ this property returns a `web.dom.DOMException`
@@ -89,24 +82,10 @@
   [this]
   (-> this (.-error)))
 
-(defn set-error!
-  "Property.
-
-  A `web.deprecated.DOMError` containing the relevant error. In
-  48+/Firefox 58+ this property returns a `web.dom.DOMException`
-  DOMError has been removed from the DOM standard. The exact error
-  one of serveral possibilities. It can be a reference to the same
-  as the request object that raised it, or a transaction failure
-  example `QuotaExceededError` or `UnknownError`).
-
-  `var myError = transaction.error;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error`"
-  [this val]
-  (aset this "error" val))
-
 (defn mode
   "Property.
+
+  [Read Only]
 
   An `IDBTransactionMode` object defining the mode for isolating
   to data in the current object stores:
@@ -117,20 +96,11 @@
   [this]
   (-> this (.-mode)))
 
-(defn set-mode!
-  "Property.
-
-  An `IDBTransactionMode` object defining the mode for isolating
-  to data in the current object stores:
-
-  `var myCurrentMode = IDBTransaction.mode;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/mode`"
-  [this val]
-  (aset this "mode" val))
-
 (defn object-store-names
   "Property.
+
+  [Read Only]
+  [Experimental]
 
   The objectStoreNames read-only property of the `web.storage.IDBTransaction`
   returns a `web.dom.DOMStringList` of names of `web.idb.IDBObjectStore`
@@ -140,18 +110,6 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/ObjectStoreNames`"
   [this]
   (-> this (.-objectStoreNames)))
-
-(defn set-object-store-names!
-  "Property.
-
-  The objectStoreNames read-only property of the `web.storage.IDBTransaction`
-  returns a `web.dom.DOMStringList` of names of `web.idb.IDBObjectStore`
-
-  `var myDatabase = transactionObj.objectStoreNames;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/ObjectStoreNames`"
-  [this val]
-  (aset this "objectStoreNames" val))
 
 (defn onabort
   "Property.

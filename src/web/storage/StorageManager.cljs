@@ -24,6 +24,8 @@
 (defn persist
   "Method.
 
+  [Experimental]
+
   The persist() method of the `web.storage.StorageManager` interface
   permission to use persistent storage, and returns a `js.Promise`
   resolves to true if permission is granted and box mode is persistent,
@@ -37,6 +39,8 @@
 
 (defn persisted
   "Method.
+
+  [Experimental]
 
   The persisted() method of the `web.storage.StorageManager` interface
   a `js.Promise` that resolves to true if box mode is persistent

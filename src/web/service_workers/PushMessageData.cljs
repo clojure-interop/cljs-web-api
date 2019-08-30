@@ -6,6 +6,8 @@
 (defn array-buffer
   "Method.
 
+  [Experimental]
+
   The arrayBuffer()method of the `web.service-workers.PushMessageData`
   extracts push message data as an `js.ArrayBuffer` object.
 
@@ -17,6 +19,8 @@
 
 (defn blob
   "Method.
+
+  [Experimental]
 
   The blob()method of the `web.service-workers.PushMessageData`
   extracts push message data as a `web.files.Blob` object.
@@ -30,6 +34,8 @@
 (defn json
   "Method.
 
+  [Experimental]
+
   The json()method of the `web.service-workers.PushMessageData`
   extracts push message data by parsing it as a JSON string and
   the result.
@@ -42,6 +48,8 @@
 
 (defn text
   "Method.
+
+  [Experimental]
 
   The text()method of the `web.service-workers.PushMessageData`
   extracts push message data as a plain text string.

@@ -3,21 +3,10 @@
   screen. It is available in both the window and worker contexts."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The OffscreenCanvas() constructor returns a newly instantiated `web.canvas.OffscreenCanvas` object.
-
-  width
-  The width of the offscreen canvas.
-  height
-  The height of the offscreen canvas.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/OffscreenCanvas`"
-  js/OffscreenCanvas)
-
 (defn get-context
   "Method.
+
+  [Experimental]
 
   The OffscreenCanvas.getContext() method returns a drawing context
   an offscreen canvas, or `js.null` if the context identifier is
@@ -32,6 +21,8 @@
 (defn convert-to-blob
   "Method.
 
+  [Experimental]
+
   The OffscreenCanvas.convertToBlob()method creates a `web.files.Blob`
   representing the image contained in the canvas.
 
@@ -43,6 +34,8 @@
 
 (defn transfer-to-image-bitmap
   "Method.
+
+  [Experimental]
 
   The OffscreenCanvas.transferToImageBitmap() method creates an
   object from the most recently rendered image of the OffscreenCanvas.
@@ -56,6 +49,8 @@
 (defn height
   "Property.
 
+  [Experimental]
+
   The height property returns and sets the height of an `web.canvas.OffscreenCanvas`
 
   `var pxl = offscreen.height;
@@ -67,6 +62,8 @@
 
 (defn set-height!
   "Property.
+
+  [Experimental]
 
   The height property returns and sets the height of an `web.canvas.OffscreenCanvas`
 
@@ -80,6 +77,8 @@
 (defn width
   "Property.
 
+  [Experimental]
+
   The width property returns and sets the width of an `web.canvas.OffscreenCanvas`
 
   `var pxl = offscreen.width;
@@ -91,6 +90,8 @@
 
 (defn set-width!
   "Property.
+
+  [Experimental]
 
   The width property returns and sets the width of an `web.canvas.OffscreenCanvas`
 

@@ -3,21 +3,11 @@
   pull request into a `web.fetch.ReadableByteStreamController`"
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The ReadableStreamBYOBRequest() constructor creates and returns a ReadableStreamBYOBRequest() object instance.
-
-  controller
-  The associated `web.fetch.ReadableByteStreamController`.
-  view
-  The current view.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamBYOBRequest/ReadableStreamBYOBRequest`"
-  js/ReadableStreamBYOBRequest)
-
 (defn respond
   "Method.
+
+  [Draft]
+  [Experimental]
 
   The error() method of the `web.fetch.ReadableStreamBYOBRequest`
   xxx
@@ -31,6 +21,9 @@
 (defn respond-with-new-view
   "Method.
 
+  [Draft]
+  [Experimental]
+
   The respondWithNewView() method of the `web.fetch.ReadableStreamBYOBRequest`
   xxx
 
@@ -43,6 +36,9 @@
 (defn view
   "Property.
 
+  [Draft]
+  [Experimental]
+
   The view getter property of the `web.fetch.ReadableStreamBYOBRequest`
   returns the current view.
 
@@ -54,6 +50,9 @@
 
 (defn set-view!
   "Property.
+
+  [Draft]
+  [Experimental]
 
   The view getter property of the `web.fetch.ReadableStreamBYOBRequest`
   returns the current view.

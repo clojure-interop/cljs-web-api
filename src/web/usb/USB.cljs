@@ -6,6 +6,8 @@
 (defn get-devices
   "Method.
 
+  [Experimental]
+
   The getDevices method of the `web.usb.USB` interface returns
   `js.Promise` that resolves with an array of `web.usb.USBDevice`
   for paired attached devices. For information on pairing devices,
@@ -19,6 +21,8 @@
 
 (defn request-device
   "Method.
+
+  [Experimental]
 
   The requestDevice() method of the `web.usb.USB` interface returns
   `js.Promise` that resolves with an instance of `web.usb.USBDevice`
@@ -34,6 +38,8 @@
 (defn onconnect
   "Method.
 
+  [Experimental]
+
   The onconnect property of the `web.usb.USB` interface is an event
   called whenever a paired device is connected.
 
@@ -45,6 +51,8 @@
 
 (defn ondisconnect
   "Method.
+
+  [Experimental]
 
   The ondisconnect property of the `web.usb.USB` is an event handler
   whenever a paired device is disconnected.

@@ -20,6 +20,8 @@
 (defn length
   "Property.
 
+  [Read Only]
+
   The read-only `web.video.VideoTrackList` property length returns
   number of entries in the VideoTrackList, each of which is a `web.video.VideoTrack`
   one video track in the media element.
@@ -32,6 +34,8 @@
 
 (defn selected-index
   "Property.
+
+  [Read Only]
 
   The read-only `web.video.VideoTrackList` property selectedIndex
   the index of the currently selected track, if any, or -1 otherwise.

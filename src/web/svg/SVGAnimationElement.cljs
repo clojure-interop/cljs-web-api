@@ -71,6 +71,8 @@
 (defn target-element
   "Property.
 
+  [Read Only]
+
   The SVGAnimationElement.targetElement property refers to the
   which is being animated. If no target element is being animated
   example, because the href attribute specifies an unknown element),
@@ -82,22 +84,10 @@
   [this]
   (-> this (.-targetElement)))
 
-(defn set-target-element!
-  "Property.
-
-  The SVGAnimationElement.targetElement property refers to the
-  which is being animated. If no target element is being animated
-  example, because the href attribute specifies an unknown element),
-  value returned is null.
-
-  `var targetElement = someElement.targetElement;`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/targetElement`"
-  [this val]
-  (aset this "targetElement" val))
-
 (defn onbegin
   "Property.
+
+  [Experimental]
 
   The SVGAnimationElement.onbegin property refers to the event
   for the beginEvent.
@@ -111,6 +101,8 @@
 (defn set-onbegin!
   "Property.
 
+  [Experimental]
+
   The SVGAnimationElement.onbegin property refers to the event
   for the beginEvent.
 
@@ -122,6 +114,8 @@
 
 (defn onend
   "Property.
+
+  [Experimental]
 
   The SVGAnimationElement.onend property refers to the event handler
   the endEvent.
@@ -135,6 +129,8 @@
 (defn set-onend!
   "Property.
 
+  [Experimental]
+
   The SVGAnimationElement.onend property refers to the event handler
   the endEvent.
 
@@ -147,6 +143,8 @@
 (defn onrepeat
   "Property.
 
+  [Experimental]
+
   The SVGAnimationElement.onrepeat property refers to the event
   for the repeatEvent.
 
@@ -158,6 +156,8 @@
 
 (defn set-onrepeat!
   "Property.
+
+  [Experimental]
 
   The SVGAnimationElement.onrepeat property refers to the event
   for the repeatEvent.

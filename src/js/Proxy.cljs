@@ -76,6 +76,8 @@
 (defn enumerate
   "Method.
 
+  [Obsolute]
+
   The handler.enumerate() method used to be a trap for `for...in`
   but has been removed from the ECMAScript standard in ES2016 and
   deprecated in browsers.

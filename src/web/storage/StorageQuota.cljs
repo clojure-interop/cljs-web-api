@@ -7,6 +7,8 @@
 (defn query-info
   "Method.
 
+  [Experimental]
+
   The queryInfo() property of the `web.storage.StorageQuota` interface
   a `StorageInfo` object containting the current data usage and
   quota information for the application.
@@ -19,6 +21,8 @@
 
 (defn request-persistent-quota
   "Method.
+
+  [Experimental]
 
   The requestPersistentQuota() property of the `web.storage.StorageQuota`
   requests persistent storage for the requesting application and
@@ -33,6 +37,9 @@
 (defn supported-types
   "Property.
 
+  [Read Only]
+  [Experimental]
+
   The supportedTypes read-only property of the `web.storage.StorageQuota`
   returns a list of the available storage types.
 
@@ -41,16 +48,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/supportedTypes`"
   [this]
   (-> this (.-supportedTypes)))
-
-(defn set-supported-types!
-  "Property.
-
-  The supportedTypes read-only property of the `web.storage.StorageQuota`
-  returns a list of the available storage types.
-
-  `var storageTypes = StorageQuota.supportedTypes`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/StorageQuota/supportedTypes`"
-  [this val]
-  (aset this "supportedTypes" val))
 

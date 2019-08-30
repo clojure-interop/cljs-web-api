@@ -5,6 +5,8 @@
 (defn to-source
   "Method.
 
+  [Non Standard]
+
   The toSource() method returns a string representing the source
   of the object.
 

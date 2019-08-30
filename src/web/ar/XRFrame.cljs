@@ -8,6 +8,8 @@
 (defn get-pose
   "Method.
 
+  [Draft]
+
   The getPose() method of the `web.ar.XRFrame` interface turns
   `web.other.XRPose` object representing the relative relationship
   any two `XRSpace` objects.
@@ -21,6 +23,8 @@
 (defn get-viewer-pose
   "Method.
 
+  [Draft]
+
   The XRFrame.getViewerPose() method of the `web.ar.XRFrame` interface
   an `XRViewerPose` corresponding to the viewer's pose in a given
 
@@ -33,6 +37,8 @@
 (defn session
   "Property.
 
+  [Read Only]
+
   The session readonly property of `web.ar.XRFrame` interface references
   `web.ar.XRSession` that produced it.
 
@@ -41,16 +47,4 @@
   See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session`"
   [this]
   (-> this (.-session)))
-
-(defn set-session!
-  "Property.
-
-  The session readonly property of `web.ar.XRFrame` interface references
-  `web.ar.XRSession` that produced it.
-
-  `var xrSession = XRFrame.session`
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session`"
-  [this val]
-  (aset this "session" val))
 

@@ -3,16 +3,6 @@
   events and may have listeners for them."
   (:refer-clojure :exclude []))
 
-(def constructor
-  "Constructor.
-
-  The EventTarget() constructor creates a new `web.EventTarget` object instance.
-
-  None.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/EventTarget`"
-  js/EventTarget)
-
 (defn add-event-listener
   "Method.
 

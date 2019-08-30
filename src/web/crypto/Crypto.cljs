@@ -20,6 +20,8 @@
 (defn subtle
   "Property.
 
+  [Read Only]
+
   The Crypto.subtle read-only property returns a `web.crypto.SubtleCrypto`
   allowing to perform cryptographical operations.
 

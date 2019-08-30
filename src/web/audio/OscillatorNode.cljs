@@ -5,31 +5,6 @@
   effect, a constant tone."
   (:refer-clojure :exclude [type]))
 
-(def constructor
-  "Constructor.
-
-  The OscillatorNode() constructor of the Web Audio API creates a new `web.audio.OscillatorNode` object which is an `web.audio.AudioNode` that represents a periodic waveform, like a sine wave, optionally setting the node's properties' values to match values in a specified object.
-
-  Inherits parameters from the `web.audio.AudioNodeOptions` dictionary.
-
-
-  \\tcontext
-  \\tA reference to an `web.audio.AudioContext`.
-  \\toptions Optional
-  \\tAn object whose properties specify the initial values for the oscillator node's properties. Any properties omitted from the object will take on the default value as documented.
-
-  \\t\\ttype
-  \\t\\tThe shape of the wave produced by the node. Valid values are 'sine', 'square', 'sawtooth', 'triangle' and 'custom'. The default is 'sine'.
-  \\t\\tdetune
-  \\t\\tA detuning value (in cents) which will offset the frequency by the given amount. Its default is 0.
-  \\t\\tfrequency
-  \\t\\tThe frequency (in hertz) of the periodic waveform. Its default is 440.
-  \\t\\tperiodicWave
-  \\t\\tAn arbitrary period waveform described by a `web.audio.PeriodicWave` object.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/OscillatorNode`"
-  js/OscillatorNode)
-
 (defn set-periodic-wave
   "Method.
 

@@ -3,17 +3,6 @@
   the query string of a URL."
   (:refer-clojure :exclude [get keys set sort]))
 
-(def constructor
-  "Constructor.
-
-  The URLSearchParams() constructor creates and returns a new `web.url.URLSearchParams` object. Leading '?' characters are ignored.
-
-  init Optional
-  A `web.USVString` instance, a `web.url.URLSearchParams` instance, a sequence of `web.USVString`s, or a record containing `web.USVString`s. Note that using a URLSearchParams instance is deprecated; soon browsers will just use a USVString for the init.
-
-  See also: `https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams`"
-  js/URLSearchParams)
-
 (defn append
   "Method.
 

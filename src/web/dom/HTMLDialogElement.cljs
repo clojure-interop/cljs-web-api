@@ -6,6 +6,8 @@
 (defn close
   "Method.
 
+  [Experimental]
+
   Void.
 
   `dialogInstance.close(returnValue);`
@@ -16,6 +18,8 @@
 
 (defn show
   "Method.
+
+  [Experimental]
 
   The show() method of the `web.dom.HTMLDialogElement` interface
   the dialog modelessly, i.e. still allowing interaction with content
@@ -29,6 +33,8 @@
 
 (defn show-modal
   "Method.
+
+  [Experimental]
 
   The showModal() method of the `web.dom.HTMLDialogElement` interface
   the dialog as a modal, over the top of any other dialogs that
@@ -45,6 +51,8 @@
 (defn open
   "Property.
 
+  [Experimental]
+
   A `js.Boolean` representing the state of the open HTML attribute.
   means it is set, and therefore the dialog is shown. false means
   not set, and therefore the dialog is not shown.
@@ -58,6 +66,8 @@
 
 (defn set-open!
   "Property.
+
+  [Experimental]
 
   A `js.Boolean` representing the state of the open HTML attribute.
   means it is set, and therefore the dialog is shown. false means
@@ -73,6 +83,8 @@
 (defn return-value
   "Property.
 
+  [Experimental]
+
   The returnValue property of the `web.dom.HTMLDialogElement` interface
   or sets the return value for the <dialog>, usually to indicate
   button the user pressed to close it.
@@ -86,6 +98,8 @@
 
 (defn set-return-value!
   "Property.
+
+  [Experimental]
 
   The returnValue property of the `web.dom.HTMLDialogElement` interface
   or sets the return value for the <dialog>, usually to indicate
